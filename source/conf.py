@@ -150,8 +150,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    #    (master_doc, 'hyperledger-fabricdocs.tex', u'hyperledger-fabricdocs Documentation',
-     #u'hyperledger', 'manual'),
+    (master_doc, 'hyperledger-fabricdocs.tex', u'hyperledger-fabricdocs Documentation',
+    u'hyperledger', 'manual'),
 ]
 
 
