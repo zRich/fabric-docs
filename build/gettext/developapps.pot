@@ -1,0 +1,1249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/developapps/analysis.md:3
+#: ../../source/developapps/architecture.md:3
+#: ../../source/developapps/scenario.md:3
+msgid "Audience: Architects, Application and smart contract developers, Business professionals"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:6
+msgid "Let's analyze commercial paper in a little more detail. PaperNet participants such as MagnetoCorp and DigiBank use commercial paper transactions to achieve their business objectives -- let's examine the structure of a commercial paper and the transactions that affect it over time. We will also consider which organizations in PaperNet need to sign off on a transaction based on the trust relationships among the organizations in the network. Later we'll focus on how money flows between buyers and sellers; for now, let's focus on the first paper issued by MagnetoCorp."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:17
+msgid "A paper 00001 is issued by MagnetoCorp on May 31. Spend a few moments looking at the first state of this paper, with its different properties and values:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:30
+msgid "This paper state is a result of the issue transaction and it brings MagnetoCorp's first commercial paper into existence! Notice how this paper has a 5M USD face value for redemption later in the year. See how the Issuer and Owner are the same when paper 00001 is issued. Notice that this paper could be uniquely identified as MagnetoCorp00001 -- a composition of the Issuer and Paper properties. Finally, see how the property Current state = issued quickly identifies the stage of MagnetoCorp paper 00001 in its lifecycle."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:38
+msgid "Shortly after issuance, the paper is bought by DigiBank. Spend a few moments looking at how the same commercial paper has changed as a result of this buy transaction:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:52
+msgid "The most significant change is that of Owner -- see how the paper initially owned by MagnetoCorp is now owned by DigiBank.  We could imagine how the paper might be subsequently sold to BrokerHouse or HedgeMatic, and the corresponding change to Owner. Note how Current state allow us to easily identify that the paper is now trading."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:58
+msgid "After 6 months, if DigiBank still holds the the commercial paper, it can redeem it with MagnetoCorp:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:71
+msgid "This final redeem transaction has ended the commercial paper's lifecycle -- it can be considered closed. It is often mandatory to keep a record of redeemed commercial papers, and the redeemed state allows us to quickly identify these. The value of Owner of a paper can be used to perform access control on the redeem transaction, by comparing the Owner against the identity of the transaction creator. Fabric supports this through the getCreator() chaincode API. If golang is used as a chaincode language, the client identity chaincode library can be used to retrieve additional attributes of the transaction creator."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:83
+msgid "We've seen that paper 00001's lifecycle is relatively straightforward -- it moves between issued, trading and redeemed as a result of an issue, buy, or redeem transaction."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:87
+msgid "These three transactions are initiated by MagnetoCorp and DigiBank (twice), and drive the state changes of paper 00001. Let's have a look at the transactions that affect this paper in a little more detail:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:93
+msgid "Examine the first transaction initiated by MagnetoCorp:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:104
+msgid "See how the issue transaction has a structure with properties and values. This transaction structure is different to, but closely matches, the structure of paper 00001. That's because they are different things -- paper 00001 reflects a state of PaperNet that is a result of the issue transaction. It's the logic behind the issue transaction (which we cannot see) that takes these properties and creates this paper. Because the transaction creates the paper, it means there's a very close relationship between these structures."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:112
+msgid "The only organization that is involved in the issue transaction is MagnetoCorp. Naturally, MagnetoCorp needs to sign off on the transaction. In general, the issuer of a paper is required to sign off on a transaction that issues a new paper."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:118
+msgid "Next, examine the buy transaction which transfers ownership of paper 00001 from MagnetoCorp to DigiBank:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:131
+msgid "See how the buy transaction has fewer properties that end up in this paper. That's because this transaction only modifies this paper. It's only New owner = DigiBank that changes as a result of this transaction; everything else is the same. That's OK -- the most important thing about the buy transaction is the change of ownership, and indeed in this transaction, there's an acknowledgement of the current owner of the paper, MagnetoCorp."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:138
+msgid "You might ask why the Purchase time and Price properties are not captured in paper 00001? This comes back to the difference between the transaction and the paper. The 4.94 M USD price tag is actually a property of the transaction, rather than a property of this paper. Spend a little time thinking about this difference; it is not as obvious as it seems. We're going to see later that the ledger will record both pieces of information -- the history of all transactions that affect this paper, as well its latest state. Being clear on this separation of information is really important."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:147
+msgid "It's also worth remembering that paper 00001 may be bought and sold many times. Although we're skipping ahead a little in our scenario, let's examine what transactions we might see if paper 00001 changes ownership."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:151
+msgid "If we have a purchase by BigFund:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:162
+msgid "Followed by a subsequent purchase by HedgeMatic:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:173
+msgid "See how the paper owners changes, and how in out example, the price changes. Can you think of a reason why the price of MagnetoCorp commercial paper might be falling?"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:177
+msgid "Intuitively, a buy transaction demands that both the selling as well as the buying organization need to sign off on such a transaction such that there is proof of the mutual agreement among the two parties that are part of the deal."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:183
+msgid "The redeem transaction for paper 00001 represents the end of its lifecycle. In our relatively simple example, DigiBank initiates the transaction which transfers the commercial paper back to MagnetoCorp:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:195
+msgid "Again, notice how the redeem transaction has very few properties; all of the changes to paper 00001 can be calculated data by the redeem transaction logic: the Issuer will become the new owner, and the Current state will change to redeemed. The Current owner property is specified in our example, so that it can be checked against the current holder of the paper."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:201
+msgid "From a trust perspective, the same reasoning of the buy transaction also applies to the redeem instruction: both organizations involved in the transaction are required to sign off on it."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:207
+msgid "In this topic, we've seen how transactions and the resultant paper states are the two most important concepts in PaperNet. Indeed, we'll see these two fundamental elements in any Hyperledger Fabric distributed ledger -- a world state, that contains the current value of all objects, and a blockchain that records the history of all transactions that resulted in the current world state."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:214
+msgid "The required sign-offs on transactions are enforced through rules, which are evaluated before appending a transaction to the ledger. Only if the required signatures are present, Fabric will accept a transaction as valid."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:218
+msgid "You're now in a great place translate these ideas into a smart contract. Don't worry if your programming is a little rusty, we'll provide tips and pointers to understand the program code. Mastering the commercial paper smart contract is the first big step towards designing your own application. Or, if you're a business analyst who's comfortable with a little programming, don't be afraid to keep dig a little deeper!"
+msgstr ""
+
+#: ../../source/developapps/application.md:3
+#: ../../source/developapps/endorsementpolicies.md:3
+#: ../../source/developapps/smartcontract.md:3
+#: ../../source/developapps/transactionhandler.md:3
+msgid "Audience: Architects, Application and smart contract developers"
+msgstr ""
+
+#: ../../source/developapps/application.md:5
+msgid "An application can interact with a blockhain network by submitting transactions to a ledger or querying ledger content. This topic covers the mechanics of how an application does this; in our scenario, organizations access PaperNet using applications which invoke issue, sell and redeem transactions defined in a commercial paper smart contract. Even though MagnetoCorp's application to issue a commercial paper is basic, it covers all the major points of understanding."
+msgstr ""
+
+#: ../../source/developapps/application.md:13
+#: ../../source/developapps/chaincodenamespace.md:14
+#: ../../source/developapps/connectionoptions.md:10
+#: ../../source/developapps/connectionprofile.md:13
+#: ../../source/developapps/contractname.md:12
+#: ../../source/developapps/gateway.md:9
+#: ../../source/developapps/wallet.md:10
+msgid "In this topic, we're going to cover:"
+msgstr ""
+
+#: ../../source/developapps/application.md:23
+msgid "To help your understanding, we'll make reference to the commercial paper sample application provided with Hyperledger Fabric. You can download it and run it locally. It is written in JavaScript, but the logic is quite language independent, so you'll be easily able to see what's going on! (The sample will become available for Java and GOLANG as well.)"
+msgstr ""
+
+#: ../../source/developapps/application.md:32
+msgid "An application interacts with a blockchain network using the Fabric SDK. Here's a simplified diagram of how an application invokes a commercial paper smart contract:"
+msgstr ""
+
+#: ../../source/developapps/application.md:36
+msgid "develop.application A PaperNet application invokes the commercial paper smart contract to submit an issue transaction request."
+msgstr ""
+
+#: ../../source/developapps/application.md:39
+msgid "An application has to follow six basic steps to submit a transaction:"
+msgstr ""
+
+#: ../../source/developapps/application.md:48
+msgid "You're going to see how a typical application performs these six steps using the Fabric SDK. You'll find the application code in the issue.js file. View it in your browser, or open it in your favourite editor if you've downloaded it. Spend a few moments looking at the overall structure of the application; even with comments and spacing, it's only 100 lines of code!"
+msgstr ""
+
+#: ../../source/developapps/application.md:57
+msgid "Towards the top of issue.js, you'll see two Fabric classes are brought into scope:"
+msgstr ""
+
+#: ../../source/developapps/application.md:64
+msgid "You can read about the fabric-network classes in the node SDK documentation, but for now, let's see how they are used to connect MagnetoCorp's application to PaperNet. The application uses the Fabric Wallet class as follows:"
+msgstr ""
+
+#: ../../source/developapps/application.md:73
+msgid "See how wallet locates a wallet in the local filesystem. The identity retrieved from the wallet is clearly for a user called Isabella, who is using the issue application. The wallet holds a set of identities -- X.509 digital certificates -- which can be used to access PaperNet or any other Fabric network. If you run the tutorial, and look in this directory, you'll see the identity credentials for Isabella."
+msgstr ""
+
+#: ../../source/developapps/application.md:80
+msgid "Think of a wallet holding the digital equivalents of your government ID, driving license or ATM card. The X.509 digital certificates within it will associate the holder with a organization, thereby entitling them to rights in a network channel. For example, Isabella might be an administrator in MagnetoCorp, and this could give her more privileges than a different user -- Balaji from DigiBank.  Moreover, a smart contract can retrieve this identity during smart contract processing using the transaction context."
+msgstr ""
+
+#: ../../source/developapps/application.md:89
+msgid "Note also that wallets don't hold any form of cash or tokens -- they hold identities."
+msgstr ""
+
+#: ../../source/developapps/application.md:94
+msgid "The second key class is a Fabric Gateway. Most importantly, a gateway identifies one or more peers that provide access to a network -- in our case, PaperNet. See how issue.js connects to its gateway:"
+msgstr ""
+
+#: ../../source/developapps/application.md:102
+msgid "gateway.connect() has two important parameters:"
+msgstr ""
+
+#: ../../source/developapps/application.md:112
+msgid "See how the client application uses a gateway to insulate itself from the network topology, which might change. The gateway takes care of sending the transaction proposal to the right peer nodes in the network using the connection profile and connection options."
+msgstr ""
+
+#: ../../source/developapps/application.md:118
+msgid "Spend a few moments examining the connection profile ./gateway/connectionProfile.yaml. It uses YAML, making it easy to read."
+msgstr ""
+
+#: ../../source/developapps/application.md:123
+msgid "It was loaded and converted into a JSON object:"
+msgstr ""
+
+#: ../../source/developapps/application.md:129
+msgid "Right now, we're only interested in the channels: and peers: sections of the profile: (We've modified the details slightly to better explain what's happening.)"
+msgstr ""
+
+#: ../../source/developapps/application.md:162
+msgid "See how channel: identifies the PaperNet: network channel, and two of its peers. MagnetoCorp has peer1.magenetocorp.com and DigiBank has peer2.digibank.com, and both have the role of endorsing peers. Link to these peers via the peers: key, which contains details about how to connect to them, including their respective network addresses."
+msgstr ""
+
+#: ../../source/developapps/application.md:168
+msgid "The connection profile contains a lot of information -- not just peers -- but network channels, network orderers, organizations, and CAs, so don't worry if you don't understand all of it!"
+msgstr ""
+
+#: ../../source/developapps/application.md:172
+msgid "Let's now turn our attention to the connectionOptions object:"
+msgstr ""
+
+#: ../../source/developapps/application.md:181
+msgid "See how it specifies that identity, userName, and wallet, wallet, should be used to connect to a gateway. These were assigned values earlier in the code."
+msgstr ""
+
+#: ../../source/developapps/application.md:184
+msgid "There are other connection options which an application could use to instruct the SDK to act intelligently on its behalf. For example:"
+msgstr ""
+
+#: ../../source/developapps/application.md:199
+msgid "Here, commitTimeout tells the SDK to wait 100 seconds to hear whether a transaction has been committed. And strategy: EventStrategies.MSPID_SCOPE_ANYFORTX specifies that the SDK can notify an application after a single MagnetoCorp peer has confirmed the transaction, in contrast to strategy: EventStrategies.NETWORK_SCOPE_ALLFORTX which requires that all peers from MagnetoCorp and DigiBank to confirm the transaction."
+msgstr ""
+
+#: ../../source/developapps/application.md:206
+msgid "If you'd like to, read more about how connection options allow applications to specify goal-oriented behaviour without having to worry about how it is achieved."
+msgstr ""
+
+#: ../../source/developapps/application.md:212
+msgid "The peers defined in the gateway connectionProfile.yaml provide issue.js with access to PaperNet. Because these peers can be joined to multiple network channels, the gateway actually provides the application with access to multiple network channels!"
+msgstr ""
+
+#: ../../source/developapps/application.md:217
+msgid "See how the application selects a particular channel:"
+msgstr ""
+
+#: ../../source/developapps/application.md:223
+msgid "From this point onwards, network will provide access to PaperNet.  Moreover, if the application wanted to access another network, BondNet, at the same time, it is easy:"
+msgstr ""
+
+#: ../../source/developapps/application.md:231
+msgid "Now our application has access to a second network, BondNet, simultaneously with PaperNet!"
+msgstr ""
+
+#: ../../source/developapps/application.md:234
+msgid "We can see here a powerful feature of Hyperledger Fabric -- applications can participate in a network of networks, by connecting to multiple gateway peers, each of which is joined to multiple network channels. Applications will have different rights in different channels according to their wallet identity provided in gateway.connect()."
+msgstr ""
+
+#: ../../source/developapps/application.md:242
+msgid "The application is now ready to issue a commercial paper.  To do this, it's going to use CommercialPaperContract and again, its fairly straightforward to access this smart contract:"
+msgstr ""
+
+#: ../../source/developapps/application.md:250
+msgid "Note how the application provides a name -- papercontract -- and an explicit contract name: org.papernet.commercialpaper! We see how a contract name picks out one contract from the papercontract.js chaincode file that contains many contracts. In PaperNet, papercontract.js was installed and instantiated with the name papercontract, and if you're interested, read how to install and instantiate a chaincode containing multiple smart contracts."
+msgstr ""
+
+#: ../../source/developapps/application.md:258
+msgid "If our application simultaneously required access to another contract in PaperNet or BondNet this would be easy:"
+msgstr ""
+
+#: ../../source/developapps/application.md:267
+msgid "In these examples, note how we didn't use a qualifying contract name -- we have only one smart contract per file, and getContract() will use the first contract it finds."
+msgstr ""
+
+#: ../../source/developapps/application.md:271
+msgid "Recall the transaction MagnetoCorp uses to issue its first commercial paper:"
+msgstr ""
+
+#: ../../source/developapps/application.md:282
+msgid "Let's now submit this transaction to PaperNet!"
+msgstr ""
+
+#: ../../source/developapps/application.md:286
+msgid "Submitting a transaction is a single method call to the SDK:"
+msgstr ""
+
+#: ../../source/developapps/application.md:292
+msgid "See how the submitTransaction() parameters match those of the transaction request.  It's these values that will be passed to the issue() method in the smart contract, and used to create a new commercial paper.  Recall its signature:"
+msgstr ""
+
+#: ../../source/developapps/application.md:301
+msgid "It might appear that a smart contract receives control shortly after the application issues submitTransaction(), but that's not the case. Under the covers, the SDK uses the connectionOptions and connectionProfile details to send the transaction proposal to the right peers in the network, where it can get the required endorsements. But the application doesn't need to worry about any of this -- it just issues submitTransaction and the SDK takes care of it all!"
+msgstr ""
+
+#: ../../source/developapps/application.md:309
+msgid "Let's now turn our attention to how the application handles the response!"
+msgstr ""
+
+#: ../../source/developapps/application.md:313
+msgid "Recall from papercontract.js how the issue transaction returns a commercial paper response:"
+msgstr ""
+
+#: ../../source/developapps/application.md:320
+msgid "You'll notice a slight quirk -- the new paper needs to be converted to a buffer before it is returned to the application. Notice how issue.js uses the class method CommercialPaper.fromBuffer() to rehydrate the response buffer as a commercial paper:"
+msgstr ""
+
+#: ../../source/developapps/application.md:329
+msgid "This allows paper to be used in a natural way in a descriptive completion message:"
+msgstr ""
+
+#: ../../source/developapps/application.md:336
+msgid "See how the same paper class has been used in both the application and smart contract -- if you structure your code like this, it'll really help readability and reuse."
+msgstr ""
+
+#: ../../source/developapps/application.md:340
+msgid "As with the transaction proposal, it might appear that the application receives control soon after the smart contract completes, but that's not the case. Under the covers, the SDK manages the entire consensus process, and notifies the application when it is complete according to the strategy connectionOption. If you're interested in what the SDK does under the covers, read the detailed transaction flow."
+msgstr ""
+
+#: ../../source/developapps/application.md:347
+msgid "That’s it! In this topic you’ve understood how to call a smart contract from a sample application by examining how MagnetoCorp's application issues a new commercial paper in PaperNet. Now examine the key ledger and smart contract data structures are designed by in the architecture topic behind them."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:6
+msgid "This topic shows you how to design the commercial paper processes and their related data structures in PaperNet. Our analysis highlighted that modelling PaperNet using states and transactions provided a precise way to understand what's happening. We're now going to elaborate on these two strongly related concepts to help us subsequently design the smart contracts and applications of PaperNet."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:15
+msgid "As we've seen, there are two important concepts that concern us when dealing with commercial paper; states and transactions. Indeed, this is true for all blockchain use cases; there are conceptual objects of value, modelled as states, whose lifecycle transitions are described by transactions. An effective analysis of states and transactions is an essential starting point for a successful implementation."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:22
+msgid "We can represent the life cycle of a commercial paper using a state transition diagram:"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:25
+msgid "develop.statetransition The state transition diagram for commercial paper. Commercial papers transition between issued, trading and redeemed states by means of the issue, buy and redeem transactions."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:30
+msgid "See how the state diagram describes how commercial papers change over time, and how specific transactions govern the life cycle transitions. In Hypledger Fabric, smart contracts implement transaction logic that transition commercial papers between their different states. Commercial paper states are actually held in the ledger world state; so let's take a closer look at them."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:38
+msgid "Recall the structure of a commercial paper:"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:40
+msgid "develop.paperstructure A commercial paper can be represented as a set of properties, each with a value. Typically, some combination of these properties will provide a unique key for each paper."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:44
+msgid "See how a commercial paper Paper property has value 00001, and the Face value property has value 5M USD. Most importantly, the Current state property indicates whether the commercial paper is issued,trading or redeemed. In combination, the full set of properties make up the state of a commercial paper. Moreover, the entire collection of these individual commercial paper states constitutes the ledger world state."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:52
+msgid "All ledger state share this form; each has a set of properties, each with a different value. This multi-property aspect of states is a powerful feature -- it allows us to think of a Fabric state as a vector rather than a simple scalar. We then represent facts about whole objects as individual states, which subsequently undergo transitions controlled by transaction logic. A Fabric state is implemented as a key/value pair, in which the value encodes the object properties in a format that captures the object's multiple properties, typically JSON. The ledger database can support advanced query operations against these properties, which is very helpful for sophisticated object retrieval."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:64
+msgid "See how MagnetoCorp's paper 00001 is represented as a state vector that transitions according to different transaction stimuli:"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:67
+msgid "develop.paperstates A commercial paper state is brought into existence and transitions as a result of different transactions. Hyperledger Fabric states have multiple properties, making them vectors rather than scalars."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:72
+msgid "Notice how each individual paper starts with the empty state, which is technically a nil state for the paper, as it doesn't exist! See how paper 00001 is brought into existence by the issue transaction, and how it is subsequently updated as a result of the buy and redeem transactions."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:78
+msgid "Notice how each state is self-describing; each property has a name and a value. Although all our commercial papers currently have the same properties, this need not be the case for all time, as Hyperledger Fabric supports different states having different properties. This allows the same ledger world state to contain different forms of the same asset as well as different types of asset. It also makes it possible to update a state's structure; imagine a new regulation that requires an additional data field. Flexible state properties support the fundamental requirement of data evolution over time."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:89
+msgid "In most practical applications, a state will have a combination of properties that uniquely identify it in a given context -- it's key. The key for a PaperNet commercial paper is formed by a concatenation of the Issuer and paper properties; so for MagnetoCorp's first paper, it's MagnetoCorp00001."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:94
+msgid "A state key allows us to uniquely identify a paper; it is created as a result of the issue transaction and subsequently updated by buy and redeem. Hyperledger Fabric requires each state in a ledger to have a unique key."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:98
+msgid "When a unique key is not available from the available set of properties, an application-determined unique key is specified as an input to the transaction that creates the state. This unique key is usually with some form of UUID, which although less readable, is a standard practice. What's important is that every individual state object in a ledger must have a unique key."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:107
+msgid "As we've seen, commercial papers in PaperNet are stored as state vectors in a ledger. It's a reasonable requirement to be able to query different commercial papers from the ledger; for example: find all the papers issued by MagnetoCorp, or: find all the papers issued by MagnetoCorp in the redeemed state."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:112
+msgid "To make these kinds of search tasks possible, it's helpful to group all related papers together in a logical list. The PaperNet design incorporates the idea of a commercial paper list -- a logical container which is updated whenever commercial papers are issued or otherwise changed."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:119
+msgid "It's helpful to think of all PaperNet commercial papers being in a single list of commercial papers:"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:122
+msgid "develop.paperlist MagnetoCorp's newly created commercial  paper 00004 is added to the list of existing commercial papers."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:126
+msgid "New papers can be added to the list as a result of an issue transaction, and papers already in the list can be updated with buy or redeem transactions. See how the list has a descriptive name: org.papernet.papers; it's a really good idea to use this kind of DNS name because well-chosen names will make your blockchain designs intuitive to other people. This idea applies equally well to smart contract names."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:136
+msgid "While it's correct to think of a single list of papers in PaperNet -- org.papernet.papers -- lists are best implemented as a set of individual Fabric states, whose composite key associates the state with its list. In this way, each state's composite key is both unique and supports effective list query."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:141
+msgid "develop.paperphysical Representing a list of PaperNet commercial papers as a set of distinct Hyperledger Fabric states"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:144
+msgid "Notice how each paper in the list is represented by a vector state, with a unique composite key formed by the concatenation of org.papernet.paper, Issuer and Paper properties. This structure is helpful for two reasons:"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:162
+msgid "This second point is actually a key take-away for Hyperledger Fabric; the physical design of state vectors is very important to optimum performance and behaviour. Keep your states separate!"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:168
+msgid "We have discussed how the different roles in a network, such as issuer, trader or rating agencies as well as different business interests determine who needs to sign off on a transaction. In Fabric, these rules are captured by so-called endorsement policies. The rules can be set on a chaincode granularity, as well as for individual state keys."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:174
+msgid "This means that in PaperNet, we can set one rule for the whole namespace that determines which organizations can issue new papers. Later, rules can be set and updated for individual papers to capture the trust relationships of buy and redeem transactions."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:180
+msgid "In the next topic, we will show you how to combine these design concepts to implement the PaperNet commercial paper smart contract, and then an application in exploits it!"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:3
+#: ../../source/developapps/contractname.md:3
+msgid "Audience: Architects, application and smart contract developers, administrators"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:6
+msgid "A chaincode namespace allows it to keep its world state separate from other chaincodes. Specifically, smart contracts in the same chaincode share direct access to the same world state, whereas smart contracts in different chaincodes cannot directly access each other's world state. If a smart contract needs to access another chaincode world state, it can do this by performing a chaincode-to-chaincode invocation. Finally, a blockchain can contain transactions which relate to different world states."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:25
+msgid "A namespace is a common concept. We understand that Park Street, New York and Park Street, Seattle are different streets even though they have the same name. The city forms a namespace for Park Street, simultaneously providing freedom and clarity."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:30
+msgid "It's the same in a computer system. Namespaces allow different users to program and operate different parts of a shared system, without getting in each other's way. Many programming languages have namespaces so that programs can freely assign unique identifiers, such as variable names, without worrying about other programs doing the same. We'll see that Hyperledger Fabric uses namespaces to help smart contracts keep their ledger world state separate from other smart contracts."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:40
+msgid "Let's examine how the ledger world state organizes facts about business objects that are important to the organizations in a channel using the diagram below. Whether these objects are commercial papers, bonds, or vehicle registrations, and wherever they are in their lifecycle, they are maintained as states within the ledger world state database. A smart contract manages these business objects by interacting with the ledger (world state and blockchain), and in most cases this will involve it querying or updating the ledger world state."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:48
+msgid "It's vitally important to understand that the ledger world state is partitioned according to the chaincode of the smart contract that accesses it, and this partitioning, or namespacing is an important design consideration for architects, administrators and programmers."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:53
+msgid "chaincodens.scenario The ledger world state is separated into different namespaces according to the chaincode that accesses it. Within a given channel, smart contracts in the same chaincode share the same world state, and smart contracts in different chaincodes cannot directly access each other's world state. Likewise, a blockchain can contain transactions that relate to different chaincode world states."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:60
+msgid "In our example, we can see four smart contracts defined in two different chaincodes, each of which is in their own chaincode container. The euroPaper and yenPaper smart contracts are defined in the papers chaincode. The situation is similar for the euroBond and yenBond smart contracts  -- they are defined in the bonds chaincode. This design helps application programmers understand whether they are working with commercial papers or bonds priced in Euros or Yen, and because the rules for each financial product don't really change for different currencies, it makes sense to manage their deployment in the same chaincode."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:70
+msgid "The diagram also shows the consequences of this deployment choice. The database management system (DBMS) creates different world state databases for the papers and bonds chaincodes and the smart contracts contained within them. World state A and world state B are each held within distinct databases; the data are isolated from each other such that a single world state query (for example) cannot access both world states. The world state is said to be namespaced according to its chaincode."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:78
+msgid "See how world state A contains two lists of commercial papers paperListEuro and paperListYen. The states PAP11 and PAP21 are instances of each paper managed by the euroPaper and yenPaper smart contracts respectively. Because they share the same chaincode namespace, their keys (PAPxyz) must be unique within the namespace of the papers chaincode, a little like a street name is unique within a town. Notice how it would be possible to write a smart contract in the papers chaincode that performed an aggregate calculation over all the commercial papers -- whether priced in Euros or Yen -- because they share the same namespace. The situation is similar for bonds -- they are held within world state B which maps to a separate bonds database, and their keys must be unique."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:90
+msgid "Just as importantly, namespaces mean that euroPaper and yenPaper cannot directly access world state B, and that euroBond and yenBond cannot directly access world state A. This isolation is helpful, as commercial papers and bonds are very distinct financial instruments; they have different attributes and are subject to different rules. It also means that papers and bonds could have the same keys, because they are in different namespaces. This is helpful; it provides a significant degree of freedom for naming. Use this freedom to name different business objects meaningfully."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:99
+msgid "Most importantly, we can see that a blockchain is associated with the peer operating in a particular channel, and that it contains transactions that affect both world state A and world state B. That's because the blockchain is the most fundamental data structure contained in a peer. The set of world states can always be recreated from this blockchain, because they are the cumulative results of the blockchain's transactions. A world state helps simplify smart contracts and improve their efficiency, as they usually only require the current value of a state. Keeping world states separate via namespaces helps smart contracts isolate their logic from other smart contracts, rather than having to worry about transactions that correspond to different world states. For example, a bonds contract does not need to worry about paper transactions, because it cannot see their resultant world state."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:112
+msgid "It's also worth noticing that the peer, chaincode containers and DBMS all are logically different processes. The peer and all its chaincode containers are always in physically separate operating system processes, but the DBMS can be configured to be embedded or separate, depending on its type. For LevelDB, the DBMS is wholly contained within the peer, but for CouchDB, it is a separate operating system process."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:120
+msgid "It's important to remember that namespace choices in this example are the result of a business requirement to share commercial papers in different currencies but isolate them separate from bonds. Think about how the namespace structure would be modified to meet a business requirement to keep every financial asset class separate, or share all commercial papers and bonds?"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:128
+msgid "If a peer is joined to multiple channels, then a new blockchain is created and managed for each channel. Moreover, every time a chaincode is instantiated in a new channel, a new world state database is created for it. It means that the channel also forms a kind of namespace alongside that of the chaincode for the world state."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:134
+msgid "However, the same peer and chaincode container processes can be simultaneously joined to multiple channels -- unlike blockchains, and world state databases, these processes do not increase with the number of channels joined."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:138
+msgid "For example, if the papers and bonds chaincodes were instantiated on a new channel, there would a totally separate blockchain created, and two new world state databases created. However, the peer and chaincode containers would not increase; each would just be connected to multiple channels."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:145
+msgid "Let's use our commercial paper example to show how an application uses a smart contract with namespaces. It's worth noting that an application communicates with the peer, and the peer routes the request to the appropriate chaincode container which then accesses the DBMS. This routing is done by the peer core component shown in the diagram."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:151
+msgid "Here's the code for an application that uses both commercial papers and bonds, priced in Euros and Yen. The code is fairly self-explanatory:"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:168
+msgid "See how the application:"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:202
+msgid "See how smart contracts interact with the world state:"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:215
+msgid "See how the blockchain captures transactions for all world states:"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:230
+msgid "As we saw in our example scenario, euroPaper and yenPaper cannot directly access world state B.  That's because we have designed our chaincodes and smart contracts so that these chaincodes and world states are kept separately from each other.  However, let's imagine that euroPaper needs to access world state B."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:236
+msgid "Why might this happen? Imagine that when a commercial paper was issued, the smart contract wanted to price the paper according to the current return on bonds with a similar maturity date.  In this case it will be necessary for the euroPaper contract to be able to query the price of bonds in world state B. Look at the following diagram to see how we might structure this interaction."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:242
+msgid "chaincodens.scenario How chaincodes and smart contracts can indirectly access another world state -- via its chaincode."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:245
+#: ../../source/developapps/wallet.md:213
+msgid "Notice how:"
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:263
+msgid "Control is passed between chaincode using the invokeChaincode() API. This API passes control from one chaincode to another chaincode."
+msgstr ""
+
+#: ../../source/developapps/chaincodenamespace.md:267
+msgid "Although we have only discussed query transactions in the example, it is possible to invoke a smart contract which will update the called chaincode's world state.  See the considerations below."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:3
+msgid "Audience: Architects, administrators, application and smart contract developers"
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:6
+msgid "Connection options are used in conjunction with a connection profile to control precisely how a gateway interacts with a network. Using a gateway allows an application to focus on business logic rather than network topology."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:19
+msgid "A connection option specifies a particular aspect of a gateway's behaviour. Gateways are important for many reasons, the primary being to allow an application to focus on business logic and smart contracts, while it manages interactions with the many components of a network."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:24
+msgid "profile.scenario The different interaction points where connection options control behaviour. These options are explained fully in the text."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:28
+msgid "One example of a connection option might be to specify that the gateway used by the issue application should use identity Isabella to submit transactions to the papernet network. Another might be that a gateway should wait for all three nodes from MagnetoCorp to confirm a transaction has been committed returning control. Connection options allow applications to specify the precise behaviour of a gateway's interaction with the network. Without a gateway, applications need to do a lot more work; gateways save you time, make your application more readable, and less error prone."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:39
+msgid "We'll describe the full set of connection options available to an application in a moment; let's first see how they are specified by the sample MagnetoCorp issue application:"
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:59
+msgid "See how the identity and wallet options are simple properties of the connectionOptions object. They have values userName and wallet respectively, which were set earlier in the code. Contrast these options with the eventHandlerOptions option which is an object in its own right. It has two properties: commitTimeout: 100 (measured in seconds) and strategy: EventStrategies.MSPID_SCOPE_ANYFORTX."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:66
+msgid "See how connectionOptions is passed to a gateway as a complement to connectionProfile; the network is identified by the connection profile and the options specify precisely how the gateway should interact with it. Let's now look at the available options."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:73
+msgid "Here's a list of the available options and what they do."
+msgstr ""
+
+#: ../../source/developapps/connectionoptions.md:200
+msgid "The following list of considerations is helpful when deciding how to choose connection options."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:3
+#: ../../source/developapps/gateway.md:3
+#: ../../source/developapps/wallet.md:3
+msgid "Audience: Architects, application and smart contract developers"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:5
+msgid "A connection profile describes a set of components, including peers, orderers and certificate authorities in a Hyperledger Fabric blockchain network. It also contains channel and organization information relating to these components. A connection profile is primarily used by an application to configure a gateway that handles all network interactions, allowing it it to focus on business logic. A connection profile is normally created by an administrator who understands the network topology."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:21
+msgid "A connection profile is used to configure a gateway. Gateways are important for many reasons, the primary being to simplify an application's interaction with a network channel."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:25
+msgid "profile.scenario Two applications, issue and buy, use gateways 1&2 configured with connection profiles 1&2. Each profile describes a different subset of MagnetoCorp and DigiBank network components. Each connection profile must contain sufficient information for a gateway to interact with the network on behalf of the issue and buy applications. See the text for a detailed explanation."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:32
+msgid "A connection profile contains a description of a network view, expressed in a technical syntax, which can either be JSON or YAML. In this topic, we use the YAML representation, as it's easier for you to read. Static gateways need more information than dynamic gateways because the latter can use service discovery to dynamically augment the information in a connection profile."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:39
+msgid "A connection profile should not be an exhaustive description of a network channel; it just needs to contain enough information sufficient for a gateway that's using it. In the network above, connection profile 1 needs to contain at least the endorsing organizations and peers for the issue transaction, as well as identifying the peers that will notify the gateway when the transaction has been committed to the ledger."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:46
+msgid "It's easiest to think of a connection profile as describing a view of the network. It could be a comprehensive view, but that's unrealistic for a few reasons:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:62
+msgid "A static connection profile is normally created by an administrator who understands the network topology in detail. That's because a static profile can contain quite a lot of information, and an administrator needs to capture this in the corresponding connection profile. In contrast, dynamic profiles minimize the amount of definition required, and therefore can be a better choice for developers who want to get going quickly, or administrators who want to create a more responsive gateway. Connection profiles are created in either the YAML or JSON format using an editor of choice."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:73
+msgid "We'll see how to define a connection profile in a moment; let's first see how it is used by a sample MagnetoCorp issue application:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:87
+msgid "After loading some required classes, see how the paperNet.yaml gateway file is loaded from the file system, converted to a JSON object using the yaml.safeLoad() method, and used to configure a gateway using its connect() method."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:92
+msgid "By configuring a gateway with this connection profile, the issue application is providing the gateway with the relevant network topology it should use to process transactions. That's because the connection profile contains sufficient information about the PaperNet channels, organizations, peers, orderers and CAs to ensure transactions can be successfully processed."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:98
+msgid "It's good practice for a connection profile to define more than one peer for any given organization -- it prevents a single point of failure. This practice also applies to dynamic gateways; to provide more than one starting point for service discovery."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:103
+msgid "A DigiBank buy application would typically configure its gateway with a similar connection profile, but with some important differences. Some elements will be the same, such as the channel; some elements will overlap, such as the endorsing peers. Other elements will be completely different, such as notification peers or certificate authorities for example."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:109
+msgid "The connectionOptions passed to a gateway complement the connection profile. They allow an application to declare how it would like the gateway to use the connection profile. They are interpreted by the SDK to control interaction patterns with network components, for example to select which identity to connect with, or which peers to use for event notifications. Read about the list of available connection options and when to use them."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:119
+msgid "To help you understand the structure of a connection profile, we're going to step through an example for the network shown above. Its connection profile is based on the PaperNet commercial paper sample, and stored in the GitHub repository. For convenience, we've reproduced it below. You will find it helpful to display it in another browser window as you now read about it:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:259
+msgid "Now you've understood a connection profile for MagnetoCorp, you might like to look at a corresponding profile for DigiBank. Locate where the profile is the same as MagnetoCorp's, see where it's similar, and finally where it's different. Think about why these differences make sense for DigiBank applications."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:266
+msgid "That's everything you need to know about connection profiles. In summary, a connection profile defines sufficient channels, organizations, peers, orderers and certificate authorities for an application to configure a gateway. The gateway allows the application to focus on business logic rather than the details of the network topology."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:274
+msgid "This file is reproduced inline from the GitHub commercial paper sample."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:6
+msgid "A chaincode is a generic container for deploying code to a Hyperledger Fabric blockchain network. One or more related smart contracts are defined within a chaincode. Every smart contract has a name that uniquely identifies it within a chaincode. Applications access a particular smart contract within an instantiated chaincode using its contract name."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:20
+msgid "In the Developing Applications topic, we can see how the Fabric SDKs provide high level programming abstractions which help application and smart contract developers to focus on their business problem, rather than the low level details of how to interact with a Fabric network."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:25
+msgid "Smart contracts are one example of a high level programming abstraction, and it is possible to define smart contracts within in a chaincode container. When a chaincode is installed and instantiated, all the smart contracts within it are made available to the corresponding channel."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:30
+msgid "contract.chaincode Multiple smart contracts can be defined within a chaincode. Each is uniquely identified by their name within a chaincode."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:34
+msgid "In the diagram above, chaincode A has three smart contracts defined within it, whereas chaincode B has four smart contracts. See how the chaincode name is used to fully qualify a particular smart contract."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:38
+msgid "The ledger structure is defined by a set of deployed smart contracts. That's because the ledger contains facts about the business objects of interest to the network (such as commercial paper within PaperNet), and these business objects are moved through their lifecycle (e.g. issue, buy, redeem) by the transaction functions defined within a smart contract."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:44
+msgid "In most cases, a chaincode will only have one smart contract defined within it. However, it can make sense to keep related smart contracts together in a single chaincode. For example, commercial papers denominated in different currencies might have contracts EuroPaperContract, DollarPaperContract, YenPaperContract which might need to be kept synchronized with each other in the channel to which they are deployed."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:53
+msgid "Each smart contract within a chaincode is uniquely identified by its contract name. A smart contract can explicitly assign this name when the class is constructed, or let the Contract class implicitly assign a default name."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:57
+msgid "Examine the papercontract.js chaincode file:"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:69
+msgid "See how the CommercialPaperContract constructor specifies the contract name as org.papernet.commercialpaper. The result is that within the papercontract chaincode, this smart contract is now associated with the contract name org.papernet.commercialpaper."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:74
+msgid "If an explicit contract name is not specified, then a default name is assigned -- the name of the class.  In our example, the default contract name would be CommercialPaperContract."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:78
+msgid "Choose your names carefully. It's not just that each smart contract must have a unique name; a well-chosen name is illuminating. Specifically, using an explicit DNS-style naming convention is recommended to help organize clear and meaningful names; org.papernet.commercialpaper conveys that the PaperNet network has defined a standard commercial paper smart contract."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:84
+msgid "Contract names are also helpful to disambiguate different smart contract transaction functions with the same name in a given chaincode. This happens when smart contracts are closely related; their transaction names will tend to be the same. We can see that a transaction is uniquely defined within a channel by the combination of its chaincode and smart contract name."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:90
+msgid "Contract names must be unique within a chaincode file. Some code editors will detect multiple definitions of the same class name before deployment. Regardless the chaincode will return an error if multiple classes with the same contract name are explicitly or implicitly specified."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:97
+msgid "Once a chaincode has been installed on a peer and instantiated on a channel, the smart contracts in it are accessible to an application:"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:108
+msgid "See how the application accesses the smart contract with the contract.getContract() method. The papercontract chaincode name org.papernet.commercialpaper returns a contract reference which can be used to submit transactions to issue commercial paper with the contract.submitTransaction() API."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:116
+msgid "The first smart contract defined in a chaincode is the called the default smart contract. A default is helpful because a chaincode will usually have one smart contract defined within it; a default allows the application to access those transactions directly -- without specifying a contract name."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:121
+msgid "default.contract A default smart contract is the first contract defined in a chaincode."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:124
+msgid "In this diagram, CommercialPaperContract is the default smart contract. Even though we have two smart contracts, the default smart contract makes our previous example easier to write:"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:136
+msgid "This works because the default smart contract in papercontract is CommercialPaperContract and it has an issue transaction. Note that the issue transaction in BondContract can only be invoked by explicitly addressing it. Likewise, even though the cancel transaction is unique, because BondContract is not the default smart contract, it must also be explicitly addressed."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:143
+msgid "In most cases, a chaincode will only contain a single smart contract, so careful naming of the chaincode can reduce the need for developers to care about chaincode as a concept. In the example code above it feels like papercontract is a smart contract."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:148
+msgid "In summary, contract names are a straightforward mechanism to identify individual smart contracts within a given chaincode. Contract names make it easy for applications to find a particular smart contract and use it to access the ledger."
+msgstr ""
+
+#: ../../source/developapps/designelements.rst:2
+msgid "Application design elements"
+msgstr ""
+
+#: ../../source/developapps/designelements.rst:4
+msgid "This section elaborates the key features for client application and smart contract development found in Hyperledger Fabric. A solid understanding of the features will help you design and implement efficient and effective solutions."
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:2
+msgid "Developing Applications"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:16
+msgid "This topic covers how to develop a client application and smart contract to solve a business problem using Hyperledger Fabric. In a real world **Commercial Paper** scenario, involving multiple organizations, you'll learn about all the concepts and tasks required to accomplish this goal. We assume that the blockchain network is already available."
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:22
+msgid "The topic is designed for multiple audiences:"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:24
+msgid "Solution and application architect"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:25
+msgid "Client application developer"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:26
+msgid "Smart contract developer"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:27
+msgid "Business professional"
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:29
+msgid "You can chose to read the topic in order, or you can select individual sections as appropriate. Individual topic sections are marked according to reader relevance, so whether you're looking for business or technical information it'll be clear when a topic is for you."
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:34
+msgid "The topic follows a typical software development lifecycle. It starts with business requirements, and then covers all the major technical activities required to develop an application and smart contract to meet these requirements."
+msgstr ""
+
+#: ../../source/developapps/developing_applications.rst:39
+msgid "If you'd prefer, you can try out the commercial paper scenario immediately, following an abbreviated explanation, by running the commercial paper `tutorial <../tutorial/commercial_paper.html>`_. You can return to this topic when you need fuller explanations of the concepts introduced in the tutorial."
+msgstr ""
+
+#: ../../source/developapps/endorsementpolicies.md:5
+msgid "Endorsement policies define the smallest set of organizations that are required to endorse a transaction in order for it to be valid. To endorse, an organization's endorsing peer needs to run the smart contract associated with the transaction and sign its outcome. When the ordering service sends the transaction to the committing peers, they will each individually check whether the endorsements in the transaction fulfill the endorsement policy. If this is not the case, the transaction is invalidated and it will have no effect on world state."
+msgstr ""
+
+#: ../../source/developapps/endorsementpolicies.md:13
+msgid "Endorsement policies work at two different granularities: they can be set for an entire namespace, as well as for individual state keys. They are formulated using basic logic expressions such as AND and OR. For example, in PaperNet this could be used as follows: the endorsement policy for a paper that has been sold from MagnetoCorp to DigiBank could be set to AND(MagnetoCorp.peer, DigiBank.peer), requiring any changes to this paper to be endorsed by both MagnetoCorp and DigiBank."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:5
+msgid "A gateway manages the network interactions on behalf of an application, allowing it to focus on business logic. Applications connect to a gateway and then all subsequent interactions are managed using that gateway's configuration."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:19
+msgid "A Hyperledger Fabric network channel can constantly change.  The peer, orderer and CA components, contributed by the different organizations in the network, will come and go. Reasons for this include increased or reduced business demand, and both planned and unplanned outages. A gateway relieves an application of this burden, allowing it to focus on the business problem it is trying to solve."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:25
+msgid "gateway.scenario A MagnetoCorp and DigiBank applications (issue and buy) delegate their respective network interactions to their gateways. Each gateway understands the network channel topology comprising the multiple peers and orderers of two organizations MagnetoCorp and DigiBank, leaving applications to focus on business logic. Peers can talk to each other both within and across organizations using the gossip protocol."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:32
+msgid "A gateway can be used by an application in two different ways:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:64
+msgid "You might ask yourself whether a static or dynamic gateway is better? The trade-off is between predictability and responsiveness. Static networks will always behave the same way, as they perceive the network as unchanging. In this sense they are predictable -- they will always use the same peers and orderers if they are available. Dynamic networks are more responsive as they understand how the network changes -- they can use newly added peers and orderers, which brings extra resilience and scalability, at potentially some cost in predictability. In general it's fine to use dynamic networks, and indeed this the default mode for gateways."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:74
+msgid "Note that the same connection profile can be used statically or dynamically. Clearly, if a profile is going to be used statically, it needs to be comprehensive, whereas dynamic usage requires only sparse population."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:78
+msgid "Both styles of gateway are transparent to the application; the application program design does not change whether static or dynamic gateways are used. This also means that some applications may use service discovery, while others may not. In general using dynamic discovery means less definition and more intelligence by the SDK; it is the default."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:86
+msgid "When an application connects to a gateway, two options are provided. These are used in subsequent SDK processing:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:121
+msgid "Static gateways define a fixed view of a network. In the MagnetoCorp scenario, a gateway might identify a single peer from MagnetoCorp, a single peer from DigiBank, and a MagentoCorp orderer. Alternatively, a gateway might define all peers and orderers from MagnetCorp and DigiBank. In both cases, a gateway must define a view of the network sufficient to get commercial paper transactions endorsed and distributed."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:128
+msgid "Applications can use a gateway statically by explicitly specifying the connect option discovery: { enabled:false } on the gateway.connect() API. Alternatively, the environment variable setting FABRIC_SDK_DISCOVERY=false will always override the application choice."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:133
+msgid "Examine the connection profile used by the MagnetoCorp issue application. See how all the peers, orderers and even CAs are specified in this file, including their roles."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:138
+msgid "It's worth bearing in mind that a static gateway represents a view of a network at a moment in time.  As networks change, it may be important to reflect this in a change to the gateway file. Applications will automatically pick up these changes when they re-load the gateway file."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:145
+msgid "Dynamic gateways define a small, fixed starting point for a network. In the MagnetoCorp scenario, a dynamic gateway might identify just a single peer from MagnetoCorp; everything else will be discovered! (To provide resiliency, it might be better to define two such bootstrap peers.)"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:150
+msgid "If service discovery is selected by an application, the topology defined in the gateway file is augmented with that produced by this process. Service discovery starts with the gateway definition, and finds all the connected peers and orderers within the MagnetoCorp organization using the gossip protocol. If anchor peers have been defined for a channel, then service discovery will use the gossip protocol across organizations to discover components within the connected organization. This process will also discover smart contracts installed on peers and their endorsement policies defined at a channel level. As with static gateways, the discovered network must be sufficient to get commercial paper transactions endorsed and distributed."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:162
+msgid "Dynamic gateways are the default setting for Fabric applications. They can be explicitly specified using the connect option discovery: { enabled:true } on the gateway.connect() API. Alternatively, the environment variable setting FABRIC_SDK_DISCOVERY=true will always override the application choice."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:167
+msgid "A dynamic gateway represents an up-to-date view of a network. As networks change, service discovery will ensure that the network view is an accurate reflection of the topology visible to the application. Applications will automatically pick up these changes; they do not even need to re-load the gateway file."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:175
+msgid "Finally, it is straightforward for an application to define multiple gateways, both for the same or different networks. Moreover, applications can use the name gateway both statically and dynamically."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:179
+msgid "It can be helpful to have multiple gateways. Here are a few reasons:"
+msgstr ""
+
+#: ../../source/developapps/scenario.md:6
+msgid "In this topic, we're going to describe a business scenario involving six organizations who use PaperNet, a commercial paper network built on Hyperledger Fabric, to issue, buy and redeem commercial paper. We're going to use the scenario to outline requirements for the development of commercial paper applications and smart contracts used by the participant organizations."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:14
+msgid "PaperNet is a commercial paper network that allows suitably authorized participants to issue, trade, redeem and rate commercial paper."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:17
+msgid "develop.systemscontext"
+msgstr ""
+
+#: ../../source/developapps/scenario.md:19
+msgid "The PaperNet commercial paper network. Six organizations currently use PaperNet network to issue, buy, sell, redeem and rate commercial paper. MagentoCorp issues and redeems commercial paper.  DigiBank, BigFund, BrokerHouse and HedgeMatic all trade commercial paper with each other. RateM provides various measures of risk for commercial paper."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:25
+msgid "Let's see how MagnetoCorp uses PaperNet and commercial paper to help its business."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:30
+msgid "MagnetoCorp is a well-respected company that makes self-driving electric vehicles. In early April 2020, MagnetoCorp won a large order to manufacture 10,000 Model D cars for Daintree, a new entrant in the personal transport market. Although the order represents a significant win for MagnetoCorp, Daintree will not have to pay for the vehicles until they start to be delivered on November 1, six months after the deal was formally agreed between MagnetoCorp and Daintree."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:38
+msgid "To manufacture the vehicles, MagnetoCorp will need to hire 1000 workers for at least 6 months. This puts a short term strain on its finances -- it will require an extra 5M USD each month to pay these new employees. Commercial paper is designed to help MagnetoCorp overcome its short term financing needs -- to meet payroll every month based on the expectation that it will be cash rich when Daintree starts to pay for its new Model D cars."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:45
+msgid "At the end of May, MagnetoCorp needs 5M USD to meet payroll for the extra workers it hired on May 1. To do this, it issues a commercial paper with a face value of 5M USD with a maturity date 6 months in the future -- when it expects to see cash flow from Daintree. DigiBank thinks that MagnetoCorp is creditworthy, and therefore doesn't require much of a premium above the central bank base rate of 2%, which would value 4.95M USD today at 5M USD in 6 months time. It therefore purchases the MagnetoCorp 6 month commercial paper for 4.94M USD -- a slight discount compared to the 4.95M USD it is worth. DigiBank fully expects that it will be able to redeem 5M USD from MagnetoCorp in 6 months time, making it a profit of 10K USD for bearing the increased risk associated with this commercial paper. This extra 10K means it receives a 2.4% return on investment -- significantly better than the risk free return of 2%."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:58
+msgid "At the end of June, when MagnetoCorp issues a new commercial paper for 5M USD to meet June's payroll, it is purchased by BigFund for 4.94M USD.  That's because the commercial conditions are roughly the same in June as they are in May, resulting in BigFund valuing MagnetoCorp commercial paper at the same price that DigiBank did in May."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:64
+msgid "Each subsequent month, MagnetoCorp can issue new commercial paper to meet its payroll obligations, and these may be purchased by DigiBank, or any other participant in the PaperNet commercial paper network -- BigFund, HedgeMatic or BrokerHouse. These organizations may pay more or less for the commercial paper depending on two factors -- the central bank base rate, and the risk associated with MagnetoCorp. This latter figure depends on a variety of factors such as the production of Model D cars, and the creditworthiness of MagnetoCorp as assessed by RateM, a ratings agency."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:73
+msgid "The organizations in PaperNet have different roles, MagnetoCorp issues paper, DigiBank, BigFund, HedgeMatic and BrokerHouse trade paper and RateM rates paper. Organizations of the same role, such as DigiBank, Bigfund, HedgeMatic and BrokerHouse are competitors. Organizations of different roles are not necessarily competitors, yet might still have opposing business interest, for example MagentoCorp will desire a high rating for its papers to sell them at a high price, while DigiBank would benefit from a low rating, such that it can buy them at a low price. As can be seen, even a seemingly simple network such as PaperNet can have complex trust relationships. A blockchain can help establish trust among organizations that are competitors or have opposing business interests that might lead to disputes. Fabric in particular has the means to capture even fine-grained trust relationships."
+msgstr ""
+
+#: ../../source/developapps/scenario.md:86
+msgid "Let's pause the MagnetoCorp story for a moment, and develop the client applications and smart contracts that PaperNet uses to issue, buy, sell and redeem commercial paper as well as capture the trust relationships between the organizations.  We'll come back to the role of the rating agency, RateM, a little later."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:5
+msgid "At the heart of a blockchain network is a smart contract. In PaperNet, the code in the commercial paper smart contract defines the valid states for commercial paper, and the transaction logic that transition a paper from one state to another. In this topic, we're going to show you how to implement a real world smart contract that governs the process of issuing, buying and redeeming commercial paper."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:12
+msgid "We're going to cover:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:21
+msgid "If you'd like, you can download the sample and even run it locally. It is written in JavaScript, but the logic is quite language independent, so you'll be easily able to see what's going on! (The sample will become available for Java and GOLANG as well.)"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:28
+msgid "A smart contract defines the different states of a business object and governs the processes that move the object between these different states. Smart contracts are important because they allow architects and smart contract developers to define the key business processes and data that are shared across the different organizations collaborating in a blockchain network."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:34
+msgid "In the PaperNet network, the smart contract is shared by the different network participants, such as MagnetoCorp and DigiBank.  The same version of the smart contract must be used by all applications connected to the network so that they jointly implement the same shared business processes and data."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:41
+msgid "A copy of the PaperNet commercial paper smart contract is contained in papercontract.js. View it with your browser, or open it in your favourite editor if you've downloaded it."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:46
+msgid "You may notice from the file path that this is MagnetoCorp's copy of the smart contract.  MagnetoCorp and DigiBank must agree the version of the smart contract that they are going to use. For now, it doesn't matter which organization's copy you look at, they are all the same."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:51
+msgid "Spend a few moments looking at the overall structure of the smart contract; notice that it's quite short! Towards the top of papercontract.js, you'll see that there's a definition for the commercial paper smart contract:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:59
+msgid "The CommercialPaperContract class contains the transaction definitions for commercial paper -- issue, buy and redeem. It's these transactions that bring commercial papers into existence and move them through their lifecycle. We'll examine these transactions soon, but for now notice how CommercialPaperContract extends the Hyperledger Fabric Contract class. This built-in class, and the Context class, were brought into scope earlier:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:73
+msgid "Our commercial paper contract will use built-in features of these classes, such as automatic method invocation, a per-transaction context, transaction handlers, and class-shared state."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:78
+msgid "Notice also how the class constructor uses its superclass to initialize itself with an explicit contract name:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:88
+msgid "Most importantly, org.papernet.commercialpaper is very descriptive -- this smart contract is the agreed definition of commercial paper for all PaperNet organizations."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:92
+msgid "Usually there will only be one smart contract per file -- contracts tend to have different lifecycles, which makes it sensible to separate them. However, in some cases, multiple smart contracts might provide syntactic help for applications, e.g. EuroBond, DollarBond, YenBond, but essentially provide the same function. In such cases, smart contracts and transactions can be disambiguated."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:100
+msgid "Within the class, locate the issue method."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:106
+msgid "This function is given control whenever this contract is called to issue a commercial paper. Recall how commercial paper 00001 was created with the following transaction:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:119
+msgid "We've changed the variable names for programming style, but see how these properties map almost directly to the issue method variables."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:122
+msgid "The issue method is automatically given control by the contract whenever an application makes a request to issue a commercial paper. The transaction property values are made available to the method via the corresponding variables. See how an application submits a transaction using the Hyperledger Fabric SDK in the application topic, using a sample application program."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:129
+msgid "You might have noticed an extra variable in the issue definition -- ctx. It's called the transaction context, and it's always first. By default, it maintains both per-contract and per-transaction information relevant to transaction logic. For example, it would contain MagnetoCorp's specified transaction identifier, a MagnetoCorp issuing user's digital certificate, as well as access to the ledger API."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:136
+msgid "See how the smart contract extends the default transaction context by implementing its own createContext() method rather than accepting the default implementation:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:146
+msgid "This extended context adds a custom property paperList to the defaults:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:158
+msgid "We'll soon see how ctx.paperList can be subsequently used to help store and retrieve all PaperNet commercial papers."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:161
+msgid "To solidify your understanding of the structure of a smart contract transaction, locate the buy and redeem transaction definitions, and see if you can see how they map to their corresponding commercial paper transactions."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:165
+msgid "The buy transaction:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:181
+msgid "The redeem transaction:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:195
+msgid "In both cases, observe the 1:1 correspondence between the commercial paper transaction and the smart contract method definition.  And don't worry about the async and await keywords -- they allow asynchronous JavaScript functions to be treated like their synchronous cousins in other programming languages."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:205
+msgid "Now that you've seen how contracts are structured and transactions are defined, let's focus on the logic within the smart contract."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:208
+msgid "Recall the first issue transaction:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:219
+msgid "It results in the issue method being passed control:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:241
+msgid "The logic is simple: take the transaction input variables, create a new commercial paper paper, add it to the list of all commercial papers using paperList, and return the new commercial paper (serialized as a buffer) as the transaction response."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:246
+msgid "See how paperList is retrieved from the transaction context to provide access to the list of commercial papers. issue(), buy() and redeem() continually re-access ctx.paperList to keep the list of commercial papers up-to-date."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:250
+msgid "The logic for the buy transaction is a little more elaborate:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:282
+msgid "See how the transaction checks currentOwner and that paper is TRADING before changing the owner with paper.setOwner(newOwner). The basic flow is simple though -- check some pre-conditions, set the new owner, update the commercial paper on the ledger, and return the updated commercial paper (serialized as a buffer) as the transaction response."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:288
+msgid "Why don't you see if you can understand the logic for the redeem transaction?"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:293
+msgid "We've seen how to define and implement the issue, buy and redeem transactions using the CommercialPaper and PaperList classes. Let's end this topic by seeing how these classes work."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:297
+msgid "Locate the CommercialPaper class in the paper.js file:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:304
+msgid "This class contains the in-memory representation of a commercial paper state. See how the createInstance method initializes a new commercial paper with the provided parameters:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:314
+msgid "Recall how this class was used by the issue transaction:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:320
+msgid "See how every time the issue transaction is called, a new in-memory instance of a commercial paper is created containing the transaction data."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:323
+msgid "A few important points to note:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:355
+msgid "The rest of the CommercialPaper class contains simple helper methods:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:363
+msgid "Recall how methods like this were used by the smart contract to move the commercial paper through its lifecycle. For example, in the redeem transaction we saw:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:376
+msgid "Now locate the PaperList class in the paperlist.js file:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:383
+msgid "This utility class is used to manage all PaperNet commercial papers in Hyperledger Fabric state database. The PaperList data structures are described in more detail in the architecture topic."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:387
+msgid "Like the CommercialPaper class, this class extends an application-defined StateList class which creates a common abstraction for a list of states -- in this case, all the commercial papers in PaperNet."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:391
+msgid "The addPaper() method is a simple veneer over the StateList.addState() method:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:400
+msgid "You can see in the StateList.js file how the StateList class uses the Fabric API putState() to write the commercial paper as state data in the ledger:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:413
+msgid "Every piece of state data in a ledger requires these two fundamental elements:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:427
+msgid "Notice how a StateList doesn't store anything about an individual state or the total list of states -- it delegates all of that to the Fabric state database. This is an important design pattern -- it reduces the opportunity for ledger MVCC collisions in Hyperledger Fabric."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:432
+msgid "The StateList getState() and updateState() methods work in similar ways:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:451
+msgid "See how they use the Fabric APIs putState(), getState() and createCompositeKey() to access the ledger. We'll expand this smart contract later to list all commercial papers in paperNet -- what might the method look like to implement this ledger retrieval?"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:456
+msgid "That's it! In this topic you've understood how to implement the smart contract for PaperNet.  You can move to the next sub topic to see how an application calls the smart contract using the Fabric SDK."
+msgstr ""
+
+#: ../../source/developapps/transactioncontext.md:3
+msgid "Content being added in FAB-10440"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:5
+msgid "Transaction handlers allow smart contract developers to define common processing at key points during the interaction between an application and a smart contract. Transaction handlers are optional but, if defined, they will receive control before or after every transaction in a smart contract is invoked. There is also a specific handler which receives control when a request is made to invoke a transaction not defined in a smart contract."
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:12
+msgid "Here's an example of transaction handlers for the commercial paper smart contract sample:"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:15
+msgid "develop.transactionhandler"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:17
+msgid "Before, After and Unknown transaction handlers. In this example, BeforeFunction() is called before the issue, buy and redeem transactions. AfterFunction() is called after the issue, buy and redeem transactions. UnknownFunction() is only called if a request is made to invoke a transaction not defined in the smart contract.  (The diagram is simplified by not repeating BeforeFunction and AfterFunction boxes for each transaction."
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:27
+msgid "There are three types of transaction handlers which cover different aspects of the interaction between an application and a smart contract:"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:49
+msgid "Transaction handlers are added to the smart contract as methods with well defined names.  Here's an example which adds a handler of each type:"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:75
+msgid "The form of a transaction handler definition is the similar for all handler types, but notice how the afterTransaction(ctx, result) also receives any result returned by the transaction."
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:81
+msgid "Once a handler has been added to the smart contract, it can be invoked during transaction processing. During processing, the handler receives ctx, the transaction context, performs some processing, and returns control as it completes. Processing continues as follows:"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:103
+msgid "If the handler requires access to the function and parameters, then it is easy to do this:"
+msgstr ""
+
+#: ../../source/developapps/transactionhandler.md:117
+msgid "It is only possible to define at most one handler of each type for a smart contract. If a smart contract needs to invoke multiple functions during before, after or unknown handling, it should coordinate this from within the appropriate function."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:5
+msgid "A wallet contains a set of user identities. An application run by a user selects one of these identities when it connects to a channel. Access rights to channel resources, such as the ledger, are determined using this identity in combination with an MSP."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:19
+msgid "When an application connects to a network channel such as PaperNet, it selects a user identity to do so, for example ID1. The channel MSPs associate ID1 with a role within a particular organization, and this role will ultimately determine the application's rights over channel resources. For example, ID1 might identify a user as a member of the MagnetoCorp organization who can read and write to the ledger, whereas ID2 might identify an administrator in MagnetoCorp who can add a new organization to a consortium."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:27
+msgid "wallet.scenario Two users, Isabella and Balaji have wallets containing different identities they can use to connect to different network channels, PaperNet and BondNet."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:31
+msgid "Consider the example of two users; Isabella from MagnetoCorp and Balaji from DigiBank.  Isabella is going to use App 1 to invoke a smart contract in PaperNet and a different smart contract in BondNet.  Similarly, Balaji is going to use App 2 to invoke smart contracts, but only in PaperNet. (It's very easy for applications to access multiple networks and multiple smart contracts within them.)"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:38
+msgid "See how:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:72
+msgid "There are different types of wallets according to where they store their identities:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:75
+msgid "wallet.types The four different types of wallet: File  system, In-memory, Hardware Security Module (HSM) and CouchDB."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:123
+msgid "A single wallet can hold multiple identities, each issued by a particular Certificate Authority. Each identity has a standard structure comprising a descriptive label, an X.509 certificate containing a public key, a private key, and some Fabric-specific metadata. Different wallet types map this structure appropriately to their storage mechanism."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:129
+msgid "wallet.structure A Fabric wallet can hold multiple identities with certificates issued by a different Certificate Authority. Identities comprise certificate, private key and Fabric metadata."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:133
+msgid "There's a couple of key class methods that make it easy to manage wallets and identities:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:142
+msgid "See how the X509WalletMixin.createIdentity() method creates an identity that has metadata Org1MSP, a certificate and a private key. See how wallet.import() adds this identity to the wallet with a particular identityLabel."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:148
+msgid "The Gateway class only requires the mspid metadata to be set for an identity -- Org1MSP in the above example. It currently uses this value to identify particular peers from a connection profile, for example when a specific notification strategy is requested. In the DigiBank gateway file networkConnection.yaml, see how Org1MSP notifications will be associated with peer0.org1.example.com:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:164
+msgid "You really don't need to worry about the internal structure of the different wallet types, but if you're interested, navigate to a user identity folder in the commercial paper sample:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:177
+msgid "You can examine these files, but as discussed, it's easier to use the SDK to manipulate these data."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:182
+msgid "The different wallet classes are derived from a common Wallet base class which provides a standard set of APIs to manage identities. It means that applications can be made independent of the underlying wallet storage mechanism; for example, File system and HSM wallets are handled in a very similar way."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:189
+msgid "wallet.operations Wallets follow a lifecycle: they can be created or opened, and identities can be read, added, deleted and exported."
+msgstr ""
+
+#: ../../source/developapps/wallet.md:193
+msgid "An application can use a wallet according to a simple lifecycle. Wallets can be opened or created, and subsequently identities can be added, read, updated, deleted and exported. Spend a little time on the different Wallet methods in the JSDOC to see how they work; the commercial paper tutorial provides a nice example in addToWallet.js:"
+msgstr ""
+
+#: ../../source/developapps/wallet.md:226
+msgid "That's everything you need to know about wallets. You've seen how they hold identities that are used by applications on behalf of users to access Fabric network resources. There are different types of wallets available depending on your application and security needs, and a simple set of APIs to help applications manage wallets and the identities within them."
+msgstr ""
+

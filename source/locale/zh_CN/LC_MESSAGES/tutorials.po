@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/tutorials.rst:2 ../../source/tutorials.rst:26
+msgid "Tutorials"
+msgstr ""
+
+#: ../../source/tutorials.rst:4
+msgid ""
+"We offer tutorials to get you started with Hyperledger Fabric. The first "
+"is oriented to the Hyperledger Fabric **application developer**, "
+":doc:`write_first_app`. It takes you through the process of writing your "
+"first blockchain application for Hyperledger Fabric using the Hyperledger"
+" Fabric `Node SDK <https://github.com/hyperledger/fabric-sdk-node>`__."
+msgstr ""
+
+#: ../../source/tutorials.rst:10
+msgid ""
+"The second tutorial is oriented towards the Hyperledger Fabric network "
+"operators, :doc:`build_network`. This one walks you through the process "
+"of establishing a blockchain network using Hyperledger Fabric and "
+"provides a basic sample application to test it out."
+msgstr ""
+
+#: ../../source/tutorials.rst:15
+msgid ""
+"There are also tutorials for updating your channel, "
+":doc:`channel_update_tutorial`, and upgrading your network to a later "
+"version of Hyperledger Fabric, :doc:`upgrading_your_network_tutorial`."
+msgstr ""
+
+#: ../../source/tutorials.rst:18
+msgid ""
+"Finally, we offer two chaincode tutorials. One oriented to developers, "
+":doc:`chaincode4ade`, and the other oriented to operators, "
+":doc:`chaincode4noah`."
+msgstr ""
+
+#: ../../source/tutorials.rst:22
+msgid ""
+"If you have questions not addressed by this documentation, or run into "
+"issues with any of the tutorials, please visit the :doc:`questions` page "
+"for some tips on where to find additional help."
+msgstr ""
+

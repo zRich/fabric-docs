@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/config_update.md:5
+msgid ""
+"Channel configurations contain all of the information relevant to the "
+"administration of a channel. Most importantly, the channel configuration "
+"specifies which organizations are members of channel, but it also "
+"includes other channel-wide configuration information such as channel "
+"access policies and block batch sizes."
+msgstr ""
+
+#: ../../source/config_update.md:11
+msgid ""
+"This configuration is stored on the ledger in a block, and is therefore "
+"known as a configuration (config) block. Configuration blocks contain a "
+"single configuration. The first of these blocks is known as the “genesis "
+"block” and contains the initial configuration required to bootstrap a "
+"channel. Each time the configuration of a channel changes it is done "
+"through a new configuration block, with the latest configuration block "
+"representing the current channel configuration. Orderers and peers keep "
+"the current channel configuration in memory to facilitate all channel "
+"operations such as cutting a new block and validating block transactions."
+msgstr ""
+
+#: ../../source/config_update.md:21
+msgid ""
+"Because configurations are stored in blocks, updating a config happens "
+"through a process called a “configuration transaction” (even though the "
+"process is a little different from a normal transaction). Updating a "
+"config is a process of pulling the config, translating into a format that"
+" humans can read, modifying it and then submitting it for approval."
+msgstr ""
+
+#: ../../source/config_update.md:27
+msgid ""
+"For a more in-depth look at the process for pulling a config and "
+"translating it into JSON, check out Adding an Org to a Channel. In this "
+"doc, we'll be focusing on the different ways you can edit a config and "
+"the process for getting it signed."
+msgstr ""
+
+#: ../../source/config_update.md:34
+msgid ""
+"Channels are highly configurable, but not infinitely so. Different "
+"configuration elements have different modification policies (which "
+"specify the group of identities required to sign the config update)."
+msgstr ""
+
+#: ../../source/config_update.md:38
+msgid ""
+"To see the scope of what's possible to change it's important to look at a"
+" config in JSON format. The Adding an Org to a Channel tutorial generates"
+" one, so if you've gone through that doc you can simply refer to it. For "
+"those who have not, we'll provide one here (for ease of readability, it "
+"might be helpful to put this config into a viewer that supports JSON "
+"folding, like atom or Visual Studio)."
+msgstr ""
+
+#: ../../source/config_update.md:45
+msgid "<details> <summary> Click here to see the config </summary>"
+msgstr ""
+
+#: ../../source/config_update.md:747
+msgid "</details>"
+msgstr ""
+
+#: ../../source/config_update.md:749
+msgid ""
+"A config might look intimidating in this form, but once you study it "
+"you’ll see that it has a logical structure."
+msgstr ""
+
+#: ../../source/config_update.md:752
+msgid ""
+"Beyond the definitions of the policies -- defining who can do certain "
+"things at the channel level, and who has the permission to change who can"
+" change the config -- channels also have other kinds of features that can"
+" be modified using a config update. Adding an Org to a Channel takes you "
+"through one of the most important -- adding an org to a channel. Some "
+"other things that are possible to change with a config update include:"
+msgstr ""
+
+#: ../../source/config_update.md:882
+msgid ""
+"Just as we add an Org by adding their artifacts and MSP information, you "
+"can remove them by reversing the process."
+msgstr ""
+
+#: ../../source/config_update.md:885
+msgid ""
+"Note that once the consensus type has been defined and the network has "
+"been bootstrapped, it is not possible to change it through a "
+"configuration update."
+msgstr ""
+
+#: ../../source/config_update.md:888
+msgid ""
+"There is another important channel configuration (especially for v1.1) "
+"known as Capability Requirements. It has its own doc that can be found "
+"here."
+msgstr ""
+
+#: ../../source/config_update.md:892
+msgid ""
+"Let’s say you want to edit the block batch size for the channel (because "
+"this is a single numeric field, it’s one of the easiest changes to make)."
+" First to make referencing the JSON path easy, we define it as an "
+"environment variable."
+msgstr ""
+
+#: ../../source/config_update.md:896
+msgid ""
+"To establish this, take a look at your config, find what you’re looking "
+"for, and back track the path."
+msgstr ""
+
+#: ../../source/config_update.md:899
+msgid ""
+"If you find batch size, for example, you’ll see that it’s a value of the "
+"Orderer. Orderer can be found under groups, which is under channel_group."
+" The batch size value has a parameter under value of max_message_count."
+msgstr ""
+
+#: ../../source/config_update.md:904
+msgid "Which would make the path this:"
+msgstr ""
+
+#: ../../source/config_update.md:910
+msgid "Next, display the value of that property:"
+msgstr ""
+
+#: ../../source/config_update.md:916
+msgid "Which should return a value of 10 (in our sample network at least)."
+msgstr ""
+
+#: ../../source/config_update.md:918
+msgid "Now, let’s set the new batch size and display the new value:"
+msgstr ""
+
+#: ../../source/config_update.md:925
+msgid ""
+"Once you’ve modified the JSON, it’s ready to be converted and submitted. "
+"The scripts and steps in Adding an Org to a Channel will take you through"
+" the process for converting the JSON, so let's look at the process of "
+"submitting it."
+msgstr ""
+
+#: ../../source/config_update.md:932
+msgid ""
+"Once you’ve successfully generated the protobuf file, it’s time to get it"
+" signed. To do this, you need to know the relevant policy for whatever it"
+" is you’re trying to change."
+msgstr ""
+
+#: ../../source/config_update.md:936
+msgid "By default, editing the configuration of:"
+msgstr ""
+
+#: ../../source/config_update.md:946
+msgid ""
+"If you have made changes to the default policies in the channel, you’ll "
+"need to compute your signature requirements accordingly."
+msgstr ""
+
+#: ../../source/config_update.md:949
+msgid ""
+"Note: you may be able to script the signature collection, dependent on "
+"your application. In general, you may always collect more signatures than"
+" are required."
+msgstr ""
+
+#: ../../source/config_update.md:953
+msgid ""
+"The actual process of getting these signatures will depend on how you’ve "
+"set up your system, but there are two main implementations. Currently, "
+"the Fabric command line defaults to a “pass it along” system. That is, "
+"the Admin of the Org proposing a config update sends the update to "
+"someone else (another Admin, typically) who needs to sign it. This Admin "
+"signs it (or doesn’t) and passes it along to the next Admin, and so on, "
+"until there are enough signatures for the config to be submitted."
+msgstr ""
+
+#: ../../source/config_update.md:961
+msgid ""
+"This has the virtue of simplicity -- when there are enough signatures, "
+"the last Admin can simply submit the config transaction (in Fabric, the "
+"peer channel update command includes a signature by default). However, "
+"this process will only be practical in smaller channels, since the “pass "
+"it along” method can be time consuming."
+msgstr ""
+
+#: ../../source/config_update.md:967
+msgid ""
+"The other option is to submit the update to every Admin on a channel and "
+"wait for enough signatures to come back. These signatures can then be "
+"stitched together and submitted. This makes life a bit more difficult for"
+" the Admin who created the config update (forcing them to deal with a "
+"file per signer) but is the recommended workflow for users which are "
+"developing Fabric management applications."
+msgstr ""
+
+#: ../../source/config_update.md:974
+msgid ""
+"Once the config has been added to the ledger, it will be a best practice "
+"to pull it and convert it to JSON to check to make sure everything was "
+"added correctly. This will also serve as a useful copy of the latest "
+"config."
+msgstr ""
+

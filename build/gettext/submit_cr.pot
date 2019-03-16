@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/submit_cr.rst:2
+msgid "Submitting your first change request (CR)"
+msgstr ""
+
+#: ../../source/submit_cr.rst:4
+msgid "We are using `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__ to manage code contributions and reviews. If you are unfamiliar with Gerrit, please review this :doc:`document <Gerrit/gerrit>` before proceeding."
+msgstr ""
+
+#: ../../source/submit_cr.rst:9
+msgid "Gerrit has a reputation of having a clunky user experience. However, the Google team has been working on improving this, and they have added a \"New UI\" option that will allow you to work with their new and much improved UX. See the link at the bottom of the Fabric Gerrit page, linked above."
+msgstr ""
+
+#: ../../source/submit_cr.rst:18
+msgid "Setting up your SSH key"
+msgstr ""
+
+#: ../../source/submit_cr.rst:20
+msgid "Before you can submit a change set for review, you will need to register your public SSH key. Login to `Gerrit <https://gerrit.hyperledger.org>`__ with your :doc:`LFID <Gerrit/lf-account>`, and click on your name in the upper right-hand corner of your browser window and then click 'Settings'."
+msgstr ""
+
+#: ../../source/submit_cr.rst:29
+msgid "In the left-hand margin, you should see a link for 'SSH Public Keys'."
+msgstr ""
+
+#: ../../source/submit_cr.rst:34
+msgid "Press the ``Add Key...`` button"
+msgstr ""
+
+#: ../../source/submit_cr.rst:39
+msgid "Copy-n-paste your `public SSH key <https://help.github.com/articles/generating-an-ssh-key/>`__ into the window and press 'Add'."
+msgstr ""
+
+#: ../../source/submit_cr.rst:46
+msgid "Sandbox"
+msgstr ""
+
+#: ../../source/submit_cr.rst:48
+msgid "We have created the `lf-sandbox project <https://gerrit.hyperledger.org/r/#/admin/projects/lf-sandbox,branches>`__, to allow you to familiarize yourself with using Gerrit. We'll use that project in our tutorial for submitting your first CR."
+msgstr ""
+
+#: ../../source/submit_cr.rst:54
+msgid "Clone your project"
+msgstr ""
+
+#: ../../source/submit_cr.rst:56
+msgid "First step is to clone your project to your laptop or development server. Navigate your browser to the Gerrit `Projects <https://gerrit.hyperledger.org/r/#/admin/projects/>`__ page and scroll down to the ``lf-sandbox`` project."
+msgstr ""
+
+#: ../../source/submit_cr.rst:63
+msgid "The project page will provide you with the full git clone command needed to clone the project. Select the ``clone with commit-msg hook`` option and copy the command to the clipboard."
+msgstr ""
+
+#: ../../source/submit_cr.rst:70
+msgid "Now, in a terminal window on your laptop, paste and run the command. e.g."
+msgstr ""
+
+#: ../../source/submit_cr.rst:77
+msgid "Checkout a development branch"
+msgstr ""
+
+#: ../../source/submit_cr.rst:79
+msgid "Now that you have cloned the repository, change directory to the ``lf-sandbox`` directory. Now let's make a change. First, let's create a new branch in which to work:"
+msgstr ""
+
+#: ../../source/submit_cr.rst:87
+msgid "Now let's modify a file. Pick a file, any file and make a change. You can also add a new file or delete an existing file. Don't be shy, this is just a sandbox."
+msgstr ""
+
+#: ../../source/submit_cr.rst:92
+msgid "Committing your change"
+msgstr ""
+
+#: ../../source/submit_cr.rst:94
+msgid "Once you've made your change, check to see what the current status is."
+msgstr ""
+
+#: ../../source/submit_cr.rst:107
+msgid "Now let's add the changed file to the list of files tracked by git."
+msgstr ""
+
+#: ../../source/submit_cr.rst:113
+msgid "Now let's commit that change."
+msgstr ""
+
+#: ../../source/submit_cr.rst:119
+msgid "This will open up an editing session using your favorite command-line editor where you will fill in a commit message. Add a commit message."
+msgstr ""
+
+#: ../../source/submit_cr.rst:122
+msgid "Note that for the Hyperledger Fabric project(s) we would have a title line that includes the JIRA number of the issue to which the change request applies. Please review the :doc:`guidelines <Gerrit/changes>` for change requests."
+msgstr ""
+
+#: ../../source/submit_cr.rst:143
+msgid "Submitting your change request"
+msgstr ""
+
+#: ../../source/submit_cr.rst:145
+msgid "Once you have saved the commit message, you can push the change request to Gerrit. Here, we have a couple of options."
+msgstr ""
+
+#: ../../source/submit_cr.rst:148
+msgid "The first option is to use the full git syntax."
+msgstr ""
+
+#: ../../source/submit_cr.rst:154
+msgid "This will yield results something like the following:"
+msgstr ""
+
+#: ../../source/submit_cr.rst:178
+msgid "The second option, `git review <https://www.mediawiki.org/wiki/Gerrit/git-review>`__ simplifies things a bit. The link above will provide info on how to install and setup ``git-review``."
+msgstr ""
+
+#: ../../source/submit_cr.rst:183
+msgid "Once installed and configured, you can submit your change with ``git review``."
+msgstr ""
+
+#: ../../source/submit_cr.rst:191
+msgid "Check that your change request is validated by the CI process"
+msgstr ""
+
+#: ../../source/submit_cr.rst:193
+msgid "To ensure stability of the code and limit possible regressions, we use a Continuous Integration (CI) process based on Jenkins which triggers a build on several platforms and runs tests against every change request being submitted. It is your responsibility to check that your CR passes these tests. No CR will ever be merged if it fails the tests and you shouldn't expect anybody to pay attention to your CRs until they pass the CI tests."
+msgstr ""
+
+#: ../../source/submit_cr.rst:201
+msgid "To check on the status of the CI process, simply look at your CR on Gerrit, following the URL that was given to you as the result of the push in the previous step. The History section at the bottom of the page will display a set of actions taken by \"Hyperledger Jobbuilder\" corresponding to the CI process being executed."
+msgstr ""
+
+#: ../../source/submit_cr.rst:207
+msgid "Upon completion, \"Hyperledger Jobbuilder\" will add to the CR a *+1 vote* if successful and a *-1 vote* otherwise."
+msgstr ""
+
+#: ../../source/submit_cr.rst:210
+msgid "In case of failure, explore the logs linked from the CR History. If you spot a problem with your CR and want to modify it, proceed to the following section."
+msgstr ""
+
+#: ../../source/submit_cr.rst:214
+msgid "If you see nothing wrong with your CR it might be that the CI process simply failed for some reason unrelated to your change. In that case you may want to restart the CI process by posting a reply to your CR with the simple content \"reverify\".  Check the `CI management page <https://github.com/hyperledger/ci-management/blob/master/docs/source/fabric_ci_process.rst>`__ for additional information and options on this."
+msgstr ""
+
+#: ../../source/submit_cr.rst:222
+msgid "Modifying your change request"
+msgstr ""
+
+#: ../../source/submit_cr.rst:224
+msgid "If you need to update your patch, say to address a review comment, or to fix something affecting CI, you can commit revised changes with"
+msgstr ""
+
+#: ../../source/submit_cr.rst:231
+msgid "and then repeat the ``git review`` or full syntax as before. Then check the results of the CI process that gets triggered as a result."
+msgstr ""
+
+#: ../../source/submit_cr.rst:234
+msgid "Should you have further questions, please don't hesitate to ask on the mailing list or rocket chat."
+msgstr ""
+

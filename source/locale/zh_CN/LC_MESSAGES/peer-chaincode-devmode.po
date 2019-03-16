@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/peer-chaincode-devmode.rst:2
+msgid "Using dev mode"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:4
+msgid ""
+"Normally chaincodes are started and maintained by peer. However in “dev” "
+"mode, chaincode is built and started by the user. This mode is useful "
+"during chaincode development phase for rapid code/build/run/debug cycle "
+"turnaround."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:9
+msgid ""
+"To keep this a realistic “dev” environment, we are going to keep it “out "
+"of the box” - with one exception: we create two channels to show how the "
+"single running instance can be accessed from multiple channels."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:13
+msgid "Note: Make sure peer is not using TLS when running in dev mode."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:15
+msgid "All commands are executed from the ``fabric-samples`` folder."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:18
+msgid "Start the orderer"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:24
+msgid "The above starts the orderer with the SampleDevModeSolo profile."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:27
+msgid "Start the peer in dev mode"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:33
+msgid ""
+"The above command starts the peer using the default MSP. The ``--peer-"
+"chaincodedev=true`` puts it in “dev” mode."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:37
+msgid "Create channels ch1 and ch2"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:39
+msgid ""
+"Generate the transactions for creating the channels using the "
+"``configtxgen`` tool with the SampleSingleMSPChannel profile."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:52
+msgid ""
+"Above assumes orderer is reachable on ``127.0.0.1:7050``. The orderer now"
+" is tracking channels ch1 and ch2 for the default configuration."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:60
+msgid "The peer has now joined channels ch1 and ch2."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:63
+msgid "Start the chaincode"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:71
+msgid ""
+"The chaincode is started with peer and chaincode logs indicating "
+"successful registration with the peer. Note that at this stage the "
+"chaincode is not associated with any channel. This is done in subsequent "
+"steps using the ``instantiate`` command."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:76
+msgid "Use the chaincode"
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:78
+msgid ""
+"Even though you are in ``--peer-chaincodedev`` mode, you still have to "
+"install the chaincode so the life-cycle system chaincode can go through "
+"its checks normally. This requirement may be removed in future when in "
+"``--peer-chaincodedev`` mode."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:86
+msgid "Once installed, the chaincode is ready to be instantiated."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:94
+msgid ""
+"The above instantiates the chaincode with the two channels. With default "
+"settings it might take a few seconds for the transactions to be "
+"committed."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:103
+msgid "The above invoke the chaincode over the two channels."
+msgstr ""
+
+#: ../../source/peer-chaincode-devmode.rst:105
+msgid "Finally, query the chaincode on the two channels."
+msgstr ""
+

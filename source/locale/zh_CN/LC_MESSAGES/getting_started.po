@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/getting_started.rst:2
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/getting_started.rst:11
+msgid ""
+"Before we begin, if you haven't already done so, you may wish to check "
+"that you have all the :doc:`prereqs` installed on the platform(s) on "
+"which you'll be developing blockchain applications and/or operating "
+"Hyperledger Fabric."
+msgstr ""
+
+#: ../../source/getting_started.rst:16
+msgid ""
+"Once you have the prerequisites installed, you are ready to download and "
+"install HyperLedger Fabric. While we work on developing real installers "
+"for the Fabric binaries, we provide a script that will :doc:`install` to "
+"your system. The script also will download the Docker images to your "
+"local registry."
+msgstr ""
+
+#: ../../source/getting_started.rst:23
+msgid "Hyperledger Fabric SDKs"
+msgstr ""
+
+#: ../../source/getting_started.rst:25
+msgid ""
+"Hyperledger Fabric offers a number of SDKs to support various programming"
+" languages. There are two officially released SDKs for Node.js and Java:"
+msgstr ""
+
+#: ../../source/getting_started.rst:28
+msgid ""
+"`Hyperledger Fabric Node SDK <https://github.com/hyperledger/fabric-sdk-"
+"node>`__ and `Node SDK documentation <https://fabric-sdk-"
+"node.github.io/>`__."
+msgstr ""
+
+#: ../../source/getting_started.rst:29
+msgid ""
+"`Hyperledger Fabric Java SDK <https://github.com/hyperledger/fabric-sdk-"
+"java>`__."
+msgstr ""
+
+#: ../../source/getting_started.rst:31
+msgid ""
+"In addition, there are three more SDKs that have not yet been officially "
+"released (for Python, Go and REST), but they are still available for "
+"downloading and testing:"
+msgstr ""
+
+#: ../../source/getting_started.rst:34
+msgid ""
+"`Hyperledger Fabric Python SDK <https://github.com/hyperledger/fabric-"
+"sdk-py>`__."
+msgstr ""
+
+#: ../../source/getting_started.rst:35
+msgid ""
+"`Hyperledger Fabric Go SDK <https://github.com/hyperledger/fabric-sdk-"
+"go>`__."
+msgstr ""
+
+#: ../../source/getting_started.rst:36
+msgid ""
+"`Hyperledger Fabric REST SDK <https://github.com/hyperledger/fabric-sdk-"
+"rest>`__."
+msgstr ""
+
+#: ../../source/getting_started.rst:39
+msgid "Hyperledger Fabric CA"
+msgstr ""
+
+#: ../../source/getting_started.rst:41
+msgid ""
+"Hyperledger Fabric provides an optional `certificate authority service "
+"<http://hyperledger-fabric-ca.readthedocs.io/en/latest>`_ that you may "
+"choose to use to generate the certificates and key material to configure "
+"and manage identity in your blockchain network. However, any CA that can "
+"generate ECDSA certificates may be used."
+msgstr ""
+

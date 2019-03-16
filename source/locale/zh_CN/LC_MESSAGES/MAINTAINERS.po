@@ -1,0 +1,352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/MAINTAINERS.rst:2
+msgid "Maintainers"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:4
+msgid "**Active Maintainers**"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:43
+msgid "Name"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:43
+msgid "Gerrit"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:43
+msgid "GitHub"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:43
+msgid "Chat"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:43
+msgid "email"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:9
+msgid "Alessandro Sorniotti"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:9
+msgid "ale-linux"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:9
+msgid "aso"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:9
+msgid "ale.linux@sopit.net"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:11
+msgid "Artem Barger"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:11
+msgid "c0rwin"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:11
+msgid "bartem@il.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:13
+msgid "Binh Nguyen"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:13
+msgid "binhn"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:13
+msgid "binh1010010110@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:45
+msgid "Chris Ferris"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:45
+msgid "ChristopherFerris"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:45
+msgid "christo4ferris"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:45
+msgid "cbf"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:45
+msgid "chris.ferris@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:47
+msgid "Dave Enyeart"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:47
+msgid "denyeart"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:47
+msgid "dave.enyeart"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:47
+msgid "enyeart@us.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:49
+msgid "Gari Singh"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:49
+msgid "mastersingh24"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:49
+msgid "garisingh"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:49
+msgid "gari.r.singh@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:21
+msgid "Greg Haskins"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:21
+msgid "greg.haskins"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:21
+msgid "ghaskins"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:21
+msgid "gregory.haskins@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:23
+msgid "Jason Yellick"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:23
+msgid "jyellick"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:23
+msgid "jyellick@us.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:25
+msgid "Jonathan Levi"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:25
+msgid "JonathanLevi"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:25
+msgid "hacera"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:25
+msgid "jonathan@hacera.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:27
+msgid "Keith Smith"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:27
+msgid "smithbk"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:27
+msgid "bksmith@us.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:29
+msgid "Kostas Christidis"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:29
+msgid "kchristidis"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:29
+msgid "kostas"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:29
+msgid "kostas@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:31
+msgid "Manish Sethi"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:31
+msgid "manish-sethi"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:31
+msgid "manish.sethi@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:33
+msgid "Matthew Sykes"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:33
+msgid "sykesm"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:33
+msgid "sykesmat@us.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:35
+msgid "Srinivasan Muralidharan"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:35
+msgid "muralisr"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:35
+msgid "muralisrini"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:35
+msgid "srinivasan.muralidharan99@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:37
+msgid "Yacov Manevich"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:37
+msgid "yacovm"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:37
+msgid "yacovm@il.ibm.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:40
+msgid "**Release Managers**"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:52
+msgid "**Retired Maintainers**"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:55
+msgid "Gabor Hosszu"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:55
+msgid "hgabre"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:55
+msgid "gabre"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:55
+msgid "hgabor"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:55
+msgid "gabor@digitalasset.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:57
+msgid "Sheehan Anderson"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:57
+msgid "sheehan"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:57
+msgid "srderson"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:57
+msgid "sranderson@gmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:59
+msgid "Tamas Blummer"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:59
+msgid "TamasBlummer"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:59
+msgid "tamasblummer"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:59
+msgid "tamas"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:59
+msgid "tamas@digitalasset.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:61
+msgid "Jim Zhang"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:61
+msgid "jimthematrix"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:61
+msgid "jim\\_the\\_matrix@hotmail.com"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:63
+msgid "Yaoguo Jiang"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:63
+msgid "jiangyaoguo"
+msgstr ""
+
+#: ../../source/MAINTAINERS.rst:63
+msgid "jiangyaoguo@gmail.com"
+msgstr ""
+
