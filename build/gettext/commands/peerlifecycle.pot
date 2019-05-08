@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/commands/peerlifecycle.md:3
+msgid "The peer lifecycle chaincode subcommand allows administrators to use the Fabric chaincode lifecycle to package a chaincode, install it on your peers, approve a chaincode definition for your organization, and then commit the definition to a channel. The chaincode is ready to be used after the definition has been successfully committed to the channel. For more information, visit Chaincode for Operators."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:10
+msgid "Note: These instructions use the Fabric chaincode lifecycle introduced in the v2.0 Alpha release. If you would like to use the old lifecycle to install and instantiate a chaincode, visit the peer chaincode command reference."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:17
+msgid "The peer lifecycle chaincode command has the following subcommands:"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:27
+msgid "Each peer lifecycle chaincode subcommand is described together with its options in its own section in this topic."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:296
+msgid "A chaincode needs to be packaged before it can be installed on your peers. This example uses the peer lifecycle chaincode package command to package a Golang chaincode."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:309
+msgid "After the chaincode is packaged, you can use the peer chaincode install command to install the chaincode on your peers."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:328
+msgid "You need to use the chaincode package identifier to approve a chaincode definition for your organization. You can find the package ID for the chaincodes you have installed by using the peer lifecycle chaincode queryinstalled command:"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:344
+msgid "Once the chaincode package has been installed on your peers, you can approve a chaincode definition for your organization. The chaincode definition includes the important parameters of chaincode governance, including the chaincode name, version and the endorsement policy."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:349
+msgid "Here is an example of the peer lifecycle chaincode approveformyorg command, which approves the definition of a chaincode  named mycc at version 1.0 on channel mychannel."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:382
+msgid "You can query which organizations have approved a chaincode definition before you commit the definition to the channel using the peer lifecycle chaincode queryapprovalstatus command. If an organization has approved the chaincode definition specified in the command, the command will return a value of true. You can use this command to learn whether enough channel members have approved a chaincode definition to meet the Application/Channel/Endorsement policy (a majority by default) before the definition can be committed to a channel."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:410
+msgid "Once a sufficient number of organizations approve a chaincode definition for their organizations (a majority by default), one organization can commit the definition the channel using the peer lifecycle chaincode commit command:"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:428
+msgid "You can query the chaincode definitions that have been committed to a channel by using the peer lifecycle chaincode querycommitted command. You can use this command to query the current definition sequence number before upgrading a chaincode."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:445
+msgid "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>."
+msgstr ""
+

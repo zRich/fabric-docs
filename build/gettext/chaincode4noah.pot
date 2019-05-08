@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/chaincode4noah.md:5
+msgid "Chaincode is a program, written in Go, Node.js, or Java that implements a prescribed interface. Chaincode runs in a secured Docker container isolated from the endorsing peer process. Chaincode initializes and manages ledger state through transactions submitted by applications."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:11
+msgid "A chaincode typically handles business logic agreed to by members of the network, so it may be considered as a \"smart contract\". Ledger updates created by a chaincode are scoped exclusively to that chaincode and can't be accessed directly by another chaincode. However, within the same network, given the appropriate permission a chaincode may invoke another chaincode to access its state."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:18
+msgid "In the following sections, we will explore chaincode through the eyes of a blockchain network operator rather than an application developer. Chaincode operators can use this tutorial to learn how to use the Fabric chainode lifecycle to deploy and manage chaincode on their network."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:25
+msgid "The Fabric chaincode lifecycle is a process that allows multiple organizations to agree on how a chaincode will be operated before it can be used on a channel. The tutorial will discuss how a chaincode operator would use the Fabric lifecycle to perform the following tasks:"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:34
+msgid "Note: The new Fabric chaincode lifecycle in the v2.0 Alpha release is not yet feature complete. Specifically, be aware of the following limitations in the Alpha release:"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:42
+msgid "These limitations will be resolved after the Alpha release. To use the old lifecycle model to install and instantiate a chaincode, visit the v1.4 version of the Chaincode for Operators tutorial."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:48
+msgid "Fabric chaincode lifecycle requires that organizations agree to the parameters that define a chaincode, such as name, version, and the chaincode endorsement policy. Channel members come to agreement using the following four steps. Not every organization on a channel needs to complete each step."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:69
+msgid "This tutorial provides a detailed overview of the operations of the Fabric chaincode lifecycle rather than the specific commands. To learn more about how to use the Fabric lifecycle using the Peer CLI, see Install and define a chaincode in the Building your First Network Tutorial or the peer lifecycle command reference. To learn more about how to use the Fabric lifecycle using the Fabric SDK for Node.js, visit How to install and start your chaincode."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:78
+msgid "Chaincode needs to be packaged in a tar file before it can be installed on your peers. You can package a chaincode using the Fabric peer binaries, the Node Fabric SDK, or a third party tool such as GNU tar. When you create a chaincode package, you need to provide a chaincode package label to create a succinct and human readable description of the package."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:84
+msgid "If you use a third party tool to package the chaincode, the resulting file needs to be in the format below. The Fabric peer binaries and the Fabric SDKs will automatically create a file in this format."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:101
+msgid "You need to install the chaincode package on every peer that will execute and endorse transactions. Whether using the CLI or an SDK, you need to complete this step using your Peer Administrator, whose signing certificate is in the admincerts folder of your peer MSP. It is recommended that organizations only package a chaincode once, and then install the same package on every peer that belongs to their org. If a channel wants to ensure that each organization is running the same chaincode, one organization can package a chaincode and send it to other channel members out of band."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:110
+msgid "A successful install command will return a chaincode package identifier, which is the package label combined with a hash of the package. This package identifier is used to associate a chaincode package installed on your peers with a chaincode definition approved by your organization. Save the identifier for next step. You can also find the package identifier by querying the packages installed on your peer using the Peer CLI."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:119
+msgid "The chaincode is governed by a chaincode definition. When channel members approve a chaincode definition, the approval acts as a vote by an organization on the chaincode parameters it accepts. These approved organization definitions allow channel members to agree on a chaincode before it can be used on a channel. The chaincode definition includes the following parameters, which need to be consistent across organizations:"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:152
+msgid "The chaincode definition also includes the Package Identifier. This is a required parameter for each organization that wants to use the chaincode. The package ID does not need to be the same for all organizations. An organization can approve a chaincode definition without installing a chaincode package or including the identifier in the definition."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:158
+msgid "Each channel member that wants to use the chaincode needs to approve a chaincode definition for their organization. This approval needs to be submitted to the ordering service, after which it is distributed to all peers. This approval needs to be submitted by your Organization Administrator, whose signing certificate is listed as an admin cert in the MSP of your organization definition. After the approval transaction has been successfully submitted, the approved definition is stored in a collection that is available to all the peers of your organization. As a result you only need to approve a chaincode for your organization once, even if you have multiple peers."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:170
+msgid "Once a sufficient number of channel members have approved a chaincode definition, one organization can commit the definition to the channel. You can use the queryapprovalstatus command to find which channel members have approved a definition before committing it to the channel using the peer CLI. The commit transaction proposal is first sent to the peers of channel members, who query the chaincode definition approved for their organizations and endorse the definition if their organization has approved it. The transaction is then submitted to the ordering service, which then commits the chaincode definition to the channel. The commit definition transaction needs to be submitted as the Organization Administrator, whose signing certificate is listed as an admin cert in the MSP of your organization definition."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:182
+msgid "The number of organizations that need to approve a definition before it can be successfully committed to the channel is governed by the Channel/Application/LifecycleEndorsement policy. By default, this policy requires that a majority of organizations in the channel endorse the transaction. The LifecycleEndorsement policy is separate from the chaincode endorsement policy. For example, even if a chaincode endorsement policy only requires signatures from one or two organizations, a majority of channel members still need to approve the chaincode definition according to the default policy. When committing a channel definition, you need to target enough peer organizations in the channel to satisfy your LifecycleEndorsement policy."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:193
+msgid "An organization can approve a chaincode definition without installing the chaincode package. If an organization does not need to use the chaincode, they can approve a chaincode definition without a package identifier to ensure that the Lifecycle Endorsement policy is satisfied."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:198
+msgid "After the chaincode definition has been committed to the channel, channel members can start using the chaincode. The first invoke of the chaincode will start the chaincode containers on all of the peers targeted by the transaction proposal, as long as those peers have installed the chaincode package. You can use the chaincode definition to require the invocation of the Init function to start the chaincode. Otherwise, a channel member can start the chaincode container by invoking any transaction in the chaincode. The first invoke, whether of an Init function or other transaction, is subject to the chaincode endorsement policy. It may take a few minutes for the chaincode container to start."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:210
+msgid "You can upgrade a chaincode using the same Fabric lifecycle process as you used to install and start the chainocode. You can upgrade the chaincode binaries, or only update the chaincode policies. Follow these steps to upgrade a chaincode:"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:239
+msgid "The Fabric chaincode lifecycle uses the sequence in the chaincode definition to keep track of upgrades. All channel members need to increment the sequence number by one and approve a new definition to upgrade the chaincode. The version parameter is used to track the chaincode binaries, and needs to be changed only when you upgrade the chaincode binaries."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:247
+msgid "You can use the Fabric chaincode lifecycle by creating a new channel and setting the channel capabilities to V2_0. You will not be able to use the previous lifecycle to install, instantiate, or update a chaincode on a channels with V2_0 capabilities enabled. There is no upgrade support to the v2.0 Alpha release, and no intended upgrade support from the the Alpha release to future versions of v2.x."
+msgstr ""
+

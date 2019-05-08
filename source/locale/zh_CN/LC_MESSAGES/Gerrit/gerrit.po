@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/Gerrit/gerrit.rst:2
+msgid "Working with Gerrit"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:4
+msgid ""
+"Follow these instructions to collaborate on Hyperledger Fabric through "
+"the Gerrit review system."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:7
+msgid ""
+"Please be sure that you are subscribed to the `mailing list "
+"<https://lists.hyperledger.org/mailman/listinfo/hyperledger-fabric>`__ "
+"and of course, you can reach out on `chat "
+"<https://chat.hyperledger.org/>`__ if you need help."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:12
+msgid "Gerrit assigns the following roles to users:"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:14
+msgid ""
+"**Submitters**: May submit changes for consideration, review other code "
+"changes, and make recommendations for acceptance or rejection by voting "
+"+1 or -1, respectively."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:17
+msgid ""
+"**Maintainers**: May approve or reject changes based upon feedback from "
+"reviewers voting +2 or -2, respectively."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:19
+msgid ""
+"**Builders**: (e.g. Jenkins) May use the build automation infrastructure "
+"to verify the change."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:22
+msgid ""
+"Maintainers should be familiar with the :doc:`review process "
+"<reviewing>`. However, anyone is welcome to (and encouraged!) review "
+"changes, and hence may find that document of value."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:27
+msgid "Git-review"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:29
+msgid ""
+"There's a **very** useful tool for working with Gerrit called `git-review"
+" <https://www.mediawiki.org/wiki/Gerrit/git-review>`__. This command-line"
+" tool can automate most of the ensuing sections for you. Of course, "
+"reading the information below is also highly recommended so that you "
+"understand what's going on behind the scenes."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:36
+msgid "Getting deeper into Gerrit"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:38
+msgid ""
+"A comprehensive walk-through of Gerrit is beyond the scope of this "
+"document. There are plenty of resources available on the Internet. A good"
+" summary can be found `here "
+"<https://www.mediawiki.org/wiki/Gerrit/Tutorial>`__. We have also "
+"provided a set of :doc:`Best Practices <best-practices>` that you may "
+"find helpful."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:46
+msgid "Working with a local clone of the repository"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:48
+msgid "To work on something, whether a new feature or a bugfix:"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:50
+msgid ""
+"Open the Gerrit `Projects page "
+"<https://gerrit.hyperledger.org/r/#/admin/projects/>`__"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:53
+msgid "Select the project you wish to work on."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:55
+msgid ""
+"Open a terminal window and clone the project locally using the ``Clone "
+"with git hook`` URL. Be sure that ``ssh`` is also selected, as this will "
+"make authentication much simpler:"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:63
+msgid ""
+"If you are cloning the fabric project repository, you will want to clone "
+"it to the ``$GOPATH/src/github.com/hyperledger`` directory so that it "
+"will build, and so that you can use it with the Vagrant :doc:`development"
+" environment <../dev-setup/devenv>`."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:68
+msgid "Create a descriptively-named branch off of your cloned repository"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:75
+msgid ""
+"Commit your code. For an in-depth discussion of creating an effective "
+"commit, please read :doc:`this document on submitting changes <changes>`."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:82
+msgid "Then input precise and readable commit msg and submit."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:84
+msgid ""
+"Any code changes that affect documentation should be accompanied by "
+"corresponding changes (or additions) to the documentation and tests. This"
+" will ensure that if the merged PR is reversed, all traces of the change "
+"will be reversed as well."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:90
+msgid "Submitting a Change"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:92
+msgid "Currently, Gerrit is the only method to submit a change for review."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:94
+msgid ""
+"Please review the :doc:`guidelines <changes>` for making and submitting a"
+" change."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:98
+msgid "Using git review"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:100
+msgid ""
+"if you prefer, you can use the `git-review <#git-review>`__ tool instead "
+"of the following. e.g."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:103
+msgid ""
+"Add the following section to ``.git/config``, and replace ``<USERNAME>`` "
+"with your gerrit id."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:112
+msgid "Then submit your change with ``git review``."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:119
+msgid ""
+"When you update your patch, you can commit with ``git commit --amend``, "
+"and then repeat the ``git review`` command."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:123
+msgid "Not using git review"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:125
+msgid ""
+"See the :doc:`directions for building the source code <../dev-"
+"setup/build>`."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:127
+msgid ""
+"When a change is ready for submission, Gerrit requires that the change be"
+" pushed to a special branch. The name of this special branch contains a "
+"reference to the final branch where the code should reside, once "
+"accepted."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:132
+msgid ""
+"For the Hyperledger Fabric repository, the special branch is called "
+"``refs/for/master``."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:135
+msgid ""
+"To push the current local development branch to the gerrit server, open a"
+" terminal window at the root of your cloned repository:"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:143
+msgid "If the command executes correctly, the output should look similar to this:"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:159
+msgid "The gerrit server generates a link where the change can be tracked."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:162
+msgid "Reviewing Using Gerrit"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:164
+msgid ""
+"**Add**: This button allows the change submitter to manually add names of"
+" people who should review a change; start typing a name and the system "
+"will auto-complete based on the list of people registered and with access"
+" to the system. They will be notified by email that you are requesting "
+"their input."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:170
+msgid ""
+"**Abandon**: This button is available to the submitter only; it allows a "
+"committer to abandon a change and remove it from the merge queue."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:174
+msgid ""
+"**Change-ID**: This ID is generated by Gerrit (or system). It becomes "
+"useful when the review process determines that your commit(s) have to be "
+"amended. You may submit a new version; and if the same Change-ID header "
+"(and value) are present, Gerrit will remember it and present it as "
+"another version of the same change."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:180
+msgid ""
+"**Status**: Currently, the example change is in review status, as "
+"indicated by “Needs Verified” in the upper-left corner. The list of "
+"Reviewers will all emit their opinion, voting +1 if they agree to the "
+"merge, -1 if they disagree. Gerrit users with a Maintainer role can agree"
+" to the merge or refuse it by voting +2 or -2 respectively."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:186
+msgid ""
+"Notifications are sent to the email address in your commit message's "
+"Signed-off-by line. Visit your `Gerrit dashboard "
+"<https://gerrit.hyperledger.org/r/#/dashboard/self>`__, to check the "
+"progress of your requests."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:191
+msgid ""
+"The history tab in Gerrit will show you the in-line comments and the "
+"author of the review."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:195
+msgid "Viewing Pending Changes"
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:197
+msgid ""
+"Find all pending changes by clicking on the ``All --> Changes`` link in "
+"the upper-left corner, or `open this link "
+"<https://gerrit.hyperledger.org/r/#/q/project:fabric>`__."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:201
+msgid ""
+"If you collaborate in multiple projects, you may wish to limit searching "
+"to the specific branch through the search bar in the upper-right side."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:204
+msgid ""
+"Add the filter *project:fabric* to limit the visible changes to only "
+"those from Hyperledger Fabric."
+msgstr ""
+
+#: ../../source/Gerrit/gerrit.rst:207
+msgid ""
+"List all current changes you submitted, or list just those changes in "
+"need of your input by clicking on ``My --> Changes`` or `open this link "
+"<https://gerrit.hyperledger.org/r/#/dashboard/self>`__"
+msgstr ""
+

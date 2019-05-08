@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 20:03+0000\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/membership/membership.md:3
+msgid ""
+"If you've read through the documentation on identity you've seen how a PKI "
+"can provide verifiable identities through a chain of trust. Now let's see "
+"how these identities can be used to represent the trusted members of a "
+"blockchain network."
+msgstr ""
+"如果您已经阅读了关于身份的文档，那么您已经看到PKI如何通过信任链提供可验证的身份。现在让我们看看如何使用这些标识来表示区块链网络的可信成员。"
+
+#: ../../source/membership/membership.md:8
+msgid ""
+"This is where a Membership Service Provider (MSP) comes into play --- it "
+"identifies which Root CAs and Intermediate CAs are trusted to define the "
+"members of a trust domain, e.g., an organization, either by listing the "
+"identities of their members, or by identifying which CAs are authorized to "
+"issue valid identities for their members, or --- as will usually be the case"
+" --- through a combination of both."
+msgstr ""
+"这就是成员服务提供者(MSP)发挥作用——它标识所信任的根CA和中间CA定义信任域的成员,例如,一个组织,要么通过列出其成员的身份，要么通过标识出哪些CA授权为他们的成员发行有效身份，或者——通常会是这样的——通过两者的结合。"
+
+#: ../../source/membership/membership.md:15
+msgid ""
+"The power of an MSP goes beyond simply listing who is a network participant "
+"or member of a channel. An MSP can identify specific roles an actor might "
+"play either within the scope of the organization the MSP represents (e.g., "
+"admins, or as members of a sub-organization group), and sets the basis for "
+"defining access privileges in the context of a network and channel (e.g., "
+"channel admins, readers, writers)."
+msgstr ""
+"MSP的强大功能不仅仅是列出谁是网络参与者或通道的成员。MSP在它代表的组织范围内确定参与者可以扮演的特定角色(如管理员,或作为子组织的成员组),并在网络上下文和通道中设置访问权限的基础(如通道管理员、读者、作家)。"
+
+#: ../../source/membership/membership.md:21
+msgid ""
+"The configuration of an MSP is advertised to all the channels where members "
+"of the corresponding organization participate (in the form of a channel "
+"MSP). In addition to the channel MSP, peers, orderers, and clients also "
+"maintain a local MSP to authenticate member messages outside the context of "
+"a channel and to define the permissions over a particular component (who has"
+" the ability to install chaincode on a peer, for example)."
+msgstr ""
+"组织MSP的配置将以通道MSP的形式通知相应组织成员所参与的所有通道。除了通道MSP，节点、排序器和客户端还维护一个本地MSP，以便在通道上下文之外对成员消息进行身份验证，并定义特定组件上的权限（例如谁有能力在peer上安装链码）。"
+
+#: ../../source/membership/membership.md:28
+msgid ""
+"In addition, an MSP can allow for the identification of a list of identities"
+" that have been revoked --- as discussed in the Identity documentation --- "
+"but we will talk about how that process also extends to an MSP."
+msgstr "此外，MSP还允许标识已被撤销的身份列表（如身份文档中所讨论的），但是我们将讨论该过程如何扩展到MSP。"
+
+#: ../../source/membership/membership.md:32
+msgid ""
+"We'll talk more about local and channel MSPs in a moment. For now let's see "
+"what MSPs do in general."
+msgstr "稍后我们将更多地讨论本地和通道MSP。现在，让我们看看MSP通常做什么。"
+
+#: ../../source/membership/membership.md:37
+msgid ""
+"An organization is a managed group of members. This can be something as big "
+"as a multinational corporation or a small as a flower shop. What's most "
+"important about organizations (or orgs) is that they manage their members "
+"under a single MSP. Note that this is different from the organization "
+"concept defined in an X.509 certificate, which we'll talk about later."
+msgstr ""
+"组织是一组受管理的成员。可以是像跨国公司这样的大公司，也可以是像花店这样的小公司。关于组织(或orgs)，最重要的是他们在一个MSP下管理他们的成员。注意，这与我们稍后将讨论的X.509证书中定义的组织概念不同。"
+
+#: ../../source/membership/membership.md:43
+msgid ""
+"The exclusive relationship between an organization and its MSP makes it "
+"sensible to name the MSP after the organization, a convention you'll find "
+"adopted in most policy configurations. For example, organization ORG1 would "
+"likely have an MSP called something like ORG1-MSP. In some cases an "
+"organization may require multiple membership groups --- for example, where "
+"channels are used to perform very different business functions between "
+"organizations. In these cases it makes sense to have multiple MSPs and name "
+"them accordingly, e.g., ORG2-MSP-NATIONAL and ORG2-MSP-GOVERNMENT, "
+"reflecting the different membership roots of trust within ORG2 in the "
+"NATIONAL sales channel compared to the GOVERNMENT regulatory channel."
+msgstr ""
+"组织及其MSP之间的排他性关系使得以组织的名称命名MSP是明智的，您会发现在大多数策略配置中都采用了这种约定。例如，组织ORG1可能有一个名为ORG1-MSP之类的MSP。在某些情况下，组织可能需要多个成员组——例如，通道用于在组织之间执行非常不同的业务功能。在这些情况下，有多个MSP并相应地命名是有意义的，例如，ORG2"
+"-MSP-NATIONAL和ORG2-MSP-GOVERNMENT，这反映了与政府监管通道相比，ORG2在全国销售渠道中的成员信任根是不同的。"
+
+#: ../../source/membership/membership.md:54
+msgid "MSP1"
+msgstr "MSP1"
+
+#: ../../source/membership/membership.md:56
+msgid ""
+"Two different MSP configurations for an organization. The first "
+"configuration shows the typical relationship between an MSP and an "
+"organization --- a single MSP defines the list of members of an "
+"organization. In the second configuration, different MSPs are used to "
+"represent different organizational groups with national, international, and "
+"governmental affiliation."
+msgstr ""
+"一个组织有两种不同的MSP配置。第一个配置显示了MSP和组织之间的典型关系——单个MSP定义了组织的成员列表。在第二种配置中，不同的MSP用于表示具有国家、国际和政府关联的不同组织组。"
+
+#: ../../source/membership/membership.md:64
+msgid ""
+"An organization is often divided up into multiple organizational units "
+"(OUs), each of which has a certain set of responsibilities. For example, the"
+" ORG1 organization might have both ORG1-MANUFACTURING and ORG1-DISTRIBUTION "
+"OUs to reflect these separate lines of business. When a CA issues X.509 "
+"certificates, the OU field in the certificate specifies the line of business"
+" to which the identity belongs."
+msgstr ""
+"一个组织通常被划分为多个组织单元(OU)，每个单元都有一组特定的职责。例如，ORG1组织可能同时具有ORG1-MANUFACTURING "
+"和ORG1-DISTRIBUTION OU来反映这些独立的业务线。当CA发出X.509证书时，证书中的OU字段指定身份所属的业务线。"
+
+#: ../../source/membership/membership.md:71
+msgid ""
+"We'll see later how OUs can be helpful to control the parts of an "
+"organization who are considered to be the members of a blockchain network. "
+"For example, only identities from the ORG1-MANUFACTURING OU might be able to"
+" access a channel, whereas ORG1-DISTRIBUTION cannot."
+msgstr ""
+"稍后我们将看到，OU怎样帮助控制组织中被认为是区块链网络成员的部分。例如，只有来自ORG1-MANUFACTURING "
+"OU的身份才能访问通道，而ORG1-DISTRIBUTION不能。"
+
+#: ../../source/membership/membership.md:76
+msgid ""
+"Finally, though this is a slight misuse of OUs, they can sometimes be used "
+"by different organizations in a consortium to distinguish each other. In "
+"such cases, the different organizations use the same Root CAs and "
+"Intermediate CAs for their chain of trust, but assign the OU field to "
+"identify members of each organization. We'll also see how to configure MSPs "
+"to achieve this later."
+msgstr ""
+"最后，尽管这是对OU的轻微滥用，但有时它们可以被联盟中的不同组织用来区分彼此。在这种情况下，不同的组织使用相同的根CA和中间CA作为它们的信任链，但是分配OU字段来标识每个组织的成员。稍后我们还将看到如何配置MSP来实现这一点。"
+
+#: ../../source/membership/membership.md:84
+msgid ""
+"MSPs appear in two places in a blockchain network: channel configuration "
+"(channel MSPs), and locally on an actor's premise (local MSP). Local MSPs "
+"are defined for clients (users) and for nodes (peers and orderers). Node "
+"local MSPs define the permissions for that node (who the peer admins are, "
+"for example). The local MSPs of the users allow the user side to "
+"authenticate itself in its transactions as a member of a channel (e.g. in "
+"chaincode transactions), or as the owner of a specific role into the system "
+"(an org admin, for example, in configuration transactions)."
+msgstr ""
+"在区块链网络中，MSP出现在两个位置:通道配置(通道MSP)和在参与者的前提下的本地位置(本地MSP)。本地MSP是为客户端(用户)和node节点(peer和排序器)定义的。节点本地MSP为该节点定义权限(例如，peer管理员是谁)。用户的本地MSP允许用户端在其交易中作为通道的成员(例如在链码交易中)或作为系统中特定角色的所有者(例如在配置交易中的某组织管理员)对自己进行身份验证。"
+
+#: ../../source/membership/membership.md:92
+msgid ""
+"Every node and user must have a local MSP defined, as it defines who has "
+"administrative or participatory rights at that level (peer admins will not "
+"necessarily be channel admins, and vice versa)."
+msgstr "每个节点和用户都必须定义一个本地MSP，因为它定义了谁拥有该级别的管理或参与权(peer管理员不一定是通道管理员，反之亦然)。"
+
+#: ../../source/membership/membership.md:96
+msgid ""
+"In contrast, channel MSPs define administrative and participatory rights at "
+"the channel level. Every organization participating in a channel must have "
+"an MSP defined for it. Peers and orderers on a channel will all share the "
+"same view of channel MSPs, and will therefore be able to correctly "
+"authenticate the channel participants. This means that if an organization "
+"wishes to join the channel, an MSP incorporating the chain of trust for the "
+"organization's members would need to be included in the channel "
+"configuration. Otherwise transactions originating from this organization's "
+"identities will be rejected."
+msgstr ""
+"相反，通道MSPs在通道级别定义管理和参与权。每个参与通道的组织都必须为其定义一个MSP。通道上的peer和排序器将共享通道MSPs的相同视图，因此能够正确地对通道参与者进行身份验证。这意味着，如果组织希望加入通道，则需要在通道配置中包含一个包含组织成员信任链的MSP。否则，来自这个组织身份的交易将被拒绝。"
+
+#: ../../source/membership/membership.md:105
+msgid ""
+"The key difference here between local and channel MSPs is not how they "
+"function --- both turn identities into roles --- but their scope."
+msgstr "本地和通道MSPs之间的关键区别不在于它们如何工作——它们都将身份转换为角色——而在于它们的作用域。"
+
+#: ../../source/membership/membership.md:108
+msgid "<a name=\"msp2img\"></a>"
+msgstr "<a name=\"msp2img\"></a>"
+
+#: ../../source/membership/membership.md:110
+msgid "MSP2"
+msgstr "MPS2"
+
+#: ../../source/membership/membership.md:112
+msgid ""
+"Local and channel MSPs. The trust domain (e.g., the organization) of each "
+"peer is defined by the peer's local MSP, e.g., ORG1 or ORG2. Representation "
+"of an organization on a channel is achieved by adding the organization's MSP"
+" to the channel configuration. For example, the channel of this figure is "
+"managed by both ORG1 and ORG2. Similar principles apply for the network, "
+"orderers, and users, but these are not shown here for simplicity."
+msgstr ""
+"本地和通道MSPs。每个peer的信任域(例如组织)由peer的本地MSP(例如ORG1或ORG2)定义。通过将组织的MSP添加到通道配置中，可以表示组织加入了通道。例如，此图中的通道由ORG1和ORG2管理。类似的原则也适用于网络、排序器和用户，但是为了简单起见，这里没有显示这些原则。"
+
+#: ../../source/membership/membership.md:119
+msgid ""
+"You may find it helpful to see how local and channel MSPs are used by seeing"
+" what happens when a blockchain administrator installs and instantiates a "
+"smart contract, as shown in the diagram above."
+msgstr "通过查看区块链管理员安装和实例化智能合约时发生的情况，您可能会发现了解如何使用本地和通道MSPs很有帮助，如上图所示。"
+
+#: ../../source/membership/membership.md:123
+msgid ""
+"An administrator B connects to the peer with an identity issued by RCA1 and "
+"stored in their local MSP. When B tries to install a smart contract on the "
+"peer, the peer checks its local MSP, ORG1-MSP, to verify that the identity "
+"of B is indeed a member of ORG1. A successful verification will allow the "
+"install command to complete successfully. Subsequently, B wishes to "
+"instantiate the smart contract on the channel. Because this is a channel "
+"operation, all organizations on the channel must agree to it. Therefore, the"
+" peer must check the MSPs of the channel before it can successfully commit "
+"this command. (Other things must happen too, but concentrate on the above "
+"for now.)"
+msgstr ""
+"管理员B使用RCA1颁发的身份连接到peer，并将其存储在本地MSP中。当B试图在peer上安装智能合约时，peer检查其本地MSP "
+"ORG1-MSP，以验证B的身份确实是ORG1的成员。成功的验证将允许安装命令成功完成。随后，B希望在通道上实例化智能合约。因为这是一个通道操作，所以通道上的所有组织都必须同意它。因此，peer必须在成功提交此命令之前检查通道的MSPs。(其他事情也必须发生，但现在先集中精力做上面的事情。)"
+
+#: ../../source/membership/membership.md:133
+msgid ""
+"Local MSPs are only defined on the file system of the node or user to which "
+"they apply. Therefore, physically and logically there is only one local MSP "
+"per node or user. However, as channel MSPs are available to all nodes in the"
+" channel, they are logically defined once in the channel configuration. "
+"However, a channel MSP is also instantiated on the file system of every node"
+" in the channel and kept synchronized via consensus. So while there is a "
+"copy of each channel MSP on the local file system of every node, logically a"
+" channel MSP resides on and is maintained by the channel or the network."
+msgstr ""
+"本地MSPs只在它们应用到的节点或用户的文件系统上的定义。因此，在物理和逻辑上，每个节点或用户只有一个本地MSP。但是，由于通道MSPs对通道中的所有节点都可用，所以它们在通道配置中逻辑上定义一次。然而，通道MSP也在通道中每个节点的文件系统上实例化，并通过协商一致保持同步。因此，虽然每个节点的本地文件系统上都有每个通道MSP的副本，但从逻辑上讲，通道MSP驻留在通道或网络上并由通道或网络维护。"
+
+#: ../../source/membership/membership.md:144
+msgid ""
+"The split between channel and local MSPs reflects the needs of organizations"
+" to administer their local resources, such as a peer or orderer nodes, and "
+"their channel resources, such as ledgers, smart contracts, and consortia, "
+"which operate at the channel or network level. It's helpful to think of "
+"these MSPs as being at different levels, with MSPs at a higher level "
+"relating to network administration concerns while MSPs at a lower level "
+"handle identity for the administration of private resources. MSPs are "
+"mandatory at every level of administration --- they must be defined for the "
+"network, channel, peer, orderer, and users."
+msgstr ""
+"通道和本地MSPs之间的分离反映了组织管理其本地资源(如peer节点或排序器节点)和通道资源(如账本、智能合约和联盟)的需求，这些资源在通道或网络级别运行。将这些MSPs看作是不同级别的是有帮助的，MSPs处于较高的级别，与网络管理相关，而处于较低级别的MSPs处理私有资源管理的身份。MSPs在每个管理级别都是强制性的——必须为网络、通道、peer、排序器和用户定义它们。"
+
+#: ../../source/membership/membership.md:154
+msgid "MSP3"
+msgstr "MSP3"
+
+#: ../../source/membership/membership.md:156
+msgid ""
+"MSP Levels. The MSPs for the peer and orderer are local, whereas the MSPs "
+"for a channel (including the network configuration channel) are shared "
+"across all participants of that channel. In this figure, the network "
+"configuration channel is administered by ORG1, but another application "
+"channel can be managed by ORG1 and ORG2. The peer is a member of and managed"
+" by ORG2, whereas ORG1 manages the orderer of the figure. ORG1 trusts "
+"identities from RCA1, whereas ORG2 trusts identities from RCA2. Note that "
+"these are administration identities, reflecting who can administer these "
+"components. So while ORG1 administers the network, ORG2.MSP does exist in "
+"the network definition."
+msgstr ""
+"MSP的级别。peer和排序器的MSPs是本地的，而通道(包括网络配置通道)的MSPs是跨该通道的所有参与者共享的。在这个图中，网络配置通道由ORG1管理，但是另一个应用程序通道可以由ORG1和ORG2管理。peer是ORG2的成员，由ORG2管理，而ORG1管理图的排序器。ORG1信任来自RCA1的身份，而ORG2信任来自RCA2的身份。注意，这些是管理员身份，反映了谁可以管理这些组件。所以当ORG1管理网络时，ORG2.MSP确实存在于网络定义中。"
+
+#: ../../source/membership/membership.md:194
+msgid ""
+"So far, you've seen that the most important element of an MSP are the "
+"specification of the root or intermediate CAs that are used to establish an "
+"actor's or node's membership in the respective organization. There are, "
+"however, more elements that are used in conjunction with these two to assist"
+" with membership functions."
+msgstr ""
+"到目前为止，您已经看到MSP最重要的元素是根或中间CA的规范，这些CA用于在各自的组织中建立参与者或节点的成员关系。但是，还有更多的因素与这两个因素一起使用，以协助成员的职能。"
+
+#: ../../source/membership/membership.md:199
+msgid "MSP4"
+msgstr "MSP4"
+
+#: ../../source/membership/membership.md:201
+msgid ""
+"The figure above shows how a local MSP is stored on a local filesystem. Even"
+" though channel MSPs are not physically structured in exactly this way, it's"
+" still a helpful way to think about them."
+msgstr ""
+"上面的图显示了本地MSP如何存储在本地文件系统中。尽管通道MSP的物理结构不是完全按照这种方式构建的，但是这样考虑它们仍然是一种有用的方式。"
+
+#: ../../source/membership/membership.md:205
+msgid ""
+"As you can see, there are nine elements to an MSP. It's easiest to think of "
+"these elements in a directory structure, where the MSP name is the root "
+"folder name with each subfolder representing different elements of an MSP "
+"configuration."
+msgstr "正如您所看到的，MSP有9个元素。在目录结构中考虑这些元素最简单，其中MSP名称是根文件夹名称，每个子文件夹表示MSP配置的不同元素。"
+
+#: ../../source/membership/membership.md:209
+msgid ""
+"Let's describe these folders in a little more detail and see why they are "
+"important."
+msgstr "让我们更详细地描述这些文件夹，看看它们为什么重要。"
+
+#: ../../source/membership/membership.md:335
+msgid ""
+"If you've read this doc as well as our doc on Identity), you should have a "
+"pretty good grasp of how identities and membership work in Hyperledger "
+"Fabric. You've seen how a PKI and MSPs are used to identify the actors "
+"collaborating in a blockchain network. You've learned how certificates, "
+"public/private keys, and roots of trust work, in addition to how MSPs are "
+"physically and logically structured."
+msgstr ""
+"如果你读过这个文档以及我们关于身份的文档，你应该对身份和会员如何在超级账本Fabric中工作有一个很好的理解。您已经了解了如何使用PKI和MSPs来识别在区块链网络中协作的参与者。您已经了解了证书、公钥/私钥和信任根的工作原理，以及MSPs的物理和逻辑结构。"

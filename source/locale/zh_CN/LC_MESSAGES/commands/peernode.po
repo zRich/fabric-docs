@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the
+# hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/commands/peernode.md:3
+msgid ""
+"The peer node command allows an administrator to start a peer node or "
+"check the status of a peer node."
+msgstr ""
+
+#: ../../source/commands/peernode.md:8
+msgid "The peer node command has the following subcommands:"
+msgstr ""
+
+#: ../../source/commands/peernode.md:41
+msgid "The following command:"
+msgstr ""
+
+#: ../../source/commands/peernode.md:47
+msgid ""
+"starts a peer node in chaincode development mode. Normally chaincode "
+"containers are started and maintained by peer. However in chaincode "
+"development mode, chaincode is built and started by the user. This mode "
+"is useful during chaincode development phase for iterative development. "
+"See more information on development mode in the chaincode tutorial."
+msgstr ""
+
+#: ../../source/commands/peernode.md:51
+msgid ""
+"<a rel=\"license\" "
+"href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative "
+"Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This"
+" work is licensed under a <a rel=\"license\" "
+"href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
+"Attribution 4.0 International License</a>."
+msgstr ""
+

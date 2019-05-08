@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 19:59+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/private-data/private-data.md:5
+msgid ""
+"In cases where a group of organizations on a channel need to keep data "
+"private from other organizations on that channel, they have the option to "
+"create a new channel comprising just the organizations who need access to "
+"the data. However, creating separate channels in each of these cases creates"
+" additional administrative overhead (maintaining chaincode versions, "
+"policies, MSPs, etc), and doesn't allow for use cases in which you want all "
+"channel participants to see a transaction while keeping a portion of the "
+"data private."
+msgstr ""
+"在某个通道上的一组组织需要对该通道上的其他组织保持数据私密的情况下，它们可以选择创建一个新通道，其中只包含需要访问数据的组织。但是，在每一种情况下创建单独的通道会产生额外的管理开销(维护链码版本、策略、MSPs等)，并且不允许在保持部分数据私有的同时，让所有通道参与者都看到交易。"
+
+#: ../../source/private-data/private-data.md:13
+msgid ""
+"That's why, starting in v1.2, Fabric offers the ability to create private "
+"data collections, which allow a defined subset of organizations on a channel"
+" the ability to endorse, commit, or query private data without having to "
+"create a separate channel."
+msgstr ""
+"这就是为什么从v1.2开始，Fabric就提供了创建私有数据集合的能力，这使得通道上定义的组织子集能够背书、提交或查询私有数据，而不必创建单独的通道。"
+
+#: ../../source/private-data/private-data.md:20
+msgid "A collection is the combination of two elements:"
+msgstr ""
+"集合是两个元素的组合:\n"
+"1. 实际的私有数据，通过gossip协议发送p2p消息到只有授权查看它的组织。此数据存储在授权组织peer上的私有状态数据库中(有时称为“侧”数据库，或“侧DB”)，可以从这些授权peer上的链码访问这些数据库。这里不涉及排序服务，也看不到私有数据。注意，由于gossip将私有数据p2p分发到授权的组织中，因此需要在通道上设置锚点，并在每个peer上配置CORE_PEER_GOSSIP_EXTERNALENDPOINT，以便引导跨组织通信。\n"
+"2. 该数据的哈希，它被背书、排序并写入通道上每个peer的账本。哈希用作交易的证据，用于状态验证，并可用于审计目的。"
+
+#: ../../source/private-data/private-data.md:37
+msgid ""
+"The following diagram illustrates the ledger contents of a peer authorized "
+"to have private data and one which is not."
+msgstr "下图说明了一个授权了私有数据peer和一个无权peer的账本内容。"
+
+#: ../../source/private-data/private-data.md:40
+#: ../../source/private-data/private-data.md:89
+#: ../../source/private-data/private-data.md:98
+msgid "private-data.private-data"
+msgstr "private-data.private-data"
+
+#: ../../source/private-data/private-data.md:42
+msgid ""
+"Collection members may decide to share the private data with other parties "
+"if they get into a dispute or if they want to transfer the asset to a third "
+"party. The third party can then compute the hash of the private data and see"
+" if it matches the state on the channel ledger, proving that the state "
+"existed between the collection members at a certain point in time."
+msgstr ""
+"如果集合成员陷入争议，或者如果他们想将资产转让给第三方，则可以决定与其他方共享私有数据。然后，第三方可以计算私有数据的散列，并查看它是否与通道账本上的状态匹配，从而证明在某个时间点上集合成员之间的状态存在。"
+
+#: ../../source/private-data/private-data.md:62
+msgid "Consider a group of five organizations on a channel who trade produce:"
+msgstr "考虑一个由5个组织组成的通道，他们交易农产品:"
+
+#: ../../source/private-data/private-data.md:70
+msgid ""
+"The Distributor might want to make private transactions with the Farmer and "
+"Shipper to keep the terms of the trades confidential from the Wholesaler and"
+" the Retailer (so as not to expose the markup they're charging)."
+msgstr "分销商可能希望与农场主和发货人进行私人交易，以对批发商和零售商保密交易条款(以免暴露他们收取的加价)。"
+
+#: ../../source/private-data/private-data.md:75
+msgid ""
+"The Distributor may also want to have a separate private data relationship "
+"with the Wholesaler because it charges them a lower price than it does the "
+"Retailer."
+msgstr "分销商还可能希望与批发商建立单独的私有数据关系，因为它向批发商收取的价格比零售商低。"
+
+#: ../../source/private-data/private-data.md:79
+msgid ""
+"The Wholesaler may also want to have a private data relationship with the "
+"Retailer and the Shipper."
+msgstr "批发商还可能希望与零售商和发货人建立私有数据关系。"
+
+#: ../../source/private-data/private-data.md:82
+msgid ""
+"Rather than defining many small channels for each of these relationships, "
+"multiple private data collections (PDC) can be defined to share private data"
+" between:"
+msgstr "不同于为这些关系定义许多小通道，可以定义多个私有数据集合(PDC)在以下各方之间共享私有数据:"
+
+#: ../../source/private-data/private-data.md:91
+msgid ""
+"Using this example, peers owned by the Distributor will have multiple "
+"private databases inside their ledger which includes the private data from "
+"the Distributor, Farmer and Shipper relationship and the Distributor and "
+"Wholesaler relationship. Because these databases are kept separate from the "
+"database that holds the channel ledger, private data is sometimes referred "
+"to as \"SideDB\"."
+msgstr ""
+"使用此示例，分销商拥有的peer在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为“侧DB”。"
+
+#: ../../source/private-data/private-data.md:102
+msgid ""
+"When private data collections are referenced in chaincode, the transaction "
+"flow is slightly different in order to protect the confidentiality of the "
+"private data as transactions are proposed, endorsed, and committed to the "
+"ledger."
+msgstr "当在链码中引用私有数据集合时，为了保护私有数据的机密性，在提案、背书的和提交到账本时，交易流程略有不同。"
+
+#: ../../source/private-data/private-data.md:106
+msgid ""
+"For details on transaction flows that don't use private data refer to our "
+"documentation on transaction flow."
+msgstr "有关不使用私有数据的交易流程的详细信息，请参阅我们关于交易流程的文档。"
+
+#: ../../source/private-data/private-data.md:145
+msgid ""
+"For very sensitive data, even the parties sharing the private data might "
+"want --- or might be required by government regulations --- to periodically "
+"\"purge\" the data on their peers, leaving behind a hash of the data on the "
+"blockchain to serve as immutable evidence of the private data."
+msgstr ""
+"对于非常敏感的数据，即使共享私有数据的各方也可能希望(或政府法规要求)定期“清除”其peer的数据，留下区块链上的数据哈希作为私有数据的不可变证据。"
+
+#: ../../source/private-data/private-data.md:150
+msgid ""
+"In some of these cases, the private data only needs to exist on the peer's "
+"private database until it can be replicated into a database external to the "
+"peer's blockchain. The data might also only need to exist on the peers until"
+" a chaincode business process is done with it (trade settled, contract "
+"fulfilled, etc)."
+msgstr ""
+"在某些情况下，私有数据只需要存在于peer的私有数据库上，直到可以将其复制到peer区块链外部的数据库中为止。数据也可能只需要存在于peer节点上，直到使用它完成链码业务流程(交易结算、合同履行等)。"
+
+#: ../../source/private-data/private-data.md:155
+msgid ""
+"To support these use cases, private data can be purged if it has not been "
+"modified for a configurable number of blocks. Purged private data cannot be "
+"queried from chaincode, and is not available to other requesting peers."
+msgstr "为了支持这些用例，如果私有数据没有为可配置的区块数量修改，则可以清除它。清除后的私有数据不能从链码查询，并且对其他的peer请求不可用。"
+
+#: ../../source/private-data/private-data.md:161
+msgid ""
+"For more details on collection definitions, and other low level information "
+"about private data and collections, refer to the private data reference "
+"topic."
+msgstr "有关集合定义的更多详细信息，以及关于私有数据和集合的其他低层信息，请参阅私有数据引用主题。"

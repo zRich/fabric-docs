@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, hyperledger
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hyperledger-fabricdocs master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 20:00+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/developapps/developing_applications.rst:2
+msgid "Developing Applications"
+msgstr "开发应用程序"
+
+#: ../../source/developapps/developing_applications.rst:15
+msgid ""
+"This topic covers how to develop a client application and smart contract to "
+"solve a business problem using Hyperledger Fabric. In a real world "
+"**Commercial Paper** scenario, involving multiple organizations, you'll "
+"learn about all the concepts and tasks required to accomplish this goal. We "
+"assume that the blockchain network is already available."
+msgstr ""
+"本主题介绍如何开发客户端应用程序和智能合约，以使用超级账本Fabric解决业务问题。在一个真实的**商业票据**场景中，涉及多个组织，您将了解完成此目标所需的所有概念和任务。我们假设区块链网络已经可用。"
+
+#: ../../source/developapps/developing_applications.rst:21
+msgid "The topic is designed for multiple audiences:"
+msgstr "该主题是为多个受众设计的:"
+
+#: ../../source/developapps/developing_applications.rst:23
+msgid "Solution and application architect"
+msgstr "解决方案和应用程序架构师"
+
+#: ../../source/developapps/developing_applications.rst:24
+msgid "Client application developer"
+msgstr "客户端应用程序开发者"
+
+#: ../../source/developapps/developing_applications.rst:25
+msgid "Smart contract developer"
+msgstr "智能合约开发者"
+
+#: ../../source/developapps/developing_applications.rst:26
+msgid "Business professional"
+msgstr "业务专家"
+
+#: ../../source/developapps/developing_applications.rst:28
+msgid ""
+"You can choose to read the topic in order, or you can select individual "
+"sections as appropriate. Individual topic sections are marked according to "
+"reader relevance, so whether you're looking for business or technical "
+"information it'll be clear when a topic is for you."
+msgstr ""
+"您可以选择按顺序阅读主题，也可以选择适当的各个部分。每个主题部分都根据读者的相关性进行标记，因此无论您是在寻找业务信息还是技术信息，当一个主题适合您时，就会很清楚。"
+
+#: ../../source/developapps/developing_applications.rst:33
+msgid ""
+"The topic follows a typical software development lifecycle. It starts with "
+"business requirements, and then covers all the major technical activities "
+"required to develop an application and smart contract to meet these "
+"requirements."
+msgstr "本主题遵循典型的软件开发生命周期。它从业务需求开始，然后涵盖开发应用程序和智能合约所需的所有主要技术活动，以满足这些需求。"
+
+#: ../../source/developapps/developing_applications.rst:38
+msgid ""
+"If you'd prefer, you can try out the commercial paper scenario immediately, "
+"following an abbreviated explanation, by running the commercial paper "
+"`tutorial <../tutorial/commercial_paper.html>`_. You can return to this "
+"topic when you need fuller explanations of the concepts introduced in the "
+"tutorial."
+msgstr ""
+"如果您愿意，您可以通过运行商业票据 "
+"`教程<../tutorial/commercial_paper.html>`_来立即尝试商业票据场景。当您需要对本教程中介绍的概念进行更全面的解释时，您可以回到这个主题。"
