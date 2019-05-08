@@ -1,26 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 19:57+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/enable_tls.rst:2
 msgid "Securing Communication With Transport Layer Security (TLS)"
-msgstr ""
+msgstr "使用传输层安全性(TLS)确保安全通信"
 
 #: ../../source/enable_tls.rst:4
 msgid ""
@@ -28,316 +31,333 @@ msgid ""
 "communication can use both one-way (server only) and two-way (server and "
 "client) authentication."
 msgstr ""
+"Fabric支持使用TLS在node节点之间进行安全通信。TLS通信既可以使用单向(仅限服务器)身份验证，也可以使用双向(服务器和客户机)身份验证。"
 
 #: ../../source/enable_tls.rst:8
 msgid "Configuring TLS for peers nodes"
-msgstr ""
+msgstr "为peer节点配置TLS"
 
 #: ../../source/enable_tls.rst:10
 msgid ""
 "A peer node is both a TLS server and a TLS client. It is the former when "
-"another peer node, application, or the CLI makes a connection to it and "
-"the latter when it makes a connection to another peer node or orderer."
+"another peer node, application, or the CLI makes a connection to it and the "
+"latter when it makes a connection to another peer node or orderer."
 msgstr ""
+"peer节点既是TLS服务器，也是TLS客户端。当另一个peer节点、应用程序或CLI与它建立连接时是前者，当它与另一个peer节点或排序者建立连接时是后者。"
 
 #: ../../source/enable_tls.rst:14
 msgid ""
 "To enable TLS on a peer node set the following peer configuration "
 "properties:"
-msgstr ""
+msgstr "要在peer节点上启用TLS，请设置以下peer节点配置属性:"
 
 #: ../../source/enable_tls.rst:16
 msgid "``peer.tls.enabled`` = ``true``"
-msgstr ""
+msgstr "``peer.tls.enabled`` = ``true``"
 
 #: ../../source/enable_tls.rst:17
 msgid ""
-"``peer.tls.cert.file`` = fully qualified path of the file that contains "
-"the TLS server certificate"
-msgstr ""
+"``peer.tls.cert.file`` = fully qualified path of the file that contains the "
+"TLS server certificate"
+msgstr "``peer.tls.cert.file`` =包含TLS服务器证书的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:19
 msgid ""
-"``peer.tls.key.file`` = fully qualified path of the file that contains "
-"the TLS server private key"
-msgstr ""
+"``peer.tls.key.file`` = fully qualified path of the file that contains the "
+"TLS server private key"
+msgstr "``peer.tls.key.file`` = 包含TLS服务器私钥的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:21
 msgid ""
-"``peer.tls.rootcert.file`` = fully qualified path of the file that "
-"contains the certificate chain of the certificate authority(CA) that "
-"issued TLS server certificate"
-msgstr ""
+"``peer.tls.rootcert.file`` = fully qualified path of the file that contains "
+"the certificate chain of the certificate authority(CA) that issued TLS "
+"server certificate"
+msgstr "``peer.tls.rootcert.file`` = 包含颁发TLS服务器证书的证书颁发机构(CA)的证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:24
 msgid ""
-"By default, TLS client authentication is turned off when TLS is enabled "
-"on a peer node. This means that the peer node will not verify the "
-"certificate of a client (another peer node, application, or the CLI) "
-"during a TLS handshake. To enable TLS client authentication on a peer "
-"node, set the peer configuration property ``peer.tls.clientAuthRequired``"
-" to ``true`` and set the ``peer.tls.clientRootCAs.files`` property to the"
-" CA chain file(s) that contain(s) the CA certificate chain(s) that issued"
-" TLS certificates for your organization's clients."
+"By default, TLS client authentication is turned off when TLS is enabled on a"
+" peer node. This means that the peer node will not verify the certificate of"
+" a client (another peer node, application, or the CLI) during a TLS "
+"handshake. To enable TLS client authentication on a peer node, set the peer "
+"configuration property ``peer.tls.clientAuthRequired`` to ``true`` and set "
+"the ``peer.tls.clientRootCAs.files`` property to the CA chain file(s) that "
+"contain(s) the CA certificate chain(s) that issued TLS certificates for your"
+" organization's clients."
 msgstr ""
+"默认情况下，当在peer节点上启用TLS时，将关闭TLS客户机身份验证。这意味着在TLS握手期间，peer节点不会验证客户机(另一个peer节点、应用程序或CLI)的证书。要在peer节点上启用TLS客户机身份验证，请设置peer配置属性``peer.tls.clientAuthRequired``"
+" 为``true`` "
+"，并设置``peer.tls.clientRootCAs.files``属性指向CA链文件，该文件包含为您组织的客户端颁发TLS证书的CA证书链。"
 
 #: ../../source/enable_tls.rst:32
 msgid ""
-"By default, a peer node will use the same certificate and private key "
-"pair when acting as a TLS server and client.  To use a different "
-"certificate and private key pair for the client side, set the "
-"``peer.tls.clientCert.file`` and ``peer.tls.clientKey.file`` "
-"configuration properties to the fully qualified path of the client "
-"certificate and key file, respectively."
+"By default, a peer node will use the same certificate and private key pair "
+"when acting as a TLS server and client.  To use a different certificate and "
+"private key pair for the client side, set the ``peer.tls.clientCert.file`` "
+"and ``peer.tls.clientKey.file`` configuration properties to the fully "
+"qualified path of the client certificate and key file, respectively."
 msgstr ""
+"默认情况下，peer节点在充当TLS服务器和客户端时将使用相同的证书和私钥对。要为客户端使用不同的证书和私钥对，请设置``peer.tls.clientCert.file``"
+" 和``peer.tls.clientKey.file`` 配置属性分别指向客户端证书和密钥文件的完全限定路径。"
 
 #: ../../source/enable_tls.rst:38 ../../source/enable_tls.rst:79
 msgid ""
-"TLS with client authentication can also be enabled by setting the "
-"following environment variables:"
-msgstr ""
+"TLS with client authentication can also be enabled by setting the following "
+"environment variables:"
+msgstr "客户端认证的TLS也可以通过设置以下环境变量来启用:"
 
 #: ../../source/enable_tls.rst:41 ../../source/enable_tls.rst:99
 msgid "``CORE_PEER_TLS_ENABLED`` = ``true``"
-msgstr ""
+msgstr "``CORE_PEER_TLS_ENABLED`` = ``true``"
 
 #: ../../source/enable_tls.rst:42
 msgid ""
-"``CORE_PEER_TLS_CERT_FILE`` = fully qualified path of the server "
-"certificate"
-msgstr ""
+"``CORE_PEER_TLS_CERT_FILE`` = fully qualified path of the server certificate"
+msgstr "``CORE_PEER_TLS_CERT_FILE`` = 服务器证书的完全限定路径"
 
 #: ../../source/enable_tls.rst:43
 msgid ""
-"``CORE_PEER_TLS_KEY_FILE`` = fully qualified path of the server private "
-"key"
-msgstr ""
+"``CORE_PEER_TLS_KEY_FILE`` = fully qualified path of the server private key"
+msgstr "``CORE_PEER_TLS_KEY_FILE`` = 服务器私钥的完全限定路径"
 
 #: ../../source/enable_tls.rst:44
 msgid ""
-"``CORE_PEER_TLS_ROOTCERT_FILE`` = fully qualified path of the CA chain "
-"file"
-msgstr ""
+"``CORE_PEER_TLS_ROOTCERT_FILE`` = fully qualified path of the CA chain file"
+msgstr "``CORE_PEER_TLS_ROOTCERT_FILE`` = CA链文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:45 ../../source/enable_tls.rst:106
 msgid "``CORE_PEER_TLS_CLIENTAUTHREQUIRED`` = ``true``"
-msgstr ""
+msgstr "``CORE_PEER_TLS_CLIENTAUTHREQUIRED`` = ``true``"
 
 #: ../../source/enable_tls.rst:46
 msgid ""
-"``CORE_PEER_TLS_CLIENTROOTCAS_FILES`` = fully qualified path of the CA "
-"chain file"
-msgstr ""
+"``CORE_PEER_TLS_CLIENTROOTCAS_FILES`` = fully qualified path of the CA chain"
+" file"
+msgstr "``CORE_PEER_TLS_CLIENTROOTCAS_FILES`` = CA链文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:47 ../../source/enable_tls.rst:107
 msgid ""
 "``CORE_PEER_TLS_CLIENTCERT_FILE`` = fully qualified path of the client "
 "certificate"
-msgstr ""
+msgstr "``CORE_PEER_TLS_CLIENTCERT_FILE`` = 客户端证书的完全限定路径"
 
 #: ../../source/enable_tls.rst:48
-msgid "``CORE_PEER_TLS_CLIENTKEY_FILE`` = fully qualified path of the client key"
-msgstr ""
+msgid ""
+"``CORE_PEER_TLS_CLIENTKEY_FILE`` = fully qualified path of the client key"
+msgstr "``CORE_PEER_TLS_CLIENTKEY_FILE`` = 客户端密钥的完全限定路径"
 
 #: ../../source/enable_tls.rst:50
 msgid ""
-"When client authentication is enabled on a peer node, a client is "
-"required to send its certificate during a TLS handshake. If the client "
-"does not send its certificate, the handshake will fail and the peer will "
-"close the connection."
-msgstr ""
+"When client authentication is enabled on a peer node, a client is required "
+"to send its certificate during a TLS handshake. If the client does not send "
+"its certificate, the handshake will fail and the peer will close the "
+"connection."
+msgstr "当在peer节点上启用客户端身份验证时，需要客户端在TLS握手期间发送其证书。如果客户端不发送证书，握手将失败，peer端将关闭连接。"
 
 #: ../../source/enable_tls.rst:54
 msgid ""
 "When a peer joins a channel, root CA certificate chains of the channel "
-"members are read from the config block of the channel and are added to "
-"the TLS client and server root CAs data structure. So, peer to peer "
+"members are read from the config block of the channel and are added to the "
+"TLS client and server root CAs data structure. So, peer to peer "
 "communication, peer to orderer communication should work seamlessly."
 msgstr ""
+"当peer加入通道时，通道成员的根CA证书链将从通道的配置区块中读取，并添加到TLS客户端和服务器根CA数据结构中。因此，peer对peer通信，peer对排序器通信应该无缝地工作。"
 
 #: ../../source/enable_tls.rst:60
 msgid "Configuring TLS for orderer nodes"
-msgstr ""
+msgstr "为排序器节点配置TLS"
 
 #: ../../source/enable_tls.rst:62
 msgid ""
-"To enable TLS on an orderer node, set the following orderer configuration"
-" properties:"
-msgstr ""
+"To enable TLS on an orderer node, set the following orderer configuration "
+"properties:"
+msgstr "要在排序器节点上启用TLS，请设置以下排序器配置属性:"
 
 #: ../../source/enable_tls.rst:64
 msgid "``General.TLS.Enabled`` = ``true``"
-msgstr ""
+msgstr "``General.TLS.Enabled`` = ``true``"
 
 #: ../../source/enable_tls.rst:65
 msgid ""
-"``General.TLS.PrivateKey`` = fully qualified path of the file that "
-"contains the server private key"
-msgstr ""
+"``General.TLS.PrivateKey`` = fully qualified path of the file that contains "
+"the server private key"
+msgstr "``General.TLS.PrivateKey`` = 包含服务器私钥的文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:67
 msgid ""
-"``General.TLS.Certificate`` = fully qualified path of the file that "
-"contains the server certificate"
-msgstr ""
+"``General.TLS.Certificate`` = fully qualified path of the file that contains"
+" the server certificate"
+msgstr "``General.TLS.Certificate`` = 包含服务器证书的文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:69
 msgid ""
-"``General.TLS.RootCAs`` = fully qualified path of the file that contains "
-"the certificate chain of the CA that issued TLS server certificate"
-msgstr ""
+"``General.TLS.RootCAs`` = fully qualified path of the file that contains the"
+" certificate chain of the CA that issued TLS server certificate"
+msgstr "``General.TLS.RootCAs`` = 包含颁发TLS服务器证书的CA证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:72
 msgid ""
-"By default, TLS client authentication is turned off on orderer, as is the"
-" case with peer. To enable TLS client authentication, set the following "
+"By default, TLS client authentication is turned off on orderer, as is the "
+"case with peer. To enable TLS client authentication, set the following "
 "config properties:"
-msgstr ""
+msgstr "默认情况下，TLS客户端身份验证在排序器上是关闭的，peer也是如此。要启用TLS客户端身份验证，请设置以下配置属性:"
 
 #: ../../source/enable_tls.rst:75
 msgid "``General.TLS.ClientAuthRequired`` = ``true``"
-msgstr ""
+msgstr "``General.TLS.ClientAuthRequired`` = ``true``"
 
 #: ../../source/enable_tls.rst:76
 msgid ""
 "``General.TLS.ClientRootCAs`` = fully qualified path of the file that "
 "contains the certificate chain of the CA that issued the TLS server "
 "certificate"
-msgstr ""
+msgstr "``General.TLS.ClientRootCAs`` = 包含颁发TLS服务器证书的CA证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:82
 msgid "``ORDERER_GENERAL_TLS_ENABLED`` = ``true``"
-msgstr ""
+msgstr "``ORDERER_GENERAL_TLS_ENABLED`` = ``true``"
 
 #: ../../source/enable_tls.rst:83
 msgid ""
-"``ORDERER_GENERAL_TLS_PRIVATEKEY`` = fully qualified path of the file "
-"that contains the server private key"
-msgstr ""
+"``ORDERER_GENERAL_TLS_PRIVATEKEY`` = fully qualified path of the file that "
+"contains the server private key"
+msgstr "``ORDERER_GENERAL_TLS_PRIVATEKEY`` = 包含服务器私钥的文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:85
 msgid ""
-"``ORDERER_GENERAL_TLS_CERTIFICATE`` = fully qualified path of the file "
-"that contains the server certificate"
-msgstr ""
+"``ORDERER_GENERAL_TLS_CERTIFICATE`` = fully qualified path of the file that "
+"contains the server certificate"
+msgstr "``ORDERER_GENERAL_TLS_CERTIFICATE`` = 包含服务器证书的文件的完全限定路径"
 
 #: ../../source/enable_tls.rst:87
 msgid ""
 "``ORDERER_GENERAL_TLS_ROOTCAS`` = fully qualified path of the file that "
-"contains the certificate chain of the CA that issued TLS server "
-"certificate"
-msgstr ""
+"contains the certificate chain of the CA that issued TLS server certificate"
+msgstr "``ORDERER_GENERAL_TLS_ROOTCAS`` = 包含颁发TLS服务器证书的CA证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:89
 msgid "``ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED`` = ``true``"
-msgstr ""
+msgstr "``ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED`` = ``true``"
 
 #: ../../source/enable_tls.rst:90
 msgid ""
 "``ORDERER_GENERAL_TLS_CLIENTROOTCAS`` = fully qualified path of the file "
 "that contains the certificate chain of the CA that issued TLS server "
 "certificate"
-msgstr ""
+msgstr "``ORDERER_GENERAL_TLS_CLIENTROOTCAS`` = 包含颁发TLS服务器证书的CA证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:94
 msgid "Configuring TLS for the peer CLI"
-msgstr ""
+msgstr "为peer CLI配置TLS"
 
 #: ../../source/enable_tls.rst:96
 msgid ""
 "The following environment variables must be set when running peer CLI "
 "commands against a TLS enabled peer node:"
-msgstr ""
+msgstr "启用TLS的peer节点运行peer CLI命令时，必须设置以下环境变量:"
 
 #: ../../source/enable_tls.rst:100
 msgid ""
 "``CORE_PEER_TLS_ROOTCERT_FILE`` = fully qualified path of the file that "
 "contains cert chain of the CA that issued the TLS server cert"
-msgstr ""
+msgstr "``CORE_PEER_TLS_ROOTCERT_FILE`` = 包含发出TLS服务器证书的CA证书链的文件完全限定路径"
 
 #: ../../source/enable_tls.rst:103
 msgid ""
 "If TLS client authentication is also enabled on the remote server, the "
 "following variables must to be set in addition to those above:"
-msgstr ""
+msgstr "如果在远程服务器上也启用了TLS客户端身份验证，除了上述变量外，还必须设置以下变量:"
 
 #: ../../source/enable_tls.rst:108
 msgid ""
 "``CORE_PEER_TLS_CLIENTKEY_FILE`` = fully qualified path of the client "
 "private key"
-msgstr ""
+msgstr "``CORE_PEER_TLS_CLIENTKEY_FILE`` = 客户端私钥的完全限定路径"
 
 #: ../../source/enable_tls.rst:110
 msgid ""
-"When running a command that connects to orderer service, like `peer "
-"channel <create|update|fetch>` or `peer chaincode <invoke|instantiate>`, "
-"following command line arguments must also be specified if TLS is enabled"
-" on the orderer:"
+"When running a command that connects to orderer service, like `peer channel "
+"<create|update|fetch>` or `peer chaincode <invoke|instantiate>`, following "
+"command line arguments must also be specified if TLS is enabled on the "
+"orderer:"
 msgstr ""
+"当运行连接到排序服务的命令时，例如 `peer channel <create|update|fetch>` 或 `peer chaincode "
+"<invoke|instantiate>`，如果在排序器上启用了TLS，还必须指定以下命令行参数:"
 
 #: ../../source/enable_tls.rst:114
 msgid "--tls"
-msgstr ""
+msgstr "--tls"
 
 #: ../../source/enable_tls.rst:115
 msgid ""
-"--cafile <fully qualified path of the file that contains cert chain of "
-"the orderer CA>"
+"--cafile <fully qualified path of the file that contains cert chain of the "
+"orderer CA>"
 msgstr ""
+"--cafile <fully qualified path of the file that contains cert chain of the "
+"orderer CA>"
 
 #: ../../source/enable_tls.rst:117
 msgid ""
 "If TLS client authentication is enabled on the orderer, the following "
 "arguments must be specified as well:"
-msgstr ""
+msgstr "如果在排序器上启用了TLS客户端身份验证，还必须指定以下参数:"
 
 #: ../../source/enable_tls.rst:120
 msgid "--clientauth"
-msgstr ""
+msgstr "--clientauth"
 
 #: ../../source/enable_tls.rst:121
 msgid ""
-"--keyfile <fully qualified path of the file that contains the client "
-"private key>"
+"--keyfile <fully qualified path of the file that contains the client private"
+" key>"
 msgstr ""
+"--keyfile <fully qualified path of the file that contains the client private"
+" key>"
 
 #: ../../source/enable_tls.rst:122
 msgid ""
 "--certfile <fully qualified path of the file that contains the client "
 "certificate>"
 msgstr ""
+"--certfile <fully qualified path of the file that contains the client "
+"certificate>"
 
 #: ../../source/enable_tls.rst:126
 msgid "Debugging TLS issues"
-msgstr ""
+msgstr "调试TLS问题"
 
 #: ../../source/enable_tls.rst:128
 msgid ""
 "Before debugging TLS issues, it is advisable to enable ``GRPC debug`` on "
-"both the TLS client and the server side to get additional information. To"
-" enable ``GRPC debug``, set the environment variable "
-"``FABRIC_LOGGING_SPEC`` to include ``grpc=debug``. For example, to set "
-"the default logging level to ``INFO`` and the GRPC logging level to "
-"``DEBUG``, set the logging specification to ``grpc=debug:info``."
+"both the TLS client and the server side to get additional information. To "
+"enable ``GRPC debug``, set the environment variable ``FABRIC_LOGGING_SPEC`` "
+"to include ``grpc=debug``. For example, to set the default logging level to "
+"``INFO`` and the GRPC logging level to ``DEBUG``, set the logging "
+"specification to ``grpc=debug:info``."
 msgstr ""
+"在调试TLS问题之前，建议在TLS客户端和服务器端都启用``GRPC debug``，以获取更多信息。要启用``GRPC "
+"debug``，请将环境变量``FABRIC_LOGGING_SPEC``设置为包含``grpc=debug``。例如，要将默认日志级别设置为``INFO``，将GRPC日志级别设置为'``DEBUG``，请将日志规范设置为``grpc=debug:info``。"
 
 #: ../../source/enable_tls.rst:134
 msgid ""
-"If you see the error message ``remote error: tls: bad certificate`` on "
-"the client side, it usually means that the TLS server has enabled client "
+"If you see the error message ``remote error: tls: bad certificate`` on the "
+"client side, it usually means that the TLS server has enabled client "
 "authentication and the server either did not receive the correct client "
-"certificate or it received a client certificate that it does not trust. "
-"Make sure the client is sending its certificate and that it has been "
-"signed by one of the CA certificates trusted by the peer or orderer node."
+"certificate or it received a client certificate that it does not trust. Make"
+" sure the client is sending its certificate and that it has been signed by "
+"one of the CA certificates trusted by the peer or orderer node."
 msgstr ""
+"如果在客户端看到错误消息``remote error: tls: bad certificate`` "
+"，这通常意味着TLS服务器启用了客户端身份验证，而服务器要么没有收到正确的客户端证书，要么收到了它不信任的客户端证书。确保客户端正在发送它的证书，并且它已经由peer节点或排序节点信任的CA证书之一签名。"
 
 #: ../../source/enable_tls.rst:140
 msgid ""
-"If you see the error message ``remote error: tls: bad certificate`` in "
-"your chaincode logs, ensure that your chaincode has been built using the "
-"chaincode shim provided with Fabric v1.1 or newer. If your chaincode does"
-" not contain a vendored copy of the shim, deleting the chaincode "
-"container and restarting its peer will rebuild the chaincode container "
-"using the current shim version."
+"If you see the error message ``remote error: tls: bad certificate`` in your "
+"chaincode logs, ensure that your chaincode has been built using the "
+"chaincode shim provided with Fabric v1.1 or newer. If your chaincode does "
+"not contain a vendored copy of the shim, deleting the chaincode container "
+"and restarting its peer will rebuild the chaincode container using the "
+"current shim version."
 msgstr ""
-
+"如果您在您的链码日志中看到错误消息``remote error: tls: bad certificate``，请确保您的链码是使用Fabric "
+"v1.1或更新版本提供的链码shim构建的。如果您的链码不包含shim的vendored副本，那么删除链码容器并重新启动它的peer程序将使用当前shim版本重新构建链码容器。"

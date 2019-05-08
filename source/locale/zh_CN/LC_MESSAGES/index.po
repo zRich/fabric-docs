@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ../../source/index.rst:2
+#: ../../source/index.rst:1
+msgid ""
+"Please make sure you are looking at the documentation that matches the "
+"version of the software you are using. See the version label at the top "
+"of the navigation panel on the left. You can change it using selector at "
+"the bottom of that navigation panel."
+msgstr ""
+
+#: ../../source/index.rst:8
 msgid "A Blockchain Platform for the Enterprise"
 msgstr ""
 
-#: ../../source/index.rst:6
+#: ../../source/index.rst:12
 msgid ""
 "Enterprise grade permissioned distributed ledger platform that offers "
 "modularity and versatility for a broad set of industry use cases."
 msgstr ""
 
-#: ../../source/index.rst:34
+#: ../../source/index.rst:40
 msgid ""
 "If you have questions not addressed by this documentation, or run into "
 "issues with any of the tutorials, please visit the :doc:`questions` page "

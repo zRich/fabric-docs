@@ -1,36 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 19:56+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/channel_update_tutorial.rst:2
 msgid "Adding an Org to a Channel"
-msgstr ""
+msgstr "向通道添加组织"
 
 #: ../../source/channel_update_tutorial.rst:4
 msgid ""
 "Ensure that you have downloaded the appropriate images and binaries as "
-"outlined in :doc:`install` and :doc:`prereqs` that conform to the version"
-" of this documentation (which can be found at the bottom of the table of "
-"contents to the left). In particular, your version of the ``fabric-"
-"samples`` folder must include the ``eyfn.sh`` (\"Extending Your First "
-"Network\") script and its related scripts."
+"outlined in :doc:`install` and :doc:`prereqs` that conform to the version of"
+" this documentation (which can be found at the bottom of the table of "
+"contents to the left). In particular, your version of the ``fabric-samples``"
+" folder must include the ``eyfn.sh`` (\"Extending Your First Network\") "
+"script and its related scripts."
 msgstr ""
+"确保您已经下载了适当的镜像和二进制文件，如 :doc:`install` "
+"和:doc:`prereqs`中所述，这些文件都符合本文档的版本(可以在左边目录的底部找到)。特别是，“fabric-"
+"samples”文件夹的版本必须包含``eyfn.sh``(“扩展您的第一个网络”)脚本及其相关脚本。"
 
 #: ../../source/channel_update_tutorial.rst:11
 msgid ""
@@ -40,272 +46,298 @@ msgid ""
 "BYFN. It assumes a strong understanding of BYFN, including the usage and "
 "functionality of the aforementioned utilities."
 msgstr ""
+"本教程作为对:doc:`build_network` "
+"(BYFN)教程的扩展，并将演示如何向BYFN自动生成的应用程序通道(``mychannel``)添加一个新的组织``Org3``。它假设对BYFN有很好的理解，包括前面提到的实用程序的用法和功能。"
 
 #: ../../source/channel_update_tutorial.rst:17
 msgid ""
-"While we will focus solely on the integration of a new organization here,"
-" the same approach can be adopted when performing other channel "
-"configuration updates (updating modification policies or altering batch "
-"size, for example). To learn more about the process and possibilities of "
-"channel config updates in general, check out :doc:`config_update`). It's "
-"also worth noting that channel configuration updates like the one "
-"demonstrated here will usually be the responsibility of an organization "
-"admin (rather than a chaincode or application developer)."
+"While we will focus solely on the integration of a new organization here, "
+"the same approach can be adopted when performing other channel configuration"
+" updates (updating modification policies or altering batch size, for "
+"example). To learn more about the process and possibilities of channel "
+"config updates in general, check out :doc:`config_update`). It's also worth "
+"noting that channel configuration updates like the one demonstrated here "
+"will usually be the responsibility of an organization admin (rather than a "
+"chaincode or application developer)."
 msgstr ""
+"虽然我们在这里只关注新组织的集成，但是在执行其他通道配置更新(例如，更新修改策略或更改批大小)时也可以采用相同的方法。要了解更多关于通道配置更新的过程和可能性，请查看:doc:`config_update`)。同样值得注意的是，像这里演示的通道配置更新通常由组织管理员(而不是链码或应用程序开发人员)负责。"
 
 #: ../../source/channel_update_tutorial.rst:25
 msgid ""
 "Make sure the automated ``byfn.sh`` script runs without error on your "
 "machine before continuing. If you have exported your binaries and the "
-"related tools (``cryptogen``, ``configtxgen``, etc) into your PATH "
-"variable, you'll be able to modify the commands accordingly without "
-"passing the fully qualified path."
+"related tools (``cryptogen``, ``configtxgen``, etc) into your PATH variable,"
+" you'll be able to modify the commands accordingly without passing the fully"
+" qualified path."
 msgstr ""
+"在继续之前确保自动'``byfn.sh``脚本在您的机器上没有错误地运行。如果您已经将二进制文件和相关工具(``cryptogen``, "
+"``configtxgen``, 等)导出到PATH变量中，那么您就可以相应地修改命令，而无需传递完全限定的路径。"
 
 #: ../../source/channel_update_tutorial.rst:32
 msgid "Setup the Environment"
-msgstr ""
+msgstr "设置环境"
 
 #: ../../source/channel_update_tutorial.rst:34
 msgid ""
 "We will be operating from the root of the ``first-network`` subdirectory "
-"within your local clone of ``fabric-samples``. Change into that directory"
-" now. You will also want to open a few extra terminals for ease of use."
+"within your local clone of ``fabric-samples``. Change into that directory "
+"now. You will also want to open a few extra terminals for ease of use."
 msgstr ""
+"我们将在您的本地从``first-network`` 子目录克隆``fabric-"
+"samples``。现在切换到那个目录。您还需要打开一些额外的终端以方便使用。"
 
 #: ../../source/channel_update_tutorial.rst:38
 msgid ""
 "First, use the ``byfn.sh`` script to tidy up. This command will kill any "
-"active or stale docker containers and remove previously generated "
-"artifacts. It is by no means **necessary** to bring down a Fabric network"
-" in order to perform channel configuration update tasks. However, for the"
-" sake of this tutorial, we want to operate from a known initial state. "
-"Therefore let's run the following command to clean up any previous "
-"environments:"
+"active or stale docker containers and remove previously generated artifacts."
+" It is by no means **necessary** to bring down a Fabric network in order to "
+"perform channel configuration update tasks. However, for the sake of this "
+"tutorial, we want to operate from a known initial state. Therefore let's run"
+" the following command to clean up any previous environments:"
 msgstr ""
+"首先，使用``byfn.sh``脚本整理。该命令将杀死所有活动的或陈旧的docker容器，并删除以前生成的构件。要执行通道配置更新任务，并不**必需**关闭Fabric网络。但是，出于本教程的考虑，我们希望从已知的初始状态开始操作。因此，让我们运行以下命令来清理以前的环境:"
 
 #: ../../source/channel_update_tutorial.rst:49
 msgid "Now generate the default BYFN artifacts:"
-msgstr ""
+msgstr "现在生成默认的BYFN构件:"
 
 #: ../../source/channel_update_tutorial.rst:55
 msgid ""
-"And launch the network making use of the scripted execution within the "
-"CLI container:"
-msgstr ""
+"And launch the network making use of the scripted execution within the CLI "
+"container:"
+msgstr "并利用CLI容器内的脚本执行启动网络:"
 
 #: ../../source/channel_update_tutorial.rst:61
 msgid ""
-"Now that you have a clean version of BYFN running on your machine, you "
-"have two different paths you can pursue. First, we offer a fully "
-"commented script that will carry out a config transaction update to bring"
-" Org3 into the network."
+"Now that you have a clean version of BYFN running on your machine, you have "
+"two different paths you can pursue. First, we offer a fully commented script"
+" that will carry out a config transaction update to bring Org3 into the "
+"network."
 msgstr ""
+"现在您的机器上已经运行了一个干净的BYFN版本，您可以使用两条不同的路径。首先，我们提供了一个完整的带注释脚本，它将执行配置交易更新以将Org3引入网络。"
 
 #: ../../source/channel_update_tutorial.rst:65
 msgid ""
-"Also, we will show a \"manual\" version of the same process, showing each"
-" step and explaining what it accomplishes (since we show you how to bring"
-" down your network before this manual process, you could also run the "
-"script and then look at each step)."
+"Also, we will show a \"manual\" version of the same process, showing each "
+"step and explaining what it accomplishes (since we show you how to bring "
+"down your network before this manual process, you could also run the script "
+"and then look at each step)."
 msgstr ""
+"此外，我们还将显示相同流程的“手动”版本，显示每个步骤并解释它所完成的工作(因为我们在此手动过程之前向您展示了如何关闭您的网络，所以您也可以运行脚本，然后查看每个步骤)。"
 
 #: ../../source/channel_update_tutorial.rst:71
 msgid "Bring Org3 into the Channel with the Script"
-msgstr ""
+msgstr "使用脚本将Org3加入通道"
 
 #: ../../source/channel_update_tutorial.rst:73
 msgid ""
 "You should be in ``first-network``. To use the script, simply issue the "
 "following:"
-msgstr ""
+msgstr "你应该在``first-network``中。要使用该脚本，只需发出以下命令:"
 
 #: ../../source/channel_update_tutorial.rst:79
 msgid ""
-"The output here is well worth reading. You'll see the Org3 crypto "
-"material being added, the config update being created and signed, and "
-"then chaincode being installed to allow Org3 to execute ledger queries."
-msgstr ""
+"The output here is well worth reading. You'll see the Org3 crypto material "
+"being added, the config update being created and signed, and then chaincode "
+"being installed to allow Org3 to execute ledger queries."
+msgstr "这里的输出很值得一读。您将看到添加了Org3加密原料，创建并签名了配置更新，然后安装了链码，以允许Org3执行账本查询。"
 
 #: ../../source/channel_update_tutorial.rst:83
 msgid "If everything goes well, you'll get this message:"
-msgstr ""
+msgstr "如果一切顺利，你会得到这样的信息:"
 
 #: ../../source/channel_update_tutorial.rst:89
 msgid ""
-"``eyfn.sh`` can be used with the same Node.js chaincode and database "
-"options as ``byfn.sh`` by issuing the following (instead of ``./byfn.sh "
-"up``):"
+"``eyfn.sh`` can be used with the same Node.js chaincode and database options"
+" as ``byfn.sh`` by issuing the following (instead of ``./byfn.sh up``):"
 msgstr ""
+" 通过发出以下命令(代替``./byfn.sh up``)，``eyfn.sh`` "
+"可以使用与``byfn.sh``相同的Node.js链码和数据库选项："
 
 #: ../../source/channel_update_tutorial.rst:96
 msgid "And then:"
-msgstr ""
+msgstr "然后："
 
 #: ../../source/channel_update_tutorial.rst:102
 msgid ""
-"For those who want to take a closer look at this process, the rest of the"
-" doc will show you each command for making a channel update and what it "
-"does."
-msgstr ""
+"For those who want to take a closer look at this process, the rest of the "
+"doc will show you each command for making a channel update and what it does."
+msgstr "对于那些希望更深入地了解这个过程的人，文档的其余部分将向您展示用于进行通道更新的每个命令及其功能。"
 
 #: ../../source/channel_update_tutorial.rst:106
 msgid "Bring Org3 into the Channel Manually"
-msgstr ""
+msgstr "手动将Org3导入通道"
 
 #: ../../source/channel_update_tutorial.rst:108
 msgid ""
-"The manual steps outlined below assume that the ``FABRIC_LOGGING_SPEC`` "
-"in the ``cli`` and ``Org3cli`` containers is set to ``DEBUG``."
-msgstr ""
+"The manual steps outlined below assume that the ``FABRIC_LOGGING_SPEC`` in "
+"the ``cli`` and ``Org3cli`` containers is set to ``DEBUG``."
+msgstr "下面列出了手动步骤，假定“cli”和“Org3cli”容器中的“FABRIC_LOGGING_SPEC”设置为“DEBUG”。"
 
 #: ../../source/channel_update_tutorial.rst:111
 msgid ""
 "For the ``cli`` container, you can set this by modifying the ``docker-"
 "compose-cli.yaml`` file in the ``first-network`` directory. e.g."
 msgstr ""
+"对于 ``cli``容器，您可以通过修改 ``first-network``目录下的文件 ``docker-compose-"
+"cli.yaml``来设置它。"
 
 #: ../../source/channel_update_tutorial.rst:128
 msgid ""
-"For the ``Org3cli`` container, you can set this by modifying the "
-"``docker-compose-org3.yaml`` file in the ``first-network`` directory. "
-"e.g."
+"For the ``Org3cli`` container, you can set this by modifying the ``docker-"
+"compose-org3.yaml`` file in the ``first-network`` directory. e.g."
 msgstr ""
+"对于 ``Org3cli``容器，您可以通过修改``first-network``目录下的文件``docker-compose-"
+"org3.yaml``来设置它。"
 
 #: ../../source/channel_update_tutorial.rst:145
 msgid ""
 "If you've used the ``eyfn.sh`` script, you'll need to bring your network "
 "down. This can be done by issuing:"
-msgstr ""
+msgstr "如果你用过``eyfn.sh``脚本，你需要关闭你的网络。这可以通过发出下列命令做到:"
 
 #: ../../source/channel_update_tutorial.rst:152
 msgid ""
-"This will bring down the network, delete all the containers and undo what"
-" we've done to add Org3."
-msgstr ""
+"This will bring down the network, delete all the containers and undo what "
+"we've done to add Org3."
+msgstr "这将关闭网络，删除所有容器，并撤消我们为添加Org3所做的操作。"
 
 #: ../../source/channel_update_tutorial.rst:155
 msgid "When the network is down, bring it back up again."
-msgstr ""
+msgstr "当网络关闭时，请将其重新恢复。"
 
 #: ../../source/channel_update_tutorial.rst:161
 msgid "Then:"
-msgstr ""
+msgstr "然后："
 
 #: ../../source/channel_update_tutorial.rst:167
 msgid ""
 "This will bring your network back to the same state it was in before you "
 "executed the ``eyfn.sh`` script."
-msgstr ""
+msgstr "这将使您的网络恢复到执行 ``eyfn.sh``之前的状态。"
 
 #: ../../source/channel_update_tutorial.rst:170
 msgid ""
 "Now we're ready to add Org3 manually. As a first step, we'll need to "
 "generate Org3's crypto material."
-msgstr ""
+msgstr "现在我们准备手动添加Org3。作为第一步，我们需要生成Org3的加密材料。"
 
 #: ../../source/channel_update_tutorial.rst:174
 msgid "Generate the Org3 Crypto Material"
-msgstr ""
+msgstr "生成Org3加密材料"
 
 #: ../../source/channel_update_tutorial.rst:176
 msgid ""
-"In another terminal, change into the ``org3-artifacts`` subdirectory from"
-" ``first-network``."
-msgstr ""
+"In another terminal, change into the ``org3-artifacts`` subdirectory from "
+"``first-network``."
+msgstr "在另一个终端，从``first-network``切换到``org3-artifacts``子目录。"
 
 #: ../../source/channel_update_tutorial.rst:183
 msgid ""
 "There are two ``yaml`` files of interest here: ``org3-crypto.yaml`` and "
 "``configtx.yaml``. First, generate the crypto material for Org3:"
 msgstr ""
+"这里有两个有趣的``yaml``文件: ``org3-crypto.yaml`` 和``configtx.yaml``。首先，生成Org3的加密材料:"
 
 #: ../../source/channel_update_tutorial.rst:190
 msgid ""
-"This command reads in our new crypto ``yaml`` file -- "
-"``org3-crypto.yaml`` -- and leverages ``cryptogen`` to generate the keys "
-"and certificates for an Org3 CA as well as two peers bound to this new "
-"Org. As with the BYFN implementation, this crypto material is put into a "
-"newly generated ``crypto-config`` folder within the present working "
-"directory (in our case, ``org3-artifacts``)."
+"This command reads in our new crypto ``yaml`` file -- ``org3-crypto.yaml`` "
+"-- and leverages ``cryptogen`` to generate the keys and certificates for an "
+"Org3 CA as well as two peers bound to this new Org. As with the BYFN "
+"implementation, this crypto material is put into a newly generated ``crypto-"
+"config`` folder within the present working directory (in our case, "
+"``org3-artifacts``)."
 msgstr ""
+"这个命令读取我们新的密码 ``yaml``文件——``org3-crypto.yaml``，并利用``cryptogen`` 为Org3 "
+"CA生成密钥和证书，以及绑定两个peer节点到这个新组织。与BYFN实现一样，这个加密材料被放入当前工作目录(在我们的示例中是“org3-artifacts”)中新生成的"
+"“crypto-config”文件夹中。"
 
 #: ../../source/channel_update_tutorial.rst:196
 msgid ""
 "Now use the ``configtxgen`` utility to print out the Org3-specific "
-"configuration material in JSON. We will preface the command by telling "
-"the tool to look in the current directory for the ``configtx.yaml`` file "
-"that it needs to ingest."
+"configuration material in JSON. We will preface the command by telling the "
+"tool to look in the current directory for the ``configtx.yaml`` file that it"
+" needs to ingest."
 msgstr ""
+"现在使用 ``configtxgen`` "
+"实用程序用JSON格式输出Org3专用的配置材料。在命令开始之前，我们将告诉工具在当前目录中查找它需要提取的``configtx.yaml`` 文件。"
 
 #: ../../source/channel_update_tutorial.rst:204
 msgid ""
 "The above command creates a JSON file -- ``org3.json`` -- and outputs it "
 "into the ``channel-artifacts`` subdirectory at the root of ``first-"
-"network``. This file contains the policy definitions for Org3, as well as"
-" three important certificates presented in base 64 format: the admin user"
-" certificate (which will be needed to act as the admin of Org3 later on),"
-" a CA root cert, and a TLS root cert. In an upcoming step we will append "
-"this JSON file to the channel configuration."
+"network``. This file contains the policy definitions for Org3, as well as "
+"three important certificates presented in base 64 format: the admin user "
+"certificate (which will be needed to act as the admin of Org3 later on), a "
+"CA root cert, and a TLS root cert. In an upcoming step we will append this "
+"JSON file to the channel configuration."
 msgstr ""
+"上面的命令创建一个JSON文件-- ``org3.json`` -- 并将其输出到``first-network``根目录下的``channel-"
+"artifacts`` "
+"子目录中。这个文件包含Org3策略定义，以及三个重要的base64格式的证书在：admin用户证书(之后用作Org3的管理员)、CA根证书和TLS根证书。在即将到来的步骤中,我们将这个JSON文件附加到通道配置。"
 
 #: ../../source/channel_update_tutorial.rst:211
 msgid ""
-"Our final piece of housekeeping is to port the Orderer Org's MSP material"
-" into the Org3 ``crypto-config`` directory. In particular, we are "
-"concerned with the Orderer's TLS root cert, which will allow for secure "
-"communication between Org3 entities and the network's ordering node."
+"Our final piece of housekeeping is to port the Orderer Org's MSP material "
+"into the Org3 ``crypto-config`` directory. In particular, we are concerned "
+"with the Orderer's TLS root cert, which will allow for secure communication "
+"between Org3 entities and the network's ordering node."
 msgstr ""
+"最后一项管理工作是将排序器Org的MSP材料转移到Org3``crypto-config`` "
+"目录中。我们特别关注排序器的TLS根证书，它将允许在Org3实体和网络的排序节点之间进行安全通信。"
 
 #: ../../source/channel_update_tutorial.rst:220
 msgid "Now we're ready to update the channel configuration..."
-msgstr ""
+msgstr "现在我们准备更新通道配置…"
 
 #: ../../source/channel_update_tutorial.rst:223
 msgid "Prepare the CLI Environment"
-msgstr ""
+msgstr "准备CLI环境"
 
 #: ../../source/channel_update_tutorial.rst:225
 msgid ""
 "The update process makes use of the configuration translator tool -- "
-"``configtxlator``. This tool provides a stateless REST API independent of"
-" the SDK. Additionally it provides a CLI, to simplify configuration tasks"
-" in Fabric networks. The tool allows for the easy conversion between "
-"different equivalent data representations/formats (in this case, between "
-"protobufs and JSON). Additionally, the tool can compute a configuration "
-"update transaction based on the differences between two channel "
-"configurations."
+"``configtxlator``. This tool provides a stateless REST API independent of "
+"the SDK. Additionally it provides a CLI, to simplify configuration tasks in "
+"Fabric networks. The tool allows for the easy conversion between different "
+"equivalent data representations/formats (in this case, between protobufs and"
+" JSON). Additionally, the tool can compute a configuration update "
+"transaction based on the differences between two channel configurations."
 msgstr ""
+"更新过程使用配置转换工具——'``configtxlator``。该工具提供了一个独立于SDK的无状态REST "
+"API。此外，它还提供了一个CLI，以简化Fabric网络中的配置工作。该工具允许在不同的等效数据表示/格式之间进行简单的转换(在本例中，是在protobufs和JSON之间)。此外，该工具可以根据两个通道配置之间的差异计算配置更新交易。"
 
 #: ../../source/channel_update_tutorial.rst:233
 msgid ""
 "First, exec into the CLI container. Recall that this container has been "
-"mounted with the BYFN ``crypto-config`` library, giving us access to the "
-"MSP material for the two original peer organizations and the Orderer Org."
-" The bootstrapped identity is the Org1 admin user, meaning that any steps"
-" where we want to act as Org2 will require the export of MSP-specific "
-"environment variables."
+"mounted with the BYFN ``crypto-config`` library, giving us access to the MSP"
+" material for the two original peer organizations and the Orderer Org. The "
+"bootstrapped identity is the Org1 admin user, meaning that any steps where "
+"we want to act as Org2 will require the export of MSP-specific environment "
+"variables."
 msgstr ""
+"首先，exec 进入CLI容器。回想一下，这个容器已经安装了BYFN``crypto-"
+"config``库，使我们能够访问两个最初的peer组织和排序器Org的MSP材料。引导的身份是Org1管理用户，这意味着我们想要扮演Org2的任何步骤都需要导出特定于MSP的环境变量。"
 
 #: ../../source/channel_update_tutorial.rst:243
 msgid "Export the ``ORDERER_CA`` and ``CHANNEL_NAME`` variables:"
-msgstr ""
+msgstr "导出“ORDERER_CA”和“CHANNEL_NAME”变量:"
 
 #: ../../source/channel_update_tutorial.rst:249
 #: ../../source/channel_update_tutorial.rst:560
 msgid "Check to make sure the variables have been properly set:"
-msgstr ""
+msgstr "检查变量是否设置正确:"
 
 #: ../../source/channel_update_tutorial.rst:255
 msgid ""
-"If for any reason you need to restart the CLI container, you will also "
-"need to re-export the two environment variables -- ``ORDERER_CA`` and "
+"If for any reason you need to restart the CLI container, you will also need "
+"to re-export the two environment variables -- ``ORDERER_CA`` and "
 "``CHANNEL_NAME``."
-msgstr ""
+msgstr "如果出于任何原因需要重新启动CLI容器，还需要重新导出两个环境变量—— ``ORDERER_CA``和``CHANNEL_NAME``。"
 
 #: ../../source/channel_update_tutorial.rst:259
 msgid "Fetch the Configuration"
-msgstr ""
+msgstr "获取配置"
 
 #: ../../source/channel_update_tutorial.rst:261
 msgid ""
@@ -313,522 +345,591 @@ msgid ""
 "``ORDERER_CA`` and ``CHANNEL_NAME`` exported.  Let's go fetch the most "
 "recent config block for the channel -- ``mychannel``."
 msgstr ""
+"现在我们有了一个CLI容器，其中包含两个关键的环境变量—— ``ORDERER_CA`` 和``CHANNEL_NAME``已导出 "
+"。让我们去获取通道``mychannel``的最新配置块。"
 
 #: ../../source/channel_update_tutorial.rst:265
 msgid ""
-"The reason why we have to pull the latest version of the config is "
-"because channel config elements are versioned. Versioning is important "
-"for several reasons. It prevents config changes from being repeated or "
-"replayed (for instance, reverting to a channel config with old CRLs would"
-" represent a security risk). Also it helps ensure concurrency (if you "
-"want to remove an Org from your channel, for example, after a new Org has"
-" been added, versioning will help prevent you from removing both Orgs, "
-"instead of just the Org you want to remove)."
+"The reason why we have to pull the latest version of the config is because "
+"channel config elements are versioned. Versioning is important for several "
+"reasons. It prevents config changes from being repeated or replayed (for "
+"instance, reverting to a channel config with old CRLs would represent a "
+"security risk). Also it helps ensure concurrency (if you want to remove an "
+"Org from your channel, for example, after a new Org has been added, "
+"versioning will help prevent you from removing both Orgs, instead of just "
+"the Org you want to remove)."
 msgstr ""
+"我们必须提取配置的最新版本的原因是，通道配置元素是经过版本控制的。版本控制之所以重要，有几个原因。它可以防止配置更改被重复或重播(例如用旧的CRL恢复到通道配置会带来安全风险)。它还有助于确保并发性(例如如果您想从通道中删除一个组织，在添加了一个新的组织之后，版本控制将有助于防止您同时删除两个组织，从而只删除您想要删除的组织)。"
 
 #: ../../source/channel_update_tutorial.rst:277
 msgid ""
 "This command saves the binary protobuf channel configuration block to "
 "``config_block.pb``. Note that the choice of name and file extension is "
-"arbitrary. However, following a convention which identifies both the type"
-" of object being represented and its encoding (protobuf or JSON) is "
+"arbitrary. However, following a convention which identifies both the type of"
+" object being represented and its encoding (protobuf or JSON) is "
 "recommended."
 msgstr ""
+"该命令将二进制protobuf通道配置块保存为``config_block.pb``。注意，名称和文件扩展名的选择是任意的。但是，建议遵循一种约定，即同时标识所表示对象的类型及其编码(protobuf或JSON)。"
 
 #: ../../source/channel_update_tutorial.rst:282
 msgid ""
 "When you issued the ``peer channel fetch`` command, there was a decent "
-"amount of output in the terminal. The last line in the logs is of "
-"interest:"
-msgstr ""
+"amount of output in the terminal. The last line in the logs is of interest:"
+msgstr "当您发出``peer channel fetch``命令时，终端中有相当数量的输出。日志中的最后一行很有趣:"
 
 #: ../../source/channel_update_tutorial.rst:289
 msgid ""
 "This is telling us that the most recent configuration block for "
-"``mychannel`` is actually block 2, **NOT** the genesis block. By default,"
-" the ``peer channel fetch config`` command returns the most **recent** "
+"``mychannel`` is actually block 2, **NOT** the genesis block. By default, "
+"the ``peer channel fetch config`` command returns the most **recent** "
 "configuration block for the targeted channel, which in this case is the "
-"third block. This is because the BYFN script defined anchor peers for our"
-" two organizations -- ``Org1`` and ``Org2`` -- in two separate channel "
-"update transactions."
+"third block. This is because the BYFN script defined anchor peers for our "
+"two organizations -- ``Org1`` and ``Org2`` -- in two separate channel update"
+" transactions."
 msgstr ""
+"这告诉我们，``mychannel``的最新配置区块实际上是2号区块，**不是** 创世区块。默认情况下， ``peer channel fetch "
+"config`` "
+"命令返回目标通道**最近的**配置区块，在本例中是第三个区块。这是因为BYFN脚本在两个独立的通道更新交易中为我们的两个组织(``Org1``和``Org2``)定义了锚点peer。"
 
 #: ../../source/channel_update_tutorial.rst:296
 msgid "As a result, we have the following configuration sequence:"
-msgstr ""
+msgstr "因此，我们得到如下配置序列:"
 
 #: ../../source/channel_update_tutorial.rst:298
 msgid "block 0: genesis block"
-msgstr ""
+msgstr "区块0：创世区块"
 
 #: ../../source/channel_update_tutorial.rst:299
 msgid "block 1: Org1 anchor peer update"
-msgstr ""
+msgstr "区块1：Org1锚点区块更新"
 
 #: ../../source/channel_update_tutorial.rst:300
 msgid "block 2: Org2 anchor peer update"
-msgstr ""
+msgstr "区块2：Org2锚点区块更新"
 
 #: ../../source/channel_update_tutorial.rst:303
 msgid "Convert the Configuration to JSON and Trim It Down"
-msgstr ""
+msgstr "将配置转换为JSON并对其进行修剪"
 
 #: ../../source/channel_update_tutorial.rst:305
 msgid ""
-"Now we will make use of the ``configtxlator`` tool to decode this channel"
-" configuration block into JSON format (which can be read and modified by "
+"Now we will make use of the ``configtxlator`` tool to decode this channel "
+"configuration block into JSON format (which can be read and modified by "
 "humans). We also must strip away all of the headers, metadata, creator "
-"signatures, and so on that are irrelevant to the change we want to make. "
-"We accomplish this by means of the ``jq`` tool:"
+"signatures, and so on that are irrelevant to the change we want to make. We "
+"accomplish this by means of the ``jq`` tool:"
 msgstr ""
+"现在，我们将使用``configtxlator``工具将这个通道配置块解码为JSON格式(可以由人类读取和修改)。我们还必须删除与我们想要进行的更改无关的所有头部、元数据、创建者签名等等。我们通过“jq”工具来实现:"
 
 #: ../../source/channel_update_tutorial.rst:315
 msgid ""
-"This leaves us with a trimmed down JSON object -- ``config.json``, "
-"located in the ``fabric-samples`` folder inside ``first-network`` -- "
-"which will serve as the baseline for our config update."
+"This leaves us with a trimmed down JSON object -- ``config.json``, located "
+"in the ``fabric-samples`` folder inside ``first-network`` -- which will "
+"serve as the baseline for our config update."
 msgstr ""
+"这就留给我们一个经过修剪的JSON对象—— ``config.json``，位于``first-network``中的``fabric-"
+"samples``文件夹中—这将作为配置更新的基线。"
 
 #: ../../source/channel_update_tutorial.rst:319
 msgid ""
 "Take a moment to open this file inside your text editor of choice (or in "
-"your browser). Even after you're done with this tutorial, it will be "
-"worth studying it as it reveals the underlying configuration structure "
-"and the other kind of channel updates that can be made. We discuss them "
-"in more detail in :doc:`config_update`."
+"your browser). Even after you're done with this tutorial, it will be worth "
+"studying it as it reveals the underlying configuration structure and the "
+"other kind of channel updates that can be made. We discuss them in more "
+"detail in :doc:`config_update`."
 msgstr ""
+"花点时间在您选择的文本编辑器(或浏览器)中打开这个文件。即使您已经完成了本教程的学习，也值得研究它，因为它揭示了底层配置结构和其他可以进行的通道更新。我们将在:doc:`config_update`中更详细地讨论它们。"
 
 #: ../../source/channel_update_tutorial.rst:325
 msgid "Add the Org3 Crypto Material"
-msgstr ""
+msgstr "添加Org3加密材料"
 
 #: ../../source/channel_update_tutorial.rst:327
 msgid ""
-"The steps you've taken up to this point will be nearly identical no "
-"matter what kind of config update you're trying to make. We've chosen to "
-"add an org with this tutorial because it's one of the most complex "
-"channel configuration updates you can attempt."
+"The steps you've taken up to this point will be nearly identical no matter "
+"what kind of config update you're trying to make. We've chosen to add an org"
+" with this tutorial because it's one of the most complex channel "
+"configuration updates you can attempt."
 msgstr ""
+"到目前为止，您所采取的步骤几乎是相同的，无论您试图进行哪种配置更新。我们选择在本教程中添加一个组织，因为它是您可以尝试的最复杂的通道配置更新之一。"
 
 #: ../../source/channel_update_tutorial.rst:332
 msgid ""
 "We'll use the ``jq`` tool once more to append the Org3 configuration "
-"definition -- ``org3.json`` -- to the channel's application groups field,"
-" and name the output -- ``modified_config.json``."
+"definition -- ``org3.json`` -- to the channel's application groups field, "
+"and name the output -- ``modified_config.json``."
 msgstr ""
+"我们将再次使用``jq``工具来添加Org3配置定义—— ``org3.json`` "
+"——到通道的应用程序groups字段，并将输出命名为——``modified_config.json``。"
 
 #: ../../source/channel_update_tutorial.rst:340
 msgid ""
 "Now, within the CLI container we have two JSON files of interest -- "
-"``config.json`` and ``modified_config.json``. The initial file contains "
-"only Org1 and Org2 material, whereas \"modified\" file contains all three"
-" Orgs. At this point it's simply a matter of re-encoding these two JSON "
-"files and calculating the delta."
+"``config.json`` and ``modified_config.json``. The initial file contains only"
+" Org1 and Org2 material, whereas \"modified\" file contains all three Orgs. "
+"At this point it's simply a matter of re-encoding these two JSON files and "
+"calculating the delta."
 msgstr ""
+"现在，在CLI容器中我们有两个感兴趣的JSON文件—— "
+"``config.json``和``modified_config.json``。初始文件只包含Org1和Org2材料，而“修改”文件包含所有三个Org。此时，只需重新编码这两个JSON文件并计算增量。"
 
 #: ../../source/channel_update_tutorial.rst:345
 msgid ""
-"First, translate ``config.json`` back into a protobuf called "
-"``config.pb``:"
-msgstr ""
+"First, translate ``config.json`` back into a protobuf called ``config.pb``:"
+msgstr "首先，转换 ``config.json`` 回到名为 ``config.pb``的protobuf :"
 
 #: ../../source/channel_update_tutorial.rst:351
 msgid "Next, encode ``modified_config.json`` to ``modified_config.pb``:"
-msgstr ""
+msgstr "接下来，编码``modified_config.json``为``modified_config.pb``:"
 
 #: ../../source/channel_update_tutorial.rst:357
 msgid ""
-"Now use ``configtxlator`` to calculate the delta between these two config"
-" protobufs. This command will output a new protobuf binary named "
+"Now use ``configtxlator`` to calculate the delta between these two config "
+"protobufs. This command will output a new protobuf binary named "
 "``org3_update.pb``:"
 msgstr ""
+"现在使用 ``configtxlator`` "
+"来计算这两个配置protobuf之间的增量。这个命令将输出一个新的protobuf二进制文件，名为``org3_update.pb``:"
 
 #: ../../source/channel_update_tutorial.rst:364
 msgid ""
-"This new proto -- ``org3_update.pb`` -- contains the Org3 definitions and"
-" high level pointers to the Org1 and Org2 material. We are able to forgo "
-"the extensive MSP material and modification policy information for Org1 "
-"and Org2 because this data is already present within the channel's "
-"genesis block. As such, we only need the delta between the two "
-"configurations."
+"This new proto -- ``org3_update.pb`` -- contains the Org3 definitions and "
+"high level pointers to the Org1 and Org2 material. We are able to forgo the "
+"extensive MSP material and modification policy information for Org1 and Org2"
+" because this data is already present within the channel's genesis block. As"
+" such, we only need the delta between the two configurations."
 msgstr ""
+"这个新的proto——``org3_update.pb``——包含Org3定义和指向Org1和Org2材料的高级指针。我们能够抛弃为Org1和Org2提供的大量MSP材料和修改策略信息，因为这些数据已经存在于通道的创世区块中。因此，我们只需要两个构型之间的增量。"
 
 #: ../../source/channel_update_tutorial.rst:370
 msgid ""
-"Before submitting the channel update, we need to perform a few final "
-"steps. First, let's decode this object into editable JSON format and call"
-" it ``org3_update.json``:"
+"Before submitting the channel update, we need to perform a few final steps. "
+"First, let's decode this object into editable JSON format and call it "
+"``org3_update.json``:"
 msgstr ""
+"在提交通道更新之前，我们需要执行一些最后的步骤。首先，让我们将这个对象解码为可编辑的JSON格式，并将其命名为'``org3_update.json``:"
 
 #: ../../source/channel_update_tutorial.rst:377
 msgid ""
-"Now, we have a decoded update file -- ``org3_update.json`` -- that we "
-"need to wrap in an envelope message. This step will give us back the "
-"header field that we stripped away earlier. We'll name this file "
+"Now, we have a decoded update file -- ``org3_update.json`` -- that we need "
+"to wrap in an envelope message. This step will give us back the header field"
+" that we stripped away earlier. We'll name this file "
 "``org3_update_in_envelope.json``:"
 msgstr ""
+"现在，我们有一个解码的更新文件 -- ``org3_update.json`` -- "
+"我们需要将其封装在信封消息中。这一步将返回我们之前删除的头部字段。我们将这个文件命名为``org3_update_in_envelope.json``:"
 
 #: ../../source/channel_update_tutorial.rst:385
 msgid ""
 "Using our properly formed JSON -- ``org3_update_in_envelope.json`` -- we "
-"will leverage the ``configtxlator`` tool one last time and convert it "
-"into the fully fledged protobuf format that Fabric requires. We'll name "
-"our final update object ``org3_update_in_envelope.pb``:"
+"will leverage the ``configtxlator`` tool one last time and convert it into "
+"the fully fledged protobuf format that Fabric requires. We'll name our final"
+" update object ``org3_update_in_envelope.pb``:"
 msgstr ""
+"使用格式正确的JSON -- ``org3_update_in_envelope.json`` -- "
+"我们将最后一次使用``configtxlator``工具，并将其转换为Fabric所需的完全成熟的protobuf格式。我们将最终的更新对象命名为 "
+"``org3_update_in_envelope.pb``:"
 
 #: ../../source/channel_update_tutorial.rst:395
 msgid "Sign and Submit the Config Update"
-msgstr ""
+msgstr "签署并提交配置更新"
 
 #: ../../source/channel_update_tutorial.rst:397
 msgid "Almost done!"
-msgstr ""
+msgstr "差不多完成了！"
 
 #: ../../source/channel_update_tutorial.rst:399
 msgid ""
-"We now have a protobuf binary -- ``org3_update_in_envelope.pb`` -- within"
-" our CLI container. However, we need signatures from the requisite Admin "
+"We now have a protobuf binary -- ``org3_update_in_envelope.pb`` -- within "
+"our CLI container. However, we need signatures from the requisite Admin "
 "users before the config can be written to the ledger. The modification "
-"policy (mod_policy) for our channel Application group is set to the "
-"default of \"MAJORITY\", which means that we need a majority of existing "
-"org admins to sign it. Because we have only two orgs -- Org1 and Org2 -- "
-"and the majority of two is two, we need both of them to sign. Without "
-"both signatures, the ordering service will reject the transaction for "
-"failing to fulfill the policy."
+"policy (mod_policy) for our channel Application group is set to the default "
+"of \"MAJORITY\", which means that we need a majority of existing org admins "
+"to sign it. Because we have only two orgs -- Org1 and Org2 -- and the "
+"majority of two is two, we need both of them to sign. Without both "
+"signatures, the ordering service will reject the transaction for failing to "
+"fulfill the policy."
 msgstr ""
+"在CLI容器中，现在我们有了一个protobuf二进制文件 ，``org3_update_in_envelope.pb``  "
+"。然而，在将配置写入账本之前，我们需要来自必需的管理用户的签名。通道应用程序组的修改策略(mod_policy)被设置为默认的“多数”，这意味着我们需要大多数现有的org管理员来签署它。因为我们只有两个org——Org1和Org2——而两个中的大多数是2，所以我们需要他们两个都签名。如果没有这两个签名，排序服务将因为未能满足策略而拒绝交易。"
 
 #: ../../source/channel_update_tutorial.rst:408
 msgid ""
-"First, let's sign this update proto as the Org1 Admin. Remember that the "
-"CLI container is bootstrapped with the Org1 MSP material, so we simply "
-"need to issue the ``peer channel signconfigtx`` command:"
+"First, let's sign this update proto as the Org1 Admin. Remember that the CLI"
+" container is bootstrapped with the Org1 MSP material, so we simply need to "
+"issue the ``peer channel signconfigtx`` command:"
 msgstr ""
+"首先，让我们以Org1管理员的身份签署这个更新proto。请记住，CLI容器是用Org1 MSP材料引导的，所以我们只需要发出``peer "
+"channel signconfigtx``命令:"
 
 #: ../../source/channel_update_tutorial.rst:416
 msgid ""
-"The final step is to switch the CLI container's identity to reflect the "
-"Org2 Admin user. We do this by exporting four environment variables "
-"specific to the Org2 MSP."
-msgstr ""
+"The final step is to switch the CLI container's identity to reflect the Org2"
+" Admin user. We do this by exporting four environment variables specific to "
+"the Org2 MSP."
+msgstr "最后一步是切换CLI容器的身份，以反映Org2管理用户。为此，我们导出了四个特定于Org2 MSP的环境变量。"
 
 #: ../../source/channel_update_tutorial.rst:419
 msgid ""
 "Switching between organizations to sign a config transaction (or to do "
-"anything else) is not reflective of a real-world Fabric operation. A "
-"single container would never be mounted with an entire network's crypto "
-"material. Rather, the config update would need to be securely passed out-"
-"of-band to an Org2 Admin for inspection and approval."
+"anything else) is not reflective of a real-world Fabric operation. A single "
+"container would never be mounted with an entire network's crypto material. "
+"Rather, the config update would need to be securely passed out-of-band to an"
+" Org2 Admin for inspection and approval."
 msgstr ""
+"在组织之间切换以签署配置交易(或执行任何其他操作)并不反映实际的Fabric操作。单个容器永远不会安装整个网络的加密材料。相反，配置更新将需要安全地通过带外传递给一个Org2管理员进行检查和批准。"
 
 #: ../../source/channel_update_tutorial.rst:425
 msgid "Export the Org2 environment variables:"
-msgstr ""
+msgstr "导出Org2环境变量:"
 
 #: ../../source/channel_update_tutorial.rst:439
 msgid ""
-"Lastly, we will issue the ``peer channel update`` command. The Org2 Admin"
-" signature will be attached to this call so there is no need to manually "
-"sign the protobuf a second time:"
+"Lastly, we will issue the ``peer channel update`` command. The Org2 Admin "
+"signature will be attached to this call so there is no need to manually sign"
+" the protobuf a second time:"
 msgstr ""
+"最后，我们会发出``peer channel update`` 命令。Org2管理员签名将附加到这个调用，所以不需要手动签署第二次protobuf:"
 
 #: ../../source/channel_update_tutorial.rst:443
 msgid ""
-"The upcoming update call to the ordering service will undergo a series of"
-" systematic signature and policy checks. As such you may find it useful "
-"to stream and inspect the ordering node's logs. From another shell, issue"
-" a ``docker logs -f orderer.example.com`` command to display them."
+"The upcoming update call to the ordering service will undergo a series of "
+"systematic signature and policy checks. As such you may find it useful to "
+"stream and inspect the ordering node's logs. From another shell, issue a "
+"``docker logs -f orderer.example.com`` command to display them."
 msgstr ""
+"即将对排序服务进行的更新调用将经过一系列系统签名和策略检查。因此，您可能会发现，对排序节点的日志进行流处理和检查非常有用。从另一个shell发出一个``docker"
+" logs -f orderer.example.com``命令来显示它们。"
 
 #: ../../source/channel_update_tutorial.rst:448
 msgid "Send the update call:"
-msgstr ""
+msgstr "发送更新调用:"
 
 #: ../../source/channel_update_tutorial.rst:454
 msgid ""
-"You should see a message digest indication similar to the following if "
-"your update has been submitted successfully:"
-msgstr ""
+"You should see a message digest indication similar to the following if your "
+"update has been submitted successfully:"
+msgstr "如果你的更新成功提交，你应该会看到一个类似于下面的消息摘要提示:"
 
 #: ../../source/channel_update_tutorial.rst:461
 msgid "You will also see the submission of our configuration transaction:"
-msgstr ""
+msgstr "您还将看到我们的配置交易提交:"
 
 #: ../../source/channel_update_tutorial.rst:467
 msgid ""
-"The successful channel update call returns a new block -- block 5 -- to "
-"all of the peers on the channel. If you remember, blocks 0-2 are the "
-"initial channel configurations while blocks 3 and 4 are the instantiation"
-" and invocation of the ``mycc`` chaincode. As such, block 5 serves as the"
-" most recent channel configuration with Org3 now defined on the channel."
+"The successful channel update call returns a new block -- block 5 -- to all "
+"of the peers on the channel. If you remember, blocks 0-2 are the initial "
+"channel configurations while blocks 3 and 4 are the instantiation and "
+"invocation of the ``mycc`` chaincode. As such, block 5 serves as the most "
+"recent channel configuration with Org3 now defined on the channel."
 msgstr ""
+"成功的通道更新调用将向通道上的所有peer节点返回一个新区块--区块5。可能您还记得，区块0-2是初始通道配置，而区块3和4是 "
+"``mycc``链码的实例化和调用。因此，第5区块作为最近的通道配置，现在在通道上定义了Org3。"
 
 #: ../../source/channel_update_tutorial.rst:473
 msgid "Inspect the logs for ``peer0.org1.example.com``:"
-msgstr ""
+msgstr "为了 ``peer0.org1.example.com``检查日志:"
 
 #: ../../source/channel_update_tutorial.rst:479
 msgid ""
-"Follow the demonstrated process to fetch and decode the new config block "
-"if you wish to inspect its contents."
-msgstr ""
+"Follow the demonstrated process to fetch and decode the new config block if "
+"you wish to inspect its contents."
+msgstr "如果希望检查新配置区块的内容，请遵循演示的过程来获取和解码新配置区块。"
 
 #: ../../source/channel_update_tutorial.rst:483
 msgid "Configuring Leader Election"
-msgstr ""
+msgstr "配置领导选举"
 
 #: ../../source/channel_update_tutorial.rst:485
 msgid ""
-"This section is included as a general reference for understanding the "
-"leader election settings when adding organizations to a network after the"
-" initial channel configuration has completed. This sample defaults to "
-"dynamic leader election, which is set for all peers in the network in "
-"`peer-base.yaml`."
+"This section is included as a general reference for understanding the leader"
+" election settings when adding organizations to a network after the initial "
+"channel configuration has completed. This sample defaults to dynamic leader "
+"election, which is set for all peers in the network in `peer-base.yaml`."
 msgstr ""
+"本节作为一般参考，用于理解在初始通道配置完成后将组织添加到网络时的领导人选举设置。这个示例默认为动态领导人选举，它在“peer-"
+"base.yaml”中为网络中的所有peer节点设置。"
 
 #: ../../source/channel_update_tutorial.rst:491
 msgid ""
-"Newly joining peers are bootstrapped with the genesis block, which does "
-"not contain information about the organization that is being added in the"
-" channel configuration update. Therefore new peers are not able to "
-"utilize gossip as they cannot verify blocks forwarded by other peers from"
-" their own organization until they get the configuration transaction "
-"which added the organization to the channel. Newly added peers must "
-"therefore have one of the following configurations so that they receive "
-"blocks from the ordering service:"
+"Newly joining peers are bootstrapped with the genesis block, which does not "
+"contain information about the organization that is being added in the "
+"channel configuration update. Therefore new peers are not able to utilize "
+"gossip as they cannot verify blocks forwarded by other peers from their own "
+"organization until they get the configuration transaction which added the "
+"organization to the channel. Newly added peers must therefore have one of "
+"the following configurations so that they receive blocks from the ordering "
+"service:"
 msgstr ""
+"新加入的peer节点使用创世区块引导，该区块不包含有关正在通道配置更新中添加的组织的信息。因此，新peer节点不能使用gossip，因为它们无法验证其他peer节点从自己的组织转发的区块，直到它们获得将组织添加到通道的配置交易。因此，新添加的peer节点必须具有以下配置之一，以便从排序服务接收区块:"
 
 #: ../../source/channel_update_tutorial.rst:499
 msgid ""
-"1. To utilize static leader mode, configure the peer to be an "
-"organization leader:"
-msgstr ""
+"1. To utilize static leader mode, configure the peer to be an organization "
+"leader:"
+msgstr "1. 若要使用静态领导人模式，请将peer节点配置为组织领导人:"
 
 #: ../../source/channel_update_tutorial.rst:508
 msgid ""
-"This configuration must be the same for all new peers added to the "
-"channel."
-msgstr ""
+"This configuration must be the same for all new peers added to the channel."
+msgstr "对于添加到通道的所有新peer节点，此配置必须相同。"
 
 #: ../../source/channel_update_tutorial.rst:511
 msgid ""
 "2. To utilize dynamic leader election, configure the peer to use leader "
 "election:"
-msgstr ""
+msgstr "2. 若要使用动态领导人选举，请将peer节点配置为使用领导人选举:"
 
 #: ../../source/channel_update_tutorial.rst:520
 msgid ""
 "Because peers of the newly added organization won't be able to form "
-"membership view, this option will be similar to the static configuration,"
-" as each peer will start proclaiming itself to be a leader. However, once"
-" they get updated with the configuration transaction that adds the "
-"organization to the channel, there will be only one active leader for the"
-" organization. Therefore, it is recommended to leverage this option if "
-"you eventually want the organization's peers to utilize leader election."
+"membership view, this option will be similar to the static configuration, as"
+" each peer will start proclaiming itself to be a leader. However, once they "
+"get updated with the configuration transaction that adds the organization to"
+" the channel, there will be only one active leader for the organization. "
+"Therefore, it is recommended to leverage this option if you eventually want "
+"the organization's peers to utilize leader election."
 msgstr ""
+"因为新添加的组织的peer节点将无法形成成员视图，所以这个选项将类似于静态配置，因为每个peer节点将开始声明自己是领导人。然而，一旦使用将组织添加到通道的配置交易对其进行更新，组织将只有一个活动领导人。因此，如果您最终希望组织的peer节点利用领导人选举，建议利用这个选项。"
 
 #: ../../source/channel_update_tutorial.rst:531
 msgid "Join Org3 to the Channel"
-msgstr ""
+msgstr "将Org3加入通道"
 
 #: ../../source/channel_update_tutorial.rst:533
 msgid ""
-"At this point, the channel configuration has been updated to include our "
-"new organization -- ``Org3`` -- meaning that peers attached to it can now"
-" join ``mychannel``."
+"At this point, the channel configuration has been updated to include our new"
+" organization -- ``Org3`` -- meaning that peers attached to it can now join "
+"``mychannel``."
 msgstr ""
+"此时，为了包含我们的新组织-- ``Org3``，通道配置已经更新， 这意味着连接到它的peer节点现在可以加入``mychannel``。"
 
 #: ../../source/channel_update_tutorial.rst:536
 msgid ""
-"First, let's launch the containers for the Org3 peers and an "
-"Org3-specific CLI."
-msgstr ""
+"First, let's launch the containers for the Org3 peers and an Org3-specific "
+"CLI."
+msgstr "首先，让我们启动Org3的peer节点和特定于Org3的CLI容器。"
 
 #: ../../source/channel_update_tutorial.rst:538
 msgid ""
 "Open a new terminal and from ``first-network`` kick off the Org3 docker "
 "compose:"
-msgstr ""
+msgstr "打开一个新的终端，并从``first-network``启动Org3 docker compose:"
 
 #: ../../source/channel_update_tutorial.rst:544
 msgid ""
 "This new compose file has been configured to bridge across our initial "
-"network, so the two peers and the CLI container will be able to resolve "
-"with the existing peers and ordering node. With the three new containers "
-"now running, exec into the Org3-specific CLI container:"
+"network, so the two peers and the CLI container will be able to resolve with"
+" the existing peers and ordering node. With the three new containers now "
+"running, exec into the Org3-specific CLI container:"
 msgstr ""
+"这个新的compose文件已配置为跨初始网络进行桥接，因此两个peer节点和CLI容器将能够使用现有peer节点和排序节点进行解析。现在运行了三个新的容器，exec到特定于org3的CLI容器中:"
 
 #: ../../source/channel_update_tutorial.rst:553
 msgid ""
 "Just as we did with the initial CLI container, export the two key "
 "environment variables: ``ORDERER_CA`` and ``CHANNEL_NAME``:"
-msgstr ""
+msgstr "正如我们对初始CLI容器所做的那样，导出两个关键的环境变量: ``ORDERER_CA``和``CHANNEL_NAME``:"
 
 #: ../../source/channel_update_tutorial.rst:566
 msgid ""
-"Now let's send a call to the ordering service asking for the genesis "
-"block of ``mychannel``. The ordering service is able to verify the Org3 "
-"signature attached to this call as a result of our successful channel "
-"update. If Org3 has not been successfully appended to the channel config,"
-" the ordering service should reject this request."
+"Now let's send a call to the ordering service asking for the genesis block "
+"of ``mychannel``. The ordering service is able to verify the Org3 signature "
+"attached to this call as a result of our successful channel update. If Org3 "
+"has not been successfully appended to the channel config, the ordering "
+"service should reject this request."
 msgstr ""
+"现在让我们向排序服务发送一个调用，请求“mychannel”的创世区块。由于我们的通道更新成功，排序服务能够验证附加到此调用的Org3签名。如果没有成功地将Org3附加到通道配置中，排序服务会拒绝此请求。"
 
 #: ../../source/channel_update_tutorial.rst:572
 msgid ""
-"Again, you may find it useful to stream the ordering node's logs to "
-"reveal the sign/verify logic and policy checks."
-msgstr ""
+"Again, you may find it useful to stream the ordering node's logs to reveal "
+"the sign/verify logic and policy checks."
+msgstr "同样，您可能会发现，对排序节点的日志进行流处理以显示签名/验证逻辑和策略检查非常有用。"
 
 #: ../../source/channel_update_tutorial.rst:575
 msgid "Use the ``peer channel fetch`` command to retrieve this block:"
-msgstr ""
+msgstr "使用 ``peer channel fetch``命令检索此区块:"
 
 #: ../../source/channel_update_tutorial.rst:581
 msgid ""
-"Notice, that we are passing a ``0`` to indicate that we want the first "
-"block on the channel's ledger (i.e. the genesis block). If we simply "
-"passed the ``peer channel fetch config`` command, then we would have "
-"received block 5 -- the updated config with Org3 defined. However, we "
-"can't begin our ledger with a downstream block -- we must start with "
-"block 0."
+"Notice, that we are passing a ``0`` to indicate that we want the first block"
+" on the channel's ledger (i.e. the genesis block). If we simply passed the "
+"``peer channel fetch config`` command, then we would have received block 5 "
+"-- the updated config with Org3 defined. However, we can't begin our ledger "
+"with a downstream block -- we must start with block 0."
 msgstr ""
+"注意，我们传递了一个``0``来表示我们想要通道账本上的第一个区块(即创世区块)。如果我们只是通过 ``peer channel fetch "
+"config`` 命令，那么我们将接收到区块5——定义了Org3的更新配置。然而，我们不能从下游区块开始账本——我们必须从区块0开始。"
 
 #: ../../source/channel_update_tutorial.rst:587
 msgid ""
 "Issue the ``peer channel join`` command and pass in the genesis block -- "
 "``mychannel.block``:"
-msgstr ""
+msgstr "发出``peer channel join``命令，并传入创世区块 -- ``mychannel.block``:"
 
 #: ../../source/channel_update_tutorial.rst:593
 msgid ""
 "If you want to join the second peer for Org3, export the ``TLS`` and "
 "``ADDRESS`` variables and reissue the ``peer channel join command``:"
 msgstr ""
+"如果您想加入Org3的第二个peer节点，导出 ``TLS``和``ADDRESS`` 变量并重新发出``peer channel join "
+"command``:"
 
 #: ../../source/channel_update_tutorial.rst:605
-msgid "Upgrade and Invoke Chaincode"
-msgstr ""
+msgid "Install, define, and invoke chaincode"
+msgstr "安装、定义和调用链码"
 
 #: ../../source/channel_update_tutorial.rst:607
 msgid ""
-"The final piece of the puzzle is to increment the chaincode version and "
-"update the endorsement policy to include Org3. Since we know that an "
-"upgrade is coming, we can forgo the futile exercise of installing version"
-" 1 of the chaincode. We are solely concerned with the new version where "
-"Org3 will be part of the endorsement policy, therefore we'll jump "
-"directly to version 2 of the chaincode."
+"Once you have joined the channel, you can package and install a chaincode on"
+" a peer of Org3. You then need to approve the chaincode definition as org3. "
+"Because the chaincode definition has already been committed to the channel "
+"you have joined, you can start using the chaincode after you approve the "
+"definition."
 msgstr ""
+"一旦您加入了通道，您就可以在Org3的peer节点上打包并安装一个链码。然后需要将链码定义批准为Org3。因为链码定义已经提交到您已经加入的通道，所以您可以在批准定义之后开始使用链码。"
 
 #: ../../source/channel_update_tutorial.rst:613
-msgid "From the Org3 CLI:"
-msgstr ""
-
-#: ../../source/channel_update_tutorial.rst:619
 msgid ""
-"Modify the environment variables accordingly and reissue the command if "
-"you want to install the chaincode on the second peer of Org3. Note that a"
-" second installation is not mandated, as you only need to install "
-"chaincode on peers that are going to serve as endorsers or otherwise "
-"interface with the ledger (i.e. query only). Peers will still run the "
-"validation logic and serve as committers without a running chaincode "
-"container."
+"These instructions use the Fabric chaincode lifecycle introduced in the v2.0"
+" Alpha release. If you would like to use the previous lifecycle to install "
+"and instantiate a chaincode, visit the v1.4 version of the `Adding an org to"
+" a channel tutorial <https://hyperledger-"
+"fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html>`__."
 msgstr ""
+"这些指令使用了在v2.0 Alpha版本中引入的Fabric "
+"链码生命周期。如果您想使用以前的生命周期来安装和实例化链码，请访问“将org添加到通道教程”的v1.4版本 <https://hyperledger-"
+"fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html>`__。"
 
-#: ../../source/channel_update_tutorial.rst:626
+#: ../../source/channel_update_tutorial.rst:618
+msgid "The first step is to package the chaincode from the Org3 CLI:"
+msgstr "第一步是打包来自Org3 CLI的链码:"
+
+#: ../../source/channel_update_tutorial.rst:624
 msgid ""
-"Now jump back to the **original** CLI container and install the new "
-"version on the Org1 and Org2 peers. We submitted the channel update call "
-"with the Org2 admin identity, so the container is still acting on behalf "
-"of ``peer0.org2``:"
+"This command will create a chaincode package named ``mycc.tar.gz``, which we"
+" can use to install the chaincode on our peer. In this command, you need to "
+"provide a chaincode package label as a description of the chaincode. Modify "
+"the command accordingly if the channel is running a chaincode written in "
+"Java or Node.js. Issue the following command to install the package on peer0"
+" of Org3:"
 msgstr ""
+"这个命令将创建一个名为``mycc.tar.gz``的链码包，我们可以使用它在我们的peer节点上安装链码。在这个命令中，您需要提供一个链码包标签来描述链码。如果通道正在运行用Java或Node.js编写的链码，则相应地修改该命令。发出以下命令在Org3的peer0上安装包:"
 
-#: ../../source/channel_update_tutorial.rst:634
-msgid "Flip to the ``peer0.org1`` identity:"
+#: ../../source/channel_update_tutorial.rst:635
+msgid ""
+"You can also modify the environment variables and reissue the command if you"
+" want to install the chaincode on the second peer of Org3. Note that a "
+"second installation is not mandated, as you only need to install chaincode "
+"on peers that are going to serve as endorsers or otherwise interface with "
+"the ledger (i.e. query only). Peers will still run the validation logic and "
+"serve as committers without a running chaincode container."
 msgstr ""
+"如果希望在Org3的第二个peer点上安装链码，还可以修改环境变量并重新发出命令。注意，第二次安装并不是强制的，因为您只需要将链码安装在peer节点充当背书者，或以其他方式与账本接口(即仅查询)。peer节点仍将运行验证逻辑，并在没有运行链码容器的情况下充当提交者。"
 
-#: ../../source/channel_update_tutorial.rst:646
-msgid "And install again:"
+#: ../../source/channel_update_tutorial.rst:642
+msgid ""
+"The next step is to approve the chaincode definition of ``mycc`` as Org3. "
+"Org3 needs to approve the same definition that Org1 and Org2 approved and "
+"committed to the channel. The chaincode definition also needs to include the"
+" chaincode package identifier. You can find the package identifier by "
+"querying your peer:"
 msgstr ""
+"下一步是将``mycc``的链码定义批准为Org3。Org3需要批准与Org1和Org2已批准并提交给通道的相同的定义。链码定义还需要包括链码包标识符。你可以通过查询你的peer节点来找到包的标识符:"
 
 #: ../../source/channel_update_tutorial.rst:652
-msgid ""
-"Now we're ready to upgrade the chaincode. There have been no "
-"modifications to the underlying source code, we are simply adding Org3 to"
-" the endorsement policy for a chaincode -- ``mycc`` -- on ``mychannel``."
-msgstr ""
-
-#: ../../source/channel_update_tutorial.rst:656
-msgid ""
-"Any identity satisfying the chaincode's instantiation policy can issue "
-"the upgrade call. By default, these identities are the channel Admins."
-msgstr ""
+msgid "You should see output similar to the following:"
+msgstr "您应该会看到类似如下的输出:"
 
 #: ../../source/channel_update_tutorial.rst:659
-msgid "Send the call:"
-msgstr ""
-
-#: ../../source/channel_update_tutorial.rst:665
 msgid ""
-"You can see in the above command that we are specifying our new version "
-"by means of the ``v`` flag. You can also see that the endorsement policy "
-"has been modified to ``-P \"OR "
-"('Org1MSP.peer','Org2MSP.peer','Org3MSP.peer')\"``, reflecting the "
-"addition of Org3 to the policy. The final area of interest is our "
-"constructor request (specified with the ``c`` flag)."
+"We are going to need the package ID in a future command, so lets go ahead "
+"and save it as an environment variable. Paste the package ID returned by the"
+" `peer lifecycle chaincode queryinstalled` into the command below. The "
+"package ID may not be the same for all users, so you need to complete this "
+"step using the package ID returned from your console."
 msgstr ""
+"我们将在将来的命令中需要包ID，所以让我们继续将它保存为一个环境变量。将`peer lifecycle chaincode "
+"queryinstalled` 返回的包ID粘贴到下面的命令中。包ID可能不适合所有用户，因此需要使用从控制台返回的包ID完成此步骤。"
 
 #: ../../source/channel_update_tutorial.rst:671
 msgid ""
-"As with an instantiate call, a chaincode upgrade requires usage of the "
-"``init`` method. **If** your chaincode requires arguments be passed to "
-"the ``init`` method, then you will need to do so here."
-msgstr ""
+"Use the following command to approve a definition of the  ``mycc`` chaincode"
+" for Org3:"
+msgstr "使用以下命令来批准Org3的 ``mycc``链码的定义:"
 
-#: ../../source/channel_update_tutorial.rst:675
+#: ../../source/channel_update_tutorial.rst:681
 msgid ""
-"The upgrade call adds a new block -- block 6 -- to the channel's ledger "
-"and allows for the Org3 peers to execute transactions during the "
-"endorsement phase. Hop back to the Org3 CLI container and issue a query "
-"for the value of ``a``. This will take a bit of time because a chaincode "
-"image needs to be built for the targeted peer, and the container needs to"
-" start:"
+"You can use the ``peer lifecycle chaincode querycommitted`` command to check"
+" if the chaincode definition you have approved has already been committed to"
+" the channel."
 msgstr ""
+"您可以使用 ``peer lifecycle chaincode querycommitted`` 命令来检查您已批准的链码定义是否已提交到通道。"
 
-#: ../../source/channel_update_tutorial.rst:685
+#: ../../source/channel_update_tutorial.rst:690
+msgid ""
+"A successful command will return information about the committed definition:"
+msgstr "一个成功的命令将返回关于提交定义的信息:"
+
+#: ../../source/channel_update_tutorial.rst:697
+msgid ""
+"Since the chaincode definition has already been committed, you are ready to "
+"use the ``mycc`` chaincode after you approve the definition. The chaincode "
+"definition uses the default endorsement policy, which requires a majority of"
+" organizations on the channel endorse a transaction. This implies that if an"
+" organization is added to or removed from the channel, the endorsement "
+"policy is updated automatically. We previously needed endorsements from Org1"
+" and Org2 (2 out of 2). Now we need endorsements from two organizations out "
+"of Org1, Org2, and Org3 (2 out of 3)."
+msgstr ""
+"由于链码定义已经提交，所以在您批准定义之后，就可以使用'``mycc`` "
+"链码了。链码定义使用默认的背书策略，这要求通道上的大多数组织对交易进行背书。这意味着，如果一个组织被添加到或从通道中删除，背书策略将自动更新。我们之前需要来自Org1和Org2(2个中的2个)的背书，现在我们需要来自Org1、Org2和Org3中的两个(3个中的2个)的背书。"
+
+#: ../../source/channel_update_tutorial.rst:706
+msgid ""
+"Query the chaincode to ensure that it has started. Note that you may need to"
+" wait for the chaincode container to start."
+msgstr "查询链码以确保它已经启动。注意，您可能需要等待链码容器启动。"
+
+#: ../../source/channel_update_tutorial.rst:713
 msgid "We should see a response of ``Query Result: 90``."
-msgstr ""
+msgstr "我们应该看到 ``Query Result: 90``的响应。"
 
-#: ../../source/channel_update_tutorial.rst:687
-msgid "Now issue an invocation to move ``10`` from ``a`` to ``b``:"
-msgstr ""
+#: ../../source/channel_update_tutorial.rst:715
+msgid ""
+"Now issue an invocation to move ``10`` from ``a`` to ``b``. In the command "
+"below, we target a peer in Org1 and Org3 to collect a sufficient number of "
+"endorsements."
+msgstr "现在发出一个调用，将“10”从“a”转账到“b”。在下面的命令中，我们的目标是在Org1和Org3中收集足够数量的背书。"
 
-#: ../../source/channel_update_tutorial.rst:693
+#: ../../source/channel_update_tutorial.rst:723
 msgid "Query one final time:"
-msgstr ""
+msgstr "最后一次查询:"
 
-#: ../../source/channel_update_tutorial.rst:699
+#: ../../source/channel_update_tutorial.rst:729
 msgid ""
-"We should see a response of ``Query Result: 80``, accurately reflecting "
-"the update of this chaincode's world state."
-msgstr ""
+"We should see a response of ``Query Result: 80``, accurately reflecting the "
+"update of this chaincode's world state."
+msgstr "我们应该看到 ``Query Result: 80``的响应，准确地反映了这个链码的世界状态的更新。"
 
-#: ../../source/channel_update_tutorial.rst:703
+#: ../../source/channel_update_tutorial.rst:733
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
-#: ../../source/channel_update_tutorial.rst:705
+#: ../../source/channel_update_tutorial.rst:735
 msgid ""
-"The channel configuration update process is indeed quite involved, but "
-"there is a logical method to the various steps. The endgame is to form a "
-"delta transaction object represented in protobuf binary format and then "
-"acquire the requisite number of admin signatures such that the channel "
-"configuration update transaction fulfills the channel's modification "
-"policy."
+"The channel configuration update process is indeed quite involved, but there"
+" is a logical method to the various steps. The endgame is to form a delta "
+"transaction object represented in protobuf binary format and then acquire "
+"the requisite number of admin signatures such that the channel configuration"
+" update transaction fulfills the channel's modification policy."
 msgstr ""
+"通道配置更新过程确实非常复杂，但是各个步骤都有一个逻辑方法。最终的目的是形成一个用protobuf二进制格式表示的delta交易对象，然后获得所需的管理签名数量，以便通道配置更新交易能够满足通道的修改策略。"
 
-#: ../../source/channel_update_tutorial.rst:711
+#: ../../source/channel_update_tutorial.rst:741
 msgid ""
-"The ``configtxlator`` and ``jq`` tools, along with the ever-growing "
-"``peer channel`` commands, provide us with the functionality to "
-"accomplish this task."
-msgstr ""
-
+"The ``configtxlator`` and ``jq`` tools, along with the ever-growing ``peer "
+"channel`` commands, provide us with the functionality to accomplish this "
+"task."
+msgstr "``configtxlator``和``jq``工具以及不断增长的“peer channel”命令为我们提供了完成这项任务的功能。"

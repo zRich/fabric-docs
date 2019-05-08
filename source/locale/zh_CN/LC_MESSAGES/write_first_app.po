@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,7 +209,7 @@ msgid ""
 "look at what's inside:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:140 ../../source/write_first_app.rst:380
+#: ../../source/write_first_app.rst:140 ../../source/write_first_app.rst:379
 msgid "You should see the following:"
 msgstr ""
 
@@ -366,20 +366,20 @@ msgid ""
 "network, ``mychannel``:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:289
+#: ../../source/write_first_app.rst:288
 msgid ""
 "Within this channel, we can access the smart contract ``fabcar`` to "
 "interact with the ledger:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:296
+#: ../../source/write_first_app.rst:295
 msgid ""
 "Within ``fabcar`` there are many different **transactions**, and our "
 "application initially uses the ``queryAllCars`` transaction to access the"
 " ledger world state data:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:304
+#: ../../source/write_first_app.rst:303
 msgid ""
 "The ``evaluateTransaction`` method represents one of the simplest "
 "interaction with a smart contract in blockchain network. It simply picks "
@@ -389,11 +389,11 @@ msgid ""
 " interaction does not result in an update the ledger."
 msgstr ""
 
-#: ../../source/write_first_app.rst:312
+#: ../../source/write_first_app.rst:311
 msgid "The FabCar smart contract"
 msgstr ""
 
-#: ../../source/write_first_app.rst:314
+#: ../../source/write_first_app.rst:313
 msgid ""
 "Let's take a look at the transactions within the ``FabCar`` smart "
 "contract. Navigate to the ``chaincode/fabcar/javascript/lib`` "
@@ -401,24 +401,24 @@ msgid ""
 "your editor."
 msgstr ""
 
-#: ../../source/write_first_app.rst:318
+#: ../../source/write_first_app.rst:317
 msgid "See how our smart contract is defined using the ``Contract`` class:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:324
+#: ../../source/write_first_app.rst:323
 msgid ""
 "Within this class structure, you'll see that we have the following "
 "transactions defined: ``initLedger``, ``queryCar``, ``queryAllCars``, "
 "``createCar``, and ``changeCarOwner``. For example:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:334
+#: ../../source/write_first_app.rst:333
 msgid ""
 "Let's take a closer look at the ``queryAllCars`` transaction to see how "
 "it interacts with the ledger."
 msgstr ""
 
-#: ../../source/write_first_app.rst:347
+#: ../../source/write_first_app.rst:346
 msgid ""
 "This code defines the range of cars that ``queryAllCars`` will retrieve "
 "from the ledger. Every car between ``CAR0`` and ``CAR999`` -- 1,000 cars "
@@ -427,7 +427,7 @@ msgid ""
 "results and packages them into JSON for the application."
 msgstr ""
 
-#: ../../source/write_first_app.rst:353
+#: ../../source/write_first_app.rst:352
 msgid ""
 "Below is a representation of how an application would call different "
 "transactions in a smart contract. Each transaction uses a broad set of "
@@ -436,63 +436,63 @@ msgid ""
 "shim.github.io/master/index.html?redirect=true>`_."
 msgstr ""
 
-#: ../../source/write_first_app.rst:361
+#: ../../source/write_first_app.rst:360
 msgid ""
 "We can see our ``queryAllCars`` transaction, and another called "
 "``createCar``. We will use this later in the tutorial to update the "
 "ledger, and add a new block to the blockchain."
 msgstr ""
 
-#: ../../source/write_first_app.rst:365
+#: ../../source/write_first_app.rst:364
 msgid ""
 "But first, go back to the ``query`` program and change the "
 "``evaluateTransaction`` request to query ``CAR4``. The ``query`` program "
 "should now look like this:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:373
+#: ../../source/write_first_app.rst:372
 msgid ""
 "Save the program and navigate back to your ``fabcar/javascript`` "
 "directory. Now run the ``query`` program again:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:388
+#: ../../source/write_first_app.rst:387
 msgid ""
 "If you go back and look at the result from when the transaction was "
 "``queryAllCars``, you can see that ``CAR4`` was Adriana’s black Tesla "
 "model S, which is the result that was returned here."
 msgstr ""
 
-#: ../../source/write_first_app.rst:392
+#: ../../source/write_first_app.rst:391
 msgid ""
 "We can use the ``queryCar`` transaction to query against any car, using "
 "its key (e.g. ``CAR0``) and get whatever make, model, color, and owner "
 "correspond to that car."
 msgstr ""
 
-#: ../../source/write_first_app.rst:396
+#: ../../source/write_first_app.rst:395
 msgid ""
 "Great. At this point you should be comfortable with the basic query "
 "transactions in the smart contract and the handful of parameters in the "
 "query program."
 msgstr ""
 
-#: ../../source/write_first_app.rst:399
+#: ../../source/write_first_app.rst:398
 msgid "Time to update the ledger..."
 msgstr ""
 
-#: ../../source/write_first_app.rst:402
+#: ../../source/write_first_app.rst:401
 msgid "Updating the ledger"
 msgstr ""
 
-#: ../../source/write_first_app.rst:404
+#: ../../source/write_first_app.rst:403
 msgid ""
 "Now that we’ve done a few ledger queries and added a bit of code, we’re "
 "ready to update the ledger. There are a lot of potential updates we could"
 " make, but let's start by creating a **new** car."
 msgstr ""
 
-#: ../../source/write_first_app.rst:408
+#: ../../source/write_first_app.rst:407
 msgid ""
 "From an application perspective, updating the ledger is simple. An "
 "application submits a transaction to the blockchain network, and when it "
@@ -503,7 +503,7 @@ msgid ""
 "the ledger is valid and performed in an agreed and consistent order."
 msgstr ""
 
-#: ../../source/write_first_app.rst:418
+#: ../../source/write_first_app.rst:417
 msgid ""
 "Above, you can see the major components that make this process work. As "
 "well as the multiple peers which each host a copy of the ledger, and "
@@ -514,7 +514,7 @@ msgid ""
 " network."
 msgstr ""
 
-#: ../../source/write_first_app.rst:425
+#: ../../source/write_first_app.rst:424
 msgid ""
 "Our first update to the ledger will create a new car. We have a separate "
 "program called ``invoke.js`` that we will use to make updates to the "
@@ -523,7 +523,7 @@ msgid ""
 "it to the network:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:434
+#: ../../source/write_first_app.rst:433
 msgid ""
 "See how the applications calls the smart contract transaction "
 "``createCar`` to create a black Honda Accord with an owner named Tom. We "
@@ -531,22 +531,22 @@ msgid ""
 "need to use sequential keys."
 msgstr ""
 
-#: ../../source/write_first_app.rst:438
+#: ../../source/write_first_app.rst:437
 msgid "Save it and run the program:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:444
+#: ../../source/write_first_app.rst:443
 msgid "If the invoke is successful, you will see output like this:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:452
+#: ../../source/write_first_app.rst:451
 msgid ""
 "Notice how the ``invoke`` application interacted with the blockchain "
 "network using the ``submitTransaction`` API, rather than "
 "``evaluateTransaction``."
 msgstr ""
 
-#: ../../source/write_first_app.rst:459
+#: ../../source/write_first_app.rst:458
 msgid ""
 "``submitTransaction`` is much more sophisticated than "
 "``evaluateTransaction``. Rather than interacting with a single peer, the "
@@ -562,7 +562,17 @@ msgid ""
 "allowing it to return control to the application."
 msgstr ""
 
-#: ../../source/write_first_app.rst:471
+#: ../../source/write_first_app.rst:470
+msgid ""
+"``submitTransaction`` also includes a listener that checks to make sure "
+"the transaction has been validated and committed to the ledger. "
+"Applications should either utilize a commit listener, or leverage an API "
+"like ``submitTransaction`` that does this for you. Without doing this, "
+"your transaction may not have been successfully orderered, validated, and"
+" committed to the ledger."
+msgstr ""
+
+#: ../../source/write_first_app.rst:477
 msgid ""
 "``submitTransaction`` does all this for the application! The process by "
 "which the application, smart contract, peers and ordering service work "
@@ -571,73 +581,73 @@ msgid ""
 "<./peers/peers.html>`_."
 msgstr ""
 
-#: ../../source/write_first_app.rst:476
+#: ../../source/write_first_app.rst:482
 msgid ""
 "To see that this transaction has been written to the ledger, go back to "
 "``query.js`` and change the argument from ``CAR4`` to ``CAR12``."
 msgstr ""
 
-#: ../../source/write_first_app.rst:479
+#: ../../source/write_first_app.rst:485
 msgid "In other words, change this:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:485
+#: ../../source/write_first_app.rst:491
 msgid "To this:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:491
+#: ../../source/write_first_app.rst:497
 msgid "Save once again, then query:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:497
+#: ../../source/write_first_app.rst:503
 msgid "Which should return this:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:505
+#: ../../source/write_first_app.rst:511
 msgid ""
 "Congratulations. You’ve created a car and verified that its recorded on "
 "the ledger!"
 msgstr ""
 
-#: ../../source/write_first_app.rst:508
+#: ../../source/write_first_app.rst:514
 msgid ""
 "So now that we’ve done that, let’s say that Tom is feeling generous and "
 "he wants to give his Honda Accord to someone named Dave."
 msgstr ""
 
-#: ../../source/write_first_app.rst:511
+#: ../../source/write_first_app.rst:517
 msgid ""
 "To do this, go back to ``invoke.js`` and change the smart contract "
 "transaction from ``createCar`` to ``changeCarOwner`` with a corresponding"
 " change in input arguments:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:519
+#: ../../source/write_first_app.rst:525
 msgid ""
 "The first argument --- ``CAR12`` --- identifies the car that will be "
 "changing owners. The second argument --- ``Dave`` --- defines the new "
 "owner of the car."
 msgstr ""
 
-#: ../../source/write_first_app.rst:522
+#: ../../source/write_first_app.rst:528
 msgid "Save and execute the program again:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:528
+#: ../../source/write_first_app.rst:534
 msgid ""
 "Now let’s query the ledger again and ensure that Dave is now associated "
 "with the ``CAR12`` key:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:535
+#: ../../source/write_first_app.rst:541
 msgid "It should return this result:"
 msgstr ""
 
-#: ../../source/write_first_app.rst:543
+#: ../../source/write_first_app.rst:549
 msgid "The ownership of ``CAR12`` has been changed from Tom to Dave."
 msgstr ""
 
-#: ../../source/write_first_app.rst:545
+#: ../../source/write_first_app.rst:551
 msgid ""
 "In a real world application the smart contract would likely have some "
 "access control logic. For example, only certain authorized users may "
@@ -645,11 +655,11 @@ msgid ""
 "else."
 msgstr ""
 
-#: ../../source/write_first_app.rst:551
+#: ../../source/write_first_app.rst:557
 msgid "Summary"
 msgstr ""
 
-#: ../../source/write_first_app.rst:553
+#: ../../source/write_first_app.rst:559
 msgid ""
 "Now that we’ve done a few queries and a few updates, you should have a "
 "pretty good sense of how applications interact with a blockchain network "
@@ -660,11 +670,11 @@ msgid ""
 "operations."
 msgstr ""
 
-#: ../../source/write_first_app.rst:561
+#: ../../source/write_first_app.rst:567
 msgid "Additional resources"
 msgstr ""
 
-#: ../../source/write_first_app.rst:563
+#: ../../source/write_first_app.rst:569
 msgid ""
 "As we said in the introduction, we have a whole section on "
 ":doc:`developapps/developing_applications` that includes in-depth "

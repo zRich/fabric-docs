@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,15 +145,15 @@ msgid ""
 "steps are required:"
 msgstr ""
 
-#: ../../source/idemix.rst:70
+#: ../../source/idemix.rst:71
 msgid "*Compare the roles in this image to the ones above.*"
 msgstr ""
 
-#: ../../source/idemix.rst:72
+#: ../../source/idemix.rst:73
 msgid "Consider the issuer."
 msgstr ""
 
-#: ../../source/idemix.rst:74
+#: ../../source/idemix.rst:75
 msgid ""
 "Fabric CA (version 1.3 or later) has been enhanced to automatically "
 "function as an Idemix issuer. When ``fabric-ca-server`` is started (or "
@@ -163,23 +163,23 @@ msgid ""
 " files are required in step 2."
 msgstr ""
 
-#: ../../source/idemix.rst:81
+#: ../../source/idemix.rst:82
 msgid ""
 "For a development environment and if you are not using Fabric CA, you may"
-" use ``idemixgen``to create these files."
+" use ``idemixgen`` to create these files."
 msgstr ""
 
-#: ../../source/idemix.rst:84
+#: ../../source/idemix.rst:85
 msgid "Consider the verifier."
 msgstr ""
 
-#: ../../source/idemix.rst:86
+#: ../../source/idemix.rst:87
 msgid ""
 "You need to create an Idemix MSP using the ``IssuerPublicKey`` and "
 "``IssuerRevocationPublicKey`` from step 1."
 msgstr ""
 
-#: ../../source/idemix.rst:89
+#: ../../source/idemix.rst:90
 msgid ""
 "For example, consider the following excerpt from `configtx.yaml in the "
 "Hyperledger Java SDK sample <https://github.com/hyperledger/fabric-sdk-"
@@ -187,7 +187,7 @@ msgid ""
 "2Orgs/v1.3/configtx.yaml>`_:"
 msgstr ""
 
-#: ../../source/idemix.rst:105
+#: ../../source/idemix.rst:106
 msgid ""
 "The ``msptype`` is set to ``idemix`` and the contents of the ``mspdir`` "
 "directory (``crypto-config/peerOrganizations/org3.example.com/msp`` in "
@@ -195,17 +195,17 @@ msgid ""
 "``IssuerRevocationPublicKey`` files."
 msgstr ""
 
-#: ../../source/idemix.rst:110
+#: ../../source/idemix.rst:111
 msgid ""
 "Note that in this example, ``Org1Idemix`` represents the Idemix MSP for "
 "``Org1`` (not shown), which would also have an X509 MSP."
 msgstr ""
 
-#: ../../source/idemix.rst:113
+#: ../../source/idemix.rst:114
 msgid "Consider the user. Recall that the Java SDK is the API for the user."
 msgstr ""
 
-#: ../../source/idemix.rst:115
+#: ../../source/idemix.rst:116
 msgid ""
 "There is only a single additional API call required in order to use "
 "Idemix with the Java SDK: the ``idemixEnroll`` method of the "
@@ -215,14 +215,14 @@ msgid ""
 "certificate."
 msgstr ""
 
-#: ../../source/idemix.rst:121
+#: ../../source/idemix.rst:122
 msgid ""
 "The following call will return an "
 "``org.hyperledger.fabric.sdk.Enrollment`` object associated with your "
 "Idemix credential."
 msgstr ""
 
-#: ../../source/idemix.rst:128
+#: ../../source/idemix.rst:129
 msgid ""
 "Note also that ``IdemixEnrollment`` implements the "
 "``org.hyperledger.fabric.sdk.Enrollment`` interface and can, therefore, "
@@ -231,18 +231,18 @@ msgid ""
 "features of Idemix."
 msgstr ""
 
-#: ../../source/idemix.rst:134
+#: ../../source/idemix.rst:135
 msgid "Idemix and chaincode"
 msgstr ""
 
-#: ../../source/idemix.rst:136
+#: ../../source/idemix.rst:137
 msgid ""
 "From a verifier perspective, there is one more actor to consider: "
 "chaincode. What can chaincode learn about the transactor when an Idemix "
 "credential is used?"
 msgstr ""
 
-#: ../../source/idemix.rst:139
+#: ../../source/idemix.rst:140
 msgid ""
 "The `cid (Client Identity) library "
 "<https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/cid>`_"
@@ -252,17 +252,17 @@ msgid ""
 "which are disclosed in the Idemix case: ``ou`` and ``role``."
 msgstr ""
 
-#: ../../source/idemix.rst:145
+#: ../../source/idemix.rst:146
 msgid "If Fabric CA is the credential issuer:"
 msgstr ""
 
-#: ../../source/idemix.rst:147
+#: ../../source/idemix.rst:148
 msgid ""
 "the value of the `ou` attribute is the identity's **affiliation** (e.g. "
 "\"org1.department1\");"
 msgstr ""
 
-#: ../../source/idemix.rst:149
+#: ../../source/idemix.rst:150
 msgid ""
 "the value of the ``role`` attribute will be either 'member' or 'admin'. A"
 " value of 'admin' means that the identity is an MSP administrator. By "
@@ -271,14 +271,14 @@ msgid ""
 "``role`` attribute and a value of ``2``."
 msgstr ""
 
-#: ../../source/idemix.rst:155
+#: ../../source/idemix.rst:156
 msgid ""
 "For an example of setting an affiliation in the Java SDK see this `sample"
 " <https://github.com/hyperledger/fabric-sdk-"
 "java/blob/master/src/test/java/org/hyperledger/fabric/sdkintegration/End2endIdemixIT.java#L121>`_."
 msgstr ""
 
-#: ../../source/idemix.rst:157
+#: ../../source/idemix.rst:158
 msgid ""
 "For an example of using the CID library in go chaincode to retrieve "
 "attributes, see this `go chaincode <https://github.com/hyperledger"
@@ -286,118 +286,118 @@ msgid ""
 "java/blob/master/src/test/fixture/sdkintegration/gocc/sampleIdemix/src/github.com/example_cc/example_cc.go#L88>`_."
 msgstr ""
 
-#: ../../source/idemix.rst:161
+#: ../../source/idemix.rst:162
 msgid "Current limitations"
 msgstr ""
 
-#: ../../source/idemix.rst:163
+#: ../../source/idemix.rst:164
 msgid "The current version of Idemix does have a few limitations."
 msgstr ""
 
-#: ../../source/idemix.rst:165
+#: ../../source/idemix.rst:166
 msgid "**Fixed set of attributes**"
 msgstr ""
 
-#: ../../source/idemix.rst:167
+#: ../../source/idemix.rst:168
 msgid ""
 "It not yet possible to issue or use an Idemix credential with custom "
 "attributes. Custom attributes will be supported in a future release."
 msgstr ""
 
-#: ../../source/idemix.rst:170
+#: ../../source/idemix.rst:171
 msgid "The following four attributes are currently supported:"
 msgstr ""
 
-#: ../../source/idemix.rst:172
+#: ../../source/idemix.rst:173
 msgid "Organizational Unit attribute (\"ou\"):"
 msgstr ""
 
-#: ../../source/idemix.rst:174 ../../source/idemix.rst:180
+#: ../../source/idemix.rst:175 ../../source/idemix.rst:181
 msgid "Usage: same as X.509"
 msgstr ""
 
-#: ../../source/idemix.rst:175
+#: ../../source/idemix.rst:176
 msgid "Type: String"
 msgstr ""
 
-#: ../../source/idemix.rst:176 ../../source/idemix.rst:182
+#: ../../source/idemix.rst:177 ../../source/idemix.rst:183
 msgid "Revealed: always"
 msgstr ""
 
-#: ../../source/idemix.rst:178
+#: ../../source/idemix.rst:179
 msgid "Role attribute (\"role\"):"
 msgstr ""
 
-#: ../../source/idemix.rst:181 ../../source/idemix.rst:194
+#: ../../source/idemix.rst:182 ../../source/idemix.rst:195
 msgid "Type: integer"
 msgstr ""
 
-#: ../../source/idemix.rst:184
+#: ../../source/idemix.rst:185
 msgid "Enrollment ID attribute"
 msgstr ""
 
-#: ../../source/idemix.rst:186
+#: ../../source/idemix.rst:187
 msgid ""
 "Usage: uniquely identify a user --- same in all enrollment credentials "
 "that belong to the same user (will be used for auditing in the future "
 "releases)"
 msgstr ""
 
-#: ../../source/idemix.rst:188
+#: ../../source/idemix.rst:189
 msgid "Type: BIG"
 msgstr ""
 
-#: ../../source/idemix.rst:189
+#: ../../source/idemix.rst:190
 msgid ""
 "Revealed: never in the signature, only when generating an authentication "
 "token for Fabric CA"
 msgstr ""
 
-#: ../../source/idemix.rst:191
+#: ../../source/idemix.rst:192
 msgid "Revocation Handle attribute"
 msgstr ""
 
-#: ../../source/idemix.rst:193
+#: ../../source/idemix.rst:194
 msgid ""
 "Usage: uniquely identify a credential (will be used for revocation in "
 "future releases)"
 msgstr ""
 
-#: ../../source/idemix.rst:195
+#: ../../source/idemix.rst:196
 msgid "Revealed: never"
 msgstr ""
 
-#: ../../source/idemix.rst:197
+#: ../../source/idemix.rst:198
 msgid "**Revocation is not yet supported**"
 msgstr ""
 
-#: ../../source/idemix.rst:199
+#: ../../source/idemix.rst:200
 msgid ""
 "Although much of the revocation framework is in place as can be seen by "
 "the presence of a revocation handle attribute mentioned above, revocation"
 " of an Idemix credential is not yet supported."
 msgstr ""
 
-#: ../../source/idemix.rst:203
+#: ../../source/idemix.rst:204
 msgid "**Peers do not use Idemix for endorsement**"
 msgstr ""
 
-#: ../../source/idemix.rst:205
+#: ../../source/idemix.rst:206
 msgid ""
 "Currently, Idemix MSP is used by the peers only for signature "
 "verification. Signing with Idemix is only done via Client SDK. More roles"
 " (including a 'peer' role) will be supported by Idemix MSP."
 msgstr ""
 
-#: ../../source/idemix.rst:210
+#: ../../source/idemix.rst:211
 msgid "Technical summary"
 msgstr ""
 
-#: ../../source/idemix.rst:213
+#: ../../source/idemix.rst:214
 msgid "Comparing Idemix credentials to X.509 certificates"
 msgstr ""
 
-#: ../../source/idemix.rst:215
+#: ../../source/idemix.rst:216
 msgid ""
 "The certificate/credential concept and the issuance process are very "
 "similar in Idemix and X.509 certs: a set of attributes is digitally "
@@ -405,7 +405,7 @@ msgid ""
 "to which a credential is cryptographically bound."
 msgstr ""
 
-#: ../../source/idemix.rst:220
+#: ../../source/idemix.rst:221
 msgid ""
 "The main difference between a standard X.509 certificate and an Identity "
 "Mixer credential is the signature scheme that is used to certify the "
@@ -418,7 +418,7 @@ msgid ""
 "the corresponding credential secret key."
 msgstr ""
 
-#: ../../source/idemix.rst:229
+#: ../../source/idemix.rst:230
 msgid ""
 "Such proofs, like X.509 certificates, can be verified with the public key"
 " of the authority that originally signed the credential and cannot be "
@@ -426,7 +426,7 @@ msgid ""
 "can generate the proofs about the credential and its attributes."
 msgstr ""
 
-#: ../../source/idemix.rst:234
+#: ../../source/idemix.rst:235
 msgid ""
 "With regard to unlinkability, when an X.509 certificate is presented, all"
 " attributes have to be revealed to verify the certificate signature. This"
@@ -434,7 +434,7 @@ msgid ""
 "linkable."
 msgstr ""
 
-#: ../../source/idemix.rst:238
+#: ../../source/idemix.rst:239
 msgid ""
 "To avoid such linkability, fresh X.509 certificates need to be used every"
 " time, which results in complex key management and communication and "
@@ -443,7 +443,7 @@ msgid ""
 "transactions to the user."
 msgstr ""
 
-#: ../../source/idemix.rst:243
+#: ../../source/idemix.rst:244
 msgid ""
 "Idemix helps to avoid linkability with respect to both the CA and "
 "verifiers, since even the CA is not able to link proofs to the original "
@@ -451,7 +451,7 @@ msgid ""
 " were derived from the same credential (or from two different ones)."
 msgstr ""
 
-#: ../../source/idemix.rst:248
+#: ../../source/idemix.rst:249
 #, python-format
 msgid ""
 "More details on the concepts and features of the Identity Mixer "
@@ -460,11 +460,11 @@ msgid ""
 "<https://link.springer.com/chapter/10.1007%2F978-3-642-37282-7_4>`_."
 msgstr ""
 
-#: ../../source/idemix.rst:252
+#: ../../source/idemix.rst:253
 msgid "Topology Information"
 msgstr ""
 
-#: ../../source/idemix.rst:254
+#: ../../source/idemix.rst:255
 msgid ""
 "Given the above limitations, it is recommended to have only one Idemix-"
 "based MSP per channel or, at the extreme, per network. Indeed, for "
@@ -476,7 +476,7 @@ msgid ""
 "organization (MSP)."
 msgstr ""
 
-#: ../../source/idemix.rst:261
+#: ../../source/idemix.rst:262
 msgid ""
 "In the future, Idemix could be extended to support anonymous hierarchies "
 "of Idemix-based Certification Authorities whose certified credentials can"
@@ -485,7 +485,7 @@ msgid ""
 "to coexist in the same channel."
 msgstr ""
 
-#: ../../source/idemix.rst:266
+#: ../../source/idemix.rst:267
 msgid ""
 "In principal, a channel can be configured to have a single Idemix-based "
 "MSP and multiple X.509-based MSPs. Of course, the interaction between "
@@ -493,11 +493,11 @@ msgid ""
 "information need to be done case by case.wq"
 msgstr ""
 
-#: ../../source/idemix.rst:271
+#: ../../source/idemix.rst:272
 msgid "Underlying cryptographic protocols"
 msgstr ""
 
-#: ../../source/idemix.rst:273
+#: ../../source/idemix.rst:274
 msgid ""
 "Idemix technology is built from a blind signature scheme that supports "
 "multiple messages and efficient zero-knowledge proofs of signature "
@@ -506,7 +506,7 @@ msgid ""
 "scientific community."
 msgstr ""
 
-#: ../../source/idemix.rst:278
+#: ../../source/idemix.rst:279
 msgid ""
 "This particular Idemix implementation for Fabric uses a pairing-based "
 "signature scheme that was briefly proposed by `Camenisch and Lysyanskaya "

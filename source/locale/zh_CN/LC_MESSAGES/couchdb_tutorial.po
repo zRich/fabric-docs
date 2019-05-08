@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,46 +30,58 @@ msgid ""
 msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:9
-msgid "The tutorial will take you through the following steps:"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:11
-msgid ":ref:`cdb-enable-couch`"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:12
-msgid ":ref:`cdb-create-index`"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:13
-msgid ":ref:`cdb-add-index`"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:14
-msgid ":ref:`cdb-install-instantiate`"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:15
-msgid ":ref:`cdb-query`"
+msgid ""
+"The Fabric chaincode lifecycle that is being introduced in the v2.0 Alpha"
+" release does not support using indexes with CouchDB. As a result, this "
+"tutorial requires the `previous lifecycle process <https://hyperledger-"
+"fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`_ to install "
+"and instantiate a chaincode that includes CouchDB indexes. Download the "
+"`release-1.4 version of the Fabric Samples "
+"<https://github.com/hyperledger/fabric-samples/tree/release-1.4/>`_ to "
+"use this tutorial. For more information, see :ref:`cdb-add-index`."
 msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:16
-msgid ":ref:`cdb-best`"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:17
-msgid ":ref:`cdb-pagination`"
+msgid "The tutorial will take you through the following steps:"
 msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:18
-msgid ":ref:`cdb-update-index`"
+msgid ":ref:`cdb-enable-couch`"
 msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:19
-msgid ":ref:`cdb-delete-index`"
+msgid ":ref:`cdb-create-index`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:20
+msgid ":ref:`cdb-add-index`"
 msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:21
+msgid ":ref:`cdb-install-instantiate`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:22
+msgid ":ref:`cdb-query`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:23
+msgid ":ref:`cdb-best`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:24
+msgid ":ref:`cdb-pagination`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:25
+msgid ":ref:`cdb-update-index`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:26
+msgid ":ref:`cdb-delete-index`"
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:28
 msgid ""
 "For a deeper dive into CouchDB refer to :doc:`couchdb_as_state_database` "
 "and for more information on the Fabric ledger refer to the `Ledger "
@@ -77,7 +89,7 @@ msgid ""
 "how to leverage CouchDB in your blockchain network."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:26
+#: ../../source/couchdb_tutorial.rst:33
 msgid ""
 "Throughout this tutorial we will use the `Marbles sample "
 "<https://github.com/hyperledger/fabric-"
@@ -89,11 +101,11 @@ msgid ""
 "commands are provided throughout this tutorial to use the network."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:34
+#: ../../source/couchdb_tutorial.rst:41
 msgid "Why CouchDB?"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:36
+#: ../../source/couchdb_tutorial.rst:43
 msgid ""
 "Fabric supports two types of peer databases. LevelDB is the default state"
 " database embedded in the peer node and stores chaincode data as simple "
@@ -107,7 +119,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:46
+#: ../../source/couchdb_tutorial.rst:53
 msgid ""
 "In order to leverage the benefits of CouchDB, namely content-based JSON "
 "queries,your data must be modeled in JSON format. You must decide whether"
@@ -119,11 +131,11 @@ msgid ""
 "key range, and composite key queries."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:57
+#: ../../source/couchdb_tutorial.rst:64
 msgid "Enable CouchDB in Hyperledger Fabric"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:59
+#: ../../source/couchdb_tutorial.rst:66
 msgid ""
 "CouchDB runs as a separate database process alongside the peer, therefore"
 " there are additional considerations in terms of setup, management, and "
@@ -136,7 +148,7 @@ msgid ""
 "directory specified by the environment variable FABRIC_CFG_PATH:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:69
+#: ../../source/couchdb_tutorial.rst:76
 msgid ""
 "For docker deployments, ``core.yaml`` is pre-configured and located in "
 "the peer container ``FABRIC_CFG_PATH`` folder. However when using docker "
@@ -144,13 +156,13 @@ msgid ""
 "``docker-compose-couch.yaml``  to override the core.yaml"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:74
+#: ../../source/couchdb_tutorial.rst:81
 msgid ""
 "For native binary deployments, ``core.yaml`` is included with the release"
 " artifact distribution."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:77
+#: ../../source/couchdb_tutorial.rst:84
 msgid ""
 "Edit the ``stateDatabase`` section of ``core.yaml``. Specify ``CouchDB`` "
 "as the ``stateDatabase`` and fill in the associated ``couchDBConfig`` "
@@ -162,15 +174,15 @@ msgid ""
 "``HyperLedger/fabric-samples/first-network`` directory."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:87
+#: ../../source/couchdb_tutorial.rst:94
 msgid "Create an index"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:89
+#: ../../source/couchdb_tutorial.rst:96
 msgid "Why are indexes important?"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:91
+#: ../../source/couchdb_tutorial.rst:98
 msgid ""
 "Indexes allow a database to be queried without having to examine every "
 "row with every query, making them run faster and more efficiently. "
@@ -182,7 +194,7 @@ msgid ""
 " index of the sorted fields."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:101
+#: ../../source/couchdb_tutorial.rst:108
 msgid ""
 "Rich queries that do not have an index will work but may throw a warning "
 "in the CouchDB log that the index was not found. However, if a rich query"
@@ -190,7 +202,7 @@ msgid ""
 "otherwise, the query will fail and an error will be thrown."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:106
+#: ../../source/couchdb_tutorial.rst:113
 msgid ""
 "To demonstrate building an index, we will use the data from the `Marbles "
 "sample <https://github.com/hyperledger/fabric-"
@@ -198,7 +210,7 @@ msgid ""
 "this example, the Marbles data structure is defined as:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:121
+#: ../../source/couchdb_tutorial.rst:128
 msgid ""
 "In this structure, the attributes (``docType``, ``name``, ``color``, "
 "``size``, ``owner``) define the ledger data associated with the asset. "
@@ -210,7 +222,7 @@ msgid ""
 "database, that is, each chaincode has its own namespace for keys.)"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:129
+#: ../../source/couchdb_tutorial.rst:136
 msgid ""
 "With respect to the Marbles data structure, ``docType`` is used to "
 "identify that this document/asset is a marble asset. Potentially there "
@@ -218,34 +230,34 @@ msgid ""
 "in the database are searchable against all of these attribute values."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:134
+#: ../../source/couchdb_tutorial.rst:141
 msgid ""
 "When defining an index for use in chaincode queries, each one must be "
 "defined in its own text file with the extension `*.json` and the index "
 "definition must be formatted in the CouchDB index JSON format."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:138
+#: ../../source/couchdb_tutorial.rst:145
 msgid "To define an index, three pieces of information are required:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:140
+#: ../../source/couchdb_tutorial.rst:147
 msgid "`fields`: these are the frequently queried fields"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:141
+#: ../../source/couchdb_tutorial.rst:148
 msgid "`name`: name of the index"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:142
+#: ../../source/couchdb_tutorial.rst:149
 msgid "`type`: always json in this context"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:144
+#: ../../source/couchdb_tutorial.rst:151
 msgid "For example, a simple index named ``foo-index`` for a field named ``foo``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:156
+#: ../../source/couchdb_tutorial.rst:163
 msgid ""
 "Optionally the design document  attribute ``ddoc`` can be specified on "
 "the index definition. A `design document "
@@ -254,7 +266,7 @@ msgid ""
 " for efficiency but CouchDB recommends one index per design document."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:162
+#: ../../source/couchdb_tutorial.rst:169
 msgid ""
 "When defining an index it is a good practice to include the ``ddoc`` "
 "attribute and value along with the index name. It is important to include"
@@ -263,14 +275,14 @@ msgid ""
 " a query."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:169
+#: ../../source/couchdb_tutorial.rst:176
 msgid ""
 "Here is another example of an index definition from the Marbles sample "
 "with the index name ``indexOwner`` using multiple fields ``docType`` and "
 "``owner`` and includes the ``ddoc`` attribute:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:186
+#: ../../source/couchdb_tutorial.rst:193
 msgid ""
 "In the example above, if the design document ``indexOwnerDoc`` does not "
 "already exist, it is automatically created when the index is deployed. An"
@@ -284,7 +296,7 @@ msgid ""
 "recommended practice."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:226
+#: ../../source/couchdb_tutorial.rst:233
 msgid ""
 "In general, you should model index fields to match the fields that will "
 "be used in query filters and sorts. For more details on building an index"
@@ -292,7 +304,7 @@ msgid ""
 "<http://docs.couchdb.org/en/latest/api/database/find.html#db-index>`__."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:230
+#: ../../source/couchdb_tutorial.rst:237
 msgid ""
 "A final word on indexing, Fabric takes care of indexing the documents in "
 "the database using a pattern called ``index warming``. CouchDB does not "
@@ -304,39 +316,39 @@ msgid ""
 "added to the state database."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:242
+#: ../../source/couchdb_tutorial.rst:249
 msgid "Add the index to your chaincode folder"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:244
+#: ../../source/couchdb_tutorial.rst:251
 msgid ""
 "Once you finalize an index, it is ready to be packaged with your "
 "chaincode for deployment by being placed alongside it in the appropriate "
 "metadata folder."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:247
+#: ../../source/couchdb_tutorial.rst:254
 msgid ""
 "If your chaincode installation and instantiation uses the Hyperledger "
 "Fabric Node SDK, the JSON index files can be located in any folder as "
 "long as it conforms to this `directory structure <https://fabric-sdk-"
 "node.github.io/tutorial-metadata-chaincode.html>`__. During the chaincode"
-" installation using the client.installChaincode() API, include the "
+" installation using the ``client.installChaincode()`` API, include the "
 "attribute (``metadataPath``) in the `installation request <https"
 "://fabric-sdk-node.github.io/global.html#ChaincodeInstallRequest>`__. The"
 " value of the metadataPath is a string representing the absolute path to "
 "the directory structure containing the JSON index file(s)."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:255
+#: ../../source/couchdb_tutorial.rst:262
 msgid ""
-"Alternatively, if you are using the :doc:`peer-commands` to install and "
-"instantiate the chaincode, then the JSON index files must be located "
-"under the path ``META-INF/statedb/couchdb/indexes`` which is located "
-"inside the directory where the chaincode resides."
+"Alternatively, if you are using the :doc:`commands/peercommand` command "
+"to install and instantiate the chaincode, then the JSON index files must "
+"be located under the path ``META-INF/statedb/couchdb/indexes`` which is "
+"located inside the directory where the chaincode resides."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:260
+#: ../../source/couchdb_tutorial.rst:267
 msgid ""
 "The `Marbles sample <https://github.com/hyperledger/fabric-"
 "samples/tree/master/chaincode/marbles02/go>`__  below illustrates how the"
@@ -344,23 +356,33 @@ msgid ""
 "peer commands."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:268
+#: ../../source/couchdb_tutorial.rst:275
 msgid "This sample includes one index named indexOwnerDoc:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:276
+#: ../../source/couchdb_tutorial.rst:283
 msgid "Start the network"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:278 ../../source/couchdb_tutorial.rst:320
-#: ../../source/couchdb_tutorial.rst:340 ../../source/couchdb_tutorial.rst:358
-#: ../../source/couchdb_tutorial.rst:437 ../../source/couchdb_tutorial.rst:652
-#: ../../source/couchdb_tutorial.rst:705 ../../source/couchdb_tutorial.rst:732
-#: ../../source/couchdb_tutorial.rst:751
+#: ../../source/couchdb_tutorial.rst:285
+msgid ""
+"The following tutorial needs to be run using the `release-1.4 version of "
+"the Fabric Samples <https://github.com/hyperledger/fabric-"
+"samples/tree/release-1.4/>`__. If you have already downloaded release-2.0"
+" of the Fabric Samples, you can use the `git checkout` to download "
+"`release-1.4`. Navigate to the `fabric-samples` directory on your local "
+"machine. Then run the command `git checkout v1.4.0`."
+msgstr ""
+
+#: ../../source/couchdb_tutorial.rst:293 ../../source/couchdb_tutorial.rst:335
+#: ../../source/couchdb_tutorial.rst:355 ../../source/couchdb_tutorial.rst:373
+#: ../../source/couchdb_tutorial.rst:452 ../../source/couchdb_tutorial.rst:670
+#: ../../source/couchdb_tutorial.rst:724 ../../source/couchdb_tutorial.rst:751
+#: ../../source/couchdb_tutorial.rst:770
 msgid ":guilabel:`Try it yourself`"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:280
+#: ../../source/couchdb_tutorial.rst:295
 msgid ""
 "Before installing and instantiating the marbles chaincode, we need to "
 "start up the BYFN network. For the sake of this tutorial, we want to "
@@ -370,24 +392,24 @@ msgid ""
 "previous environments:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:293
+#: ../../source/couchdb_tutorial.rst:308
 msgid ""
 "Now start up the BYFN network with CouchDB by running the following "
 "command:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:299
+#: ../../source/couchdb_tutorial.rst:314
 msgid ""
 "This will create a simple Fabric network consisting of a single channel "
 "named `mychannel` with two organizations (each maintaining two peer "
 "nodes) and an ordering service while using CouchDB as the state database."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:306
+#: ../../source/couchdb_tutorial.rst:321
 msgid "Install and instantiate the Chaincode"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:308
+#: ../../source/couchdb_tutorial.rst:323
 msgid ""
 "Client applications interact with the blockchain ledger through "
 "chaincode. As such we need to install the chaincode on every peer that "
@@ -396,13 +418,13 @@ msgid ""
 "the chaincode so they should be ready for deployment."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:314
+#: ../../source/couchdb_tutorial.rst:329
 msgid ""
 "Chaincode is installed onto a peer and then instantiated onto the channel"
-" using :doc:`peer-commands`."
+" using :doc:`commands/peercommand`."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:318
+#: ../../source/couchdb_tutorial.rst:333
 #, python-format
 msgid ""
 "Use the `peer chaincode install <http://hyperledger-"
@@ -411,20 +433,20 @@ msgid ""
 " peer."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:322
+#: ../../source/couchdb_tutorial.rst:337
 msgid ""
 "Assuming you have started the BYFN network, navigate into the CLI "
 "container using the command:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:329
+#: ../../source/couchdb_tutorial.rst:344
 msgid ""
 "Use the following command to install the Marbles chaincode from the git "
 "repository onto a peer in your BYFN network. The CLI container defaults "
 "to using peer0 of org1:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:337
+#: ../../source/couchdb_tutorial.rst:352
 #, python-format
 msgid ""
 "2. Issue the `peer chaincode instantiate <http://hyperledger-"
@@ -433,17 +455,17 @@ msgid ""
 " channel."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:342
+#: ../../source/couchdb_tutorial.rst:357
 msgid ""
 "To instantiate the Marbles sample on the BYFN channel ``mychannel`` run "
 "the following command:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:351
+#: ../../source/couchdb_tutorial.rst:366
 msgid "Verify index was deployed"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:353
+#: ../../source/couchdb_tutorial.rst:368
 msgid ""
 "Indexes will be deployed to each peer's CouchDB state database once the "
 "chaincode is both installed on the peer and instantiated on the channel. "
@@ -451,29 +473,29 @@ msgid ""
 "examining the peer log in the Docker container."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:360
+#: ../../source/couchdb_tutorial.rst:375
 msgid ""
 "To view the logs in the peer docker container, open a new Terminal window"
 " and run the following command to grep for message confirmation that the "
 "index was created."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:369
+#: ../../source/couchdb_tutorial.rst:384
 msgid "You should see a result that looks like the following:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:375
+#: ../../source/couchdb_tutorial.rst:390
 msgid ""
 "If Marbles was not installed on the BYFN peer ``peer0.org1.example.com``,"
 " you may need to replace it with the name of a different peer where "
 "Marbles was installed."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:382
+#: ../../source/couchdb_tutorial.rst:397
 msgid "Query the CouchDB State Database"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:384
+#: ../../source/couchdb_tutorial.rst:399
 msgid ""
 "Now that the index has been defined in the JSON file and deployed "
 "alongside the chaincode, chaincode functions can execute JSON queries "
@@ -481,14 +503,14 @@ msgid ""
 "the chaincode functions."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:388
+#: ../../source/couchdb_tutorial.rst:403
 msgid ""
 "Specifying an index name on a query is optional. If not specified, and an"
 " index already exists for the fields being queried, the existing index "
 "will be automatically used."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:392
+#: ../../source/couchdb_tutorial.rst:407
 msgid ""
 "It is a good practice to explicitly include an index name on a query "
 "using the ``use_index`` keyword. Without it, CouchDB may pick a less "
@@ -498,11 +520,11 @@ msgid ""
 "and you assumed it was."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:401
+#: ../../source/couchdb_tutorial.rst:416
 msgid "Build the query in chaincode"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:403
+#: ../../source/couchdb_tutorial.rst:418
 msgid ""
 "You can perform complex rich queries against the chaincode data values "
 "using the CouchDB JSON query language within chaincode. As we explored "
@@ -513,11 +535,11 @@ msgid ""
 "``queryMarbles`` and ``queryMarblesByOwner``:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:409
+#: ../../source/couchdb_tutorial.rst:424
 msgid "**queryMarbles** --"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:411
+#: ../../source/couchdb_tutorial.rst:426
 msgid ""
 "Example of an **ad hoc rich query**. This is a query where a (selector) "
 "string can be passed into the function. This query would be useful to "
@@ -527,11 +549,11 @@ msgid ""
 "selectors>`__."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:419
+#: ../../source/couchdb_tutorial.rst:434
 msgid "**queryMarblesByOwner** --"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:421
+#: ../../source/couchdb_tutorial.rst:436
 msgid ""
 "Example of a parameterized query where the query logic is baked into the "
 "chaincode. In this case the function accepts a single argument, the "
@@ -540,11 +562,11 @@ msgid ""
 "syntax."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:429
+#: ../../source/couchdb_tutorial.rst:444
 msgid "Run the query using the peer command"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:431
+#: ../../source/couchdb_tutorial.rst:446
 #, python-format
 msgid ""
 "In absence of a client application to test rich queries defined in "
@@ -557,13 +579,13 @@ msgid ""
 "function."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:439
+#: ../../source/couchdb_tutorial.rst:454
 msgid ""
 "Before querying the database, we should add some data. Run the following "
 "command in the peer container to create a marble owned by \"tom\":"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:446
+#: ../../source/couchdb_tutorial.rst:461
 msgid ""
 "After an index has been deployed during chaincode instantiation, it will "
 "automatically be utilized by chaincode queries. CouchDB can determine "
@@ -574,17 +596,17 @@ msgid ""
 "selector syntax by including the ``use_index`` keyword:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:459
+#: ../../source/couchdb_tutorial.rst:474
 msgid ""
 "Delving into the query command above, there are three arguments of "
 "interest:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:461
+#: ../../source/couchdb_tutorial.rst:476
 msgid "``queryMarbles``"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:462
+#: ../../source/couchdb_tutorial.rst:478
 msgid ""
 "Name of the function in the Marbles chaincode. Notice a `shim "
 "<https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim>`__ "
@@ -593,22 +615,22 @@ msgid ""
 " API ``getQueryResult()``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:485
+#: ../../source/couchdb_tutorial.rst:501
 msgid "``{\"selector\":{\"docType\":\"marble\",\"owner\":\"tom\"}``"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:486
+#: ../../source/couchdb_tutorial.rst:503
 msgid ""
 "This is an example of an **ad hoc selector** string which finds all "
 "documents of type ``marble`` where the ``owner`` attribute has a value of"
 " ``tom``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:490
+#: ../../source/couchdb_tutorial.rst:507
 msgid "``\"use_index\":[\"_design/indexOwnerDoc\", \"indexOwner\"]``"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:491
+#: ../../source/couchdb_tutorial.rst:509
 msgid ""
 "Specifies both the design doc name  ``indexOwnerDoc`` and index name "
 "``indexOwner``. In this example the selector query explicitly includes "
@@ -620,17 +642,17 @@ msgid ""
 "``use_index`` keyword."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:500
+#: ../../source/couchdb_tutorial.rst:518
 msgid ""
 "The query runs successfully and the index is leveraged with the following"
 " results:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:509
+#: ../../source/couchdb_tutorial.rst:527
 msgid "Use best practices for queries and indexes"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:511
+#: ../../source/couchdb_tutorial.rst:529
 msgid ""
 "Queries that use indexes will complete faster, without having to scan the"
 " full database in couchDB. Understanding indexes will allow you to write "
@@ -638,7 +660,7 @@ msgid ""
 "larger amounts of data or blocks on your network."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:516
+#: ../../source/couchdb_tutorial.rst:534
 msgid ""
 "It is also important to plan the indexes you install with your chaincode."
 " You should install only a few indexes per chaincode that support most of"
@@ -649,42 +671,42 @@ msgid ""
 "take for transactions to complete."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:523
+#: ../../source/couchdb_tutorial.rst:541
 msgid ""
 "The examples in this section will help demonstrate how queries use "
 "indexes and what type of queries will have the best performance. Remember"
 " the following when writing your queries:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:527
+#: ../../source/couchdb_tutorial.rst:545
 msgid ""
 "All fields in the index must also be in the selector or sort sections of "
 "your query for the index to be used."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:529
+#: ../../source/couchdb_tutorial.rst:547
 msgid ""
 "More complex queries will have a lower performance and will be less "
 "likely to use an index."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:531
+#: ../../source/couchdb_tutorial.rst:549
 msgid ""
 "You should try to avoid operators that will result in a full table scan "
 "or a full index scan such as ``$or``, ``$in`` and ``$regex``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:534
+#: ../../source/couchdb_tutorial.rst:552
 msgid ""
 "In the previous section of this tutorial, you issued the following query "
 "against the marbles chaincode:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:542
+#: ../../source/couchdb_tutorial.rst:560
 msgid "The marbles chaincode was installed with the ``indexOwnerDoc`` index:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:548
+#: ../../source/couchdb_tutorial.rst:566
 msgid ""
 "Notice that both the fields in the query, ``docType`` and ``owner``, are "
 "included in the index, making it a fully supported query. As a result "
@@ -693,7 +715,7 @@ msgid ""
 "return faster than other queries from your chaincode."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:554
+#: ../../source/couchdb_tutorial.rst:572
 msgid ""
 "If you add extra fields to the query above, it will still use the index. "
 "However, the query will additionally have to scan the indexed data for "
@@ -702,7 +724,7 @@ msgid ""
 "return than the previous example."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:565
+#: ../../source/couchdb_tutorial.rst:583
 msgid ""
 "A query that does not include all fields in the index will have to scan "
 "the full database instead. For example, the query below searches for the "
@@ -711,7 +733,7 @@ msgid ""
 "query will not be able to use the index."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:576
+#: ../../source/couchdb_tutorial.rst:594
 msgid ""
 "In general, more complex queries will have a longer response time, and "
 "have a lower chance of being supported by an index. Operators such as "
@@ -719,13 +741,13 @@ msgid ""
 "full index or not use the index at all."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:581
+#: ../../source/couchdb_tutorial.rst:599
 msgid ""
 "As an example, the query below contains an ``$or`` term that will search "
 "for every marble and every item owned by tom."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:589
+#: ../../source/couchdb_tutorial.rst:607
 msgid ""
 "This query will still use the index because it searches for fields that "
 "are included in ``indexOwnerDoc``. However, the ``$or`` condition in the "
@@ -733,11 +755,11 @@ msgid ""
 "longer response time."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:594
+#: ../../source/couchdb_tutorial.rst:612
 msgid "Below is an example of a complex query that is not supported by the index."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:601
+#: ../../source/couchdb_tutorial.rst:619
 msgid ""
 "The query searches for all marbles owned by tom or any other items that "
 "are yellow. This query will not use the index because it will need to "
@@ -746,7 +768,7 @@ msgid ""
 "respond or may timeout."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:606
+#: ../../source/couchdb_tutorial.rst:624
 msgid ""
 "While it is important to follow best practices with your queries, using "
 "indexes is not a solution for collecting large amounts of data. The "
@@ -759,7 +781,7 @@ msgid ""
 "of your network or disrupting transactions."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:615
+#: ../../source/couchdb_tutorial.rst:633
 msgid ""
 "You can use block or chaincode events from your application to write "
 "transaction data to an off-chain database or analytics engine. For each "
@@ -770,11 +792,11 @@ msgid ""
 "stores."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:625
+#: ../../source/couchdb_tutorial.rst:643
 msgid "Query the CouchDB State Database With Pagination"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:627
+#: ../../source/couchdb_tutorial.rst:645
 msgid ""
 "When large result sets are returned by CouchDB queries, a set of APIs is "
 "available which can be called by chaincode to paginate the list of "
@@ -788,7 +810,7 @@ msgid ""
 "pagination>`__."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:636
+#: ../../source/couchdb_tutorial.rst:654
 msgid ""
 "We will use the  `Marbles sample <https://github.com/hyperledger/fabric-"
 "samples/blob/master/chaincode/marbles02/go/marbles_chaincode.go>`__ "
@@ -796,11 +818,11 @@ msgid ""
 "can be implemented in chaincode and the client application."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:640
+#: ../../source/couchdb_tutorial.rst:658
 msgid "**queryMarblesWithPagination** --"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:642
+#: ../../source/couchdb_tutorial.rst:660
 msgid ""
 "Example of an **ad hoc rich query with pagination**. This is a query "
 "where a (selector) string can be passed into the function similar to the "
@@ -808,7 +830,7 @@ msgid ""
 "query as well as a ``bookmark``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:647
+#: ../../source/couchdb_tutorial.rst:665
 msgid ""
 "In order to demonstrate pagination, more data is required. This example "
 "assumes that you have already added marble1 from above. Run the following"
@@ -816,7 +838,7 @@ msgid ""
 "\"tom\", to create a total of five marbles owned by \"tom\":"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:661
+#: ../../source/couchdb_tutorial.rst:679
 msgid ""
 "In addition to the arguments for the query in the previous example, "
 "queryMarblesWithPagination adds ``pagesize`` and ``bookmark``. "
@@ -825,78 +847,73 @@ msgid ""
 "(Each page of results returns a unique bookmark.)"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:667
+#: ../../source/couchdb_tutorial.rst:685
 msgid "``queryMarblesWithPagination``"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:668
+#: ../../source/couchdb_tutorial.rst:687
 msgid ""
 "Name of the function in the Marbles chaincode. Notice a `shim "
 "<https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim>`__ "
 "``shim.ChaincodeStubInterface`` is used to access and modify the ledger. "
 "The ``getQueryResultForQueryStringWithPagination()`` passes the "
-"queryString along"
-msgstr ""
-
-#: ../../source/couchdb_tutorial.rst:671
-msgid ""
-"with the pagesize and bookmark to the shim API "
+"queryString along with the pagesize and bookmark to the shim API "
 "``GetQueryResultWithPagination()``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:699
+#: ../../source/couchdb_tutorial.rst:718
 msgid ""
 "The following example is a peer command which calls "
 "queryMarblesWithPagination with a pageSize of ``3`` and no bookmark "
 "specified."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:702
+#: ../../source/couchdb_tutorial.rst:721
 msgid ""
 "When no bookmark is specified, the query starts with the \"first\" page "
 "of records."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:712
+#: ../../source/couchdb_tutorial.rst:731
 msgid ""
 "The following response is received (carriage returns added for clarity), "
 "three of the five marbles are returned because the ``pagsize`` was set to"
 " ``3``:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:723
+#: ../../source/couchdb_tutorial.rst:742
 msgid ""
 "Bookmarks are uniquely generated by CouchDB for each query and represent "
 "a placeholder in the result set. Pass the returned bookmark on the "
 "subsequent iteration of the query to retrieve the next set of results."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:728
+#: ../../source/couchdb_tutorial.rst:747
 msgid ""
 "The following is a peer command to call queryMarblesWithPagination with a"
 " pageSize of ``3``. Notice this time, the query includes the bookmark "
 "returned from the previous query."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:738
+#: ../../source/couchdb_tutorial.rst:757
 msgid ""
 "The following response is received (carriage returns added for clarity)."
 "  The last two records are retrieved:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:748
+#: ../../source/couchdb_tutorial.rst:767
 msgid ""
 "The final command is a peer command to call queryMarblesWithPagination "
 "with a pageSize of ``3`` and with the bookmark from the previous query."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:757
+#: ../../source/couchdb_tutorial.rst:776
 msgid ""
 "The following response is received (carriage returns added for clarity). "
 "No records are returned, indicating that all pages have been retrieved:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:766
+#: ../../source/couchdb_tutorial.rst:785
 msgid ""
 "For an example of how a client application can iterate over the result "
 "sets using pagination, search for the "
@@ -905,11 +922,11 @@ msgid ""
 "samples/blob/master/chaincode/marbles02/go/marbles_chaincode.go>`__."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:773
+#: ../../source/couchdb_tutorial.rst:792
 msgid "Update an Index"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:775
+#: ../../source/couchdb_tutorial.rst:794
 msgid ""
 "It may be necessary to update an index over time. The same index may "
 "exist in subsequent versions of the chaincode that gets installed. In "
@@ -925,18 +942,18 @@ msgid ""
 "unchanged in CouchDB until it is removed."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:787
+#: ../../source/couchdb_tutorial.rst:806
 msgid ""
 "If the state database has a significant volume of data, it will take some"
 " time for the index to be re-built, during which time chaincode invokes "
 "that issue queries may fail or timeout."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:792
+#: ../../source/couchdb_tutorial.rst:811
 msgid "Iterating on your index definition"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:794
+#: ../../source/couchdb_tutorial.rst:813
 msgid ""
 "If you have access to your peer's CouchDB state database in a development"
 " environment, you can iteratively test various indexes in support of your"
@@ -946,7 +963,7 @@ msgid ""
 "line curl utility to create and update indexes."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:800
+#: ../../source/couchdb_tutorial.rst:819
 msgid ""
 "The Fauxton interface is a web UI for the creation, update, and "
 "deployment of indexes to CouchDB. If you want to try out this interface, "
@@ -956,41 +973,41 @@ msgid ""
 "``http://localhost:5984/_utils``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:807
+#: ../../source/couchdb_tutorial.rst:826
 msgid ""
 "Alternatively, if you prefer not use the Fauxton UI, the following is an "
 "example of a curl command which can be used to create the index on the "
 "database ``mychannel_marbles``:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:811
+#: ../../source/couchdb_tutorial.rst:830
 msgid ""
 "// Index for docType, owner. // Example curl command line to define index"
 " in the CouchDB channel_chaincode database"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:822
+#: ../../source/couchdb_tutorial.rst:841
 msgid ""
 "If you are using BYFN configured with CouchDB, replace hostname:port with"
 " ``localhost:5984``."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:828
+#: ../../source/couchdb_tutorial.rst:847
 msgid "Delete an Index"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:830
+#: ../../source/couchdb_tutorial.rst:849
 msgid ""
 "Index deletion is not managed by Fabric tooling. If you need to delete an"
 " index, manually issue a curl command against the database or delete it "
 "using the Fauxton interface."
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:834
+#: ../../source/couchdb_tutorial.rst:853
 msgid "The format of the curl command to delete an index would be:"
 msgstr ""
 
-#: ../../source/couchdb_tutorial.rst:841
+#: ../../source/couchdb_tutorial.rst:860
 msgid "To delete the index used in this tutorial, the curl command would be:"
 msgstr ""
 

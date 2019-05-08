@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -362,7 +362,7 @@ msgid "gauge"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:51 ../../source/metrics_reference.rst:299
-msgid "Capacity of the egress queue"
+msgid "Capacity of the egress queue."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:51 ../../source/metrics_reference.rst:55
@@ -374,7 +374,7 @@ msgid "cluster_comm_egress_queue_length"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:55 ../../source/metrics_reference.rst:301
-msgid "Length of the egress queue"
+msgid "Length of the egress queue."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:59
@@ -382,7 +382,7 @@ msgid "cluster_comm_egress_queue_workers"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:59 ../../source/metrics_reference.rst:303
-msgid "Count of egress queue workers"
+msgid "Count of egress queue workers."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:61
@@ -390,7 +390,7 @@ msgid "cluster_comm_egress_stream_count"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:61 ../../source/metrics_reference.rst:305
-msgid "Count of streams to other nodes"
+msgid "Count of streams to other nodes."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:63
@@ -398,7 +398,7 @@ msgid "cluster_comm_egress_tls_connection_count"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:63 ../../source/metrics_reference.rst:307
-msgid "Count of TLS connections to other nodes"
+msgid "Count of TLS connections to other nodes."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:65
@@ -406,7 +406,7 @@ msgid "cluster_comm_ingress_stream_count"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:65 ../../source/metrics_reference.rst:309
-msgid "Count of streams from other nodes"
+msgid "Count of streams from other nodes."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:67
@@ -414,7 +414,7 @@ msgid "cluster_comm_msg_dropped_count"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:67 ../../source/metrics_reference.rst:311
-msgid "Count of messages dropped"
+msgid "Count of messages dropped."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:67 ../../source/metrics_reference.rst:70
@@ -426,7 +426,7 @@ msgid "cluster_comm_msg_send_time"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:70 ../../source/metrics_reference.rst:313
-msgid "Time it takes to send a message down the stream"
+msgid "The time it takes to send a message in seconds."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:73
@@ -474,7 +474,7 @@ msgid "consensus_etcdraft_leader_changes"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:86 ../../source/metrics_reference.rst:328
-msgid "The number of leader changes."
+msgid "The number of leader changes since process start."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:88

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -381,20 +381,65 @@ msgid ""
 msgstr ""
 
 #: ../../source/CONTRIBUTING.rst:240
-msgid "Setting up development environment"
+msgid "CR Aging"
 msgstr ""
 
 #: ../../source/CONTRIBUTING.rst:242
+msgid ""
+"As the Fabric project has grown, so too has the backlog of open CRs. One "
+"problem that nearly all projects face is effectively managing that "
+"backlog and Fabric is no exception. In an effort to keep the backlog of "
+"Fabric and related project CRs manageable, we are introducing an aging "
+"policy which will be enforced by bots.  This is consistent with how other"
+" large projects manage their CR backlog."
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:250
+msgid "CR Aging Policy"
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:252
+msgid ""
+"The Fabric project maintainers will automatically monitor all CR activity"
+" for delinquency. If a CR has not been updated in 2 weeks, a reminder "
+"comment will be added requesting that the CR either be updated to address"
+" any outstanding comments or abandoned if it is to be withdrawn. If a "
+"delinquent CR goes another 2 weeks without an update, it will be "
+"automatically abandoned. If a CR has aged more than 2 months since it was"
+" originally submitted, even if it has activity, it will be flagged for "
+"maintainer review."
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:260
+msgid ""
+"If a submitted CR has passed all validation but has not been reviewed in "
+"72 hours (3 days), it will be flagged to the #fabric-pr-review channel "
+"daily until it receives a review comment(s)."
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:264
+msgid ""
+"This policy applies to all official Fabric projects (fabric, fabric-ca, "
+"fabric-samples, fabric-test, fabric-sdk-node, fabric-sdk-java, fabric-"
+"chaincode-node, fabric-chaincode-java, fabric-chaincode-evm, fabric-"
+"baseimage, and fabric-amcl)."
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:270
+msgid "Setting up development environment"
+msgstr ""
+
+#: ../../source/CONTRIBUTING.rst:272
 msgid ""
 "Next, try :doc:`building the project <dev-setup/build>` in your local "
 "development environment to ensure that everything is set up correctly."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:246
+#: ../../source/CONTRIBUTING.rst:276
 msgid "What makes a good change request?"
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:248
+#: ../../source/CONTRIBUTING.rst:278
 msgid ""
 "One change at a time. Not five, not three, not ten. One and only one. "
 "Why? Because it limits the blast area of the change. If we have a "
@@ -402,7 +447,7 @@ msgid ""
 "have some composite change that impacts more of the code."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:253
+#: ../../source/CONTRIBUTING.rst:283
 msgid ""
 "Include a link to the JIRA story for the change. Why? Because a) we want "
 "to track our velocity to better judge what we think we can deliver and "
@@ -411,7 +456,7 @@ msgid ""
 "want to link back to that from the change itself."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:260
+#: ../../source/CONTRIBUTING.rst:290
 msgid ""
 "Include unit and integration tests (or changes to existing tests) with "
 "every change. This does not mean just happy path testing, either. It also"
@@ -422,7 +467,7 @@ msgid ""
 "actually works."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:268
+#: ../../source/CONTRIBUTING.rst:298
 msgid ""
 "Unit tests should have NO external dependencies. You should be able to "
 "run unit tests in place with ``go test`` or equivalent for the language. "
@@ -438,7 +483,7 @@ msgid ""
 "unit tests."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:281
+#: ../../source/CONTRIBUTING.rst:311
 msgid ""
 "Minimize the lines of code per CR. Why? Maintainers have day jobs, too. "
 "If you send a 1,000 or 2,000 LOC change, how long do you think it takes "
@@ -453,14 +498,14 @@ msgid ""
 "(protobufs, etc.). Again, there can be exceptions."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:294
+#: ../../source/CONTRIBUTING.rst:324
 msgid ""
 "Large change requests, e.g. those with more than 300 LOC are more likely "
 "than not going to receive a -2, and you'll be asked to refactor the "
 "change to conform with this guidance."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:298
+#: ../../source/CONTRIBUTING.rst:328
 msgid ""
 "Do not stack change requests (e.g. submit a CR from the same local branch"
 " as your previous CR) unless they are related. This will minimize merge "
@@ -469,7 +514,7 @@ msgid ""
 "comments in the preceding requests."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:304
+#: ../../source/CONTRIBUTING.rst:334
 msgid ""
 "Write a meaningful commit message. Include a meaningful 55 (or less) "
 "character title, followed by a blank line, followed by a more "
@@ -480,11 +525,11 @@ msgid ""
 "change request."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:312
+#: ../../source/CONTRIBUTING.rst:342
 msgid "That Gerrit will automatically create a hyperlink to the JIRA item. e.g."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:322
+#: ../../source/CONTRIBUTING.rst:352
 msgid ""
 "Finally, be responsive. Don't let a change request fester with review "
 "comments such that it gets to a point that it requires a rebase. It only "
@@ -492,11 +537,11 @@ msgid ""
 "remediate the merge conflicts."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:328
+#: ../../source/CONTRIBUTING.rst:358
 msgid "Legal stuff"
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:330
+#: ../../source/CONTRIBUTING.rst:360
 msgid ""
 "**Note:** Each source file must include a license header for the Apache "
 "Software License 2.0. See the template of the `license header "
@@ -504,7 +549,7 @@ msgid ""
 "setup/headers.txt>`__."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:334
+#: ../../source/CONTRIBUTING.rst:364
 msgid ""
 "We have tried to make it as easy as possible to make contributions. This "
 "applies to how we handle the legal aspects of contribution. We use the "
@@ -515,25 +560,25 @@ msgid ""
 "code contributions."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:341
+#: ../../source/CONTRIBUTING.rst:371
 msgid ""
 "We simply ask that when submitting a patch for review, the developer must"
 " include a sign-off statement in the commit message."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:344
+#: ../../source/CONTRIBUTING.rst:374
 msgid ""
 "Here is an example Signed-off-by line, which indicates that the submitter"
 " accepts the DCO:"
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:351
+#: ../../source/CONTRIBUTING.rst:381
 msgid ""
 "You can include this automatically when you commit a change to your local"
 " git repository using ``git commit -s``."
 msgstr ""
 
-#: ../../source/CONTRIBUTING.rst:355
+#: ../../source/CONTRIBUTING.rst:385
 msgid "Related Topics"
 msgstr ""
 

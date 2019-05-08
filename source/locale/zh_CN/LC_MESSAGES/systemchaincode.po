@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,40 +31,42 @@ msgid ""
 " be implemented through user chaincodes. Examples of System Chaincodes "
 "include QSCC (Query System Chaincode) for ledger and other Fabric-related"
 " queries, CSCC (Configuration System Chaincode) which helps regulate "
-"access control, and LSCC (Lifecycle System Chaincode)."
+"access control, ``_lifecycle`` (which regulates the Fabric chaincode "
+"lifecycle), and the legacy LSCC (Lifecycle System Chaincode) which "
+"regulated the previous chaincode lifecycle."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:12
+#: ../../source/systemchaincode.rst:14
 msgid ""
 "Unlike a user chaincode, a system chaincode is not installed and "
 "instantiated using proposals from SDKs or CLI. It is registered and "
 "deployed by the peer at start-up."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:16
+#: ../../source/systemchaincode.rst:18
 msgid ""
 "System chaincodes can be linked to a peer in two ways: statically, and "
 "dynamically using Go plugins. This tutorial will outline how to develop "
 "and load system chaincodes as plugins."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:21
+#: ../../source/systemchaincode.rst:23
 msgid "Developing Plugins"
 msgstr ""
 
-#: ../../source/systemchaincode.rst:23
+#: ../../source/systemchaincode.rst:25
 msgid ""
 "A system chaincode is a program written in `Go <https://golang.org>`_ and"
 " loaded using the Go `plugin <https://golang.org/pkg/plugin>`_ package."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:26
+#: ../../source/systemchaincode.rst:28
 msgid ""
 "A plugin includes a main package with exported symbols and is built with "
 "the command ``go build -buildmode=plugin``."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:29
+#: ../../source/systemchaincode.rst:31
 msgid ""
 "Every system chaincode must implement the `Chaincode Interface "
 "<https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode>`_"
@@ -73,7 +75,7 @@ msgid ""
 "repository at ``examples/plugin/scc``."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:33
+#: ../../source/systemchaincode.rst:35
 msgid ""
 "Existing chaincodes such as the QSCC can also serve as templates for "
 "certain features, such as access control, that are typically implemented "
@@ -81,24 +83,24 @@ msgid ""
 " reference for best-practices on things like logging and testing."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:38
+#: ../../source/systemchaincode.rst:40
 msgid ""
 "On imported packages: the Go standard library requires that a plugin must"
 " include the same version of imported packages as the host application "
 "(Fabric, in this case)."
 msgstr ""
 
-#: ../../source/systemchaincode.rst:43
+#: ../../source/systemchaincode.rst:45
 msgid "Configuring Plugins"
 msgstr ""
 
-#: ../../source/systemchaincode.rst:45
+#: ../../source/systemchaincode.rst:47
 msgid ""
 "Plugins are configured in the ``chaincode.systemPlugin`` section in "
 "``core.yaml``:"
 msgstr ""
 
-#: ../../source/systemchaincode.rst:58
+#: ../../source/systemchaincode.rst:60
 msgid ""
 "A system chaincode must also be whitelisted in the ``chaincode.system`` "
 "section in ``core.yaml``:"

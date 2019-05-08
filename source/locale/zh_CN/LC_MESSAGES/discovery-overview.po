@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,18 +22,34 @@ msgstr ""
 msgid "Service Discovery"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:5
+#: ../../source/discovery-overview.rst:4
+msgid ""
+"The new Fabric chaincode lifecycle has limitations in the v2.0 alpha "
+"release: in particular, it does not support using service discovery to "
+"discover a chaincode endorsement policy. Chaincodes that are installed "
+"and instantiated with the `previous lifecycle process <https"
+"://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`"
+" are still discoverable with the Fabric v2.0 Alpha if the channel "
+"capabilities are set with V1_4 as the highest version enabled in the "
+"Application Capabilities section of the `configtx.yaml file "
+"<https://github.com/hyperledger/fabric/blob/release-2.0/sampleconfig/configtx.yaml>`_."
+" The chaincode defined after enabling V2_0 capability on a channel will "
+"not be discoverable via service discovery while the existing chaincode "
+"will continue to work as before."
+msgstr ""
+
+#: ../../source/discovery-overview.rst:17
 msgid "Why do we need service discovery?"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:7
+#: ../../source/discovery-overview.rst:19
 msgid ""
 "In order to execute chaincode on peers, submit transactions to orderers, "
 "and to be updated about the status of transactions, applications connect "
 "to an API exposed by an SDK."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:11
+#: ../../source/discovery-overview.rst:23
 msgid ""
 "However, the SDK needs a lot of information in order to allow "
 "applications to connect to the relevant network nodes. In addition to the"
@@ -43,7 +59,7 @@ msgid ""
 "(so the application knows which peers to send chaincode proposals to)."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:18
+#: ../../source/discovery-overview.rst:30
 msgid ""
 "Prior to v1.2, this information was statically encoded. However, this "
 "implementation is not dynamically reactive to network changes (such as "
@@ -53,7 +69,7 @@ msgid ""
 "might happen when a new organization joins a channel)."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:24
+#: ../../source/discovery-overview.rst:36
 msgid ""
 "In addition, the client application has no way of knowing which peers "
 "have updated ledgers and which do not. As a result, the application might"
@@ -62,18 +78,18 @@ msgid ""
 "and wasting resources as a consequence."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:29
+#: ../../source/discovery-overview.rst:41
 msgid ""
 "The **discovery service** improves this process by having the peers "
 "compute the needed information dynamically and present it to the SDK in a"
 " consumable manner."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:34
+#: ../../source/discovery-overview.rst:46
 msgid "How service discovery works in Fabric"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:36
+#: ../../source/discovery-overview.rst:48
 msgid ""
 "The application is bootstrapped knowing about a group of peers which are "
 "trusted by the application developer/administrator to provide authentic "
@@ -84,7 +100,7 @@ msgid ""
 ":`discovery-cli` documentation."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:43
+#: ../../source/discovery-overview.rst:55
 msgid ""
 "The application issues a configuration query to the discovery service and"
 " obtains all the static information it would have otherwise needed to "
@@ -93,7 +109,7 @@ msgid ""
 "discovery service of a peer."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:48
+#: ../../source/discovery-overview.rst:60
 msgid ""
 "The service runs on peers -- not on the application -- and uses the "
 "network metadata information maintained by the gossip communication layer"
@@ -101,7 +117,7 @@ msgid ""
 " any relevant endorsement policies, from the peer's state database."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:53
+#: ../../source/discovery-overview.rst:65
 msgid ""
 "With service discovery, applications no longer need to specify which "
 "peers they need endorsements from. The SDK can simply send a query to the"
@@ -110,13 +126,13 @@ msgid ""
 "comprised of two objects:"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:58
+#: ../../source/discovery-overview.rst:70
 msgid ""
 "**Layouts**: a list of groups of peers and a corresponding amount of "
 "peers from each group which should be selected."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:60
+#: ../../source/discovery-overview.rst:72
 msgid ""
 "**Group to peer mapping**: from the groups in the layouts to the peers of"
 " the channel. In practice, each group would most likely be peers that "
@@ -124,14 +140,14 @@ msgid ""
 "generic and ignorant of organizations this is just a \"group\"."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:65
+#: ../../source/discovery-overview.rst:77
 msgid ""
 "The following is an example of a descriptor from the evaluation of a "
 "policy of ``AND(Org1, Org2)`` where there are two peers in each of the "
 "organizations."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:81
+#: ../../source/discovery-overview.rst:93
 msgid ""
 "In other words, the endorsement policy requires a signature from one peer"
 " in Org1 and one peer in Org2. And it provides the names of available "
@@ -139,7 +155,7 @@ msgid ""
 " and in Org2)."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:85
+#: ../../source/discovery-overview.rst:97
 msgid ""
 "The SDK then selects a random layout from the list. In the example above,"
 " the endorsement policy is Org1 ``AND`` Org2. If instead it was an ``OR``"
@@ -147,7 +163,7 @@ msgid ""
 "signature from a peer from either Org would satisfy the policy."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:90
+#: ../../source/discovery-overview.rst:102
 msgid ""
 "After the SDK has selected a layout, it selects from the peers in the "
 "layout based on a criteria specified on the client side (the SDK can do "
@@ -159,42 +175,42 @@ msgid ""
 "select from the peers that best meet the criteria."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:99
+#: ../../source/discovery-overview.rst:111
 msgid "Capabilities of the discovery service"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:101
+#: ../../source/discovery-overview.rst:113
 msgid "The discovery service can respond to the following queries:"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:103
+#: ../../source/discovery-overview.rst:115
 msgid ""
 "**Configuration query**: Returns the ``MSPConfig`` of all organizations "
 "in the channel along with the orderer endpoints of the channel."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:105
+#: ../../source/discovery-overview.rst:117
 msgid "**Peer membership query**: Returns the peers that have joined the channel."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:106
+#: ../../source/discovery-overview.rst:118
 msgid ""
 "**Endorsement query**: Returns an endorsement descriptor for given "
 "chaincode(s) in a channel."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:108
+#: ../../source/discovery-overview.rst:120
 msgid ""
 "**Local peer membership query**: Returns the local membership information"
 " of the peer that responds to the query. By default the client needs to "
 "be an administrator for the peer to respond to this query."
 msgstr ""
 
-#: ../../source/discovery-overview.rst:113
+#: ../../source/discovery-overview.rst:125
 msgid "Special requirements"
 msgstr ""
 
-#: ../../source/discovery-overview.rst:114
+#: ../../source/discovery-overview.rst:126
 msgid ""
 "When the peer is running with TLS enabled the client must provide a TLS "
 "certificate when connecting to the peer. If the peer isn't configured to "

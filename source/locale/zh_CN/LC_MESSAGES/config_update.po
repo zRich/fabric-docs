@@ -1,31 +1,35 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 19:55+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/config_update.md:5
 msgid ""
 "Channel configurations contain all of the information relevant to the "
 "administration of a channel. Most importantly, the channel configuration "
-"specifies which organizations are members of channel, but it also "
-"includes other channel-wide configuration information such as channel "
-"access policies and block batch sizes."
+"specifies which organizations are members of channel, but it also includes "
+"other channel-wide configuration information such as channel access policies"
+" and block batch sizes."
 msgstr ""
+"通道配置包含与通道管理相关的所有信息。最重要的是，通道配置指定了哪些组织是通道的成员，但它还包含其他通道范围的配置信息，如通道访问策略和区块批大小。"
 
 #: ../../source/config_update.md:11
 msgid ""
@@ -33,195 +37,205 @@ msgid ""
 "known as a configuration (config) block. Configuration blocks contain a "
 "single configuration. The first of these blocks is known as the “genesis "
 "block” and contains the initial configuration required to bootstrap a "
-"channel. Each time the configuration of a channel changes it is done "
-"through a new configuration block, with the latest configuration block "
-"representing the current channel configuration. Orderers and peers keep "
-"the current channel configuration in memory to facilitate all channel "
-"operations such as cutting a new block and validating block transactions."
+"channel. Each time the configuration of a channel changes it is done through"
+" a new configuration block, with the latest configuration block representing"
+" the current channel configuration. Orderers and peers keep the current "
+"channel configuration in memory to facilitate all channel operations such as"
+" cutting a new block and validating block transactions."
 msgstr ""
+"此配置存储在账本的一个区块中，因此称为配置(config)区块。配置区块包含一个配置。第一个区块称为“创世区块”，包含引导通道所需的初始配置。每次通道的配置更改都是通过一个新的配置区块完成的，最新的配置区块表示当前通道配置。排序器和peer将当前通道配置保存在内存中，以方便所有通道操作，例如修剪一个新区块和验证区块交易。"
 
 #: ../../source/config_update.md:21
 msgid ""
 "Because configurations are stored in blocks, updating a config happens "
 "through a process called a “configuration transaction” (even though the "
-"process is a little different from a normal transaction). Updating a "
-"config is a process of pulling the config, translating into a format that"
-" humans can read, modifying it and then submitting it for approval."
+"process is a little different from a normal transaction). Updating a config "
+"is a process of pulling the config, translating into a format that humans "
+"can read, modifying it and then submitting it for approval."
 msgstr ""
+"由于配置存储在区块中，所以更新配置是通过一个称为“配置交易”的流程进行的(尽管该流程与普通交易稍有不同)。更新配置是一个获取配置、将配置转换成人类可读的格式、修改配置并提交批准的过程。"
 
 #: ../../source/config_update.md:27
 msgid ""
-"For a more in-depth look at the process for pulling a config and "
-"translating it into JSON, check out Adding an Org to a Channel. In this "
-"doc, we'll be focusing on the different ways you can edit a config and "
-"the process for getting it signed."
-msgstr ""
+"For a more in-depth look at the process for pulling a config and translating"
+" it into JSON, check out Adding an Org to a Channel. In this doc, we'll be "
+"focusing on the different ways you can edit a config and the process for "
+"getting it signed."
+msgstr "要更深入地了解提取配置并将其转换为JSON的过程，请查看向通道添加Org。在这个文档中，我们将重点介绍编辑配置的不同方法以及签名的过程。"
 
 #: ../../source/config_update.md:34
 msgid ""
 "Channels are highly configurable, but not infinitely so. Different "
-"configuration elements have different modification policies (which "
-"specify the group of identities required to sign the config update)."
-msgstr ""
+"configuration elements have different modification policies (which specify "
+"the group of identities required to sign the config update)."
+msgstr "通道是高度可配置的，但不是无限可配置的。不同的配置元素有不同的修改策略(指定签署配置更新所需的一组标识)。"
 
 #: ../../source/config_update.md:38
 msgid ""
-"To see the scope of what's possible to change it's important to look at a"
-" config in JSON format. The Adding an Org to a Channel tutorial generates"
-" one, so if you've gone through that doc you can simply refer to it. For "
+"To see the scope of what's possible to change it's important to look at a "
+"config in JSON format. The Adding an Org to a Channel tutorial generates "
+"one, so if you've gone through that doc you can simply refer to it. For "
 "those who have not, we'll provide one here (for ease of readability, it "
 "might be helpful to put this config into a viewer that supports JSON "
 "folding, like atom or Visual Studio)."
 msgstr ""
+"要查看可以更改的范围，查看JSON格式的配置非常重要。将一个组织添加到一个通道教程中会生成一个配置，因此，如果您已经阅读了该文档，您可以简单地引用它。对于那些没有配置的人，我们将在这里提供一个配置(为了便于阅读，将这个配置放入一个支持JSON折叠的查看器中可能会有帮助，比如atom或Visual"
+" Studio)。"
 
 #: ../../source/config_update.md:45
 msgid "<details> <summary> Click here to see the config </summary>"
-msgstr ""
+msgstr "<details> <summary>点击这里查看配置 </summary> "
 
 #: ../../source/config_update.md:747
 msgid "</details>"
-msgstr ""
+msgstr "</details>"
 
 #: ../../source/config_update.md:749
 msgid ""
-"A config might look intimidating in this form, but once you study it "
-"you’ll see that it has a logical structure."
-msgstr ""
+"A config might look intimidating in this form, but once you study it you’ll "
+"see that it has a logical structure."
+msgstr "在这种形式下，配置可能看起来有些吓人，但是一旦您研究了它，您就会发现它有一个逻辑结构。"
 
 #: ../../source/config_update.md:752
 msgid ""
-"Beyond the definitions of the policies -- defining who can do certain "
-"things at the channel level, and who has the permission to change who can"
-" change the config -- channels also have other kinds of features that can"
-" be modified using a config update. Adding an Org to a Channel takes you "
-"through one of the most important -- adding an org to a channel. Some "
-"other things that are possible to change with a config update include:"
+"Beyond the definitions of the policies -- defining who can do certain things"
+" at the channel level, and who has the permission to change who can change "
+"the config -- channels also have other kinds of features that can be "
+"modified using a config update. Adding an Org to a Channel takes you through"
+" one of the most important -- adding an org to a channel. Some other things "
+"that are possible to change with a config update include:"
 msgstr ""
+"除了策略的定义(定义谁可以在通道级别做某些事情，以及谁有权更改谁可以更改配置)之外，通道还具有可以使用配置更新修改的其他类型的特性。将一个组织添加到一个通道中是最重要的——将一个组织添加到通道中。其他一些配置更新可以改变的事情包括:"
 
 #: ../../source/config_update.md:882
 msgid ""
-"Just as we add an Org by adding their artifacts and MSP information, you "
-"can remove them by reversing the process."
-msgstr ""
+"Just as we add an Org by adding their artifacts and MSP information, you can"
+" remove them by reversing the process."
+msgstr "正如我们通过添加组织的构件和MSP信息来添加组织一样，您也可以通过逆转流程来删除它们。"
 
 #: ../../source/config_update.md:885
 msgid ""
-"Note that once the consensus type has been defined and the network has "
-"been bootstrapped, it is not possible to change it through a "
-"configuration update."
-msgstr ""
+"Note that once the consensus type has been defined and the network has been "
+"bootstrapped, it is not possible to change it through a configuration "
+"update."
+msgstr "注意，一旦定义了共识类型并引导了网络，就不能通过配置更新来更改它。"
 
 #: ../../source/config_update.md:888
 msgid ""
-"There is another important channel configuration (especially for v1.1) "
-"known as Capability Requirements. It has its own doc that can be found "
-"here."
-msgstr ""
+"There is another important channel configuration (especially for v1.1) known"
+" as Capability Requirements. It has its own doc that can be found here."
+msgstr "还有另一个重要的通道配置(特别是对于v1.1)，称为功能需求。它有自己的文档，可以在这里找到。"
 
 #: ../../source/config_update.md:892
 msgid ""
 "Let’s say you want to edit the block batch size for the channel (because "
-"this is a single numeric field, it’s one of the easiest changes to make)."
-" First to make referencing the JSON path easy, we define it as an "
-"environment variable."
+"this is a single numeric field, it’s one of the easiest changes to make). "
+"First to make referencing the JSON path easy, we define it as an environment"
+" variable."
 msgstr ""
+"假设您想要编辑通道的区块批大小(因为这是一个单一的数字字段，这是最容易进行的更改之一)。首先，为了方便引用JSON路径，我们将其定义为一个环境变量。"
 
 #: ../../source/config_update.md:896
 msgid ""
-"To establish this, take a look at your config, find what you’re looking "
-"for, and back track the path."
-msgstr ""
+"To establish this, take a look at your config, find what you’re looking for,"
+" and back track the path."
+msgstr "要建立此功能，请查看您的配置，找到您要查找的内容，然后回溯路径。"
 
 #: ../../source/config_update.md:899
 msgid ""
 "If you find batch size, for example, you’ll see that it’s a value of the "
-"Orderer. Orderer can be found under groups, which is under channel_group."
-" The batch size value has a parameter under value of max_message_count."
+"Orderer. Orderer can be found under groups, which is under channel_group. "
+"The batch size value has a parameter under value of max_message_count."
 msgstr ""
+"例如，如果您发现批大小，您将看到它是排序器的一个值。排序器可以在groups下找到，它位于channel_group下。批大小值在max_message_count值下有一个参数。"
 
 #: ../../source/config_update.md:904
 msgid "Which would make the path this:"
-msgstr ""
+msgstr "这条路径是这样的:"
 
 #: ../../source/config_update.md:910
 msgid "Next, display the value of that property:"
-msgstr ""
+msgstr "接下来，显示该属性的值:"
 
 #: ../../source/config_update.md:916
 msgid "Which should return a value of 10 (in our sample network at least)."
-msgstr ""
+msgstr "它应该返回一个值10(至少在我们的示例网络中)。"
 
 #: ../../source/config_update.md:918
 msgid "Now, let’s set the new batch size and display the new value:"
-msgstr ""
+msgstr "现在，让我们设置新的批大小并显示新值:"
 
 #: ../../source/config_update.md:925
 msgid ""
-"Once you’ve modified the JSON, it’s ready to be converted and submitted. "
-"The scripts and steps in Adding an Org to a Channel will take you through"
-" the process for converting the JSON, so let's look at the process of "
-"submitting it."
+"Once you’ve modified the JSON, it’s ready to be converted and submitted. The"
+" scripts and steps in Adding an Org to a Channel will take you through the "
+"process for converting the JSON, so let's look at the process of submitting "
+"it."
 msgstr ""
+"一旦修改了JSON，就可以对其进行转换并提交了。将Org添加到通道中的脚本和步骤将指导您完成转换JSON的过程，所以让我们来看看提交它的过程。"
 
 #: ../../source/config_update.md:932
 msgid ""
-"Once you’ve successfully generated the protobuf file, it’s time to get it"
-" signed. To do this, you need to know the relevant policy for whatever it"
-" is you’re trying to change."
-msgstr ""
+"Once you’ve successfully generated the protobuf file, it’s time to get it "
+"signed. To do this, you need to know the relevant policy for whatever it is "
+"you’re trying to change."
+msgstr "一旦您成功地生成了protobuf文件，就可以对它进行签名了。要做到这一点，你需要知道你要改变的东西的相关策略。"
 
 #: ../../source/config_update.md:936
 msgid "By default, editing the configuration of:"
-msgstr ""
+msgstr "默认情况下，编辑配置:"
 
 #: ../../source/config_update.md:946
 msgid ""
-"If you have made changes to the default policies in the channel, you’ll "
-"need to compute your signature requirements accordingly."
-msgstr ""
+"If you have made changes to the default policies in the channel, you’ll need"
+" to compute your signature requirements accordingly."
+msgstr "如果您对通道中的默认策略进行了更改，则需要相应地计算签名需求。"
 
 #: ../../source/config_update.md:949
 msgid ""
-"Note: you may be able to script the signature collection, dependent on "
-"your application. In general, you may always collect more signatures than"
-" are required."
-msgstr ""
+"Note: you may be able to script the signature collection, dependent on your "
+"application. In general, you may always collect more signatures than are "
+"required."
+msgstr "注意:您可以根据您的应用程序编写收集签名的脚本。一般来说，您收集的签名可能总是比要求的多。"
 
 #: ../../source/config_update.md:953
 msgid ""
-"The actual process of getting these signatures will depend on how you’ve "
-"set up your system, but there are two main implementations. Currently, "
-"the Fabric command line defaults to a “pass it along” system. That is, "
-"the Admin of the Org proposing a config update sends the update to "
-"someone else (another Admin, typically) who needs to sign it. This Admin "
-"signs it (or doesn’t) and passes it along to the next Admin, and so on, "
-"until there are enough signatures for the config to be submitted."
+"The actual process of getting these signatures will depend on how you’ve set"
+" up your system, but there are two main implementations. Currently, the "
+"Fabric command line defaults to a “pass it along” system. That is, the Admin"
+" of the Org proposing a config update sends the update to someone else "
+"(another Admin, typically) who needs to sign it. This Admin signs it (or "
+"doesn’t) and passes it along to the next Admin, and so on, until there are "
+"enough signatures for the config to be submitted."
 msgstr ""
+"获得这些签名的实际过程将取决于您如何设置系统，但是有两个主要实现。目前，Fabric命令行默认为“pass it "
+"along”系统。也就是说，提出配置更新的组织的管理员将更新发送给需要签名的其他人(通常是另一个管理员)。这个管理员对它进行签名(或者不签名)，并将其传递给下一个管理员，以此类推，直到有足够的签名来提交配置为止。"
 
 #: ../../source/config_update.md:961
 msgid ""
-"This has the virtue of simplicity -- when there are enough signatures, "
-"the last Admin can simply submit the config transaction (in Fabric, the "
-"peer channel update command includes a signature by default). However, "
-"this process will only be practical in smaller channels, since the “pass "
-"it along” method can be time consuming."
+"This has the virtue of simplicity -- when there are enough signatures, the "
+"last Admin can simply submit the config transaction (in Fabric, the peer "
+"channel update command includes a signature by default). However, this "
+"process will only be practical in smaller channels, since the “pass it "
+"along” method can be time consuming."
 msgstr ""
+"这具有简单性的优点——当有足够的签名时，最后一个管理员可以简单地提交配置交易(在Fabric中，peer channel "
+"update命令默认包含一个签名)。但是，这个过程只在较小的通道中实用，因为“pass it along”方法可能会很耗时。"
 
 #: ../../source/config_update.md:967
 msgid ""
 "The other option is to submit the update to every Admin on a channel and "
 "wait for enough signatures to come back. These signatures can then be "
-"stitched together and submitted. This makes life a bit more difficult for"
-" the Admin who created the config update (forcing them to deal with a "
-"file per signer) but is the recommended workflow for users which are "
-"developing Fabric management applications."
+"stitched together and submitted. This makes life a bit more difficult for "
+"the Admin who created the config update (forcing them to deal with a file "
+"per signer) but is the recommended workflow for users which are developing "
+"Fabric management applications."
 msgstr ""
+"另一个选项是向通道上的每个管理员提交更新，并等待足够的签名返回。然后可以将这些签名装订在一起并提交。这使得创建配置更新的管理员(强制他们为每个签名者处理一个文件)的工作变得更加困难，但是对于正在开发Fabric管理应用程序的用户来说，这是推荐的工作流。"
 
 #: ../../source/config_update.md:974
 msgid ""
-"Once the config has been added to the ledger, it will be a best practice "
-"to pull it and convert it to JSON to check to make sure everything was "
-"added correctly. This will also serve as a useful copy of the latest "
-"config."
-msgstr ""
-
+"Once the config has been added to the ledger, it will be a best practice to "
+"pull it and convert it to JSON to check to make sure everything was added "
+"correctly. This will also serve as a useful copy of the latest config."
+msgstr "一旦配置被添加到账本中，最好将其拉出并将其转换为JSON，以检查是否正确地添加了所有内容。这也将作为最新配置的有用副本。"

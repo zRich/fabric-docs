@@ -84,6 +84,7 @@ release = u'master'
 # Usually you set "language" from the command line for these cases.
 language = None
 locale_dirs = ['locale/']
+gettext_compact = False
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -151,7 +152,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'hyperledger-fabricdocs.tex', u'hyperledger-fabricdocs Documentation',
-    u'hyperledger', 'manual'),
+     u'hyperledger', 'manual'),
 ]
 
 

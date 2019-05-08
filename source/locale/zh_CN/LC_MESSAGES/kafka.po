@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,11 +36,30 @@ msgid ""
 "an ordering service to your blockchain network."
 msgstr ""
 
-#: ../../source/kafka.rst:12
+#: ../../source/kafka.rst:16
+msgid ""
+"For information about the role orderers play in a network and in a "
+"transaction flow, checkout our :doc:`orderer/ordering_service` "
+"documentation."
+msgstr ""
+
+#: ../../source/kafka.rst:19
+msgid ""
+"For information on how to set up an ordering node, check out our "
+":doc:`orderer_deploy` documentation."
+msgstr ""
+
+#: ../../source/kafka.rst:22
+msgid ""
+"For information about configuring Raft ordering services, check out "
+":doc:`raft_configuration`."
+msgstr ""
+
+#: ../../source/kafka.rst:25
 msgid "Big picture"
 msgstr ""
 
-#: ../../source/kafka.rst:14
+#: ../../source/kafka.rst:27
 msgid ""
 "Each channel maps to a separate single-partition topic in Kafka. When an "
 "OSN receives transactions via the ``Broadcast`` RPC, it checks to make "
@@ -51,69 +70,69 @@ msgid ""
 "them in its local ledger, and serves them to receiving clients via the "
 "``Deliver`` RPC. For low-level details, refer to `the document that "
 "describes how we came to this design <https://docs.google.com/document/d"
-"/19JihmW-8blTzN99lAubOfseLUZqdrB6sBR0HsRgCAnY/edit>`_ — Figure 8 is a "
+"/19JihmW-8blTzN99lAubOfseLUZqdrB6sBR0HsRgCAnY/edit>`_. **Figure 8** is a "
 "schematic representation of the process described above."
 msgstr ""
 
-#: ../../source/kafka.rst:17
+#: ../../source/kafka.rst:38
 msgid "Steps"
 msgstr ""
 
-#: ../../source/kafka.rst:19
+#: ../../source/kafka.rst:40
 msgid ""
 "Let ``K`` and ``Z`` be the number of nodes in the Kafka cluster and the "
 "ZooKeeper ensemble respectively:"
 msgstr ""
 
-#: ../../source/kafka.rst:21
+#: ../../source/kafka.rst:43
 msgid ""
 "At a minimum, ``K`` should be set to 4. (As we will explain in Step 4 "
-"below,  this is the minimum number of nodes necessary in order to exhibit"
-" crash fault tolerance, i.e. with 4 brokers, you can have 1 broker go "
+"below, this is the minimum number of nodes necessary in order to exhibit "
+"crash fault tolerance, i.e. with 4 brokers, you can have 1 broker go "
 "down, all channels will continue to be writeable and readable, and new "
 "channels can be created.)"
 msgstr ""
 
-#: ../../source/kafka.rst:22
+#: ../../source/kafka.rst:48
 msgid ""
 "``Z`` will either be 3, 5, or 7. It has to be an odd number to avoid "
 "split-brain scenarios, and larger than 1 in order to avoid single point "
-"of failures. Anything beyond 7 ZooKeeper servers is considered an "
-"overkill."
+"of failures. Anything beyond 7 ZooKeeper servers is considered overkill."
 msgstr ""
 
-#: ../../source/kafka.rst:24
+#: ../../source/kafka.rst:52
 msgid "Then proceed as follows:"
 msgstr ""
 
-#: ../../source/kafka.rst:26
+#: ../../source/kafka.rst:54
 msgid ""
 "Orderers: **Encode the Kafka-related information in the network's genesis"
-" block.** If you are using ``configtxgen``, edit ``configtx.yaml`` —or "
-"pick a preset profile for the system channel's genesis block—  so that:"
+" block.** If you are using ``configtxgen``, edit ``configtx.yaml``. "
+"Alternatively, pick a preset profile for the system channel's genesis "
+"block—  so that:"
 msgstr ""
 
-#: ../../source/kafka.rst:28
+#: ../../source/kafka.rst:58
 msgid "``Orderer.OrdererType`` is set to ``kafka``."
 msgstr ""
 
-#: ../../source/kafka.rst:29
+#: ../../source/kafka.rst:59
 msgid ""
 "``Orderer.Kafka.Brokers`` contains the address of *at least two* of the "
 "Kafka brokers in your cluster in ``IP:port`` notation. The list does not "
 "need to be exhaustive. (These are your bootstrap brokers.)"
 msgstr ""
 
-#: ../../source/kafka.rst:31
+#: ../../source/kafka.rst:63
 msgid ""
 "Orderers: **Set the maximum block size.** Each block will have at most "
-"`Orderer.AbsoluteMaxBytes` bytes (not including headers), a value that "
+"``Orderer.AbsoluteMaxBytes`` bytes (not including headers), a value that "
 "you can set in ``configtx.yaml``. Let the value you pick here be ``A`` "
-"and make note of it — it will affect how you configure your Kafka brokers"
-" in Step 6."
+"and make note of it —-- it will affect how you configure your Kafka "
+"brokers in Step 6."
 msgstr ""
 
-#: ../../source/kafka.rst:32
+#: ../../source/kafka.rst:68
 msgid ""
 "Orderers: **Create the genesis block.** Use ``configtxgen``. The settings"
 " you picked in Steps 3 and 4 above are system-wide settings, i.e. they "
@@ -121,13 +140,13 @@ msgid ""
 "block's location."
 msgstr ""
 
-#: ../../source/kafka.rst:33
+#: ../../source/kafka.rst:72
 msgid ""
-"Kafka cluster: **Configure your Kafka brokers appropriately.** Ensure "
-"that every Kafka broker has these keys configured:"
+"6. Kafka cluster: **Configure your Kafka brokers appropriately.** Ensure "
+"that every #Kafka broker has these keys configured:"
 msgstr ""
 
-#: ../../source/kafka.rst:35
+#: ../../source/kafka.rst:75
 msgid ""
 "``unclean.leader.election.enable = false`` — Data consistency is key in a"
 " blockchain environment. We cannot have a channel leader chosen outside "
@@ -136,7 +155,7 @@ msgid ""
 "blockchain that the orderers produce."
 msgstr ""
 
-#: ../../source/kafka.rst:36
+#: ../../source/kafka.rst:81
 msgid ""
 "``min.insync.replicas = M`` — Where you pick a value ``M`` such that ``1 "
 "< M < N`` (see ``default.replication.factor`` below). Data is considered "
@@ -145,20 +164,20 @@ msgid ""
 " other case, the write operation returns an error. Then:"
 msgstr ""
 
-#: ../../source/kafka.rst:38
+#: ../../source/kafka.rst:88
 msgid ""
 "If up to ``N-M`` replicas —out of the ``N`` that the channel data is "
-"written to— become unavailable, operations proceed normally."
+"written to become unavailable, operations proceed normally."
 msgstr ""
 
-#: ../../source/kafka.rst:39
+#: ../../source/kafka.rst:91
 msgid ""
 "If more replicas become unavailable, Kafka cannot maintain an ISR set of "
 "``M,`` so it stops accepting writes. Reads work without issues. The "
 "channel becomes writeable again when ``M`` replicas get in-sync."
 msgstr ""
 
-#: ../../source/kafka.rst:41
+#: ../../source/kafka.rst:95
 msgid ""
 "``default.replication.factor = N`` — Where you pick a value ``N`` such "
 "that ``N < K``. A replication factor of ``N`` means that each channel "
@@ -172,54 +191,31 @@ msgid ""
 "ordering service is non-existent."
 msgstr ""
 
-#: ../../source/kafka.rst:43
+#: ../../source/kafka.rst:106
 msgid ""
 "Based on what we've described above, the minimum allowed values for ``M``"
 " and ``N`` are 2 and 3 respectively. This configuration allows for the "
 "creation of new channels to go forward, and for all channels to continue "
-"to be writeable."
-msgstr ""
-
-#: ../../source/kafka.rst:44
-msgid ""
-"``message.max.bytes`` and ``replica.fetch.max.bytes`` should be set to a "
-"value larger than ``A``, the value you picked in "
+"to be writeable. #. ``message.max.bytes`` and ``replica.fetch.max.bytes``"
+" should be set to a value larger than ``A``, the value you picked in "
 "``Orderer.AbsoluteMaxBytes`` in Step 4 above. Add some buffer to account "
-"for headers — 1 MiB is more than enough. The following condition applies:"
+"for headers —-- 1 MiB is more than enough. The following condition "
+"applies:"
 msgstr ""
 
-#: ../../source/kafka.rst:50
-msgid ""
-"(For completeness, we note that ``message.max.bytes`` should be strictly "
-"smaller to ``socket.request.max.bytes`` which is set by default to 100 "
-"MiB. If you wish to have blocks larger than 100 MiB you will need to edit"
-" the hard-coded value in ``brokerConfig.Producer.MaxMessageBytes`` in "
-"``fabric/orderer/kafka/config.go`` and rebuild the binary from source. "
-"This is not advisable.)"
-msgstr ""
-
-#: ../../source/kafka.rst:51
-msgid ""
-"``log.retention.ms = -1``. Until the ordering service adds support for "
-"pruning of the Kafka logs, you should disable time-based retention and "
-"prevent segments from expiring. (Size-based retention —see "
-"``log.retention.bytes``— is disabled by default in Kafka at the time of "
-"this writing, so there's no need to set it explicitly.)"
-msgstr ""
-
-#: ../../source/kafka.rst:53
+#: ../../source/kafka.rst:129
 msgid ""
 "Orderers: **Point each OSN to the genesis block.** Edit "
 "``General.GenesisFile`` in ``orderer.yaml`` so that it points to the "
-"genesis block created in Step 5 above. (While at it, ensure all other "
-"keys in that YAML file are set appropriately.)"
+"genesis block created in Step 5 above. While at it, ensure all other keys"
+" in that YAML file are set appropriately."
 msgstr ""
 
-#: ../../source/kafka.rst:54
+#: ../../source/kafka.rst:134
 msgid "Orderers: **Adjust polling intervals and timeouts.** (Optional step.)"
 msgstr ""
 
-#: ../../source/kafka.rst:56
+#: ../../source/kafka.rst:136
 msgid ""
 "The ``Kafka.Retry`` section in the ``orderer.yaml`` file allows you to "
 "adjust the frequency of the metadata/producer/consumer requests, as well "
@@ -227,30 +223,22 @@ msgid ""
 "in a Kafka producer or consumer.)"
 msgstr ""
 
-#: ../../source/kafka.rst:57
+#: ../../source/kafka.rst:141
 msgid ""
 "Additionally, when a new channel is created, or when an existing channel "
 "is reloaded (in case of a just-restarted orderer), the orderer interacts "
 "with the Kafka cluster in the following ways:"
 msgstr ""
 
-#: ../../source/kafka.rst:59
+#: ../../source/kafka.rst:145
 msgid ""
 "It creates a Kafka producer (writer) for the Kafka partition that "
-"corresponds to the channel."
+"corresponds to the channel. . It uses that producer to post a no-op "
+"``CONNECT`` message to that partition. . It creates a Kafka consumer "
+"(reader) for that partition."
 msgstr ""
 
-#: ../../source/kafka.rst:60
-msgid ""
-"It uses that producer to post a no-op ``CONNECT`` message to that "
-"partition."
-msgstr ""
-
-#: ../../source/kafka.rst:61
-msgid "It creates a Kafka consumer (reader) for that partition."
-msgstr ""
-
-#: ../../source/kafka.rst:63
+#: ../../source/kafka.rst:150
 msgid ""
 "If any of these steps fail, you can adjust the frequency with which they "
 "are repeated. Specifically they will be re-attempted every "
@@ -261,7 +249,7 @@ msgid ""
 " have been completed successfully."
 msgstr ""
 
-#: ../../source/kafka.rst:65
+#: ../../source/kafka.rst:158
 msgid ""
 "**Set up the OSNs and Kafka cluster so that they communicate over SSL.** "
 "(Optional step, but highly recommended.) Refer to `the Confluent guide "
@@ -270,45 +258,45 @@ msgid ""
 "``orderer.yaml`` on every OSN accordingly."
 msgstr ""
 
-#: ../../source/kafka.rst:66
+#: ../../source/kafka.rst:163
 msgid ""
 "**Bring up the nodes in the following order: ZooKeeper ensemble, Kafka "
 "cluster, ordering service nodes.**"
 msgstr ""
 
-#: ../../source/kafka.rst:69
+#: ../../source/kafka.rst:167
 msgid "Additional considerations"
 msgstr ""
 
-#: ../../source/kafka.rst:71
+#: ../../source/kafka.rst:169
 msgid ""
-"**Preferred message size.** In Step 4 above (see `Steps`_ section) you "
-"can also set the preferred size of blocks by setting the "
+"1. **Preferred message size.** In Step 4 above (see `Steps`_ section) you"
+" can #also set the preferred size of blocks by setting the "
 "``Orderer.Batchsize.PreferredMaxBytes`` key. Kafka offers higher "
-"throughput when dealing with relatively small messages; aim for a value "
-"no bigger than 1 MiB."
+"throughput #when dealing with relatively small messages; aim for a value "
+"no bigger than 1 #MiB."
 msgstr ""
 
-#: ../../source/kafka.rst:72
+#: ../../source/kafka.rst:175
 msgid ""
-"**Using environment variables to override settings.** When using the "
+"2. **Using environment variables to override settings.** When using the "
 "sample Kafka and Zookeeper Docker images provided with Fabric (see "
 "``images/kafka`` and ``images/zookeeper`` respectively), you can override"
 " a Kafka broker or a ZooKeeper server's settings by using environment "
-"variables. Replace the dots of the configuration key with underscores — "
-"e.g. ``KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false`` will allow you to "
-"override the default value of ``unclean.leader.election.enable``. The "
-"same applies to the OSNs for their *local* configuration, i.e. what can "
-"be set in ``orderer.yaml``. For example "
+"variables. Replace the dots of the configuration key with underscores. "
+"For example, ``KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false`` will allow "
+"you to override the default value of ``unclean.leader.election.enable``. "
+"The same applies to the OSNs for their *local* configuration, i.e. what "
+"can be set in ``orderer.yaml``. For example "
 "``ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s`` allows you to override the "
-"default value for ``Orderer.Kafka.Retry.ShortInterval``."
+"#default value for ``Orderer.Kafka.Retry.ShortInterval``."
 msgstr ""
 
-#: ../../source/kafka.rst:75
+#: ../../source/kafka.rst:187
 msgid "Kafka Protocol Version Compatibility"
 msgstr ""
 
-#: ../../source/kafka.rst:77
+#: ../../source/kafka.rst:189
 msgid ""
 "Fabric uses the `sarama client library "
 "<https://github.com/Shopify/sarama>`_ and vendors a version of it that "
@@ -316,7 +304,7 @@ msgid ""
 "versions."
 msgstr ""
 
-#: ../../source/kafka.rst:79
+#: ../../source/kafka.rst:193
 msgid ""
 "Using the ``Kafka.Version`` key in ``orderer.yaml``, you can configure "
 "which version of the Kafka protocol is used to communicate with the Kafka"
@@ -329,13 +317,17 @@ msgid ""
 "while using an older protocol version."
 msgstr ""
 
-#: ../../source/kafka.rst:82
+#: ../../source/kafka.rst:203
 msgid "Debugging"
 msgstr ""
 
-#: ../../source/kafka.rst:84
+#: ../../source/kafka.rst:205
 msgid ""
 "Set environment variable ``FABRIC_LOGGING_SPEC`` to ``DEBUG`` and set "
 "``Kafka.Verbose`` to ``true`` in ``orderer.yaml`` ."
+msgstr ""
+
+#: ../../source/kafka.rst:209
+msgid "https://creativecommons.org/licenses/by/4.0/"
 msgstr ""
 

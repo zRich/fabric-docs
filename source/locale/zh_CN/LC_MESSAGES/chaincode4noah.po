@@ -1,534 +1,264 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 王伟兵 <wbwang@inspur.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"PO-Revision-Date: 2019-04-22 19:58+0000\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../source/chaincode4noah.rst:2
-msgid "Chaincode for Operators"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:5
-msgid "What is Chaincode?"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:7
+#: ../../source/chaincode4noah.md:5
 msgid ""
-"Chaincode is a program, written in `Go <https://golang.org>`_, `node.js "
-"<https://nodejs.org>`_, or `Java <https://java.com/en/>`_ that implements"
-" a prescribed interface. Chaincode runs in a secured Docker container "
-"isolated from the endorsing peer process. Chaincode initializes and "
-"manages ledger state through transactions submitted by applications."
+"Chaincode is a program, written in Go, Node.js, or Java that implements a "
+"prescribed interface. Chaincode runs in a secured Docker container isolated "
+"from the endorsing peer process. Chaincode initializes and manages ledger "
+"state through transactions submitted by applications."
 msgstr ""
+"链码是一个程序，用Go、Node.js或Java编写，实现指定的接口。链码运行在安全的Docker容器中，该容器与背书节点进程隔离。链码通过应用程序提交的交易初始化和管理账本状态。"
 
-#: ../../source/chaincode4noah.rst:13
+#: ../../source/chaincode4noah.md:11
 msgid ""
 "A chaincode typically handles business logic agreed to by members of the "
-"network, so it may be considered as a \"smart contract\". State created "
-"by a chaincode is scoped exclusively to that chaincode and can't be "
-"accessed directly by another chaincode. However, within the same network,"
-" given the appropriate permission a chaincode may invoke another "
-"chaincode to access its state."
+"network, so it may be considered as a \"smart contract\". Ledger updates "
+"created by a chaincode are scoped exclusively to that chaincode and can't be"
+" accessed directly by another chaincode. However, within the same network, "
+"given the appropriate permission a chaincode may invoke another chaincode to"
+" access its state."
 msgstr ""
+"链码通常处理网络成员认同的业务逻辑，因此它可以被视为“智能合约”。由链码创建的账本更新只适用于该链码，不能被其他链码直接访问。但是，在相同的网络中，给定适当的权限，一个链码可以调用另一个链码来访问它的状态。"
 
-#: ../../source/chaincode4noah.rst:20
+#: ../../source/chaincode4noah.md:18
 msgid ""
-"In the following sections, we will explore chaincode through the eyes of "
-"a blockchain network operator, Noah. For Noah's interests, we will focus "
-"on chaincode lifecycle operations; the process of packaging, installing, "
-"instantiating and upgrading the chaincode as a function of the "
-"chaincode's operational lifecycle within a blockchain network."
+"In the following sections, we will explore chaincode through the eyes of a "
+"blockchain network operator rather than an application developer. Chaincode "
+"operators can use this tutorial to learn how to use the Fabric chainode "
+"lifecycle to deploy and manage chaincode on their network."
 msgstr ""
+"在接下来的部分中，我们将通过区块链网络操作者而不是应用程序开发者的视角来研究链码。链码操作者可以使用本教程学习如何使用Fabric链码生命周期在其网络上部署和管理链码。"
 
-#: ../../source/chaincode4noah.rst:27
-msgid "Chaincode lifecycle"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:29
+#: ../../source/chaincode4noah.md:25
 msgid ""
-"The Hyperledger Fabric API enables interaction with the various nodes in "
-"a blockchain network - the peers, orderers and MSPs - and it also allows "
-"one to package, install, instantiate and upgrade chaincode on the "
-"endorsing peer nodes. The Hyperledger Fabric language-specific SDKs "
-"abstract the specifics of the Hyperledger Fabric API to facilitate "
-"application development, though it can be used to manage a chaincode's "
-"lifecycle. Additionally, the Hyperledger Fabric API can be accessed "
-"directly via the CLI, which we will use in this document."
+"The Fabric chaincode lifecycle is a process that allows multiple "
+"organizations to agree on how a chaincode will be operated before it can be "
+"used on a channel. The tutorial will discuss how a chaincode operator would "
+"use the Fabric lifecycle to perform the following tasks:"
 msgstr ""
+"Fabric "
+"链码生命周期是一个允许多个组织在链码在通道上使用之前，就如何操作达成一致意见的程序。本教程将讨论链码操作员如何使用Fabric生命周期来执行以下任务："
 
-#: ../../source/chaincode4noah.rst:38
+#: ../../source/chaincode4noah.md:34
 msgid ""
-"We provide four commands to manage a chaincode's lifecycle: ``package``, "
-"``install``, ``instantiate``, and ``upgrade``. In a future release, we "
-"are considering adding ``stop`` and ``start`` transactions to disable and"
-" re-enable a chaincode without having to actually uninstall it. After a "
-"chaincode has been successfully installed and instantiated, the chaincode"
-" is active (running) and can process transactions via the ``invoke`` "
-"transaction. A chaincode may be upgraded any time after it has been "
-"installed."
-msgstr ""
+"Note: The new Fabric chaincode lifecycle in the v2.0 Alpha release is not "
+"yet feature complete. Specifically, be aware of the following limitations in"
+" the Alpha release:"
+msgstr "注意:在v2.0 Alpha版本中，新的Fabric链码生命周期还没有完成。具体来说，要注意Alpha发行版中的以下限制:"
 
-#: ../../source/chaincode4noah.rst:49
-msgid "Packaging"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:51
-msgid "The chaincode package consists of 3 parts:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:53
+#: ../../source/chaincode4noah.md:42
 msgid ""
-"the chaincode, as defined by ``ChaincodeDeploymentSpec`` or CDS. The CDS "
-"defines the chaincode package in terms of the code and other properties "
-"such as name and version,"
-msgstr ""
+"These limitations will be resolved after the Alpha release. To use the old "
+"lifecycle model to install and instantiate a chaincode, visit the v1.4 "
+"version of the Chaincode for Operators tutorial."
+msgstr "这些限制将在Alpha发行版之后得到解决。要使用旧的生命周期模型来安装和实例化链码，请访问链码的操作员教程的v1.4版本。"
 
-#: ../../source/chaincode4noah.rst:56
+#: ../../source/chaincode4noah.md:48
 msgid ""
-"an optional instantiation policy which can be syntactically described by "
-"the same policy used for endorsement and described in :doc:`endorsement-"
-"policies`, and"
+"Fabric chaincode lifecycle requires that organizations agree to the "
+"parameters that define a chaincode, such as name, version, and the chaincode"
+" endorsement policy. Channel members come to agreement using the following "
+"four steps. Not every organization on a channel needs to complete each step."
 msgstr ""
+"Fabric链码生命周期要求组织同意定义链码的参数，例如名称、版本和链码背书策略。通道成员通过以下四个步骤达成协议。并不是每个通道上的组织都需要完成每个步骤。"
 
-#: ../../source/chaincode4noah.rst:59
-msgid "a set of signatures by the entities that “own” the chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:61
-msgid "The signatures serve the following purposes:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:63
-msgid "to establish an ownership of the chaincode,"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:64
-msgid "to allow verification of the contents of the package, and"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:65
-msgid "to allow detection of package tampering."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:67
+#: ../../source/chaincode4noah.md:69
 msgid ""
-"The creator of the instantiation transaction of the chaincode on a "
-"channel is validated against the instantiation policy of the chaincode."
+"This tutorial provides a detailed overview of the operations of the Fabric "
+"chaincode lifecycle rather than the specific commands. To learn more about "
+"how to use the Fabric lifecycle using the Peer CLI, see Install and define a"
+" chaincode in the Building your First Network Tutorial or the peer lifecycle"
+" command reference. To learn more about how to use the Fabric lifecycle "
+"using the Fabric SDK for Node.js, visit How to install and start your "
+"chaincode."
 msgstr ""
+"本教程提供了Fabric链码生命周期操作的详细概述，而不是具体的命令。要了解关于如何使用节点的CLI来使用Fabric生命周期的更多信息，请参见在构建您的第一个网络教程或节点的生命周期命令引用中安装和定义链码。要了解关于如何使用Fabric"
+" SDK for Node.js使用Fabric生命周期的更多信息，请访问如何安装和启动链码。"
 
-#: ../../source/chaincode4noah.rst:71
-msgid "Creating the package"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:73
+#: ../../source/chaincode4noah.md:78
 msgid ""
-"There are two approaches to packaging chaincode. One for when you want to"
-" have multiple owners of a chaincode, and hence need to have the "
-"chaincode package signed by multiple identities. This workflow requires "
-"that we initially create a signed chaincode package (a ``SignedCDS``) "
-"which is subsequently passed serially to each of the other owners for "
-"signing."
+"Chaincode needs to be packaged in a tar file before it can be installed on "
+"your peers. You can package a chaincode using the Fabric peer binaries, the "
+"Node Fabric SDK, or a third party tool such as GNU tar. When you create a "
+"chaincode package, you need to provide a chaincode package label to create a"
+" succinct and human readable description of the package."
 msgstr ""
+" 链码需要打包在tar文件中，然后才能安装到您的节点上。您可以使用Fabric节点二进制文件、Node Fabric SDK或第三方工具(如GNU "
+"tar)打包链码。当您创建一个链码包时，您需要提供一个链码包标签来创建一个简洁的、人类可读的包描述。"
 
-#: ../../source/chaincode4noah.rst:79
+#: ../../source/chaincode4noah.md:84
 msgid ""
-"The simpler workflow is for when you are deploying a SignedCDS that has "
-"only the signature of the identity of the node that is issuing the "
-"``install`` transaction."
-msgstr ""
+"If you use a third party tool to package the chaincode, the resulting file "
+"needs to be in the format below. The Fabric peer binaries and the Fabric "
+"SDKs will automatically create a file in this format."
+msgstr "如果使用第三方工具来打包链码，则生成的文件需要采用以下格式。Fabric节点二进制文件和Fabric SDKs将自动创建这种格式的文件。"
 
-#: ../../source/chaincode4noah.rst:83
+#: ../../source/chaincode4noah.md:101
 msgid ""
-"We will address the more complex case first. However, you may skip ahead "
-"to the :ref:`Install` section below if you do not need to worry about "
-"multiple owners just yet."
+"You need to install the chaincode package on every peer that will execute "
+"and endorse transactions. Whether using the CLI or an SDK, you need to "
+"complete this step using your Peer Administrator, whose signing certificate "
+"is in the admincerts folder of your peer MSP. It is recommended that "
+"organizations only package a chaincode once, and then install the same "
+"package on every peer that belongs to their org. If a channel wants to "
+"ensure that each organization is running the same chaincode, one "
+"organization can package a chaincode and send it to other channel members "
+"out of band."
 msgstr ""
+"你需要在每一个执行和背书交易的节点上安装链码包。无论使用CLI还是SDK，都需要使用节点管理员完成此步骤，节点管理员的签名证书位于节点MSP的admincerts文件夹中。建议组织只打包一次链码，然后在属于其组织的每个节点上安装相同的包。如果一个通道想要确保每个组织运行相同的链码，那么一个组织可以打包一个链码并用带外方式将其发送到其他通道成员。"
 
-#: ../../source/chaincode4noah.rst:87
-msgid "To create a signed chaincode package, use the following command:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:93
+#: ../../source/chaincode4noah.md:110
 msgid ""
-"The ``-s`` option creates a package that can be signed by multiple owners"
-" as opposed to simply creating a raw CDS. When ``-s`` is specified, the "
-"``-S`` option must also be specified if other owners are going to need to"
-" sign. Otherwise, the process will create a SignedCDS that includes only "
-"the instantiation policy in addition to the CDS."
+"A successful install command will return a chaincode package identifier, "
+"which is the package label combined with a hash of the package. This package"
+" identifier is used to associate a chaincode package installed on your peers"
+" with a chaincode definition approved by your organization. Save the "
+"identifier for next step. You can also find the package identifier by "
+"querying the packages installed on your peer using the Peer CLI."
 msgstr ""
+"一个成功的安装命令将返回一个链码包标识符，它是一个包标签和包的散列组合。此包标识符用于将安装在节点上的链码包与组织批准的链码定义关联起来。为下一步保存标识符。您还可以通过使用节点CLI查询安装在您的节点上的包来找到包标识符。"
 
-#: ../../source/chaincode4noah.rst:99
+#: ../../source/chaincode4noah.md:119
 msgid ""
-"The ``-S`` option directs the process to sign the package using the MSP "
-"identified by the value of the ``localMspid`` property in ``core.yaml``."
+"The chaincode is governed by a chaincode definition. When channel members "
+"approve a chaincode definition, the approval acts as a vote by an "
+"organization on the chaincode parameters it accepts. These approved "
+"organization definitions allow channel members to agree on a chaincode "
+"before it can be used on a channel. The chaincode definition includes the "
+"following parameters, which need to be consistent across organizations:"
 msgstr ""
+"链码由链码定义控制。当通道成员批准链码定义时，该批准作为组织对其接受的链码参数的表决。这些经过批准的组织定义允许通道成员在链码在通道上使用之前就链码达成一致。链码定义包括以下参数，这些参数需要跨组织保持一致:"
 
-#: ../../source/chaincode4noah.rst:103
+#: ../../source/chaincode4noah.md:152
 msgid ""
-"The ``-S`` option is optional. However if a package is created without a "
-"signature, it cannot be signed by any other owner using the "
-"``signpackage`` command."
+"The chaincode definition also includes the Package Identifier. This is a "
+"required parameter for each organization that wants to use the chaincode. "
+"The package ID does not need to be the same for all organizations. An "
+"organization can approve a chaincode definition without installing a "
+"chaincode package or including the identifier in the definition."
 msgstr ""
+"链码定义还包括包标识符。对于希望使用链码的每个组织，这都是必需的参数。包ID不需要对所有组织都是相同的。组织可以在不安装链码包或在定义中包含标识符的情况下批准链码定义。"
 
-#: ../../source/chaincode4noah.rst:107
+#: ../../source/chaincode4noah.md:158
 msgid ""
-"The optional ``-i`` option allows one to specify an instantiation policy "
-"for the chaincode. The instantiation policy has the same format as an "
-"endorsement policy and specifies which identities can instantiate the "
-"chaincode. In the example above, only the admin of OrgA is allowed to "
-"instantiate the chaincode. If no policy is provided, the default policy "
-"is used, which only allows the admin identity of the peer's MSP to "
-"instantiate chaincode."
+"Each channel member that wants to use the chaincode needs to approve a "
+"chaincode definition for their organization. This approval needs to be "
+"submitted to the ordering service, after which it is distributed to all "
+"peers. This approval needs to be submitted by your Organization "
+"Administrator, whose signing certificate is listed as an admin cert in the "
+"MSP of your organization definition. After the approval transaction has been"
+" successfully submitted, the approved definition is stored in a collection "
+"that is available to all the peers of your organization. As a result you "
+"only need to approve a chaincode for your organization once, even if you "
+"have multiple peers."
 msgstr ""
+"希望使用链码的每个通道成员都需要为其组织批准一个链码定义。此批准需要提交给排序服务，然后分发给所有节点。此批准需要由组织管理员提交，其签名证书在组织定义的MSP中作为管理证书列出。成功提交批准交易后，已批准的定义存储在一个集合中，该集合可用于组织的所有节点。因此，即使您有多个节点，也只需要为您的组织批准一次链码。"
 
-#: ../../source/chaincode4noah.rst:116
-msgid "Package signing"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:118
+#: ../../source/chaincode4noah.md:170
 msgid ""
-"A chaincode package that was signed at creation can be handed over to "
-"other owners for inspection and signing. The workflow supports out-of-"
-"band signing of chaincode package."
+"Once a sufficient number of channel members have approved a chaincode "
+"definition, one organization can commit the definition to the channel. You "
+"can use the queryapprovalstatus command to find which channel members have "
+"approved a definition before committing it to the channel using the peer "
+"CLI. The commit transaction proposal is first sent to the peers of channel "
+"members, who query the chaincode definition approved for their organizations"
+" and endorse the definition if their organization has approved it. The "
+"transaction is then submitted to the ordering service, which then commits "
+"the chaincode definition to the channel. The commit definition transaction "
+"needs to be submitted as the Organization Administrator, whose signing "
+"certificate is listed as an admin cert in the MSP of your organization "
+"definition."
 msgstr ""
+"一旦有足够数量的通道成员批准了链码定义，一个组织就可以将该定义提交给通道。在使用节点的CLI将定义提交到通道之前，可以使用queryapprovalstatus命令查找哪些通道成员已经批准了该定义。提交交易提议首先发送给通道成员的节点，这些成员查询为其组织批准的链码定义，如果组织已经批准了该定义，则对其进行背书。然后将交易提交给排序服务，然后该服务将链码定义提交给通道。提交定义交易需要作为组织管理员提交，其签名证书在组织定义的MSP中作为管理证书列出。"
 
-#: ../../source/chaincode4noah.rst:122
+#: ../../source/chaincode4noah.md:182
 msgid ""
-"The `ChaincodeDeploymentSpec "
-"<https://github.com/hyperledger/fabric/blob/master/protos/peer/chaincode.proto#L78>`_"
-" may be optionally be signed by the collective owners to create a "
-"`SignedChaincodeDeploymentSpec "
-"<https://github.com/hyperledger/fabric/blob/master/protos/peer/signed_cc_dep_spec.proto#L26>`_"
-" (or SignedCDS). The SignedCDS contains 3 elements:"
+"The number of organizations that need to approve a definition before it can "
+"be successfully committed to the channel is governed by the "
+"Channel/Application/LifecycleEndorsement policy. By default, this policy "
+"requires that a majority of organizations in the channel endorse the "
+"transaction. The LifecycleEndorsement policy is separate from the chaincode "
+"endorsement policy. For example, even if a chaincode endorsement policy only"
+" requires signatures from one or two organizations, a majority of channel "
+"members still need to approve the chaincode definition according to the "
+"default policy. When committing a channel definition, you need to target "
+"enough peer organizations in the channel to satisfy your "
+"LifecycleEndorsement policy."
 msgstr ""
+"在将定义成功提交给通道之前，需要批准该定义的组织数量由通道/应用程序/生命周期背书策略控制。默认情况下，该策略要求通道中的大多数组织认可该交易。生命周期背书策略与链码背书策略是分开的。例如，即使某链码背书策略只需要一个或两个组织的签名，大多数通道成员仍然需要根据默认策略批准链码定义。在提交通道定义时，您需要在通道中发送给足够多的节点组织，以满足您的生命周期背书策略。"
 
-#: ../../source/chaincode4noah.rst:128
-msgid "The CDS contains the source code, the name, and version of the chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:129
+#: ../../source/chaincode4noah.md:193
 msgid ""
-"An instantiation policy of the chaincode, expressed as endorsement "
-"policies."
+"An organization can approve a chaincode definition without installing the "
+"chaincode package. If an organization does not need to use the chaincode, "
+"they can approve a chaincode definition without a package identifier to "
+"ensure that the Lifecycle Endorsement policy is satisfied."
 msgstr ""
+"组织可以在不安装链码包的情况下批准链码定义。如果组织不需要使用链码，他们可以在没有包标识符的情况下批准链码定义，以确保满足生命周期背书策略。"
 
-#: ../../source/chaincode4noah.rst:130
+#: ../../source/chaincode4noah.md:198
 msgid ""
-"The list of chaincode owners, defined by means of `Endorsement "
-"<https://github.com/hyperledger/fabric/blob/master/protos/peer/proposal_response.proto#L111>`_."
+"After the chaincode definition has been committed to the channel, channel "
+"members can start using the chaincode. The first invoke of the chaincode "
+"will start the chaincode containers on all of the peers targeted by the "
+"transaction proposal, as long as those peers have installed the chaincode "
+"package. You can use the chaincode definition to require the invocation of "
+"the Init function to start the chaincode. Otherwise, a channel member can "
+"start the chaincode container by invoking any transaction in the chaincode. "
+"The first invoke, whether of an Init function or other transaction, is "
+"subject to the chaincode endorsement policy. It may take a few minutes for "
+"the chaincode container to start."
 msgstr ""
+"将链码定义提交给通道后，通道成员可以开始使用链码。链码的第一次调用将在交易提议发送给的所有节点上启动链码容器，只要这些节点已经安装了链码包。您可以使用链码定义来要求调用Init函数来启动链码。否则，通道成员可以通过调用链码中的任何交易来启动链码容器。无论是初始化函数还是其他交易的第一个调用，都受链码背书策略的约束。链码容器可能需要几分钟的时间才能启动。"
 
-#: ../../source/chaincode4noah.rst:133
+#: ../../source/chaincode4noah.md:210
 msgid ""
-"Note that this endorsement policy is determined out-of-band to provide "
-"proper MSP principals when the chaincode is instantiated on some "
-"channels. If the instantiation policy is not specified, the default "
-"policy is any MSP administrator of the channel."
-msgstr ""
+"You can upgrade a chaincode using the same Fabric lifecycle process as you "
+"used to install and start the chainocode. You can upgrade the chaincode "
+"binaries, or only update the chaincode policies. Follow these steps to "
+"upgrade a chaincode:"
+msgstr "您可以使用与安装和启动链码相同的Fabric生命周期过程来升级链码。您可以升级链码二进制文件，或者只更新链码策略。按照以下步骤升级链码:"
 
-#: ../../source/chaincode4noah.rst:138
+#: ../../source/chaincode4noah.md:239
 msgid ""
-"Each owner endorses the ChaincodeDeploymentSpec by combining it with that"
-" owner's identity (e.g. certificate) and signing the combined result."
+"The Fabric chaincode lifecycle uses the sequence in the chaincode definition"
+" to keep track of upgrades. All channel members need to increment the "
+"sequence number by one and approve a new definition to upgrade the "
+"chaincode. The version parameter is used to track the chaincode binaries, "
+"and needs to be changed only when you upgrade the chaincode binaries."
 msgstr ""
+"Fabric链码生命周期使用链码定义中的序列来跟踪升级。所有通道成员都需要将序列号增加1，并批准一个新的定义来升级链码。版本参数用于跟踪链码二进制文件，只有在升级链码二进制文件时才需要更改。"
+" "
 
-#: ../../source/chaincode4noah.rst:142
+#: ../../source/chaincode4noah.md:247
 msgid ""
-"A chaincode owner can sign a previously created signed package using the "
-"following command:"
+"You can use the Fabric chaincode lifecycle by creating a new channel and "
+"setting the channel capabilities to V2_0. You will not be able to use the "
+"previous lifecycle to install, instantiate, or update a chaincode on a "
+"channels with V2_0 capabilities enabled. There is no upgrade support to the "
+"v2.0 Alpha release, and no intended upgrade support from the the Alpha "
+"release to future versions of v2.x."
 msgstr ""
-
-#: ../../source/chaincode4noah.rst:149
-msgid ""
-"Where ``ccpack.out`` and ``signedccpack.out`` are the input and output "
-"packages, respectively. ``signedccpack.out`` contains an additional "
-"signature over the package signed using the Local MSP."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:156
-msgid "Installing chaincode"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:158
-msgid ""
-"The ``install`` transaction packages a chaincode's source code into a "
-"prescribed format called a ``ChaincodeDeploymentSpec`` (or CDS) and "
-"installs it on a peer node that will run that chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:162
-msgid ""
-"You must install the chaincode on **each** endorsing peer node of a "
-"channel that will run your chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:165
-msgid ""
-"When the ``install`` API is given simply a ``ChaincodeDeploymentSpec``, "
-"it will default the instantiation policy and include an empty owner list."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:168
-msgid ""
-"Chaincode should only be installed on endorsing peer nodes of the owning "
-"members of the chaincode to protect the confidentiality of the chaincode "
-"logic from other members on the network. Those members without the "
-"chaincode, can't be the endorsers of the chaincode's transactions; that "
-"is, they can't execute the chaincode. However, they can still validate "
-"and commit the transactions to the ledger."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:175
-msgid ""
-"To install a chaincode, send a `SignedProposal "
-"<https://github.com/hyperledger/fabric/blob/master/protos/peer/proposal.proto#L104>`_"
-" to the ``lifecycle system chaincode`` (LSCC) described in the `System "
-"Chaincode`_ section. For example, to install the **sacc** sample "
-"chaincode described in section :ref:`simple asset chaincode` using the "
-"CLI, the command would look like the following:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:186
-msgid ""
-"The CLI internally creates the SignedChaincodeDeploymentSpec for **sacc**"
-" and sends it to the local peer, which calls the ``Install`` method on "
-"the LSCC. The argument to the ``-p`` option specifies the path to the "
-"chaincode, which must be located within the source tree of the user's "
-"``GOPATH``, e.g. ``$GOPATH/src/sacc``. Note if using ``-l node`` or ``-l "
-"java`` for node chaincode or java chaincode, use ``-p`` with the absolute"
-" path of the chaincode location. See the :doc:`command_ref` for a "
-"complete description of the command options."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:194
-msgid ""
-"Note that in order to install on a peer, the signature of the "
-"SignedProposal must be from 1 of the peer's local MSP administrators."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:200
-msgid "Instantiate"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:202
-msgid ""
-"The ``instantiate`` transaction invokes the ``lifecycle System "
-"Chaincode`` (LSCC) to create and initialize a chaincode on a channel. "
-"This is a chaincode-channel binding process: a chaincode may be bound to "
-"any number of channels and operate on each channel individually and "
-"independently. In other words, regardless of how many other channels on "
-"which a chaincode might be installed and instantiated, state is kept "
-"isolated to the channel to which a transaction is submitted."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:210
-msgid ""
-"The creator of an ``instantiate`` transaction must satisfy the "
-"instantiation policy of the chaincode included in SignedCDS and must also"
-" be a writer on the channel, which is configured as part of the channel "
-"creation. This is important for the security of the channel to prevent "
-"rogue entities from deploying chaincodes or tricking members to execute "
-"chaincodes on an unbound channel."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:216
-msgid ""
-"For example, recall that the default instantiation policy is any channel "
-"MSP administrator, so the creator of a chaincode instantiate transaction "
-"must be a member of the channel administrators. When the transaction "
-"proposal arrives at the endorser, it verifies the creator's signature "
-"against the instantiation policy. This is done again during the "
-"transaction validation before committing it to the ledger."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:223
-msgid ""
-"The instantiate transaction also sets up the endorsement policy for that "
-"chaincode on the channel. The endorsement policy describes the "
-"attestation requirements for the transaction result to be accepted by "
-"members of the channel."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:228
-msgid ""
-"For example, using the CLI to instantiate the **sacc** chaincode and "
-"initialize the state with ``john`` and ``0``, the command would look like"
-" the following:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:235
-msgid ""
-"Note the endorsement policy (CLI uses polish notation), which requires an"
-" endorsement from both a member of Org1 and Org2 for all transactions to "
-"**sacc**. That is, both Org1 and Org2 must sign the result of executing "
-"the `Invoke` on **sacc** for the transactions to be valid."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:241
-msgid ""
-"After being successfully instantiated, the chaincode enters the active "
-"state on the channel and is ready to process any transaction proposals of"
-" type `ENDORSER_TRANSACTION "
-"<https://github.com/hyperledger/fabric/blob/master/protos/common/common.proto#L42>`_."
-" The transactions are processed concurrently as they arrive at the "
-"endorsing peer."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:250
-msgid "Upgrade"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:252
-msgid ""
-"A chaincode may be upgraded any time by changing its version, which is "
-"part of the SignedCDS. Other parts, such as owners and instantiation "
-"policy are optional. However, the chaincode name must be the same; "
-"otherwise it would be considered as a totally different chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:257
-msgid ""
-"Prior to upgrade, the new version of the chaincode must be installed on "
-"the required endorsers. Upgrade is a transaction similar to the "
-"instantiate transaction, which binds the new version of the chaincode to "
-"the channel. Other channels bound to the old version of the chaincode "
-"still run with the old version. In other words, the ``upgrade`` "
-"transaction only affects one channel at a time, the channel to which the "
-"transaction is submitted."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:264
-msgid ""
-"Note that since multiple versions of a chaincode may be active "
-"simultaneously, the upgrade process doesn't automatically remove the old "
-"versions, so user must manage this for the time being."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:268
-msgid ""
-"There's one subtle difference with the ``instantiate`` transaction: the "
-"``upgrade`` transaction is checked against the current chaincode "
-"instantiation policy, not the new policy (if specified). This is to "
-"ensure that only existing members specified in the current instantiation "
-"policy may upgrade the chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:273
-msgid ""
-"Note that during upgrade, the chaincode ``Init`` function is called to "
-"perform any data related updates or re-initialize it, so care must be "
-"taken to avoid resetting states when upgrading chaincode."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:280
-msgid "Stop and Start"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:281
-msgid ""
-"Note that ``stop`` and ``start`` lifecycle transactions have not yet been"
-" implemented. However, you may stop a chaincode manually by removing the "
-"chaincode container and the SignedCDS package from each of the endorsers."
-" This is done by deleting the chaincode's container on each of the hosts "
-"or virtual machines on which the endorsing peer nodes are running, and "
-"then deleting the SignedCDS from each of the endorsing peer nodes:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:288
-msgid ""
-"TODO - in order to delete the CDS from the peer node, you would need to "
-"enter the peer node's container, first. We really need to provide a "
-"utility script that can do this."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:297
-msgid ""
-"Stop would be useful in the workflow for doing upgrade in controlled "
-"manner, where a chaincode can be stopped on a channel on all peers before"
-" issuing an upgrade."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:304
-msgid "System chaincode"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:305
-msgid ""
-"System chaincode has the same programming model except that it runs "
-"within the peer process rather than in an isolated container like normal "
-"chaincode. Therefore, system chaincode is built into the peer executable "
-"and doesn't follow the same lifecycle described above. In particular, "
-"**install**, **instantiate** and **upgrade** do not apply to system "
-"chaincodes."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:311
-msgid ""
-"The purpose of system chaincode is to shortcut gRPC communication cost "
-"between peer and chaincode, and tradeoff the flexibility in management. "
-"For example, a system chaincode can only be upgraded with the peer "
-"binary. It must also register with a `fixed set of parameters "
-"<https://github.com/hyperledger/fabric/blob/master/core/scc/importsysccs.go>`_"
-" compiled in and doesn't have endorsement policies or endorsement policy "
-"functionality."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:318
-msgid ""
-"System chaincode is used in Hyperledger Fabric to implement a number of "
-"system behaviors so that they can be replaced or modified as appropriate "
-"by a system integrator."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:322
-msgid "The current list of system chaincodes:"
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:324
-msgid ""
-"`LSCC <https://github.com/hyperledger/fabric/tree/master/core/scc/lscc>`_"
-" Lifecycle system chaincode handles lifecycle requests described above."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:326
-msgid ""
-"`CSCC <https://github.com/hyperledger/fabric/tree/master/core/scc/cscc>`_"
-" Configuration system chaincode handles channel configuration on the peer"
-" side."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:328
-msgid ""
-"`QSCC <https://github.com/hyperledger/fabric/tree/master/core/scc/qscc>`_"
-" Query system chaincode provides ledger query APIs such as getting blocks"
-" and transactions."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:332
-msgid ""
-"The former system chaincodes for endorsement and validation have been "
-"replaced by the pluggable endorsement and validation function as "
-"described by the :doc:`pluggable_endorsement_and_validation` "
-"documentation."
-msgstr ""
-
-#: ../../source/chaincode4noah.rst:336
-msgid ""
-"Extreme care must be taken when modifying or replacing these system "
-"chaincodes, especially LSCC."
-msgstr ""
-
+"您可以通过创建一个新通道并将通道功能设置为V2_0来使用Fabric链码生命周期。您将无法使用前一个生命周期在启用V2_0功能的通道上安装、实例化或更新链码。没有对v2.0"
+" Alpha版本的升级支持，也没有从Alpha版本到未来版本v2.x的升级支持。"

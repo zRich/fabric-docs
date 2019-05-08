@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
+"POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,9 +54,10 @@ msgstr ""
 
 #: ../../source/endorsement-policies.rst:23
 msgid ""
-"By default, endorsement policies are specified for a channel's chaincode "
-"at instantiation or upgrade time (that is, one endorsement policy covers "
-"all of the state associated with a chaincode)."
+"By default, endorsement policies are specified in the chaincode "
+"definition, which is agreed to by channel members and then committed to a"
+" channel (that is, one endorsement policy covers all of the state "
+"associated with a chaincode)."
 msgstr ""
 
 #: ../../source/endorsement-policies.rst:27
@@ -106,61 +107,94 @@ msgstr ""
 
 #: ../../source/endorsement-policies.rst:55
 msgid ""
-"Chaincode-level endorsement policies can be specified at instantiate time"
-" using either the SDK (for some sample code on how to do this, click "
-"`here <https://github.com/hyperledger/fabric-sdk-"
-"node/blob/f8ffa90dc1b61a4a60a6fa25de760c647587b788/test/integration/e2e/e2eUtils.js#L178>`_)"
-" or in the peer CLI using the ``-P`` switch followed by the policy."
+"Chaincode-level endorsement policies are agreed to by channel members "
+"when they approve a chaincode definition for their organization. A "
+"sufficient number of channel members need to approve a chaincode "
+"definition to meet the ``Channel/Application/LifecycleEndorsement`` "
+"policy, which by default is set to a majority of channel members, before "
+"the definition can be committed to the channel. Once the definition has "
+"been committed, the chaincode is ready to use. Any invoke of the "
+"chaincode that writes data to the ledger will need to be validated by "
+"enough channel members to meet the endorsement policy."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:60
+#: ../../source/endorsement-policies.rst:64
+msgid ""
+"You can specify an endorsement policy for a chainocode using the Fabric "
+"SDKs. For an example, visit the `How to install and start your chaincode "
+"<https://fabric-sdk-node.github.io/master/tutorial-chaincode-"
+"lifecycle.html>`_ in the Node.js SDK documentation. You can also create "
+"an endorsement policy from your CLI when you approve and commit a "
+"chaincode definition with the Fabric peer binaries by using the "
+"``—-signature-policy`` flag."
+msgstr ""
+
+#: ../../source/endorsement-policies.rst:70
 msgid ""
 "Don't worry about the policy syntax (``'Org1.member'``, et all) right "
 "now. We'll talk more about the syntax in the next section."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:63
-#: ../../source/endorsement-policies.rst:76
-#: ../../source/endorsement-policies.rst:130
+#: ../../source/endorsement-policies.rst:73
+#: ../../source/endorsement-policies.rst:92
+#: ../../source/endorsement-policies.rst:104
+#: ../../source/endorsement-policies.rst:163
 msgid "For example:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:69
+#: ../../source/endorsement-policies.rst:79
 msgid ""
-"This command deploys chaincode ``mycc`` (\"my chaincode\") with the "
+"The above command approves the chaincode definition of ``mycc`` with the "
 "policy ``AND('Org1.member', 'Org2.member')`` which would require that a "
-"member of both Org1 and Org2 sign the transaction."
+"member of both Org1 and Org2 sign the transaction. After a sufficient "
+"number of channel members approve a chaincode definition for ``mycc``, "
+"the definition and endorsement policy can be committed to the channel "
+"using the command below:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:73
+#: ../../source/endorsement-policies.rst:89
 msgid ""
 "Notice that, if the identity classification is enabled (see :doc:`msp`), "
 "one can use the ``PEER`` role to restrict endorsement to only peers."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:82
+#: ../../source/endorsement-policies.rst:99
 msgid ""
-"A new organization added to the channel after instantiation can query a "
-"chaincode (provided the query has appropriate authorization as defined by"
-" channel policies and any application level checks enforced by the "
-"chaincode) but will not be able to execute or endorse the chaincode. The "
-"endorsement policy needs to be modified to allow transactions to be "
-"committed with endorsements from the new organization."
+"In addition to the specifying an endorsement policy from the CLI or SDK, "
+"a chaincode can also use policies in the channel configuration as "
+"endorsement policies. You can use the ``--channel-config-policy``flag to "
+"select a channel policy with format used by the channel configuration and"
+" by ACLs."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:88
+#: ../../source/endorsement-policies.rst:110
 msgid ""
-"if not specified at instantiation time, the endorsement policy defaults "
-"to \"any member of the organizations in the channel\". For example, a "
-"channel with \"Org1\" and \"Org2\" would have a default endorsement "
-"policy of \"OR('Org1.member', 'Org2.member')\"."
+"If you do not specify a policy, the chaincode definition will use the "
+"``Channel/Application/Endorsement`` policy by default, which requires "
+"that a transaction be validated by a majority of channel members. This "
+"policy depends on the membership of the channel, so it will be updated "
+"automatically when organizations are added or removed from a channel. One"
+" advantage of using channel policies is that they can be written to be "
+"updated automatically with channel membership."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:94
+#: ../../source/endorsement-policies.rst:117
+msgid ""
+"If you specify an endorsement policy using the ``—-signature-policy`` "
+"flag or the SDK, you will need to update the policy when organizations "
+"join or leave the channel. A new organization added to the channel after "
+"instantiation will be able to query a chaincode (provided the query has "
+"appropriate authorization as defined by channel policies and any "
+"application level checks enforced by the chaincode) but will not be able "
+"to execute or endorse the chaincode. Only organizations listed in the "
+"endorsement policy syntax will be able sign transactions."
+msgstr ""
+
+#: ../../source/endorsement-policies.rst:127
 msgid "Endorsement policy syntax"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:96
+#: ../../source/endorsement-policies.rst:129
 msgid ""
 "As you can see above, policies are expressed in terms of principals "
 "(\"principals\" are identities matched to a role). Principals are "
@@ -169,54 +203,54 @@ msgid ""
 "``admin``, ``client``, and ``peer``."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:102
+#: ../../source/endorsement-policies.rst:135
 msgid "Here are a few examples of valid principals:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:104
+#: ../../source/endorsement-policies.rst:137
 msgid "``'Org0.admin'``: any administrator of the ``Org0`` MSP"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:105
+#: ../../source/endorsement-policies.rst:138
 msgid "``'Org1.member'``: any member of the ``Org1`` MSP"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:106
+#: ../../source/endorsement-policies.rst:139
 msgid "``'Org1.client'``: any client of the ``Org1`` MSP"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:107
+#: ../../source/endorsement-policies.rst:140
 msgid "``'Org1.peer'``: any peer of the ``Org1`` MSP"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:109
+#: ../../source/endorsement-policies.rst:142
 msgid "The syntax of the language is:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:111
+#: ../../source/endorsement-policies.rst:144
 msgid "``EXPR(E[, E...])``"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:113
+#: ../../source/endorsement-policies.rst:146
 msgid ""
 "Where ``EXPR`` is either ``AND``, ``OR``, or ``OutOf``, and ``E`` is "
 "either a principal (with the syntax described above) or another nested "
 "call to ``EXPR``."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:117
+#: ../../source/endorsement-policies.rst:150
 msgid ""
 "``AND('Org1.member', 'Org2.member', 'Org3.member')`` requests one "
 "signature from each of the three principals."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:119
+#: ../../source/endorsement-policies.rst:152
 msgid ""
 "``OR('Org1.member', 'Org2.member')`` requests one signature from either "
 "one of the two principals."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:121
+#: ../../source/endorsement-policies.rst:154
 msgid ""
 "``OR('Org1.member', AND('Org2.member', 'Org3.member'))`` requests either "
 "one signature from a member of the ``Org1`` MSP or one signature from a "
@@ -224,13 +258,13 @@ msgid ""
 "``Org3`` MSP."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:124
+#: ../../source/endorsement-policies.rst:157
 msgid ""
 "``OutOf(1, 'Org1.member', 'Org2.member')``, which resolves to the same "
 "thing as ``OR('Org1.member', 'Org2.member')``."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:126
+#: ../../source/endorsement-policies.rst:159
 msgid ""
 "Similarly, ``OutOf(2, 'Org1.member', 'Org2.member')`` is equivalent to "
 "``AND('Org1.member', 'Org2.member')``, and ``OutOf(2, 'Org1.member', "
@@ -239,11 +273,11 @@ msgid ""
 "'Org3.member'))``."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:135
+#: ../../source/endorsement-policies.rst:168
 msgid "Setting key-level endorsement policies"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:137
+#: ../../source/endorsement-policies.rst:170
 msgid ""
 "Setting regular chaincode-level endorsement policies is tied to the "
 "lifecycle of the corresponding chaincode. They can only be set or "
@@ -251,20 +285,20 @@ msgid ""
 " channel."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:141
+#: ../../source/endorsement-policies.rst:174
 msgid ""
 "In contrast, key-level endorsement policies can be set and modified in a "
 "more granular fashion from within a chaincode. The modification is part "
 "of the read-write set of a regular transaction."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:145
+#: ../../source/endorsement-policies.rst:178
 msgid ""
 "The shim API provides the following functions to set and retrieve an "
 "endorsement policy for/from a regular key."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:148
+#: ../../source/endorsement-policies.rst:181
 msgid ""
 "``ep`` below stands for the \"endorsement policy\", which can be "
 "expressed either by using the same syntax described above or by using the"
@@ -273,13 +307,13 @@ msgid ""
 "basic shim API."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:159
+#: ../../source/endorsement-policies.rst:192
 msgid ""
 "For keys that are part of :doc:`private-data/private-data` in a "
 "collection the following functions apply:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:167
+#: ../../source/endorsement-policies.rst:200
 msgid ""
 "To help set endorsement policies and marshal them into validation "
 "parameter byte arrays, the Go shim provides an extension with convenience"
@@ -289,7 +323,7 @@ msgid ""
 "<https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim/ext/statebased#KeyEndorsementPolicy>`_:"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:190
+#: ../../source/endorsement-policies.rst:223
 msgid ""
 "For example, to set an endorsement policy for a key where two specific "
 "orgs are required to endorse the key change, pass both org ``MSPIDs`` to "
@@ -298,51 +332,51 @@ msgid ""
 "``SetStateValidationParameter()``."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:195
+#: ../../source/endorsement-policies.rst:228
 msgid ""
 "To add the shim extension to your chaincode as a dependency, see "
 ":ref:`vendoring`."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:198
-#: ../../source/endorsement-policies.rst:205
+#: ../../source/endorsement-policies.rst:231
+#: ../../source/endorsement-policies.rst:238
 msgid "Validation"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:200
+#: ../../source/endorsement-policies.rst:233
 msgid ""
 "At commit time, setting a value of a key is no different from setting the"
 " endorsement policy of a key --- both update the state of the key and are"
 " validated based on the same rules."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:205
+#: ../../source/endorsement-policies.rst:238
 msgid "no validation parameter set"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:205
+#: ../../source/endorsement-policies.rst:238
 msgid "validation parameter set"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:207
+#: ../../source/endorsement-policies.rst:240
 msgid "modify value"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:207
-#: ../../source/endorsement-policies.rst:209
+#: ../../source/endorsement-policies.rst:240
+#: ../../source/endorsement-policies.rst:242
 msgid "check chaincode ep"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:207
-#: ../../source/endorsement-policies.rst:209
+#: ../../source/endorsement-policies.rst:240
+#: ../../source/endorsement-policies.rst:242
 msgid "check key-level ep"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:209
+#: ../../source/endorsement-policies.rst:242
 msgid "modify key-level ep"
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:212
+#: ../../source/endorsement-policies.rst:245
 msgid ""
 "As we discussed above, if a key is modified and no key-level endorsement "
 "policy is present, the chaincode-level endorsement policy applies by "
@@ -352,7 +386,7 @@ msgid ""
 "endorsement policy."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:218
+#: ../../source/endorsement-policies.rst:251
 msgid ""
 "If a key is modified and a key-level endorsement policy is present, the "
 "key-level endorsement policy overrides the chaincode-level endorsement "
@@ -363,13 +397,13 @@ msgid ""
 " time, no trust assumptions have been violated."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:225
+#: ../../source/endorsement-policies.rst:258
 msgid ""
 "If a key's endorsement policy is removed (set to nil), the chaincode-"
 "level endorsement policy becomes the default again."
 msgstr ""
 
-#: ../../source/endorsement-policies.rst:228
+#: ../../source/endorsement-policies.rst:261
 msgid ""
 "If a transaction modifies multiple keys with different associated key-"
 "level endorsement policies, all of these policies need to be satisfied in"
