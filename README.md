@@ -96,7 +96,7 @@ Once completed, the generated po files will be placed in the **source/locale/zh_
 make -e SPHINXOPTS="-D lanagauge='zh_CN'" html
 ```
 
-For more detail reference to [Multi-Lanaguage Support](https://docs.google.com/document/d/1lOF9kxjN4hK0b4YzlEVsHO8BcB2BjA3CMSemkfdDTdM/edit) 
+For more detail reference to [Multi-Lanaguage Support](https://docs.google.com/document/d/1lOF9kxjN4hK0b4YzlEVsHO8BcB2BjA3CMSemkfdDTdM/edit?usp=sharing) 
 
 
 This will generate all the html files in `docs/build/html` which you can
