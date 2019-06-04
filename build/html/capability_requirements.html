@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Capability Requirements &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>功能需求 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="CouchDB as the State Database" href="couchdb_as_state_database.html" />
-    <link rel="prev" title="Channels" href="channels.html" /> 
+    <link rel="prev" title="通道" href="channels.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,32 +97,32 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">Architecture Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">Architecture Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">架构参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">架构起源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="txflow.html">Transaction Flow</a></li>
 <li class="toctree-l2"><a class="reference external" href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">Hyperledger Fabric CA's User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fabric-sdks.html">Hyperledger Fabric SDKs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery-overview.html">Service Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channels.html">Channels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Capability Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#defining-capability-requirements">Defining Capability Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-capabilities">Setting Capabilities</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#capabilities-in-an-initial-configuration">Capabilities in an Initial Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels.html">通道</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">功能需求</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#defining-capability-requirements">定义功能需求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-capabilities">设置功能</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#capabilities-in-an-initial-configuration">初始配置中的功能</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_as_state_database.html">CouchDB as the State Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peer_event_services.html">Peer channel-based event services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">Private Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">私有数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="readwrite.html">Read-Write set semantics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gossip.html">Gossip data dissemination protocol</a></li>
 </ul>
@@ -129,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -177,9 +178,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="architecture.html">Architecture Reference</a> &raquo;</li>
+          <li><a href="architecture.html">架构参考</a> &raquo;</li>
         
-      <li>Capability Requirements</li>
+      <li>功能需求</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,30 +200,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="capability-requirements">
-<h1>Capability Requirements<a class="headerlink" href="#capability-requirements" title="Permalink to this headline">¶</a></h1>
-<p>Because Fabric is a distributed system that will usually involve multiple
-organizations (sometimes in different countries or even continents), it is
-possible (and typical) that many different versions of Fabric code will exist in
-the network. Nevertheless, it’s vital that networks process transactions in the
-same way so that everyone has the same view of the current network state.</p>
-<p>This means that every network – and every channel within that network – must
-define a set of what we call “capabilities” to be able to participate in
-processing transactions. For example, Fabric v1.1 introduces new MSP role types
-of “Peer” and “Client”. However, if a v1.0 peer does not understand these new
-role types, it will not be able to appropriately evaluate an endorsement policy
-that references them. This means that before the new role types may be used, the
-network must agree to enable the v1.1 <code class="docutils literal notranslate"><span class="pre">channel</span></code> capability requirement,
-ensuring that all peers come to the same decision.</p>
-<p>Only binaries which support the required capabilities will be able to participate in the
-channel, and newer binary versions will not enable new validation logic until the
-corresponding capability is enabled.  In this way, capability requirements ensure that
-even with disparate builds and versions, it is not possible for the network to suffer a
-state fork.</p>
+<h1>功能需求<a class="headerlink" href="#capability-requirements" title="永久链接至标题">¶</a></h1>
+<p>由于Fabric是一个分布式系统，通常会涉及多个组织(有时在不同的国家甚至大洲)，所以网络中可能(而且是典型的)存在许多不同版本的Fabric代码。然而，重要的是，网络以相同的方式处理交易，这样每个人对当前网络状态都有相同的看法。</p>
+<p>这意味着每个网络，以及该网络中的每个通道，必须定义一组我们称为“功能”的东西，以便能够参与处理交易。例如，Fabric v1.1引入了新的MSP角色类型“Peer”和“Client”。但是，如果1.0版本的节点不理解这些新角色类型，那么它将无法恰当地验证引用它们的背书策略。这意味着在使用新角色类型之前，网络必须同意启用v1.1的“通道”功能需求，确保所有节点都做出相同的决定。</p>
+<p>只有支持所需功能的二进制文件才能参与通道，较新的二进制版本在启用相应功能之前不会启用新的验证逻辑。通过这种方式，功能需求确保即使使用不同的构建和版本，网络也不可能出现状态分支。</p>
 <div class="section" id="defining-capability-requirements">
-<h2>Defining Capability Requirements<a class="headerlink" href="#defining-capability-requirements" title="Permalink to this headline">¶</a></h2>
-<p>Capability requirements are defined per channel in the channel configuration (found
-in the channel’s most recent configuration block). The channel configuration contains
-three locations, each of which defines a capability of a different type.</p>
+<h2>定义功能需求<a class="headerlink" href="#defining-capability-requirements" title="永久链接至标题">¶</a></h2>
+<p>功能需求是在通道配置中为每个通道定义的(可以在通道的最新配置区块中找到)。通道配置包含三个位置，每个位置定义了一个不同类型的功能。</p>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 17%" />
@@ -230,75 +214,48 @@ three locations, each of which defines a capability of a different type.</p>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Capability Type</p></th>
-<th class="head"><p>Canonical Path</p></th>
-<th class="head"><p>JSON Path</p></th>
+<tr class="row-odd"><th class="head"><p>功能类型</p></th>
+<th class="head"><p>标准路径</p></th>
+<th class="head"><p>JSON路径</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Channel</p></td>
-<td><p>/Channel/Capabilities</p></td>
+<tr class="row-even"><td><p>通道</p></td>
+<td><p>/通道/功能</p></td>
 <td><p>.channel_group.values.Capabilities</p></td>
 </tr>
-<tr class="row-odd"><td><p>Orderer</p></td>
-<td><p>/Channel/Orderer/Capabilities</p></td>
+<tr class="row-odd"><td><p>排序器</p></td>
+<td><p>/通道/排序器/功能</p></td>
 <td><p>.channel_group.groups.Orderer.values.Capabilities</p></td>
 </tr>
-<tr class="row-even"><td><p>Application</p></td>
-<td><p>/Channel/Application/Capabilities</p></td>
+<tr class="row-even"><td><p>应用</p></td>
+<td><p>/通道/应用/功能</p></td>
 <td><p>.channel_group.groups.Application.values.
 Capabilities</p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p><strong>Channel:</strong> these capabilities apply to both peer and orderers and are located in
-the root <code class="docutils literal notranslate"><span class="pre">Channel</span></code> group.</p></li>
-<li><p><strong>Orderer:</strong> apply to orderers only and are located in the <code class="docutils literal notranslate"><span class="pre">Orderer</span></code> group.</p></li>
-<li><p><strong>Application:</strong> apply to peers only and are located in the <code class="docutils literal notranslate"><span class="pre">Application</span></code> group.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>Channel：<a href="#id3"><span class="problematic" id="id4">**</span></a>这些功能同时适用于节点和排序器，并且位于根“通道”组中。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>Orderer：<a href="#id3"><span class="problematic" id="id4">**</span></a>只适用于排序器，并且位于“排序器”组中。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>Application:<a href="#id3"><span class="problematic" id="id4">**</span></a>只适用于节点，并且位于“应用程序”组中。</p></li>
 </ul>
-<p>The capabilities are broken into these groups in order to align with the existing
-administrative structure. Updating orderer capabilities is something the ordering orgs
-would manage independent of the application orgs. Similarly, updating application
-capabilities is something only the application admins would manage. By splitting the
-capabilities between “Orderer” and “Application”, a hypothetical network could run a
-v1.6 ordering service while supporting a v1.3 peer application network.</p>
-<p>However, some capabilities cross both the ‘Application’ and ‘Orderer’ groups. As we
-saw earlier, adding a new MSP role type is something both the orderer and application
-admins agree to and need to recognize. The orderer must understand the meaning
-of MSP roles in order to allow the transactions to pass through ordering, while
-the peers must understand the roles in order to validate the transaction. These
-kinds of capabilities – which span both the application and orderer components
-– are defined in the top level “Channel” group.</p>
+<p>为了与现有的管理结构保持一致，将功能分解为这些组。更新排序器功能是排序器组织独立于应用组织来管理的。类似地，只有应用管理员才会管理更新应用功能。通过在“Orderer”和“Application”之间划分功能，一个假设的网络可以运行v1.6排序服务，同时支持v1.3节点应用网络。</p>
+<p>然而，有些功能跨“Application”和“Orderer”组。正如我们前面看到的，添加新的MSP角色类型是排序器和应用管理员都同意和需要确认。排序器必须理解MSP角色的含义，以便允许交易通过排序，而节点必须理解角色，以便验证交易。这些跨应用和排序器组件的功能在顶层“Channel”组中定义。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is possible that the channel capabilities are defined to be at version
-v1.3 while the orderer and application capabilities are defined to be at
-version 1.1 and v1.4, respectively. Enabling a capability at the “Channel”
-group level does not imply that this same capability is available at the
-more specific “Orderer” and “Application” group levels.</p>
+<p class="admonition-title">注解</p>
+<p>有可能将通道功能定义为版本v1.3，而将排序器和应用功能分别定义为版本1.1和版本1.4。在“通道”组级别启用功能并不意味着在更特定的“Orderer”和“Application”组级别也可以使用相同的功能。</p>
 </div>
 </div>
 <div class="section" id="setting-capabilities">
-<h2>Setting Capabilities<a class="headerlink" href="#setting-capabilities" title="Permalink to this headline">¶</a></h2>
-<p>Capabilities are set as part of the channel configuration (either as part of the
-initial configuration – which we’ll talk about in a moment – or as part of a
-reconfiguration).</p>
+<h2>设置功能<a class="headerlink" href="#setting-capabilities" title="永久链接至标题">¶</a></h2>
+<p>功能被设置为通道配置的一部分(作为初始配置的一部分，我们稍后将讨论它，或者作为重新配置的一部分)。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We have a two documents that talk through different aspects of channel
-reconfigurations. First, we have a tutorial that will take you through
-the process of <a class="reference internal" href="channel_update_tutorial.html"><span class="doc">Adding an Org to a Channel</span></a>. And we also have a document that
-talks through <a class="reference internal" href="config_update.html"><span class="doc">Updating a Channel Configuration</span></a> which gives an overview of the
-different kinds of updates that are possible as well as a fuller look
-at the signature process.</p>
+<p class="admonition-title">注解</p>
+<p>我们有两个文档讨论通道重新配置的不同方面。首先，我们有一个教程:doc: ` channel_update_tutorial <a href="#id1"><span class="problematic" id="id2">`</span></a>，将带您通过这个过程。我们还有一个文档:doc: ‘ config_update ‘来进行讨论，它概述了各种可能的更新，并更全面地查看了签名过程。</p>
 </div>
-<p>Because new channels copy the configuration of the Orderer System Channel by
-default, new channels will automatically be configured to work with the orderer
-and channel capabilities of the Orderer System Channel and the application
-capabilities specified by the channel creation transaction. Channels that already
-exist, however, must be reconfigured.</p>
-<p>The schema for the Capabilities value is defined in the protobuf as:</p>
+<p>由于新通道默认情况下复制了排序器系统通道的配置，因此将自动配置新通道，使其使用排序器系统通道的功能，以及通道创建交易指定的应用功能。但是，必须重新配置已经存在的通道。</p>
+<p>功能值的数据结构在protobuf中定义为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>message Capabilities <span class="o">{</span>
       map&lt;string, Capability&gt; <span class="nv">capabilities</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
 <span class="o">}</span>
@@ -306,7 +263,7 @@ exist, however, must be reconfigured.</p>
 message Capability <span class="o">{</span> <span class="o">}</span>
 </pre></div>
 </div>
-<p>As an example, rendered in JSON:</p>
+<p>例如，在JSON中呈现:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;capabilities&quot;</span>: <span class="o">{</span>
         <span class="s2">&quot;V1_1&quot;</span>: <span class="o">{}</span>
@@ -315,12 +272,9 @@ message Capability <span class="o">{</span> <span class="o">}</span>
 </pre></div>
 </div>
 <div class="section" id="capabilities-in-an-initial-configuration">
-<h3>Capabilities in an Initial Configuration<a class="headerlink" href="#capabilities-in-an-initial-configuration" title="Permalink to this headline">¶</a></h3>
-<p>In the <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code> file distributed in the <code class="docutils literal notranslate"><span class="pre">config</span></code> directory of the release
-artifacts, there is a <code class="docutils literal notranslate"><span class="pre">Capabilities</span></code> section which enumerates the possible capabilities
-for each capability type (Channel, Orderer, and Application).</p>
-<p>The simplest way to enable capabilities is to pick a v1.1 sample profile and customize
-it for your network. For example:</p>
+<h3>初始配置中的功能<a class="headerlink" href="#capabilities-in-an-initial-configuration" title="永久链接至标题">¶</a></h3>
+<p>在文件“configtx.yaml”的发布构件的“config”目录中，有一个“功能”部分，列举了每种功能类型(通道、排序器和应用)的可能功能。</p>
+<p>用功能的最简单方法是选择一个v1.1示例概要文件（profile），并为您的网络定制它。例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SampleSingleMSPSoloV1_1:
     Capabilities:
         &lt;&lt;: *GlobalCapabilities
@@ -336,13 +290,8 @@ it for your network. For example:</p>
                 - *SampleOrg
 </pre></div>
 </div>
-<p>Note that there is a <code class="docutils literal notranslate"><span class="pre">Capabilities</span></code> section defined at the root level (for the channel
-capabilities), and at the Orderer level (for orderer capabilities). The sample above uses
-a YAML reference to include the capabilities as defined at the bottom of the YAML.</p>
-<p>When defining the orderer system channel there is no Application section, as those
-capabilities are defined during the creation of an application channel. To define a new
-channel’s application capabilities at channel creation time, the application admins should
-model their channel creation transaction after the <code class="docutils literal notranslate"><span class="pre">SampleSingleMSPChannelV1_1</span></code> profile.</p>
+<p>注意，在根级别(用于通道功能)和排序器级别(用于排序器功能)定义了一个“‘Capabilities’”部分。上面的示例使用了一个YAML引用来包含YAML底部定义的功能。</p>
+<p>当定义排序器系统通道时，没有应用部分，因为这些功能是在创建应用通道时定义的。要在通道创建时定义新通道的应用功能，应用管理员应该在“SampleSingleMSPChannelV1_1”概要文件(profile)之后为其通道创建交易建模。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SampleSingleMSPChannelV1_1:
      Consortium: SampleConsortium
      Application:
@@ -352,13 +301,10 @@ model their channel creation transaction after the <code class="docutils literal
              &lt;&lt;: *ApplicationCapabilities
 </pre></div>
 </div>
-<p>Here, the Application section has a new element <code class="docutils literal notranslate"><span class="pre">Capabilities</span></code> which references the
-<code class="docutils literal notranslate"><span class="pre">ApplicationCapabilities</span></code> section defined at the end of the YAML.</p>
+<p>这里，Application部分有一个新元素``Capabilities`` ，它引用了在YAML末尾定义的``ApplicationCapabilities``部分。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The capabilities for the Channel and Orderer sections are inherited from
-the definition in the ordering system channel and are automatically included
-by the orderer during the process of channel creation.</p>
+<p class="admonition-title">注解</p>
+<p>通道和排序器部分的功能继承自排序器系统通道中的定义，并在通道创建过程中由排序器自动包含。</p>
 </div>
 </div>
 </div>
@@ -375,7 +321,7 @@ by the orderer during the process of channel creation.</p>
         <a href="couchdb_as_state_database.html" class="btn btn-neutral float-right" title="CouchDB as the State Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="channels.html" class="btn btn-neutral" title="Channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="channels.html" class="btn btn-neutral" title="通道" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

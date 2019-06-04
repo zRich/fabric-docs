@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Updating a Channel Configuration &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Updating a Channel Configuration &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Membership Service Providers (MSP)" href="msp.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="成员服务提供者（MSP）" href="msp.html" />
     <link rel="prev" title="Setting up an ordering node" href="orderer_deploy.html" /> 
 </head>
 
@@ -96,13 +97,13 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Updating a Channel Configuration</a><ul>
@@ -111,7 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-the-necessary-signatures">Get the Necessary Signatures</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configtx.html">Channel Configuration (configtx)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endorsement-policies.html">Endorsement policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="token/FabToken.html">Using FabToken</a></li>
@@ -123,17 +124,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -181,7 +182,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>Updating a Channel Configuration</li>
     
@@ -203,44 +204,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="updating-a-channel-configuration">
-<h1>Updating a Channel Configuration<a class="headerlink" href="#updating-a-channel-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>Updating a Channel Configuration<a class="headerlink" href="#updating-a-channel-configuration" title="永久链接至标题">¶</a></h1>
 <div class="section" id="what-is-a-channel-configuration">
-<h2>What is a Channel Configuration?<a class="headerlink" href="#what-is-a-channel-configuration" title="Permalink to this headline">¶</a></h2>
-<p>Channel configurations contain all of the information relevant to the
-administration of a channel. Most importantly, the channel configuration
-specifies which organizations are members of channel, but it also includes other
-channel-wide configuration information such as channel access policies and block
-batch sizes.</p>
-<p>This configuration is stored on the ledger in a <strong>block</strong>, and is therefore
-known as a configuration (config) block. Configuration blocks contain a single
-configuration. The first of these blocks is known as the “genesis block” and
-contains the initial configuration required to bootstrap a channel. Each time
-the configuration of a channel changes it is done through a new configuration
-block, with the latest configuration block representing the current channel
-configuration. Orderers and peers keep the current channel configuration in
-memory to facilitate all channel operations such as cutting a new block and
-validating block transactions.</p>
-<p>Because configurations are stored in blocks, updating a config happens through a
-process called a “configuration transaction” (even though the process is a
-little different from a normal transaction). Updating a config is a process of
-pulling the config, translating into a format that humans can read, modifying it
-and then submitting it for approval.</p>
-<p>For a more in-depth look at the process for pulling a config and translating it
-into JSON, check out <a class="reference external" href="./channel_update_tutorial.html">Adding an Org to a Channel</a>.
-In this doc, we’ll be focusing on the different ways you can edit a config and
-the process for getting it signed.</p>
+<h2>What is a Channel Configuration?<a class="headerlink" href="#what-is-a-channel-configuration" title="永久链接至标题">¶</a></h2>
+<p>通道配置包含与通道管理相关的所有信息。最重要的是，通道配置指定了哪些组织是通道的成员，但它还包含其他通道范围的配置信息，如通道访问策略和区块批大小。</p>
+<p>此配置存储在账本的一个区块中，因此称为配置(config)区块。配置区块包含一个配置。第一个区块称为“创世区块”，包含引导通道所需的初始配置。每次通道的配置更改都是通过一个新的配置区块完成的，最新的配置区块表示当前通道配置。排序器和peer将当前通道配置保存在内存中，以方便所有通道操作，例如修剪一个新区块和验证区块交易。</p>
+<p>由于配置存储在区块中，所以更新配置是通过一个称为“配置交易”的流程进行的(尽管该流程与普通交易稍有不同)。更新配置是一个获取配置、将配置转换成人类可读的格式、修改配置并提交批准的过程。</p>
+<p>要更深入地了解提取配置并将其转换为JSON的过程，请查看向通道添加Org。在这个文档中，我们将重点介绍编辑配置的不同方法以及签名的过程。</p>
 </div>
 <div class="section" id="editing-a-config">
-<h2>Editing a Config<a class="headerlink" href="#editing-a-config" title="Permalink to this headline">¶</a></h2>
-<p>Channels are highly configurable, but not infinitely so. Different configuration
-elements have different modification policies (which specify the group of
-identities required to sign the config update).</p>
-<p>To see the scope of what’s possible to change it’s important to look at a config
-in JSON format. The <a class="reference external" href="./channel_update_tutorial.html">Adding an Org to a Channel</a>
-tutorial generates one, so if you’ve gone through that doc you can simply refer to it.
-For those who have not, we’ll provide one here (for ease of readability, it might be
-helpful to put this config into a viewer that supports JSON folding, like atom or
-Visual Studio).</p>
+<h2>Editing a Config<a class="headerlink" href="#editing-a-config" title="永久链接至标题">¶</a></h2>
+<p>通道是高度可配置的，但不是无限可配置的。不同的配置元素有不同的修改策略(指定签署配置更新所需的一组标识)。</p>
+<p>要查看可以更改的范围，查看JSON格式的配置非常重要。将一个组织添加到一个通道教程中会生成一个配置，因此，如果您已经阅读了该文档，您可以简单地引用它。对于那些没有配置的人，我们将在这里提供一个配置(为了便于阅读，将这个配置放入一个支持JSON折叠的查看器中可能会有帮助，比如atom或Visual Studio)。</p>
 <details>
   <summary>
     **Click here to see the config**
@@ -943,14 +918,8 @@ Visual Studio).</p>
   "type": 0
 }
 ```
-</details><p>A config might look intimidating in this form, but once you study it you’ll see
-that it has a logical structure.</p>
-<p>Beyond the definitions of the policies – defining who can do certain things
-at the channel level, and who has the permission to change who can change the
-config – channels also have other kinds of features that can be modified using
-a config update. <a class="reference external" href="./channel_update_tutorial.html">Adding an Org to a Channel</a>
-takes you through one of the most important – adding an org to a channel. Some
-other things that are possible to change with a config update include:</p>
+</details><p>在这种形式下，配置可能看起来有些吓人，但是一旦您研究了它，您就会发现它有一个逻辑结构。</p>
+<p>除了策略的定义(定义谁可以在通道级别做某些事情，以及谁有权更改谁可以更改配置)之外，通道还具有可以使用配置更新修改的其他类型的特性。将一个组织添加到一个通道中是最重要的——将一个组织添加到通道中。其他一些配置更新可以改变的事情包括:</p>
 <ul>
 <li><p><strong>Batch Size.</strong> These parameters dictate the number and size of transactions
 in a block. No block will appear larger than <code class="docutils literal notranslate"><span class="pre">absolute_max_bytes</span></code> large or
@@ -1066,47 +1035,32 @@ addresses and fails over between them for retrieving blocks.</p>
 </div>
 </li>
 </ul>
-<p>Just as we add an Org by adding their artifacts and MSP information, you can remove
-them by reversing the process.</p>
-<p><strong>Note</strong> that once the consensus type has been defined and the network has been
-bootstrapped, it is not possible to change it through a configuration update.</p>
-<p>There is another important channel configuration (especially for v1.1) known as
-<strong>Capability Requirements</strong>. It has its own doc that can be found
-<a class="reference external" href="./capability_requirements.html">here</a>.</p>
-<p>Let’s say you want to edit the block batch size for the channel (because this is
-a single numeric field, it’s one of the easiest changes to make). First to make
-referencing the JSON path easy, we define it as an environment variable.</p>
-<p>To establish this, take a look at your config, find what you’re looking for, and
-back track the path.</p>
-<p>If you find batch size, for example, you’ll see that it’s a <code class="docutils literal notranslate"><span class="pre">value</span></code> of the
-<code class="docutils literal notranslate"><span class="pre">Orderer</span></code>. <code class="docutils literal notranslate"><span class="pre">Orderer</span></code> can be found under <code class="docutils literal notranslate"><span class="pre">groups</span></code>, which is under
-<code class="docutils literal notranslate"><span class="pre">channel_group</span></code>. The batch size value has a parameter under <code class="docutils literal notranslate"><span class="pre">value</span></code> of
-<code class="docutils literal notranslate"><span class="pre">max_message_count</span></code>.</p>
-<p>Which would make the path this:</p>
+<p>正如我们通过添加组织的构件和MSP信息来添加组织一样，您也可以通过逆转流程来删除它们。</p>
+<p>注意，一旦定义了共识类型并引导了网络，就不能通过配置更新来更改它。</p>
+<p>还有另一个重要的通道配置(特别是对于v1.1)，称为功能需求。它有自己的文档，可以在这里找到。</p>
+<p>假设您想要编辑通道的区块批大小(因为这是一个单一的数字字段，这是最容易进行的更改之一)。首先，为了方便引用JSON路径，我们将其定义为一个环境变量。</p>
+<p>要建立此功能，请查看您的配置，找到您要查找的内容，然后回溯路径。</p>
+<p>例如，如果您发现批大小，您将看到它是排序器的一个值。排序器可以在groups下找到，它位于channel_group下。批大小值在max_message_count值下有一个参数。</p>
+<p>这条路径是这样的:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">export</span> <span class="n">MAXBATCHSIZEPATH</span><span class="o">=</span><span class="s2">&quot;.channel_group.groups.Orderer.values.BatchSize.value.max_message_count&quot;</span>
 </pre></div>
 </div>
-<p>Next, display the value of that property:</p>
+<p>接下来，显示该属性的值:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jq</span> <span class="s2">&quot;$MAXBATCHSIZEPATH&quot;</span> <span class="n">config</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
-<p>Which should return a value of <code class="docutils literal notranslate"><span class="pre">10</span></code> (in our sample network at least).</p>
-<p>Now, let’s set the new batch size and display the new value:</p>
+<p>它应该返回一个值10(至少在我们的示例网络中)。</p>
+<p>现在，让我们设置新的批大小并显示新值:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> jq “$MAXBATCHSIZEPATH = 20” config.json &gt; modified_config.json
  jq “$MAXBATCHSIZEPATH” modified_config.json
 </pre></div>
 </div>
-<p>Once you’ve modified the JSON, it’s ready to be converted and submitted. The
-scripts and steps in <a class="reference external" href="./channel_update_tutorial.html">Adding an Org to a Channel</a>
-will take you through the process for converting the JSON, so let’s look at the
-process of submitting it.</p>
+<p>一旦修改了JSON，就可以对其进行转换并提交了。将Org添加到通道中的脚本和步骤将指导您完成转换JSON的过程，所以让我们来看看提交它的过程。</p>
 </div>
 <div class="section" id="get-the-necessary-signatures">
-<h2>Get the Necessary Signatures<a class="headerlink" href="#get-the-necessary-signatures" title="Permalink to this headline">¶</a></h2>
-<p>Once you’ve successfully generated the protobuf file, it’s time to get it
-signed. To do this, you need to know the relevant policy for whatever it is you’re
-trying to change.</p>
-<p>By default, editing the configuration of:</p>
+<h2>Get the Necessary Signatures<a class="headerlink" href="#get-the-necessary-signatures" title="永久链接至标题">¶</a></h2>
+<p>一旦您成功地生成了protobuf文件，就可以对它进行签名了。要做到这一点，你需要知道你要改变的东西的相关策略。</p>
+<p>默认情况下，编辑配置:</p>
 <ul class="simple">
 <li><p><strong>A particular org</strong> (for example, changing anchor peers) requires only the admin
 signature of that org.</p></li>
@@ -1117,32 +1071,12 @@ which there are by default only 1).</p></li>
 <li><p><strong>The top level <code class="docutils literal notranslate"><span class="pre">channel</span></code> group</strong> requires both the agreement of a majority of
 application organization admins and orderer organization admins.</p></li>
 </ul>
-<p>If you have made changes to the default policies in the channel, you’ll need to
-compute your signature requirements accordingly.</p>
-<p><em>Note: you may be able to script the signature collection, dependent on your
-application. In general, you may always collect more signatures than are
-required.</em></p>
-<p>The actual process of getting these signatures will depend on how you’ve set up
-your system, but there are two main implementations. Currently, the Fabric
-command line defaults to a “pass it along” system. That is, the Admin of the Org
-proposing a config update sends the update to someone else (another Admin,
-typically) who needs to sign it. This Admin signs it (or doesn’t) and passes it
-along to the next Admin, and so on, until there are enough signatures for the
-config to be submitted.</p>
-<p>This has the virtue of simplicity – when there are enough signatures, the last
-Admin can simply submit the config transaction (in Fabric, the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">update</span></code>
-command includes a signature by default). However, this process will only be
-practical in smaller channels, since the “pass it along” method can be time
-consuming.</p>
-<p>The other option is to submit the update to every Admin on a channel and wait
-for enough signatures to come back. These signatures can then be stitched
-together and submitted. This makes life a bit more difficult for the Admin who
-created the config update (forcing them to deal with a file per signer) but is
-the recommended workflow for users which are developing Fabric management
-applications.</p>
-<p>Once the config has been added to the ledger, it will be a best practice to
-pull it and convert it to JSON to check to make sure everything was added
-correctly. This will also serve as a useful copy of the latest config.</p>
+<p>如果您对通道中的默认策略进行了更改，则需要相应地计算签名需求。</p>
+<p>注意:您可以根据您的应用程序编写收集签名的脚本。一般来说，您收集的签名可能总是比要求的多。</p>
+<p>获得这些签名的实际过程将取决于您如何设置系统，但是有两个主要实现。目前，Fabric命令行默认为“pass it along”系统。也就是说，提出配置更新的组织的管理员将更新发送给需要签名的其他人(通常是另一个管理员)。这个管理员对它进行签名(或者不签名)，并将其传递给下一个管理员，以此类推，直到有足够的签名来提交配置为止。</p>
+<p>这具有简单性的优点——当有足够的签名时，最后一个管理员可以简单地提交配置交易(在Fabric中，peer channel update命令默认包含一个签名)。但是，这个过程只在较小的通道中实用，因为“pass it along”方法可能会很耗时。</p>
+<p>另一个选项是向通道上的每个管理员提交更新，并等待足够的签名返回。然后可以将这些签名装订在一起并提交。这使得创建配置更新的管理员(强制他们为每个签名者处理一个文件)的工作变得更加困难，但是对于正在开发Fabric管理应用程序的用户来说，这是推荐的工作流。</p>
+<p>一旦配置被添加到账本中，最好将其拉出并将其转换为JSON，以检查是否正确地添加了所有内容。这也将作为最新配置的有用副本。</p>
 <!--- Licensed under Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ --></div>
 </div>
@@ -1155,7 +1089,7 @@ https://creativecommons.org/licenses/by/4.0/ --></div>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="msp.html" class="btn btn-neutral float-right" title="Membership Service Providers (MSP)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="msp.html" class="btn btn-neutral float-right" title="成员服务提供者（MSP）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="orderer_deploy.html" class="btn btn-neutral" title="Setting up an ordering node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

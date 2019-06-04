@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Membership Service Providers (MSP) &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>成员服务提供者（MSP） &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Channel Configuration (configtx)" href="configtx.html" />
     <link rel="prev" title="Updating a Channel Configuration" href="config_update.html" /> 
 </head>
@@ -96,18 +97,18 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Membership Service Providers (MSP)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#msp-configuration">MSP Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">成员服务提供者（MSP）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#msp-configuration">MSP配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-generate-msp-certificates-and-their-signing-keys">How to generate MSP certificates and their signing keys?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#msp-setup-on-the-peer-orderer-side">MSP setup on the peer &amp; orderer side</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#organizational-units">Organizational Units</a></li>
@@ -127,17 +128,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -185,9 +186,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
-      <li>Membership Service Providers (MSP)</li>
+      <li>成员服务提供者（MSP）</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,35 +208,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="membership-service-providers-msp">
-<h1>Membership Service Providers (MSP)<a class="headerlink" href="#membership-service-providers-msp" title="Permalink to this headline">¶</a></h1>
-<p>The document serves to provide details on the setup and best practices for MSPs.</p>
-<p>Membership Service Provider (MSP) is a component that aims to offer an
-abstraction of a membership operation architecture.</p>
-<p>In particular, MSP abstracts away all cryptographic mechanisms and protocols
-behind issuing and validating certificates, and user authentication. An
-MSP may define their own notion of identity, and the rules by which those
-identities are governed (identity validation) and authenticated (signature
-generation and verification).</p>
-<p>A Hyperledger Fabric blockchain network can be governed by one or more MSPs.
-This provides modularity of membership operations, and interoperability
-across different membership standards and architectures.</p>
-<p>In the rest of this document we elaborate on the setup of the MSP
-implementation supported by Hyperledger Fabric, and discuss best practices
-concerning its use.</p>
+<h1>成员服务提供者（MSP）<a class="headerlink" href="#membership-service-providers-msp" title="永久链接至标题">¶</a></h1>
+<p>该文档提供了关于MSPs的设置和最佳实践的详细信息。</p>
+<p>成员服务提供者(MSP)是一个旨在提供成员操作体系结构的抽象的组件</p>
+<p>特别地，MSP抽象出了颁发、验证证书以及用户身份验证背后的所有加密机制和协议。MSP可以定义自己的身份概念，以及控制这些身份的规则(标识验证)和身份验证(签名生成和验证)。</p>
+<p>一个超级账本fabric的区块链网络可以由一个或者多个MSP来管理。这提供了模块化的成员管理操作，以及不同的成员标准和架构之间的互操作性。</p>
+<p>在本文档的其余部分中，我们将详细介绍如何设置超级账本 Fabric所支持的MSP，并讨论有关其使用的最佳实践方法。</p>
 <div class="section" id="msp-configuration">
-<h2>MSP Configuration<a class="headerlink" href="#msp-configuration" title="Permalink to this headline">¶</a></h2>
-<p>To setup an instance of the MSP, its configuration needs to be specified
-locally at each peer and orderer (to enable peer, and orderer signing),
-and on the channels to enable peer, orderer, client identity validation, and
-respective signature verification (authentication) by and for all channel
-members.</p>
-<p>Firstly, for each MSP a name needs to be specified in order to reference that MSP
-in the network (e.g. <code class="docutils literal notranslate"><span class="pre">msp1</span></code>, <code class="docutils literal notranslate"><span class="pre">org2</span></code>, and <code class="docutils literal notranslate"><span class="pre">org3.divA</span></code>). This is the name under
-which membership rules of an MSP representing a consortium, organization or
-organization division is to be referenced in a channel. This is also referred
-to as the <em>MSP Identifier</em> or <em>MSP ID</em>. MSP Identifiers are required to be unique per MSP
-instance. For example, shall two MSP instances with the same identifier be
-detected at the system channel genesis, orderer setup will fail.</p>
+<h2>MSP配置<a class="headerlink" href="#msp-configuration" title="永久链接至标题">¶</a></h2>
+<p>通道要设置一个MSP的实例，需要在每个peer和orderer上进行本地配置(启用peer和orderer节点的签名)，并在通道上为所有通道成员启用peer、orderer、客户端标识验证和各自的签名验证(身份验证)。</p>
+<p>首先，需要为每个MSP指定一个名称，以便在网络中引用该MSP（比如“msp1”，“org2”，以及“org3.divA”）。这代表在通道中引用联盟、组织、部门时的MSP成员名称。也可以称之为“MSP 标识符”或者“MSP ID”。每个MSP实例都要求MSP标识符是惟一的。例如，如果在启动系统通道时检测到两个具有相同标识符的MSP实例，则orderer设置将失败。</p>
 <p>In the case of default implementation of MSP, a set of parameters need to be
 specified to allow for identity (certificate) validation and signature
 verification. These parameters are deduced by
@@ -290,7 +272,7 @@ by adding them to the appropriate CRLs. Additionally, there is currently no
 support for enforcing revocation of TLS certificates.</p>
 </div>
 <div class="section" id="how-to-generate-msp-certificates-and-their-signing-keys">
-<h2>How to generate MSP certificates and their signing keys?<a class="headerlink" href="#how-to-generate-msp-certificates-and-their-signing-keys" title="Permalink to this headline">¶</a></h2>
+<h2>How to generate MSP certificates and their signing keys?<a class="headerlink" href="#how-to-generate-msp-certificates-and-their-signing-keys" title="永久链接至标题">¶</a></h2>
 <p>To generate X.509 certificates to feed its MSP configuration, the application
 can use <a class="reference external" href="https://www.openssl.org/">Openssl</a>. We emphasize that in Hyperledger
 Fabric there is no support for certificates including RSA keys.</p>
@@ -300,7 +282,7 @@ Fabric there is no support for certificates including RSA keys.</p>
 can also be used to generate the keys and certificates needed to configure an MSP.</p>
 </div>
 <div class="section" id="msp-setup-on-the-peer-orderer-side">
-<h2>MSP setup on the peer &amp; orderer side<a class="headerlink" href="#msp-setup-on-the-peer-orderer-side" title="Permalink to this headline">¶</a></h2>
+<h2>MSP setup on the peer &amp; orderer side<a class="headerlink" href="#msp-setup-on-the-peer-orderer-side" title="永久链接至标题">¶</a></h2>
 <p>To set up a local MSP (for either a peer or an orderer), the administrator
 should create a folder (e.g. <code class="docutils literal notranslate"><span class="pre">$MY_PATH/mspconfig</span></code>) that contains six subfolders
 and a file:</p>
@@ -341,7 +323,7 @@ offer online/dynamic reconfiguration (i.e. without requiring to stop the node
 by using a node managed system chaincode).</p>
 </div>
 <div class="section" id="organizational-units">
-<h2>Organizational Units<a class="headerlink" href="#organizational-units" title="Permalink to this headline">¶</a></h2>
+<h2>Organizational Units<a class="headerlink" href="#organizational-units" title="永久链接至标题">¶</a></h2>
 <p>In order to configure the list of Organizational Units that valid members of this MSP should
 include in their X.509 certificate, the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file
 needs to specify the organizational unit identifiers. Here is an example:</p>
@@ -359,7 +341,7 @@ under which identities, having that specific OU, should be validated.
 The path is relative to the MSP root folder and cannot be empty.</p>
 </div>
 <div class="section" id="identity-classification">
-<h2>Identity Classification<a class="headerlink" href="#identity-classification" title="Permalink to this headline">¶</a></h2>
+<h2>Identity Classification<a class="headerlink" href="#identity-classification" title="永久链接至标题">¶</a></h2>
 <p>The default MSP implementation allows to further classify identities into clients and peers, based on the OUs
 of their x509 certificates.
 An identity should be classified as a <strong>client</strong> if it submits transactions, queries peers, etc.
@@ -396,7 +378,7 @@ the validation will fail.</p>
 needs to be enabled before identify classification can be used.</p>
 </div>
 <div class="section" id="channel-msp-setup">
-<h2>Channel MSP setup<a class="headerlink" href="#channel-msp-setup" title="Permalink to this headline">¶</a></h2>
+<h2>Channel MSP setup<a class="headerlink" href="#channel-msp-setup" title="永久链接至标题">¶</a></h2>
 <p>At the genesis of the system, verification parameters of all the MSPs that
 appear in the network need to be specified, and included in the system
 channel’s genesis block. Recall that MSP verification parameters consist of
@@ -423,7 +405,7 @@ administrator certificates of the MSP. The client application managed by the
 admin would then announce this update to the channels in which this MSP appears.</p>
 </div>
 <div class="section" id="best-practices">
-<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="永久链接至标题">¶</a></h2>
 <p>In this section we elaborate on best practices for MSP
 configuration in commonly met scenarios.</p>
 <p><strong>1) Mapping between organizations/corporations and MSPs</strong></p>

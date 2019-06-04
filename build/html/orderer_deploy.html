@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setting up an ordering node &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Setting up an ordering node &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Updating a Channel Configuration" href="config_update.html" />
     <link rel="prev" title="Upgrading to the Newest Version of Fabric" href="upgrade_to_newest_version.html" /> 
 </head>
@@ -96,13 +97,13 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up an ordering node</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#create-an-organization-definition">Create an organization definition</a></li>
@@ -112,7 +113,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configtx.html">Channel Configuration (configtx)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endorsement-policies.html">Endorsement policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="token/FabToken.html">Using FabToken</a></li>
@@ -124,17 +125,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -182,7 +183,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>Setting up an ordering node</li>
     
@@ -204,7 +205,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="setting-up-an-ordering-node">
-<h1>Setting up an ordering node<a class="headerlink" href="#setting-up-an-ordering-node" title="Permalink to this headline">¶</a></h1>
+<h1>Setting up an ordering node<a class="headerlink" href="#setting-up-an-ordering-node" title="永久链接至标题">¶</a></h1>
 <p>In this topic, we’ll describe the process for bootstrapping an ordering node.
 If you want more information about the different ordering service implementations
 and their relative strengths and weaknesses, check out our
@@ -220,7 +221,7 @@ done so)</p></li>
 <p>Note: this topic assumes you have already pulled the Hyperledger Fabric orderer
 images from docker hub.</p>
 <div class="section" id="create-an-organization-definition">
-<h2>Create an organization definition<a class="headerlink" href="#create-an-organization-definition" title="Permalink to this headline">¶</a></h2>
+<h2>Create an organization definition<a class="headerlink" href="#create-an-organization-definition" title="永久链接至标题">¶</a></h2>
 <p>Like peers, all orderers must belong to an organization that must be created
 before the orderer itself is created. This organization has a definition
 encapsulated by a <a class="reference external" href="./membership/membership.html">Membership Service Provider</a>
@@ -230,7 +231,7 @@ certificates and MSP for the organization.</p>
 check out the <a class="reference external" href="https://hyperledger-fabric-ca.readthedocs.io/en/latest/users-guide.html">Fabric CA user’s guide</a>.</p>
 </div>
 <div class="section" id="configure-your-node">
-<h2>Configure your node<a class="headerlink" href="#configure-your-node" title="Permalink to this headline">¶</a></h2>
+<h2>Configure your node<a class="headerlink" href="#configure-your-node" title="永久链接至标题">¶</a></h2>
 <p>The configuration of the orderer is handled through a <code class="docutils literal notranslate"><span class="pre">yaml</span></code> filed called
 <code class="docutils literal notranslate"><span class="pre">orderer.yaml</span></code>. The <code class="docutils literal notranslate"><span class="pre">FABRIC_CFG_PATH</span></code> environment variable is used to point to
 an <code class="docutils literal notranslate"><span class="pre">orderer.yaml</span></code> file you’ve configured, which will extract a series of files
@@ -258,7 +259,7 @@ cluster of Raft nodes), make note of the <code class="docutils literal notransla
 the <code class="docutils literal notranslate"><span class="pre">Kafka</span></code> section.</p>
 </div>
 <div class="section" id="generate-the-genesis-block-of-the-orderer">
-<h2>Generate the genesis block of the orderer<a class="headerlink" href="#generate-the-genesis-block-of-the-orderer" title="Permalink to this headline">¶</a></h2>
+<h2>Generate the genesis block of the orderer<a class="headerlink" href="#generate-the-genesis-block-of-the-orderer" title="永久链接至标题">¶</a></h2>
 <p>The first block of a newly created channel is known as a “genesis block”. If
 this genesis block is being created as part of the creation of a <strong>new network</strong>
 (in other words, if the orderer being created will not be joined to an existing
@@ -272,7 +273,7 @@ can be started.</em></p>
 <a class="reference external" href="configtx.html">Channel Configuration (configtx)</a>.</p>
 </div>
 <div class="section" id="bootstrap-the-ordering-node">
-<h2>Bootstrap the ordering node<a class="headerlink" href="#bootstrap-the-ordering-node" title="Permalink to this headline">¶</a></h2>
+<h2>Bootstrap the ordering node<a class="headerlink" href="#bootstrap-the-ordering-node" title="永久链接至标题">¶</a></h2>
 <p>Once you have built the images, created the MSP, configured your <code class="docutils literal notranslate"><span class="pre">orderer.yaml</span></code>,
 and created the genesis block, you’re ready to start your orderer using a
 command that will look similar to:</p>

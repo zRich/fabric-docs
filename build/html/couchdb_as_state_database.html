@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CouchDB as the State Database &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>CouchDB as the State Database &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Peer channel-based event services" href="peer_event_services.html" />
-    <link rel="prev" title="Capability Requirements" href="capability_requirements.html" /> 
+    <link rel="prev" title="功能需求" href="capability_requirements.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,22 +97,22 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">Architecture Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">Architecture Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">架构参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">架构起源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="txflow.html">Transaction Flow</a></li>
 <li class="toctree-l2"><a class="reference external" href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">Hyperledger Fabric CA's User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fabric-sdks.html">Hyperledger Fabric SDKs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery-overview.html">Service Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channels.html">Channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">Capability Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels.html">通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">功能需求</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">CouchDB as the State Database</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#state-database-options">State Database options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-couchdb-from-chaincode">Using CouchDB from Chaincode</a><ul>
@@ -124,7 +125,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="peer_event_services.html">Peer channel-based event services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">Private Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">私有数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="readwrite.html">Read-Write set semantics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gossip.html">Gossip data dissemination protocol</a></li>
 </ul>
@@ -132,7 +133,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -180,7 +181,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="architecture.html">Architecture Reference</a> &raquo;</li>
+          <li><a href="architecture.html">架构参考</a> &raquo;</li>
         
       <li>CouchDB as the State Database</li>
     
@@ -202,9 +203,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="couchdb-as-the-state-database">
-<h1>CouchDB as the State Database<a class="headerlink" href="#couchdb-as-the-state-database" title="Permalink to this headline">¶</a></h1>
+<h1>CouchDB as the State Database<a class="headerlink" href="#couchdb-as-the-state-database" title="永久链接至标题">¶</a></h1>
 <div class="section" id="state-database-options">
-<h2>State Database options<a class="headerlink" href="#state-database-options" title="Permalink to this headline">¶</a></h2>
+<h2>State Database options<a class="headerlink" href="#state-database-options" title="永久链接至标题">¶</a></h2>
 <p>State database options include LevelDB and CouchDB. LevelDB is the default key-value state
 database embedded in the peer process. CouchDB is an optional alternative external state database.
 Like the LevelDB key-value store, CouchDB can store any binary data that is modeled in chaincode
@@ -235,7 +236,7 @@ default embedded LevelDB, and move to CouchDB if you require the additional comp
 It is a good practice to model chaincode asset data as JSON, so that you have the option to perform
 complex rich queries if needed in the future.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The key for a CouchDB JSON document cannot begin with an underscore (“_”).  Also, a JSON
 document cannot use the following field names at the top level.  These are reserved for internal use.</p>
 <ul class="simple">
@@ -245,9 +246,9 @@ document cannot use the following field names at the top level.  These are reser
 </div>
 </div>
 <div class="section" id="using-couchdb-from-chaincode">
-<h2>Using CouchDB from Chaincode<a class="headerlink" href="#using-couchdb-from-chaincode" title="Permalink to this headline">¶</a></h2>
+<h2>Using CouchDB from Chaincode<a class="headerlink" href="#using-couchdb-from-chaincode" title="永久链接至标题">¶</a></h2>
 <div class="section" id="chaincode-queries">
-<h3>Chaincode queries<a class="headerlink" href="#chaincode-queries" title="Permalink to this headline">¶</a></h3>
+<h3>Chaincode queries<a class="headerlink" href="#chaincode-queries" title="永久链接至标题">¶</a></h3>
 <p>Most of the <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStubInterface">chaincode shim APIs</a>
 can be utilized with either LevelDB or CouchDB state database, e.g. <code class="docutils literal notranslate"><span class="pre">GetState</span></code>, <code class="docutils literal notranslate"><span class="pre">PutState</span></code>,
 <code class="docutils literal notranslate"><span class="pre">GetStateByRange</span></code>, <code class="docutils literal notranslate"><span class="pre">GetStateByPartialCompositeKey</span></code>. Additionally when you utilize CouchDB as
@@ -263,7 +264,7 @@ syntax:</p>
 </pre></div>
 </div>
 <div class="section" id="couchdb-pagination">
-<h4>CouchDB pagination<a class="headerlink" href="#couchdb-pagination" title="Permalink to this headline">¶</a></h4>
+<h4>CouchDB pagination<a class="headerlink" href="#couchdb-pagination" title="永久链接至标题">¶</a></h4>
 <p>Fabric supports paging of query results for rich queries and range based queries.
 APIs supporting pagination allow the use of page size and bookmarks to be used for
 both range and rich queries. To support efficient pagination, the Fabric
@@ -284,7 +285,7 @@ bound by <code class="docutils literal notranslate"><span class="pre">totalQuery
 number of results that chaincode will iterate through and return to the client,
 in order to avoid accidental or malicious long-running queries.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Regardless of whether chaincode uses paginated queries or not, the peer will
 query CouchDB in batches based on <code class="docutils literal notranslate"><span class="pre">internalQueryLimit</span></code> (default 1000)
 from <code class="docutils literal notranslate"><span class="pre">core.yaml</span></code>. This behavior ensures reasonably sized result sets are
@@ -295,7 +296,7 @@ transparent to chaincode and the calling client.</p>
 </div>
 </div>
 <div class="section" id="couchdb-indexes">
-<h3>CouchDB indexes<a class="headerlink" href="#couchdb-indexes" title="Permalink to this headline">¶</a></h3>
+<h3>CouchDB indexes<a class="headerlink" href="#couchdb-indexes" title="永久链接至标题">¶</a></h3>
 <p>Indexes in CouchDB are required in order to make JSON queries efficient and are required for
 any JSON query with a sort. Indexes can be packaged alongside chaincode in a
 <code class="docutils literal notranslate"><span class="pre">/META-INF/statedb/couchdb/indexes</span></code> directory. Each index must be defined in its own
@@ -332,7 +333,7 @@ as blocks are committed to the ledger.</p>
 </div>
 </div>
 <div class="section" id="couchdb-configuration">
-<h2>CouchDB Configuration<a class="headerlink" href="#couchdb-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>CouchDB Configuration<a class="headerlink" href="#couchdb-configuration" title="永久链接至标题">¶</a></h2>
 <p>CouchDB is enabled as the state database by changing the <code class="docutils literal notranslate"><span class="pre">stateDatabase</span></code> configuration option from
 goleveldb to CouchDB. Additionally, the <code class="docutils literal notranslate"><span class="pre">couchDBAddress</span></code> needs to configured to point to the
 CouchDB to be used by the peer. The username and password properties should be populated with
@@ -397,12 +398,12 @@ must be edited to set the admin username and password.</p>
 the container. The <em>local.ini</em> file must be edited if the username or password
 is to be changed after creation of the container.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>CouchDB peer options are read on each peer startup.</p>
 </div>
 </div>
 <div class="section" id="good-practices-for-queries">
-<h2>Good practices for queries<a class="headerlink" href="#good-practices-for-queries" title="Permalink to this headline">¶</a></h2>
+<h2>Good practices for queries<a class="headerlink" href="#good-practices-for-queries" title="永久链接至标题">¶</a></h2>
 <p>Avoid using chaincode for queries that will result in a scan of the entire
 CouchDB database. Full length database scans will result in long response
 times and will degrade the performance of your network. You can take some of
@@ -450,7 +451,7 @@ integrity of downstream data stores.</p></li>
         <a href="peer_event_services.html" class="btn btn-neutral float-right" title="Peer channel-based event services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="capability_requirements.html" class="btn btn-neutral" title="Capability Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="capability_requirements.html" class="btn btn-neutral" title="功能需求" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

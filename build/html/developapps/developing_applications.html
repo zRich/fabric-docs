@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developing Applications &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>开发应用程序 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="The scenario" href="scenario.html" />
     <link rel="prev" title="Install Samples, Binaries and Docker Images" href="../install.html" /> 
 </head>
@@ -96,27 +97,27 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing Applications</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">开发应用程序</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="designelements.html">Application design elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="designelements.html">应用程序设计元素</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -164,7 +165,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Developing Applications</li>
+      <li>开发应用程序</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,32 +185,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="developing-applications">
-<h1>Developing Applications<a class="headerlink" href="#developing-applications" title="Permalink to this headline">¶</a></h1>
+<h1>开发应用程序<a class="headerlink" href="#developing-applications" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>This topic covers how to develop a client application and smart contract to
-solve a business problem using Hyperledger Fabric. In a real world <strong>Commercial
-Paper</strong> scenario, involving multiple organizations, you’ll learn about all the
-concepts and tasks required to accomplish this goal. We assume that the
-blockchain network is already available.</p>
-<p>The topic is designed for multiple audiences:</p>
+<p>本主题介绍如何开发客户端应用程序和智能合约，以使用超级账本Fabric解决业务问题。在一个真实的**商业票据**场景中，涉及多个组织，您将了解完成此目标所需的所有概念和任务。我们假设区块链网络已经可用。</p>
+<p>该主题是为多个受众设计的:</p>
 <ul class="simple">
-<li><p>Solution and application architect</p></li>
-<li><p>Client application developer</p></li>
-<li><p>Smart contract developer</p></li>
-<li><p>Business professional</p></li>
+<li><p>解决方案和应用程序架构师</p></li>
+<li><p>客户端应用程序开发者</p></li>
+<li><p>智能合约开发者</p></li>
+<li><p>业务专家</p></li>
 </ul>
-<p>You can choose to read the topic in order, or you can select individual sections
-as appropriate. Individual topic sections are marked according to reader
-relevance, so whether you’re looking for business or technical information it’ll
-be clear when a topic is for you.</p>
-<p>The topic follows a typical software development lifecycle. It starts with
-business requirements, and then covers all the major technical activities
-required to develop an application and smart contract to meet these
-requirements.</p>
-<p>If you’d prefer, you can try out the commercial paper scenario immediately,
-following an abbreviated explanation, by running the commercial paper <a class="reference external" href="../tutorial/commercial_paper.html">tutorial</a>. You can return to this topic when you
-need fuller explanations of the concepts introduced in the tutorial.</p>
+<p>您可以选择按顺序阅读主题，也可以选择适当的各个部分。每个主题部分都根据读者的相关性进行标记，因此无论您是在寻找业务信息还是技术信息，当一个主题适合您时，就会很清楚。</p>
+<p>本主题遵循典型的软件开发生命周期。它从业务需求开始，然后涵盖开发应用程序和智能合约所需的所有主要技术活动，以满足这些需求。</p>
+<p>如果您愿意，您可以通过运行商业票据 <a href="#id1"><span class="problematic" id="id2">`</span></a>教程&lt;../tutorial/commercial_paper.html&gt;`_来立即尝试商业票据场景。当您需要对本教程中介绍的概念进行更全面的解释时，您可以回到这个主题。</p>
 </div>
 
 

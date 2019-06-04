@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../source/membership/membership.md:1
 msgid "Membership"
-msgstr ""
+msgstr "成员"
 
 #: ../../source/membership/membership.md:3
 msgid ""
@@ -83,7 +83,7 @@ msgstr "稍后我们将更多地讨论本地和通道MSP。现在，让我们看
 
 #: ../../source/membership/membership.md:35
 msgid "Mapping MSPs to Organizations"
-msgstr ""
+msgstr "将 MSPs 匹配到组织"
 
 #: ../../source/membership/membership.md:37
 msgid ""
@@ -124,7 +124,7 @@ msgstr ""
 
 #: ../../source/membership/membership.md:62
 msgid "Organizational Units and MSPs"
-msgstr ""
+msgstr "组织的单位以及 MSPs"
 
 #: ../../source/membership/membership.md:64
 msgid ""
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../source/membership/membership.md:82
 msgid "Local and Channel MSPs"
-msgstr ""
+msgstr "本地和 channel MSPs"
 
 #: ../../source/membership/membership.md:84
 msgid ""
@@ -256,7 +256,7 @@ msgstr ""
 
 #: ../../source/membership/membership.md:142
 msgid "MSP Levels"
-msgstr ""
+msgstr "MSP 层级"
 
 #: ../../source/membership/membership.md:144
 msgid ""
@@ -294,6 +294,8 @@ msgid ""
 " well as which of these members are authorized to perform administrative "
 "tasks (e.g., creating a channel)."
 msgstr ""
+"网络 MSP： 一个网络的配置文件，定义了谁是这个网络中的成员 --- 通过定义参与组织的 MSPs --- "
+"并且定义了这些成员中的哪些被授权来进行管理相关的任务 (比如，创建一个 channel)。"
 
 #: ../../source/membership/membership.md:171
 msgid ""
@@ -309,6 +311,11 @@ msgid ""
 "being administrated (unless the rules have been written otherwise --- see "
 "the discussion of the ROLE attribute below)."
 msgstr ""
+"Channel MSP： 对于一个 channel 来说，分别维护它的成员的 MSPs 非常重要。一个 channel "
+"在一个指定的一系列组织间提供了一个私有的通信方式，这些组织又对这个 channel 进行管理。在这个 channel 的 MSPs "
+"的上下文中被解释执行的 channel 策略定义了谁有能力来参与到在这个 channel 上的某些操作中， 比如，添加组织，或者实例化 "
+"chaincode。注意，在管理一个 channel 的权限和管理网络配置 channel (或者任何其他的 channel) "
+"之间没有必然的联系。管理的权利存在于什么被管理的范围中 (除非规则已经被制定，否则 --- 查看下边对于 ROLE属性的讨论)。"
 
 #: ../../source/membership/membership.md:182
 msgid ""
@@ -319,6 +326,9 @@ msgid ""
 "authorization is evaluated using the peer's local MSP is the installation of"
 " a chaincode on the peer."
 msgstr ""
+"Peer MSP： 这个本地 MSP 是在每个 peer 的文件系统上定义的，并且对于每个 peer 都有一个单独的 MSP 实例。 概念上讲，它同 "
+"channel MSPs 执行这完全一样的操作，但是具有这些操作仅仅能够被应用到它被定义的那个 peer 上的限制。 对于使用 peer 的本地 MSP"
+" 来判定谁被授权进行的一个操作的例子就是在 peer 上安装一个 chaincode。"
 
 #: ../../source/membership/membership.md:188
 msgid ""
@@ -327,10 +337,12 @@ msgid ""
 "orderers are also owned by a single organization and therefore have a single"
 " MSP to list the actors or nodes it trusts."
 msgstr ""
+"排序节点 MSP： 像一个 peer MSP，一个排序节点的本地 MSP 也是在节点的文件系统上定义的，并且只会应用于这个节点。 就像 peer "
+"节点，排序节点也是由一个单独的组织所有，因此具有一个单独的 MSP 来列出它所信任的操作者或者节点。"
 
 #: ../../source/membership/membership.md:192
 msgid "MSP Structure"
-msgstr ""
+msgstr " MSP 结构"
 
 #: ../../source/membership/membership.md:194
 msgid ""
@@ -370,13 +382,15 @@ msgid ""
 "the Root CAs trusted by the organization represented by this MSP. There must"
 " be at least one Root CA X.509 certificate in this MSP folder."
 msgstr ""
+"根 CAs：这个文件夹包含了一个这个 MSP 所代表的组织所信任的根证书的自签名 X.509 证书列表。 在这个 MSP 文件夹中至少要有一个根 CA "
+"X.509 证书。"
 
 #: ../../source/membership/membership.md:215
 msgid ""
 "This is the most important folder because it identifies the CAs from which "
 "all other certificates must be derived to be considered members of the "
 "corresponding organization."
-msgstr ""
+msgstr "这是最重要的一个文件夹，因为它标识了可以被认为是对应组织的成员的所有其他的证书的来源 CAs。"
 
 #: ../../source/membership/membership.md:220
 msgid ""
@@ -385,6 +399,8 @@ msgid ""
 "signed by one of the Root CAs in the MSP or by an Intermediate CA whose "
 "issuing CA chain ultimately leads back to a trusted Root CA."
 msgstr ""
+"中间 CAs： 这个文件夹包含了由这个组织所信任的中间 CAs 对应的 X.509 证书列表。每个证书必须要由这个 MSP 中的一个根 CAs "
+"来签发，或者有一个中间 CA 来签发，这个中间 CA 的签发 CA 的链条最终能够导向回一个授信的根 CA。"
 
 #: ../../source/membership/membership.md:225
 msgid ""
@@ -397,12 +413,16 @@ msgid ""
 "possible to have a functioning network that does not have an Intermediate "
 "CA, in which case this folder would be empty."
 msgstr ""
+"一个中间 CA 可能代表了该组织的一个不同的细分 (就像对于 ORG1 会有 ORG1-MANUFACTURING和 "
+"ORG1-DISTRIBUTION)， 或者是这个组织自身 (比如就像一个商业的 CA 被用来作为组织的身份管理这样的一个情况)。在后边这个情况中，中间"
+" CAs 可以被用来代 表组织的细分。从这里你可能找到关于对于 MSP 配置的最佳实践的更多信息。注意，对于一个可工作的网络来说，没 有任何的中间 CA"
+" 是可能的，对于这种情况，这个文件夹就是空的。"
 
 #: ../../source/membership/membership.md:234
 msgid ""
 "Like the Root CA folder, this folder defines the CAs from which certificates"
 " must be issued to be considered members of the organization."
-msgstr ""
+msgstr "就像根 CA 文件夹一样，这个文件夹定义了能够被认为是某个组织的成员的证书所来自的 CAs。"
 
 #: ../../source/membership/membership.md:238
 msgid ""
@@ -413,6 +433,9 @@ msgid ""
 "restrict the members of an organization to the ones holding an identity "
 "(signed by one of MSP designated CAs) with a specific OU in it."
 msgstr ""
+"组织单元 (OUs) 这些在 $FABRIC_CFG_PATH/msp/config.yaml 文件中被列出来，并且包含了组织单元的 "
+"一个列表，他们的成员被认为是由这个 MSP 所代表的组织的一部分。这个在当你想要将组织的成员限定在那些具有某个 指定的 OU 在其身份信息中的成员 "
+"(这个身份信息是由 MSP 指定的 CAs 签发的)。"
 
 #: ../../source/membership/membership.md:245
 msgid ""
@@ -420,6 +443,8 @@ msgid ""
 "are part of an MSP --- as identified by the Root CA and Intermediate CA "
 "folders --- will be considered members of the organization."
 msgstr ""
+"指定 OUs 是可选的。如果没有列出任何的的 OUs，对于作为一个 MSP 的一部分的所有身份信息 --- 作为由根 CA 和中间 CA 文件夹标识的 "
+"--- 将会被认为是组织的成员。"
 
 #: ../../source/membership/membership.md:250
 msgid ""
@@ -428,6 +453,8 @@ msgid ""
 "standard MSP type, there should be one or more X.509 certificates in this "
 "list."
 msgstr ""
+"管理员： 这个文件夹包含了定义对于该组织来讲具有管理员角色的操作者的所有身份信息的列表。对于标准的 MSP 类型， 在这个列表中应该有一个或者多个 "
+"X509 证书。"
 
 #: ../../source/membership/membership.md:254
 msgid ""
@@ -439,6 +466,9 @@ msgid ""
 "administrators have the rights to add new organizations to the channel, "
 "whereas the ORG1-DISTRIBUTION administrators have no such rights."
 msgstr ""
+"如果一个操作者具有一个管理者的角色但是它却不能管理某个资源，那这样就没有任何意义了！对于一个给定的身份所具有的 "
+"实际的权利以及对于系统的相关的管理是由管理系统资源的策略所决定的。比如，一个 channel 策略可能会 "
+"指明ORG1-MANUFACTURING管理员有权利来向 channel 中添加新的组织，然而ORG1-DISTRIBUTION管理员却没有这个权利。"
 
 #: ../../source/membership/membership.md:261
 msgid ""
@@ -448,6 +478,8 @@ msgid ""
 "the purpose of the OU attribute, which --- if it has been defined --- refers"
 " to an actor's place in the organization."
 msgstr ""
+"尽管这样，一个 X.509 证书具有一个 ROLE 属性 (具体来讲，比如一个操作者是一个 admin)，这个指的是在它的组织而不是 "
+"在这个区块链网络上的一个操作者的角色。这个跟 OU 属性的目的是类似的 --- 如果它被定义了的话 --- 参考在组织中的一个操作者的地方。"
 
 #: ../../source/membership/membership.md:267
 msgid ""
@@ -457,6 +489,8 @@ msgid ""
 "perform certain channel functions (such as instantiating chaincode). In this"
 " way, an organizational role can confer a network role."
 msgstr ""
+"如果这个 channel 已经写入了这个允许任何来自于一个组织 (或者某些组织) 的管理员的权限来执行某个 channel 方法 (比如初始化 "
+"chaincode) 的策略的话，这个 ROLE 属性 能够 被用来在 channel 层级授予管理者权限。"
 
 #: ../../source/membership/membership.md:273
 msgid ""
@@ -467,6 +501,9 @@ msgid ""
 "Identifier (AKI), and are checked whenever the X.509 certificate is being "
 "used to make sure the certificate has not been revoked."
 msgstr ""
+"撤销证书： 如果一个参与者的身份信息被收回，有关这个身份信息的标识信息 --- 不是指身份信息本身 --- 被放置于这个文件夹中。对于基于 X.509 "
+"身份信息，这些标识符是以主体密钥标识符 (SKI) 以及权限访问标识符 (AKI) 的形式的字符串对，并且会在 X.509 "
+"证书被使用的时候被检查，以确保证书没有被收回。"
 
 #: ../../source/membership/membership.md:280
 msgid ""
@@ -478,6 +515,9 @@ msgid ""
 "lists\" is optional. It will only become populated as certificates are "
 "revoked."
 msgstr ""
+"这个列表在概念上跟一个 CA 的证书回收列表 (CRL) 是一样的，但是它也同从组织中收回成员有关。作为结果， 对于本地或者 channel 的一个 "
+"MSP 的管理员，能够通过将这个 CA 的更新过的 CRL 广播的方式，快速地从 一个组织中收回一个参与者或者节点，这个 CA "
+"就是颁发这个要回收的证书的 CA。"
 
 #: ../../source/membership/membership.md:288
 msgid ""
@@ -491,12 +531,16 @@ msgid ""
 "checked against the resulting transaction's endorsement policy at validation"
 " time."
 msgstr ""
+"节点身份信息： 这个文件夹包含了节点的身份信息，比如，加密材料 --- 同 KeyStore 的内容合并起来 --- 将会允许节点在被发送到其他的该 "
+"channel 和网络的参与者的信息当中来为自己授权。对于基于 X.509 的身份信息， 这个文件夹包含了一个 X.509 证书。这是一个 peer "
+"会放置到一笔交易提案的反馈中的证书，比如，来表述 这个 peer 已经为它背书 --- "
+"这个可以在接下来的验证阶段同产生结果的交易的背书策略相比较来进行验证。"
 
 #: ../../source/membership/membership.md:297
 msgid ""
 "This folder is mandatory for local MSPs, and there must be exactly one X.509"
 " certificate for the node. It is not used for channel MSPs."
-msgstr ""
+msgstr "这个文件夹对于本地 MSPs 是必须的，并且对于这个节点这里也必须要有一个 X.509 证书。Channel MSPs 是不需要有这个的。"
 
 #: ../../source/membership/membership.md:301
 msgid ""
@@ -506,6 +550,9 @@ msgid ""
 " in Node Identity folder and is used to sign data --- for example to sign a "
 "transaction proposal response, as part of the endorsement phase."
 msgstr ""
+"私钥的 KeyStore： 这个文件夹是为了一个 peer 或者排序节点 (或者在一个客户端的本地 MSP 中) 的本地 MSP "
+"来定义的，并且包含了节点的 签名秘钥。这个秘钥与包含在 节点身份信息 文件夹里的 节点的身份信息密码上匹配，并且会被用来对数据提供签名 --- "
+"比如作为背书阶段的一部分，会对一个交易提案的反馈提供签名。"
 
 #: ../../source/membership/membership.md:307
 msgid ""
@@ -513,6 +560,8 @@ msgid ""
 "private key. Obviously, access to this folder must be limited only to the "
 "identities of users who have administrative responsibility on the peer."
 msgstr ""
+"这个文件夹对于本地 MSPs 是必须的，并且必须要包含一个私钥。很显然，对于这个文件夹的访问，必须要仅仅 局限于对于这个 peer "
+"有管理职责的用户的身份信息。"
 
 #: ../../source/membership/membership.md:311
 msgid ""
@@ -520,6 +569,8 @@ msgid ""
 "MSPs solely aim to offer identity validation functionalities and not signing"
 " abilities."
 msgstr ""
+"一个 channel MSPs 的配置信息不回包含这个文件夹，因为 channel MSPs 仅仅是为了提供身份信息 "
+"验证的功能，而不是为了提供签名的能力。"
 
 #: ../../source/membership/membership.md:315
 msgid ""
@@ -528,6 +579,8 @@ msgid ""
 "example of a TLS communication would be when a peer needs to connect to an "
 "orderer so that it can receive ledger updates."
 msgstr ""
+"TLS 根 CA： 这个文件夹包含了一个自签名的 X.509 证书列表，这个 X.509 证书是由这个组织信任的根 CAs 颁发的证书，这是 为了 "
+"TLS 通信 的目的。一个 TLS 通信的例子就是当一个 peer 需要连接到一个排序节点， 所以他才能够接收到账本的更新。"
 
 #: ../../source/membership/membership.md:320
 msgid ""
@@ -535,11 +588,12 @@ msgid ""
 "and the orderers, in other words, rather than the applications and "
 "administrations that consume the network."
 msgstr ""
+"MSP TLS 信息跟在这个网络内部的节点有关联 --- peers 节点和排序节点，换句话说，这个并不是指消费这个网络 的应用程序和管理功能。"
 
 #: ../../source/membership/membership.md:324
 msgid ""
 "There must be at least one TLS Root CA X.509 certificate in this folder."
-msgstr ""
+msgstr "在这个文件夹中必须至少有一个 TLS 根 CA X.509 证书。"
 
 #: ../../source/membership/membership.md:327
 msgid ""
@@ -549,10 +603,12 @@ msgid ""
 "used for TLS certificates of an organization. Similar to membership "
 "intermediate CAs, specifying intermediate TLS CAs is optional."
 msgstr ""
+"TLS 中间 CA： 这个文件夹包含了一个中间证书 CAs 的列表，这些 CAs 被这个 MSP 所代表的的组织所信任， 这是 为了 TLS 通信 "
+"的目的。这个文件夹在当商业的 CAs 被用于一个组织的 TLS 证书的时候特别有用。 跟成员的中间 CAs 类似，指定中间 TLS CAs 是可选的。"
 
 #: ../../source/membership/membership.md:333
 msgid "For more information about TLS, click here."
-msgstr ""
+msgstr "关于 TLS 的更多信息，点击 这里。"
 
 #: ../../source/membership/membership.md:335
 msgid ""

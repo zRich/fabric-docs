@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:1
 msgid "Peers"
-msgstr ""
+msgstr "节点"
 
 #: ../../source/peers/peers.md:3
 msgid ""
@@ -70,7 +71,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:30
 msgid "A word on terminology"
-msgstr ""
+msgstr "专业术语上"
 
 #: ../../source/peers/peers.md:32
 msgid ""
@@ -87,7 +88,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:39
 msgid "Ledgers and Chaincode"
-msgstr ""
+msgstr "账本和链码"
 
 #: ../../source/peers/peers.md:41
 msgid ""
@@ -120,7 +121,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:61
 msgid "Multiple Ledgers"
-msgstr ""
+msgstr "多账本"
 
 #: ../../source/peers/peers.md:63
 msgid ""
@@ -157,7 +158,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:83
 msgid "Multiple Chaincodes"
-msgstr ""
+msgstr "多链码"
 
 #: ../../source/peers/peers.md:85
 msgid ""
@@ -184,7 +185,7 @@ msgstr "稍后我们将看到为什么Fabric中的通道概念对于在peer节�
 
 #: ../../source/peers/peers.md:99
 msgid "Applications and Peers"
-msgstr ""
+msgstr "应用程序和节点"
 
 #: ../../source/peers/peers.md:101
 msgid ""
@@ -278,7 +279,7 @@ msgstr "在本节的稍后部分，您将了解关于此排序流程的详细性
 
 #: ../../source/peers/peers.md:162
 msgid "Peers and Channels"
-msgstr ""
+msgstr "节点和通道"
 
 #: ../../source/peers/peers.md:164
 msgid ""
@@ -328,7 +329,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:193
 msgid "Peers and Organizations"
-msgstr ""
+msgstr "节点和组织"
 
 #: ../../source/peers/peers.md:195
 msgid ""
@@ -413,7 +414,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:248
 msgid "Peers and Identity"
-msgstr ""
+msgstr "节点和身份"
 
 #: ../../source/peers/peers.md:250
 msgid ""
@@ -491,7 +492,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:299
 msgid "Peers and Orderers"
-msgstr ""
+msgstr "Peer节点和排序节点"
 
 #: ../../source/peers/peers.md:301
 msgid ""
@@ -545,7 +546,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:333
 msgid "Phase 1: Proposal"
-msgstr ""
+msgstr "第一阶段：提案"
 
 #: ../../source/peers/peers.md:335
 msgid ""
@@ -640,7 +641,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:397
 msgid "Phase 2: Ordering and packaging transactions into blocks"
-msgstr ""
+msgstr "第二阶段：排序和把交易打包成区块"
 
 #: ../../source/peers/peers.md:399
 msgid ""
@@ -655,7 +656,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:406
 msgid "Phase 3: Validation and commit"
-msgstr ""
+msgstr "第三阶段：验证和提交"
 
 #: ../../source/peers/peers.md:408
 msgid ""
@@ -789,7 +790,7 @@ msgstr ""
 
 #: ../../source/peers/peers.md:492
 msgid "Orderers and Consensus"
-msgstr ""
+msgstr "排序和共识"
 
 #: ../../source/peers/peers.md:494
 msgid ""

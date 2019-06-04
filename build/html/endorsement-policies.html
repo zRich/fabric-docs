@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Endorsement policies &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Endorsement policies &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Using FabToken" href="token/FabToken.html" />
     <link rel="prev" title="Channel Configuration (configtx)" href="configtx.html" /> 
 </head>
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configtx.html">Channel Configuration (configtx)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Endorsement policies</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#two-ways-to-require-endorsement">Two ways to require endorsement</a></li>
@@ -127,17 +128,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -185,7 +186,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>Endorsement policies</li>
     
@@ -207,14 +208,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="endorsement-policies">
-<h1>Endorsement policies<a class="headerlink" href="#endorsement-policies" title="Permalink to this headline">¶</a></h1>
+<h1>Endorsement policies<a class="headerlink" href="#endorsement-policies" title="永久链接至标题">¶</a></h1>
 <p>Every chaincode has an endorsement policy which specifies the set of peers on
 a channel that must execute chaincode and endorse the execution results in
 order for the transaction to be considered valid. These endorsement policies
 define the organizations (through their peers) who must “endorse” (i.e., approve
 of) the execution of a proposal.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Recall that <strong>state</strong>, represented by key-value pairs, is separate
 from blockchain data. For more on this, check out our <a class="reference internal" href="ledger/ledger.html"><span class="doc">Ledger</span></a>
 documentation.</p>
@@ -225,7 +226,7 @@ of endorsements and that they are from the expected sources (both of these are
 specified in the endorsement policy). The endorsements are also checked to make
 sure they’re valid (i.e., that they are valid signatures from valid certificates).</p>
 <div class="section" id="two-ways-to-require-endorsement">
-<h2>Two ways to require endorsement<a class="headerlink" href="#two-ways-to-require-endorsement" title="Permalink to this headline">¶</a></h2>
+<h2>Two ways to require endorsement<a class="headerlink" href="#two-ways-to-require-endorsement" title="永久链接至标题">¶</a></h2>
 <p>By default, endorsement policies are specified in the chaincode definition,
 which is agreed to by channel members and then committed to a channel (that is,
 one endorsement policy covers all of the state associated with a chaincode).</p>
@@ -252,7 +253,7 @@ assets associated with that chaincode.</strong></p>
 section. But first, let’s see how we set a chaincode-level endorsement policy.</p>
 </div>
 <div class="section" id="setting-chaincode-level-endorsement-policies">
-<h2>Setting chaincode-level endorsement policies<a class="headerlink" href="#setting-chaincode-level-endorsement-policies" title="Permalink to this headline">¶</a></h2>
+<h2>Setting chaincode-level endorsement policies<a class="headerlink" href="#setting-chaincode-level-endorsement-policies" title="永久链接至标题">¶</a></h2>
 <p>Chaincode-level endorsement policies are agreed to by channel members when they
 approve a chaincode definition for their organization. A sufficient number of
 channel members need to approve a chaincode definition to meet the
@@ -267,7 +268,7 @@ in the Node.js SDK documentation. You can also create an endorsement policy from
 your CLI when you approve and commit a chaincode definition with the Fabric peer
 binaries by using the <code class="docutils literal notranslate"><span class="pre">—-signature-policy</span></code> flag.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Don’t worry about the policy syntax (<code class="docutils literal notranslate"><span class="pre">'Org1.member'</span></code>, et all) right
 now. We’ll talk more about the syntax in the next section.</p>
 </div>
@@ -283,7 +284,7 @@ policy can be committed to the channel using the command below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID mychannel —-signature-policy &quot;AND(&#39;Org1.member&#39;, &#39;Org2.member&#39;)&quot; --name mycc --version 1.0 --sequence 1 --init-required --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem --waitForEvent --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses peer0.org2.example.com:9051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 </pre></div>
 </div>
-<p>Notice that, if the identity classification is enabled (see <a class="reference internal" href="msp.html"><span class="doc">Membership Service Providers (MSP)</span></a>), one can
+<p>Notice that, if the identity classification is enabled (see <a class="reference internal" href="msp.html"><span class="doc">成员服务提供者（MSP）</span></a>), one can
 use the <code class="docutils literal notranslate"><span class="pre">PEER</span></code> role to restrict endorsement to only peers.</p>
 <p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>peer lifecycle chaincode approveformyorg --channelID mychannel —-signature-policy &quot;AND(&#39;Org1.peer&#39;, &#39;Org2.peer&#39;)&quot; --name mycc --version 1.0 --package-id mycc_1:3a8c52d70c36313cfebbaf09d8616e7a6318ababa01c7cbe40603c373bcfe173 --sequence 1 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem --waitForEvent
@@ -312,7 +313,7 @@ chaincode) but will not be able to execute or endorse the chaincode. Only
 organizations listed in the endorsement policy syntax will be able sign
 transactions.</p>
 <div class="section" id="endorsement-policy-syntax">
-<h3>Endorsement policy syntax<a class="headerlink" href="#endorsement-policy-syntax" title="Permalink to this headline">¶</a></h3>
+<h3>Endorsement policy syntax<a class="headerlink" href="#endorsement-policy-syntax" title="永久链接至标题">¶</a></h3>
 <p>As you can see above, policies are expressed in terms of principals
 (“principals” are identities matched to a role). Principals are described as
 <code class="docutils literal notranslate"><span class="pre">'MSP.ROLE'</span></code>, where <code class="docutils literal notranslate"><span class="pre">MSP</span></code> represents the required MSP ID and <code class="docutils literal notranslate"><span class="pre">ROLE</span></code>
@@ -353,7 +354,7 @@ as <code class="docutils literal notranslate"><span class="pre">OR('Org1.member'
 </div>
 </div>
 <div class="section" id="setting-key-level-endorsement-policies">
-<span id="key-level-endorsement"></span><h2>Setting key-level endorsement policies<a class="headerlink" href="#setting-key-level-endorsement-policies" title="Permalink to this headline">¶</a></h2>
+<span id="key-level-endorsement"></span><h2>Setting key-level endorsement policies<a class="headerlink" href="#setting-key-level-endorsement-policies" title="永久链接至标题">¶</a></h2>
 <p>Setting regular chaincode-level endorsement policies is tied to the lifecycle of
 the corresponding chaincode. They can only be set or modified when instantiating
 or upgrading the corresponding chaincode on a channel.</p>
@@ -363,7 +364,7 @@ read-write set of a regular transaction.</p>
 <p>The shim API provides the following functions to set and retrieve an endorsement
 policy for/from a regular key.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p><code class="docutils literal notranslate"><span class="pre">ep</span></code> below stands for the “endorsement policy”, which can be expressed
 either by using the same syntax described above or by using the
 convenience function described below. Either method will generate a
@@ -405,10 +406,10 @@ in terms of the MSP identifiers of organizations, see <a class="reference extern
 required to endorse the key change, pass both org <code class="docutils literal notranslate"><span class="pre">MSPIDs</span></code> to <code class="docutils literal notranslate"><span class="pre">AddOrgs()</span></code>,
 and then call <code class="docutils literal notranslate"><span class="pre">Policy()</span></code> to construct the endorsement policy byte array that
 can be passed to <code class="docutils literal notranslate"><span class="pre">SetStateValidationParameter()</span></code>.</p>
-<p>To add the shim extension to your chaincode as a dependency, see <a class="reference internal" href="chaincode4ade.html#vendoring"><span class="std std-ref">Managing external dependencies for chaincode written in Go</span></a>.</p>
+<p>To add the shim extension to your chaincode as a dependency, see <a class="reference internal" href="chaincode4ade.html#vendoring"><span class="std std-ref">管理用Go编写的链码的外部依赖关系</span></a>.</p>
 </div>
 <div class="section" id="validation">
-<h2>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h2>
+<h2>Validation<a class="headerlink" href="#validation" title="永久链接至标题">¶</a></h2>
 <p>At commit time, setting a value of a key is no different from setting the
 endorsement policy of a key — both update the state of the key and are
 validated based on the same rules.</p>

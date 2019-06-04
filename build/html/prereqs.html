@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Prerequisites &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Prerequisites &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Install Samples, Binaries and Docker Images" href="install.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" /> 
 </head>
@@ -96,7 +97,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="getting_started.html">Getting Started</a><ul class="current">
@@ -116,15 +117,15 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#hyperledger-fabric-ca">Hyperledger Fabric CA</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -194,24 +195,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="prerequisites">
-<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="永久链接至标题">¶</a></h1>
 <p>Before we begin, if you haven’t already done so, you may wish to check that
 you have all the prerequisites below installed on the platform(s)
 on which you’ll be developing blockchain applications and/or operating
 Hyperledger Fabric.</p>
 <div class="section" id="install-curl">
-<h2>Install cURL<a class="headerlink" href="#install-curl" title="Permalink to this headline">¶</a></h2>
+<h2>Install cURL<a class="headerlink" href="#install-curl" title="永久链接至标题">¶</a></h2>
 <p>Download the latest version of the <a class="reference external" href="https://curl.haxx.se/download.html">cURL</a> tool if it is not already
 installed or if you get errors running the curl commands from the
 documentation.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you’re on Windows please see the specific note on <a class="reference internal" href="#id1">Windows
 extras</a> below.</p>
 </div>
 </div>
 <div class="section" id="docker-and-docker-compose">
-<h2>Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="Permalink to this headline">¶</a></h2>
+<h2>Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="永久链接至标题">¶</a></h2>
 <p>You will need the following installed on the platform on which you will be
 operating, or developing on (or for), Hyperledger Fabric:</p>
 <blockquote>
@@ -229,7 +230,7 @@ command from a terminal prompt:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Installing Docker for Mac or Windows, or Docker Toolbox will also
 install Docker Compose. If you already had Docker installed, you
 should check that you have Docker Compose version 1.14.0 or greater
@@ -243,7 +244,7 @@ following command from a terminal prompt:</p>
 </div>
 </div>
 <div class="section" id="go-programming-language">
-<span id="golang"></span><h2>Go Programming Language<a class="headerlink" href="#go-programming-language" title="Permalink to this headline">¶</a></h2>
+<span id="golang"></span><h2>Go Programming Language<a class="headerlink" href="#go-programming-language" title="永久链接至标题">¶</a></h2>
 <p>Hyperledger Fabric uses the Go Programming Language for many of its
 components.</p>
 <blockquote>
@@ -262,7 +263,7 @@ Go workspace containing the downloaded Fabric code base, with something like:</p
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>You <strong>must</strong> set the GOPATH variable</p>
 <p>Even though, in Linux, Go’s <code class="docutils literal notranslate"><span class="pre">GOPATH</span></code> variable can be a colon-separated list
 of directories, and will use a default value of <code class="docutils literal notranslate"><span class="pre">$HOME/go</span></code> if it is unset,
@@ -282,19 +283,19 @@ used by other parts of the build system. So even if you currently have no such
 directory yet, extend your shell search path as above.</p>
 </div>
 <div class="section" id="node-js-runtime-and-npm">
-<h2>Node.js Runtime and NPM<a class="headerlink" href="#node-js-runtime-and-npm" title="Permalink to this headline">¶</a></h2>
+<h2>Node.js Runtime and NPM<a class="headerlink" href="#node-js-runtime-and-npm" title="永久链接至标题">¶</a></h2>
 <p>If you will be developing applications for Hyperledger Fabric leveraging the
 Hyperledger Fabric SDK for Node.js, you will need to have version 8.9.x of Node.js
 installed.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Versions other than the 8.x series are not supported at this time.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nodejs.org/en/download/">Node.js</a> - version 8.x</p></li>
 </ul>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Installing Node.js will also install NPM, however it is recommended
 that you confirm the version of NPM installed. You can upgrade
 the <code class="docutils literal notranslate"><span class="pre">npm</span></code> tool with the following command:</p>
@@ -303,9 +304,9 @@ the <code class="docutils literal notranslate"><span class="pre">npm</span></cod
 </pre></div>
 </div>
 <div class="section" id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<h3>Python<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The following applies to Ubuntu 16.04 users only.</p>
 </div>
 <p>By default Ubuntu 16.04 comes with Python 3.5.1 installed as the <code class="docutils literal notranslate"><span class="pre">python3</span></code> binary.
@@ -321,7 +322,7 @@ operations to complete successfully.  Retrieve the 2.7 version with the followin
 </div>
 </div>
 <div class="section" id="windows-extras">
-<span id="id1"></span><h2>Windows extras<a class="headerlink" href="#windows-extras" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Windows extras<a class="headerlink" href="#windows-extras" title="永久链接至标题">¶</a></h2>
 <p>If you are developing on Windows 7, you will want to work within the
 Docker Quickstart Terminal which uses <a class="reference external" href="https://git-scm.com/downloads">Git Bash</a> and provides a better alternative
 to the built-in Windows shell.</p>
@@ -366,7 +367,7 @@ following command:</p>
 <p>Your environment should now be ready to go through the
 <a class="reference internal" href="getting_started.html"><span class="doc">Getting Started</span></a> samples and tutorials.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you have questions not addressed by this documentation, or run into
 issues with any of the tutorials, please visit the <a class="reference internal" href="questions.html"><span class="doc">Still Have Questions?</span></a>
 page for some tips on where to find additional help.</p>

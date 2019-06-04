@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>peer lifecycle chaincode &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>peer lifecycle chaincode &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="peer channel" href="peerchannel.html" />
     <link rel="prev" title="peer chaincode" href="peerchaincode.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">peer lifecycle chaincode</a><ul>
@@ -140,11 +141,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -192,7 +193,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>peer lifecycle chaincode</li>
     
@@ -214,7 +215,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer-lifecycle-chaincode">
-<h1>peer lifecycle chaincode<a class="headerlink" href="#peer-lifecycle-chaincode" title="Permalink to this headline">¶</a></h1>
+<h1>peer lifecycle chaincode<a class="headerlink" href="#peer-lifecycle-chaincode" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span></code> subcommand allows administrators to use the
 Fabric chaincode lifecycle to package a chaincode, install it on your peers,
 approve a chaincode definition for your organization, and then commit the
@@ -226,7 +227,7 @@ v2.0 Alpha release. If you would like to use the old lifecycle to install and
 instantiate a chaincode, visit the <a class="reference external" href="peerchaincode.html">peer chaincode</a> command
 reference.</em></p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span></code> command has the following subcommands:</p>
 <ul class="simple">
 <li><p>package</p></li>
@@ -241,7 +242,7 @@ reference.</em></p>
 section in this topic.</p>
 </div>
 <div class="section" id="peer-lifecycle">
-<h2>peer lifecycle<a class="headerlink" href="#peer-lifecycle" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle<a class="headerlink" href="#peer-lifecycle" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Perform</span> <span class="n">_lifecycle</span> <span class="n">operations</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -258,7 +259,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2>peer lifecycle chaincode<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Perform</span> <span class="n">_lifecycle</span> <span class="n">operations</span><span class="p">:</span> <span class="n">package</span><span class="o">|</span><span class="n">install</span><span class="o">|</span><span class="n">queryinstalled</span><span class="o">|</span><span class="n">approveformyorg</span><span class="o">|</span><span class="n">queryapprovalstatus</span><span class="o">|</span><span class="n">commit</span><span class="o">|</span><span class="n">querycommitted</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -289,7 +290,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-package">
-<h2>peer lifecycle chaincode package<a class="headerlink" href="#peer-lifecycle-chaincode-package" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode package<a class="headerlink" href="#peer-lifecycle-chaincode-package" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">the</span> <span class="n">package</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -317,7 +318,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-install">
-<h2>peer lifecycle chaincode install<a class="headerlink" href="#peer-lifecycle-chaincode-install" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode install<a class="headerlink" href="#peer-lifecycle-chaincode-install" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Install</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -342,7 +343,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-queryinstalled">
-<h2>peer lifecycle chaincode queryinstalled<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode queryinstalled<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">the</span> <span class="n">installed</span> <span class="n">chaincodes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -367,7 +368,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-approveformyorg">
-<h2>peer lifecycle chaincode approveformyorg<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode approveformyorg<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Approve</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">my</span> <span class="n">organization</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -405,7 +406,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-queryapprovalstatus">
-<h2>peer lifecycle chaincode queryapprovalstatus<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode queryapprovalstatus<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">approval</span> <span class="n">status</span> <span class="k">for</span> <span class="n">chaincode</span> <span class="n">definition</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -440,7 +441,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-commit">
-<h2>peer lifecycle chaincode commit<a class="headerlink" href="#peer-lifecycle-chaincode-commit" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode commit<a class="headerlink" href="#peer-lifecycle-chaincode-commit" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">on</span> <span class="n">the</span> <span class="n">channel</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -477,7 +478,7 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-querycommitted">
-<h2>peer lifecycle chaincode querycommitted<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted" title="Permalink to this headline">¶</a></h2>
+<h2>peer lifecycle chaincode querycommitted<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">a</span> <span class="n">committed</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">by</span> <span class="n">channel</span> <span class="ow">and</span> <span class="n">name</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -504,9 +505,9 @@ section in this topic.</p>
 </div>
 </div>
 <div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="永久链接至标题">¶</a></h2>
 <div class="section" id="peer-lifecycle-chaincode-package-example">
-<h3>peer lifecycle chaincode package example<a class="headerlink" href="#peer-lifecycle-chaincode-package-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode package example<a class="headerlink" href="#peer-lifecycle-chaincode-package-example" title="永久链接至标题">¶</a></h3>
 <p>A chaincode needs to be packaged before it can be installed on your peers.
 This example uses the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">package</span></code> command to package
 a Golang chaincode.</p>
@@ -520,7 +521,7 @@ that your organization will use to identify the package.</p>
 </ul>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-install-example">
-<h3>peer lifecycle chaincode install example<a class="headerlink" href="#peer-lifecycle-chaincode-install-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode install example<a class="headerlink" href="#peer-lifecycle-chaincode-install-example" title="永久链接至标题">¶</a></h3>
 <p>After the chaincode is packaged, you can use the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">install</span></code> command
 to install the chaincode on your peers.</p>
 <ul>
@@ -540,7 +541,7 @@ package taken by the peer.</p>
 </ul>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-queryinstalled-example">
-<h3>peer lifecycle chaincode queryinstalled example<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode queryinstalled example<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled-example" title="永久链接至标题">¶</a></h3>
 <p>You need to use the chaincode package identifier to approve a chaincode
 definition for your organization. You can find the package ID for the
 chaincodes you have installed by using the
@@ -558,7 +559,7 @@ Package ID: myccv1:a7ca45a7cc85f1d89c905b775920361ed089a364e12a9b6d55ba75c965ddd
 </div>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-approveformyorg-example">
-<h3>peer lifecycle chaincode approveformyorg example<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode approveformyorg example<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg-example" title="永久链接至标题">¶</a></h3>
 <p>Once the chaincode package has been installed on your peers, you can approve
 a chaincode definition for your organization. The chaincode definition includes
 the important parameters of chaincode governance, including the chaincode name,
@@ -595,7 +596,7 @@ peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 --tls --caf
 </ul>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-queryapprovalstatus-example">
-<h3>peer lifecycle chaincode queryapprovalstatus example<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode queryapprovalstatus example<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus-example" title="永久链接至标题">¶</a></h3>
 <p>You can query which organizations have approved a chaincode definition before
 you commit the definition to the channel using the
 <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">queryapprovalstatus</span></code> command. If an organization
@@ -626,7 +627,7 @@ organization has approved the chaincode definition.</p>
 </ul>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-commit-example">
-<h3>peer lifecycle chaincode commit example<a class="headerlink" href="#peer-lifecycle-chaincode-commit-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode commit example<a class="headerlink" href="#peer-lifecycle-chaincode-commit-example" title="永久链接至标题">¶</a></h3>
 <p>Once a sufficient number of organizations approve a chaincode definition for
 their organizations (a majority by default), one organization can commit the
 definition the channel using the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">commit</span></code> command:</p>
@@ -645,7 +646,7 @@ peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID mychanne
 </ul>
 </div>
 <div class="section" id="peer-lifecycle-chaincode-querycommitted-example">
-<h3>peer lifecycle chaincode querycommitted example<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer lifecycle chaincode querycommitted example<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted-example" title="永久链接至标题">¶</a></h3>
 <p>You can query the chaincode definitions that have been committed to a channel by
 using the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">querycommitted</span></code> command. You can use this
 command to query the current definition sequence number before upgrading a

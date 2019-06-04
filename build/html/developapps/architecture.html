@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Process and Data Design &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Process and Data Design &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Smart Contract Processing" href="smartcontract.html" />
     <link rel="prev" title="Analysis" href="analysis.html" /> 
 </head>
@@ -96,11 +97,11 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">开发应用程序</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Process and Data Design</a><ul>
@@ -117,17 +118,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="designelements.html">Application design elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="designelements.html">应用程序设计元素</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -175,7 +176,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+          <li><a href="developing_applications.html">开发应用程序</a> &raquo;</li>
         
       <li>Process and Data Design</li>
     
@@ -197,130 +198,61 @@
            <div itemprop="articleBody">
             
   <div class="section" id="process-and-data-design">
-<h1>Process and Data Design<a class="headerlink" href="#process-and-data-design" title="Permalink to this headline">¶</a></h1>
-<p><strong>Audience</strong>: Architects, Application and smart contract developers, Business
-professionals</p>
-<p>This topic shows you how to design the commercial paper processes and their
-related data structures in PaperNet. Our <a class="reference external" href="./analysis.html">analysis</a> highlighted
-that modelling PaperNet using states and transactions provided a precise way to
-understand what’s happening. We’re now going to elaborate on these two strongly
-related concepts to help us subsequently design the smart contracts and
-applications of PaperNet.</p>
+<h1>Process and Data Design<a class="headerlink" href="#process-and-data-design" title="永久链接至标题">¶</a></h1>
+<p>受众:架构师、应用程序开发者和智能合约开发者、业务专家</p>
+<p>本主题向您展示如何在PaperNet中设计商业票据流程及其相关数据结构。我们的分析强调，使用状态和交易对PaperNet建模提供了一种精确的方法来理解正在发生的事情。现在我们将详细阐述这两个紧密相关的概念，以帮助我们随后设计PaperNet的智能合约和应用程序。</p>
 <div class="section" id="lifecycle">
-<h2>Lifecycle<a class="headerlink" href="#lifecycle" title="Permalink to this headline">¶</a></h2>
-<p>As we’ve seen, there are two important concepts that concern us when dealing
-with commercial paper; <strong>states</strong> and <strong>transactions</strong>. Indeed, this is true for
-<em>all</em> blockchain use cases; there are conceptual objects of value, modelled as
-states, whose lifecycle transitions are described by transactions. An effective
-analysis of states and transactions is an essential starting point for a
-successful implementation.</p>
-<p>We can represent the life cycle of a commercial paper using a state transition
-diagram:</p>
+<h2>Lifecycle<a class="headerlink" href="#lifecycle" title="永久链接至标题">¶</a></h2>
+<p>正如我们所看到的，在处理商业票据时，有两个重要的概念引起了我们的关注，状态和交易。事实上，这对于所有区块链用例都是正确的;有价值的概念对象，建模为状态，其生命周期转换由交易描述。对状态和交易的有效分析是成功实现的必要起点。</p>
+<p>我们可以用状态转换图来表示商业票据的生命周期:</p>
 <p><img alt="../_images/develop.diagram.4.png" src="../_images/develop.diagram.4.png" />develop.statetransition <em>The state transition
 diagram for commercial paper. Commercial papers transition between <strong>issued</strong>,
 <strong>trading</strong> and <strong>redeemed</strong> states by means of the <strong>issue</strong>, <strong>buy</strong> and
 <strong>redeem</strong> transactions.</em></p>
-<p>See how the state diagram describes how commercial papers change over time, and
-how specific transactions govern the life cycle transitions. In Hypledger
-Fabric, smart contracts implement transaction logic that transition commercial
-papers between their different states. Commercial paper states are actually held
-in the ledger world state; so let’s take a closer look at them.</p>
+<p>查看状态图如何描述商业票据如何随时间变化，以及特定交易如何控制生命周期转换。在超级账本Fabric中，智能合约实现了商业票据在不同状态之间转换的交易逻辑。商业票据状态实际上是在账本世界状态中持有的;让我们仔细看看。</p>
 </div>
 <div class="section" id="ledger-state">
-<h2>Ledger state<a class="headerlink" href="#ledger-state" title="Permalink to this headline">¶</a></h2>
-<p>Recall the structure of a commercial paper:</p>
+<h2>Ledger state<a class="headerlink" href="#ledger-state" title="永久链接至标题">¶</a></h2>
+<p>回想一下商业票据的结构:</p>
 <p><img alt="../_images/develop.diagram.5.png" src="../_images/develop.diagram.5.png" />develop.paperstructure <em>A commercial paper can be
 represented as a set of properties, each with a value. Typically, some
 combination of these properties will provide a unique key for each paper.</em></p>
-<p>See how a commercial paper <code class="docutils literal notranslate"><span class="pre">Paper</span></code> property has value <code class="docutils literal notranslate"><span class="pre">00001</span></code>, and the <code class="docutils literal notranslate"><span class="pre">Face</span> <span class="pre">value</span></code> property has value <code class="docutils literal notranslate"><span class="pre">5M</span> <span class="pre">USD</span></code>. Most importantly, the <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">state</span></code>
-property indicates whether the commercial paper is <code class="docutils literal notranslate"><span class="pre">issued</span></code>,<code class="docutils literal notranslate"><span class="pre">trading</span></code> or
-<code class="docutils literal notranslate"><span class="pre">redeemed</span></code>. In combination, the full set of properties make up the <strong>state</strong> of
-a commercial paper. Moreover, the entire collection of these individual
-commercial paper states constitutes the ledger
-<a class="reference external" href="../ledger/ledger.html#world-state">world state</a>.</p>
-<p>All ledger state share this form; each has a set of properties, each with a
-different value. This <em>multi-property</em> aspect of states is a powerful feature –
-it allows us to think of a Fabric state as a vector rather than a simple scalar.
-We then represent facts about whole objects as individual states, which
-subsequently undergo transitions controlled by transaction logic. A Fabric state
-is implemented as a key/value pair, in which the value encodes the object
-properties in a format that captures the object’s multiple properties, typically
-JSON. The <a class="reference external" href="../ledger/ledger.html#ledger-world-state-database-options">ledger
-database</a> can support
-advanced query operations against these properties, which is very helpful for
-sophisticated object retrieval.</p>
-<p>See how MagnetoCorp’s paper <code class="docutils literal notranslate"><span class="pre">00001</span></code> is represented as a state vector that
-transitions according to different transaction stimuli:</p>
+<p>看看一个商业票据属性的怎样具有值00001，而面值属性的值是500万美元。最重要的是，当前的状态属性表明商业票据是发行、交易还是赎回。综合起来，所有的属性构成了商业票据的状态。此外，这些单独商业票据状态的全部集合构成账本世界状态。</p>
+<p>所有账本状态共享此表格;每一个都有一组属性，每个属性都有不同的值。状态的这种多属性特性是一个强大的特性——它允许我们将一个Fabric状态看作一个向量，而不是一个简单的标量。然后，我们将关于整个对象的事实表示为单个状态，这些状态随后经历由交易逻辑的控制进行转换。Fabric状态实现为键/值对，其中值是对象属性编码到一个格式中（通常是JSON）。账本数据库可以支持针对这些属性的高级查询操作，这对于复杂的对象检索非常有帮助。</p>
+<p>看看MagnetoCorp的票据00001如何表示为一个状态向量，该状态向量根据不同的交易促进进行转换:</p>
 <p><img alt="../_images/develop.diagram.6.png" src="../_images/develop.diagram.6.png" />develop.paperstates <em>A commercial paper state is
 brought into existence and transitions as a result of different transactions.
 Hyperledger Fabric states have multiple properties, making them vectors rather
 than scalars.</em></p>
-<p>Notice how each individual paper starts with the empty state, which is
-technically a <a class="reference external" href="https://en.wikipedia.org/wiki/Null_(SQL)"><code class="docutils literal notranslate"><span class="pre">nil</span></code></a> state for the
-paper, as it doesn’t exist! See how paper <code class="docutils literal notranslate"><span class="pre">00001</span></code> is brought into existence by
-the <strong>issue</strong> transaction, and how it is subsequently updated as a result of the
-<strong>buy</strong> and <strong>redeem</strong> transactions.</p>
-<p>Notice how each state is self-describing; each property has a name and a value.
-Although all our commercial papers currently have the same properties, this need
-not be the case for all time, as Hyperledger Fabric supports different states
-having different properties. This allows the same ledger world state to contain
-different forms of the same asset as well as different types of asset. It also
-makes it possible to update a state’s structure; imagine a new regulation that
-requires an additional data field. Flexible state properties support the
-fundamental requirement of data evolution over time.</p>
+<p>请注意，每一张票据都是以空状态开始的，从技术上讲，空状态是票据的nil状态，因为它不存在！请参阅票据00001是如何由发行交易产生的，以及随后如何由于购买和赎回交易而更新它。</p>
+<p>注意每个状态是如何自我描述的;每个属性都有一个名称和一个值。尽管我们所有的商业票据目前都具有相同的属性，但这并不需要一直如此，因为超级账本Fabric支持不同状态具有不同属性。这允许相同的账本世界状态包含相同资产的不同形式以及不同类型的资产。它还使更新一个状态的结构成为可能;设想一个需要额外数据字段的新规则。灵活的状态属性支持数据随时间演化的基本需求。</p>
 </div>
 <div class="section" id="state-keys">
-<h2>State keys<a class="headerlink" href="#state-keys" title="Permalink to this headline">¶</a></h2>
-<p>In most practical applications, a state will have a combination of properties
-that uniquely identify it in a given context – it’s <strong>key</strong>. The key for a
-PaperNet commercial paper is formed by a concatenation of the <code class="docutils literal notranslate"><span class="pre">Issuer</span></code> and
-<code class="docutils literal notranslate"><span class="pre">paper</span></code> properties; so for MagnetoCorp’s first paper, it’s <code class="docutils literal notranslate"><span class="pre">MagnetoCorp00001</span></code>.</p>
-<p>A state key allows us to uniquely identify a paper; it is created as a result
-of the <strong>issue</strong> transaction and subsequently updated by <strong>buy</strong> and <strong>redeem</strong>.
-Hyperledger Fabric requires each state in a ledger to have a unique key.</p>
-<p>When a unique key is not available from the available set of properties, an
-application-determined unique key is specified as an input to the transaction
-that creates the state. This unique key is usually with some form of
-<a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>, which
-although less readable, is a standard practice. What’s important is that every
-individual state object in a ledger must have a unique key.</p>
+<h2>State keys<a class="headerlink" href="#state-keys" title="永久链接至标题">¶</a></h2>
+<p>在大多数实际应用中，状态将具有在给定上下文中拥有唯一标识它的属性组合——这是键(key)。PaperNet商业票据的键是由发行者和票据属性串联而成；所以对于MagnetoCorp的第一张票据，它是MagnetoCorp00001。</p>
+<p>状态键允许我们唯一地标识一张票据；它是作为发行交易的结果创建的，随后由购买和赎回交易更新。超级账本Fabric要求账本中的每个状态都有一个唯一的键。</p>
+<p>当可用属性集中没有唯一键可用时，应用程序通过交易输入决定唯一键来创建状态。这个唯一的键通常与某种形式的UUID一起使用，虽然可读性较差，但这是一种标准实践。重要的是，账本中的每个状态对象都必须有唯一的键。</p>
 </div>
 <div class="section" id="multiple-states">
-<h2>Multiple states<a class="headerlink" href="#multiple-states" title="Permalink to this headline">¶</a></h2>
-<p>As we’ve seen, commercial papers in PaperNet are stored as state vectors in a
-ledger. It’s a reasonable requirement to be able to query different commercial
-papers from the ledger; for example: find all the papers issued by MagnetoCorp,
-or: find all the papers issued by MagnetoCorp in the <code class="docutils literal notranslate"><span class="pre">redeemed</span></code> state.</p>
-<p>To make these kinds of search tasks possible, it’s helpful to group all related
-papers together in a logical list. The PaperNet design incorporates the idea of
-a commercial paper list – a logical container which is updated whenever
-commercial papers are issued or otherwise changed.</p>
+<h2>Multiple states<a class="headerlink" href="#multiple-states" title="永久链接至标题">¶</a></h2>
+<p>如我们所见，PaperNet中的商业票据以状态向量的形式存储在账本中。能够从账本中查询不同的商业票据是合理的需求；例如:查找MagnetoCorp发行的所有票据，或者:查找处于赎回状态的MagnetoCorp发行的所有票据。</p>
+<p>为了使这类搜索任务成为可能，将所有相关的票据放在一个逻辑列表中是很有帮助的。PaperNet设计结合了商业票据列表的思想——一个逻辑容器，每当发行或更改商业票据时，该容器都会更新。</p>
 <div class="section" id="logical-representation">
-<h3>Logical representation<a class="headerlink" href="#logical-representation" title="Permalink to this headline">¶</a></h3>
-<p>It’s helpful to think of all PaperNet commercial papers being in a single list
-of commercial papers:</p>
+<h3>Logical representation<a class="headerlink" href="#logical-representation" title="永久链接至标题">¶</a></h3>
+<p>将所有PaperNet商业票据放在一个商业票据列表中是有帮助的:</p>
 <p><img alt="../_images/develop.diagram.7.png" src="../_images/develop.diagram.7.png" />develop.paperlist <em>MagnetoCorp’s
 newly created commercial  paper 00004 is added to the list of existing
 commercial papers.</em></p>
-<p>New papers can be added to the list as a result of an <strong>issue</strong> transaction, and
-papers already in the list can be updated with <strong>buy</strong> or <strong>redeem</strong>
-transactions. See how the list has a descriptive name: <code class="docutils literal notranslate"><span class="pre">org.papernet.papers</span></code>;
-it’s a really good idea to use this kind of <a class="reference external" href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS
-name</a> because well-chosen
-names will make your blockchain designs intuitive to other people. This idea
-applies equally well to smart contract <a class="reference external" href="./contractname.html">names</a>.</p>
+<p>新票据可以作为发行交易的结果添加到列表中，并且已经在列表中的票据可以通过购买或赎回交易进行更新。查看列表如何具有描述性名称:org.papernet.papers;使用这种DNS名称是一个非常好的主意，因为精心选择的名称将使您的区块链设计对其他人更加直观。这一观点同样适用于智能合约名称。</p>
 </div>
 <div class="section" id="physical-representation">
-<h3>Physical representation<a class="headerlink" href="#physical-representation" title="Permalink to this headline">¶</a></h3>
-<p>While it’s correct to think of a single list of papers in PaperNet –
-<code class="docutils literal notranslate"><span class="pre">org.papernet.papers</span></code> – lists are best implemented as a set of individual
-Fabric states, whose composite key associates the state with its list. In this
-way, each state’s composite key is both unique and supports effective list query.</p>
+<h3>Physical representation<a class="headerlink" href="#physical-representation" title="永久链接至标题">¶</a></h3>
+<p>当然，在PaperNet中只考虑一张票据的列表是正确的 – org.papernet.papers – 列表最好实现为一组单独的Fabric状态，其组合键将状态与其列表关联起来。这样，每个状态的组合键都是惟一的，并且支持有效的列表查询。</p>
 <p><img alt="../_images/develop.diagram.8.png" src="../_images/develop.diagram.8.png" />develop.paperphysical <em>Representing a list of
 PaperNet commercial papers as a set of distinct Hyperledger Fabric states</em></p>
-<p>Notice how each paper in the list is represented by a vector state, with a
-unique <strong>composite</strong> key formed by the concatenation of <code class="docutils literal notranslate"><span class="pre">org.papernet.paper</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Issuer</span></code> and <code class="docutils literal notranslate"><span class="pre">Paper</span></code> properties. This structure is helpful for two reasons:</p>
+<p>注意，列表中的每张票据都是由向量状态表示的，其中包含连接org.papernet.paper、发行人及票据属性形成的惟一组合键。这种结构有两个原因:
+- 它允许我们检查账本中的任何状态向量，以确定它在哪个列表中，而不需要参考单独的列表。这类似于观察一群体育迷，通过他们所穿衬衫的颜色来确定他们支持哪支球队。体育迷们宣布他们的忠诚;我们不需要粉丝名单。
+- 超级账本Fabric内部使用并发控制机制来更新账本，这样将票据保存在单独的状态向量中可以大大减少共享状态冲突的机会。这种冲突要求交易重新提交，使应用程序设计复杂化，并降低性能。</p>
 <ul class="simple">
 <li><p>It allows us to examine any state vector in the ledger to determine which
 list it’s in, without reference to a separate list. It’s analogous to
@@ -334,25 +266,14 @@ reduces the opportunity for shared-state collisions. Such collisions require
 transaction re-submission, complicate application design, and decrease
 performance.</p></li>
 </ul>
-<p>This second point is actually a key take-away for Hyperledger Fabric; the
-physical design of state vectors is <strong>very important</strong> to optimum performance
-and behaviour. Keep your states separate!</p>
+<p>这第二点实际上是超级账本Fabric的一个关键要点；状态向量的物理设计对于优化性能和行为非常重要。把你们的状态分开!</p>
 </div>
 </div>
 <div class="section" id="trust-relationships">
-<h2>Trust relationships<a class="headerlink" href="#trust-relationships" title="Permalink to this headline">¶</a></h2>
-<p>We have discussed how the different roles in a network, such as issuer, trader
-or rating agencies as well as different business interests determine who needs
-to sign off on a transaction. In Fabric, these rules are captured by so-called
-<a class="reference external" href="endorsementpolicies.html"><strong>endorsement policies</strong></a>. The rules can be set on
-a chaincode granularity, as well as for individual state keys.</p>
-<p>This means that in PaperNet, we can set one rule for the whole namespace that
-determines which organizations can issue new papers. Later, rules can be set
-and updated for individual papers to capture the trust relationships of buy
-and redeem transactions.</p>
-<p>In the next topic, we will show you how to combine these design concepts to
-implement the PaperNet commercial paper smart contract, and then an application
-in exploits it!</p>
+<h2>Trust relationships<a class="headerlink" href="#trust-relationships" title="永久链接至标题">¶</a></h2>
+<p>我们已经讨论了网络中的不同角色(如发行者、交易员或评级机构)以及不同的商业利益如何决定谁需要签署交易。在Fabric中，这些规则由所谓的背书策略捕获。规则可以设置在链码粒度上，也可以设置在单个状态键上。</p>
+<p>这意味着在PaperNet中，我们可以为整个命名空间设置一个规则，以确定哪些组织可以发布新票据。稍后，可以为单个票据设置和更新规则，以捕获购买和赎回交易的信任关系。</p>
+<p>在下一个主题中，我们将向您展示如何结合这些设计概念来实现PaperNet商业票据智能合同，然后在应用程序中加以利用!</p>
 <!--- Licensed under Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ --></div>
 </div>

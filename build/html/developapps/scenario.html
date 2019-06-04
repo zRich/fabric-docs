@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The scenario &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>The scenario &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Analysis" href="analysis.html" />
-    <link rel="prev" title="Developing Applications" href="developing_applications.html" /> 
+    <link rel="prev" title="开发应用程序" href="developing_applications.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,11 +97,11 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">开发应用程序</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">The scenario</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#papernet-network">PaperNet network</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#introducing-the-actors">Introducing the actors</a></li>
@@ -110,17 +111,17 @@
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="designelements.html">Application design elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="designelements.html">应用程序设计元素</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -168,7 +169,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+          <li><a href="developing_applications.html">开发应用程序</a> &raquo;</li>
         
       <li>The scenario</li>
     
@@ -190,84 +191,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-scenario">
-<h1>The scenario<a class="headerlink" href="#the-scenario" title="Permalink to this headline">¶</a></h1>
-<p><strong>Audience</strong>: Architects, Application and smart contract developers, Business
-professionals</p>
-<p>In this topic, we’re going to describe a business scenario involving six
-organizations who use PaperNet, a commercial paper network built on Hyperledger
-Fabric, to issue, buy and redeem commercial paper. We’re going to use the
-scenario to outline requirements for the development of commercial paper
-applications and smart contracts used by the participant organizations.</p>
+<h1>The scenario<a class="headerlink" href="#the-scenario" title="永久链接至标题">¶</a></h1>
+<p>受众:架构师、应用程序开发者和智能合约开发者、业务专家</p>
+<p>在本主题中，我们将描述一个涉及六个组织的业务场景，这些组织使用PaperNet发行、购买和赎回商业票据。PaperNet是一个建立在超级账本FAbric的商业票据网络。我们将使用该场景概述开发商业票据应用程序和参与者组织使用的智能合约的需求。</p>
 <div class="section" id="papernet-network">
-<h2>PaperNet network<a class="headerlink" href="#papernet-network" title="Permalink to this headline">¶</a></h2>
-<p>PaperNet is a commercial paper network that allows suitably authorized
-participants to issue, trade, redeem and rate commercial paper.</p>
+<h2>PaperNet network<a class="headerlink" href="#papernet-network" title="永久链接至标题">¶</a></h2>
+<p>PaperNet是一个商业票据网络，允许适当授权的参与者发行、交易、赎回和定价商业票据。</p>
 <p><img alt="../_images/develop.diagram.1.png" src="../_images/develop.diagram.1.png" />develop.systemscontext</p>
-<p><em>The PaperNet commercial paper network. Six organizations currently use PaperNet
-network to issue, buy, sell, redeem and rate commercial paper. MagentoCorp
-issues and redeems commercial paper.  DigiBank, BigFund, BrokerHouse and
-HedgeMatic all trade commercial paper with each other. RateM provides various
-measures of risk for commercial paper.</em></p>
-<p>Let’s see how MagnetoCorp uses PaperNet and commercial paper to help its
-business.</p>
+<p>PaperNet商业票据网。目前有六家机构使用PaperNet网络发行、购买、销售、赎回和定价商业票据。MagentoCorp发行和赎回商业票据。Digbank、BigFund、BrokerHouse和HedgeMatic都互相交易商业票据。RateM为商业票据提供了各种风险评估。</p>
+<p>让我们看看MagnetoCorp 是如何使用PaperNet和商业票据来帮助其业务的。</p>
 </div>
 <div class="section" id="introducing-the-actors">
-<h2>Introducing the actors<a class="headerlink" href="#introducing-the-actors" title="Permalink to this headline">¶</a></h2>
-<p>MagnetoCorp is a well-respected company that makes self-driving electric
-vehicles. In early April 2020, MagnetoCorp won a large order to manufacture
-10,000 Model D cars for Daintree, a new entrant in the personal transport
-market. Although the order represents a significant win for MagnetoCorp,
-Daintree will not have to pay for the vehicles until they start to be delivered
-on November 1, six months after the deal was formally agreed between MagnetoCorp
-and Daintree.</p>
-<p>To manufacture the vehicles, MagnetoCorp will need to hire 1000 workers for at
-least 6 months. This puts a short term strain on its finances – it will require
-an extra 5M USD each month to pay these new employees. <strong>Commercial paper</strong> is
-designed to help MagnetoCorp overcome its short term financing needs – to meet
-payroll every month based on the expectation that it will be cash rich when
-Daintree starts to pay for its new Model D cars.</p>
-<p>At the end of May, MagnetoCorp needs 5M USD to meet payroll for the extra
-workers it hired on May 1. To do this, it issues a commercial paper with a face
-value of 5M USD with a maturity date 6 months in the future – when it expects
-to see cash flow from Daintree. DigiBank thinks that MagnetoCorp is
-creditworthy, and therefore doesn’t require much of a premium above the central
-bank base rate of 2%, which would value 4.95M USD today at 5M USD in 6 months
-time. It therefore purchases the MagnetoCorp 6 month commercial paper for 4.94M
-USD – a slight discount compared to the 4.95M USD it is worth. DigiBank fully
-expects that it will be able to redeem 5M USD from MagnetoCorp in 6 months time,
-making it a profit of 10K USD for bearing the increased risk associated with
-this commercial paper. This extra 10K means it receives a 2.4% return on
-investment – significantly better than the risk free return of 2%.</p>
-<p>At the end of June, when MagnetoCorp issues a new commercial paper for 5M USD to
-meet June’s payroll, it is purchased by BigFund for 4.94M USD.  That’s because
-the commercial conditions are roughly the same in June as they are in May,
-resulting in BigFund valuing MagnetoCorp commercial paper at the same price that
-DigiBank did in May.</p>
-<p>Each subsequent month, MagnetoCorp can issue new commercial paper to meet its
-payroll obligations, and these may be purchased by DigiBank, or any other
-participant in the PaperNet commercial paper network – BigFund, HedgeMatic or
-BrokerHouse. These organizations may pay more or less for the commercial paper
-depending on two factors – the central bank base rate, and the risk associated
-with MagnetoCorp. This latter figure depends on a variety of factors such as the
-production of Model D cars, and the creditworthiness of MagnetoCorp as assessed
-by RateM, a ratings agency.</p>
-<p>The organizations in PaperNet have different roles, MagnetoCorp issues paper,
-DigiBank, BigFund, HedgeMatic and BrokerHouse trade paper and RateM rates paper.
-Organizations of the same role, such as DigiBank, Bigfund, HedgeMatic and
-BrokerHouse are competitors. Organizations of different roles are not
-necessarily competitors, yet might still have opposing business interest, for
-example MagentoCorp will desire a high rating for its papers to sell them at
-a high price, while DigiBank would benefit from a low rating, such that it can
-buy them at a low price. As can be seen, even a seemingly simple network such
-as PaperNet can have complex trust relationships. A blockchain can help
-establish trust among organizations that are competitors or have opposing
-business interests that might lead to disputes. Fabric in particular has the
-means to capture even fine-grained trust relationships.</p>
-<p>Let’s pause the MagnetoCorp story for a moment, and develop the client
-applications and smart contracts that PaperNet uses to issue, buy, sell and
-redeem commercial paper as well as capture the trust relationships between
-the organizations.  We’ll come back to the role of the rating agency,
-RateM, a little later.</p>
+<h2>Introducing the actors<a class="headerlink" href="#introducing-the-actors" title="永久链接至标题">¶</a></h2>
+<p>MagnetoCorp是一家生产自动驾驶电动汽车的知名公司。在2020年4月初，MagnetoCorp赢得了一份为Daintree公司生产10000辆D型汽车的大订单。Daintree公司是个人交通市场的新参与者。尽管该订单代表着MagnetoCorp的重大胜利，但在11月1日开始交付之前，Daintree不必为这些车辆付款。6个月前，MagnetoCorp与Daintree已正式达成协议。</p>
+<p>为了制造这些汽车，MagnetoCorp将需要雇佣1000名工人至少工作6个月。这给它的财务带来了短期压力——每月需要额外支付500万美元给这些新员工。商业票据的目的是帮助MagnetoCorp克服其短期融资需求——在Daintree开始为其新款D型汽车付款时，该公司预计将拥有充足的现金，因此每月都要发放工资。</p>
+<p>5月底，MagnetoCorp需要500万美元来支付5月1日雇佣的额外工人的工资。为此，它发行了一张面值为500万美元的商业票据，期限为6个月，预计届时将看到Daintree的现金流入。Digbank认为MagnetoCorp是有信誉的，因此不需要比央行2%的基准利率高多少的溢价。按照目前的汇率，6个月后的500万美元相当于485万美元。因此，该公司以494万美元的价格购买了MagnetoCorp6个月期商业票据——与其价值485万美元相比，这是一个小折扣。DigiBank完全预计，在6个月内，它将能够从MagnetoCorp手中赎回500万美元，从而为自己带来1万美元的利润，因为它承担了与这张商业票据相关的风险增加。这额外的1万美元意味着它的投资回报率为2.4%，明显高于2%的无风险回报率。</p>
+<p>6月底，当MagnetoCorp发行一份500万美元的新商业票据来支付6月份的工资时，它被BigFund以494万美元的价格收购。这是因为6月的商业环境与5月大致相同，导致BigFund对MagnetoCorp商业票据的估值与DigiBank 5月的估值相同。</p>
+<p>此后的每个月，MagnetoCorp都可以发行新的商业票据，以履行其薪资义务，这些票据可能被DigiBank或PaperNet商业票据网络的任何其他参与者购买——BigFund、HedgeMatic或BrokerHouse。这些机构可能会为商业票据支付更多或更少的费用，这取决于两个因素——央行基准利率和与MagnetoCorp相关的风险。后者的数字取决于多种因素，比如D型车的产量，以及评级机构RateM评估的MagnetoCorp的信誉。</p>
+<p>PaperNet中的组织有不同的角色，如MagnetoCorp发行票据、DigiBank、BigFund、HedgeMatic和BrokerHouse交易票据以及RateM对票据估价。扮演同样角色的组织，如Digbank、Bigfund、HedgeMatic和BrokerHouse，都是竞争对手。组织不同的角色不一定是竞争对手，但可能仍有对立的商业利益，例如MagentoCorp将期望高评级的票据以高价卖给他们,而DigiBank将受益于较低的评级,这样它能以较低的价格买进。可以看出，即使是看似简单的网络，如PaperNet，也可能具有复杂的信任关系。区块链可以帮助在竞争对手之间建立信任，或者在可能导致争议的商业利益对立的组织之间建立信任。Fabric尤其能够捕获甚至细粒度的信任关系。</p>
+<p>让我们暂停一下MagnetoCorp的故事，开发客户端应用程序和智能合约，PaperNet使用这些应用程序发行、购买、销售和赎回商业票据，并获得组织之间的信任关系。我们稍后会回到评级机构RateM的角色。</p>
 <!--- Licensed under Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ --></div>
 </div>
@@ -283,7 +225,7 @@ https://creativecommons.org/licenses/by/4.0/ --></div>
         <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="developing_applications.html" class="btn btn-neutral" title="Developing Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="developing_applications.html" class="btn btn-neutral" title="开发应用程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

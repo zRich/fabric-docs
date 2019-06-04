@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building Your First Network &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>搭建你的第一个网络（BYFN） &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Adding an Org to a Channel" href="channel_update_tutorial.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="向通道添加组织" href="channel_update_tutorial.html" />
     <link rel="prev" title="Commercial paper tutorial" href="tutorial/commercial_paper.html" /> 
 </head>
 
@@ -96,16 +97,16 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="write_first_app.html">Writing Your First Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/commercial_paper.html">Commercial paper tutorial</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Building Your First Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-prerequisites">Install prerequisites</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">搭建你的第一个网络（BYFN）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-prerequisites">安装前的准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#want-to-run-it-now">Want to run it now?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#generate-network-artifacts">Generate Network Artifacts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bring-up-the-network">Bring Up the Network</a></li>
@@ -148,24 +149,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">Adding an Org to a Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">向通道添加组织</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading_your_network_tutorial.html">Upgrading Your Network Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">Using Private Data in Fabric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode.html">Chaincode Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">Chaincode for Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">在Fabric里面使用私有数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode.html">链码教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">链码开发者</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaincode4noah.html">Chaincode for Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemchaincode.html">System Chaincode Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_tutorial.html">Using CouchDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html">Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html">视频</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -215,7 +216,7 @@
         
           <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
         
-      <li>Building Your First Network</li>
+      <li>搭建你的第一个网络（BYFN）</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -235,22 +236,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="building-your-first-network">
-<h1>Building Your First Network<a class="headerlink" href="#building-your-first-network" title="Permalink to this headline">¶</a></h1>
+<h1>搭建你的第一个网络（BYFN）<a class="headerlink" href="#building-your-first-network" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These instructions have been verified to work against the
-latest stable Docker images and the pre-compiled
-setup utilities within the supplied tar file. If you run
-these commands with images or tools from the current master
-branch, it is possible that you will see configuration and panic
-errors.</p>
+<p class="admonition-title">注解</p>
+<p>经验证，使用最新稳定版本的Docker镜像，以及所提供的tar文件中预编译好的建制工具，可以运行本文涉及的指令。然而，如果您使用当前master分支编译得到的镜像或者工具，有可能出现配置错误或panic。</p>
 </div>
-<p>The build your first network (BYFN) scenario provisions a sample Hyperledger
-Fabric network consisting of two organizations, each maintaining two peer
-nodes. It also will deploy a “Solo” ordering service by default, though other
-ordering service implementations are available.</p>
+<p>BYFN搭建了一个Hyperledger Fabric示例网络，包含了两个组织，每个组织含有两个peer节点，同时还会部署一个默认的Solo排序服务，其它排序服务的实现也是可用的。</p>
 <div class="section" id="install-prerequisites">
-<h2>Install prerequisites<a class="headerlink" href="#install-prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>安装前的准备工作<a class="headerlink" href="#install-prerequisites" title="永久链接至标题">¶</a></h2>
 <p>Before we begin, if you haven’t already done so, you may wish to check that
 you have all the <a class="reference internal" href="prereqs.html"><span class="doc">Prerequisites</span></a> installed on the platform(s) on which you’ll be
 developing blockchain applications and/or operating Hyperledger Fabric.</p>
@@ -261,7 +254,7 @@ samples included in the <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The supplied commands in this documentation <strong>MUST</strong> be run from your
 <code class="docutils literal notranslate"><span class="pre">first-network</span></code> sub-directory of the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> repository
 clone.  If you elect to run the commands from a different location,
@@ -269,7 +262,7 @@ the various provided scripts will be unable to find the binaries.</p>
 </div>
 </div>
 <div class="section" id="want-to-run-it-now">
-<h2>Want to run it now?<a class="headerlink" href="#want-to-run-it-now" title="Permalink to this headline">¶</a></h2>
+<h2>Want to run it now?<a class="headerlink" href="#want-to-run-it-now" title="永久链接至标题">¶</a></h2>
 <p>We provide a fully annotated script — <code class="docutils literal notranslate"><span class="pre">byfn.sh</span></code> — that leverages these Docker
 images to quickly bootstrap a Hyperledger Fabric network that by default is
 comprised of four peers representing two different organizations, and an orderer
@@ -314,7 +307,7 @@ Taking all defaults:<span class="s2">&quot;</span>
 </div>
 <p>If you choose not to supply a flag, the script will use default values.</p>
 <div class="section" id="generate-network-artifacts">
-<h3>Generate Network Artifacts<a class="headerlink" href="#generate-network-artifacts" title="Permalink to this headline">¶</a></h3>
+<h3>Generate Network Artifacts<a class="headerlink" href="#generate-network-artifacts" title="永久链接至标题">¶</a></h3>
 <p>Ready to give it a go? Okay then! Execute the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh generate
 </pre></div>
@@ -371,7 +364,7 @@ and a collection of configuration transactions required to configure a
 <a class="reference internal" href="glossary.html#channel"><span class="std std-ref">Channel</span></a>.</p>
 </div>
 <div class="section" id="bring-up-the-network">
-<h3>Bring Up the Network<a class="headerlink" href="#bring-up-the-network" title="Permalink to this headline">¶</a></h3>
+<h3>Bring Up the Network<a class="headerlink" href="#bring-up-the-network" title="永久链接至标题">¶</a></h3>
 <p>Next, you can bring the network up with one of the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh up
 </pre></div>
@@ -388,12 +381,12 @@ the following command instead:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>For more information on the Node.js shim, please refer to its
 <a class="reference external" href="https://fabric-shim.github.io/ChaincodeInterface.html">documentation</a>.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>For more information on the Java shim, please refer to its
 <a class="reference external" href="https://fabric-chaincode-java.github.io/org/hyperledger/fabric/shim/Chaincode.html">documentation</a>.</p>
 </div>
@@ -402,7 +395,7 @@ the following command instead:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Do not run both of these commands. Only one language can be tried unless
 you bring down and recreate the network between.</p>
 </div>
@@ -464,7 +457,7 @@ get this result, then jump down to the <a class="reference internal" href="#trou
 whether we can help you discover what went wrong.</p>
 </div>
 <div class="section" id="bring-down-the-network">
-<h3>Bring Down the Network<a class="headerlink" href="#bring-down-the-network" title="Permalink to this headline">¶</a></h3>
+<h3>Bring Down the Network<a class="headerlink" href="#bring-down-the-network" title="永久链接至标题">¶</a></h3>
 <p>Finally, let’s bring it all down so we can explore the network setup one step
 at a time. The following will kill your containers, remove the crypto material
 and four artifacts, and delete the chaincode images from your Docker Registry:</p>
@@ -489,7 +482,7 @@ Deleted: sha256:ed3230614e64e1c83e510c0c282e982d2b06d148b1c498bbdcc429e2b2531e91
 continue reading.  In these next sections we’ll walk through the various steps
 and requirements to build a fully-functional Hyperledger Fabric network.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The manual steps outlined below assume that the <code class="docutils literal notranslate"><span class="pre">FABRIC_LOGGING_SPEC</span></code> in
 the <code class="docutils literal notranslate"><span class="pre">cli</span></code> container is set to <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>. You can set this by modifying
 the <code class="docutils literal notranslate"><span class="pre">docker-compose-cli.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">first-network</span></code> directory.
@@ -510,13 +503,13 @@ e.g.</p>
 </div>
 </div>
 <div class="section" id="crypto-generator">
-<h2>Crypto Generator<a class="headerlink" href="#crypto-generator" title="Permalink to this headline">¶</a></h2>
+<h2>Crypto Generator<a class="headerlink" href="#crypto-generator" title="永久链接至标题">¶</a></h2>
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">cryptogen</span></code> tool to generate the cryptographic material
 (x509 certs and signing keys) for our various network entities.  These certificates are
 representative of identities, and they allow for sign/verify authentication to
 take place as our entities communicate and transact.</p>
 <div class="section" id="how-does-it-work">
-<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h3>
+<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="永久链接至标题">¶</a></h3>
 <p>Cryptogen consumes a file — <code class="docutils literal notranslate"><span class="pre">crypto-config.yaml</span></code> — that contains the network
 topology and allows us to generate a set of certificates and keys for both the
 Organizations and the components that belong to those Organizations.  Each
@@ -542,7 +535,7 @@ system channel and <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="section" id="configuration-transaction-generator">
-<h2>Configuration Transaction Generator<a class="headerlink" href="#configuration-transaction-generator" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration Transaction Generator<a class="headerlink" href="#configuration-transaction-generator" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> tool is used to create four configuration artifacts:</p>
 <blockquote>
 <div><ul class="simple">
@@ -555,9 +548,9 @@ system channel and <code class="docutils literal notranslate"><span class="pre">
 <p>The orderer block is the <a class="reference internal" href="glossary.html#genesis-block"><span class="std std-ref">Genesis Block</span></a> for the ordering service, and the
 channel configuration transaction file is broadcast to the orderer at <a class="reference internal" href="glossary.html#channel"><span class="std std-ref">Channel</span></a> creation
 time.  The anchor peer transactions, as the name might suggest, specify each
-Org’s <a class="reference internal" href="glossary.html#anchor-peer"><span class="std std-ref">Anchor Peer</span></a> on this channel.</p>
+Org’s <a class="reference internal" href="glossary.html#anchor-peer"><span class="std std-ref">锚节点</span></a> on this channel.</p>
 <div class="section" id="id2">
-<h3>How does it work?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>How does it work?<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>Configtxgen consumes a file - <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code> - that contains the definitions
 for the sample network. There are three members - one Orderer Org (<code class="docutils literal notranslate"><span class="pre">OrdererOrg</span></code>)
 and two Peer Orgs (<code class="docutils literal notranslate"><span class="pre">Org1</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Org2</span></code>) each managing and maintaining two peer nodes.
@@ -577,7 +570,7 @@ service. Only used if you issue the <code class="docutils literal notranslate"><
 <p>These headers are important, as we will pass them in as arguments when we create
 our artifacts.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Notice that our <code class="docutils literal notranslate"><span class="pre">SampleConsortium</span></code> is defined in
 the system-level profile and then referenced by
 our channel-level profile.  Channels exist within
@@ -595,12 +588,12 @@ its digital signature verified.</p>
 </div>
 </div>
 <div class="section" id="run-the-tools">
-<h2>Run the tools<a class="headerlink" href="#run-the-tools" title="Permalink to this headline">¶</a></h2>
+<h2>Run the tools<a class="headerlink" href="#run-the-tools" title="永久链接至标题">¶</a></h2>
 <p>You can manually generate the certificates/keys and the various configuration
 artifacts using the <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> and <code class="docutils literal notranslate"><span class="pre">cryptogen</span></code> commands. Alternately,
 you could try to adapt the byfn.sh script to accomplish your objectives.</p>
 <div class="section" id="manually-generate-the-artifacts">
-<h3>Manually generate the artifacts<a class="headerlink" href="#manually-generate-the-artifacts" title="Permalink to this headline">¶</a></h3>
+<h3>Manually generate the artifacts<a class="headerlink" href="#manually-generate-the-artifacts" title="永久链接至标题">¶</a></h3>
 <p>You can refer to the <code class="docutils literal notranslate"><span class="pre">generateCerts</span></code> function in the byfn.sh script for the
 commands necessary to generate the certificates that will be used for your
 network configuration as defined in the <code class="docutils literal notranslate"><span class="pre">crypto-config.yaml</span></code> file. However,
@@ -644,14 +637,14 @@ following:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The orderer genesis block and the subsequent artifacts we are about to create
 will be output into the <code class="docutils literal notranslate"><span class="pre">channel-artifacts</span></code> directory at the root of this
 project. The <cite>channelID</cite> in the above command is the name of the system channel.</p>
 </div>
 </div>
 <div class="section" id="create-a-channel-configuration-transaction">
-<span id="createchanneltx"></span><h3>Create a Channel Configuration Transaction<a class="headerlink" href="#create-a-channel-configuration-transaction" title="Permalink to this headline">¶</a></h3>
+<span id="createchanneltx"></span><h3>Create a Channel Configuration Transaction<a class="headerlink" href="#create-a-channel-configuration-transaction" title="永久链接至标题">¶</a></h3>
 <p>Next, we need to create the channel transaction artifact. Be sure to replace <code class="docutils literal notranslate"><span class="pre">$CHANNEL_NAME</span></code> or
 set <code class="docutils literal notranslate"><span class="pre">CHANNEL_NAME</span></code> as an environment variable that can be used throughout these instructions:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The channel.tx artifact contains the definitions for our sample channel</span>
@@ -684,9 +677,9 @@ channel transaction artifact:</p>
 </div>
 </div>
 <div class="section" id="start-the-network">
-<h2>Start the network<a class="headerlink" href="#start-the-network" title="Permalink to this headline">¶</a></h2>
+<h2>Start the network<a class="headerlink" href="#start-the-network" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you ran the <code class="docutils literal notranslate"><span class="pre">byfn.sh</span></code> example above previously, be sure that you
 have brought down the test network before you proceed (see
 <a class="reference internal" href="#bring-down-the-network">Bring Down the Network</a>).</p>
@@ -703,7 +696,7 @@ syntax and functionality of each call.</p>
 <p>If you want to see the realtime logs for your network, then do not supply the <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag.
 If you let the logs stream, then you will need to open a second terminal to execute the CLI calls.</p>
 <div class="section" id="create-join-channel">
-<span id="peerenvvars"></span><h3>Create &amp; Join Channel<a class="headerlink" href="#create-join-channel" title="Permalink to this headline">¶</a></h3>
+<span id="peerenvvars"></span><h3>Create &amp; Join Channel<a class="headerlink" href="#create-join-channel" title="永久链接至标题">¶</a></h3>
 <p>Recall that we created the channel configuration transaction using the
 <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> tool in the <a class="reference internal" href="#createchanneltx"><span class="std std-ref">Create a Channel Configuration Transaction</span></a> section, above. You can
 repeat that process to create additional channel configuration transactions,
@@ -754,7 +747,7 @@ peer channel create -o orderer.example.com:7050 -c <span class="nv">$CHANNEL_NAM
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">--cafile</span></code> that we pass as part of this command.  It is
 the local path to the orderer’s root cert, allowing us to verify the
 TLS handshake.</p>
@@ -764,7 +757,7 @@ It contains the configuration information specified in <code class="docutils lit
 made any modifications to the default channel name, then the command will return you a
 proto titled <code class="docutils literal notranslate"><span class="pre">mychannel.block</span></code>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>You will remain in the CLI container for the remainder of
 these manual commands. You must also remember to preface all commands
 with the corresponding environment variables when targeting a peer other than
@@ -795,7 +788,7 @@ to issue the <code class="docutils literal notranslate"><span class="pre">peer</
 on behalf of <code class="docutils literal notranslate"><span class="pre">peer0.org2.example.com</span></code>.</p>
 </div>
 <div class="section" id="update-the-anchor-peers">
-<h3>Update the anchor peers<a class="headerlink" href="#update-the-anchor-peers" title="Permalink to this headline">¶</a></h3>
+<h3>Update the anchor peers<a class="headerlink" href="#update-the-anchor-peers" title="永久链接至标题">¶</a></h3>
 <p>The following commands are channel updates and they will propagate to the definition
 of the channel.  In essence, we adding additional configuration information on top
 of the channel’s genesis block.  Note that we are not modifying the genesis block, but
@@ -812,14 +805,14 @@ preface this call with the appropriate environment variables.</p>
 </div>
 </div>
 <div class="section" id="install-and-define-a-chaincode">
-<span id="install-define-chaincode"></span><h3>Install and define a chaincode<a class="headerlink" href="#install-and-define-a-chaincode" title="Permalink to this headline">¶</a></h3>
+<span id="install-define-chaincode"></span><h3>Install and define a chaincode<a class="headerlink" href="#install-and-define-a-chaincode" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>We will utilize a simple existing chaincode. To learn how to write
-your own chaincode, see the <a class="reference internal" href="chaincode4ade.html"><span class="doc">Chaincode for Developers</span></a> tutorial.</p>
+your own chaincode, see the <a class="reference internal" href="chaincode4ade.html"><span class="doc">链码开发者</span></a> tutorial.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>These instructions use the Fabric chaincode lifecycle introduced in
 the v2.0 Alpha release. If you would like to use the previous
 lifecycle to install and instantiate a chaincode, visit the v1.4
@@ -992,7 +985,7 @@ peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID <span cl
 </div>
 </div>
 <div class="section" id="invoking-the-chaincode">
-<h3>Invoking the chaincode<a class="headerlink" href="#invoking-the-chaincode" title="Permalink to this headline">¶</a></h3>
+<h3>Invoking the chaincode<a class="headerlink" href="#invoking-the-chaincode" title="永久链接至标题">¶</a></h3>
 <p>After a chaincode definition has been committed to a channel, we are ready to
 invoke the chaincode and start interacting with the ledger. We requested the
 execution of the <code class="docutils literal notranslate"><span class="pre">Init</span></code> function in the chaincode definition using the
@@ -1009,7 +1002,7 @@ peer chaincode invoke -o orderer.example.com:7050 --isInit --tls <span class="nb
 container to start. Node.js images will take longer.</p>
 </div>
 <div class="section" id="query">
-<h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
+<h3>Query<a class="headerlink" href="#query" title="永久链接至标题">¶</a></h3>
 <p>Let’s query the chaincode to make sure that the container was properly started
 and the state DB was populated. The syntax for query is as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to set the -C and -n flags appropriately</span>
@@ -1019,7 +1012,7 @@ peer chaincode query -C <span class="nv">$CHANNEL_NAME</span> -n mycc -c <span c
 </div>
 </div>
 <div class="section" id="invoke">
-<h3>Invoke<a class="headerlink" href="#invoke" title="Permalink to this headline">¶</a></h3>
+<h3>Invoke<a class="headerlink" href="#invoke" title="永久链接至标题">¶</a></h3>
 <p>Now let’s move <code class="docutils literal notranslate"><span class="pre">10</span></code> from <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>. This transaction will cut a new block
 and update the state DB. The syntax for invoke is as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to set the -C and -n flags appropriately</span>
@@ -1028,7 +1021,7 @@ peer chaincode invoke -o orderer.example.com:7050 --tls <span class="nb">true</s
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Query<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Query<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>Let’s confirm that our previous invocation executed properly. We initialized the
 key <code class="docutils literal notranslate"><span class="pre">a</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">100</span></code> and just removed <code class="docutils literal notranslate"><span class="pre">10</span></code> with our previous
 invocation. Therefore, a query against <code class="docutils literal notranslate"><span class="pre">a</span></code> should return <code class="docutils literal notranslate"><span class="pre">90</span></code>. The syntax
@@ -1044,7 +1037,7 @@ peer chaincode query -C <span class="nv">$CHANNEL_NAME</span> -n mycc -c <span c
 </div>
 </div>
 <div class="section" id="install-the-chaincode-on-an-additional-peer">
-<h3>Install the chaincode on an additional peer<a class="headerlink" href="#install-the-chaincode-on-an-additional-peer" title="Permalink to this headline">¶</a></h3>
+<h3>Install the chaincode on an additional peer<a class="headerlink" href="#install-the-chaincode-on-an-additional-peer" title="永久链接至标题">¶</a></h3>
 <p>If you want additional peers to interact with the ledger, then you will need to
 join them to the channel and install the same chaincode package on the peers.
 You only need to approve the chaincode definition once from your organization.
@@ -1069,7 +1062,7 @@ peer lifecycle chaincode install mycc.tar.gz
 </div>
 </div>
 <div class="section" id="id6">
-<h3>Query<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>Query<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>Let’s confirm that we can issue the query to Peer1 in Org2. We initialized the
 key <code class="docutils literal notranslate"><span class="pre">a</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">100</span></code> and just removed <code class="docutils literal notranslate"><span class="pre">10</span></code> with our previous
 invocation. Therefore, a query against <code class="docutils literal notranslate"><span class="pre">a</span></code> should still return <code class="docutils literal notranslate"><span class="pre">90</span></code>.</p>
@@ -1094,9 +1087,9 @@ peer to join and catch up to the current blockchain height. You may
 re-query as needed. Feel free to perform additional invokes as well.</p>
 </div>
 <div class="section" id="what-s-happening-behind-the-scenes">
-<span id="behind-scenes"></span><h3>What’s happening behind the scenes?<a class="headerlink" href="#what-s-happening-behind-the-scenes" title="Permalink to this headline">¶</a></h3>
+<span id="behind-scenes"></span><h3>What’s happening behind the scenes?<a class="headerlink" href="#what-s-happening-behind-the-scenes" title="永久链接至标题">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>These steps describe the scenario in which
 <code class="docutils literal notranslate"><span class="pre">script.sh</span></code> is run by ‘./byfn.sh up’.  Clean your network
 with <code class="docutils literal notranslate"><span class="pre">./byfn.sh</span> <span class="pre">down</span></code> and ensure
@@ -1151,7 +1144,7 @@ transaction during which the value for key “a” was modified by 10.</p></li>
 </ul>
 </div>
 <div class="section" id="what-does-this-demonstrate">
-<h3>What does this demonstrate?<a class="headerlink" href="#what-does-this-demonstrate" title="Permalink to this headline">¶</a></h3>
+<h3>What does this demonstrate?<a class="headerlink" href="#what-does-this-demonstrate" title="永久链接至标题">¶</a></h3>
 <p>Chaincode <strong>MUST</strong> be installed on a peer in order for it to
 successfully perform read/write operations against the ledger.
 Furthermore, a chaincode container is not started for a peer until an <code class="docutils literal notranslate"><span class="pre">init</span></code> or
@@ -1166,7 +1159,7 @@ after it is installed (like <code class="docutils literal notranslate"><span cla
 definition has already been committed on the channel.</p>
 </div>
 <div class="section" id="how-do-i-see-these-transactions">
-<h3>How do I see these transactions?<a class="headerlink" href="#how-do-i-see-these-transactions" title="Permalink to this headline">¶</a></h3>
+<h3>How do I see these transactions?<a class="headerlink" href="#how-do-i-see-these-transactions" title="永久链接至标题">¶</a></h3>
 <p>Check the logs for the CLI Docker container.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker logs -f cli
 </pre></div>
@@ -1193,7 +1186,7 @@ Query Result: <span class="m">90</span>
 <p>You can scroll through these logs to see the various transactions.</p>
 </div>
 <div class="section" id="how-can-i-see-the-chaincode-logs">
-<h3>How can I see the chaincode logs?<a class="headerlink" href="#how-can-i-see-the-chaincode-logs" title="Permalink to this headline">¶</a></h3>
+<h3>How can I see the chaincode logs?<a class="headerlink" href="#how-can-i-see-the-chaincode-logs" title="永久链接至标题">¶</a></h3>
 <p>Inspect the individual chaincode containers to see the separate
 transactions executed against each container. Here is the combined
 output from each container:</p>
@@ -1223,14 +1216,14 @@ and block commit messages:</p>
 </div>
 </div>
 <div class="section" id="understanding-the-docker-compose-topology">
-<h2>Understanding the Docker Compose topology<a class="headerlink" href="#understanding-the-docker-compose-topology" title="Permalink to this headline">¶</a></h2>
+<h2>Understanding the Docker Compose topology<a class="headerlink" href="#understanding-the-docker-compose-topology" title="永久链接至标题">¶</a></h2>
 <p>The BYFN sample offers us two flavors of Docker Compose files, both of which
 are extended from the <code class="docutils literal notranslate"><span class="pre">docker-compose-base.yaml</span></code> (located in the <code class="docutils literal notranslate"><span class="pre">base</span></code>
 folder).  Our first flavor, <code class="docutils literal notranslate"><span class="pre">docker-compose-cli.yaml</span></code>, provides us with a
 CLI container, along with an orderer, four peers.  We use this file
 for the entirety of the instructions on this page.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>the remainder of this section covers a docker-compose file designed for the
 SDK.  Refer to the <a class="reference external" href="https://github.com/hyperledger/fabric-sdk-node">Node SDK</a>
 repo for details on running these tests.</p>
@@ -1252,7 +1245,7 @@ to start the ca server.  You are providing the same private key twice for each
 CA container.</p>
 </div>
 <div class="section" id="using-couchdb">
-<h2>Using CouchDB<a class="headerlink" href="#using-couchdb" title="Permalink to this headline">¶</a></h2>
+<h2>Using CouchDB<a class="headerlink" href="#using-couchdb" title="永久链接至标题">¶</a></h2>
 <p>The state database can be switched from the default (goleveldb) to CouchDB.
 The same chaincode functions are available with CouchDB, however, there is the
 added ability to perform rich and complex queries against the state database
@@ -1265,7 +1258,7 @@ the network pass <code class="docutils literal notranslate"><span class="pre">do
 </div>
 <p><strong>abstore</strong> should now work using CouchDB underneath.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you choose to implement mapping of the fabric-couchdb container
 port to a host port, please make sure you are aware of the security
 implications. Mapping of the port in a development environment makes the
@@ -1362,7 +1355,7 @@ a browser and navigating to the following URL:</p>
 <p>You should see a database named <code class="docutils literal notranslate"><span class="pre">mychannel</span></code> (or your unique channel name) and
 the documents inside it.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>For the below commands, be sure to update the $CHANNEL_NAME variable appropriately.</p>
 </div>
 <p>You can run regular queries from the CLI (e.g. reading <code class="docutils literal notranslate"><span class="pre">marble2</span></code>):</p>
@@ -1391,7 +1384,7 @@ the documents inside it.</p>
 </div>
 </div>
 <div class="section" id="why-couchdb">
-<h2>Why CouchDB<a class="headerlink" href="#why-couchdb" title="Permalink to this headline">¶</a></h2>
+<h2>Why CouchDB<a class="headerlink" href="#why-couchdb" title="永久链接至标题">¶</a></h2>
 <p>CouchDB is a kind of NoSQL solution. It is a document-oriented database where document fields are stored as key-value maps. Fields can be either a simple key-value pair, list, or map.
 In addition to keyed/composite-key/key-range queries which are supported by LevelDB, CouchDB also supports full data rich queries capability, such as non-key queries against the whole blockchain data,
 since its data content is stored in JSON format and fully queryable. Therefore, CouchDB can meet chaincode, auditing, reporting requirements for many use cases that not supported by LevelDB.</p>
@@ -1404,7 +1397,7 @@ However, under each fabric peer, there is no database replicas, writes to databa
 And the CP-type (Consistency and Partition Tolerance) databases may also in need, so as to enable data consistency without application level guarantee.</p>
 </div>
 <div class="section" id="a-note-on-data-persistence">
-<h2>A Note on Data Persistence<a class="headerlink" href="#a-note-on-data-persistence" title="Permalink to this headline">¶</a></h2>
+<h2>A Note on Data Persistence<a class="headerlink" href="#a-note-on-data-persistence" title="永久链接至标题">¶</a></h2>
 <p>If data persistence is desired on the peer container or the CouchDB container,
 one option is to mount a directory in the docker-host into a relevant directory
 in the container. For example, you may add the following two lines in
@@ -1421,7 +1414,7 @@ container specification:</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<span id="troubleshoot"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<span id="troubleshoot"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>Always start your network fresh.  Use the following command
 to remove artifacts, crypto, containers and chaincode images:</p>
@@ -1429,7 +1422,7 @@ to remove artifacts, crypto, containers and chaincode images:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>You <strong>will</strong> see errors if you do not remove old containers
 and images.</p>
 </div>
@@ -1514,7 +1507,7 @@ access to the vim editor for instance, open the file:</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you continue to see errors, share your logs on the
 <strong>fabric-questions</strong> channel on
 <a class="reference external" href="https://chat.hyperledger.org/home">Hyperledger Rocket Chat</a>
@@ -1531,7 +1524,7 @@ or on <a class="reference external" href="https://stackoverflow.com/questions/ta
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="channel_update_tutorial.html" class="btn btn-neutral float-right" title="Adding an Org to a Channel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="channel_update_tutorial.html" class="btn btn-neutral float-right" title="向通道添加组织" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tutorial/commercial_paper.html" class="btn btn-neutral" title="Commercial paper tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

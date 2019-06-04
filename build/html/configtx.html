@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Channel Configuration (configtx) &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Channel Configuration (configtx) &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Endorsement policies" href="endorsement-policies.html" />
-    <link rel="prev" title="Membership Service Providers (MSP)" href="msp.html" /> 
+    <link rel="prev" title="成员服务提供者（MSP）" href="msp.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Channel Configuration (configtx)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#anatomy-of-a-configuration">Anatomy of a configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuration-updates">Configuration updates</a></li>
@@ -126,17 +127,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -184,7 +185,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>Channel Configuration (configtx)</li>
     
@@ -206,7 +207,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="channel-configuration-configtx">
-<h1>Channel Configuration (configtx)<a class="headerlink" href="#channel-configuration-configtx" title="Permalink to this headline">¶</a></h1>
+<h1>Channel Configuration (configtx)<a class="headerlink" href="#channel-configuration-configtx" title="永久链接至标题">¶</a></h1>
 <p>Shared configuration for a Hyperledger Fabric blockchain network is
 stored in a collection configuration transactions, one per channel. Each
 configuration transaction is usually referred to by the shorter name
@@ -227,7 +228,7 @@ policies can take advantage of the hierarchy to derive policies at
 one level from policies of lower levels.</p></li>
 </ol>
 <div class="section" id="anatomy-of-a-configuration">
-<h2>Anatomy of a configuration<a class="headerlink" href="#anatomy-of-a-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Anatomy of a configuration<a class="headerlink" href="#anatomy-of-a-configuration" title="永久链接至标题">¶</a></h2>
 <p>Configuration is stored as a transaction of type <code class="docutils literal notranslate"><span class="pre">HeaderType_CONFIG</span></code>
 in a block with no other transactions. These blocks are referred to as
 <em>Configuration Blocks</em>, the first of which is referred to as the
@@ -333,7 +334,7 @@ we use the golang map reference syntax, so
 the item cannot be modified.</p>
 </div>
 <div class="section" id="configuration-updates">
-<h2>Configuration updates<a class="headerlink" href="#configuration-updates" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration updates<a class="headerlink" href="#configuration-updates" title="永久链接至标题">¶</a></h2>
 <p>Configuration updates are submitted as an <code class="docutils literal notranslate"><span class="pre">Envelope</span></code> message of type
 <code class="docutils literal notranslate"><span class="pre">HeaderType_CONFIG_UPDATE</span></code>. The <code class="docutils literal notranslate"><span class="pre">Payload</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> of the
 transaction is a marshaled <code class="docutils literal notranslate"><span class="pre">ConfigUpdateEnvelope</span></code>. The <code class="docutils literal notranslate"><span class="pre">ConfigUpdateEnvelope</span></code>
@@ -434,7 +435,7 @@ and verifying that the orderer-computed <code class="docutils literal notranslat
 correct new configuration.</p>
 </div>
 <div class="section" id="permitted-configuration-groups-and-values">
-<h2>Permitted configuration groups and values<a class="headerlink" href="#permitted-configuration-groups-and-values" title="Permalink to this headline">¶</a></h2>
+<h2>Permitted configuration groups and values<a class="headerlink" href="#permitted-configuration-groups-and-values" title="永久链接至标题">¶</a></h2>
 <p>Any valid configuration is a subset of the following configuration. Here
 we use the notation <code class="docutils literal notranslate"><span class="pre">peer.&lt;MSG&gt;</span></code> to define a <code class="docutils literal notranslate"><span class="pre">ConfigValue</span></code> whose
 <code class="docutils literal notranslate"><span class="pre">value</span></code> field is a marshaled proto message of name <code class="docutils literal notranslate"><span class="pre">&lt;MSG&gt;</span></code> defined
@@ -504,7 +505,7 @@ with different names.</p>
 </div>
 </div>
 <div class="section" id="orderer-system-channel-configuration">
-<h2>Orderer system channel configuration<a class="headerlink" href="#orderer-system-channel-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Orderer system channel configuration<a class="headerlink" href="#orderer-system-channel-configuration" title="永久链接至标题">¶</a></h2>
 <p>The ordering system channel needs to define ordering parameters, and
 consortiums for creating channels. There must be exactly one ordering
 system channel for an ordering service, and it is the first channel to
@@ -577,7 +578,7 @@ channel sign to authorize the channel creation. More details about
 channel creation follow later in this document.</p>
 </div>
 <div class="section" id="application-channel-configuration">
-<h2>Application channel configuration<a class="headerlink" href="#application-channel-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Application channel configuration<a class="headerlink" href="#application-channel-configuration" title="永久链接至标题">¶</a></h2>
 <p>Application configuration is for channels which are designed for
 application type transactions. It is defined as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">ConfigGroup</span><span class="p">{</span>
@@ -608,7 +609,7 @@ is included. However from an application perspective this may be largely
 ignored.</p>
 </div>
 <div class="section" id="channel-creation">
-<h2>Channel creation<a class="headerlink" href="#channel-creation" title="Permalink to this headline">¶</a></h2>
+<h2>Channel creation<a class="headerlink" href="#channel-creation" title="永久链接至标题">¶</a></h2>
 <p>When the orderer receives a <code class="docutils literal notranslate"><span class="pre">CONFIG_UPDATE</span></code> for a channel which does
 not exist, the orderer assumes that this must be a channel creation
 request and performs the following.</p>
@@ -656,7 +657,7 @@ the channel is created.</p></li>
         <a href="endorsement-policies.html" class="btn btn-neutral float-right" title="Endorsement policies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="msp.html" class="btn btn-neutral" title="Membership Service Providers (MSP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="msp.html" class="btn btn-neutral" title="成员服务提供者（MSP）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

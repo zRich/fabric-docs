@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install Samples, Binaries and Docker Images &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Install Samples, Binaries and Docker Images &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Developing Applications" href="developapps/developing_applications.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="开发应用程序" href="developapps/developing_applications.html" />
     <link rel="prev" title="Prerequisites" href="prereqs.html" /> 
 </head>
 
@@ -96,7 +97,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="getting_started.html">Getting Started</a><ul class="current">
@@ -106,15 +107,15 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#hyperledger-fabric-ca">Hyperledger Fabric CA</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -184,14 +185,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="install-samples-binaries-and-docker-images">
-<h1>Install Samples, Binaries and Docker Images<a class="headerlink" href="#install-samples-binaries-and-docker-images" title="Permalink to this headline">¶</a></h1>
+<h1>Install Samples, Binaries and Docker Images<a class="headerlink" href="#install-samples-binaries-and-docker-images" title="永久链接至标题">¶</a></h1>
 <p>While we work on developing real installers for the Hyperledger Fabric
 binaries, we provide a script that will download and install samples and
 binaries to your system. We think that you’ll find the sample applications
 installed useful to learn more about the capabilities and operations of
 Hyperledger Fabric.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you are running on <strong>Windows</strong> you will want to make use of the
 Docker Quickstart Terminal for the upcoming terminal commands.
 Please visit the <a class="reference internal" href="prereqs.html"><span class="doc">Prerequisites</span></a> if you haven’t previously installed
@@ -221,14 +222,14 @@ for the version specified into the /bin and /config directories of fabric-sample
 Fabric Samples and binaries, go ahead and execute the command to pull down
 the binaries and images.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you want the latest production release, omit all version identifiers.</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -sSL http://bit.ly/2ysbOFE <span class="p">|</span> bash -s
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you want a specific release, pass a version identifier for Fabric,
 Fabric-ca and thirdparty Docker images.
 The command below demonstrates how to download <strong>Fabric v2.0.0 Alpha release v2.0.0-alpha</strong></p>
@@ -238,7 +239,7 @@ curl -sSL http://bit.ly/2ysbOFE <span class="p">|</span> bash -s -- <span class=
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you get an error running the above curl command, you may
 have too old a version of curl that does not handle
 redirects or an unsupported environment.</p>
@@ -282,12 +283,12 @@ two instances of the same image ID - one tagged as “amd64-1.x.x” and
 one tagged as “latest”. Prior to 1.2.0, the image being downloaded was determined
 by <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-m</span></code> and showed as “x86_64-1.x.x”.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>On different architectures, the x86_64/amd64 would be replaced
 with the string identifying your architecture.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>If you have questions not addressed by this documentation, or run into
 issues with any of the tutorials, please visit the <a class="reference internal" href="questions.html"><span class="doc">Still Have Questions?</span></a>
 page for some tips on where to find additional help.</p>
@@ -302,7 +303,7 @@ page for some tips on where to find additional help.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="developapps/developing_applications.html" class="btn btn-neutral float-right" title="Developing Applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="developapps/developing_applications.html" class="btn btn-neutral float-right" title="开发应用程序" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="prereqs.html" class="btn btn-neutral" title="Prerequisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

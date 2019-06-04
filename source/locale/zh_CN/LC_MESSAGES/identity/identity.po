@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,11 +24,11 @@ msgstr ""
 
 #: ../../source/identity/identity.md:1
 msgid "Identity"
-msgstr ""
+msgstr "身份"
 
 #: ../../source/identity/identity.md:3
 msgid "What is an Identity?"
-msgstr ""
+msgstr "什么是身份？"
 
 #: ../../source/identity/identity.md:5
 msgid ""
@@ -67,7 +68,7 @@ msgstr ""
 
 #: ../../source/identity/identity.md:28
 msgid "A Simple Scenario to Explain the Use of an Identity"
-msgstr ""
+msgstr "一个简单的场景来解释身份的使用"
 
 #: ../../source/identity/identity.md:30
 msgid ""
@@ -105,7 +106,7 @@ msgstr "让我们更详细地研究一下这些概念。"
 
 #: ../../source/identity/identity.md:52
 msgid "What are PKIs?"
-msgstr ""
+msgstr "什么是PKI？"
 
 #: ../../source/identity/identity.md:54
 msgid ""
@@ -146,19 +147,19 @@ msgstr "PKI有四个要素:"
 
 #: ../../source/identity/identity.md:77 ../../source/identity/identity.md:86
 msgid "Digital Certificates"
-msgstr ""
+msgstr "数字证书"
 
 #: ../../source/identity/identity.md:78
 msgid "Public and Private Keys"
-msgstr ""
+msgstr "公钥和私钥"
 
 #: ../../source/identity/identity.md:79 ../../source/identity/identity.md:151
 msgid "Certificate Authorities"
-msgstr ""
+msgstr "证书授权中心"
 
 #: ../../source/identity/identity.md:80 ../../source/identity/identity.md:230
 msgid "Certificate Revocation Lists"
-msgstr ""
+msgstr "证书撤销列表"
 
 #: ../../source/identity/identity.md:82
 msgid ""
@@ -219,7 +220,7 @@ msgstr ""
 
 #: ../../source/identity/identity.md:119
 msgid "Authentication, Public keys, and Private Keys"
-msgstr ""
+msgstr "授权，公钥和私钥"
 
 #: ../../source/identity/identity.md:121
 msgid ""
@@ -328,7 +329,7 @@ msgstr ""
 
 #: ../../source/identity/identity.md:187
 msgid "Root CAs, Intermediate CAs and Chains of Trust"
-msgstr ""
+msgstr "根CA，中介CA和信任链"
 
 #: ../../source/identity/identity.md:189
 msgid ""
@@ -368,7 +369,7 @@ msgstr ""
 
 #: ../../source/identity/identity.md:214
 msgid "Fabric CA"
-msgstr ""
+msgstr "Fabric CA"
 
 #: ../../source/identity/identity.md:216
 msgid ""

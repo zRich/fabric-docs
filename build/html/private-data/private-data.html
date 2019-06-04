@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Private data &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Private data &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Use Cases" href="../usecases.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="用例" href="../usecases.html" />
     <link rel="prev" title="The Ordering Service" href="../orderer/ordering_service.html" /> 
 </head>
 
@@ -96,12 +97,12 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../key_concepts.html">Key Concepts</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../blockchain.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functionalities.html">Hyperledger Fabric Functionalities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fabric_model.html">Hyperledger Fabric Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockchain.html">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionalities.html">超级账本Fabric功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fabric_model.html">超级账本Fabric模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/network.html">Blockchain network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../identity/identity.html">Identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../membership/membership.html">Membership</a></li>
@@ -121,19 +122,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-a-private-data-collection-is-defined">How a private data collection is defined</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../usecases.html">Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases.html">用例</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -203,24 +204,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="private-data">
-<h1>Private data<a class="headerlink" href="#private-data" title="Permalink to this headline">¶</a></h1>
+<h1>Private data<a class="headerlink" href="#private-data" title="永久链接至标题">¶</a></h1>
 <div class="section" id="what-is-private-data">
-<h2>What is private data?<a class="headerlink" href="#what-is-private-data" title="Permalink to this headline">¶</a></h2>
-<p>In cases where a group of organizations on a channel need to keep data private from
-other organizations on that channel, they have the option to create a new channel
-comprising just the organizations who need access to the data. However, creating
-separate channels in each of these cases creates additional administrative overhead
-(maintaining chaincode versions, policies, MSPs, etc), and doesn’t allow for use
-cases in which you want all channel participants to see a transaction while keeping
-a portion of the data private.</p>
-<p>That’s why, starting in v1.2, Fabric offers the ability to create
-<strong>private data collections</strong>, which allow a defined subset of organizations on a
-channel the ability to endorse, commit, or query private data without having to
-create a separate channel.</p>
+<h2>What is private data?<a class="headerlink" href="#what-is-private-data" title="永久链接至标题">¶</a></h2>
+<p>在某个通道上的一组组织需要对该通道上的其他组织保持数据私密的情况下，它们可以选择创建一个新通道，其中只包含需要访问数据的组织。但是，在每一种情况下创建单独的通道会产生额外的管理开销(维护链码版本、策略、MSPs等)，并且不允许在保持部分数据私有的同时，让所有通道参与者都看到交易。</p>
+<p>这就是为什么从v1.2开始，Fabric就提供了创建私有数据集合的能力，这使得通道上定义的组织子集能够背书、提交或查询私有数据，而不必创建单独的通道。</p>
 </div>
 <div class="section" id="what-is-a-private-data-collection">
-<h2>What is a private data collection?<a class="headerlink" href="#what-is-a-private-data-collection" title="Permalink to this headline">¶</a></h2>
-<p>A collection is the combination of two elements:</p>
+<h2>What is a private data collection?<a class="headerlink" href="#what-is-a-private-data-collection" title="永久链接至标题">¶</a></h2>
+<p>一个私有数据集合由两个元素组成：</p>
 <ol class="simple">
 <li><p><strong>The actual private data</strong>, sent peer-to-peer <a class="reference external" href="../gossip.html">via gossip protocol</a>
 to only the organization(s) authorized to see it. This data is stored in a
@@ -236,16 +228,11 @@ in order to bootstrap cross-organization communication.</p></li>
 of every peer on the channel. The hash serves as evidence of the transaction and
 is used for state validation and can be used for audit purposes.</p></li>
 </ol>
-<p>The following diagram illustrates the ledger contents of a peer authorized to have
-private data and one which is not.</p>
+<p>下图说明了一个被授权拥有私有数据的节点和一个未授权的节点的账本内容。</p>
 <p><img alt="../_images/PrivateDataConcept-2.png" src="../_images/PrivateDataConcept-2.png" />private-data.private-data</p>
-<p>Collection members may decide to share the private data with other parties if they
-get into a dispute or if they want to transfer the asset to a third party. The
-third party can then compute the hash of the private data and see if it matches the
-state on the channel ledger, proving that the state existed between the collection
-members at a certain point in time.</p>
+<p>如果集合成员陷入争议，或者如果他们想将资产转让给第三方，则可以决定与其他方共享私有数据。然后，第三方可以计算私有数据的散列，并查看它是否与通道账本上的状态匹配，从而证明在某个时间点上集合成员之间的状态存在。</p>
 <div class="section" id="when-to-use-a-collection-within-a-channel-vs-a-separate-channel">
-<h3>When to use a collection within a channel vs. a separate channel<a class="headerlink" href="#when-to-use-a-collection-within-a-channel-vs-a-separate-channel" title="Permalink to this headline">¶</a></h3>
+<h3>When to use a collection within a channel vs. a separate channel<a class="headerlink" href="#when-to-use-a-collection-within-a-channel-vs-a-separate-channel" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>Use <strong>channels</strong> when entire transactions (and ledgers) must be kept
 confidential within a set of organizations that are members of the channel.</p></li>
@@ -259,8 +246,8 @@ from ordering service nodes.</p></li>
 </div>
 </div>
 <div class="section" id="a-use-case-to-explain-collections">
-<h2>A use case to explain collections<a class="headerlink" href="#a-use-case-to-explain-collections" title="Permalink to this headline">¶</a></h2>
-<p>Consider a group of five organizations on a channel who trade produce:</p>
+<h2>A use case to explain collections<a class="headerlink" href="#a-use-case-to-explain-collections" title="永久链接至标题">¶</a></h2>
+<p>考虑一个由5个组织组成的通道，他们交易农产品：</p>
 <ul class="simple">
 <li><p><strong>A Farmer</strong> selling his goods abroad</p></li>
 <li><p><strong>A Distributor</strong> moving goods abroad</p></li>
@@ -268,38 +255,23 @@ from ordering service nodes.</p></li>
 <li><p><strong>A Wholesaler</strong> purchasing goods from distributors</p></li>
 <li><p><strong>A Retailer</strong> purchasing goods from shippers and wholesalers</p></li>
 </ul>
-<p>The <strong>Distributor</strong> might want to make private transactions with the
-<strong>Farmer</strong> and <strong>Shipper</strong> to keep the terms of the trades confidential from
-the <strong>Wholesaler</strong> and the <strong>Retailer</strong> (so as not to expose the markup they’re
-charging).</p>
-<p>The <strong>Distributor</strong> may also want to have a separate private data relationship
-with the <strong>Wholesaler</strong> because it charges them a lower price than it does the
-<strong>Retailer</strong>.</p>
-<p>The <strong>Wholesaler</strong> may also want to have a private data relationship with the
-<strong>Retailer</strong> and the <strong>Shipper</strong>.</p>
-<p>Rather than defining many small channels for each of these relationships, multiple
-private data collections <strong>(PDC)</strong> can be defined to share private data between:</p>
+<p>分销商可能希望与农场主和托运商之间保持私密交易，以对批发商和零售商保密交易条款(以免暴露他们收取的加价)。</p>
+<p>分销商还可能希望与批发商建立单独的私有数据关系，因为它向批发商收取的价格比零售商低。</p>
+<p>批发商还可能希望与零售商和托运商建立私有数据关系。</p>
+<p>与其为这些关系定义许多小通道，不如定义多个私有数据集合(PDC)在以下各方之间共享私有数据：</p>
 <ol class="simple">
 <li><p>PDC1: <strong>Distributor</strong>, <strong>Farmer</strong> and <strong>Shipper</strong></p></li>
 <li><p>PDC2: <strong>Distributor</strong> and <strong>Wholesaler</strong></p></li>
 <li><p>PDC3: <strong>Wholesaler</strong>, <strong>Retailer</strong> and <strong>Shipper</strong></p></li>
 </ol>
 <p><img alt="../_images/PrivateDataConcept-1.png" src="../_images/PrivateDataConcept-1.png" />private-data.private-data</p>
-<p>Using this example, peers owned by the <strong>Distributor</strong> will have multiple private
-databases inside their ledger which includes the private data from the
-<strong>Distributor</strong>, <strong>Farmer</strong> and <strong>Shipper</strong> relationship and the
-<strong>Distributor</strong> and <strong>Wholesaler</strong> relationship. Because these databases are kept
-separate from the database that holds the channel ledger, private data is
-sometimes referred to as “SideDB”.</p>
+<p>使用此示例，分销商拥有的节点在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为“SideDB”。</p>
 <p><img alt="../_images/PrivateDataConcept-3.png" src="../_images/PrivateDataConcept-3.png" />private-data.private-data</p>
 </div>
 <div class="section" id="transaction-flow-with-private-data">
-<h2>Transaction flow with private data<a class="headerlink" href="#transaction-flow-with-private-data" title="Permalink to this headline">¶</a></h2>
-<p>When private data collections are referenced in chaincode, the transaction flow
-is slightly different in order to protect the confidentiality of the private
-data as transactions are proposed, endorsed, and committed to the ledger.</p>
-<p>For details on transaction flows that don’t use private data refer to our
-documentation on <a class="reference external" href="../txflow.html">transaction flow</a>.</p>
+<h2>Transaction flow with private data<a class="headerlink" href="#transaction-flow-with-private-data" title="永久链接至标题">¶</a></h2>
+<p>当在链码中引用私有数据集合时，为了保护私有数据的机密性，在提案、背书的和提交交易到账本时，交易流程略有不同。</p>
+<p>关于不使用私有数据的交易流程的详细信息，请参阅我们关于交易流程的文档。</p>
 <ol class="simple">
 <li><p>The client application submits a proposal request to invoke a chaincode
 function (reading or writing private data) to endorsing peers which are
@@ -333,23 +305,14 @@ private data is then deleted from the <code class="docutils literal notranslate"
 </ol>
 </div>
 <div class="section" id="purging-private-data">
-<h2>Purging private data<a class="headerlink" href="#purging-private-data" title="Permalink to this headline">¶</a></h2>
-<p>For very sensitive data, even the parties sharing the private data might want
-— or might be required by government regulations — to periodically “purge” the data
-on their peers, leaving behind a hash of the data on the blockchain
-to serve as immutable evidence of the private data.</p>
-<p>In some of these cases, the private data only needs to exist on the peer’s private
-database until it can be replicated into a database external to the peer’s
-blockchain. The data might also only need to exist on the peers until a chaincode business
-process is done with it (trade settled, contract fulfilled, etc).</p>
-<p>To support these use cases, private data can be purged if it has not been modified
-for a configurable number of blocks. Purged private data cannot be queried from chaincode,
-and is not available to other requesting peers.</p>
+<h2>Purging private data<a class="headerlink" href="#purging-private-data" title="永久链接至标题">¶</a></h2>
+<p>对于非常敏感的数据，即使共享私有数据的各方也可能希望 — 或政府法规要求 — 定期“清除”其peer的数据，留下区块链上的数据哈希作为私有数据的不可变证据。</p>
+<p>在某些情况下，私有数据只需要存在于节点的私有数据库上，直到可以将其复制到区块链外部的数据库中为止。数据也可能只需要存在于节点上，直到使用它完成链码业务流程(交易结算、合约履行等)。</p>
+<p>为了支持这些用例，如果已经持续N个块都没有修改私有数据了，N是可配置的，则可以清除它。清除的私有数据不能从链码查询，并且其他节点也请求不到。</p>
 </div>
 <div class="section" id="how-a-private-data-collection-is-defined">
-<h2>How a private data collection is defined<a class="headerlink" href="#how-a-private-data-collection-is-defined" title="Permalink to this headline">¶</a></h2>
-<p>For more details on collection definitions, and other low level information about
-private data and collections, refer to the <a class="reference external" href="../private-data-arch.html">private data reference topic</a>.</p>
+<h2>How a private data collection is defined<a class="headerlink" href="#how-a-private-data-collection-is-defined" title="永久链接至标题">¶</a></h2>
+<p>有关集合定义的更多详细信息，以及关于私有数据和集合的其他更细层级的信息，请参阅私有数据主题。</p>
 <!--- Licensed under Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ --></div>
 </div>
@@ -362,7 +325,7 @@ https://creativecommons.org/licenses/by/4.0/ --></div>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../usecases.html" class="btn btn-neutral float-right" title="Use Cases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../usecases.html" class="btn btn-neutral float-right" title="用例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../orderer/ordering_service.html" class="btn btn-neutral" title="The Ordering Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fabric-CA Commands &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Fabric-CA Commands &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Architecture Reference" href="../architecture.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="架构参考" href="../architecture.html" />
     <link rel="prev" title="Service Discovery CLI" href="../discovery-cli.html" /> 
 </head>
 
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -122,11 +123,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -174,7 +175,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>Fabric-CA Commands</li>
     
@@ -196,18 +197,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fabric-ca-commands">
-<h1>Fabric-CA Commands<a class="headerlink" href="#fabric-ca-commands" title="Permalink to this headline">¶</a></h1>
+<h1>Fabric-CA Commands<a class="headerlink" href="#fabric-ca-commands" title="永久链接至标题">¶</a></h1>
 <p>The Hyperledger Fabric CA is a Certificate Authority (CA) for Hyperledger Fabric.
 The commands available for the fabric-ca client and fabric-ca server are described
 in the links below.</p>
 <div class="section" id="fabric-ca-client">
-<h2>Fabric-CA Client<a class="headerlink" href="#fabric-ca-client" title="Permalink to this headline">¶</a></h2>
+<h2>Fabric-CA Client<a class="headerlink" href="#fabric-ca-client" title="永久链接至标题">¶</a></h2>
 <p>The fabric-ca-client command allows you to manage identities (including attribute management)
 and certificates (including renewal and revocation).</p>
 <p>More information on <code class="docutils literal notranslate"><span class="pre">fabric-ca-client</span></code> commands can be found <a class="reference external" href="https://hyperledger-fabric-ca.readthedocs.io/en/release-1.1/clientcli.html#fabric-ca-client-s-cli">here</a>.</p>
 </div>
 <div class="section" id="fabric-ca-server">
-<h2>Fabric-CA Server<a class="headerlink" href="#fabric-ca-server" title="Permalink to this headline">¶</a></h2>
+<h2>Fabric-CA Server<a class="headerlink" href="#fabric-ca-server" title="永久链接至标题">¶</a></h2>
 <p>The fabric-ca-server command allows you to initialize and start a server process which may host
 one or more certificate authorities.</p>
 <p>More information on <code class="docutils literal notranslate"><span class="pre">fabric-ca-server</span></code> commands can be found <a class="reference external" href="https://hyperledger-fabric-ca.readthedocs.io/en/release-1.1/servercli.html#fabric-ca-server-s-cli">here</a>.</p>
@@ -222,7 +223,7 @@ one or more certificate authorities.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../architecture.html" class="btn btn-neutral float-right" title="Architecture Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../architecture.html" class="btn btn-neutral float-right" title="架构参考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../discovery-cli.html" class="btn btn-neutral" title="Service Discovery CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

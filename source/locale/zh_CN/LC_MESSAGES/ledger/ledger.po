@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../source/ledger/ledger.md:1
 msgid "Ledger"
-msgstr ""
+msgstr "账本"
 
 #: ../../source/ledger/ledger.md:3
 msgid ""
@@ -46,7 +46,7 @@ msgstr "在这个主题中，我们将涉及:"
 
 #: ../../source/ledger/ledger.md:13 ../../source/ledger/ledger.md:25
 msgid "What is a Ledger?"
-msgstr ""
+msgstr "什么是账本？"
 
 #: ../../source/ledger/ledger.md:14
 msgid "Storing facts about business objects"

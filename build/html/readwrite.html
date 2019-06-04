@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Read-Write set semantics &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Read-Write set semantics &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Gossip data dissemination protocol" href="gossip.html" />
-    <link rel="prev" title="Private Data" href="private-data-arch.html" /> 
+    <link rel="prev" title="私有数据" href="private-data-arch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,25 +97,25 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">Architecture Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">Architecture Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">架构参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">架构起源</a></li>
 <li class="toctree-l2"><a class="reference internal" href="txflow.html">Transaction Flow</a></li>
 <li class="toctree-l2"><a class="reference external" href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">Hyperledger Fabric CA's User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fabric-sdks.html">Hyperledger Fabric SDKs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery-overview.html">Service Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channels.html">Channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">Capability Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels.html">通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">功能需求</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_as_state_database.html">CouchDB as the State Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peer_event_services.html">Peer channel-based event services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">Private Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">私有数据</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Read-Write set semantics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#transaction-simulation-and-read-write-set">Transaction simulation and read-write set</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transaction-validation-and-updating-world-state-using-read-write-set">Transaction validation and updating world state using read-write set</a></li>
@@ -127,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -175,7 +176,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="architecture.html">Architecture Reference</a> &raquo;</li>
+          <li><a href="architecture.html">架构参考</a> &raquo;</li>
         
       <li>Read-Write set semantics</li>
     
@@ -197,11 +198,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="read-write-set-semantics">
-<h1>Read-Write set semantics<a class="headerlink" href="#read-write-set-semantics" title="Permalink to this headline">¶</a></h1>
+<h1>Read-Write set semantics<a class="headerlink" href="#read-write-set-semantics" title="永久链接至标题">¶</a></h1>
 <p>This document discusses the details of the current implementation about
 the semantics of read-write sets.</p>
 <div class="section" id="transaction-simulation-and-read-write-set">
-<h2>Transaction simulation and read-write set<a class="headerlink" href="#transaction-simulation-and-read-write-set" title="Permalink to this headline">¶</a></h2>
+<h2>Transaction simulation and read-write set<a class="headerlink" href="#transaction-simulation-and-read-write-set" title="永久链接至标题">¶</a></h2>
 <p>During simulation of a transaction at an <code class="docutils literal notranslate"><span class="pre">endorser</span></code>, a read-write set
 is prepared for the transaction. The <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">set</span></code> contains a list of
 unique keys and their committed versions that the transaction reads
@@ -254,7 +255,7 @@ simulation, the range query as well as its results will be added to the
 read-write set as <code class="docutils literal notranslate"><span class="pre">query-info</span></code>.</p>
 </div>
 <div class="section" id="transaction-validation-and-updating-world-state-using-read-write-set">
-<h2>Transaction validation and updating world state using read-write set<a class="headerlink" href="#transaction-validation-and-updating-world-state-using-read-write-set" title="Permalink to this headline">¶</a></h2>
+<h2>Transaction validation and updating world state using read-write set<a class="headerlink" href="#transaction-validation-and-updating-world-state-using-read-write-set" title="永久链接至标题">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">committer</span></code> uses the read set portion of the read-write set for
 checking the validity of a transaction and the write set portion of the
 read-write set for updating the versions and the values of the affected
@@ -288,7 +289,7 @@ is set to the value as specified in the write set. Further, the version
 of the key in the world state is changed to reflect the latest version.</p>
 </div>
 <div class="section" id="example-simulation-and-validation">
-<h2>Example simulation and validation<a class="headerlink" href="#example-simulation-and-validation" title="Permalink to this headline">¶</a></h2>
+<h2>Example simulation and validation<a class="headerlink" href="#example-simulation-and-validation" title="永久链接至标题">¶</a></h2>
 <p>This section helps with understanding the semantics through an example
 scenario. For the purpose of this example, the presence of a key, <code class="docutils literal notranslate"><span class="pre">k</span></code>,
 in the world state is represented by a tuple <code class="docutils literal notranslate"><span class="pre">(k,ver,val)</span></code> where
@@ -338,7 +339,7 @@ not modified by any of the preceding transactions</p></li>
         <a href="gossip.html" class="btn btn-neutral float-right" title="Gossip data dissemination protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="private-data-arch.html" class="btn btn-neutral" title="Private Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="private-data-arch.html" class="btn btn-neutral" title="私有数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

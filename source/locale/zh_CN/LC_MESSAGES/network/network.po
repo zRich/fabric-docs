@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../source/network/network.md:1
 msgid "Blockchain network"
-msgstr ""
+msgstr "区块链网络"
 
 #: ../../source/network/network.md:3
 msgid ""
@@ -63,7 +64,7 @@ msgstr ""
 
 #: ../../source/network/network.md:27
 msgid "What is a blockchain network?"
-msgstr ""
+msgstr "什么是区块链网络？"
 
 #: ../../source/network/network.md:29
 msgid ""
@@ -89,7 +90,7 @@ msgstr ""
 
 #: ../../source/network/network.md:44
 msgid "The sample network"
-msgstr ""
+msgstr "示例网络"
 
 #: ../../source/network/network.md:46
 msgid ""
@@ -141,7 +142,7 @@ msgstr ""
 
 #: ../../source/network/network.md:83
 msgid "Creating the Network"
-msgstr ""
+msgstr "创建网络"
 
 #: ../../source/network/network.md:85
 msgid "Let's start at the beginning by creating the basis for the network:"
@@ -173,7 +174,7 @@ msgstr ""
 
 #: ../../source/network/network.md:104
 msgid "Certificate Authorities"
-msgstr ""
+msgstr "证书认证机构"
 
 #: ../../source/network/network.md:106
 msgid ""
@@ -239,7 +240,7 @@ msgstr ""
 
 #: ../../source/network/network.md:150
 msgid "Adding Network Administrators"
-msgstr ""
+msgstr "添加网络管理员"
 
 #: ../../source/network/network.md:152
 msgid ""
@@ -296,7 +297,7 @@ msgstr "我们将在本主题的稍后部分进一步讨论排序服务，但是
 
 #: ../../source/network/network.md:187
 msgid "Defining a Consortium"
-msgstr ""
+msgstr "定义联盟"
 
 #: ../../source/network/network.md:189
 msgid ""
@@ -358,7 +359,7 @@ msgstr "现在，我们将使用联盟X1创建一个非常重要的超级账本F
 
 #: ../../source/network/network.md:223
 msgid "Creating a channel for a consortium"
-msgstr ""
+msgstr "为联盟创建一个通道"
 
 #: ../../source/network/network.md:225
 msgid ""
@@ -462,7 +463,7 @@ msgstr ""
 
 #: ../../source/network/network.md:290
 msgid "Peers and Ledgers"
-msgstr ""
+msgstr "节点和账本"
 
 #: ../../source/network/network.md:292
 msgid ""
@@ -512,7 +513,7 @@ msgstr ""
 
 #: ../../source/network/network.md:320
 msgid "Applications and Smart Contract chaincode"
-msgstr ""
+msgstr "应用程序和智能合约"
 
 #: ../../source/network/network.md:322
 msgid ""
@@ -574,7 +575,7 @@ msgstr ""
 
 #: ../../source/network/network.md:360
 msgid "Installing a smart contract"
-msgstr ""
+msgstr "安装一个智能合约"
 
 #: ../../source/network/network.md:362
 msgid ""
@@ -597,7 +598,7 @@ msgstr "当一个组织在一个通道中有多个peer时，它可以选择在�
 
 #: ../../source/network/network.md:374
 msgid "Instantiating a smart contract"
-msgstr ""
+msgstr "实例化一个智能合约"
 
 #: ../../source/network/network.md:376
 msgid ""
@@ -626,7 +627,7 @@ msgstr ""
 
 #: ../../source/network/network.md:393
 msgid "Endorsement policy"
-msgstr ""
+msgstr "背书策略"
 
 #: ../../source/network/network.md:395
 msgid ""
@@ -648,7 +649,7 @@ msgstr "实例化行为将背书策略放置在通道配置CC1中;它使通道�
 
 #: ../../source/network/network.md:406
 msgid "Invoking a smart contract"
-msgstr ""
+msgstr "调用一个智能合约"
 
 #: ../../source/network/network.md:408
 msgid ""
@@ -684,7 +685,7 @@ msgstr ""
 
 #: ../../source/network/network.md:428
 msgid "Network completed"
-msgstr ""
+msgstr "网络设置结束"
 
 #: ../../source/network/network.md:430
 msgid ""
@@ -732,7 +733,7 @@ msgstr ""
 
 #: ../../source/network/network.md:456
 msgid "Generating and accepting transactions"
-msgstr ""
+msgstr "生成并接受交易"
 
 #: ../../source/network/network.md:458
 msgid ""
@@ -771,7 +772,7 @@ msgstr ""
 
 #: ../../source/network/network.md:480
 msgid "Types of peers"
-msgstr ""
+msgstr "节点类型"
 
 #: ../../source/network/network.md:482
 msgid ""
@@ -790,6 +791,8 @@ msgid ""
 "before they are committed to the peer node's copy of the ledger as an append"
 " operation."
 msgstr ""
+"在一个通道中的每个 peer 节点都是一个记账节点。他们会接收生成的交易的区块，在这些区块以一种附加的操作被 提交到 peer "
+"节点的账本副本中之前，他们会被验证。"
 
 #: ../../source/network/network.md:491
 msgid ""
@@ -799,6 +802,9 @@ msgid ""
 " generate a digitally signed transaction response. The term endorsing peer "
 "is an explicit reference to this fact."
 msgstr ""
+"背书 peer。 每一个带有一个智能合约 的 peer 可以作为一个 endorsing peer。然而，想要成为一个真正的 endorsing "
+"peer， 在 peer 上的智能合约必须要被一个客户端应用使用，来生成一个被数字签名的交易的 response。 这个 endorsing peer "
+"术语就是对这个事实的真实参考。"
 
 #: ../../source/network/network.md:498
 msgid ""
@@ -806,6 +812,8 @@ msgid ""
 "whose peer should digitally sign a generated transaction before it can be "
 "accepted onto a committing peer's copy of the ledger."
 msgstr ""
+"对于一个智能合约的一个背书策略明确了在交易能够被接受并且记录到 commiting peer 的账本 副本之前，都哪些组织的 peer "
+"需要为交易提供数字签名。"
 
 #: ../../source/network/network.md:502
 msgid ""
@@ -823,6 +831,9 @@ msgid ""
 " the orderer to the other committing peers in the organization.  A peer can "
 "choose to participate in static or dynamic leadership selection."
 msgstr ""
+"Leader peer. 当一个组织在一个 channel 中具有多个 peers 的时候，会有一个 leader peer， "
+"它是一个节点来负责将交易从 order 节点分发到该组织中其他的 committing peers。 一个节点可以选择参与静态的或者动态的 "
+"leadership 的选择。"
 
 #: ../../source/network/network.md:511
 msgid ""
@@ -833,6 +844,9 @@ msgid ""
 "by the set. Moreover, in the dynamic set, if a leader peer fails, then the "
 "remaining peers will re-elect a leader."
 msgstr ""
+"这个是很有用的，从管理者的角度来考虑的话会有两套 peers - 一套是具有静态 leader 选择的， 另一套是带有动态的 leader "
+"选择的。对于静态的，0 个或者多个 peers 可以被配置为 leader。 对于动态的，一个 peer 会被选举成为 leader。另外，在动态选择 "
+"leader 中，如果一个 leader peer 出错了，那么剩下的 peers 将会重新选举一个 leader。"
 
 #: ../../source/network/network.md:518
 msgid ""
@@ -840,6 +854,8 @@ msgid ""
 " to the ordering service. This can help to improve resilience and "
 "scalability in large networks which process high volumes of transactions."
 msgstr ""
+"这意味着一个组织的 peers 可以有一个或者多个 leaders 连接到 ordering service。这个对于 "
+"一个大型的处理大量的交易的网络有助于改进弹性以及可扩展性。"
 
 #: ../../source/network/network.md:522
 msgid ""
@@ -849,6 +865,9 @@ msgid ""
 "anchor peers defined for it, and an anchor peer can help with many different"
 " cross-organization communication scenarios."
 msgstr ""
+"Anchor peer. 如果一个 peer 需要同另外一个组织 的一个 peer 进行通信的话，那么它可以使用对方组织的 channel "
+"configuration 中定义的 anchor peers。一个组织可以拥有 0 个或者多个 anchor peers，并且一个 anchor "
+"peer 能够帮助很多不同的跨组织间的通信场景。"
 
 #: ../../source/network/network.md:529
 msgid ""
@@ -861,7 +880,7 @@ msgstr ""
 
 #: ../../source/network/network.md:534
 msgid "Install not instantiate"
-msgstr ""
+msgstr "安装但没有实例化"
 
 #: ../../source/network/network.md:536
 msgid ""
@@ -932,7 +951,7 @@ msgstr ""
 
 #: ../../source/network/network.md:578
 msgid "Simplifying the visual vocabulary"
-msgstr ""
+msgstr "简化视觉词汇表"
 
 #: ../../source/network/network.md:580
 msgid ""
@@ -977,7 +996,7 @@ msgstr ""
 
 #: ../../source/network/network.md:604
 msgid "Adding another consortium definition"
-msgstr ""
+msgstr "添加另外一个联盟定义"
 
 #: ../../source/network/network.md:606
 msgid ""
@@ -1030,7 +1049,7 @@ msgstr "在实践中，联盟定义X2被添加到网络配置NC4中。我们将�
 
 #: ../../source/network/network.md:637
 msgid "Adding a new channel"
-msgstr ""
+msgstr "添加一个新通道"
 
 #: ../../source/network/network.md:639
 msgid ""
@@ -1091,7 +1110,7 @@ msgstr ""
 
 #: ../../source/network/network.md:677
 msgid "Network and channel configurations"
-msgstr ""
+msgstr "网络和 channel 配置"
 
 #: ../../source/network/network.md:679
 msgid ""
@@ -1219,7 +1238,7 @@ msgstr ""
 
 #: ../../source/network/network.md:762
 msgid "Adding another peer"
-msgstr ""
+msgstr "添加另一个节点"
 
 #: ../../source/network/network.md:764
 msgid ""
@@ -1283,7 +1302,7 @@ msgstr ""
 
 #: ../../source/network/network.md:800
 msgid "Joining a peer to multiple channels"
-msgstr ""
+msgstr "把一个节点添加到多个通道中"
 
 #: ../../source/network/network.md:802
 msgid ""
@@ -1369,7 +1388,7 @@ msgstr ""
 
 #: ../../source/network/network.md:849
 msgid "The ordering service"
-msgstr ""
+msgstr "排序服务"
 
 #: ../../source/network/network.md:851
 msgid ""
@@ -1423,7 +1442,7 @@ msgstr ""
 
 #: ../../source/network/network.md:882
 msgid "De-centralized transaction distribution"
-msgstr ""
+msgstr "去中心化的交易分发"
 
 #: ../../source/network/network.md:884
 msgid ""
@@ -1466,7 +1485,7 @@ msgstr ""
 
 #: ../../source/network/network.md:909
 msgid "Changing policy"
-msgstr ""
+msgstr "修改策略"
 
 #: ../../source/network/network.md:911
 msgid ""
@@ -1563,7 +1582,7 @@ msgstr "在本小节中，我们只讨论了策略和mod_policy的功能的皮�
 
 #: ../../source/network/network.md:968
 msgid "Network fully formed"
-msgstr ""
+msgstr "网路已经完全形成了"
 
 #: ../../source/network/network.md:970
 msgid ""
@@ -1604,7 +1623,7 @@ msgstr ""
 
 #: ../../source/network/network.md:996
 msgid "Summary of network components"
-msgstr ""
+msgstr "网络组件的总结"
 
 #: ../../source/network/network.md:998
 msgid "Here's a quick summary of the network components we've discussed:"
@@ -1613,31 +1632,31 @@ msgstr "下面是我们讨论过的网络组件的快速总结:"
 #: ../../source/network/network.md:1000
 msgid ""
 "Ledger. One per channel. Comprised of the Blockchain and the World state"
-msgstr ""
+msgstr "账本：每个通道一个，由区块链和世界状态组成；"
 
 #: ../../source/network/network.md:1003
 msgid "Smart contract (aka chaincode)"
-msgstr ""
+msgstr "智能合约（即链码）"
 
 #: ../../source/network/network.md:1004
 msgid "Peer nodes"
-msgstr ""
+msgstr "Peer节点"
 
 #: ../../source/network/network.md:1005
 msgid "Ordering service"
-msgstr ""
+msgstr "排序服务"
 
 #: ../../source/network/network.md:1006
 msgid "Channel"
-msgstr ""
+msgstr "通道"
 
 #: ../../source/network/network.md:1007
 msgid "Certificate Authority"
-msgstr ""
+msgstr "证书认证机构"
 
 #: ../../source/network/network.md:1009
 msgid "Network summary"
-msgstr ""
+msgstr "网络总结"
 
 #: ../../source/network/network.md:1011
 msgid ""

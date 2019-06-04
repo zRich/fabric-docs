@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Transaction Flow &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Transaction Flow &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Hyperledger Fabric SDKs" href="fabric-sdks.html" />
-    <link rel="prev" title="Architecture Origins" href="arch-deep-dive.html" /> 
+    <link rel="prev" title="架构起源" href="arch-deep-dive.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,25 +97,25 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">Architecture Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">Architecture Origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">架构参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arch-deep-dive.html">架构起源</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Transaction Flow</a></li>
 <li class="toctree-l2"><a class="reference external" href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">Hyperledger Fabric CA's User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fabric-sdks.html">Hyperledger Fabric SDKs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery-overview.html">Service Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channels.html">Channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">Capability Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels.html">通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">功能需求</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_as_state_database.html">CouchDB as the State Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peer_event_services.html">Peer channel-based event services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">Private Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">私有数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="readwrite.html">Read-Write set semantics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gossip.html">Gossip data dissemination protocol</a></li>
 </ul>
@@ -122,7 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -170,7 +171,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="architecture.html">Architecture Reference</a> &raquo;</li>
+          <li><a href="architecture.html">架构参考</a> &raquo;</li>
         
       <li>Transaction Flow</li>
     
@@ -192,7 +193,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="transaction-flow">
-<h1>Transaction Flow<a class="headerlink" href="#transaction-flow" title="Permalink to this headline">¶</a></h1>
+<h1>Transaction Flow<a class="headerlink" href="#transaction-flow" title="永久链接至标题">¶</a></h1>
 <p>This document outlines the transactional mechanics that take place during a
 standard asset exchange. The scenario includes two clients, A and B, who are
 buying and selling radishes. They each have a peer on the network through which
@@ -244,7 +245,7 @@ ledger at this point. The set of these values, along with the endorsing peer’s
 signature is passed back as a “proposal response” to the SDK which parses the
 payload for the application to consume.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The MSP is a peer component that allows peers to verify transaction
 requests arriving from clients and to sign transaction results
 (endorsements). The writing policy is defined at channel creation time
@@ -297,7 +298,7 @@ emitted, to notify the client application that the transaction (invocation) has
 been immutably appended to the chain, as well as notification of whether the
 transaction was validated or invalidated.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Applications should listen for the transaction event after submitting
 a transaction, for example by using the <code class="docutils literal notranslate"><span class="pre">submitTransaction</span></code>
 API, which automatically listen for transaction events. Without
@@ -321,7 +322,7 @@ transaction flow.</p>
         <a href="fabric-sdks.html" class="btn btn-neutral float-right" title="Hyperledger Fabric SDKs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="arch-deep-dive.html" class="btn btn-neutral" title="Architecture Origins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="arch-deep-dive.html" class="btn btn-neutral" title="架构起源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

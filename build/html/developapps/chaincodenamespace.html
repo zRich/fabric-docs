@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chaincode namespace &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Chaincode namespace &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Transaction context" href="transactioncontext.html" />
     <link rel="prev" title="Contract names" href="contractname.html" /> 
 </head>
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">开发应用程序</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="designelements.html">Application design elements</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="designelements.html">应用程序设计元素</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="contractname.html">Contract names</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Chaincode namespace</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a></li>
@@ -129,13 +130,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -183,9 +184,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+          <li><a href="developing_applications.html">开发应用程序</a> &raquo;</li>
         
-          <li><a href="designelements.html">Application design elements</a> &raquo;</li>
+          <li><a href="designelements.html">应用程序设计元素</a> &raquo;</li>
         
       <li>Chaincode namespace</li>
     
@@ -207,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="chaincode-namespace">
-<h1>Chaincode namespace<a class="headerlink" href="#chaincode-namespace" title="Permalink to this headline">¶</a></h1>
+<h1>Chaincode namespace<a class="headerlink" href="#chaincode-namespace" title="永久链接至标题">¶</a></h1>
 <p><strong>Audience</strong>: Architects, application and smart contract developers,
 administrators</p>
 <p>A chaincode namespace allows it to keep its world state separate from other
@@ -227,7 +228,7 @@ transactions which relate to different world states.</p>
 <li><p><a class="reference external" href="#considerations">Design considerations for chaincode namespaces</a></p></li>
 </ul>
 <div class="section" id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<h2>Motivation<a class="headerlink" href="#motivation" title="永久链接至标题">¶</a></h2>
 <p>A namespace is a common concept. We understand that <em>Park Street, New York</em> and
 <em>Park Street, Seattle</em> are different streets even though they have the same
 name. The city forms a <strong>namespace</strong> for Park Street, simultaneously providing
@@ -241,7 +242,7 @@ help smart contracts keep their ledger world state separate from other smart
 contracts.</p>
 </div>
 <div class="section" id="scenario">
-<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
+<h2>Scenario<a class="headerlink" href="#scenario" title="永久链接至标题">¶</a></h2>
 <p>Let’s examine how the ledger world state organizes facts about business objects
 that are important to the organizations in a channel using the diagram below.
 Whether these objects are commercial papers, bonds, or vehicle registrations,
@@ -320,7 +321,7 @@ be modified to meet a business requirement to keep every financial asset class
 separate, or share all commercial papers and bonds?</p>
 </div>
 <div class="section" id="channels">
-<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
+<h2>Channels<a class="headerlink" href="#channels" title="永久链接至标题">¶</a></h2>
 <p>If a peer is joined to multiple channels, then a new blockchain is created
 and managed for each channel. Moreover, every time a chaincode is instantiated
 in a new channel, a new world state database is created for it. It means that
@@ -335,7 +336,7 @@ state databases created. However, the peer and chaincode containers would not
 increase; each would just be connected to multiple channels.</p>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
 <p>Let’s use our commercial paper <a class="reference external" href="#scenario">example</a> to show how an application
 uses a smart contract with namespaces. It’s worth noting that an application
 communicates with the peer, and the peer routes the request to the appropriate
@@ -405,7 +406,7 @@ could be recreated by replaying all the transactions in the blockchain.</p></li>
 </ul>
 </div>
 <div class="section" id="cross-chaincode-access">
-<h2>Cross chaincode access<a class="headerlink" href="#cross-chaincode-access" title="Permalink to this headline">¶</a></h2>
+<h2>Cross chaincode access<a class="headerlink" href="#cross-chaincode-access" title="永久链接至标题">¶</a></h2>
 <p>As we saw in our example <a class="reference external" href="#scenario">scenario</a>, <code class="docutils literal notranslate"><span class="pre">euroPaper</span></code> and <code class="docutils literal notranslate"><span class="pre">yenPaper</span></code>
 cannot directly access <code class="docutils literal notranslate"><span class="pre">world</span> <span class="pre">state</span> <span class="pre">B</span></code>.  That’s because we have designed our
 chaincodes and smart contracts so that these chaincodes and world states are
@@ -440,7 +441,7 @@ possible to invoke a smart contract which will update the called chaincode’s
 world state.  See the <a class="reference external" href="#considerations">considerations</a> below.</p>
 </div>
 <div class="section" id="considerations">
-<h2>Considerations<a class="headerlink" href="#considerations" title="Permalink to this headline">¶</a></h2>
+<h2>Considerations<a class="headerlink" href="#considerations" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>In general, each chaincode will have a single smart contract in it.</p></li>
 <li><p>Multiple smart contracts should only be deployed in the same chaincode if they

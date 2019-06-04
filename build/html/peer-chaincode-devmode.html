@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using dev mode &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Using dev mode &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,19 +95,19 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -174,7 +175,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-dev-mode">
-<h1>Using dev mode<a class="headerlink" href="#using-dev-mode" title="Permalink to this headline">¶</a></h1>
+<h1>Using dev mode<a class="headerlink" href="#using-dev-mode" title="永久链接至标题">¶</a></h1>
 <p>Normally chaincodes are started and maintained by peer. However in “dev”
 mode, chaincode is built and started by the user. This mode is useful
 during chaincode development phase for rapid code/build/run/debug cycle
@@ -187,14 +188,14 @@ single running instance can be accessed from multiple channels.</p>
 </ul>
 <p>All commands are executed from the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> folder.</p>
 <div class="section" id="start-the-orderer">
-<h2>Start the orderer<a class="headerlink" href="#start-the-orderer" title="Permalink to this headline">¶</a></h2>
+<h2>Start the orderer<a class="headerlink" href="#start-the-orderer" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ORDERER_GENERAL_GENESISPROFILE</span><span class="o">=</span><span class="n">SampleDevModeSolo</span> <span class="n">orderer</span>
 </pre></div>
 </div>
 <p>The above starts the orderer with the SampleDevModeSolo profile.</p>
 </div>
 <div class="section" id="start-the-peer-in-dev-mode">
-<h2>Start the peer in dev mode<a class="headerlink" href="#start-the-peer-in-dev-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Start the peer in dev mode<a class="headerlink" href="#start-the-peer-in-dev-mode" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CORE_PEER_CHAINCODELISTENADDRESS</span><span class="o">=</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">7052</span> <span class="n">peer</span> <span class="n">node</span> <span class="n">start</span> <span class="o">--</span><span class="n">peer</span><span class="o">-</span><span class="n">chaincodedev</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
@@ -202,7 +203,7 @@ single running instance can be accessed from multiple channels.</p>
 The <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev=true</span></code> puts it in “dev” mode.</p>
 </div>
 <div class="section" id="create-channels-ch1-and-ch2">
-<h2>Create channels ch1 and ch2<a class="headerlink" href="#create-channels-ch1-and-ch2" title="Permalink to this headline">¶</a></h2>
+<h2>Create channels ch1 and ch2<a class="headerlink" href="#create-channels-ch1-and-ch2" title="永久链接至标题">¶</a></h2>
 <p>Generate the transactions for creating the channels using the <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code>
 tool with the SampleSingleMSPChannel profile.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxgen</span> <span class="o">-</span><span class="n">channelID</span> <span class="n">ch1</span> <span class="o">-</span><span class="n">outputCreateChannelTx</span> <span class="n">ch1</span><span class="o">.</span><span class="n">tx</span> <span class="o">-</span><span class="n">profile</span> <span class="n">SampleSingleMSPChannel</span>
@@ -222,7 +223,7 @@ now is tracking channels ch1 and ch2 for the default configuration.</p>
 <p>The peer has now joined channels ch1 and ch2.</p>
 </div>
 <div class="section" id="start-the-chaincode">
-<h2>Start the chaincode<a class="headerlink" href="#start-the-chaincode" title="Permalink to this headline">¶</a></h2>
+<h2>Start the chaincode<a class="headerlink" href="#start-the-chaincode" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fabric</span><span class="o">-</span><span class="n">samples</span><span class="o">/</span><span class="n">chaincode</span><span class="o">/</span><span class="n">abstore</span><span class="o">/</span><span class="n">go</span>
 <span class="n">go</span> <span class="n">build</span> <span class="o">-</span><span class="n">o</span> <span class="n">abstore</span>
 <span class="n">CORE_CHAINCODE_LOGLEVEL</span><span class="o">=</span><span class="n">debug</span> <span class="n">CORE_PEER_ADDRESS</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">7052</span> <span class="n">CORE_CHAINCODE_ID_NAME</span><span class="o">=</span><span class="n">mycc</span><span class="p">:</span><span class="mi">0</span> <span class="o">./</span><span class="n">abstore</span>
@@ -233,7 +234,7 @@ Note that at this stage the chaincode is not associated with any channel. This i
 using the <code class="docutils literal notranslate"><span class="pre">instantiate</span></code> command.</p>
 </div>
 <div class="section" id="use-the-chaincode">
-<h2>Use the chaincode<a class="headerlink" href="#use-the-chaincode" title="Permalink to this headline">¶</a></h2>
+<h2>Use the chaincode<a class="headerlink" href="#use-the-chaincode" title="永久链接至标题">¶</a></h2>
 <p>Even though you are in <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code> mode, you still have to install the chaincode so the life-cycle system
 chaincode can go through its checks normally. This requirement may be removed in future when in <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code>
 mode.</p>

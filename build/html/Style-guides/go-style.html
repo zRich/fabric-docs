@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Coding guidelines &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Coding guidelines &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Glossary" href="../glossary.html" />
     <link rel="prev" title="Gerrit Recommended Practices" href="../Gerrit/best-practices.html" /> 
 </head>
@@ -96,15 +97,15 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#ways-to-contribute">Ways to contribute</a></li>
@@ -115,7 +116,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../CONTRIBUTING.html#related-topics">Related Topics</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../MAINTAINERS.html">Maintainers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../jira_navigation.html">Using Jira to understand current work items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dev-setup/devenv.html">Setting up the development environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev-setup/devenv.html">设置开发环境</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev-setup/build.html">Building Hyperledger Fabric</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev-setup/build.html#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Gerrit/lf-account.html">Requesting a Linux Foundation Account</a></li>
@@ -136,7 +137,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -206,9 +207,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="coding-guidelines">
-<h1>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h1>
+<h1>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="永久链接至标题">¶</a></h1>
 <div class="section" id="coding-golang">
-<h2>Coding Golang<a class="headerlink" href="#coding-golang" title="Permalink to this headline">¶</a></h2>
+<h2>Coding Golang<a class="headerlink" href="#coding-golang" title="永久链接至标题">¶</a></h2>
 <p>We code in Go™ and try to follow the best practices and style outlined in
 <a class="reference external" href="https://golang.org/doc/effective_go.html">Effective Go</a> and the
 supplemental rules from the <a class="reference external" href="https://github.com/golang/go/wiki/CodeReviewComments">Go Code Review Comments wiki</a>.</p>
@@ -230,7 +231,7 @@ by these tools must be addressed before the code will be merged:</p>
 </ul>
 </div></blockquote>
 <div class="section" id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<h3>Testing<a class="headerlink" href="#testing" title="永久链接至标题">¶</a></h3>
 <p>Unit tests are expected to accompany all production code changes. These tests
 should be fast, provide very good coverage for new and modified code, and
 support parallel execution.</p>
@@ -261,14 +262,14 @@ manage the generation with the following tools:</p>
 </div></blockquote>
 </div>
 <div class="section" id="api-documentation">
-<h3>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h3>
+<h3>API Documentation<a class="headerlink" href="#api-documentation" title="永久链接至标题">¶</a></h3>
 <p>The API documentation for Hyperledger Fabric’s Golang APIs is available
 in <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric">GoDoc</a>.</p>
 </div>
 </div>
 </div>
 <div class="section" id="generating-grpc-code">
-<h1>Generating gRPC code<a class="headerlink" href="#generating-grpc-code" title="Permalink to this headline">¶</a></h1>
+<h1>Generating gRPC code<a class="headerlink" href="#generating-grpc-code" title="永久链接至标题">¶</a></h1>
 <p>If you modify any <code class="docutils literal notranslate"><span class="pre">.proto</span></code> files, run the following command to
 generate/update the respective <code class="docutils literal notranslate"><span class="pre">.pb.go</span></code> files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $GOPATH/src/github.com/hyperledger/fabric
@@ -277,7 +278,7 @@ make protos
 </div>
 </div>
 <div class="section" id="adding-or-updating-go-packages">
-<h1>Adding or updating Go packages<a class="headerlink" href="#adding-or-updating-go-packages" title="Permalink to this headline">¶</a></h1>
+<h1>Adding or updating Go packages<a class="headerlink" href="#adding-or-updating-go-packages" title="永久链接至标题">¶</a></h1>
 <p>Hyperledger Fabric vendors dependencies. This means that all required packages
 reside in the <code class="docutils literal notranslate"><span class="pre">$GOPATH/src/github.com/hyperledger/fabric/vendor</span></code> folder. Go
 will use packages in this folder instead of the GOPATH when the <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">install</span></code>

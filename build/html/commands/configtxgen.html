@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>configtxgen &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>configtxgen &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="configtxlator" href="configtxlator.html" />
     <link rel="prev" title="token" href="token.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -132,11 +133,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -184,7 +185,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>configtxgen</li>
     
@@ -206,17 +207,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configtxgen">
-<h1>configtxgen<a class="headerlink" href="#configtxgen" title="Permalink to this headline">¶</a></h1>
+<h1>configtxgen<a class="headerlink" href="#configtxgen" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> command allows users to create and inspect channel config
 related artifacts.  The content of the generated artifacts is dictated by the
 contents of <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code>.</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> tool has no sub-commands, but supports flags which can be set
 to accomplish a number of tasks.</p>
 </div>
 <div class="section" id="id1">
-<h2>configtxgen<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>configtxgen<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span> <span class="n">of</span> <span class="n">configtxgen</span><span class="p">:</span>
   <span class="o">-</span><span class="n">asOrg</span> <span class="n">string</span>
     	<span class="n">Performs</span> <span class="n">the</span> <span class="n">config</span> <span class="n">generation</span> <span class="k">as</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">organization</span> <span class="p">(</span><span class="n">by</span> <span class="n">name</span><span class="p">),</span> <span class="n">only</span> <span class="n">including</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">write</span> <span class="nb">set</span> <span class="n">that</span> <span class="n">org</span> <span class="p">(</span><span class="n">likely</span><span class="p">)</span> <span class="n">has</span> <span class="n">privilege</span> <span class="n">to</span> <span class="nb">set</span>
@@ -246,9 +247,9 @@ to accomplish a number of tasks.</p>
 </div>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
 <div class="section" id="output-a-genesis-block">
-<h3>Output a genesis block<a class="headerlink" href="#output-a-genesis-block" title="Permalink to this headline">¶</a></h3>
+<h3>Output a genesis block<a class="headerlink" href="#output-a-genesis-block" title="永久链接至标题">¶</a></h3>
 <p>Write a genesis block to <code class="docutils literal notranslate"><span class="pre">genesis_block.pb</span></code> for channel <code class="docutils literal notranslate"><span class="pre">orderer-system-channel</span></code>
 for profile <code class="docutils literal notranslate"><span class="pre">SampleSingleMSPSoloV1_1</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxgen</span> <span class="o">-</span><span class="n">outputBlock</span> <span class="n">genesis_block</span><span class="o">.</span><span class="n">pb</span> <span class="o">-</span><span class="n">profile</span> <span class="n">SampleSingleMSPSoloV1_1</span> <span class="o">-</span><span class="n">channelID</span> <span class="n">orderer</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">channel</span>
@@ -256,7 +257,7 @@ for profile <code class="docutils literal notranslate"><span class="pre">SampleS
 </div>
 </div>
 <div class="section" id="output-a-channel-creation-tx">
-<h3>Output a channel creation tx<a class="headerlink" href="#output-a-channel-creation-tx" title="Permalink to this headline">¶</a></h3>
+<h3>Output a channel creation tx<a class="headerlink" href="#output-a-channel-creation-tx" title="永久链接至标题">¶</a></h3>
 <p>Write a channel creation transaction to <code class="docutils literal notranslate"><span class="pre">create_chan_tx.pb</span></code> for profile
 <code class="docutils literal notranslate"><span class="pre">SampleSingleMSPChannelV1_1</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxgen</span> <span class="o">-</span><span class="n">outputCreateChannelTx</span> <span class="n">create_chan_tx</span><span class="o">.</span><span class="n">pb</span> <span class="o">-</span><span class="n">profile</span> <span class="n">SampleSingleMSPChannelV1_1</span> <span class="o">-</span><span class="n">channelID</span> <span class="n">application</span><span class="o">-</span><span class="n">channel</span><span class="o">-</span><span class="mi">1</span>
@@ -264,7 +265,7 @@ for profile <code class="docutils literal notranslate"><span class="pre">SampleS
 </div>
 </div>
 <div class="section" id="inspect-a-genesis-block">
-<h3>Inspect a genesis block<a class="headerlink" href="#inspect-a-genesis-block" title="Permalink to this headline">¶</a></h3>
+<h3>Inspect a genesis block<a class="headerlink" href="#inspect-a-genesis-block" title="永久链接至标题">¶</a></h3>
 <p>Print the contents of a genesis block named <code class="docutils literal notranslate"><span class="pre">genesis_block.pb</span></code> to the screen as
 JSON.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxgen</span> <span class="o">-</span><span class="n">inspectBlock</span> <span class="n">genesis_block</span><span class="o">.</span><span class="n">pb</span>
@@ -272,7 +273,7 @@ JSON.</p>
 </div>
 </div>
 <div class="section" id="inspect-a-channel-creation-tx">
-<h3>Inspect a channel creation tx<a class="headerlink" href="#inspect-a-channel-creation-tx" title="Permalink to this headline">¶</a></h3>
+<h3>Inspect a channel creation tx<a class="headerlink" href="#inspect-a-channel-creation-tx" title="永久链接至标题">¶</a></h3>
 <p>Print the contents of a channel creation tx named <code class="docutils literal notranslate"><span class="pre">create_chan_tx.pb</span></code> to the
 screen as JSON.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxgen</span> <span class="o">-</span><span class="n">inspectChannelCreateTx</span> <span class="n">create_chan_tx</span><span class="o">.</span><span class="n">pb</span>
@@ -280,7 +281,7 @@ screen as JSON.</p>
 </div>
 </div>
 <div class="section" id="print-an-organization-definition">
-<h3>Print an organization definition<a class="headerlink" href="#print-an-organization-definition" title="Permalink to this headline">¶</a></h3>
+<h3>Print an organization definition<a class="headerlink" href="#print-an-organization-definition" title="永久链接至标题">¶</a></h3>
 <p>Construct an organization definition based on the parameters such as MSPDir
 from <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code> and print it as JSON to the screen. (This output is useful
 for channel reconfiguration workflows, such as adding a member).</p>
@@ -289,7 +290,7 @@ for channel reconfiguration workflows, such as adding a member).</p>
 </div>
 </div>
 <div class="section" id="output-anchor-peer-tx">
-<h3>Output anchor peer tx<a class="headerlink" href="#output-anchor-peer-tx" title="Permalink to this headline">¶</a></h3>
+<h3>Output anchor peer tx<a class="headerlink" href="#output-anchor-peer-tx" title="永久链接至标题">¶</a></h3>
 <p>Output a configuration update transaction to <code class="docutils literal notranslate"><span class="pre">anchor_peer_tx.pb</span></code> which sets the
 anchor peers for organization Org1 as defined in profile
 SampleSingleMSPChannelV1_1 based on <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code>.</p>
@@ -299,7 +300,7 @@ SampleSingleMSPChannelV1_1 based on <code class="docutils literal notranslate"><
 </div>
 </div>
 <div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> tool’s output is largely controlled by the content of
 <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code>.  This file is searched for at <code class="docutils literal notranslate"><span class="pre">FABRIC_CFG_PATH</span></code> and must be
 present for <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> to operate.</p>

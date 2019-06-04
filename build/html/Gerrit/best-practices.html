@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gerrit Recommended Practices &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Gerrit Recommended Practices &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Coding guidelines" href="../style-guides/go-style.html" />
     <link rel="prev" title="Reviewing a Change" href="reviewing.html" /> 
 </head>
@@ -96,15 +97,15 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#ways-to-contribute">Ways to contribute</a></li>
@@ -115,7 +116,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../CONTRIBUTING.html#related-topics">Related Topics</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../MAINTAINERS.html">Maintainers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../jira_navigation.html">Using Jira to understand current work items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dev-setup/devenv.html">Setting up the development environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev-setup/devenv.html">设置开发环境</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev-setup/build.html">Building Hyperledger Fabric</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev-setup/build.html#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lf-account.html">Requesting a Linux Foundation Account</a></li>
@@ -150,7 +151,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -220,13 +221,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gerrit-recommended-practices">
-<h1>Gerrit Recommended Practices<a class="headerlink" href="#gerrit-recommended-practices" title="Permalink to this headline">¶</a></h1>
+<h1>Gerrit Recommended Practices<a class="headerlink" href="#gerrit-recommended-practices" title="永久链接至标题">¶</a></h1>
 <p>This document presents some best practices to help you use Gerrit more
 effectively. The intent is to show how content can be submitted easily.
 Use the recommended practices to reduce your troubleshooting time and
 improve participation in the community.</p>
 <div class="section" id="browsing-the-git-tree">
-<h2>Browsing the Git Tree<a class="headerlink" href="#browsing-the-git-tree" title="Permalink to this headline">¶</a></h2>
+<h2>Browsing the Git Tree<a class="headerlink" href="#browsing-the-git-tree" title="永久链接至标题">¶</a></h2>
 <p>Visit
 <a class="reference external" href="https://gerrit.hyperledger.org/r/#/admin/projects/fabric">Gerrit</a>
 then select <code class="docutils literal notranslate"><span class="pre">Projects</span> <span class="pre">--&gt;</span> <span class="pre">List</span> <span class="pre">--&gt;</span> <span class="pre">SELECT-PROJECT</span> <span class="pre">--&gt;</span> <span class="pre">Branches</span></code>.
@@ -235,14 +236,14 @@ right-hand side. Now, <code class="docutils literal notranslate"><span class="pr
 interface and redirects appropriately.</p>
 </div>
 <div class="section" id="watching-a-project">
-<h2>Watching a Project<a class="headerlink" href="#watching-a-project" title="Permalink to this headline">¶</a></h2>
+<h2>Watching a Project<a class="headerlink" href="#watching-a-project" title="永久链接至标题">¶</a></h2>
 <p>Visit
 <a class="reference external" href="https://gerrit.hyperledger.org/r/#/admin/projects/fabric">Gerrit</a>,
 then select <code class="docutils literal notranslate"><span class="pre">Settings</span></code>, located on the top right corner. Select
 <code class="docutils literal notranslate"><span class="pre">Watched</span> <span class="pre">Projects</span></code> and then add any projects that interest you.</p>
 </div>
 <div class="section" id="commit-messages">
-<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h2>
+<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="永久链接至标题">¶</a></h2>
 <p>Gerrit follows the Git commit message format. Ensure the headers are at
 the bottom and don’t contain blank lines between one another. The
 following example shows the format and content expected in a commit
@@ -264,13 +265,13 @@ Change-Id which is one time use.</p>
 Message</a></p>
 </div>
 <div class="section" id="avoid-pushing-untested-work-to-a-gerrit-server">
-<h2>Avoid Pushing Untested Work to a Gerrit Server<a class="headerlink" href="#avoid-pushing-untested-work-to-a-gerrit-server" title="Permalink to this headline">¶</a></h2>
+<h2>Avoid Pushing Untested Work to a Gerrit Server<a class="headerlink" href="#avoid-pushing-untested-work-to-a-gerrit-server" title="永久链接至标题">¶</a></h2>
 <p>To avoid pushing untested work to Gerrit.</p>
 <p>Check your work at least three times before pushing your change to
 Gerrit. Be mindful of what information you are publishing.</p>
 </div>
 <div class="section" id="keeping-track-of-changes">
-<h2>Keeping Track of Changes<a class="headerlink" href="#keeping-track-of-changes" title="Permalink to this headline">¶</a></h2>
+<h2>Keeping Track of Changes<a class="headerlink" href="#keeping-track-of-changes" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>Set Gerrit to send you emails:</p></li>
 <li><p>Gerrit will add you to the email distribution list for a change if a
@@ -286,7 +287,7 @@ Changes</em>.</p></li>
 feedback/comments mailing list to learn and help others ramp up.</p>
 </div>
 <div class="section" id="topic-branches">
-<h2>Topic branches<a class="headerlink" href="#topic-branches" title="Permalink to this headline">¶</a></h2>
+<h2>Topic branches<a class="headerlink" href="#topic-branches" title="永久链接至标题">¶</a></h2>
 <p>Topic branches are temporary branches that you push to commit a set of
 logically-grouped dependent commits:</p>
 <p>To push changes from <code class="docutils literal notranslate"><span class="pre">REMOTE/master</span></code> tree to Gerrit for being reviewed
@@ -300,7 +301,7 @@ as a topic in <strong>TopicName</strong> use the following command as an example
 tree when its content is merged.</p>
 </div>
 <div class="section" id="creating-a-cover-letter-for-a-topic">
-<h2>Creating a Cover Letter for a Topic<a class="headerlink" href="#creating-a-cover-letter-for-a-topic" title="Permalink to this headline">¶</a></h2>
+<h2>Creating a Cover Letter for a Topic<a class="headerlink" href="#creating-a-cover-letter-for-a-topic" title="永久链接至标题">¶</a></h2>
 <p>You may decide whether or not you’d like the cover letter to appear in
 the history.</p>
 <ol class="arabic simple">
@@ -346,7 +347,7 @@ the last commit on the list. Use the following command as an example:</p>
 sum of the commits plus your new cover letter.</p>
 </div>
 <div class="section" id="finding-available-topics">
-<h2>Finding Available Topics<a class="headerlink" href="#finding-available-topics" title="Permalink to this headline">¶</a></h2>
+<h2>Finding Available Topics<a class="headerlink" href="#finding-available-topics" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh -p 29418 gerrit.hyperledger.org gerrit query \ status:open project:fabric branch:master \
 | grep topic: | sort -u
 </pre></div>
@@ -365,7 +366,7 @@ all.</p></li>
 </ul>
 </div>
 <div class="section" id="downloading-or-checking-out-a-change">
-<h2>Downloading or Checking Out a Change<a class="headerlink" href="#downloading-or-checking-out-a-change" title="Permalink to this headline">¶</a></h2>
+<h2>Downloading or Checking Out a Change<a class="headerlink" href="#downloading-or-checking-out-a-change" title="永久链接至标题">¶</a></h2>
 <p>In the review UI, on the top right corner, the <strong>Download</strong> link
 provides a list of commands and hyperlinks to checkout or download diffs
 or files.</p>
@@ -391,7 +392,7 @@ digits (24):</p>
 </div>
 </div>
 <div class="section" id="using-draft-branches">
-<h2>Using Draft Branches<a class="headerlink" href="#using-draft-branches" title="Permalink to this headline">¶</a></h2>
+<h2>Using Draft Branches<a class="headerlink" href="#using-draft-branches" title="永久链接至标题">¶</a></h2>
 <p>You can use draft branches to add specific reviewers before you
 publishing your change. The Draft Branches are pushed to
 <code class="docutils literal notranslate"><span class="pre">refs/drafts/master/TopicName</span></code></p>
@@ -406,7 +407,7 @@ publishing your change. The Draft Branches are pushed to
 </div>
 </div>
 <div class="section" id="using-sandbox-branches">
-<h2>Using Sandbox Branches<a class="headerlink" href="#using-sandbox-branches" title="Permalink to this headline">¶</a></h2>
+<h2>Using Sandbox Branches<a class="headerlink" href="#using-sandbox-branches" title="永久链接至标题">¶</a></h2>
 <p>You can create your own branches to develop features. The branches are
 pushed to the <code class="docutils literal notranslate"><span class="pre">refs/sandbox/USERNAME/BRANCHNAME</span></code> location.</p>
 <p>These commands ensure the branch is created in Gerrit’s server.</p>
@@ -432,7 +433,7 @@ pushed to the <code class="docutils literal notranslate"><span class="pre">refs/
 </div>
 </div>
 <div class="section" id="updating-the-version-of-a-change">
-<h2>Updating the Version of a Change<a class="headerlink" href="#updating-the-version-of-a-change" title="Permalink to this headline">¶</a></h2>
+<h2>Updating the Version of a Change<a class="headerlink" href="#updating-the-version-of-a-change" title="永久链接至标题">¶</a></h2>
 <p>During the review process, you might be asked to update your change. It
 is possible to submit multiple versions of the same change. Each version
 of the change is called a patch set.</p>
@@ -463,7 +464,7 @@ Gerrit on the <code class="docutils literal notranslate"><span class="pre">revie
 <p>It is also permitted to add more commits when pushing new versions.</p>
 </div>
 <div class="section" id="rebasing">
-<h2>Rebasing<a class="headerlink" href="#rebasing" title="Permalink to this headline">¶</a></h2>
+<h2>Rebasing<a class="headerlink" href="#rebasing" title="永久链接至标题">¶</a></h2>
 <p>Rebasing is usually the last step before pushing changes to Gerrit; this
 allows you to make the necessary <em>Change-Ids</em>. The <em>Change-Ids</em> must be
 kept the same.</p>
@@ -476,7 +477,7 @@ kept the same.</p>
 </ul>
 </div>
 <div class="section" id="rebasing-during-a-pull">
-<h2>Rebasing During a Pull<a class="headerlink" href="#rebasing-during-a-pull" title="Permalink to this headline">¶</a></h2>
+<h2>Rebasing During a Pull<a class="headerlink" href="#rebasing-during-a-pull" title="永久链接至标题">¶</a></h2>
 <p>Before pushing a rebase to your master, ensure that the history has a
 consecutive order.</p>
 <p>For example, your <code class="docutils literal notranslate"><span class="pre">REMOTE/master</span></code> has the list of commits from <strong>a0</strong>
@@ -512,7 +513,7 @@ c7
 </div>
 </div>
 <div class="section" id="getting-better-logs-from-git">
-<h2>Getting Better Logs from Git<a class="headerlink" href="#getting-better-logs-from-git" title="Permalink to this headline">¶</a></h2>
+<h2>Getting Better Logs from Git<a class="headerlink" href="#getting-better-logs-from-git" title="永久链接至标题">¶</a></h2>
 <p>Use these commands to change the configuration of Git in order to
 produce better logs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="n">log</span><span class="o">.</span><span class="n">abbrevCommit</span> <span class="n">true</span>

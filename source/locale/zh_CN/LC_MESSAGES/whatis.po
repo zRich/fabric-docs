@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:53+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../source/whatis.md:1
 msgid "Introduction"
-msgstr ""
+msgstr "介绍"
 
 #: ../../source/whatis.md:3
 msgid ""
@@ -68,25 +69,25 @@ msgstr "对于企业使用，我们需要考虑以下要求:"
 
 #: ../../source/whatis.md:30
 msgid "Participants must be identified/identifiable"
-msgstr ""
+msgstr "必须识别/可识别参与者"
 
 #: ../../source/whatis.md:31
 msgid "Networks need to be permissioned"
-msgstr ""
+msgstr "网络需要获得 许可"
 
 #: ../../source/whatis.md:32
 msgid "High transaction throughput performance"
-msgstr ""
+msgstr "高交易吞吐量性能"
 
 #: ../../source/whatis.md:33
 msgid "Low latency of transaction confirmation"
-msgstr ""
+msgstr "交易确认低延迟"
 
 #: ../../source/whatis.md:34
 msgid ""
 "Privacy and confidentiality of transactions and data pertaining to business "
 "transactions"
-msgstr ""
+msgstr "与商业交易有关的交易和数据的隐私和机密性"
 
 #: ../../source/whatis.md:37
 msgid ""
@@ -101,7 +102,7 @@ msgstr ""
 
 #: ../../source/whatis.md:43
 msgid "Hyperledger Fabric"
-msgstr ""
+msgstr "超级账本Fabric"
 
 #: ../../source/whatis.md:45
 msgid ""
@@ -199,7 +200,7 @@ msgstr "让我们更详细地探讨这些不同的特性。"
 
 #: ../../source/whatis.md:104
 msgid "Modularity"
-msgstr ""
+msgstr "模块化"
 
 #: ../../source/whatis.md:106
 msgid ""
@@ -221,36 +222,36 @@ msgstr "在高层，Fabric由以下模块组件组成:"
 msgid ""
 "A pluggable ordering service establishes consensus on the order of "
 "transactions and then broadcasts blocks to peers."
-msgstr ""
+msgstr "可插拔排序服务对交易顺序建立共识，然后向所有节点广播各区块"
 
 #: ../../source/whatis.md:116
 msgid ""
 "A pluggable membership service provider is responsible for associating "
 "entities in the network with cryptographic identities."
-msgstr ""
+msgstr "可插入的 成员服务提供者 负责将网络中的实体与加密身份相关联。"
 
 #: ../../source/whatis.md:118
 msgid ""
 "An optional peer-to-peer gossip service disseminates the blocks output by "
 "ordering service to other peers."
-msgstr ""
+msgstr "可选的P2P gossip服务通过排序服务传播区块输出到其他节点。"
 
 #: ../../source/whatis.md:120
 msgid ""
 "Smart contracts (\"chaincode\") run within a container environment (e.g. "
 "Docker) for isolation. They can be written in standard programming languages"
 " but do not have direct access to the ledger state."
-msgstr ""
+msgstr "智能合约（“链码”）在容器环境（例如Docker）内运行以隔离。它们可以用标准编程语言编写，但不能直接访问账本状态。"
 
 #: ../../source/whatis.md:123
 msgid "The ledger can be configured to support a variety of DBMSs."
-msgstr ""
+msgstr "账本可以配置成支持各种DBMS。"
 
 #: ../../source/whatis.md:124
 msgid ""
 "A pluggable endorsement and validation policy enforcement that can be "
 "independently configured per application."
-msgstr ""
+msgstr "可插拔的背书和验证策略实施，可根据应用程序自由配置。"
 
 #: ../../source/whatis.md:127
 msgid ""
@@ -261,7 +262,7 @@ msgstr "业内有一个公平的认识，即没有“一个区块链来统治所
 
 #: ../../source/whatis.md:131
 msgid "Permissioned vs Permissionless Blockchains"
-msgstr ""
+msgstr "许可区块链与非许可区块链"
 
 #: ../../source/whatis.md:133
 msgid ""
@@ -305,7 +306,7 @@ msgstr ""
 
 #: ../../source/whatis.md:160
 msgid "Smart Contracts"
-msgstr ""
+msgstr "智能合约"
 
 #: ../../source/whatis.md:162
 msgid ""
@@ -328,16 +329,16 @@ msgstr ""
 
 #: ../../source/whatis.md:170
 msgid "many smart contracts run concurrently in the network,"
-msgstr ""
+msgstr "许多智能合约在网络中同时运行；"
 
 #: ../../source/whatis.md:171
 msgid "they may be deployed dynamically (in many cases by anyone), and"
-msgstr ""
+msgstr "它们可以动态部署（在很多情况下通过任何人）"
 
 #: ../../source/whatis.md:172
 msgid ""
 "application code should be treated as untrusted, potentially even malicious."
-msgstr ""
+msgstr "应用代码应视为不受信任的，甚至可能是恶意的"
 
 #: ../../source/whatis.md:175
 msgid ""
@@ -351,11 +352,11 @@ msgstr ""
 #: ../../source/whatis.md:178
 msgid ""
 "validates and orders transactions then propagates them to all peer nodes,"
-msgstr ""
+msgstr "验证并将交易排序，然后将它们传播到所有的peer节点"
 
 #: ../../source/whatis.md:179
 msgid "each peer then executes the transactions sequentially."
-msgstr ""
+msgstr "每个peer节点按顺序执行交易"
 
 #: ../../source/whatis.md:181
 msgid ""
@@ -391,7 +392,7 @@ msgstr ""
 
 #: ../../source/whatis.md:202
 msgid "A New Approach"
-msgstr ""
+msgstr "一种新方法"
 
 #: ../../source/whatis.md:204
 msgid ""
@@ -407,17 +408,17 @@ msgstr ""
 
 #: ../../source/whatis.md:209
 msgid "execute a transaction and check its correctness, thereby endorsing it,"
-msgstr ""
+msgstr "执行一个交易并检查其正确性，从而给它背书；"
 
 #: ../../source/whatis.md:210
 msgid "order transactions via a (pluggable) consensus protocol, and"
-msgstr ""
+msgstr "通过（可插拔的）共识协议将交易 排序；"
 
 #: ../../source/whatis.md:211
 msgid ""
 "validate transactions against an application-specific endorsement policy "
 "before committing them to the ledger"
-msgstr ""
+msgstr "提交交易到账本前先根据特定应用程序的背书策略验证交易。"
 
 #: ../../source/whatis.md:214
 msgid ""
@@ -450,7 +451,7 @@ msgstr ""
 
 #: ../../source/whatis.md:230
 msgid "Privacy and Confidentiality"
-msgstr ""
+msgstr "隐私和保密性"
 
 #: ../../source/whatis.md:232
 msgid ""
@@ -540,7 +541,7 @@ msgstr ""
 
 #: ../../source/whatis.md:283
 msgid "Pluggable Consensus"
-msgstr ""
+msgstr "可插拔共识"
 
 #: ../../source/whatis.md:285
 msgid ""
@@ -572,7 +573,7 @@ msgstr "还请注意，这些并不相互排斥。Fabric网络可以有多个排
 
 #: ../../source/whatis.md:303
 msgid "Performance and Scalability"
-msgstr ""
+msgstr "性能和扩展性"
 
 #: ../../source/whatis.md:305
 msgid ""
@@ -610,7 +611,7 @@ msgstr "研究团队所做的基准测试工作为Fabric v1.1.0版本带来了�
 
 #: ../../source/whatis.md:324
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/whatis.md:326
 msgid ""
@@ -639,7 +640,7 @@ msgstr ""
 
 #: ../../source/whatis.md:340
 msgid "Acknowledgement"
-msgstr ""
+msgstr "致谢"
 
 #: ../../source/whatis.md:342
 msgid ""

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>token &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>token &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="configtxgen" href="configtxgen.html" />
     <link rel="prev" title="peer node" href="peernode.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -135,11 +136,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -187,7 +188,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>token</li>
     
@@ -209,12 +210,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="token">
-<h1>token<a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">token</span></code> CLI allows you to use the Fabtoken client to issue, list, transfer,
-and redeem tokens.</p>
+<h1>token<a class="headerlink" href="#token" title="永久链接至标题">¶</a></h1>
+<p>Token CLI 允许您使用 Fabtoken client 发行、列出、转账和赎回token。</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">token</span></code> command has the following subcommands:</p>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
+<p>token 命令有以下子命令：</p>
 <ul class="simple">
 <li><p>issue</p></li>
 <li><p>list</p></li>
@@ -224,7 +224,7 @@ and redeem tokens.</p>
 </ul>
 </div>
 <div class="section" id="token-issue">
-<h2>token issue<a class="headerlink" href="#token-issue" title="Permalink to this headline">¶</a></h2>
+<h2>token issue<a class="headerlink" href="#token-issue" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">issue</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Import</span> <span class="n">token</span> <span class="n">command</span>
@@ -258,7 +258,7 @@ and redeem tokens.</p>
 </div>
 </div>
 <div class="section" id="token-list">
-<h2>token list<a class="headerlink" href="#token-list" title="Permalink to this headline">¶</a></h2>
+<h2>token list<a class="headerlink" href="#token-list" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="nb">list</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">List</span> <span class="n">tokens</span> <span class="n">command</span>
@@ -289,7 +289,7 @@ and redeem tokens.</p>
 </div>
 </div>
 <div class="section" id="token-transfer">
-<h2>token transfer<a class="headerlink" href="#token-transfer" title="Permalink to this headline">¶</a></h2>
+<h2>token transfer<a class="headerlink" href="#token-transfer" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">transfer</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Transfer</span> <span class="n">tokens</span> <span class="n">command</span>
@@ -322,7 +322,7 @@ and redeem tokens.</p>
 </div>
 </div>
 <div class="section" id="token-redeem">
-<h2>token redeem<a class="headerlink" href="#token-redeem" title="Permalink to this headline">¶</a></h2>
+<h2>token redeem<a class="headerlink" href="#token-redeem" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">redeem</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Redeem</span> <span class="n">tokens</span> <span class="n">command</span>
@@ -355,7 +355,7 @@ and redeem tokens.</p>
 </div>
 </div>
 <div class="section" id="token-saveconfig">
-<h2>token saveConfig<a class="headerlink" href="#token-saveconfig" title="Permalink to this headline">¶</a></h2>
+<h2>token saveConfig<a class="headerlink" href="#token-saveconfig" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">saveConfig</span>
 
 <span class="n">Save</span> <span class="n">the</span> <span class="n">config</span> <span class="n">passed</span> <span class="n">by</span> <span class="n">flags</span> <span class="n">into</span> <span class="n">the</span> <span class="n">file</span> <span class="n">specified</span> <span class="n">by</span> <span class="o">--</span><span class="n">configFile</span>
@@ -382,11 +382,10 @@ and redeem tokens.</p>
 </div>
 </div>
 <div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="永久链接至标题">¶</a></h2>
 <div class="section" id="token-issue-example">
-<h3>token issue example<a class="headerlink" href="#token-issue-example" title="Permalink to this headline">¶</a></h3>
-<p>You can use the following command to issue 100 <code class="docutils literal notranslate"><span class="pre">Fabcoins</span></code> belonging to
-<code class="docutils literal notranslate"><span class="pre">User1&#64;org1.example.com</span></code>. The tokens are issued by <code class="docutils literal notranslate"><span class="pre">Admin&#64;org1.example.com</span></code>.</p>
+<h3>token issue example<a class="headerlink" href="#token-issue-example" title="永久链接至标题">¶</a></h3>
+<p>您可以使用以下命令来发行属于User1&#64;org1.example.com的100个Fabcoins。Tokens由Admin&#64;org1.example.com发行。</p>
 <ul>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">--config</span></code> flag to provide the path to a file that contains the
 connection information for your fabric network, including your
@@ -406,9 +405,8 @@ Committed [true]
 </ul>
 </div>
 <div class="section" id="token-list-example">
-<h3>token list example<a class="headerlink" href="#token-list-example" title="Permalink to this headline">¶</a></h3>
-<p>You can use the <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">list</span></code> command to discover the tokenIDs of the tokens that
-you own.</p>
+<h3>token list example<a class="headerlink" href="#token-list-example" title="永久链接至标题">¶</a></h3>
+<p>您可以使用 token list 命令来发现您所拥有的tokens的tokenIDs。</p>
 <ul>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">--mspPath</span></code> flag to provide the path to the MSP of the token owner.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
@@ -428,9 +426,8 @@ assets represented by the token.</p>
 </ul>
 </div>
 <div class="section" id="token-transfer-example">
-<h3>token transfer example<a class="headerlink" href="#token-transfer-example" title="Permalink to this headline">¶</a></h3>
-<p>You can transfer the tokens that you own to another member of the channel using
-the <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">transfer</span></code> command.</p>
+<h3>token transfer example<a class="headerlink" href="#token-transfer-example" title="永久链接至标题">¶</a></h3>
+<p>您可以使用 token transfer 命令将您拥有的token转账给通道的另一个成员。</p>
 <ul>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">--tokenIDs</span></code> flag to select the tokens that you want to transfer.
 Use the <code class="docutils literal notranslate"><span class="pre">--shares</span></code> flag to provide a path to a JSON file that describes
@@ -451,10 +448,8 @@ Committed [true]
 </ul>
 </div>
 <div class="section" id="token-redeem-example">
-<h3>token redeem example<a class="headerlink" href="#token-redeem-example" title="Permalink to this headline">¶</a></h3>
-<p>Redeemed tokens can no longer be transferred to other channel members. Tokens
-can only be redeemed by their owner. You can use the following command to redeem
-50 <code class="docutils literal notranslate"><span class="pre">Fabcoins</span></code>:</p>
+<h3>token redeem example<a class="headerlink" href="#token-redeem-example" title="永久链接至标题">¶</a></h3>
+<p>赎回的tokens不能再转账给其他通道成员。Tokens只能由其所有者赎回。您可以使用以下命令赎回50枚 Fabcoins：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
 export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
 export MSP_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
@@ -469,10 +464,8 @@ Committed [true]
 </div>
 </div>
 <div class="section" id="configuration-file-example">
-<h3>Configuration file example<a class="headerlink" href="#configuration-file-example" title="Permalink to this headline">¶</a></h3>
-<p>The configuration file provides the token CLI the endpoint information of your
-network. The file include the <strong>Prover Peer</strong> that your organization will use to
-assemble token transactions.</p>
+<h3>Configuration file example<a class="headerlink" href="#configuration-file-example" title="永久链接至标题">¶</a></h3>
+<p>配置文件给token CLI提供您的网络的端点信息。该文件包含您的组织将用于组装token交易的校准节点。</p>
 <details>
   <summary>
     **Sample configuration file**
@@ -510,11 +503,8 @@ assemble token transactions.</p>
 ```
 </details></div>
 <div class="section" id="shares-file-example">
-<h3>Shares file example<a class="headerlink" href="#shares-file-example" title="Permalink to this headline">¶</a></h3>
-<p>The shares file is used by the transfer transaction to allocate the assets
-represented by the input token between the recipients of the transfer. Any
-quantity of the input token that is not transferred to a recipient is
-automatically provided to the original owner in a new token.</p>
+<h3>Shares file example<a class="headerlink" href="#shares-file-example" title="永久链接至标题">¶</a></h3>
+<p>转账交易使用shares文件在转账的接收者之间分配由输入token表示的资产。没有转账给接收方的任何数量的输入token都会以新token的形式自动提供给原始所有者。</p>
 <details>
   <summary>
     **Sample shares file**

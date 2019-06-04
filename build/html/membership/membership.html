@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Membership &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Membership &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Peers" href="../peers/peers.html" />
     <link rel="prev" title="Identity" href="../identity/identity.html" /> 
 </head>
@@ -96,12 +97,12 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../key_concepts.html">Key Concepts</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../blockchain.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functionalities.html">Hyperledger Fabric Functionalities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fabric_model.html">Hyperledger Fabric Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockchain.html">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionalities.html">超级账本Fabric功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fabric_model.html">超级账本Fabric模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/network.html">Blockchain network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../identity/identity.html">Identity</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Membership</a><ul>
@@ -119,19 +120,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../ledger/ledger.html">Ledger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../orderer/ordering_service.html">The Ordering Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../private-data/private-data.html">Private data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usecases.html">Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases.html">用例</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -201,147 +202,44 @@
            <div itemprop="articleBody">
             
   <div class="section" id="membership">
-<h1>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h1>
-<p>If you’ve read through the documentation on <a class="reference external" href="../identity/identity.html">identity</a>
-you’ve seen how a PKI can provide verifiable identities through a chain
-of trust. Now let’s see how these identities can be used to represent the
-trusted members of a blockchain network.</p>
-<p>This is where a <strong>Membership Service</strong> Provider (MSP) comes into play —
-<strong>it identifies which Root CAs and Intermediate CAs are trusted to define
-the members of a trust domain, e.g., an organization</strong>, either by listing the
-identities of their members, or by identifying which CAs are authorized to
-issue valid identities for their members, or — as will usually be the case —
-through a combination of both.</p>
-<p>The power of an MSP goes beyond simply listing who is a network participant or
-member of a channel. An MSP can identify specific <strong>roles</strong> an actor might play either
-within the scope of the organization the MSP represents (e.g., admins, or as members
-of a sub-organization group), and sets the basis for defining <strong>access privileges</strong>
-in the context of a network and channel (e.g., channel admins, readers, writers).</p>
-<p>The configuration of an MSP is advertised to all the channels where members of
-the corresponding organization participate (in the form of a <strong>channel MSP</strong>). In
-addition to the channel MSP, peers, orderers, and clients also maintain a <strong>local MSP</strong>
-to authenticate member messages outside the context of a channel and to define the
-permissions over a particular component (who has the ability to install chaincode on
-a peer, for example).</p>
-<p>In addition, an MSP can allow for the identification of a list of identities that
-have been revoked — as discussed in the <a class="reference external" href="../identity/identity.html">Identity</a>
-documentation — but we will talk about how that process also extends to an MSP.</p>
-<p>We’ll talk more about local and channel MSPs in a moment. For now let’s see what
-MSPs do in general.</p>
+<h1>Membership<a class="headerlink" href="#membership" title="永久链接至标题">¶</a></h1>
+<p>如果您已经阅读了关于身份的文档，那么您已经看到PKI如何通过信任链提供可验证的身份。现在让我们看看如何使用这些标识来表示区块链网络的可信成员。</p>
+<p>这就是成员服务提供者(MSP)发挥作用——它标识所信任的根CA和中间CA定义信任域的成员,例如,一个组织,要么通过列出其成员的身份，要么通过标识出哪些CA授权为他们的成员发行有效身份，或者——通常会是这样的——通过两者的结合。</p>
+<p>MSP的强大功能不仅仅是列出谁是网络参与者或通道的成员。MSP在它代表的组织范围内确定参与者可以扮演的特定角色(如管理员,或作为子组织的成员组),并在网络上下文和通道中设置访问权限的基础(如通道管理员、读者、作家)。</p>
+<p>组织MSP的配置将以通道MSP的形式通知相应组织成员所参与的所有通道。除了通道MSP，节点、排序器和客户端还维护一个本地MSP，以便在通道上下文之外对成员消息进行身份验证，并定义特定组件上的权限（例如谁有能力在peer上安装链码）。</p>
+<p>此外，MSP还允许标识已被撤销的身份列表（如身份文档中所讨论的），但是我们将讨论该过程如何扩展到MSP。</p>
+<p>稍后我们将更多地讨论本地和通道MSP。现在，让我们看看MSP通常做什么。</p>
 <div class="section" id="mapping-msps-to-organizations">
-<h2>Mapping MSPs to Organizations<a class="headerlink" href="#mapping-msps-to-organizations" title="Permalink to this headline">¶</a></h2>
-<p>An <strong>organization</strong> is a managed group of members. This can be something as big
-as a multinational corporation or a small as a flower shop. What’s most
-important about organizations (or <strong>orgs</strong>) is that they manage their
-members under a single MSP. Note that this is different from the organization
-concept defined in an X.509 certificate, which we’ll talk about later.</p>
-<p>The exclusive relationship between an organization and its MSP makes it sensible to
-name the MSP after the organization, a convention you’ll find adopted in most policy
-configurations. For example, organization <code class="docutils literal notranslate"><span class="pre">ORG1</span></code> would likely have an MSP called
-something like <code class="docutils literal notranslate"><span class="pre">ORG1-MSP</span></code>. In some cases an organization may require multiple
-membership groups — for example, where channels are used to perform very different
-business functions between organizations. In these cases it makes sense to have
-multiple MSPs and name them accordingly, e.g., <code class="docutils literal notranslate"><span class="pre">ORG2-MSP-NATIONAL</span></code> and
-<code class="docutils literal notranslate"><span class="pre">ORG2-MSP-GOVERNMENT</span></code>, reflecting the different membership roots of trust within
-<code class="docutils literal notranslate"><span class="pre">ORG2</span></code> in the <code class="docutils literal notranslate"><span class="pre">NATIONAL</span></code> sales channel compared to the <code class="docutils literal notranslate"><span class="pre">GOVERNMENT</span></code> regulatory
-channel.</p>
+<h2>Mapping MSPs to Organizations<a class="headerlink" href="#mapping-msps-to-organizations" title="永久链接至标题">¶</a></h2>
+<p>组织是一组受管理的成员。可以是像跨国公司这样的大公司，也可以是像花店这样的小公司。关于组织(或orgs)，最重要的是他们在一个MSP下管理他们的成员。注意，这与我们稍后将讨论的X.509证书中定义的组织概念不同。</p>
+<p>组织及其MSP之间的排他性关系使得以组织的名称命名MSP是明智的，您会发现在大多数策略配置中都采用了这种约定。例如，组织ORG1可能有一个名为ORG1-MSP之类的MSP。在某些情况下，组织可能需要多个成员组——例如，通道用于在组织之间执行非常不同的业务功能。在这些情况下，有多个MSP并相应地命名是有意义的，例如，ORG2-MSP-NATIONAL和ORG2-MSP-GOVERNMENT，这反映了与政府监管通道相比，ORG2在全国销售渠道中的成员信任根是不同的。</p>
 <p><img alt="../_images/membership.diagram.3.png" src="../_images/membership.diagram.3.png" />MSP1</p>
-<p><em>Two different MSP configurations for an organization. The first configuration shows
-the typical relationship between an MSP and an organization — a single MSP defines
-the list of members of an organization. In the second configuration, different MSPs
-are used to represent different organizational groups with national, international,
-and governmental affiliation.</em></p>
+<p>一个组织有两种不同的MSP配置。第一个配置显示了MSP和组织之间的典型关系——单个MSP定义了组织的成员列表。在第二种配置中，不同的MSP用于表示具有国家、国际和政府关联的不同组织组。</p>
 <div class="section" id="organizational-units-and-msps">
-<h3>Organizational Units and MSPs<a class="headerlink" href="#organizational-units-and-msps" title="Permalink to this headline">¶</a></h3>
-<p>An organization is often divided up into multiple <strong>organizational units</strong> (OUs), each
-of which has a certain set of responsibilities. For example, the <code class="docutils literal notranslate"><span class="pre">ORG1</span></code>
-organization might have both <code class="docutils literal notranslate"><span class="pre">ORG1-MANUFACTURING</span></code> and <code class="docutils literal notranslate"><span class="pre">ORG1-DISTRIBUTION</span></code> OUs
-to reflect these separate lines of business. When a CA issues X.509 certificates,
-the <code class="docutils literal notranslate"><span class="pre">OU</span></code> field in the certificate specifies the line of business to which the
-identity belongs.</p>
-<p>We’ll see later how OUs can be helpful to control the parts of an organization who
-are considered to be the members of a blockchain network. For example, only
-identities from the <code class="docutils literal notranslate"><span class="pre">ORG1-MANUFACTURING</span></code> OU might be able to access a channel,
-whereas <code class="docutils literal notranslate"><span class="pre">ORG1-DISTRIBUTION</span></code> cannot.</p>
-<p>Finally, though this is a slight misuse of OUs, they can sometimes be used by
-different organizations in a consortium to distinguish each other. In such cases, the
-different organizations use the same Root CAs and Intermediate CAs for their chain
-of trust, but assign the <code class="docutils literal notranslate"><span class="pre">OU</span></code> field to identify members of each organization.
-We’ll also see how to configure MSPs to achieve this later.</p>
+<h3>Organizational Units and MSPs<a class="headerlink" href="#organizational-units-and-msps" title="永久链接至标题">¶</a></h3>
+<p>一个组织通常被划分为多个组织单元(OU)，每个单元都有一组特定的职责。例如，ORG1组织可能同时具有ORG1-MANUFACTURING 和ORG1-DISTRIBUTION OU来反映这些独立的业务线。当CA发出X.509证书时，证书中的OU字段指定身份所属的业务线。</p>
+<p>稍后我们将看到，OU怎样帮助控制组织中被认为是区块链网络成员的部分。例如，只有来自ORG1-MANUFACTURING OU的身份才能访问通道，而ORG1-DISTRIBUTION不能。</p>
+<p>最后，尽管这是对OU的轻微滥用，但有时它们可以被联盟中的不同组织用来区分彼此。在这种情况下，不同的组织使用相同的根CA和中间CA作为它们的信任链，但是分配OU字段来标识每个组织的成员。稍后我们还将看到如何配置MSP来实现这一点。</p>
 </div>
 </div>
 <div class="section" id="local-and-channel-msps">
-<h2>Local and Channel MSPs<a class="headerlink" href="#local-and-channel-msps" title="Permalink to this headline">¶</a></h2>
-<p>MSPs appear in two places in a blockchain network: channel configuration
-(<strong>channel MSPs</strong>), and locally on an actor’s premise (<strong>local MSP</strong>). <strong>Local MSPs are
-defined for clients (users) and for nodes (peers and orderers)</strong>. Node local MSPs define
-the permissions for that node (who the peer admins are, for example). The local MSPs
-of the users allow the user side to authenticate itself in its transactions as a member
-of a channel (e.g. in chaincode transactions), or as the owner of a specific role
-into the system (an org admin, for example, in configuration transactions).</p>
-<p><strong>Every node and user must have a local MSP defined</strong>, as it defines who has
-administrative or participatory rights at that level (peer admins will not necessarily
-be channel admins, and vice versa).</p>
-<p>In contrast, <strong>channel MSPs define administrative and participatory rights at the
-channel level</strong>. Every organization participating in a channel must have an MSP
-defined for it. Peers and orderers on a channel will all share the same view of channel
-MSPs, and will therefore be able to correctly authenticate the channel participants.
-This means that if an organization wishes to join the channel, an MSP incorporating
-the chain of trust for the organization’s members would need to be included in the
-channel configuration. Otherwise transactions originating from this organization’s
-identities will be rejected.</p>
-<p>The key difference here between local and channel MSPs is not how they function
-— both turn identities into roles — but their <strong>scope</strong>.</p>
+<h2>Local and Channel MSPs<a class="headerlink" href="#local-and-channel-msps" title="永久链接至标题">¶</a></h2>
+<p>在区块链网络中，MSP出现在两个位置:通道配置(通道MSP)和在参与者的前提下的本地位置(本地MSP)。本地MSP是为客户端(用户)和node节点(peer和排序器)定义的。节点本地MSP为该节点定义权限(例如，peer管理员是谁)。用户的本地MSP允许用户端在其交易中作为通道的成员(例如在链码交易中)或作为系统中特定角色的所有者(例如在配置交易中的某组织管理员)对自己进行身份验证。</p>
+<p>每个节点和用户都必须定义一个本地MSP，因为它定义了谁拥有该级别的管理或参与权(peer管理员不一定是通道管理员，反之亦然)。</p>
+<p>相反，通道MSPs在通道级别定义管理和参与权。每个参与通道的组织都必须为其定义一个MSP。通道上的peer和排序器将共享通道MSPs的相同视图，因此能够正确地对通道参与者进行身份验证。这意味着，如果组织希望加入通道，则需要在通道配置中包含一个包含组织成员信任链的MSP。否则，来自这个组织身份的交易将被拒绝。</p>
+<p>本地和通道MSPs之间的关键区别不在于它们如何工作——它们都将身份转换为角色——而在于它们的作用域。</p>
 <p><a name="msp2img"></a></p>
 <p><img alt="../_images/membership.diagram.4.png" src="../_images/membership.diagram.4.png" />MSP2</p>
-<p><em>Local and channel MSPs. The trust domain (e.g., the organization) of each
-peer is defined by the peer’s local MSP, e.g., ORG1 or ORG2. Representation
-of an organization on a channel is achieved by adding the organization’s MSP to
-the channel configuration. For example, the channel of this figure is managed by
-both ORG1 and ORG2. Similar principles apply for the network, orderers, and users,
-but these are not shown here for simplicity.</em></p>
-<p>You may find it helpful to see how local and channel MSPs are used by seeing
-what happens when a blockchain administrator installs and instantiates a smart
-contract, as shown in the <a class="reference external" href="#msp2img">diagram above</a>.</p>
-<p>An administrator <code class="docutils literal notranslate"><span class="pre">B</span></code> connects to the peer with an identity issued by <code class="docutils literal notranslate"><span class="pre">RCA1</span></code>
-and stored in their local MSP. When <code class="docutils literal notranslate"><span class="pre">B</span></code> tries to install a smart contract on
-the peer, the peer checks its local MSP, <code class="docutils literal notranslate"><span class="pre">ORG1-MSP</span></code>, to verify that the identity
-of <code class="docutils literal notranslate"><span class="pre">B</span></code> is indeed a member of <code class="docutils literal notranslate"><span class="pre">ORG1</span></code>. A successful verification will allow the
-install command to complete successfully. Subsequently, <code class="docutils literal notranslate"><span class="pre">B</span></code> wishes
-to instantiate the smart contract on the channel. Because this is a channel
-operation, all organizations on the channel must agree to it. Therefore, the
-peer must check the MSPs of the channel before it can successfully commit this
-command. (Other things must happen too, but concentrate on the above for now.)</p>
-<p><strong>Local MSPs are only defined on the file system of the node or user</strong> to which
-they apply. Therefore, physically and logically there is only one local MSP per
-node or user. However, as channel MSPs are available to all nodes in the
-channel, they are logically defined once in the channel configuration. However,
-<strong>a channel MSP is also instantiated on the file system of every node in the
-channel and kept synchronized via consensus</strong>. So while there is a copy of each
-channel MSP on the local file system of every node, logically a channel MSP
-resides on and is maintained by the channel or the network.</p>
+<p>本地和通道MSPs。每个peer的信任域(例如组织)由peer的本地MSP(例如ORG1或ORG2)定义。通过将组织的MSP添加到通道配置中，可以表示组织加入了通道。例如，此图中的通道由ORG1和ORG2管理。类似的原则也适用于网络、排序器和用户，但是为了简单起见，这里没有显示这些原则。</p>
+<p>通过查看区块链管理员安装和实例化智能合约时发生的情况，您可能会发现了解如何使用本地和通道MSPs很有帮助，如上图所示。</p>
+<p>管理员B使用RCA1颁发的身份连接到peer，并将其存储在本地MSP中。当B试图在peer上安装智能合约时，peer检查其本地MSP ORG1-MSP，以验证B的身份确实是ORG1的成员。成功的验证将允许安装命令成功完成。随后，B希望在通道上实例化智能合约。因为这是一个通道操作，所以通道上的所有组织都必须同意它。因此，peer必须在成功提交此命令之前检查通道的MSPs。(其他事情也必须发生，但现在先集中精力做上面的事情。)</p>
+<p>本地MSPs只在它们应用到的节点或用户的文件系统上的定义。因此，在物理和逻辑上，每个节点或用户只有一个本地MSP。但是，由于通道MSPs对通道中的所有节点都可用，所以它们在通道配置中逻辑上定义一次。然而，通道MSP也在通道中每个节点的文件系统上实例化，并通过协商一致保持同步。因此，虽然每个节点的本地文件系统上都有每个通道MSP的副本，但从逻辑上讲，通道MSP驻留在通道或网络上并由通道或网络维护。</p>
 </div>
 <div class="section" id="msp-levels">
-<h2>MSP Levels<a class="headerlink" href="#msp-levels" title="Permalink to this headline">¶</a></h2>
-<p>The split between channel and local MSPs reflects the needs of organizations
-to administer their local resources, such as a peer or orderer nodes, and their
-channel resources, such as ledgers, smart contracts, and consortia, which
-operate at the channel or network level. It’s helpful to think of these MSPs
-as being at different <strong>levels</strong>, with <strong>MSPs at a higher level relating to
-network administration concerns</strong> while <strong>MSPs at a lower level handle
-identity for the administration of private resources</strong>. MSPs are mandatory
-at every level of administration — they must be defined for the network,
-channel, peer, orderer, and users.</p>
+<h2>MSP Levels<a class="headerlink" href="#msp-levels" title="永久链接至标题">¶</a></h2>
+<p>通道和本地MSPs之间的分离反映了组织管理其本地资源(如peer节点或排序器节点)和通道资源(如账本、智能合约和联盟)的需求，这些资源在通道或网络级别运行。将这些MSPs看作是不同级别的是有帮助的，MSPs处于较高的级别，与网络管理相关，而处于较低级别的MSPs处理私有资源管理的身份。MSPs在每个管理级别都是强制性的——必须为网络、通道、peer、排序器和用户定义它们。</p>
 <p><img alt="../_images/membership.diagram.2.png" src="../_images/membership.diagram.2.png" />MSP3</p>
-<p><em>MSP Levels. The MSPs for the peer and orderer are local, whereas the MSPs for a
-channel (including the network configuration channel) are shared across all
-participants of that channel. In this figure, the network configuration channel
-is administered by ORG1, but another application channel can be managed by ORG1
-and ORG2. The peer is a member of and managed by ORG2, whereas ORG1 manages the
-orderer of the figure. ORG1 trusts identities from RCA1, whereas ORG2 trusts
-identities from RCA2. Note that these are administration identities, reflecting
-who can administer these components. So while ORG1 administers the network,
-ORG2.MSP does exist in the network definition.</em></p>
+<p>MSP的级别。peer和排序器的MSPs是本地的，而通道(包括网络配置通道)的MSPs是跨该通道的所有参与者共享的。在这个图中，网络配置通道由ORG1管理，但是另一个应用程序通道可以由ORG1和ORG2管理。peer是ORG2的成员，由ORG2管理，而ORG1管理图的排序器。ORG1信任来自RCA1的身份，而ORG2信任来自RCA2的身份。注意，这些是管理员身份，反映了谁可以管理这些组件。所以当ORG1管理网络时，ORG2.MSP确实存在于网络定义中。</p>
 <ul class="simple">
 <li><p><strong>Network MSP:</strong> The configuration of a network defines who are the
 members in the network — by defining the MSPs of the participant organizations
@@ -368,19 +266,12 @@ organization and therefore have a single MSP to list the actors or nodes it trus
 </ul>
 </div>
 <div class="section" id="msp-structure">
-<h2>MSP Structure<a class="headerlink" href="#msp-structure" title="Permalink to this headline">¶</a></h2>
-<p>So far, you’ve seen that the most important element of an MSP are the specification
-of the root or intermediate CAs that are used to establish an actor’s or node’s
-membership in the respective organization. There are, however, more elements that are
-used in conjunction with these two to assist with membership functions.</p>
+<h2>MSP Structure<a class="headerlink" href="#msp-structure" title="永久链接至标题">¶</a></h2>
+<p>到目前为止，您已经看到MSP最重要的元素是根或中间CA的规范，这些CA用于在各自的组织中建立参与者或节点的成员关系。但是，还有更多的因素与这两个因素一起使用，以协助成员的职能。</p>
 <p><img alt="../_images/membership.diagram.5.png" src="../_images/membership.diagram.5.png" />MSP4</p>
-<p><em>The figure above shows how a local MSP is stored on a local filesystem. Even though
-channel MSPs are not physically structured in exactly this way, it’s still a helpful
-way to think about them.</em></p>
-<p>As you can see, there are nine elements to an MSP. It’s easiest to think of these elements
-in a directory structure, where the MSP name is the root folder name with each
-subfolder representing different elements of an MSP configuration.</p>
-<p>Let’s describe these folders in a little more detail and see why they are important.</p>
+<p>上面的图显示了本地MSP如何存储在本地文件系统中。尽管通道MSP的物理结构不是完全按照这种方式构建的，但是这样考虑它们仍然是一种有用的方式。</p>
+<p>正如您所看到的，MSP有9个元素。在目录结构中考虑这些元素最简单，其中MSP名称是根文件夹名称，每个子文件夹表示MSP配置的不同元素。</p>
+<p>让我们更详细地描述这些文件夹，看看它们为什么重要。</p>
 <ul>
 <li><p><strong>Root CAs:</strong> This folder contains a list of self-signed X.509 certificates of
 the Root CAs trusted by the organization represented by this MSP.
@@ -485,11 +376,7 @@ optional.</p>
 <p>For more information about TLS, click <a class="reference external" href="../enable_tls.html">here</a>.</p>
 </li>
 </ul>
-<p>If you’ve read this doc as well as our doc on <a class="reference external" href="../identity/identity.html">Identity</a>), you
-should have a pretty good grasp of how identities and membership work in Hyperledger Fabric.
-You’ve seen how a PKI and MSPs are used to identify the actors collaborating in a blockchain
-network. You’ve learned how certificates, public/private keys, and roots of trust work,
-in addition to how MSPs are physically and logically structured.</p>
+<p>如果你读过这个文档以及我们关于身份的文档，你应该对身份和会员如何在超级账本Fabric中工作有一个很好的理解。您已经了解了如何使用PKI和MSPs来识别在区块链网络中协作的参与者。您已经了解了证书、公钥/私钥和信任根的工作原理，以及MSPs的物理和逻辑结构。</p>
 <!---
 Licensed under Creative Commons Attribution 4.0 International License https://creativecommons.org/licenses/by/4.0/
 --></div>

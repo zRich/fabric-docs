@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Policies in Hyperledger Fabric &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Policies in Hyperledger Fabric &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,19 +95,19 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -174,7 +175,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="policies-in-hyperledger-fabric">
-<h1>Policies in Hyperledger Fabric<a class="headerlink" href="#policies-in-hyperledger-fabric" title="Permalink to this headline">¶</a></h1>
+<h1>Policies in Hyperledger Fabric<a class="headerlink" href="#policies-in-hyperledger-fabric" title="永久链接至标题">¶</a></h1>
 <p>Configuration for a Hyperledger Fabric blockchain network is managed by
 policies. These policies generally reside in the channel configuration.
 The primary purpose of this document is to explain how policies are
@@ -183,7 +184,7 @@ policies may also be specified in some other places, such as chaincodes,
 so this information may be of interest outside the scope of channel
 configuration.</p>
 <div class="section" id="what-is-a-policy">
-<h2>What is a Policy?<a class="headerlink" href="#what-is-a-policy" title="Permalink to this headline">¶</a></h2>
+<h2>What is a Policy?<a class="headerlink" href="#what-is-a-policy" title="永久链接至标题">¶</a></h2>
 <p>At its most basic level, a policy is a function which accepts as input a
 set of signed data and evaluates successfully, or returns an error
 because some aspect of the signed data did not satisfy the policy.</p>
@@ -199,7 +200,7 @@ sign.</p>
 constructed.</p>
 </div>
 <div class="section" id="policy-types">
-<h2>Policy Types<a class="headerlink" href="#policy-types" title="Permalink to this headline">¶</a></h2>
+<h2>Policy Types<a class="headerlink" href="#policy-types" title="永久链接至标题">¶</a></h2>
 <p>There are presently two different types of policies implemented:</p>
 <ol class="arabic simple">
 <li><p><strong>SignaturePolicy</strong>: This policy type is the most powerful, and
@@ -234,7 +235,7 @@ following message:</p>
 marshal the corresponding policy implementation proto to <code class="docutils literal notranslate"><span class="pre">policy</span></code>.</p>
 </div>
 <div class="section" id="configuration-and-policies">
-<h2>Configuration and Policies<a class="headerlink" href="#configuration-and-policies" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration and Policies<a class="headerlink" href="#configuration-and-policies" title="永久链接至标题">¶</a></h2>
 <p>The channel configuration is expressed as a hierarchy of configuration
 groups, each of which has a set of values and policies associated with
 them. For a validly configured application channel with two application
@@ -289,7 +290,7 @@ policy be satisfied.</p>
 rich access controls.</p>
 </div>
 <div class="section" id="constructing-a-signaturepolicy">
-<h2>Constructing a SignaturePolicy<a class="headerlink" href="#constructing-a-signaturepolicy" title="Permalink to this headline">¶</a></h2>
+<h2>Constructing a SignaturePolicy<a class="headerlink" href="#constructing-a-signaturepolicy" title="永久链接至标题">¶</a></h2>
 <p>As with all policies, the SignaturePolicy is expressed as protobuf.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="n">SignaturePolicyEnvelope</span> <span class="p">{</span>
     <span class="n">int32</span> <span class="n">version</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -397,7 +398,7 @@ least privileged in the policy identities specification, and signatures should
 be ordered from least privileged to most privileged in the signature set.</p>
 </div>
 <div class="section" id="msp-principals">
-<h2>MSP Principals<a class="headerlink" href="#msp-principals" title="Permalink to this headline">¶</a></h2>
+<h2>MSP Principals<a class="headerlink" href="#msp-principals" title="永久链接至标题">¶</a></h2>
 <p>The MSP Principal is a generalized notion of cryptographic identity.
 Although the MSP framework is designed to work with types of
 cryptography other than X.509, for the purposes of this document, the
@@ -455,7 +456,7 @@ evaluate the signature, and the <code class="docutils literal notranslate"><span
 <p>(see <a class="reference external" href="http://hyperledger-fabric.readthedocs.io/en/latest/msp.html">MSP Documentation</a>)</p>
 </div>
 <div class="section" id="constructing-an-implicitmetapolicy">
-<h2>Constructing an ImplicitMetaPolicy<a class="headerlink" href="#constructing-an-implicitmetapolicy" title="Permalink to this headline">¶</a></h2>
+<h2>Constructing an ImplicitMetaPolicy<a class="headerlink" href="#constructing-an-implicitmetapolicy" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ImplicitMetaPolicy</span></code> is only validly defined in the context of
 channel configuration. It is <code class="docutils literal notranslate"><span class="pre">Implicit</span></code> because it is constructed
 implicitly based on the current configuration, and it is <code class="docutils literal notranslate"><span class="pre">Meta</span></code>
@@ -502,7 +503,7 @@ and <code class="docutils literal notranslate"><span class="pre">/Channel/Applic
 organization’s <code class="docutils literal notranslate"><span class="pre">bar</span></code> policies are satisfied.</p>
 </div>
 <div class="section" id="policy-defaults">
-<h2>Policy Defaults<a class="headerlink" href="#policy-defaults" title="Permalink to this headline">¶</a></h2>
+<h2>Policy Defaults<a class="headerlink" href="#policy-defaults" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> tool creates default policies as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Channel</span><span class="o">/</span><span class="n">Readers</span> <span class="p">:</span> <span class="n">ImplicitMetaPolicy</span> <span class="k">for</span> <span class="n">ANY</span> <span class="n">of</span> <span class="o">/</span><span class="n">Channel</span><span class="o">/*/</span><span class="n">Readers</span>
 <span class="o">/</span><span class="n">Channel</span><span class="o">/</span><span class="n">Writers</span> <span class="p">:</span> <span class="n">ImplicitMetaPolicy</span> <span class="k">for</span> <span class="n">ANY</span> <span class="n">of</span> <span class="o">/</span><span class="n">Channel</span><span class="o">/*/</span><span class="n">Writers</span>

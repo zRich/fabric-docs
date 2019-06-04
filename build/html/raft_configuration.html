@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuring and operating a Raft ordering service &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Configuring and operating a Raft ordering service &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Bringing up a Kafka-based Ordering Service" href="kafka.html" />
-    <link rel="prev" title="Securing Communication With Transport Layer Security (TLS)" href="enable_tls.html" /> 
+    <link rel="prev" title="使用传输层安全性(TLS)确保安全通信" href="enable_tls.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configtx.html">Channel Configuration (configtx)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endorsement-policies.html">Endorsement policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="token/FabToken.html">Using FabToken</a></li>
@@ -118,7 +119,7 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Configuring and operating a Raft ordering service</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#conceptual-overview">Conceptual overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a><ul>
@@ -137,12 +138,12 @@
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -190,7 +191,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>Configuring and operating a Raft ordering service</li>
     
@@ -212,10 +213,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configuring-and-operating-a-raft-ordering-service">
-<h1>Configuring and operating a Raft ordering service<a class="headerlink" href="#configuring-and-operating-a-raft-ordering-service" title="Permalink to this headline">¶</a></h1>
-<p><strong>Audience</strong>: <em>Raft ordering node admins</em></p>
+<h1>Configuring and operating a Raft ordering service<a class="headerlink" href="#configuring-and-operating-a-raft-ordering-service" title="永久链接至标题">¶</a></h1>
+<p>受众：Raft 排序节点管理员</p>
 <div class="section" id="conceptual-overview">
-<h2>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Permalink to this headline">¶</a></h2>
+<h2>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="永久链接至标题">¶</a></h2>
 <p>For a high level overview of the concept of ordering and how the supported
 ordering service implementations (including Raft) work at a high level, check
 out our conceptual documentation on the <a class="reference external" href="./orderer/ordering_service.html">Ordering Service</a>.</p>
@@ -224,7 +225,7 @@ creation of a local MSP and the creation of a genesis block — check out our
 documentation on <a class="reference external" href="orderer_deploy.html">Setting up an ordering node</a>.</p>
 </div>
 <div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="永久链接至标题">¶</a></h2>
 <p>While every Raft node must be added to the system channel, a node does not need
 to be added to every application channel. Additionally, you can remove and add a
 node from a channel dynamically without affecting the other nodes, a process
@@ -269,7 +270,7 @@ any application channels they’re joined to.</p>
 to the TLS certificates, and replaces the paths with the corresponding bytes of
 the certificates.</p>
 <div class="section" id="local-configuration">
-<h3>Local configuration<a class="headerlink" href="#local-configuration" title="Permalink to this headline">¶</a></h3>
+<h3>Local configuration<a class="headerlink" href="#local-configuration" title="永久链接至标题">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">orderer.yaml</span></code> has two configuration sections that are relevant for Raft
 orderers:</p>
 <p><strong>Cluster</strong>, which determines the TLS communication configuration. And
@@ -333,7 +334,7 @@ elected as leader in the channel. Defaults to 10 minutes.</p></li>
 </ul>
 </div>
 <div class="section" id="channel-configuration">
-<h3>Channel configuration<a class="headerlink" href="#channel-configuration" title="Permalink to this headline">¶</a></h3>
+<h3>Channel configuration<a class="headerlink" href="#channel-configuration" title="永久链接至标题">¶</a></h3>
 <p>Apart from the (already discussed) consenters, the Raft channel configuration has
 an <code class="docutils literal notranslate"><span class="pre">Options</span></code> section which relates to protocol specific knobs. It is currently
 not possible to change these values dynamically while a node is running. The
@@ -362,7 +363,7 @@ optimistic replication phase.</p></li>
 </div>
 </div>
 <div class="section" id="reconfiguration">
-<h2>Reconfiguration<a class="headerlink" href="#reconfiguration" title="Permalink to this headline">¶</a></h2>
+<h2>Reconfiguration<a class="headerlink" href="#reconfiguration" title="永久链接至标题">¶</a></h2>
 <p>The Raft orderer supports dynamic (meaning, while the channel is being serviced)
 addition and removal of nodes as long as only one node is added or removed at a
 time. Note that your cluster must be operational and able to achieve consensus
@@ -437,7 +438,7 @@ removal either immediately or after <code class="docutils literal notranslate"><
 </li>
 </ol>
 <div class="section" id="tls-certificate-rotation-for-an-orderer-node">
-<h3>TLS certificate rotation for an orderer node<a class="headerlink" href="#tls-certificate-rotation-for-an-orderer-node" title="Permalink to this headline">¶</a></h3>
+<h3>TLS certificate rotation for an orderer node<a class="headerlink" href="#tls-certificate-rotation-for-an-orderer-node" title="永久链接至标题">¶</a></h3>
 <p>All TLS certificates have an expiration date that is determined by the issuer.
 These expiration dates can range from 10 years from the date of issuance to as
 little as a few months, so check with your issuer. Before the expiration date,
@@ -460,7 +461,7 @@ what they were and attempt the rotation later.</p>
 </div>
 </div>
 <div class="section" id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
+<h2>Metrics<a class="headerlink" href="#metrics" title="永久链接至标题">¶</a></h2>
 <p>For a description of the Operations Service and how to set it up, check out
 <a class="reference external" href="operations_service.html">our documentation on the Operations Service</a>.</p>
 <p>For a list at the metrics that are gathered by the Operations Service, check out
@@ -480,7 +481,7 @@ service interruption for this node and possibly the network).</p></li>
 </ul>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>The more stress you put on your nodes, the more you might have to change certain
 parameters. As with any system, computer or mechanical, stress can lead to a drag
@@ -507,7 +508,7 @@ https://creativecommons.org/licenses/by/4.0/) --></div>
         <a href="kafka.html" class="btn btn-neutral float-right" title="Bringing up a Kafka-based Ordering Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="enable_tls.html" class="btn btn-neutral" title="Securing Communication With Transport Layer Security (TLS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="enable_tls.html" class="btn btn-neutral" title="使用传输层安全性(TLS)确保安全通信" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

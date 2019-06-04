@@ -178,10 +178,13 @@ msgid ""
 "scenario, there would be many organizations in the channel, with two or more"
 " organizations in each collection sharing private data between them."
 msgstr ""
+"这个例子使用了来自于 BYFN 样例网络中的组织，``Org1``和``Org2``。在 "
+"``collectionMarbles``的定义里面的策略内容是对于私有数据授权了两个组织。这个是当链码数据需要针对排序服务节点保密的时候的一种典型配置。然而，在``collectionMarblePrivateDetails``的定义里面的策略内容是将访问控制在了通道中的组织的一个子集（在这里指的是"
+" ``Org1`` ） 。在一个真实的场景中，在通道中会有好多组织，在每个集合中会有两个或者多个组织，他们彼此共享数据。"
 
 #: ../../source/private-data-arch.rst:114
 msgid "Private data dissemination"
-msgstr ""
+msgstr "私有数据传播"
 
 #: ../../source/private-data-arch.rst:116
 msgid ""
@@ -195,6 +198,8 @@ msgid ""
 "``requiredPeerCount`` properties in the collection definition control the "
 "degree of dissemination at endorsement time."
 msgstr ""
+"由于提交给排序服务的交易中不包含私有数据，因此也不包含在分发给通道中所有节点的块中，所以背书的节点在向被授权获取私有数据的组织的其他节点分发私有数据方面扮演着重要的角色。这确保了通道集合中私有数据的可用性，即使背书的节点在背书之后变得不可用。为了协助这种传播，集合定义中的"
+" ``maxPeerCount`` 和 ``requiredPeerCount``属性控制在背书时的传播程度。"
 
 #: ../../source/private-data-arch.rst:125
 msgid ""
@@ -207,6 +212,8 @@ msgid ""
 "recipient peers store a copy of the private data in a local ``transient "
 "store`` alongside their blockchain until the transaction is committed."
 msgstr ""
+"如果背书的节点不能成功地将私有数据传播给至少“requiredPeerCount”个节点，那么它将向客户端返回一个错误。背书节点将尝试将私有数据传播给不同组织的节点，以确保每个被授权的组织都拥有私有数据的副本。交易不是在链码执行时提交的，背书节点和接收私有数据的节点将私有数据的副本存储在本地的"
+" ``transient store`` 临时存储中，直到交易提交时再与提交时的区块一起存储。"
 
 #: ../../source/private-data-arch.rst:133
 msgid ""
@@ -218,17 +225,20 @@ msgid ""
 " on the peer property ``peer.gossip.pvtData.pullRetryThreshold`` in the peer"
 " configuration ``core.yaml`` file."
 msgstr ""
+"当提交时，被授权的节点在瞬态数据存储里面没有私有数据的副本（因为他们不是背书节点，或者因为他们不接受背书时传播过来的私有数据），他们将试图从另一个被授权节点拉取私有数据，拉取的重试的"
+" *可配置的时间长度* "
+"在节点配置文件``core.yaml``中设置``peer.gossip.pvtData.pullRetryThreshold``"
 
 #: ../../source/private-data-arch.rst:141
 msgid ""
 "The peers being asked for private data will only return the private data if "
 "the requesting peer is a member of the collection as defined by the private "
 "data dissemination policy."
-msgstr ""
+msgstr "只有当请求私有数据的节点是私有数据传播策略定义的集合的成员时，被请求的节点才会返回私有数据。"
 
 #: ../../source/private-data-arch.rst:145
 msgid "Considerations when using ``pullRetryThreshold``:"
-msgstr ""
+msgstr "使用的考虑事项 ``pullRetryThreshold``："
 
 #: ../../source/private-data-arch.rst:147
 msgid ""
@@ -237,6 +247,8 @@ msgid ""
 "(including the private data hash), and store the private data in its state "
 "database, logically separated from other channel state data."
 msgstr ""
+"如果请求的节点能够在 ``pullRetryThreshold`` "
+"变量配置的时间内检索到私有数据，那么它将把交易提交到其账本(包括私有数据哈希)，并将私有数据存储在其状态数据库中，从逻辑上与其他的通道状态数据分离。"
 
 #: ../../source/private-data-arch.rst:152
 msgid ""
@@ -244,6 +256,8 @@ msgid ""
 "``pullRetryThreshold``, it will commit the transaction to it’s blockchain "
 "(including the private data hash), without the private data."
 msgstr ""
+"如果请求的节点无法在 ``pullRetryThreshold`` "
+"变量配置的时间内检索到私有数据，则将交易提交给它的账本（包括私有数据哈希），而不包含私有数据。"
 
 #: ../../source/private-data-arch.rst:156
 msgid ""

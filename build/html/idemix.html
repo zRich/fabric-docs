@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MSP Implementation with Identity Mixer &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>MSP Implementation with Identity Mixer &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Identity Mixer MSP configuration generator (idemixgen)" href="idemixgen.html" />
     <link rel="prev" title="Access Control Lists (ACL)" href="access_control.html" /> 
 </head>
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ops_guide.html">操作指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orderer_deploy.html">Setting up an ordering node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config_update.html">Updating a Channel Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="msp.html">成员服务提供者（MSP）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configtx.html">Channel Configuration (configtx)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endorsement-policies.html">Endorsement policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="token/FabToken.html">Using FabToken</a></li>
@@ -130,17 +131,17 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics_reference.html">Metrics Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error-handling.html">Error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging-control.html">Logging Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enable_tls.html">使用传输层安全性(TLS)确保安全通信</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -188,7 +189,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ops_guide.html">Operations Guides</a> &raquo;</li>
+          <li><a href="ops_guide.html">操作指南</a> &raquo;</li>
         
       <li>MSP Implementation with Identity Mixer</li>
     
@@ -210,9 +211,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="msp-implementation-with-identity-mixer">
-<h1>MSP Implementation with Identity Mixer<a class="headerlink" href="#msp-implementation-with-identity-mixer" title="Permalink to this headline">¶</a></h1>
+<h1>MSP Implementation with Identity Mixer<a class="headerlink" href="#msp-implementation-with-identity-mixer" title="永久链接至标题">¶</a></h1>
 <div class="section" id="what-is-idemix">
-<h2>What is Idemix?<a class="headerlink" href="#what-is-idemix" title="Permalink to this headline">¶</a></h2>
+<h2>What is Idemix?<a class="headerlink" href="#what-is-idemix" title="永久链接至标题">¶</a></h2>
 <p>Idemix is a cryptographic protocol suite, which provides strong authentication as
 well as privacy-preserving features such as <strong>anonymity</strong>, the ability to transact
 without revealing the identity of the transactor, and <strong>unlinkability</strong>, the
@@ -252,7 +253,7 @@ privacy features including the ones described above. We’ll compare Idemix and
 X.509 technologies in detail in the technical section below.</p>
 </div>
 <div class="section" id="how-to-use-idemix">
-<h2>How to use Idemix<a class="headerlink" href="#how-to-use-idemix" title="Permalink to this headline">¶</a></h2>
+<h2>How to use Idemix<a class="headerlink" href="#how-to-use-idemix" title="永久链接至标题">¶</a></h2>
 <p>To understand how to use Idemix with Hyperledger Fabric, we need to see which
 Fabric components correspond to the user, issuer, and verifier in Idemix.</p>
 <ul>
@@ -326,7 +327,7 @@ privacy enhancing features of Idemix.</p>
 </ol>
 </div>
 <div class="section" id="idemix-and-chaincode">
-<h2>Idemix and chaincode<a class="headerlink" href="#idemix-and-chaincode" title="Permalink to this headline">¶</a></h2>
+<h2>Idemix and chaincode<a class="headerlink" href="#idemix-and-chaincode" title="永久链接至标题">¶</a></h2>
 <p>From a verifier perspective, there is one more actor to consider: chaincode.
 What can chaincode learn about the transactor when an Idemix credential is used?</p>
 <p>The <a class="reference external" href="https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/cid">cid (Client Identity) library</a>
@@ -349,7 +350,7 @@ and a value of <code class="docutils literal notranslate"><span class="pre">2</s
 see this <a class="reference external" href="https://github.com/hyperledger/fabric-sdk-java/blob/master/src/test/fixture/sdkintegration/gocc/sampleIdemix/src/github.com/example_cc/example_cc.go#L88">go chaincode</a>.</p>
 </div>
 <div class="section" id="current-limitations">
-<h2>Current limitations<a class="headerlink" href="#current-limitations" title="Permalink to this headline">¶</a></h2>
+<h2>Current limitations<a class="headerlink" href="#current-limitations" title="永久链接至标题">¶</a></h2>
 <p>The current version of Idemix does have a few limitations.</p>
 <ul>
 <li><p><strong>Fixed set of attributes</strong></p>
@@ -415,9 +416,9 @@ Signing with Idemix is only done via Client SDK. More roles (including a
 </ul>
 </div>
 <div class="section" id="technical-summary">
-<h2>Technical summary<a class="headerlink" href="#technical-summary" title="Permalink to this headline">¶</a></h2>
+<h2>Technical summary<a class="headerlink" href="#technical-summary" title="永久链接至标题">¶</a></h2>
 <div class="section" id="comparing-idemix-credentials-to-x-509-certificates">
-<h3>Comparing Idemix credentials to X.509 certificates<a class="headerlink" href="#comparing-idemix-credentials-to-x-509-certificates" title="Permalink to this headline">¶</a></h3>
+<h3>Comparing Idemix credentials to X.509 certificates<a class="headerlink" href="#comparing-idemix-credentials-to-x-509-certificates" title="永久链接至标题">¶</a></h3>
 <p>The certificate/credential concept and the issuance process are very similar in
 Idemix and X.509 certs: a set of attributes is digitally signed with a signature
 that cannot be forged and there is a secret key to which a credential is
@@ -449,7 +450,7 @@ credential (or from two different ones).</p>
 described in the paper <a class="reference external" href="https://link.springer.com/chapter/10.1007%2F978-3-642-37282-7_4">Concepts and Languages for Privacy-Preserving Attribute-Based Authentication</a>.</p>
 </div>
 <div class="section" id="topology-information">
-<h3>Topology Information<a class="headerlink" href="#topology-information" title="Permalink to this headline">¶</a></h3>
+<h3>Topology Information<a class="headerlink" href="#topology-information" title="永久链接至标题">¶</a></h3>
 <p>Given the above limitations, it is recommended to have only one Idemix-based MSP
 per channel or, at the extreme, per network. Indeed, for example, having multiple Idemix-based MSPs
 per channel would allow a party, reading the ledger of that channel, to tell apart
@@ -465,7 +466,7 @@ X.509-based MSPs. Of course, the interaction between these MSP can potential
 leak information. An assessment of the leaked information need to be done case by case.wq</p>
 </div>
 <div class="section" id="underlying-cryptographic-protocols">
-<h3>Underlying cryptographic protocols<a class="headerlink" href="#underlying-cryptographic-protocols" title="Permalink to this headline">¶</a></h3>
+<h3>Underlying cryptographic protocols<a class="headerlink" href="#underlying-cryptographic-protocols" title="永久链接至标题">¶</a></h3>
 <p>Idemix technology is built from a blind signature scheme that supports multiple
 messages and efficient zero-knowledge proofs of signature possession. All of the
 cryptographic building blocks for Idemix were published at the top conferences

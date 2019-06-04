@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Submitting your first change request (CR) &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Submitting your first change request (CR) &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,19 +95,19 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -174,13 +175,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="submitting-your-first-change-request-cr">
-<h1>Submitting your first change request (CR)<a class="headerlink" href="#submitting-your-first-change-request-cr" title="Permalink to this headline">¶</a></h1>
+<h1>Submitting your first change request (CR)<a class="headerlink" href="#submitting-your-first-change-request-cr" title="永久链接至标题">¶</a></h1>
 <p>We are using
 <a class="reference external" href="https://gerrit.hyperledger.org/r/#/admin/projects/fabric">Gerrit</a> to
 manage code contributions and reviews. If you are unfamiliar with Gerrit,
 please review this <a class="reference internal" href="Gerrit/gerrit.html"><span class="doc">document</span></a> before proceeding.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Gerrit has a reputation of having a clunky user experience. However,
 the Google team has been working on improving this, and they have
 added a “New UI” option that will allow you to work with their new
@@ -189,7 +190,7 @@ Gerrit page, linked above.</p>
 <img alt="_images/NewGerritUI.png" src="_images/NewGerritUI.png" />
 </div>
 <div class="section" id="setting-up-your-ssh-key">
-<h2>Setting up your SSH key<a class="headerlink" href="#setting-up-your-ssh-key" title="Permalink to this headline">¶</a></h2>
+<h2>Setting up your SSH key<a class="headerlink" href="#setting-up-your-ssh-key" title="永久链接至标题">¶</a></h2>
 <p>Before you can submit a change set for review, you will need to register your
 public SSH key. Login to
 <a class="reference external" href="https://gerrit.hyperledger.org">Gerrit</a> with your
@@ -205,14 +206,14 @@ the window and press ‘Add’.</p>
 <a class="reference internal image-reference" href="_images/AddSSH2.png"><img alt="_images/AddSSH2.png" src="_images/AddSSH2.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="sandbox">
-<h2>Sandbox<a class="headerlink" href="#sandbox" title="Permalink to this headline">¶</a></h2>
+<h2>Sandbox<a class="headerlink" href="#sandbox" title="永久链接至标题">¶</a></h2>
 <p>We have created the
 <a class="reference external" href="https://gerrit.hyperledger.org/r/#/admin/projects/lf-sandbox,branches">lf-sandbox project</a>,
 to allow you to familiarize yourself with using Gerrit. We’ll use that project
 in our tutorial for submitting your first CR.</p>
 </div>
 <div class="section" id="clone-your-project">
-<h2>Clone your project<a class="headerlink" href="#clone-your-project" title="Permalink to this headline">¶</a></h2>
+<h2>Clone your project<a class="headerlink" href="#clone-your-project" title="永久链接至标题">¶</a></h2>
 <p>First step is to clone your project to your laptop or development server.
 Navigate your browser to the Gerrit <a class="reference external" href="https://gerrit.hyperledger.org/r/#/admin/projects/">Projects</a>
 page and scroll down to the <code class="docutils literal notranslate"><span class="pre">lf-sandbox</span></code> project.</p>
@@ -227,7 +228,7 @@ command to the clipboard.</p>
 </div>
 </div>
 <div class="section" id="checkout-a-development-branch">
-<h2>Checkout a development branch<a class="headerlink" href="#checkout-a-development-branch" title="Permalink to this headline">¶</a></h2>
+<h2>Checkout a development branch<a class="headerlink" href="#checkout-a-development-branch" title="永久链接至标题">¶</a></h2>
 <p>Now that you have cloned the repository, change directory to the <code class="docutils literal notranslate"><span class="pre">lf-sandbox</span></code>
 directory. Now let’s make a change. First, let’s create a new branch in which
 to work:</p>
@@ -239,7 +240,7 @@ add a new file or delete an existing file. Don’t be shy, this is just a
 sandbox.</p>
 </div>
 <div class="section" id="committing-your-change">
-<h2>Committing your change<a class="headerlink" href="#committing-your-change" title="Permalink to this headline">¶</a></h2>
+<h2>Committing your change<a class="headerlink" href="#committing-your-change" title="永久链接至标题">¶</a></h2>
 <p>Once you’ve made your change, check to see what the current status is.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 <span class="n">On</span> <span class="n">branch</span> <span class="n">foo</span>
@@ -262,7 +263,7 @@ sandbox.</p>
 <p>This will open up an editing session using your favorite command-line editor
 where you will fill in a commit message. Add a commit message.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>Note that for the Hyperledger Fabric project(s) we would have a
 title line that includes the JIRA number of the issue to which the
 change request applies. Please review the
@@ -284,7 +285,7 @@ change request applies. Please review the
 </div>
 </div>
 <div class="section" id="submitting-your-change-request">
-<h2>Submitting your change request<a class="headerlink" href="#submitting-your-change-request" title="Permalink to this headline">¶</a></h2>
+<h2>Submitting your change request<a class="headerlink" href="#submitting-your-change-request" title="永久链接至标题">¶</a></h2>
 <p>Once you have saved the commit message, you can push the change request
 to Gerrit. Here, we have a couple of options.</p>
 <p>The first option is to use the full git syntax.</p>
@@ -323,7 +324,7 @@ things a bit. The link above will provide info on how to install and setup
 </div>
 </div>
 <div class="section" id="check-that-your-change-request-is-validated-by-the-ci-process">
-<h2>Check that your change request is validated by the CI process<a class="headerlink" href="#check-that-your-change-request-is-validated-by-the-ci-process" title="Permalink to this headline">¶</a></h2>
+<h2>Check that your change request is validated by the CI process<a class="headerlink" href="#check-that-your-change-request-is-validated-by-the-ci-process" title="永久链接至标题">¶</a></h2>
 <p>To ensure stability of the code and limit possible regressions, we use
 a Continuous Integration (CI) process based on Jenkins which triggers
 a build on several platforms and runs tests against every change
@@ -348,7 +349,7 @@ with the simple content “reverify”.  Check the <a class="reference external"
 for additional information and options on this.</p>
 </div>
 <div class="section" id="modifying-your-change-request">
-<h2>Modifying your change request<a class="headerlink" href="#modifying-your-change-request" title="Permalink to this headline">¶</a></h2>
+<h2>Modifying your change request<a class="headerlink" href="#modifying-your-change-request" title="永久链接至标题">¶</a></h2>
 <p>If you need to update your patch, say to address a review comment, or to fix
 something affecting CI, you can commit revised changes with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span>

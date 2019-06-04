@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Analysis &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Analysis &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Process and Data Design" href="architecture.html" />
     <link rel="prev" title="The scenario" href="scenario.html" /> 
 </head>
@@ -96,11 +97,11 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">开发应用程序</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#commercial-paper-lifecycle">Commercial paper lifecycle</a></li>
@@ -116,17 +117,17 @@
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="designelements.html">Application design elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="designelements.html">应用程序设计元素</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -174,7 +175,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+          <li><a href="developing_applications.html">开发应用程序</a> &raquo;</li>
         
       <li>Analysis</li>
     
@@ -196,21 +197,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="analysis">
-<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
-<p><strong>Audience</strong>: Architects, Application and smart contract developers, Business
-professionals</p>
-<p>Let’s analyze commercial paper in a little more detail. PaperNet participants
-such as MagnetoCorp and DigiBank use commercial paper transactions to achieve
-their business objectives – let’s examine the structure of a commercial paper
-and the transactions that affect it over time. We will also consider which
-organizations in PaperNet need to sign off on a transaction based on the trust
-relationships among the organizations in the network. Later we’ll focus on how
-money flows between buyers and sellers; for now, let’s focus on the first paper
-issued by MagnetoCorp.</p>
+<h1>Analysis<a class="headerlink" href="#analysis" title="永久链接至标题">¶</a></h1>
+<p>受众：架构师、应用程序开发者和智能合约开发者、业务专家</p>
+<p>让我们更详细地分析一下商业票据。PaperNet的参与者，如MagnetoCorp和DigiBank，使用商业票据交易来实现他们的业务目标——让我们研究一下商业票据的结构以及随着时间的推移影响它的交易。我们还将根据网络中组织之间的信任关系，考虑PaperNet中的哪些组织需要签署交易。稍后我们将重点讨论资金如何在买家和卖家之间流动；现在，让我们专注于MagnetoCorp发表的第一篇论文。</p>
 <div class="section" id="commercial-paper-lifecycle">
-<h2>Commercial paper lifecycle<a class="headerlink" href="#commercial-paper-lifecycle" title="Permalink to this headline">¶</a></h2>
-<p>A paper 00001 is issued by MagnetoCorp on May 31. Spend a few moments looking at
-the first <strong>state</strong> of this paper, with its different properties and values:</p>
+<h2>Commercial paper lifecycle<a class="headerlink" href="#commercial-paper-lifecycle" title="永久链接至标题">¶</a></h2>
+<p>一张票据00001是由MagnetoCorp在5月31日发布。花点时间看看这个票据的第一种状态，它有不同的性质和值:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
 <span class="n">Owner</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
@@ -220,16 +212,8 @@ the first <strong>state</strong> of this paper, with its different properties an
 <span class="n">Current</span> <span class="n">state</span> <span class="o">=</span> <span class="n">issued</span>
 </pre></div>
 </div>
-<p>This paper state is a result of the <strong>issue</strong> transaction and it brings
-MagnetoCorp’s first commercial paper into existence! Notice how this paper has a
-5M USD face value for redemption later in the year. See how the <code class="docutils literal notranslate"><span class="pre">Issuer</span></code> and
-<code class="docutils literal notranslate"><span class="pre">Owner</span></code> are the same when paper 00001 is issued. Notice that this paper could be
-uniquely identified as <code class="docutils literal notranslate"><span class="pre">MagnetoCorp00001</span></code> – a composition of the <code class="docutils literal notranslate"><span class="pre">Issuer</span></code> and
-<code class="docutils literal notranslate"><span class="pre">Paper</span></code> properties. Finally, see how the property <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">state</span> <span class="pre">=</span> <span class="pre">issued</span></code>
-quickly identifies the stage of MagnetoCorp paper 00001 in its lifecycle.</p>
-<p>Shortly after issuance, the paper is bought by DigiBank. Spend a few moments
-looking at how the same commercial paper has changed as a result of this <strong>buy</strong>
-transaction:</p>
+<p>票据的状态是发行交易的结果，它带来了MagnetoCorp 的第一份商业票据的存在！请注意，这张票据的面值为500万美元，可在今年晚些时候赎回。查看当发行00001时，发行者和所有者是如何相同的。请注意，本票据可以惟一地标识为MagnetoCorp00001——发行方和票据属性的组合。最后，查看属性Current state = issue如何快速标识MagnetoCorp paper 00001在其生命周期中的阶段。</p>
+<p>发行后不久，该票据被DigiBank收购。花点时间看看同样的商业票据是如何由于这次购买交易而发生变化的:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
 <span class="n">Owner</span> <span class="o">=</span> <span class="n">DigiBank</span>
@@ -239,13 +223,8 @@ transaction:</p>
 <span class="n">Current</span> <span class="n">state</span> <span class="o">=</span> <span class="n">trading</span>
 </pre></div>
 </div>
-<p>The most significant change is that of <code class="docutils literal notranslate"><span class="pre">Owner</span></code> – see how the paper initially
-owned by <code class="docutils literal notranslate"><span class="pre">MagnetoCorp</span></code> is now owned by <code class="docutils literal notranslate"><span class="pre">DigiBank</span></code>.  We could imagine how the
-paper might be subsequently sold to BrokerHouse or HedgeMatic, and the
-corresponding change to <code class="docutils literal notranslate"><span class="pre">Owner</span></code>. Note how <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">state</span></code> allow us to easily
-identify that the paper is now <code class="docutils literal notranslate"><span class="pre">trading</span></code>.</p>
-<p>After 6 months, if DigiBank still holds the the commercial paper, it can redeem
-it with MagnetoCorp:</p>
+<p>最显著的变化是所有者的变化——看看这家最初由MagnetoCorp拥有的票据现在是如何被DigiBank拥有的。我们可以想象，这张票据后来可能会被卖给BrokerHouse或HedgeMatic，然后相应的变更所有者。请注意，目前的状态如何让我们容易地确定，该票据现在正在交易。</p>
+<p>六个月后，如果DigiBank仍持有商业票据，可向MagnetoCorp赎回:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
 <span class="n">Owner</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
@@ -255,27 +234,15 @@ it with MagnetoCorp:</p>
 <span class="n">Current</span> <span class="n">state</span> <span class="o">=</span> <span class="n">redeemed</span>
 </pre></div>
 </div>
-<p>This final <strong>redeem</strong> transaction has ended the commercial paper’s lifecycle –
-it can be considered closed. It is often mandatory to keep a record of redeemed
-commercial papers, and the <code class="docutils literal notranslate"><span class="pre">redeemed</span></code> state allows us to quickly identify these.
-The value of <code class="docutils literal notranslate"><span class="pre">Owner</span></code> of a paper can be used to perform access control on the
-<strong>redeem</strong> transaction, by comparing the <code class="docutils literal notranslate"><span class="pre">Owner</span></code> against the identity of the
-transaction creator. Fabric supports this through the
-<a class="reference external" href="https://github.com/hyperledger/fabric-chaincode-node/blob/master/fabric-shim/lib/stub.js#L293"><code class="docutils literal notranslate"><span class="pre">getCreator()</span></code> chaincode API</a>.
-If golang is used as a chaincode language, the <a class="reference external" href="https://github.com/hyperledger/fabric/blob/master/core/chaincode/shim/ext/cid/README">client identity chaincode library</a>
-can be used to retrieve additional attributes of the transaction creator.</p>
+<p>最后的赎回交易结束了商业票据的生命周期——可以认为已经结束。通常必须保存赎回的商业票据的记录，而赎回状态允许我们快速识别这些票据。通过比较所有者和交易创建者的身份，票据所有者这个值可以用于对赎回交易执行访问控制。Fabric通过getCreator() 链码API支持这一点。如果将GO语言用作链码语言，还可以使用客户端标识链码库检索交易创建者的其他属性。</p>
 </div>
 <div class="section" id="transactions">
-<h2>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h2>
-<p>We’ve seen that paper 00001’s lifecycle is relatively straightforward – it
-moves between <code class="docutils literal notranslate"><span class="pre">issued</span></code>, <code class="docutils literal notranslate"><span class="pre">trading</span></code> and <code class="docutils literal notranslate"><span class="pre">redeemed</span></code> as a result of an <strong>issue</strong>,
-<strong>buy</strong>, or <strong>redeem</strong> transaction.</p>
-<p>These three transactions are initiated by MagnetoCorp and DigiBank (twice), and
-drive the state changes of paper 00001. Let’s have a look at the transactions
-that affect this paper in a little more detail:</p>
+<h2>Transactions<a class="headerlink" href="#transactions" title="永久链接至标题">¶</a></h2>
+<p>我们已经看到，票据00001的生命周期相对简单——它在发行、交易和赎回之间移动，这是由于发行、购买或赎回交易的结果。</p>
+<p>这三笔交易由MagnetoCorp和DigiBank发起(两次)，驱动票据00001状态变化。让我们更详细地看看影响票据的交易:</p>
 <div class="section" id="issue">
-<h3>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h3>
-<p>Examine the first transaction initiated by MagnetoCorp:</p>
+<h3>Issue<a class="headerlink" href="#issue" title="永久链接至标题">¶</a></h3>
+<p>研究MagnetoCorp发起的第一笔交易:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Txn</span> <span class="o">=</span> <span class="n">issue</span>
 <span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
@@ -284,21 +251,12 @@ that affect this paper in a little more detail:</p>
 <span class="n">Face</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">5</span><span class="n">M</span> <span class="n">USD</span>
 </pre></div>
 </div>
-<p>See how the <strong>issue</strong> transaction has a structure with properties and values.
-This transaction structure is different to, but closely matches, the structure
-of paper 00001. That’s because they are different things – paper 00001 reflects
-a state of PaperNet that is a result of the <strong>issue</strong> transaction. It’s the
-logic behind the <strong>issue</strong> transaction (which we cannot see) that takes these
-properties and creates this paper. Because the transaction <strong>creates</strong> the
-paper, it means there’s a very close relationship between these structures.</p>
-<p>The only organization that is involved in the <strong>issue</strong> transaction is MagnetoCorp.
-Naturally, MagnetoCorp needs to sign off on the transaction. In general, the issuer
-of a paper is required to sign off on a transaction that issues a new paper.</p>
+<p>查看怎样发起交易具有属性和值的结构。这种交易结构与票据00001的结构不同，但非常匹配。这是因为它们是不同的东西——票据00001反映了PaperNet的状态，这是发起交易的结果。正是发起交易背后的逻辑(我们无法看到)获取这些属性并创建了票据。因为交易创建了票据，这意味着这些结构之间有着非常密切的关系。</p>
+<p>参与此次发起交易的唯一组织是MagnetoCorp.。自然，MagnetoCorp需要批准这笔交易。一般来说，一张票据的发起者必须在发起新票据的交易上签字。</p>
 </div>
 <div class="section" id="buy">
-<h3>Buy<a class="headerlink" href="#buy" title="Permalink to this headline">¶</a></h3>
-<p>Next, examine the <strong>buy</strong> transaction which transfers ownership of paper 00001
-from MagnetoCorp to DigiBank:</p>
+<h3>Buy<a class="headerlink" href="#buy" title="永久链接至标题">¶</a></h3>
+<p>接下来，研究一下将票据00001的所有权从MagnetoCorp转移到DigiBank的购买交易:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Txn</span> <span class="o">=</span> <span class="n">buy</span>
 <span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
@@ -308,23 +266,10 @@ from MagnetoCorp to DigiBank:</p>
 <span class="n">Price</span> <span class="o">=</span> <span class="mf">4.94</span><span class="n">M</span> <span class="n">USD</span>
 </pre></div>
 </div>
-<p>See how the <strong>buy</strong> transaction has fewer properties that end up in this paper.
-That’s because this transaction only <strong>modifies</strong> this paper. It’s only <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">owner</span> <span class="pre">=</span> <span class="pre">DigiBank</span></code> that changes as a result of this transaction; everything else
-is the same. That’s OK – the most important thing about the <strong>buy</strong> transaction
-is the change of ownership, and indeed in this transaction, there’s an
-acknowledgement of the current owner of the paper, MagnetoCorp.</p>
-<p>You might ask why the <code class="docutils literal notranslate"><span class="pre">Purchase</span> <span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">Price</span></code> properties are not captured in
-paper 00001? This comes back to the difference between the transaction and the
-paper. The 4.94 M USD price tag is actually a property of the transaction,
-rather than a property of this paper. Spend a little time thinking about
-this difference; it is not as obvious as it seems. We’re going to see later
-that the ledger will record both pieces of information – the history of all
-transactions that affect this paper, as well its latest state. Being clear on
-this separation of information is really important.</p>
-<p>It’s also worth remembering that paper 00001 may be bought and sold many times.
-Although we’re skipping ahead a little in our scenario, let’s examine what
-transactions we <strong>might</strong> see if paper 00001 changes ownership.</p>
-<p>If we have a purchase by BigFund:</p>
+<p>在这张票据中，请查看购买交易如何拥有更少的属性。那是因为这个交易只修改了这张票据。只有新的所有者= DigiBank才会因为这笔交易而改变；其他的都是一样的。没关系，购买交易中最重要的是所有权的变更，事实上，在这次交易中，我们承认了票据的当前所有者，MagnetoCorp。</p>
+<p>您可能会问，为什么在票据00001中没有记录购买时间和价格属性？这又回到了交易和票据之间的区别。494万美元的价格标签实际上是交易的属性，而不是票据的属性。花点时间想想这种不同；这并不像看上去那么明显。我们稍后将看到，账本将记录这两条信息——影响票据的所有交易的历史，以及它的最新状态。明确这种信息的分离是非常重要的。</p>
+<p>同样值得记住的是，票据00001可能会被买卖很多次。虽然在我们的场景中跳过了一点，但是让我们检查一下，如果票据00001更改了所有权，我们可能会看到哪些交易。</p>
+<p>如果被BigFund购买:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Txn</span> <span class="o">=</span> <span class="n">buy</span>
 <span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
@@ -334,7 +279,7 @@ transactions we <strong>might</strong> see if paper 00001 changes ownership.</p>
 <span class="n">Price</span> <span class="o">=</span> <span class="mf">4.93</span><span class="n">M</span> <span class="n">USD</span>
 </pre></div>
 </div>
-<p>Followed by a subsequent purchase by HedgeMatic:</p>
+<p>随后被HedgeMatic购买:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Txn</span> <span class="o">=</span> <span class="n">buy</span>
 <span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
@@ -344,18 +289,12 @@ transactions we <strong>might</strong> see if paper 00001 changes ownership.</p>
 <span class="n">Price</span> <span class="o">=</span> <span class="mf">4.90</span><span class="n">M</span> <span class="n">USD</span>
 </pre></div>
 </div>
-<p>See how the paper owners changes, and how in out example, the price changes. Can
-you think of a reason why the price of MagnetoCorp commercial paper might be
-falling?</p>
-<p>Intuitively, a <strong>buy</strong> transaction demands that both the selling as well as the
-buying organization need to sign off on such a transaction such that there is
-proof of the mutual agreement among the two parties that are part of the deal.</p>
+<p>看看票据所有者是如何变化的，以及出了例子，价格是如何变化的。你能想出MagnetoCorp商业票据价格下跌的原因吗?</p>
+<p>直观地说，购买交易要求销售和购买组织都需要在这样的交易上签名，这样就有证据表明交易双方达成了协议。</p>
 </div>
 <div class="section" id="redeem">
-<h3>Redeem<a class="headerlink" href="#redeem" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>redeem</strong> transaction for paper 00001 represents the end of its lifecycle.
-In our relatively simple example, DigiBank initiates the transaction which
-transfers the commercial paper back to MagnetoCorp:</p>
+<h3>Redeem<a class="headerlink" href="#redeem" title="永久链接至标题">¶</a></h3>
+<p>票据00001的赎回交易表示其生命周期的结束。在我们相对简单的例子中，DigiBank启动了将商业票据转回MagnetoCorp的交易:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Txn</span> <span class="o">=</span> <span class="n">redeem</span>
 <span class="n">Issuer</span> <span class="o">=</span> <span class="n">MagnetoCorp</span>
 <span class="n">Paper</span> <span class="o">=</span> <span class="mi">00001</span>
@@ -363,33 +302,15 @@ transfers the commercial paper back to MagnetoCorp:</p>
 <span class="n">Redeem</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">30</span> <span class="n">Nov</span> <span class="mi">2020</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">EST</span>
 </pre></div>
 </div>
-<p>Again, notice how the <strong>redeem</strong> transaction has very few properties; all of the
-changes to paper 00001 can be calculated data by the redeem transaction logic:
-the <code class="docutils literal notranslate"><span class="pre">Issuer</span></code> will become the new owner, and the <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">state</span></code> will change to
-<code class="docutils literal notranslate"><span class="pre">redeemed</span></code>. The <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">owner</span></code> property is specified in our example, so that it
-can be checked against the current holder of the paper.</p>
-<p>From a trust perspective, the same reasoning of the <strong>buy</strong> transaction also
-applies to the <strong>redeem</strong> instruction: both organizations involved in the
-transaction are required to sign off on it.</p>
+<p>再次注意，赎回交易的属性非常少；对票据00001的所有更改都可以通过赎回交易逻辑计算：发起者将成为新的所有者，当前状态将变为赎回。在我们的示例中指定了当前所有者属性，以便可以根据票据的当前所有者对其进行检查。</p>
+<p>从信任的角度来看，购买交易的相同推理也适用于赎回指令：参与交易的两个组织都需要在上面签名。</p>
 </div>
 </div>
 <div class="section" id="the-ledger">
-<h2>The Ledger<a class="headerlink" href="#the-ledger" title="Permalink to this headline">¶</a></h2>
-<p>In this topic, we’ve seen how transactions and the resultant paper states are
-the two most important concepts in PaperNet. Indeed, we’ll see these two
-fundamental elements in any Hyperledger Fabric distributed
-<a class="reference external" href="../ledger/ledger.html">ledger</a> – a world state, that contains the current
-value of all objects, and a blockchain that records the history of all
-transactions that resulted in the current world state.</p>
-<p>The required sign-offs on transactions are enforced through rules, which
-are evaluated before appending a transaction to the ledger. Only if the
-required signatures are present, Fabric will accept a transaction as valid.</p>
-<p>You’re now in a great place translate these ideas into a smart contract. Don’t
-worry if your programming is a little rusty, we’ll provide tips and pointers to
-understand the program code. Mastering the commercial paper smart contract is
-the first big step towards designing your own application. Or, if you’re a
-business analyst who’s comfortable with a little programming, don’t be afraid to
-keep dig a little deeper!</p>
+<h2>The Ledger<a class="headerlink" href="#the-ledger" title="永久链接至标题">¶</a></h2>
+<p>在本主题中，我们已经看到交易和生成的票据状态是PaperNet中两个最重要的概念。实际上，我们将在任何超级账本Fabric分布式账本中看到这两个基本元素——一个包含所有对象的当前值的世界状态，以及一个记录导致当前世界状态的所有交易历史的区块链。</p>
+<p>交易所需的签名是通过规则强制执行的，这些规则在将交易追加到账本之前进行评估。只有在提供了所需的签名之后，Fabric才会接受交易为有效。</p>
+<p>你现在处在一个很好的位置，把这些想法转化为一份智能合约。如果您的编程有点生疏，不要担心，我们将提供理解程序代码的技巧和要点。掌握商业票据智能合约是设计自己的应用程序的第一步。或者，如果您是一位业务分析师，对一些编程比较熟悉，那么不要害怕继续深入研究!</p>
 <!--- Licensed under Creative Commons Attribution 4.0 International License
 https://creativecommons.org/licenses/by/4.0/ --></div>
 </div>

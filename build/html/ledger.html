@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ledger &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Ledger &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,19 +95,19 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -174,7 +175,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ledger">
-<h1>Ledger<a class="headerlink" href="#ledger" title="Permalink to this headline">¶</a></h1>
+<h1>Ledger<a class="headerlink" href="#ledger" title="永久链接至标题">¶</a></h1>
 <p>The ledger is the sequenced, tamper-resistant record of all state transitions. State
 transitions are a result of chaincode invocations (“transactions”) submitted by participating
 parties.  Each transaction results in a set of asset key-value pairs that are committed to the
@@ -183,7 +184,7 @@ ledger as creates, updates, or deletes.</p>
 blocks, as well as a state database to maintain current state.  There is one ledger per
 channel. Each peer maintains a copy of the ledger for each channel of which they are a member.</p>
 <div class="section" id="chain">
-<h2>Chain<a class="headerlink" href="#chain" title="Permalink to this headline">¶</a></h2>
+<h2>Chain<a class="headerlink" href="#chain" title="永久链接至标题">¶</a></h2>
 <p>The chain is a transaction log, structured as hash-linked blocks, where each block contains a
 sequence of N transactions. The block header includes a hash of the block’s transactions, as
 well as a hash of the prior block’s header. In this way, all transactions on the ledger are
@@ -195,7 +196,7 @@ and trusted state.</p>
 supporting the append-only nature of the blockchain workload.</p>
 </div>
 <div class="section" id="state-database">
-<h2>State Database<a class="headerlink" href="#state-database" title="Permalink to this headline">¶</a></h2>
+<h2>State Database<a class="headerlink" href="#state-database" title="永久链接至标题">¶</a></h2>
 <p>The ledger’s current state data represents the latest values for all keys ever included in the chain
 transaction log. Since current state represents all latest key values known to the channel, it is
 sometimes referred to as World State.</p>
@@ -211,7 +212,7 @@ is modeled as JSON, permitting rich queries of the JSON content. See
 <a class="reference internal" href="couchdb_as_state_database.html"><span class="doc">CouchDB as the State Database</span></a> for more information on CouchDB.</p>
 </div>
 <div class="section" id="transaction-flow">
-<h2>Transaction Flow<a class="headerlink" href="#transaction-flow" title="Permalink to this headline">¶</a></h2>
+<h2>Transaction Flow<a class="headerlink" href="#transaction-flow" title="永久链接至标题">¶</a></h2>
 <p>At a high level, the transaction flow consists of a transaction proposal sent by an application
 client to specific endorsing peers.  The endorsing peers verify the client signature, and execute
 a chaincode function to simulate the transaction. The output is the chaincode results,

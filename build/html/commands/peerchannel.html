@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>peer channel &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>peer channel &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="peer version" href="peerversion.html" />
     <link rel="prev" title="peer lifecycle chaincode" href="peerlifecycle.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -139,11 +140,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -191,7 +192,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>peer channel</li>
     
@@ -213,12 +214,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer-channel">
-<h1>peer channel<a class="headerlink" href="#peer-channel" title="Permalink to this headline">¶</a></h1>
+<h1>peer channel<a class="headerlink" href="#peer-channel" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span></code> command allows administrators to perform channel related
 operations on a peer, such as joining a channel or listing the channels to which
 a peer is joined.</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span></code> command has the following subcommands:</p>
 <ul class="simple">
 <li><p>create</p></li>
@@ -231,7 +232,7 @@ a peer is joined.</p>
 </ul>
 </div>
 <div class="section" id="id1">
-<h2>peer channel<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Operate</span> <span class="n">a</span> <span class="n">channel</span><span class="p">:</span> <span class="n">create</span><span class="o">|</span><span class="n">fetch</span><span class="o">|</span><span class="n">join</span><span class="o">|</span><span class="nb">list</span><span class="o">|</span><span class="n">update</span><span class="o">|</span><span class="n">signconfigtx</span><span class="o">|</span><span class="n">getinfo</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -262,7 +263,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-create">
-<h2>peer channel create<a class="headerlink" href="#peer-channel-create" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel create<a class="headerlink" href="#peer-channel-create" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">channel</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">the</span> <span class="n">genesis</span> <span class="n">block</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -288,7 +289,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-fetch">
-<h2>peer channel fetch<a class="headerlink" href="#peer-channel-fetch" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel fetch<a class="headerlink" href="#peer-channel-fetch" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fetch</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">block</span><span class="p">,</span> <span class="n">writing</span> <span class="n">it</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -311,7 +312,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-getinfo">
-<h2>peer channel getinfo<a class="headerlink" href="#peer-channel-getinfo" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel getinfo<a class="headerlink" href="#peer-channel-getinfo" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get</span> <span class="n">blockchain</span> <span class="n">information</span> <span class="n">of</span> <span class="n">a</span> <span class="n">specified</span> <span class="n">channel</span><span class="o">.</span> <span class="n">Requires</span> <span class="s1">&#39;-c&#39;</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -334,7 +335,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-join">
-<h2>peer channel join<a class="headerlink" href="#peer-channel-join" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel join<a class="headerlink" href="#peer-channel-join" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Joins</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">to</span> <span class="n">a</span> <span class="n">channel</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -357,7 +358,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-list">
-<h2>peer channel list<a class="headerlink" href="#peer-channel-list" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel list<a class="headerlink" href="#peer-channel-list" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">of</span> <span class="n">channels</span> <span class="n">peer</span> <span class="n">has</span> <span class="n">joined</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -379,7 +380,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-signconfigtx">
-<h2>peer channel signconfigtx<a class="headerlink" href="#peer-channel-signconfigtx" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel signconfigtx<a class="headerlink" href="#peer-channel-signconfigtx" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signs</span> <span class="n">the</span> <span class="n">supplied</span> <span class="n">configtx</span> <span class="n">update</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">place</span> <span class="n">on</span> <span class="n">the</span> <span class="n">filesystem</span><span class="o">.</span> <span class="n">Requires</span> <span class="s1">&#39;-f&#39;</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -402,7 +403,7 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="peer-channel-update">
-<h2>peer channel update<a class="headerlink" href="#peer-channel-update" title="Permalink to this headline">¶</a></h2>
+<h2>peer channel update<a class="headerlink" href="#peer-channel-update" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signs</span> <span class="ow">and</span> <span class="n">sends</span> <span class="n">the</span> <span class="n">supplied</span> <span class="n">configtx</span> <span class="n">update</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">channel</span><span class="o">.</span> <span class="n">Requires</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -426,9 +427,9 @@ a peer is joined.</p>
 </div>
 </div>
 <div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="永久链接至标题">¶</a></h2>
 <div class="section" id="peer-channel-create-examples">
-<h3>peer channel create examples<a class="headerlink" href="#peer-channel-create-examples" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel create examples<a class="headerlink" href="#peer-channel-create-examples" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example that uses the <code class="docutils literal notranslate"><span class="pre">--orderer</span></code> global flag on the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">create</span></code> command.</p>
 <ul>
 <li><p>Create a sample channel <code class="docutils literal notranslate"><span class="pre">mychannel</span></code> defined by the configuration transaction
@@ -474,7 +475,7 @@ supersedes the previous configuration.</p>
 </ul>
 </div>
 <div class="section" id="peer-channel-fetch-example">
-<h3>peer channel fetch example<a class="headerlink" href="#peer-channel-fetch-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel fetch example<a class="headerlink" href="#peer-channel-fetch-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s some examples of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span></code> command.</p>
 <ul>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">newest</span></code> option to retrieve the most recent channel block, and
@@ -517,7 +518,7 @@ program must be written to do this.</p>
 </ul>
 </div>
 <div class="section" id="peer-channel-getinfo-example">
-<h3>peer channel getinfo example<a class="headerlink" href="#peer-channel-getinfo-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel getinfo example<a class="headerlink" href="#peer-channel-getinfo-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">getinfo</span></code> command.</p>
 <ul>
 <li><p>Get information about the local peer for channel <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>.</p>
@@ -535,7 +536,7 @@ channel’s blockchain.</p>
 </ul>
 </div>
 <div class="section" id="peer-channel-join-example">
-<h3>peer channel join example<a class="headerlink" href="#peer-channel-join-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel join example<a class="headerlink" href="#peer-channel-join-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">join</span></code> command.</p>
 <ul>
 <li><p>Join a peer to the channel defined in the genesis block identified by the file
@@ -553,7 +554,7 @@ previously retrieved by the <code class="docutils literal notranslate"><span cla
 </ul>
 </div>
 <div class="section" id="peer-channel-list-example">
-<h3>peer channel list example<a class="headerlink" href="#peer-channel-list-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel list example<a class="headerlink" href="#peer-channel-list-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">list</span></code> command.</p>
 <ul>
 <li><p>List the channels to which a peer is joined.</p>
@@ -570,7 +571,7 @@ previously retrieved by the <code class="docutils literal notranslate"><span cla
 </ul>
 </div>
 <div class="section" id="peer-channel-signconfigtx-example">
-<h3>peer channel signconfigtx example<a class="headerlink" href="#peer-channel-signconfigtx-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel signconfigtx example<a class="headerlink" href="#peer-channel-signconfigtx-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">signconfigtx</span></code> command.</p>
 <ul>
 <li><p>Sign the <code class="docutils literal notranslate"><span class="pre">channel</span> <span class="pre">update</span></code> transaction defined in the file
@@ -597,7 +598,7 @@ transaction by the increase in the size of the file <code class="docutils litera
 </ul>
 </div>
 <div class="section" id="peer-channel-update-example">
-<h3>peer channel update example<a class="headerlink" href="#peer-channel-update-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer channel update example<a class="headerlink" href="#peer-channel-update-example" title="永久链接至标题">¶</a></h3>
 <p>Here’s an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">update</span></code> command.</p>
 <ul>
 <li><p>Update the channel <code class="docutils literal notranslate"><span class="pre">mychannel</span></code> using the configuration transaction defined in

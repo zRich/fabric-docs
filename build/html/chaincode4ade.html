@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chaincode for Developers &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>链码开发者 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Chaincode for Operators" href="chaincode4noah.html" />
-    <link rel="prev" title="Chaincode Tutorials" href="chaincode.html" /> 
+    <link rel="prev" title="链码教程" href="chaincode.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,56 +97,56 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="write_first_app.html">Writing Your First Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/commercial_paper.html">Commercial paper tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_network.html">Building Your First Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">Adding an Org to a Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_network.html">搭建你的第一个网络（BYFN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">向通道添加组织</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading_your_network_tutorial.html">Upgrading Your Network Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">Using Private Data in Fabric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode.html">Chaincode Tutorials</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Chaincode for Developers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-chaincode">What is Chaincode?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chaincode-api">Chaincode API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simple-asset-chaincode">Simple Asset Chaincode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#choosing-a-location-for-the-code">Choosing a Location for the Code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#housekeeping">Housekeeping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initializing-the-chaincode">Initializing the Chaincode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#invoking-the-chaincode">Invoking the Chaincode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#implementing-the-chaincode-application">Implementing the Chaincode Application</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pulling-it-all-together">Pulling it All Together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#building-chaincode">Building Chaincode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#testing-using-dev-mode">Testing Using dev mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">在Fabric里面使用私有数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode.html">链码教程</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">链码开发者</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-chaincode">什么是链码？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chaincode-api">链码API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-asset-chaincode">简单资产链码</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-a-location-for-the-code">为代码选择一个位置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#housekeeping">辅助工作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initializing-the-chaincode">初始化链码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invoking-the-chaincode">调用链码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementing-the-chaincode-application">实现链码应用程序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pulling-it-all-together">放在一起</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-chaincode">构建链码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-using-dev-mode">用开发模式测试</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#install-hyperledger-fabric-samples">Install Hyperledger Fabric Samples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#terminal-1-start-the-network">Terminal 1 - Start the network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#terminal-2-build-start-the-chaincode">Terminal 2 - Build &amp; start the chaincode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#terminal-3-use-the-chaincode">Terminal 3 - Use the chaincode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing-new-chaincode">Testing new chaincode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chaincode-access-control">Chaincode access control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chaincode-encryption">Chaincode encryption</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#managing-external-dependencies-for-chaincode-written-in-go">Managing external dependencies for chaincode written in Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-hyperledger-fabric-samples">安装超级账本Fabric示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminal-1-start-the-network">终端1 - 启动网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminal-2-build-start-the-chaincode">终端2 - 构建和启动链码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminal-3-use-the-chaincode">终端3 - 使用链码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-new-chaincode">测试新链码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chaincode-access-control">链码访问控制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chaincode-encryption">链码加密</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-external-dependencies-for-chaincode-written-in-go">管理用Go编写的链码的外部依赖关系</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="chaincode4noah.html">Chaincode for Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemchaincode.html">System Chaincode Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_tutorial.html">Using CouchDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html">Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html">视频</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -195,7 +196,7 @@
         
           <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
         
-      <li>Chaincode for Developers</li>
+      <li>链码开发者</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,30 +216,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="chaincode-for-developers">
-<h1>Chaincode for Developers<a class="headerlink" href="#chaincode-for-developers" title="Permalink to this headline">¶</a></h1>
+<h1>链码开发者<a class="headerlink" href="#chaincode-for-developers" title="永久链接至标题">¶</a></h1>
 <div class="section" id="what-is-chaincode">
-<h2>What is Chaincode?<a class="headerlink" href="#what-is-chaincode" title="Permalink to this headline">¶</a></h2>
-<p>Chaincode is a program, written in <a class="reference external" href="https://golang.org">Go</a>, <a class="reference external" href="https://nodejs.org">node.js</a>,
-or <a class="reference external" href="https://java.com/en/">Java</a> that implements a prescribed interface.
-Chaincode runs in a secured Docker container isolated from the endorsing peer
-process. Chaincode initializes and manages the ledger state through transactions
-submitted by applications.</p>
-<p>A chaincode typically handles business logic agreed to by members of the
-network, so it similar to a “smart contract”. A chaincode can be invoked to update or query
-the ledger in a proposal transaction. Given the appropriate permission, a chaincode
-may invoke another chaincode, either in the same channel or in different channels, to access its state.
-Note that, if the called chaincode is on a different channel from the calling chaincode,
-only read query is allowed. That is, the called chaincode on a different channel is only a <code class="docutils literal notranslate"><span class="pre">Query</span></code>,
-which does not participate in state validation checks in subsequent commit phase.</p>
-<p>In the following sections, we will explore chaincode through the eyes of an
-application developer. We’ll present a simple chaincode sample application
-and walk through the purpose of each method in the Chaincode Shim API.</p>
+<h2>什么是链码？<a class="headerlink" href="#what-is-chaincode" title="永久链接至标题">¶</a></h2>
+<p>Chaincode是一个程序，用`Go &lt;<a class="reference external" href="https://golang.org">https://golang.org</a>&gt;`_, <a class="reference external" href="https://nodejs.org">node.js</a>, or <a href="#id1"><span class="problematic" id="id2">`</span></a>Java &lt;<a class="reference external" href="https://java.com/en/">https://java.com/en/</a>&gt;`_编写，实现指定的接口。链码运行在安全的Docker容器中，该容器与背书节点进程隔离。链码通过应用提交的交易初始化和管理账本状态。</p>
+<p>链码通常处理网络成员同意的业务逻辑，因此它类似于“智能合约”。在一个提议交易中，可以调用链码来更新或查询账本。给予适当的权限，一个链码可以调用另一个链码(在相同通道中或在不同通道中)来访问其状态。注意，如果被调用的链码位于与调用链码不同的通道上，则只允许读查询。也就是说，在不同通道上被调用的链码只是一个“查询”，它不参与后续提交阶段的状态验证检查。</p>
+<p>在下面的部分中，我们将通过应用开发者的视角来研究链码。我们将展示一个简单的链码示例应用程序，并介绍Chaincode Shim API中每个方法的用途。</p>
 </div>
 <div class="section" id="chaincode-api">
-<h2>Chaincode API<a class="headerlink" href="#chaincode-api" title="Permalink to this headline">¶</a></h2>
-<p>Every chaincode program must implement the <code class="docutils literal notranslate"><span class="pre">Chaincode</span></code> interface whose methods
-are called in response to received transactions. You can find the reference
-documentation of the Chaincode Shim API for different languages below:</p>
+<h2>链码API<a class="headerlink" href="#chaincode-api" title="永久链接至标题">¶</a></h2>
+<p>每个链码程序都必须实现``Chaincode`` 接口，该接口的方法是在收到交易的响应中被调用的。你可以在下面找到适用于不同语言的Chaincode Shim API的参考文档:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode">Go</a></p></li>
@@ -246,23 +233,9 @@ documentation of the Chaincode Shim API for different languages below:</p>
 <li><p><a class="reference external" href="https://fabric-chaincode-java.github.io/org/hyperledger/fabric/shim/Chaincode.html">Java</a></p></li>
 </ul>
 </div></blockquote>
-<p>In each language, the <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> method is called by clients to submit transaction
-proposals. This method allows you to use the chaincode to read and write data on
-the channel ledger.</p>
-<p>You also need to include an <code class="docutils literal notranslate"><span class="pre">Init</span></code> method that will serve as the initialization
-function for your chaincode. This method will be called in order to initialize
-the chaincode when it is started or upgraded. By default, this function is never
-executed. However, you can use the chaincode definition to request that the <code class="docutils literal notranslate"><span class="pre">Init</span></code>
-function be executed. If execution of <code class="docutils literal notranslate"><span class="pre">Init</span></code> is requested, fabric will ensure
-that <code class="docutils literal notranslate"><span class="pre">Init</span></code> is invoked before any other function and is only invoked once.
-This option provides you additional control over which users can initialize the
-chaincode and the ability to add initial data to the ledger. If you are using
-the peer CLI to approve the chaincode definition, use the <code class="docutils literal notranslate"><span class="pre">--init-required</span></code>
-flag to request the execution of the <code class="docutils literal notranslate"><span class="pre">Init</span></code> function. Then call the <code class="docutils literal notranslate"><span class="pre">Init</span></code>
-function by using the <cite>peer chaincode invoke</cite> command and passing the
-<code class="docutils literal notranslate"><span class="pre">--isInit</span></code> flag. If you are using the Fabric SDK for Node.js, visit
-<a class="reference external" href="https://fabric-sdk-node.github.io/master/tutorial-chaincode-lifecycle.html">How to install and start your chaincode</a>. For more information, see <a class="reference internal" href="chaincode4noah.html"><span class="doc">Chaincode for Operators</span></a>.</p>
-<p>The other interface in the chaincode “shim” APIs is the <code class="docutils literal notranslate"><span class="pre">ChaincodeStubInterface</span></code>:</p>
+<p>在每种语言中，客户端调用``Invoke`` 方法来提交交易提议。此方法允许您使用链码读取和写入通道账本上的数据。</p>
+<p>您还需要包含一个 <code class="docutils literal notranslate"><span class="pre">Init</span></code> 方法，它将作为链码的初始化函数。当链码启动或升级时，将调用此方法来初始化链码。默认情况下，这个函数永远不会执行。但是，您可以使用链码定义来请求执行 <code class="docutils literal notranslate"><span class="pre">Init</span></code> 函数。如果请求执行 <code class="docutils literal notranslate"><span class="pre">Init</span></code> ，Fabric将确保在调用任何其他函数之前调用 <code class="docutils literal notranslate"><span class="pre">Init</span></code> ，并且只调用一次。该选项为您提供了额外的控制，用户可以对其中的链码进行初始化，并能够将初始数据添加到账本。如果您正在使用节点的CLI来批准链码定义，请使用``–init-required`` 标志来请求执行``Init`` 函数。然后使用 <cite>peer chaincode invoke`命令调用``Init`</cite> 函数，并传入 <code class="docutils literal notranslate"><span class="pre">--isInit</span></code> 标志。如果您正在为Node.js使用Fabric SDK，请访问 <a href="#id5"><span class="problematic" id="id6">`如何安装和启动您的链码&lt;https://fabric-sdk-node.github.io/master/tutorial-chaincode-lifecycle.html&gt;`__</span></a>。更多信息，请看 <a class="reference internal" href="chaincode4noah.html"><span class="doc">Chaincode for Operators</span></a>。</p>
+<p>在链码“shim”API中的另一个接口是“ChaincodeStubInterface”:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStubInterface">Go</a></p></li>
@@ -270,39 +243,28 @@ function by using the <cite>peer chaincode invoke</cite> command and passing the
 <li><p><a class="reference external" href="https://fabric-chaincode-java.github.io/org/hyperledger/fabric/shim/ChaincodeStub.html">Java</a></p></li>
 </ul>
 </div></blockquote>
-<p>which is used to access and modify the ledger, and to make invocations between
-chaincodes.</p>
-<p>In this tutorial using Go chaincode, we will demonstrate the use of these APIs
-by implementing a simple chaincode application that manages simple “assets”.</p>
+<p>这些用于存取和修改账本，并在链码之间进行调用。</p>
+<p>在使用Go链码的本教程中，我们将通过实现一个管理简单“资产”的简单链码应用程序来演示这些API的使用。</p>
 </div>
 <div class="section" id="simple-asset-chaincode">
-<span id="id3"></span><h2>Simple Asset Chaincode<a class="headerlink" href="#simple-asset-chaincode" title="Permalink to this headline">¶</a></h2>
-<p>Our application is a basic sample chaincode to create assets
-(key-value pairs) on the ledger.</p>
+<span id="id3"></span><h2>简单资产链码<a class="headerlink" href="#simple-asset-chaincode" title="永久链接至标题">¶</a></h2>
+<p>我们的应用程序是一个基本的链码示例，用于在账本上创建资产(键值对)。</p>
 <div class="section" id="choosing-a-location-for-the-code">
-<h3>Choosing a Location for the Code<a class="headerlink" href="#choosing-a-location-for-the-code" title="Permalink to this headline">¶</a></h3>
-<p>If you haven’t been doing programming in Go, you may want to make sure that
-you have <a class="reference internal" href="prereqs.html#golang"><span class="std std-ref">Go Programming Language</span></a> installed and your system properly configured.</p>
-<p>Now, you will want to create a directory for your chaincode application as a
-child directory of <code class="docutils literal notranslate"><span class="pre">$GOPATH/src/</span></code>.</p>
-<p>To keep things simple, let’s use the following command:</p>
+<h3>为代码选择一个位置<a class="headerlink" href="#choosing-a-location-for-the-code" title="永久链接至标题">¶</a></h3>
+<p>如果您没有用过Go编程，您可能希望确保已经安装了 <a class="reference internal" href="prereqs.html#golang"><span class="std std-ref">Go Programming Language</span></a> 并正确配置了系统。</p>
+<p>现在，您需要为链码应用程序创建一个目录，作为``$GOPATH/src/<a href="#id1"><span class="problematic" id="id2">``</span></a>的子目录。</p>
+<p>为了简单起见，我们使用以下命令:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p <span class="nv">$GOPATH</span>/src/sacc <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/sacc
 </pre></div>
 </div>
-<p>Now, let’s create the source file that we’ll fill in with code:</p>
+<p>现在，让我们创建源文件，我们将用下列代码填充:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch sacc.go
 </pre></div>
 </div>
 </div>
 <div class="section" id="housekeeping">
-<h3>Housekeeping<a class="headerlink" href="#housekeeping" title="Permalink to this headline">¶</a></h3>
-<p>First, let’s start with some housekeeping. As with every chaincode, it implements the
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode">Chaincode interface</a>
-in particular, <code class="docutils literal notranslate"><span class="pre">Init</span></code> and <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> functions. So, let’s add the Go import
-statements for the necessary dependencies for our chaincode. We’ll import the
-chaincode shim package and the
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/protos/peer">peer protobuf package</a>.
-Next, let’s add a struct <code class="docutils literal notranslate"><span class="pre">SimpleAsset</span></code> as a receiver for Chaincode shim functions.</p>
+<h3>辅助工作<a class="headerlink" href="#housekeeping" title="永久链接至标题">¶</a></h3>
+<p>首先，让我们从一些辅助工作开始。与每个链码一样，它实现了 <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode">Chaincode interface</a>  特别是 <code class="docutils literal notranslate"><span class="pre">Init</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> 函数。因此，让我们添加Go import语句，用于链码的必要依赖项。我们将导入链码shim包和`peer protobuf package &lt;<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/protos/peer">https://godoc.org/github.com/hyperledger/fabric/protos/peer</a>&gt;`_。接下来，让我们添加一个结构 <code class="docutils literal notranslate"><span class="pre">SimpleAsset</span></code> 作为Chaincode shim函数的接收器。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
@@ -319,8 +281,8 @@ Next, let’s add a struct <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="section" id="initializing-the-chaincode">
-<h3>Initializing the Chaincode<a class="headerlink" href="#initializing-the-chaincode" title="Permalink to this headline">¶</a></h3>
-<p>Next, we’ll implement the <code class="docutils literal notranslate"><span class="pre">Init</span></code> function.</p>
+<h3>初始化链码<a class="headerlink" href="#initializing-the-chaincode" title="永久链接至标题">¶</a></h3>
+<p>下面，我们将实现``Init`` 函数。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Init is called during chaincode instantiation to initialize any data.</span>
 <span class="kd">func</span> <span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">SimpleAsset</span><span class="p">)</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">stub</span> <span class="nx">shim</span><span class="p">.</span><span class="nx">ChaincodeStubInterface</span><span class="p">)</span> <span class="nx">peer</span><span class="p">.</span><span class="nx">Response</span> <span class="p">{</span>
 
@@ -328,15 +290,10 @@ Next, let’s add a struct <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note that chaincode upgrade also calls this function. When writing a
-chaincode that will upgrade an existing one, make sure to modify the <code class="docutils literal notranslate"><span class="pre">Init</span></code>
-function appropriately. In particular, provide an empty “Init” method if there’s
-no “migration” or nothing to be initialized as part of the upgrade.</p>
+<p class="admonition-title">注解</p>
+<p>注意，链码升级也调用这个函数。在编写现有链码升级的链码时，请确保适当地修改``Init`` 函数。特别是，如果没有“迁移”或升级过程中没有需要初始化的内容，请提供一个空的“Init”方法。</p>
 </div>
-<p>Next, we’ll retrieve the arguments to the <code class="docutils literal notranslate"><span class="pre">Init</span></code> call using the
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetStringArgs">ChaincodeStubInterface.GetStringArgs</a>
-function and check for validity. In our case, we are expecting a key-value pair.</p>
+<p>接下来，我们将使用函数 <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetStringArgs">ChaincodeStubInterface.GetStringArgs</a> 检索参数调用``Init``，并检查有效性。在我们的示例中，我们期望取到一个键值对。</p>
 <blockquote>
 <div><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Init is called during chaincode instantiation to initialize any</span>
 <span class="c1">// data. Note that chaincode upgrade also calls this function to reset</span>
@@ -352,11 +309,7 @@ function and check for validity. In our case, we are expecting a key-value pair.
 </pre></div>
 </div>
 </div></blockquote>
-<p>Next, now that we have established that the call is valid, we’ll store the
-initial state in the ledger. To do this, we will call
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">ChaincodeStubInterface.PutState</a>
-with the key and value passed in as the arguments. Assuming all went well,
-return a peer.Response object that indicates the initialization was a success.</p>
+<p>接下来，既然我们已经确定调用是有效的，我们将在账本中存储初始状态。为此，我们将以键和值作为参数传入调用`ChaincodeStubInterface.PutState &lt;<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState</a>&gt;`_ 。PutState ‘ _。假设一切顺利，返回一个表明初始化成功的peer.Response对象。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Init is called during chaincode instantiation to initialize any</span>
 <span class="c1">// data. Note that chaincode upgrade also calls this function to reset</span>
 <span class="c1">// or to migrate data, so be careful to avoid a scenario where you</span>
@@ -381,8 +334,8 @@ return a peer.Response object that indicates the initialization was a success.</
 </div>
 </div>
 <div class="section" id="invoking-the-chaincode">
-<h3>Invoking the Chaincode<a class="headerlink" href="#invoking-the-chaincode" title="Permalink to this headline">¶</a></h3>
-<p>First, let’s add the <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> function’s signature.</p>
+<h3>调用链码<a class="headerlink" href="#invoking-the-chaincode" title="永久链接至标题">¶</a></h3>
+<p>首先，让我们添加``Invoke`` 函数的签名。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Invoke is called per transaction on the chaincode. Each transaction is</span>
 <span class="c1">// either a &#39;get&#39; or a &#39;set&#39; on the asset created by Init function. The &#39;set&#39;</span>
 <span class="c1">// method may create a new asset by specifying a new key-value pair.</span>
@@ -391,14 +344,7 @@ return a peer.Response object that indicates the initialization was a success.</
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>As with the <code class="docutils literal notranslate"><span class="pre">Init</span></code> function above, we need to extract the arguments from the
-<code class="docutils literal notranslate"><span class="pre">ChaincodeStubInterface</span></code>. The <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> function’s arguments will be the
-name of the chaincode application function to invoke. In our case, our application
-will simply have two functions: <code class="docutils literal notranslate"><span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">get</span></code>, that allow the value of an
-asset to be set or its current state to be retrieved. We first call
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetFunctionAndParameters">ChaincodeStubInterface.GetFunctionAndParameters</a>
-to extract the function name and the parameters to that chaincode application
-function.</p>
+<p>与上面的``Init`` 函数一样，我们需要从``ChaincodeStubInterface``中提取参数。函数的参数将是要调用的链码应用的函数名称。在我们的例子中，应用只有两个函数：<code class="docutils literal notranslate"><span class="pre">set``和``get</span></code>，它们允许设置资产的值或检索资产的当前状态。我们首先调用`ChaincodeStubInterface.GetFunctionAndParameters &lt;<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetFunctionAndParameters">https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetFunctionAndParameters</a>&gt;`_提取函数名和链码应用函数的参数。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Invoke is called per transaction on the chaincode. Each transaction is</span>
 <span class="c1">// either a &#39;get&#39; or a &#39;set&#39; on the asset created by Init function. The Set</span>
 <span class="c1">// method may create a new asset by specifying a new key-value pair.</span>
@@ -409,10 +355,7 @@ function.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Next, we’ll validate the function name as being either <code class="docutils literal notranslate"><span class="pre">set</span></code> or <code class="docutils literal notranslate"><span class="pre">get</span></code>, and
-invoke those chaincode application functions, returning an appropriate
-response via the <code class="docutils literal notranslate"><span class="pre">shim.Success</span></code> or <code class="docutils literal notranslate"><span class="pre">shim.Error</span></code> functions that will
-serialize the response into a gRPC protobuf message.</p>
+<p>接下来，我们将验证函数名是否为``set`` 或 <code class="docutils literal notranslate"><span class="pre">get</span></code>，并调用那些链码应用程序函数，通过``shim.Success``或``shim.Error``函数返回适当的响应，该函数将响应序列化为gRPC protobuf消息。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Invoke is called per transaction on the chaincode. Each transaction is</span>
 <span class="c1">// either a &#39;get&#39; or a &#39;set&#39; on the asset created by Init function. The Set</span>
 <span class="c1">// method may create a new asset by specifying a new key-value pair.</span>
@@ -438,13 +381,8 @@ serialize the response into a gRPC protobuf message.</p>
 </div>
 </div>
 <div class="section" id="implementing-the-chaincode-application">
-<h3>Implementing the Chaincode Application<a class="headerlink" href="#implementing-the-chaincode-application" title="Permalink to this headline">¶</a></h3>
-<p>As noted, our chaincode application implements two functions that can be
-invoked via the <code class="docutils literal notranslate"><span class="pre">Invoke</span></code> function. Let’s implement those functions now.
-Note that as we mentioned above, to access the ledger’s state, we will leverage
-the <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">ChaincodeStubInterface.PutState</a>
-and <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetState">ChaincodeStubInterface.GetState</a>
-functions of the chaincode shim API.</p>
+<h3>实现链码应用程序<a class="headerlink" href="#implementing-the-chaincode-application" title="永久链接至标题">¶</a></h3>
+<p>如前所述，我们的链码应用程序实现了两个可以通过``Invoke`` ‘函数调用的函数。现在我们来实现这些函数。请注意，如前所述，要访问账本的状态，我们将利用链码shim API的 <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">ChaincodeStubInterface.PutState</a> 和 <a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetState">ChaincodeStubInterface.GetState</a> 函数。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set stores the asset (both key and value) on the ledger. If the key exists,</span>
 <span class="c1">// it will override the value with the new one</span>
 <span class="kd">func</span> <span class="nx">set</span><span class="p">(</span><span class="nx">stub</span> <span class="nx">shim</span><span class="p">.</span><span class="nx">ChaincodeStubInterface</span><span class="p">,</span> <span class="nx">args</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
@@ -478,10 +416,8 @@ functions of the chaincode shim API.</p>
 </div>
 </div>
 <div class="section" id="pulling-it-all-together">
-<span id="chaincode-sample"></span><h3>Pulling it All Together<a class="headerlink" href="#pulling-it-all-together" title="Permalink to this headline">¶</a></h3>
-<p>Finally, we need to add the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, which will call the
-<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Start">shim.Start</a>
-function. Here’s the whole chaincode program source.</p>
+<span id="chaincode-sample"></span><h3>放在一起<a class="headerlink" href="#pulling-it-all-together" title="永久链接至标题">¶</a></h3>
+<p>最后，我们需要添加``main`` 函数，它将调用`shim.Start &lt;<a class="reference external" href="https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Start">https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Start</a>&gt;`_ 函数。这是完整的链码程序源代码。</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
@@ -577,76 +513,60 @@ function. Here’s the whole chaincode program source.</p>
 </div>
 </div>
 <div class="section" id="building-chaincode">
-<h3>Building Chaincode<a class="headerlink" href="#building-chaincode" title="Permalink to this headline">¶</a></h3>
-<p>Now let’s compile your chaincode.</p>
+<h3>构建链码<a class="headerlink" href="#building-chaincode" title="永久链接至标题">¶</a></h3>
+<p>现在让我们编译你的链码</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get -u github.com/hyperledger/fabric/core/chaincode/shim
 go build
 </pre></div>
 </div>
-<p>Assuming there are no errors, now we can proceed to the next step, testing
-your chaincode.</p>
+<p>假设没有错误，现在我们可以继续下一步，测试您的链码。</p>
 </div>
 <div class="section" id="testing-using-dev-mode">
-<h3>Testing Using dev mode<a class="headerlink" href="#testing-using-dev-mode" title="Permalink to this headline">¶</a></h3>
-<p>Normally chaincodes are started and maintained by peer. However in “dev
-mode”, chaincode is built and started by the user. This mode is useful
-during chaincode development phase for rapid code/build/run/debug cycle
-turnaround.</p>
-<p>We start “dev mode” by leveraging pre-generated orderer and channel artifacts for
-a sample dev network.  As such, the user can immediately jump into the process
-of compiling chaincode and driving calls.</p>
+<h3>用开发模式测试<a class="headerlink" href="#testing-using-dev-mode" title="永久链接至标题">¶</a></h3>
+<p>通常，链码由节点启动和维护。但是在“开发模式”中，链码是由用户构建和启动的。这种模式在链码开发阶段对于快速代码/构建/运行/调试循环非常有用。</p>
+<p>我们利用预生成的排序器和通道构件组成的示例开发网络来启动“开发模式”。因此，用户可以立即跳到编译链码和驱动调用的过程中。</p>
 </div>
 </div>
 <div class="section" id="install-hyperledger-fabric-samples">
-<h2>Install Hyperledger Fabric Samples<a class="headerlink" href="#install-hyperledger-fabric-samples" title="Permalink to this headline">¶</a></h2>
-<p>If you haven’t already done so, please <a class="reference internal" href="install.html"><span class="doc">Install Samples, Binaries and Docker Images</span></a>.</p>
-<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">chaincode-docker-devmode</span></code> directory of the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code>
-clone:</p>
+<h2>安装超级账本Fabric示例<a class="headerlink" href="#install-hyperledger-fabric-samples" title="永久链接至标题">¶</a></h2>
+<p>如果您还没有这样做，请 <a class="reference internal" href="install.html"><span class="doc">Install Samples, Binaries and Docker Images</span></a>。</p>
+<p>导航到“fabric-samples”克隆体的“chaincode-docker-devmode”目录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> chaincode-docker-devmode
 </pre></div>
 </div>
-<p>Now open three terminals and navigate to your <code class="docutils literal notranslate"><span class="pre">chaincode-docker-devmode</span></code>
-directory in each.</p>
+<p>现在打开三个终端并导航到每个终端的“chaincode-docker-devmode”目录。</p>
 </div>
 <div class="section" id="terminal-1-start-the-network">
-<h2>Terminal 1 - Start the network<a class="headerlink" href="#terminal-1-start-the-network" title="Permalink to this headline">¶</a></h2>
+<h2>终端1 - 启动网络<a class="headerlink" href="#terminal-1-start-the-network" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose -f docker-compose-simple.yaml up
 </pre></div>
 </div>
-<p>The above starts the network with the <code class="docutils literal notranslate"><span class="pre">SingleSampleMSPSolo</span></code> orderer profile and
-launches the peer in “dev mode”.  It also launches two additional containers -
-one for the chaincode environment and a CLI to interact with the chaincode.  The
-commands for create and join channel are embedded in the CLI container, so we
-can jump immediately to the chaincode calls.</p>
+<p>上面的代码使用“SingleSampleMSPSolo”排序器配置文件启动网络，并在“dev模式”中启动节点。它还启动了另外两个容器，一个用于链码环境，另一个用于CLI与链码交互。创建和加入通道的命令嵌入到CLI容器中，因此我们可以立即跳转到链码调用。</p>
 </div>
 <div class="section" id="terminal-2-build-start-the-chaincode">
-<h2>Terminal 2 - Build &amp; start the chaincode<a class="headerlink" href="#terminal-2-build-start-the-chaincode" title="Permalink to this headline">¶</a></h2>
+<h2>终端2 - 构建和启动链码<a class="headerlink" href="#terminal-2-build-start-the-chaincode" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it chaincode bash
 </pre></div>
 </div>
-<p>You should see the following:</p>
+<p>你将看到如下结果：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@d2629980e76b:/opt/gopath/src/chaincode#
 </pre></div>
 </div>
-<p>Now, compile your chaincode:</p>
+<p>现在，编译你的链码：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> sacc
 go build
 </pre></div>
 </div>
-<p>Now run the chaincode:</p>
+<p>现在运行链码：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CORE_PEER_ADDRESS</span><span class="o">=</span>peer:7052 <span class="nv">CORE_CHAINCODE_ID_NAME</span><span class="o">=</span>mycc:0 ./sacc
 </pre></div>
 </div>
-<p>The chaincode is started with peer and chaincode logs indicating successful registration with the peer.
-Note that at this stage the chaincode is not associated with any channel. This is done in subsequent steps
-using the <code class="docutils literal notranslate"><span class="pre">instantiate</span></code> command.</p>
+<p>链码由节点启动，链码日志表明节点注册成功。注意，在这个阶段，链码与任何通道都没有关联。这是在后续步骤中使用 <code class="docutils literal notranslate"><span class="pre">instantiate</span></code> 命令完成的。</p>
 </div>
 <div class="section" id="terminal-3-use-the-chaincode">
-<h2>Terminal 3 - Use the chaincode<a class="headerlink" href="#terminal-3-use-the-chaincode" title="Permalink to this headline">¶</a></h2>
-<p>Even though you are in <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code> mode, you still have to install the
-chaincode so the life-cycle system chaincode can go through its checks normally.
-This requirement may be removed in future when in <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code> mode.</p>
-<p>We’ll leverage the CLI container to drive these calls.</p>
+<h2>终端3 - 使用链码<a class="headerlink" href="#terminal-3-use-the-chaincode" title="永久链接至标题">¶</a></h2>
+<p>即使您处于 <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code> 模式，您仍然必须安装链码，以便生命周期系统链码能够正常通过检查。这个要求可能会在以后的 <code class="docutils literal notranslate"><span class="pre">--peer-chaincodedev</span></code> 模式中被删除。</p>
+<p>我们将利用CLI容器来驱动这些调用。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it cli bash
 </pre></div>
 </div>
@@ -654,82 +574,43 @@ This requirement may be removed in future when in <code class="docutils literal 
 peer chaincode instantiate -n mycc -v <span class="m">0</span> -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;a&quot;,&quot;10&quot;]}&#39;</span> -C myc
 </pre></div>
 </div>
-<p>Now issue an invoke to change the value of “a” to “20”.</p>
+<p>现在发出一个调用，将“a”的值更改为“20”。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer chaincode invoke -n mycc -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;set&quot;, &quot;a&quot;, &quot;20&quot;]}&#39;</span> -C myc
 </pre></div>
 </div>
-<p>Finally, query <code class="docutils literal notranslate"><span class="pre">a</span></code>.  We should see a value of <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<p>最后,查询 <code class="docutils literal notranslate"><span class="pre">a</span></code>。我们应该看到’<a href="#id1"><span class="problematic" id="id2">``</span></a>20``的值。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer chaincode query -n mycc -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</span> -C myc
 </pre></div>
 </div>
 </div>
 <div class="section" id="testing-new-chaincode">
-<h2>Testing new chaincode<a class="headerlink" href="#testing-new-chaincode" title="Permalink to this headline">¶</a></h2>
-<p>By default, we mount only <code class="docutils literal notranslate"><span class="pre">sacc</span></code>.  However, you can easily test different
-chaincodes by adding them to the <code class="docutils literal notranslate"><span class="pre">chaincode</span></code> subdirectory and relaunching
-your network.  At this point they will be accessible in your <code class="docutils literal notranslate"><span class="pre">chaincode</span></code> container.</p>
+<h2>测试新链码<a class="headerlink" href="#testing-new-chaincode" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，我们只挂载`sacc``。然而，您可以通过将不同的链码添加到 <code class="docutils literal notranslate"><span class="pre">chaincode</span></code> 子目录并重新启动您的网络，从而轻松地测试不同的链码。此时，它们将可在您的``chaincode``容器中被访问。</p>
 </div>
 <div class="section" id="chaincode-access-control">
-<h2>Chaincode access control<a class="headerlink" href="#chaincode-access-control" title="Permalink to this headline">¶</a></h2>
-<p>Chaincode can utilize the client (submitter) certificate for access
-control decisions by calling the GetCreator() function. Additionally
-the Go shim provides extension APIs that extract client identity
-from the submitter’s certificate that can be used for access control decisions,
-whether that is based on client identity itself, or the org identity,
-or on a client identity attribute.</p>
-<p>For example an asset that is represented as a key/value may include the
-client’s identity as part of the value (for example as a JSON attribute
-indicating that asset owner), and only this client may be authorized
-to make updates to the key/value in the future. The client identity
-library extension APIs can be used within chaincode to retrieve this
-submitter information to make such access control decisions.</p>
-<p>See the <a class="reference external" href="https://github.com/hyperledger/fabric/blob/master/core/chaincode/shim/ext/cid/README.md">client identity (CID) library documentation</a>
-for more details.</p>
-<p>To add the client identity shim extension to your chaincode as a dependency, see <a class="reference internal" href="#vendoring"><span class="std std-ref">Managing external dependencies for chaincode written in Go</span></a>.</p>
+<h2>链码访问控制<a class="headerlink" href="#chaincode-access-control" title="永久链接至标题">¶</a></h2>
+<p>链码可以通过调用GetCreator()函数来利用客户端(提交者)证书进行访问控制决策。此外，Go shim还提供了扩展API，从提交者的证书中提取客户端身份，这些API可用于访问控制决策，无论是基于客户端身份本身、org身份，还是基于客户端身份属性。</p>
+<p>例如，表示为键/值的资产可能包含作为值的一部分的客户端身份(例如表示该资产所有者的JSON属性)，并且只有这个客户端可能被授权在将来更新键/值。可以在链码中使用客户端身份库扩展API来检索提交者信息，从而做出这样的访问控制决策。</p>
+<p>有关详细信息，请参见`客户端身份(CID)库文档 &lt;<a class="reference external" href="https://github.com/hyperledger/fabric/blob/master/core/chaincode/shim/ext/cid/README.md">https://github.com/hyperledger/fabric/blob/master/core/chaincode/shim/ext/cid/README.md</a>&gt;`_ 。</p>
+<p>要将客户端身份shim扩展作为依赖项添加到链码中，请参见  <a class="reference internal" href="#vendoring"><span class="std std-ref">管理用Go编写的链码的外部依赖关系</span></a>。</p>
 </div>
 <div class="section" id="chaincode-encryption">
-<h2>Chaincode encryption<a class="headerlink" href="#chaincode-encryption" title="Permalink to this headline">¶</a></h2>
-<p>In certain scenarios, it may be useful to encrypt values associated with a key
-in their entirety or simply in part.  For example, if a person’s social security
-number or address was being written to the ledger, then you likely would not want
-this data to appear in plaintext.  Chaincode encryption is achieved by leveraging
-the <a class="reference external" href="https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/entities">entities extension</a>
-which is a BCCSP wrapper with commodity factories and functions to perform cryptographic
-operations such as encryption and elliptic curve digital signatures.  For example,
-to encrypt, the invoker of a chaincode passes in a cryptographic key via the
-transient field.  The same key may then be used for subsequent query operations, allowing
-for proper decryption of the encrypted state values.</p>
-<p>For more information and samples, see the
-<a class="reference external" href="https://github.com/hyperledger/fabric/tree/master/examples/chaincode/go/enccc_example">Encc Example</a>
-within the <code class="docutils literal notranslate"><span class="pre">fabric/examples</span></code> directory.  Pay specific attention to the <code class="docutils literal notranslate"><span class="pre">utils.go</span></code>
-helper program.  This utility loads the chaincode shim APIs and Entities extension
-and builds a new class of functions (e.g. <code class="docutils literal notranslate"><span class="pre">encryptAndPutState</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">getStateAndDecrypt</span></code>)
-that the sample encryption chaincode then leverages.  As such, the chaincode can
-now marry the basic shim APIs of <code class="docutils literal notranslate"><span class="pre">Get</span></code> and <code class="docutils literal notranslate"><span class="pre">Put</span></code> with the added functionality of
-<code class="docutils literal notranslate"><span class="pre">Encrypt</span></code> and <code class="docutils literal notranslate"><span class="pre">Decrypt</span></code>.</p>
-<p>To add the encryption entities extension to your chaincode as a dependency, see <a class="reference internal" href="#vendoring"><span class="std std-ref">Managing external dependencies for chaincode written in Go</span></a>.</p>
+<h2>链码加密<a class="headerlink" href="#chaincode-encryption" title="永久链接至标题">¶</a></h2>
+<p>链码在某些场景中，对与密钥关联的值进行整体或部分加密可能很有用。例如，如果一个人的社会安全号码或地址被写入了账本，那么您可能不希望这些数据以明文形式出现。链码加密是通过使用`实体扩展 &lt;<a class="reference external" href="https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/entities">https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/entities</a>&gt;`__ 来实现的，该扩展是一个BCCSP包装器，带有商品工厂和函数，用于执行类似加密和椭圆曲线数字签名等的加密操作。例如，要加密，链码的调用程序通过瞬态字段传入一个加密密钥。然后，可以将相同的密钥用于后续查询操作，从而对加密的状态值进行正确的解密。</p>
+<p>有关更多信息和示例，请参见“fabric/examples”目录中的`Encc例子 &lt;<a class="reference external" href="https://github.com/hyperledger/fabric/tree/master/examples/chaincode/go/enccc_example">https://github.com/hyperledger/fabric/tree/master/examples/chaincode/go/enccc_example</a>&gt;`__。要特别注意 <code class="docutils literal notranslate"><span class="pre">utils.go</span></code> 辅助程序。这个实用程序加载链码shim API和实体扩展，并构建一个新的函数类（例如``encryptAndPutState`` &amp; <code class="docutils literal notranslate"><span class="pre">getStateAndDecrypt</span></code>）来示范加密链码。因此，链码现在可以将基本shim API 的``Get`` /<code class="docutils literal notranslate"><span class="pre">Put``与``Encrypt</span></code> /<a href="#id1"><span class="problematic" id="id2">``</span></a>Decrypt``的附加功能结合起来。</p>
+<p>要将加密实体扩展作为依赖项添加到链码中，请参见 <a class="reference internal" href="#vendoring"><span class="std std-ref">管理用Go编写的链码的外部依赖关系</span></a>.</p>
 </div>
 <div class="section" id="managing-external-dependencies-for-chaincode-written-in-go">
-<span id="vendoring"></span><h2>Managing external dependencies for chaincode written in Go<a class="headerlink" href="#managing-external-dependencies-for-chaincode-written-in-go" title="Permalink to this headline">¶</a></h2>
-<p>If your chaincode requires packages not provided by the Go standard library,
-you will need to include those packages with your chaincode. It is also a
-good practice to add the shim and any extension libraries to your chaincode
-as a dependency.</p>
-<p>There are <a class="reference external" href="https://github.com/golang/go/wiki/PackageManagementTools">many tools available</a>
-for managing (or “vendoring”) these dependencies.  The following demonstrates how to use
-<code class="docutils literal notranslate"><span class="pre">govendor</span></code>:</p>
+<span id="vendoring"></span><h2>管理用Go编写的链码的外部依赖关系<a class="headerlink" href="#managing-external-dependencies-for-chaincode-written-in-go" title="永久链接至标题">¶</a></h2>
+<p>如果您的链码需要Go标准库没有提供的包，那么您需要在链码中包含这些包。将shim和任何扩展库作为依赖项添加到链码中也是一个很好的实践。</p>
+<p>有`许多工具 &lt;<a class="reference external" href="https://github.com/golang/go/wiki/PackageManagementTools">https://github.com/golang/go/wiki/PackageManagementTools</a>&gt;`__ 可用于管理(或“处理”)这些依赖项。下面演示如何使用``govendor``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>govendor init
 govendor add +external  // Add all external package, or
 govendor add github.com/external/pkg // Add specific external package
 </pre></div>
 </div>
-<p>This imports the external dependencies into a local <code class="docutils literal notranslate"><span class="pre">vendor</span></code> directory.
-If you are vendoring the Fabric shim or shim extensions, clone the
-Fabric repository to your $GOPATH/src/github.com/hyperledger directory,
-before executing the govendor commands.</p>
-<p>Once dependencies are vendored in your chaincode directory, <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">package</span></code>
-and <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">install</span></code> operations will then include code associated with the
-dependencies into the chaincode package.</p>
+<p>这将外部依赖项导入到本地的 <code class="docutils literal notranslate"><span class="pre">vendor</span></code> 目录中。如果您正在处理Fabric shim或shim扩展，请在执行govendor命令之前，将Fabric存储库克隆到您的$GOPATH/src/github.com/hyperledger目录。</p>
+<p>一旦依赖项在chaincode目录中被处理，<code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">package``和``peer</span> <span class="pre">chaincode</span> <span class="pre">install</span></code> 操作将把与依赖项相关的代码包含到链码包中。</p>
 </div>
 </div>
 
@@ -744,7 +625,7 @@ dependencies into the chaincode package.</p>
         <a href="chaincode4noah.html" class="btn btn-neutral float-right" title="Chaincode for Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="chaincode.html" class="btn btn-neutral" title="Chaincode Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chaincode.html" class="btn btn-neutral" title="链码教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

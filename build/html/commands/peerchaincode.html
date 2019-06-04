@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>peer chaincode &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>peer chaincode &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="peer lifecycle chaincode" href="peerlifecycle.html" />
     <link rel="prev" title="peer" href="peercommand.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">peer chaincode</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
@@ -137,11 +138,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -189,7 +190,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>peer chaincode</li>
     
@@ -211,12 +212,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer-chaincode">
-<h1>peer chaincode<a class="headerlink" href="#peer-chaincode" title="Permalink to this headline">¶</a></h1>
+<h1>peer chaincode<a class="headerlink" href="#peer-chaincode" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span></code> command allows administrators to perform chaincode
 related operations on a peer, such as installing, instantiating, invoking,
 packaging, querying, and upgrading chaincode.</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span></code> command has the following subcommands:</p>
 <ul class="simple">
 <li><p>install</p></li>
@@ -237,7 +238,7 @@ current value on a peer’s ledger.</p>
 section in this topic.</p>
 </div>
 <div class="section" id="flags">
-<h2>Flags<a class="headerlink" href="#flags" title="Permalink to this headline">¶</a></h2>
+<h2>Flags<a class="headerlink" href="#flags" title="永久链接至标题">¶</a></h2>
 <p>Each <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span></code> subcommand has both a set of flags specific to an
 individual subcommand, as well as a set of global flags that relate to all
 <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span></code> subcommands. Not all subcommands would use these flags.
@@ -272,7 +273,7 @@ communication with the orderer endpoint</p>
 </ul>
 </div>
 <div class="section" id="peer-chaincode-install">
-<h2>peer chaincode install<a class="headerlink" href="#peer-chaincode-install" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode install<a class="headerlink" href="#peer-chaincode-install" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Install</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span> <span class="n">This</span> <span class="n">installs</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="n">deployment</span> <span class="n">spec</span> <span class="n">package</span> <span class="p">(</span><span class="k">if</span> <span class="n">provided</span><span class="p">)</span> <span class="ow">or</span> <span class="n">packages</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">chaincode</span> <span class="n">before</span> <span class="n">subsequently</span> <span class="n">installing</span> <span class="n">it</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -303,7 +304,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-instantiate">
-<h2>peer chaincode instantiate<a class="headerlink" href="#peer-chaincode-instantiate" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode instantiate<a class="headerlink" href="#peer-chaincode-instantiate" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Deploy</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">chaincode</span> <span class="n">to</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -338,7 +339,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-invoke">
-<h2>peer chaincode invoke<a class="headerlink" href="#peer-chaincode-invoke" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode invoke<a class="headerlink" href="#peer-chaincode-invoke" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">chaincode</span><span class="o">.</span> <span class="n">It</span> <span class="n">will</span> <span class="k">try</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">endorsed</span> <span class="n">transaction</span> <span class="n">to</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -370,7 +371,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-list">
-<h2>peer chaincode list<a class="headerlink" href="#peer-chaincode-list" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode list<a class="headerlink" href="#peer-chaincode-list" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">the</span> <span class="n">instantiated</span> <span class="n">chaincodes</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">channel</span> <span class="k">if</span> <span class="n">specify</span> <span class="n">channel</span><span class="p">,</span> <span class="ow">or</span> <span class="n">get</span> <span class="n">installed</span> <span class="n">chaincodes</span> <span class="n">on</span> <span class="n">the</span> <span class="n">peer</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -399,7 +400,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-package">
-<h2>peer chaincode package<a class="headerlink" href="#peer-chaincode-package" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode package<a class="headerlink" href="#peer-chaincode-package" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">the</span> <span class="n">package</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -430,7 +431,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-query">
-<h2>peer chaincode query<a class="headerlink" href="#peer-chaincode-query" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode query<a class="headerlink" href="#peer-chaincode-query" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span> <span class="n">endorsed</span> <span class="n">result</span> <span class="n">of</span> <span class="n">chaincode</span> <span class="n">function</span> <span class="n">call</span> <span class="ow">and</span> <span class="nb">print</span> <span class="n">it</span><span class="o">.</span> <span class="n">It</span> <span class="n">won</span><span class="s1">&#39;t generate transaction.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -461,7 +462,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-signpackage">
-<h2>peer chaincode signpackage<a class="headerlink" href="#peer-chaincode-signpackage" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode signpackage<a class="headerlink" href="#peer-chaincode-signpackage" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sign</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">chaincode</span> <span class="n">package</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -484,7 +485,7 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="peer-chaincode-upgrade">
-<h2>peer chaincode upgrade<a class="headerlink" href="#peer-chaincode-upgrade" title="Permalink to this headline">¶</a></h2>
+<h2>peer chaincode upgrade<a class="headerlink" href="#peer-chaincode-upgrade" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Upgrade</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">chaincode</span> <span class="k">with</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">one</span><span class="o">.</span> <span class="n">The</span> <span class="n">new</span> <span class="n">chaincode</span> <span class="n">will</span> <span class="n">immediately</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">chaincode</span> <span class="n">upon</span> <span class="n">the</span> <span class="n">transaction</span> <span class="n">committed</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
@@ -520,9 +521,9 @@ communication with the orderer endpoint</p>
 </div>
 </div>
 <div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="永久链接至标题">¶</a></h2>
 <div class="section" id="peer-chaincode-instantiate-examples">
-<h3>peer chaincode instantiate examples<a class="headerlink" href="#peer-chaincode-instantiate-examples" title="Permalink to this headline">¶</a></h3>
+<h3>peer chaincode instantiate examples<a class="headerlink" href="#peer-chaincode-instantiate-examples" title="永久链接至标题">¶</a></h3>
 <p>Here are some examples of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">instantiate</span></code> command, which
 instantiates the chaincode named <code class="docutils literal notranslate"><span class="pre">mycc</span></code> at version <code class="docutils literal notranslate"><span class="pre">1.0</span></code> on channel
 <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>:</p>
@@ -552,7 +553,7 @@ network with TLS disabled:</p>
 </ul>
 </div>
 <div class="section" id="peer-chaincode-invoke-example">
-<h3>peer chaincode invoke example<a class="headerlink" href="#peer-chaincode-invoke-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer chaincode invoke example<a class="headerlink" href="#peer-chaincode-invoke-example" title="永久链接至标题">¶</a></h3>
 <p>Here is an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">invoke</span></code> command:</p>
 <ul>
 <li><p>Invoke the chaincode named <code class="docutils literal notranslate"><span class="pre">mycc</span></code> at version <code class="docutils literal notranslate"><span class="pre">1.0</span></code> on channel <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>
@@ -583,7 +584,7 @@ or invalidated by each peer on the channel.</p>
 </ul>
 </div>
 <div class="section" id="peer-chaincode-list-example">
-<h3>peer chaincode list example<a class="headerlink" href="#peer-chaincode-list-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer chaincode list example<a class="headerlink" href="#peer-chaincode-list-example" title="永久链接至标题">¶</a></h3>
 <p>Here are some examples of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">list</span> </code> command:</p>
 <ul>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">--installed</span></code> flag to list the chaincodes installed on a peer.</p>
@@ -612,7 +613,7 @@ channel <code class="docutils literal notranslate"><span class="pre">mychannel</
 </ul>
 </div>
 <div class="section" id="peer-chaincode-package-example">
-<h3>peer chaincode package example<a class="headerlink" href="#peer-chaincode-package-example" title="Permalink to this headline">¶</a></h3>
+<h3>peer chaincode package example<a class="headerlink" href="#peer-chaincode-package-example" title="永久链接至标题">¶</a></h3>
 <p>Here is an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">package</span></code> command, which
 packages the chaincode named <code class="docutils literal notranslate"><span class="pre">mycc</span></code> at version <code class="docutils literal notranslate"><span class="pre">1.1</span></code>, creates the chaincode
 deployment spec, signs the package using the local MSP, and outputs it as

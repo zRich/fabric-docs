@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>peer &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>peer &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="peer chaincode" href="peerchaincode.html" />
-    <link rel="prev" title="Commands Reference" href="../command_ref.html" /> 
+    <link rel="prev" title="命令参考" href="../command_ref.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">peer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
@@ -124,11 +125,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -176,7 +177,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>peer</li>
     
@@ -198,9 +199,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="peer">
-<h1>peer<a class="headerlink" href="#peer" title="Permalink to this headline">¶</a></h1>
+<h1>peer<a class="headerlink" href="#peer" title="永久链接至标题">¶</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<h2>Description<a class="headerlink" href="#description" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span></code> command has five different subcommands, each of which allows
 administrators to perform a specific set of tasks related to a peer.  For
 example, you can use the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span></code> subcommand to join a peer to a channel,
@@ -208,7 +209,7 @@ or the <code class="docutils literal notranslate"><span class="pre">peer</span>&
 peer.</p>
 </div>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">peer</span></code> command has five different subcommands within it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peer</span> <span class="n">chaincode</span> <span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
 <span class="n">peer</span> <span class="n">channel</span>   <span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
@@ -223,7 +224,7 @@ subcommand (<code class="docutils literal notranslate"><span class="pre">channel
 level help text as described in the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag below.</p>
 </div>
 <div class="section" id="flags">
-<h2>Flags<a class="headerlink" href="#flags" title="Permalink to this headline">¶</a></h2>
+<h2>Flags<a class="headerlink" href="#flags" title="永久链接至标题">¶</a></h2>
 <p>Each <code class="docutils literal notranslate"><span class="pre">peer</span></code> subcommand has a specific set of flags associated with it, many of
 which are designated <em>global</em> because they can be used in all subcommand
 options. These flags are described with the relevant <code class="docutils literal notranslate"><span class="pre">peer</span></code> subcommand.</p>
@@ -244,7 +245,7 @@ even option help.</p>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
 <p>Here is an example using the available flag on the <code class="docutils literal notranslate"><span class="pre">peer</span></code> command.</p>
 <ul>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag on the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">join</span></code> command.</p>
@@ -287,7 +288,7 @@ even option help.</p>
         <a href="peerchaincode.html" class="btn btn-neutral float-right" title="peer chaincode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../command_ref.html" class="btn btn-neutral" title="Commands Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../command_ref.html" class="btn btn-neutral" title="命令参考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

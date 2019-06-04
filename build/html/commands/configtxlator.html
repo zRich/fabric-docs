@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>configtxlator &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>configtxlator &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="cryptogen" href="cryptogen.html" />
     <link rel="prev" title="configtxgen" href="configtxgen.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -133,11 +134,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -185,7 +186,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>configtxlator</li>
     
@@ -207,13 +208,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="configtxlator">
-<h1>configtxlator<a class="headerlink" href="#configtxlator" title="Permalink to this headline">¶</a></h1>
+<h1>configtxlator<a class="headerlink" href="#configtxlator" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> command allows users to translate between protobuf and JSON
 versions of fabric data structures and create config updates.  The command may
 either start a REST server to expose its functions over HTTP or may be utilized
 directly as a command line tool.</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> tool has five sub-commands, as follows:</p>
 <ul class="simple">
 <li><p>start</p></li>
@@ -224,7 +225,7 @@ directly as a command line tool.</p>
 </ul>
 </div>
 <div class="section" id="configtxlator-start">
-<h2>configtxlator start<a class="headerlink" href="#configtxlator-start" title="Permalink to this headline">¶</a></h2>
+<h2>configtxlator start<a class="headerlink" href="#configtxlator-start" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">configtxlator</span> <span class="n">start</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Start</span> <span class="n">the</span> <span class="n">configtxlator</span> <span class="n">REST</span> <span class="n">server</span>
@@ -240,7 +241,7 @@ directly as a command line tool.</p>
 </div>
 </div>
 <div class="section" id="configtxlator-proto-encode">
-<h2>configtxlator proto_encode<a class="headerlink" href="#configtxlator-proto-encode" title="Permalink to this headline">¶</a></h2>
+<h2>configtxlator proto_encode<a class="headerlink" href="#configtxlator-proto-encode" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">configtxlator</span> <span class="n">proto_encode</span> <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="n">TYPE</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Converts</span> <span class="n">a</span> <span class="n">JSON</span> <span class="n">document</span> <span class="n">to</span> <span class="n">protobuf</span><span class="o">.</span>
@@ -256,7 +257,7 @@ directly as a command line tool.</p>
 </div>
 </div>
 <div class="section" id="configtxlator-proto-decode">
-<h2>configtxlator proto_decode<a class="headerlink" href="#configtxlator-proto-decode" title="Permalink to this headline">¶</a></h2>
+<h2>configtxlator proto_decode<a class="headerlink" href="#configtxlator-proto-decode" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">configtxlator</span> <span class="n">proto_decode</span> <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="n">TYPE</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Converts</span> <span class="n">a</span> <span class="n">proto</span> <span class="n">message</span> <span class="n">to</span> <span class="n">JSON</span><span class="o">.</span>
@@ -272,7 +273,7 @@ directly as a command line tool.</p>
 </div>
 </div>
 <div class="section" id="configtxlator-compute-update">
-<h2>configtxlator compute_update<a class="headerlink" href="#configtxlator-compute-update" title="Permalink to this headline">¶</a></h2>
+<h2>configtxlator compute_update<a class="headerlink" href="#configtxlator-compute-update" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">configtxlator</span> <span class="n">compute_update</span> <span class="o">--</span><span class="n">channel_id</span><span class="o">=</span><span class="n">CHANNEL_ID</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Takes</span> <span class="n">two</span> <span class="n">marshaled</span> <span class="n">common</span><span class="o">.</span><span class="n">Config</span> <span class="n">messages</span> <span class="ow">and</span> <span class="n">computes</span> <span class="n">the</span> <span class="n">config</span> <span class="n">update</span> <span class="n">which</span>
@@ -289,7 +290,7 @@ directly as a command line tool.</p>
 </div>
 </div>
 <div class="section" id="configtxlator-version">
-<h2>configtxlator version<a class="headerlink" href="#configtxlator-version" title="Permalink to this headline">¶</a></h2>
+<h2>configtxlator version<a class="headerlink" href="#configtxlator-version" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">configtxlator</span> <span class="n">version</span>
 
 <span class="n">Show</span> <span class="n">version</span> <span class="n">information</span>
@@ -300,9 +301,9 @@ directly as a command line tool.</p>
 </div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
 <div class="section" id="decoding">
-<h3>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline">¶</a></h3>
+<h3>Decoding<a class="headerlink" href="#decoding" title="永久链接至标题">¶</a></h3>
 <p>Decode a block named <code class="docutils literal notranslate"><span class="pre">fabric_block.pb</span></code> to JSON and print to stdout.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxlator</span> <span class="n">proto_decode</span> <span class="o">--</span><span class="nb">input</span> <span class="n">fabric_block</span><span class="o">.</span><span class="n">pb</span> <span class="o">--</span><span class="nb">type</span> <span class="n">common</span><span class="o">.</span><span class="n">Block</span>
 </pre></div>
@@ -314,7 +315,7 @@ performs the same operation through the REST API.</p>
 </div>
 </div>
 <div class="section" id="encoding">
-<h3>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h3>
+<h3>Encoding<a class="headerlink" href="#encoding" title="永久链接至标题">¶</a></h3>
 <p>Convert a JSON document for a policy from stdin to a file named <code class="docutils literal notranslate"><span class="pre">policy.pb</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxlator</span> <span class="n">proto_encode</span> <span class="o">--</span><span class="nb">type</span> <span class="n">common</span><span class="o">.</span><span class="n">Policy</span> <span class="o">--</span><span class="n">output</span> <span class="n">policy</span><span class="o">.</span><span class="n">pb</span>
 </pre></div>
@@ -326,7 +327,7 @@ performs the same operation through the REST API.</p>
 </div>
 </div>
 <div class="section" id="pipelines">
-<h3>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this headline">¶</a></h3>
+<h3>Pipelines<a class="headerlink" href="#pipelines" title="永久链接至标题">¶</a></h3>
 <p>Compute a config update from <code class="docutils literal notranslate"><span class="pre">original_config.pb</span></code> and <code class="docutils literal notranslate"><span class="pre">modified_config.pb</span></code> and decode it to JSON to stdout.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configtxlator</span> <span class="n">compute_update</span> <span class="o">--</span><span class="n">channel_id</span> <span class="n">testchan</span> <span class="o">--</span><span class="n">original</span> <span class="n">original_config</span><span class="o">.</span><span class="n">pb</span> <span class="o">--</span><span class="n">updated</span> <span class="n">modified_config</span><span class="o">.</span><span class="n">pb</span> <span class="o">|</span> <span class="n">configtxlator</span> <span class="n">proto_decode</span> <span class="o">--</span><span class="nb">type</span> <span class="n">common</span><span class="o">.</span><span class="n">ConfigUpdate</span>
 </pre></div>
@@ -339,7 +340,7 @@ perform the same operations through the REST API.</p>
 </div>
 </div>
 <div class="section" id="additional-notes">
-<h2>Additional Notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">¶</a></h2>
+<h2>Additional Notes<a class="headerlink" href="#additional-notes" title="永久链接至标题">¶</a></h2>
 <p>The tool name is a portmanteau of <em>configtx</em> and <em>translator</em> and is intended to
 convey that the tool simply converts between different equivalent data
 representations. It does not generate configuration. It does not submit or

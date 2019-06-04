@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Service Discovery CLI &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Service Discovery CLI &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Fabric-CA Commands" href="commands/fabric-ca-commands.html" />
     <link rel="prev" title="cryptogen" href="commands/cryptogen.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="commands/peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -127,11 +128,11 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -179,7 +180,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="command_ref.html">命令参考</a> &raquo;</li>
         
       <li>Service Discovery CLI</li>
     
@@ -201,7 +202,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="service-discovery-cli">
-<h1>Service Discovery CLI<a class="headerlink" href="#service-discovery-cli" title="Permalink to this headline">¶</a></h1>
+<h1>Service Discovery CLI<a class="headerlink" href="#service-discovery-cli" title="永久链接至标题">¶</a></h1>
 <p>The discovery service has its own Command Line Interface (CLI) which
 uses a YAML configuration file to persist properties such as certificate
 and private key paths, as well as MSP ID.</p>
@@ -245,7 +246,7 @@ Commands:
 </pre></div>
 </div>
 <div class="section" id="configuring-external-endpoints">
-<h2>Configuring external endpoints<a class="headerlink" href="#configuring-external-endpoints" title="Permalink to this headline">¶</a></h2>
+<h2>Configuring external endpoints<a class="headerlink" href="#configuring-external-endpoints" title="永久链接至标题">¶</a></h2>
 <p>Currently, to see peers in service discovery they need to have <code class="docutils literal notranslate"><span class="pre">EXTERNAL_ENDPOINT</span></code>
 to be configured for them. Otherwise, Fabric assumes the peer should not be
 disclosed.</p>
@@ -256,7 +257,7 @@ peer, replacing the sample endpoint below with the ones of your peer.</p>
 </div>
 </div>
 <div class="section" id="persisting-configuration">
-<h2>Persisting configuration<a class="headerlink" href="#persisting-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Persisting configuration<a class="headerlink" href="#persisting-configuration" title="永久链接至标题">¶</a></h2>
 <p>To persist the configuration, a config file name should be supplied via
 the flag <code class="docutils literal notranslate"><span class="pre">--configFile</span></code>, along with the command <code class="docutils literal notranslate"><span class="pre">saveConfig</span></code>:</p>
 <div class="highlight-{.sourceCode .shell} notranslate"><div class="highlight"><pre><span></span>discover --configFile conf.yaml --peerTLSCA tls/ca.crt --userKey msp/keystore/ea4f6a38ac7057b6fa9502c2f5f39f182e320f71f667749100fe7dd94c23ce43_sk --userCert msp/signcerts/User1\@org1.example.com-cert.pem  --MSP Org1MSP saveConfig
@@ -291,7 +292,7 @@ without TLS , and this is highly not recommended, as the information is
 sent over plaintext, un-encrypted.</p>
 </div>
 <div class="section" id="querying-the-discovery-service">
-<h2>Querying the discovery service<a class="headerlink" href="#querying-the-discovery-service" title="Permalink to this headline">¶</a></h2>
+<h2>Querying the discovery service<a class="headerlink" href="#querying-the-discovery-service" title="永久链接至标题">¶</a></h2>
 <p>The discoveryCLI acts as a discovery client, and it needs to be executed
 against a peer. This is done via specifying the <code class="docutils literal notranslate"><span class="pre">--server</span></code> flag. In
 addition, the queries are channel-scoped, so the <code class="docutils literal notranslate"><span class="pre">--channel</span></code> flag must
@@ -308,7 +309,7 @@ peer being queried.</p>
 <p>Let’s go over them and see how they should be invoked and parsed:</p>
 </div>
 <div class="section" id="peer-membership-query">
-<h2>Peer membership query:<a class="headerlink" href="#peer-membership-query" title="Permalink to this headline">¶</a></h2>
+<h2>Peer membership query:<a class="headerlink" href="#peer-membership-query" title="永久链接至标题">¶</a></h2>
 <div class="highlight-{.sourceCode .shell} notranslate"><div class="highlight"><pre><span></span>$ discover --configFile conf.yaml peers --channel mychannel  --server peer0.org1.example.com:7051
 [
 	{
@@ -392,7 +393,7 @@ Certificate:
 </div>
 </div>
 <div class="section" id="configuration-query">
-<h2>Configuration query:<a class="headerlink" href="#configuration-query" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration query:<a class="headerlink" href="#configuration-query" title="永久链接至标题">¶</a></h2>
 <p>The configuration query returns a mapping from MSP IDs to orderer
 endpoints, as well as the <code class="docutils literal notranslate"><span class="pre">FabricMSPConfig</span></code> which can be used to verify
 all peer and orderer nodes by the SDK:</p>
@@ -538,7 +539,7 @@ Certificate:
 </div>
 </div>
 <div class="section" id="endorsers-query">
-<h2>Endorsers query:<a class="headerlink" href="#endorsers-query" title="Permalink to this headline">¶</a></h2>
+<h2>Endorsers query:<a class="headerlink" href="#endorsers-query" title="永久链接至标题">¶</a></h2>
 <p>To query for the endorsers of a chaincode call, additional flags need to
 be supplied:</p>
 <ul class="simple">
@@ -598,7 +599,7 @@ the endorsement policy is <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="section" id="not-using-a-configuration-file">
-<h2>Not using a configuration file<a class="headerlink" href="#not-using-a-configuration-file" title="Permalink to this headline">¶</a></h2>
+<h2>Not using a configuration file<a class="headerlink" href="#not-using-a-configuration-file" title="永久链接至标题">¶</a></h2>
 <p>It is possible to execute the discovery CLI without having a
 configuration file, and just passing all needed configuration as
 commandline flags. The following is an example of a local peer membership

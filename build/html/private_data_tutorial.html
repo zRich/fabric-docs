@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using Private Data in Fabric &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>在Fabric里面使用私有数据 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,9 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chaincode Tutorials" href="chaincode.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="链码教程" href="chaincode.html" />
     <link rel="prev" title="Upgrading Your Network Components" href="upgrading_your_network_tutorial.html" /> 
 </head>
 
@@ -96,18 +97,18 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="write_first_app.html">Writing Your First Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/commercial_paper.html">Commercial paper tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_network.html">Building Your First Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">Adding an Org to a Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_network.html">搭建你的第一个网络（BYFN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel_update_tutorial.html">向通道添加组织</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading_your_network_tutorial.html">Upgrading Your Network Components</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Private Data in Fabric</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在Fabric里面使用私有数据</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#build-a-collection-definition-json-file">Build a collection definition JSON file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#read-and-write-private-data-using-chaincode-apis">Read and Write private data using chaincode APIs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#reading-collection-data">Reading collection data</a></li>
@@ -134,21 +135,21 @@
 <li class="toctree-l3"><a class="reference internal" href="#additional-resources">Additional resources</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode.html">Chaincode Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">Chaincode for Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode.html">链码教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">链码开发者</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaincode4noah.html">Chaincode for Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemchaincode.html">System Chaincode Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_tutorial.html">Using CouchDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html">Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html">视频</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -198,7 +199,7 @@
         
           <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
         
-      <li>Using Private Data in Fabric</li>
+      <li>在Fabric里面使用私有数据</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,14 +219,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-private-data-in-fabric">
-<h1>Using Private Data in Fabric<a class="headerlink" href="#using-private-data-in-fabric" title="Permalink to this headline">¶</a></h1>
+<h1>在Fabric里面使用私有数据<a class="headerlink" href="#using-private-data-in-fabric" title="永久链接至标题">¶</a></h1>
 <p>This tutorial will demonstrate the use of collections to provide storage
 and retrieval of private data on the blockchain network for authorized peers
 of organizations.</p>
 <p>The information in this tutorial assumes knowledge of private data
 stores and their use cases. For more information, check out <a class="reference internal" href="private-data/private-data.html"><span class="doc">Private data</span></a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>These instructions use the new Fabric chaincode lifecycle introduced
 in the Fabric v2.0 Alpha release. If you would like to use the previous
 lifecycle model to use private data with chaincode, visit the v1.4
@@ -247,14 +248,14 @@ configuring and using private data with Fabric:</p>
 <p>This tutorial will use the <a class="reference external" href="https://github.com/hyperledger/fabric-samples/tree/master/chaincode/marbles02_private">marbles private data sample</a>
 — running on the Building Your First Network (BYFN) tutorial network — to
 demonstrate how to create, deploy, and use a collection of private data.
-The marbles private data sample will be deployed to the <a class="reference internal" href="build_network.html"><span class="doc">Building Your First Network</span></a>
+The marbles private data sample will be deployed to the <a class="reference internal" href="build_network.html"><span class="doc">搭建你的第一个网络（BYFN）</span></a>
 (BYFN) tutorial network. You should have completed the task <a class="reference internal" href="install.html"><span class="doc">Install Samples, Binaries and Docker Images</span></a>;
 however, running the BYFN tutorial is not a prerequisite for this tutorial.
 Instead the necessary commands are provided throughout this tutorial to use the
 network. We will describe what is happening at each step, making it possible to
 understand the tutorial without actually running the sample.</p>
 <div class="section" id="build-a-collection-definition-json-file">
-<span id="pd-build-json"></span><h2>Build a collection definition JSON file<a class="headerlink" href="#build-a-collection-definition-json-file" title="Permalink to this headline">¶</a></h2>
+<span id="pd-build-json"></span><h2>Build a collection definition JSON file<a class="headerlink" href="#build-a-collection-definition-json-file" title="永久链接至标题">¶</a></h2>
 <p>The first step in privatizing data on a channel is to build a collection
 definition which defines access to the private data.</p>
 <p>The collection definition describes who can persist data, how many peers the
@@ -321,7 +322,7 @@ committed to the channel using the <a class="reference external" href="http://hy
 More details on this process are provided in Section 3 below.</p>
 </div>
 <div class="section" id="read-and-write-private-data-using-chaincode-apis">
-<span id="pd-read-write-private-data"></span><h2>Read and Write private data using chaincode APIs<a class="headerlink" href="#read-and-write-private-data-using-chaincode-apis" title="Permalink to this headline">¶</a></h2>
+<span id="pd-read-write-private-data"></span><h2>Read and Write private data using chaincode APIs<a class="headerlink" href="#read-and-write-private-data-using-chaincode-apis" title="永久链接至标题">¶</a></h2>
 <p>The next step in understanding how to privatize data on a channel is to build
 the data definition in the chaincode. The marbles private data sample divides
 the private data into two separate data definitions according to how the data will
@@ -360,7 +361,7 @@ private data sample.</p>
 <img alt="_images/SideDB-org2.png" src="_images/SideDB-org2.png" />
 </div></blockquote>
 <div class="section" id="reading-collection-data">
-<h3>Reading collection data<a class="headerlink" href="#reading-collection-data" title="Permalink to this headline">¶</a></h3>
+<h3>Reading collection data<a class="headerlink" href="#reading-collection-data" title="永久链接至标题">¶</a></h3>
 <p>Use the chaincode API <code class="docutils literal notranslate"><span class="pre">GetPrivateData()</span></code> to query private data in the
 database.  <code class="docutils literal notranslate"><span class="pre">GetPrivateData()</span></code> takes two arguments, the <strong>collection name</strong>
 and the data key. Recall the collection  <code class="docutils literal notranslate"><span class="pre">collectionMarbles</span></code> allows members of
@@ -378,7 +379,7 @@ following two <a class="reference external" href="https://github.com/hyperledger
 we will call these two functions.</p>
 </div>
 <div class="section" id="writing-private-data">
-<h3>Writing private data<a class="headerlink" href="#writing-private-data" title="Permalink to this headline">¶</a></h3>
+<h3>Writing private data<a class="headerlink" href="#writing-private-data" title="永久链接至标题">¶</a></h3>
 <p>Use the chaincode API <code class="docutils literal notranslate"><span class="pre">PutPrivateData()</span></code> to store the private data
 into the private database. The API also requires the name of the collection.
 Since the marbles private data sample includes two different collections, it is called
@@ -437,7 +438,7 @@ keeping private data confidential from orderer.</p>
 </div>
 </div>
 <div class="section" id="start-the-network">
-<h2>Start the network<a class="headerlink" href="#start-the-network" title="Permalink to this headline">¶</a></h2>
+<h2>Start the network<a class="headerlink" href="#start-the-network" title="永久链接至标题">¶</a></h2>
 <p>Now we are ready to step through some commands which demonstrate how to use
 private data.</p>
 <blockquote>
@@ -469,7 +470,7 @@ ordering service while using CouchDB as the state database. Either LevelDB
 or CouchDB may be used with collections. CouchDB was chosen to demonstrate
 how to use indexes with private data.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>For collections to work, it is important to have cross organizational
 gossip configured correctly. Refer to our documentation on <a class="reference internal" href="gossip.html"><span class="doc">Gossip data dissemination protocol</span></a>,
 paying particular attention to the section on “anchor peers”. Our tutorial
@@ -480,7 +481,7 @@ configure for collections to work properly.</p>
 </div></blockquote>
 </div>
 <div class="section" id="install-and-define-a-chaincode-with-a-collection">
-<span id="pd-install-define-cc"></span><h2>Install and define a chaincode with a collection<a class="headerlink" href="#install-and-define-a-chaincode-with-a-collection" title="Permalink to this headline">¶</a></h2>
+<span id="pd-install-define-cc"></span><h2>Install and define a chaincode with a collection<a class="headerlink" href="#install-and-define-a-chaincode-with-a-collection" title="永久链接至标题">¶</a></h2>
 <p>Client applications interact with the blockchain ledger through chaincode.
 Therefore we need to install a chaincode on every peer that will execute and
 endorse our transactions. However, before we can interact with our chaincode,
@@ -489,7 +490,7 @@ establishes chaincode governance, including the private data collection
 configuration. We are going to package, install, and then define the chaincode
 on the channel using <a class="reference internal" href="commands/peerlifecycle.html"><span class="doc">peer lifecycle chaincode</span></a>.</p>
 <div class="section" id="install-chaincode-on-all-peers">
-<h3>Install chaincode on all peers<a class="headerlink" href="#install-chaincode-on-all-peers" title="Permalink to this headline">¶</a></h3>
+<h3>Install chaincode on all peers<a class="headerlink" href="#install-chaincode-on-all-peers" title="永久链接至标题">¶</a></h3>
 <p>The chaincode needs to be packaged before it can be installed on our peers.
 We can use the <a class="reference external" href="http://hyperledger-fabric.readthedocs.io/en/latest/commands/peerlifecycle.html#peer-lifecycle-chaincode-package">peer lifecycle chaincode package</a> command
 to package the marbles chaincode.</p>
@@ -568,7 +569,7 @@ peer lifecycle chaincode install marblesp.tar.gz
 </div></blockquote>
 </div>
 <div class="section" id="approve-the-chaincode-definition">
-<h3>Approve the chaincode definition<a class="headerlink" href="#approve-the-chaincode-definition" title="Permalink to this headline">¶</a></h3>
+<h3>Approve the chaincode definition<a class="headerlink" href="#approve-the-chaincode-definition" title="永久链接至标题">¶</a></h3>
 <p>Each channel member that wants to use the chaincode needs to approve a chaincode
 definition for their organization. Since both organizations are going to use the
 chaincode in this tutorial, we need to approve the chaincode definition for both
@@ -656,7 +657,7 @@ as a group into the peer container and run them all at once.</p>
 </div></blockquote>
 </div>
 <div class="section" id="commit-the-chaincode-definition">
-<h3>Commit the chaincode definition<a class="headerlink" href="#commit-the-chaincode-definition" title="Permalink to this headline">¶</a></h3>
+<h3>Commit the chaincode definition<a class="headerlink" href="#commit-the-chaincode-definition" title="永久链接至标题">¶</a></h3>
 <p>Once a sufficient number of organizations (in this case, a majority) have
 approved a chaincode definition, one organization commit the definition to the
 channel.</p>
@@ -685,7 +686,7 @@ peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID mychanne
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>When specifying the value of the <code class="docutils literal notranslate"><span class="pre">--collections-config</span></code> flag, you will
 need to specify the fully qualified path to the collections_config.json file.
 For example:</p>
@@ -715,7 +716,7 @@ the chaincode:</p>
 </div>
 </div>
 <div class="section" id="store-private-data">
-<span id="pd-store-private-data"></span><h2>Store private data<a class="headerlink" href="#store-private-data" title="Permalink to this headline">¶</a></h2>
+<span id="pd-store-private-data"></span><h2>Store private data<a class="headerlink" href="#store-private-data" title="永久链接至标题">¶</a></h2>
 <p>Acting as a member of Org1, who is authorized to transact with all of the private data
 in the marbles private data sample, switch back to an Org1 peer and
 submit a request to add a marble:</p>
@@ -750,7 +751,7 @@ peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src
 </div></blockquote>
 </div>
 <div class="section" id="query-the-private-data-as-an-authorized-peer">
-<span id="pd-query-authorized"></span><h2>Query the private data as an authorized peer<a class="headerlink" href="#query-the-private-data-as-an-authorized-peer" title="Permalink to this headline">¶</a></h2>
+<span id="pd-query-authorized"></span><h2>Query the private data as an authorized peer<a class="headerlink" href="#query-the-private-data-as-an-authorized-peer" title="永久链接至标题">¶</a></h2>
 <p>Our collection definition allows all members of Org1 and Org2
 to have the <code class="docutils literal notranslate"><span class="pre">name,</span> <span class="pre">color,</span> <span class="pre">size,</span> <span class="pre">owner</span></code> private data in their side database,
 but only peers in Org1 can have the <code class="docutils literal notranslate"><span class="pre">price</span></code> private data in their side
@@ -834,13 +835,13 @@ the marble name as a transient input.</p>
 </div></blockquote>
 </div>
 <div class="section" id="query-the-private-data-as-an-unauthorized-peer">
-<span id="pd-query-unauthorized"></span><h2>Query the private data as an unauthorized peer<a class="headerlink" href="#query-the-private-data-as-an-unauthorized-peer" title="Permalink to this headline">¶</a></h2>
+<span id="pd-query-unauthorized"></span><h2>Query the private data as an unauthorized peer<a class="headerlink" href="#query-the-private-data-as-an-unauthorized-peer" title="永久链接至标题">¶</a></h2>
 <p>Now we will switch to a member of Org2 which has the marbles private data
 <code class="docutils literal notranslate"><span class="pre">name,</span> <span class="pre">color,</span> <span class="pre">size,</span> <span class="pre">owner</span></code> in its side database, but does not have the
 marbles <code class="docutils literal notranslate"><span class="pre">price</span></code> private data in its side database. We will query for both
 sets of private data.</p>
 <div class="section" id="switch-to-a-peer-in-org2">
-<h3>Switch to a peer in Org2<a class="headerlink" href="#switch-to-a-peer-in-org2" title="Permalink to this headline">¶</a></h3>
+<h3>Switch to a peer in Org2<a class="headerlink" href="#switch-to-a-peer-in-org2" title="永久链接至标题">¶</a></h3>
 <p>From inside the docker container, run the following commands to switch to
 the peer which is unauthorized to access the marbles <code class="docutils literal notranslate"><span class="pre">price</span></code> private data.</p>
 <blockquote>
@@ -855,7 +856,7 @@ the peer which is unauthorized to access the marbles <code class="docutils liter
 </div></blockquote>
 </div>
 <div class="section" id="query-private-data-org2-is-authorized-to">
-<h3>Query private data Org2 is authorized to<a class="headerlink" href="#query-private-data-org2-is-authorized-to" title="Permalink to this headline">¶</a></h3>
+<h3>Query private data Org2 is authorized to<a class="headerlink" href="#query-private-data-org2-is-authorized-to" title="永久链接至标题">¶</a></h3>
 <p>Peers in Org2 should have the first set of marbles private data (<code class="docutils literal notranslate"><span class="pre">name,</span>
 <span class="pre">color,</span> <span class="pre">size</span> <span class="pre">and</span> <span class="pre">owner</span></code>) in their side database and can access it using the
 <code class="docutils literal notranslate"><span class="pre">readMarble()</span></code> function which is called with the <code class="docutils literal notranslate"><span class="pre">collectionMarbles</span></code>
@@ -872,7 +873,7 @@ argument.</p>
 </div></blockquote>
 </div>
 <div class="section" id="query-private-data-org2-is-not-authorized-to">
-<h3>Query private data Org2 is not authorized to<a class="headerlink" href="#query-private-data-org2-is-not-authorized-to" title="Permalink to this headline">¶</a></h3>
+<h3>Query private data Org2 is not authorized to<a class="headerlink" href="#query-private-data-org2-is-not-authorized-to" title="永久链接至标题">¶</a></h3>
 <p>Peers in Org2 do not have the marbles <code class="docutils literal notranslate"><span class="pre">price</span></code> private data in their side database.
 When they try to query for this data, they get back a hash of the key matching
 the public state but will not have the private state.</p>
@@ -894,7 +895,7 @@ the public state but will not have the private state.</p>
 </div>
 </div>
 <div class="section" id="purge-private-data">
-<span id="pd-purge"></span><h2>Purge Private Data<a class="headerlink" href="#purge-private-data" title="Permalink to this headline">¶</a></h2>
+<span id="pd-purge"></span><h2>Purge Private Data<a class="headerlink" href="#purge-private-data" title="永久链接至标题">¶</a></h2>
 <p>For use cases where private data only needs to be on the ledger until it can be
 replicated into an off-chain database, it is possible to “purge” the data after
 a certain set number of blocks, leaving behind only hash of the data that serves
@@ -1041,7 +1042,7 @@ message:<span class="s2">&quot;{\&quot;Error\&quot;:\&quot;Marble private detail
 </div></blockquote>
 </div>
 <div class="section" id="using-indexes-with-private-data">
-<span id="pd-indexes"></span><h2>Using indexes with private data<a class="headerlink" href="#using-indexes-with-private-data" title="Permalink to this headline">¶</a></h2>
+<span id="pd-indexes"></span><h2>Using indexes with private data<a class="headerlink" href="#using-indexes-with-private-data" title="永久链接至标题">¶</a></h2>
 <p>Indexes can also be applied to private data collections, by packaging indexes in
 the <code class="docutils literal notranslate"><span class="pre">META-INF/statedb/couchdb/collections/&lt;collection_name&gt;/indexes</span></code> directory
 alongside the chaincode. An example index is available <a class="reference external" href="https://github.com/hyperledger/fabric-samples/blob/master/chaincode/marbles02_private/go/META-INF/statedb/couchdb/collections/collectionMarbles/indexes/indexOwner.json">here</a> .</p>
@@ -1054,10 +1055,10 @@ the  <code class="docutils literal notranslate"><span class="pre">--collections-
 the collection JSON file.</p>
 </div>
 <div class="section" id="additional-resources">
-<span id="pd-ref-material"></span><h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<span id="pd-ref-material"></span><h2>Additional resources<a class="headerlink" href="#additional-resources" title="永久链接至标题">¶</a></h2>
 <p>For additional private data education, a video tutorial has been created.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注解</p>
 <p>The video uses the previous lifecycle model to install private data
 collections with chaincode.</p>
 </div>
@@ -1074,7 +1075,7 @@ collections with chaincode.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="chaincode.html" class="btn btn-neutral float-right" title="Chaincode Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="chaincode.html" class="btn btn-neutral float-right" title="链码教程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="upgrading_your_network_tutorial.html" class="btn btn-neutral" title="Upgrading Your Network Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

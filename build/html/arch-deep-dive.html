@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Architecture Origins &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>架构起源 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Transaction Flow" href="txflow.html" />
-    <link rel="prev" title="Architecture Reference" href="architecture.html" /> 
+    <link rel="prev" title="架构参考" href="architecture.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,39 +97,39 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">Architecture Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Architecture Origins</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#system-architecture">1. System architecture</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#transactions">1.1. Transactions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#blockchain-datastructures">1.2. Blockchain datastructures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nodes">1.3. Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">架构参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">架构起源</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-architecture">1. 系统架构</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transactions">1.1. 交易</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blockchain-datastructures">1.2. 区块链数据结构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nodes">1.3. node节点</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#basic-workflow-of-transaction-endorsement">2. Basic workflow of transaction endorsement</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-client-creates-a-transaction-and-sends-it-to-endorsing-peers-of-its-choice">2.1. The client creates a transaction and sends it to endorsing peers of its choice</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#propose-message-format">2.1.1. <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message format</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-endorsing-peer-simulates-a-transaction-and-produces-an-endorsement-signature">2.2. The endorsing peer simulates a transaction and produces an endorsement signature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-submitting-client-collects-an-endorsement-for-a-transaction-and-broadcasts-it-through-ordering-service">2.3. The submitting client collects an endorsement for a transaction and broadcasts it through ordering service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-ordering-service-delivers-a-transactions-to-the-peers">2.4. The ordering service delivers a transactions to the peers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-workflow-of-transaction-endorsement">2. 交易背书的基本流程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-client-creates-a-transaction-and-sends-it-to-endorsing-peers-of-its-choice">2.1. 客户端创建一个交易并将其发送给它所选择的背书peer节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#propose-message-format">2.1.1. ``提议``消息格式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-endorsing-peer-simulates-a-transaction-and-produces-an-endorsement-signature">2.2. 背书节点模拟交易并生成背书签名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-submitting-client-collects-an-endorsement-for-a-transaction-and-broadcasts-it-through-ordering-service">2.3. 提交客户端为交易收集背书并通过排序服务广播</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-ordering-service-delivers-a-transactions-to-the-peers">2.4. 排序服务向peer节点交付交易</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#endorsement-policies">3. Endorsement policies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#endorsement-policy-specification">3.1. Endorsement policy specification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transaction-evaluation-against-endorsement-policy">3.2. Transaction evaluation against endorsement policy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example-endorsement-policies">3.3. Example endorsement policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#endorsement-policies">3. 背书策略</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#endorsement-policy-specification">3.1. 背书策略规范</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transaction-evaluation-against-endorsement-policy">3.2. 根据背书策略进行交易评估</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-endorsement-policies">3.3. 背书策略的例子</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#post-v1-validated-ledger-and-peerledger-checkpointing-pruning">4 (post-v1). Validated ledger and <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> checkpointing (pruning)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#validated-ledger-vledger">4.1. Validated ledger (VLedger)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#peerledger-checkpointing">4.2. <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> Checkpointing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-v1-validated-ledger-and-peerledger-checkpointing-pruning">4 (post-v1). 验证账本和“PeerLedger”检查点(修剪)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#validated-ledger-vledger">4.1. 已验证账本 (VLedger)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peerledger-checkpointing">4.2. <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> 检查点</a></li>
 </ul>
 </li>
 </ul>
@@ -137,11 +138,11 @@
 <li class="toctree-l2"><a class="reference external" href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">Hyperledger Fabric CA's User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fabric-sdks.html">Hyperledger Fabric SDKs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery-overview.html">Service Discovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="channels.html">Channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">Capability Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channels.html">通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capability_requirements.html">功能需求</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_as_state_database.html">CouchDB as the State Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peer_event_services.html">Peer channel-based event services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">Private Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private-data-arch.html">私有数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="readwrite.html">Read-Write set semantics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gossip.html">Gossip data dissemination protocol</a></li>
 </ul>
@@ -149,7 +150,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -197,9 +198,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="architecture.html">Architecture Reference</a> &raquo;</li>
+          <li><a href="architecture.html">架构参考</a> &raquo;</li>
         
-      <li>Architecture Origins</li>
+      <li>架构起源</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,757 +220,302 @@
            <div itemprop="articleBody">
             
   <div class="section" id="architecture-origins">
-<h1>Architecture Origins<a class="headerlink" href="#architecture-origins" title="Permalink to this headline">¶</a></h1>
+<h1>架构起源<a class="headerlink" href="#architecture-origins" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This document represents the initial architectural proposal
-for Hyperledger Fabric v1.0. While the Hyperledger Fabric
-implementation has conceptually followed from the architectural
-proposal, some details have been altered during the
-implementation. The initial architectural proposal is
-presented as originally prepared. For a more technically
-accurate representation of the architecture, please see
-<a class="reference external" href="https://arxiv.org/abs/1801.10228v2">Hyperledger Fabric: A Distributed Operating System for Permissioned Blockchains</a>.</p>
+<p class="admonition-title">注解</p>
+<p>本文档表现了Hyperledger Fabric v1.0的初始架构提案。虽然Hyperledger Fabric实现在概念上遵循了本架构提案，但是在实现过程中一些细节已经被更改。最初的架构方案是按照最初准备的方式呈现的。要更精确地表示架构，请参见`Hyperledger Fabric:一个许可区块链的分布式操作系统&lt;<a class="reference external" href="https://arxiv.org/abs/1801.10228v2">https://arxiv.org/abs/1801.10228v2</a>&gt;`__。</p>
 </div>
-<p>The Hyperledger Fabric architecture delivers the following advantages:</p>
+<p>超级账本Fabric架构具有以下优点:</p>
 <ul class="simple">
-<li><p><strong>Chaincode trust flexibility.</strong> The architecture separates <em>trust
-assumptions</em> for chaincodes (blockchain applications) from trust
-assumptions for ordering. In other words, the ordering service may be
-provided by one set of nodes (orderers) and tolerate some of them to
-fail or misbehave, and the endorsers may be different for each
-chaincode.</p></li>
-<li><p><strong>Scalability.</strong> As the endorser nodes responsible for particular
-chaincode are orthogonal to the orderers, the system may <em>scale</em>
-better than if these functions were done by the same nodes. In
-particular, this results when different chaincodes specify disjoint
-endorsers, which introduces a partitioning of chaincodes between
-endorsers and allows parallel chaincode execution (endorsement).
-Besides, chaincode execution, which can potentially be costly, is
-removed from the critical path of the ordering service.</p></li>
-<li><p><strong>Confidentiality.</strong> The architecture facilitates deployment of
-chaincodes that have <em>confidentiality</em> requirements with respect to
-the content and state updates of its transactions.</p></li>
-<li><p><strong>Consensus modularity.</strong> The architecture is <em>modular</em> and allows
-pluggable consensus (i.e., ordering service) implementations.</p></li>
+<li><p>链码**链码信任的灵活性**该架构将链码(区块链应用程序)的*信任假设*与排序的信任假设分开。换句话说，排序服务可能由一组节点(排序器)提供，并允许其中一些节点失败或行为不端，而且每个链码的背书者可能不同。</p></li>
+<li><p><strong>可伸缩性</strong> 由于负责特定链码的背书节点与排序器正交，因此系统的伸缩性可能比由相同节点执行这些功能要好。特别是，当不同的链码指定了互斥的背书器时，这将导致在背书器之间对链码进行分区，并允许并行的链码执行(背书)。此外，链码执行从排序服务的关键路径中删除，链码执行的成本可能很高。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>机密性。<a href="#id3"><span class="problematic" id="id4">**</span></a>本架构有助于部署对其交易的内容和状态更新具有“机密性”要求的链码。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>共识模块化。<a href="#id3"><span class="problematic" id="id4">**</span></a>该架构是*模块化的*，允许可插入的共识算法(即，排序服务)实现。</p></li>
 </ul>
-<p><strong>Part I: Elements of the architecture relevant to Hyperledger Fabric
-v1</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>第一部分:与Hyperledger Fabric v1**相关的架构元素</p>
 <ol class="arabic simple">
-<li><p>System architecture</p></li>
-<li><p>Basic workflow of transaction endorsement</p></li>
-<li><p>Endorsement policies</p></li>
+<li><p>系统架构</p></li>
+<li><p>交易背书的基本流程</p></li>
+<li><p>背书策略</p></li>
 </ol>
-<p><strong>Part II: Post-v1 elements of the architecture</strong></p>
+<p><strong>第二部分:架构的Post-v1 元素</strong></p>
 <ol class="arabic simple" start="4">
-<li><p>Ledger checkpointing (pruning)</p></li>
+<li><p>账本检查点(修剪)</p></li>
 </ol>
 <div class="section" id="system-architecture">
-<h2>1. System architecture<a class="headerlink" href="#system-architecture" title="Permalink to this headline">¶</a></h2>
-<p>The blockchain is a distributed system consisting of many nodes that
-communicate with each other. The blockchain runs programs called
-chaincode, holds state and ledger data, and executes transactions. The
-chaincode is the central element as transactions are operations invoked
-on the chaincode. Transactions have to be “endorsed” and only endorsed
-transactions may be committed and have an effect on the state. There may
-exist one or more special chaincodes for management functions and
-parameters, collectively called <em>system chaincodes</em>.</p>
+<h2>1. 系统架构<a class="headerlink" href="#system-architecture" title="永久链接至标题">¶</a></h2>
+<p>区块链是一个分布式系统，由许多相互通信的节点组成。区块链运行名为链码的程序，保存状态和账本数据，并执行交易。链码是中心元素，因为交易是在链码上调用的操作。交易必须“背书”，只有背书的交易才可以提交并对状态产生影响。可能存在一个或多个用于管理函数和参数的特殊链码，统称为*系统链码*。</p>
 <div class="section" id="transactions">
-<h3>1.1. Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h3>
-<p>Transactions may be of two types:</p>
+<h3>1.1. 交易<a class="headerlink" href="#transactions" title="永久链接至标题">¶</a></h3>
+<p>交易可分为两类:</p>
 <ul class="simple">
-<li><p><em>Deploy transactions</em> create new chaincode and take a program as
-parameter. When a deploy transaction executes successfully, the
-chaincode has been installed “on” the blockchain.</p></li>
-<li><p><em>Invoke transactions</em> perform an operation in the context of
-previously deployed chaincode. An invoke transaction refers to a
-chaincode and to one of its provided functions. When successful, the
-chaincode executes the specified function - which may involve
-modifying the corresponding state, and returning an output.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>部署交易*创建新的链码并将程序作为参数。当部署交易成功执行时，链码会被安装在区块链上。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>调用交易*在以前部署的链码上下文中执行操作。调用交易引用链码和它提供的某个函数。当成功时，链码执行指定的函数，这可能涉及修改相应的状态，并返回输出。</p></li>
 </ul>
-<p>As described later, deploy transactions are special cases of invoke
-transactions, where a deploy transaction that creates new chaincode,
-corresponds to an invoke transaction on a system chaincode.</p>
-<p><strong>Remark:</strong> <em>This document currently assumes that a transaction either
-creates new chaincode or invokes an operation provided by *one</em> already
-deployed chaincode. This document does not yet describe: a)
-optimizations for query (read-only) transactions (included in v1), b)
-support for cross-chaincode transactions (post-v1 feature).*</p>
+<p>如后面所述，部署交易是调用交易的特殊情况，其中创建新链码的部署交易对应于系统链码上的调用交易。</p>
+<p><strong>备注:</strong> <em>本文档目前假设交易要么创建新的链码，要么调用*一个*已部署链码提供的操作。这个文档还没有描述: a)查询(只读)交易的优化(包含在v1中)，b)对跨链码交易的支持(v1后续的特性).</em></p>
 </div>
 <div class="section" id="blockchain-datastructures">
-<h3>1.2. Blockchain datastructures<a class="headerlink" href="#blockchain-datastructures" title="Permalink to this headline">¶</a></h3>
+<h3>1.2. 区块链数据结构<a class="headerlink" href="#blockchain-datastructures" title="永久链接至标题">¶</a></h3>
 <div class="section" id="state">
-<h4>1.2.1. State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h4>
-<p>The latest state of the blockchain (or, simply, <em>state</em>) is modeled as a
-versioned key-value store (KVS), where keys are names and values are
-arbitrary blobs. These entries are manipulated by the chaincodes
-(applications) running on the blockchain through <code class="docutils literal notranslate"><span class="pre">put</span></code> and <code class="docutils literal notranslate"><span class="pre">get</span></code>
-KVS-operations. The state is stored persistently and updates to the
-state are logged. Notice that versioned KVS is adopted as state model,
-an implementation may use actual KVSs, but also RDBMSs or any other
-solution.</p>
-<p>More formally, state <code class="docutils literal notranslate"><span class="pre">s</span></code> is modeled as an element of a mapping
-<code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">-&gt;</span> <span class="pre">(V</span> <span class="pre">X</span> <span class="pre">N)</span></code>, where:</p>
+<h4>1.2.1 状态<a class="headerlink" href="#state" title="永久链接至标题">¶</a></h4>
+<p>区块链的最新状态(或者简单地说，<em>状态</em>)被建模为一个版本化的键值存储(KVS)，其中键是名称，值是任意的blob。这些条目由区块链上运行的链码(应用程序)通过“put”和“get”KVS-操作操作。状态被持久地存储，并记录对状态的更新。注意，版本化的KVS被用作状态模型，实现可以使用既有的KVS，也可以使用RDBMS或任何其他解决方案。</p>
+<p>更正式地说，状态``s`` 被建模为映射``K -&gt; (V X N)``的一个元素，其中:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">K</span></code> is a set of keys</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">V</span></code> is a set of values</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> is an infinite ordered set of version numbers. Injective
-function <code class="docutils literal notranslate"><span class="pre">next:</span> <span class="pre">N</span> <span class="pre">-&gt;</span> <span class="pre">N</span></code> takes an element of <code class="docutils literal notranslate"><span class="pre">N</span></code> and returns the
-next version number.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>K``是一组键</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">V</span></code> 是一组值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N``是版本号的无穷有序集合。单射函数</span> <span class="pre">``next:</span> <span class="pre">N</span> <span class="pre">-&gt;</span> <span class="pre">N</span></code> 接受``N``的元素并返回下一个版本号。</p></li>
 </ul>
-<p>Both <code class="docutils literal notranslate"><span class="pre">V</span></code> and <code class="docutils literal notranslate"><span class="pre">N</span></code> contain a special element ⊥ (empty type), which is
-in case of <code class="docutils literal notranslate"><span class="pre">N</span></code> the lowest element. Initially all keys are mapped to
-(⊥, ⊥). For <code class="docutils literal notranslate"><span class="pre">s(k)=(v,ver)</span></code> we denote <code class="docutils literal notranslate"><span class="pre">v</span></code> by <code class="docutils literal notranslate"><span class="pre">s(k).value</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">ver</span></code> by <code class="docutils literal notranslate"><span class="pre">s(k).version</span></code>.</p>
-<p>KVS operations are modeled as follows:</p>
+<p> <code class="docutils literal notranslate"><span class="pre">V``和``N</span></code> 都包含一个特殊的元素|falsum|(空类型)，即``N`` 是最低的元素。最初，所有键都映射到(⊥, ⊥)。对于``s(k)=(v,ver)``，我们用``s(k).value``表示``v``，  用``s(k).version``表示``ver`` 。</p>
+<p>KVS操作模型如下:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">put(k,v)</span></code> for <code class="docutils literal notranslate"><span class="pre">k</span></code> ∈ <code class="docutils literal notranslate"><span class="pre">K</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> ∈ <code class="docutils literal notranslate"><span class="pre">V</span></code>, takes the blockchain
-state <code class="docutils literal notranslate"><span class="pre">s</span></code> and changes it to <code class="docutils literal notranslate"><span class="pre">s'</span></code> such that
-<code class="docutils literal notranslate"><span class="pre">s'(k)=(v,next(s(k).version))</span></code> with <code class="docutils literal notranslate"><span class="pre">s'(k')=s(k')</span></code> for all
-<code class="docutils literal notranslate"><span class="pre">k'!=k</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get(k)</span></code> returns <code class="docutils literal notranslate"><span class="pre">s(k)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">put(k,v)</span></code> for <code class="docutils literal notranslate"><span class="pre">k</span></code> ∈ <code class="docutils literal notranslate"><span class="pre">K</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> ∈ <code class="docutils literal notranslate"><span class="pre">V</span></code>, 将区块链状态设置为 <code class="docutils literal notranslate"><span class="pre">s</span></code>，然后将状态修改为 <code class="docutils literal notranslate"><span class="pre">s'</span></code> ，于是 <code class="docutils literal notranslate"><span class="pre">s'(k)=(v,next(s(k).version))</span></code> with <code class="docutils literal notranslate"><span class="pre">s'(k')=s(k')</span></code> for all <code class="docutils literal notranslate"><span class="pre">k'!=k</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get(k)</span></code> 返回``s(k)``。</p></li>
 </ul>
-<p>State is maintained by peers, but not by orderers and clients.</p>
-<p><strong>State partitioning.</strong> Keys in the KVS can be recognized from their
-name to belong to a particular chaincode, in the sense that only
-transaction of a certain chaincode may modify the keys belonging to this
-chaincode. In principle, any chaincode can read the keys belonging to
-other chaincodes. <em>Support for cross-chaincode transactions, that modify
-the state belonging to two or more chaincodes is a post-v1 feature.</em></p>
+<p>状态由节点维护，而不是由排序器和客户端维护。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>状态分区。<a href="#id3"><span class="problematic" id="id4">**</span></a>KVS中的键可以从它们的名称中识别出属于某个特定链码，因为只有某个链码的交易可以修改属于这个链码的键。原则上，任何链码都可以读取属于其他链码的键。<em>支持跨链码交易，可以修改属于两个或多个链码的状态，这是一个v1后续版本的特性。</em></p>
 </div>
 <div class="section" id="ledger">
-<h4>1.2.2 Ledger<a class="headerlink" href="#ledger" title="Permalink to this headline">¶</a></h4>
-<p>Ledger provides a verifiable history of all successful state changes (we
-talk about <em>valid</em> transactions) and unsuccessful attempts to change
-state (we talk about <em>invalid</em> transactions), occurring during the
-operation of the system.</p>
-<p>Ledger is constructed by the ordering service (see Sec 1.3.3) as a
-totally ordered hashchain of <em>blocks</em> of (valid or invalid)
-transactions. The hashchain imposes the total order of blocks in a
-ledger and each block contains an array of totally ordered transactions.
-This imposes total order across all transactions.</p>
-<p>Ledger is kept at all peers and, optionally, at a subset of orderers. In
-the context of an orderer we refer to the Ledger as to
-<code class="docutils literal notranslate"><span class="pre">OrdererLedger</span></code>, whereas in the context of a peer we refer to the
-ledger as to <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>. <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> differs from the
-<code class="docutils literal notranslate"><span class="pre">OrdererLedger</span></code> in that peers locally maintain a bitmask that tells
-apart valid transactions from invalid ones (see Section XX for more
-details).</p>
-<p>Peers may prune <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> as described in Section XX (post-v1
-feature). Orderers maintain <code class="docutils literal notranslate"><span class="pre">OrdererLedger</span></code> for fault-tolerance and
-availability (of the <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>) and may decide to prune it at
-anytime, provided that properties of the ordering service (see Sec.
-1.3.3) are maintained.</p>
-<p>The ledger allows peers to replay the history of all transactions and to
-reconstruct the state. Therefore, state as described in Sec 1.2.1 is an
-optional datastructure.</p>
+<h4>1.2.2 账本<a class="headerlink" href="#ledger" title="永久链接至标题">¶</a></h4>
+<p>账本提供了一个可验证的历史记录，记录了在系统运行期间发生的所有成功的状态更改(我们说的*有效的*交易)和失败的状态更改尝试(我们说的*无效的*交易)。</p>
+<p>账本是由排序服务(参见第1.3.3节)构造的，它是(有效或无效的)交易的*区块*的完全有序哈希链。哈希链强制账本中的区块的总顺序，每个区块包含一个完全有序的交易数组。这强制为所有交易指定了顺序。</p>
+<p>账本保存在所有的节点上，也可以选择保存在部分排序器上。在排序器的上下文中，我们将账本称为“排序器账本”，而在节点的上下文中，我们将账本称为“节点账本”。<code class="docutils literal notranslate"><span class="pre">节点账本</span></code> 与``排序器账本`` 的不同之处在于，节点在本地维护一个比特掩码，该比特掩码将有效的交易与无效的交易区分开来(有关详细信息，请参阅XX节)。</p>
+<p>如第XX节(v1后续特性)所述的，节点可以修剪 <code class="docutils literal notranslate"><span class="pre">节点账本</span></code> 。排序器维护“排序器账本”以获得容错性和(“节点账本”的)可用性，并可以决定随时对其进行修剪，前提是排序服务的属性得到了维护(参见第1.3.3节)。</p>
+<p>账本允许节点重放所有交易的历史并重建状态。因此，Sec 1.2.1中描述的状态是一个可选的数据结构。</p>
 </div>
 </div>
 <div class="section" id="nodes">
-<h3>1.3. Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
-<p>Nodes are the communication entities of the blockchain. A “node” is only
-a logical function in the sense that multiple nodes of different types
-can run on the same physical server. What counts is how nodes are
-grouped in “trust domains” and associated to logical entities that
-control them.</p>
-<p>There are three types of nodes:</p>
+<h3>1.3. node节点<a class="headerlink" href="#nodes" title="永久链接至标题">¶</a></h3>
+<p>node节点是区块链的通信实体。一个“node节点”只是一个逻辑功能，因为不同类型的多个node节点可以运行在同一个物理服务器上。重要的是node节点如何在“信任域”中分组并与控制它们的逻辑实体相关联。</p>
+<p>有三种类型的node节点：</p>
 <ol class="arabic simple">
-<li><p><strong>Client</strong> or <strong>submitting-client</strong>: a client that submits an actual
-transaction-invocation to the endorsers, and broadcasts
-transaction-proposals to the ordering service.</p></li>
-<li><p><strong>Peer</strong>: a node that commits transactions and maintains the state
-and a copy of the ledger (see Sec, 1.2). Besides, peers can have a
-special <strong>endorser</strong> role.</p></li>
-<li><p><strong>Ordering-service-node</strong> or <strong>orderer</strong>: a node running the
-communication service that implements a delivery guarantee, such as
-atomic or total order broadcast.</p></li>
+<li><p><strong>客户端**或**提交客户端</strong>：是一个向背书方提交实际交易调用并向排序服务广播交易提议的客户端。</p></li>
+<li><p><strong>peer节点</strong>：是一个提交交易并维护状态和账本副本的node节点(参见第1.2节)。此外，peer节点可以扮演一个特殊的**背书人**角色。</p></li>
+<li><p><strong>排序服务node节点**或**排序器</strong>：是一个运行实现交付担保的通信服务的node节点，例如原子性或总顺序广播。</p></li>
 </ol>
-<p>The types of nodes are explained next in more detail.</p>
+<p>接下来将更详细地解释node节点的类型。</p>
 <div class="section" id="client">
-<h4>1.3.1. Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h4>
-<p>The client represents the entity that acts on behalf of an end-user. It
-must connect to a peer for communicating with the blockchain. The client
-may connect to any peer of its choice. Clients create and thereby invoke
-transactions.</p>
-<p>As detailed in Section 2, clients communicate with both peers and the
-ordering service.</p>
+<h4>1.3.1. 客户端<a class="headerlink" href="#client" title="永久链接至标题">¶</a></h4>
+<p>客户端扮演了代表最终用户的实体。它必须连接到与区块链通信的peer节点。客户端可以连接到它所选择的任何peer节点。客户端创建并调用交易。</p>
+<p>如第2节所详细介绍的，客户端同时与peer节点和排序服务通信。</p>
 </div>
 <div class="section" id="peer">
-<h4>1.3.2. Peer<a class="headerlink" href="#peer" title="Permalink to this headline">¶</a></h4>
-<p>A peer receives ordered state updates in the form of <em>blocks</em> from the
-ordering service and maintain the state and the ledger.</p>
-<p>Peers can additionally take up a special role of an <strong>endorsing peer</strong>,
-or an <strong>endorser</strong>. The special function of an <em>endorsing peer</em> occurs
-with respect to a particular chaincode and consists in <em>endorsing</em> a
-transaction before it is committed. Every chaincode may specify an
-<em>endorsement policy</em> that may refer to a set of endorsing peers. The
-policy defines the necessary and sufficient conditions for a valid
-transaction endorsement (typically a set of endorsers’ signatures), as
-described later in Sections 2 and 3. In the special case of deploy
-transactions that install new chaincode the (deployment) endorsement
-policy is specified as an endorsement policy of the system chaincode.</p>
+<h4>1.3.2. peer节点<a class="headerlink" href="#peer" title="永久链接至标题">¶</a></h4>
+<p>peer节点接收来自排序服务的“区块”形式的有序状态更新，并维护状态和账本。</p>
+<p>链码peer节点还可以承担**背书节点**或**背书人**的特殊角色。一个*背书节点*的特殊函数根据一个特定链码重现，包括在交易提交之前*背书*一个交易。每个链码都可以指定一个*背书策略*，该策略可以引用一组背书节点。策略为有效的交易背书(通常是一组背书人的签名)定义了必要条件和充分条件，后面的第2和3节将对此进行描述。在安装新链码的部署交易的特殊情况下，(部署)背书策略指定为系统链码的背书策略。</p>
 </div>
 <div class="section" id="ordering-service-nodes-orderers">
-<h4>1.3.3. Ordering service nodes (Orderers)<a class="headerlink" href="#ordering-service-nodes-orderers" title="Permalink to this headline">¶</a></h4>
-<p>The <em>orderers</em> form the <em>ordering service</em>, i.e., a communication fabric
-that provides delivery guarantees. The ordering service can be
-implemented in different ways: ranging from a centralized service (used
-e.g., in development and testing) to distributed protocols that target
-different network and node fault models.</p>
-<p>Ordering service provides a shared <em>communication channel</em> to clients
-and peers, offering a broadcast service for messages containing
-transactions. Clients connect to the channel and may broadcast messages
-on the channel which are then delivered to all peers. The channel
-supports <em>atomic</em> delivery of all messages, that is, message
-communication with total-order delivery and (implementation specific)
-reliability. In other words, the channel outputs the same messages to
-all connected peers and outputs them to all peers in the same logical
-order. This atomic communication guarantee is also called <em>total-order
-broadcast</em>, <em>atomic broadcast</em>, or <em>consensus</em> in the context of
-distributed systems. The communicated messages are the candidate
-transactions for inclusion in the blockchain state.</p>
-<p><strong>Partitioning (ordering service channels).</strong> Ordering service may
-support multiple <em>channels</em> similar to the <em>topics</em> of a
-publish/subscribe (pub/sub) messaging system. Clients can connect to a
-given channel and can then send messages and obtain the messages that
-arrive. Channels can be thought of as partitions - clients connecting to
-one channel are unaware of the existence of other channels, but clients
-may connect to multiple channels. Even though some ordering service
-implementations included with Hyperledger Fabric support multiple
-channels, for simplicity of presentation, in the rest of this
-document, we assume ordering service consists of a single channel/topic.</p>
-<p><strong>Ordering service API.</strong> Peers connect to the channel provided by the
-ordering service, via the interface provided by the ordering service.
-The ordering service API consists of two basic operations (more
-generally <em>asynchronous events</em>):</p>
-<p><strong>TODO</strong> add the part of the API for fetching particular blocks under
-client/peer specified sequence numbers.</p>
+<h4>1.3.3. 排序服务node节点（排序器）<a class="headerlink" href="#ordering-service-nodes-orderers" title="永久链接至标题">¶</a></h4>
+<p><em>排序器*组成*排序服务</em>，即，提供交付担保的通信结构。排序服务可以以不同的方式实现：从集中式服务(例如，在开发和测试中使用)到针对不同网络和node节点故障模型的分布式协议。</p>
+<p>排序服务为客户端和peer节点提供共享的“通信通道”，为包含交易的消息提供广播服务。客户端连接到通道，并可以在通道上广播消息，然后将消息传递给所有peer节点。该通道支持所有消息的“原子”传递，即与全顺序传递和(特定于实现的)可靠性的消息通信。换句话说，通道将相同的消息输出给所有连接的peer节点，并将它们以相同的逻辑顺序输出给所有peer节点。这种原子通信保证在分布式系统上下文中也称为*全顺序广播*、<em>原子广播*或*共识</em>。所通信的消息是要包含在区块链状态中的候选交易。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>分区(排序服务通道)。<a href="#id3"><span class="problematic" id="id4">**</span></a>排序服务可能支持多个*通道*，类似于发布/订阅(发布/订阅)消息系统的*主题*。客户端可以连接到给定的通道，然后可以发送消息并获取到达的消息。通道可以看作是分区，连接到一个通道的客户端不知道其他通道的存在，但是客户端可以连接到多个通道。尽管在超级账本Fabric中包含的一些排序服务实现支持多个通道，但为了简化表示，在本文档的其余部分中，我们假设排序服务由一个通道/主题组成。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>排序服务API。<a href="#id3"><span class="problematic" id="id4">**</span></a>peer节点通过排序服务提供的接口连接到排序服务提供的通道。排序服务API由两个基本操作(一般称*异步事件*)组成:</p>
+<p><strong>TODO</strong> 添加API的一部分，用于在客户端/peer节点指定的序列号下获取特定的区块。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code>: a client calls this to broadcast an arbitrary
-message <code class="docutils literal notranslate"><span class="pre">blob</span></code> for dissemination over the channel. This is also
-called <code class="docutils literal notranslate"><span class="pre">request(blob)</span></code> in the BFT context, when sending a request
-to a service.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>: the ordering service calls this
-on the peer to deliver the message <code class="docutils literal notranslate"><span class="pre">blob</span></code> with the specified
-non-negative integer sequence number (<code class="docutils literal notranslate"><span class="pre">seqno</span></code>) and hash of the most
-recently delivered blob (<code class="docutils literal notranslate"><span class="pre">prevhash</span></code>). In other words, it is an
-output event from the ordering service. <code class="docutils literal notranslate"><span class="pre">deliver()</span></code> is also
-sometimes called <code class="docutils literal notranslate"><span class="pre">notify()</span></code> in pub-sub systems or <code class="docutils literal notranslate"><span class="pre">commit()</span></code> in
-BFT systems.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">广播(blob)</span> <span class="pre">``:客户端调用它来广播任意消息``blob``以便在通道上传播。在BFT上下文中，当向服务发送请求时，也称为``request(blob)</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>:排序服务在peer节点调用这个函数，以传递消息``blob`` ，其中包含指定的非负整数序列号 (<code class="docutils literal notranslate"><span class="pre">seqno</span></code>)和最近交付的blob的散列(<code class="docutils literal notranslate"><span class="pre">prevhash</span></code>)。换句话说，它是来自排序服务的输出事件。<code class="docutils literal notranslate"><span class="pre">deliver()``在发布订阅系统中有时也被称为`notify()</span></code>，或在BFT系统中被称为``commit()``。</p></li>
 </ul>
-<p><strong>Ledger and block formation.</strong> The ledger (see also Sec. 1.2.2)
-contains all data output by the ordering service. In a nutshell, it is a
-sequence of <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> events, which form a hash
-chain according to the computation of <code class="docutils literal notranslate"><span class="pre">prevhash</span></code> described before.</p>
-<p>Most of the time, for efficiency reasons, instead of outputting
-individual transactions (blobs), the ordering service will group (batch)
-the blobs and output <em>blocks</em> within a single <code class="docutils literal notranslate"><span class="pre">deliver</span></code> event. In this
-case, the ordering service must impose and convey a deterministic
-ordering of the blobs within each block. The number of blobs in a block
-may be chosen dynamically by an ordering service implementation.</p>
-<p>In the following, for ease of presentation, we define ordering service
-properties (rest of this subsection) and explain the workflow of
-transaction endorsement (Section 2) assuming one blob per <code class="docutils literal notranslate"><span class="pre">deliver</span></code>
-event. These are easily extended to blocks, assuming that a <code class="docutils literal notranslate"><span class="pre">deliver</span></code>
-event for a block corresponds to a sequence of individual <code class="docutils literal notranslate"><span class="pre">deliver</span></code>
-events for each blob within a block, according to the above mentioned
-deterministic ordering of blobs within a block.</p>
-<p><strong>Ordering service properties</strong></p>
-<p>The guarantees of the ordering service (or atomic-broadcast channel)
-stipulate what happens to a broadcasted message and what relations exist
-among delivered messages. These guarantees are as follows:</p>
+<p>账本和区块构成。账本(参见第1.2.2节)包含排序服务输出的所有数据。简而言之，它是``deliver(seqno, prevhash, blob)``事件的序列，这些事件根据前面描述的``prevhash`` 的计算形成一个哈希链。</p>
+<p>大多数时候，出于效率的考虑，排序服务不会输出单个交易(blob)，而是在单个``deliver``事件中对blob和输出*区块*进行分组(批处理)。在这种情况下，排序服务必须强制并传递每个区块中blob的确定性排序。区块中的区块数可以由排序服务实现动态选择。</p>
+<p>下面，为了便于表达，我们定义了排序服务属性(本小节的其余部分)，并解释了交易背书的工作流(第2节)，假设每个``deliver`` 事件有一个blob。这些很容易扩展到区块，假设一个区块的“交付”事件对应于一个区块中的每个blob的单独的 <a href="#id1"><span class="problematic" id="id2">``</span></a>deliver``事件序列，根据上面提到的区块中blob的确定性顺序。</p>
+<p><strong>排序服务属性</strong></p>
+<p>排序服务(或原子广播通道)的保证规定了广播消息发生了什么，以及传递的消息之间存在什么关系。这些保证如下:</p>
 <ol class="arabic">
-<li><p><strong>Safety (consistency guarantees)</strong>: As long as peers are connected
-for sufficiently long periods of time to the channel (they can
-disconnect or crash, but will restart and reconnect), they will see
-an <em>identical</em> series of delivered <code class="docutils literal notranslate"><span class="pre">(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>
-messages. This means the outputs (<code class="docutils literal notranslate"><span class="pre">deliver()</span></code> events) occur in the
-<em>same order</em> on all peers and according to sequence number and carry
-<em>identical content</em> (<code class="docutils literal notranslate"><span class="pre">blob</span></code> and <code class="docutils literal notranslate"><span class="pre">prevhash</span></code>) for the same sequence
-number. Note this is only a <em>logical order</em>, and a
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> on one peer is not required to
-occur in any real-time relation to <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>
-that outputs the same message at another peer. Put differently, given
-a particular <code class="docutils literal notranslate"><span class="pre">seqno</span></code>, <em>no</em> two correct peers deliver <em>different</em>
-<code class="docutils literal notranslate"><span class="pre">prevhash</span></code> or <code class="docutils literal notranslate"><span class="pre">blob</span></code> values. Moreover, no value <code class="docutils literal notranslate"><span class="pre">blob</span></code> is
-delivered unless some client (peer) actually called
-<code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code> and, preferably, every broadcasted blob is only
-delivered <em>once</em>.</p>
-<p>Furthermore, the <code class="docutils literal notranslate"><span class="pre">deliver()</span></code> event contains the cryptographic hash
-of the data in the previous <code class="docutils literal notranslate"><span class="pre">deliver()</span></code> event (<code class="docutils literal notranslate"><span class="pre">prevhash</span></code>). When
-the ordering service implements atomic broadcast guarantees,
-<code class="docutils literal notranslate"><span class="pre">prevhash</span></code> is the cryptographic hash of the parameters from the
-<code class="docutils literal notranslate"><span class="pre">deliver()</span></code> event with sequence number <code class="docutils literal notranslate"><span class="pre">seqno-1</span></code>. This
-establishes a hash chain across <code class="docutils literal notranslate"><span class="pre">deliver()</span></code> events, which is used
-to help verify the integrity of the ordering service output, as
-discussed in Sections 4 and 5 later. In the special case of the first
-<code class="docutils literal notranslate"><span class="pre">deliver()</span></code> event, <code class="docutils literal notranslate"><span class="pre">prevhash</span></code> has a default value.</p>
+<li><p><strong>安全(一致性保证)</strong>:只要peer节点连接到通道的时间足够长(它们可以断开连接或崩溃，但会重新启动和重新连接)，它们将看到一个*相同的*已交付的``(seqno, prevhash, blob)`` 消息序列。这意味着输出(<code class="docutils literal notranslate"><span class="pre">deliver()``事件)在所有peer节点上以*相同的顺序*发生，并根据序列号，为相同的序列号携带*相同的内容*</span> <span class="pre">(``blob</span></code> 和``prevhash``)。注意，这只是一个“逻辑顺序”，一个peer节点上的``deliver(seqno, prevhash, blob)`` 不需要与另一个peer节点上输出相同的``deliver(seqno, prevhash, blob)`` 消息发生实时关联。换句话说，给定一个特定的’<code class="docutils literal notranslate"><span class="pre">seqno</span></code>， <em>没有*两个正确的peer节点提供了*不同的*``prevhash`` 或``blob`` ‘值。此外，除非某个客户端（peer节点）实际调用了``broadcast(blob)`` ，否则不会传递任何值``blob`` ，即每个广播的blob只传递*一次</em>。</p>
+<p>此外，<code class="docutils literal notranslate"><span class="pre">deliver()``事件包含前一个``deliver()</span></code> 事件中的数据的加密哈希(<code class="docutils literal notranslate"><span class="pre">prevhash</span></code>)。当排序服务实现原子广播保证时，<code class="docutils literal notranslate"><span class="pre">prevhash``是``deliver()``事件的参数和序号的加密哈希``seqno-1</span></code>。这将在``deliver()``事件之间建立一个哈希链，用于帮助验证排序服务输出的完整性，后面的第4和第5节将对此进行讨论。在第一个``deliver()``事件的特殊情况下，<a href="#id1"><span class="problematic" id="id2">``</span></a>prevhash``有一个默认值。</p>
 </li>
-<li><p><strong>Liveness (delivery guarantee)</strong>: Liveness guarantees of the
-ordering service are specified by a ordering service implementation.
-The exact guarantees may depend on the network and node fault model.</p>
-<p>In principle, if the submitting client does not fail, the ordering
-service should guarantee that every correct peer that connects to the
-ordering service eventually delivers every submitted transaction.</p>
+<li><p><strong>存活性(交付保证)</strong>:排序服务的存活性保证由排序服务的实现决定。准确的保证可能取决于网络和node节点故障模型。</p>
+<p>原则上，如果提交的客户端没有失败，那么排序服务应该确保连接到排序服务的每个正确peer节点最终交付每个提交的交易。</p>
 </li>
 </ol>
-<p>To summarize, the ordering service ensures the following properties:</p>
+<p>总而言之，排序服务确保以下特性:</p>
 <ul class="simple">
-<li><p><em>Agreement.</em> For any two events at correct peers
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash0,</span> <span class="pre">blob0)</span></code> and
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash1,</span> <span class="pre">blob1)</span></code> with the same <code class="docutils literal notranslate"><span class="pre">seqno</span></code>,
-<code class="docutils literal notranslate"><span class="pre">prevhash0==prevhash1</span></code> and <code class="docutils literal notranslate"><span class="pre">blob0==blob1</span></code>;</p></li>
-<li><p><em>Hashchain integrity.</em> For any two events at correct peers
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno-1,</span> <span class="pre">prevhash0,</span> <span class="pre">blob0)</span></code> and
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>,
-<code class="docutils literal notranslate"><span class="pre">prevhash</span> <span class="pre">=</span> <span class="pre">HASH(seqno-1||prevhash0||blob0)</span></code>.</p></li>
-<li><p><em>No skipping</em>. If an ordering service outputs
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> at a correct peer <em>p</em>, such that
-<code class="docutils literal notranslate"><span class="pre">seqno&gt;0</span></code>, then <em>p</em> already delivered an event
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno-1,</span> <span class="pre">prevhash0,</span> <span class="pre">blob0)</span></code>.</p></li>
-<li><p><em>No creation</em>. Any event <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> at a
-correct peer must be preceded by a <code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code> event at some
-(possibly distinct) peer;</p></li>
-<li><p><em>No duplication (optional, yet desirable)</em>. For any two events
-<code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code> and <code class="docutils literal notranslate"><span class="pre">broadcast(blob')</span></code>, when two events
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno0,</span> <span class="pre">prevhash0,</span> <span class="pre">blob)</span></code> and
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno1,</span> <span class="pre">prevhash1,</span> <span class="pre">blob')</span></code> occur at correct peers and
-<code class="docutils literal notranslate"><span class="pre">blob</span> <span class="pre">==</span> <span class="pre">blob'</span></code>, then <code class="docutils literal notranslate"><span class="pre">seqno0==seqno1</span></code> and
-<code class="docutils literal notranslate"><span class="pre">prevhash0==prevhash1</span></code>.</p></li>
-<li><p><em>Liveness</em>. If a correct client invokes an event <code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code>
-then every correct peer “eventually” issues an event
-<code class="docutils literal notranslate"><span class="pre">deliver(*,</span> <span class="pre">*,</span> <span class="pre">blob)</span></code>, where <code class="docutils literal notranslate"><span class="pre">*</span></code> denotes an arbitrary value.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>协议。<a href="#id3"><span class="problematic" id="id4">*</span></a>对于正确peer节点上的任何两个具有相同 <code class="docutils literal notranslate"><span class="pre">seqno``的事件``deliver(seqno,</span> <span class="pre">prevhash0,</span> <span class="pre">blob0)</span></code> 和``deliver(seqno, prevhash1, blob1)`` ，<code class="docutils literal notranslate"><span class="pre">prevhash0==prevhash1``和``blob0==blob1</span></code>;</p></li>
+<li><p><em>哈希链完整性。</em> 对于正确peer节点上的任何两个事件``deliver(seqno-1, prevhash0, blob0)`` 和 <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code>, <code class="docutils literal notranslate"><span class="pre">prevhash</span> <span class="pre">=</span> <span class="pre">HASH(seqno-1||prevhash0||blob0)</span></code>。</p></li>
+<li><p><em>没有跳过</em>。如果排序服务在一个正确的peer节点*p*上输出``deliver(seqno, prevhash, blob)`` ，例如 <code class="docutils literal notranslate"><span class="pre">seqno&gt;0</span></code>，那么*p*已经交付了一个事件``deliver(seqno-1, prevhash0, blob0)``。</p></li>
+<li><p><em>没有创建</em>。在正确的peer节点上的任何事件``deliver(seqno, prevhash, blob)``之前，在一些(可能不同的)peer节点上必然有一个``broadcast(blob)``事件;</p></li>
+<li><p><em>没有复制duplication (optional, yet desirable)</em>。对任何两个事件``broadcast(blob)`` 和``broadcast(blob’)``，当两个事件``deliver(seqno0, prevhash0, blob)`` 和 <code class="docutils literal notranslate"><span class="pre">deliver(seqno1,</span> <span class="pre">prevhash1,</span> <span class="pre">blob')``发生在正确的peer节点并且</span> <span class="pre">``blob</span> <span class="pre">==</span> <span class="pre">blob'</span></code>，那么``seqno0==seqno1``和``prevhash0==prevhash1``。</p></li>
+<li><p><em>存活性</em>。如果一个正确的客户端调用一个事件``broadcast(blob)`` ，那么每个正确的peer节点“最终”发出一个事件``deliver(<a href="#id1"><span class="problematic" id="id2">*</span></a>, <a href="#id3"><span class="problematic" id="id4">*</span></a>, blob)``，其中 <code class="docutils literal notranslate"><span class="pre">*</span></code> 表示一个任意值。</p></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="section" id="basic-workflow-of-transaction-endorsement">
-<h2>2. Basic workflow of transaction endorsement<a class="headerlink" href="#basic-workflow-of-transaction-endorsement" title="Permalink to this headline">¶</a></h2>
-<p>In the following we outline the high-level request flow for a
-transaction.</p>
-<p><strong>Remark:</strong> <em>Notice that the following protocol *does not</em> assume that
-all transactions are deterministic, i.e., it allows for
-non-deterministic transactions.*</p>
+<h2>2. 交易背书的基本流程<a class="headerlink" href="#basic-workflow-of-transaction-endorsement" title="永久链接至标题">¶</a></h2>
+<p>在下面的文章中，我们将概述交易的高级请求流程。</p>
+<p><strong>注:</strong> <em>注意以下协议*并不*假设所有交易都是确定性的，即，它允许非确定性交易。</em></p>
 <div class="section" id="the-client-creates-a-transaction-and-sends-it-to-endorsing-peers-of-its-choice">
-<h3>2.1. The client creates a transaction and sends it to endorsing peers of its choice<a class="headerlink" href="#the-client-creates-a-transaction-and-sends-it-to-endorsing-peers-of-its-choice" title="Permalink to this headline">¶</a></h3>
-<p>To invoke a transaction, the client sends a <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message to a set
-of endorsing peers of its choice (possibly not at the same time - see
-Sections 2.1.2. and 2.3.). The set of endorsing peers for a given
-<code class="docutils literal notranslate"><span class="pre">chaincodeID</span></code> is made available to client via peer, which in turn
-knows the set of endorsing peers from endorsement policy (see Section
-3). For example, the transaction could be sent to <em>all</em> endorsers of a
-given <code class="docutils literal notranslate"><span class="pre">chaincodeID</span></code>. That said, some endorsers could be offline,
-others may object and choose not to endorse the transaction. The
-submitting client tries to satisfy the policy expression with the
-endorsers available.</p>
-<p>In the following, we first detail <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message format and then
-discuss possible patterns of interaction between submitting client and
-endorsers.</p>
+<h3>2.1. 客户端创建一个交易并将其发送给它所选择的背书peer节点<a class="headerlink" href="#the-client-creates-a-transaction-and-sends-it-to-endorsing-peers-of-its-choice" title="永久链接至标题">¶</a></h3>
+<p>要引起一个交易，客户端向其选择的一组背书peer节点发送一条“建议”消息(可能不是同时发送，参见2.1.2.节和2.3.节)。客户端可以通过peer节点获得给定“chaincodeID”的背书peer节点集，而peer节点又从背书策略中知道背书peer节点集合（参见第3节）。例如，可以将交易发送给给定``chaincodeID``’的*所有*背书节点。。也就是说，一些背书节点可能离线，其它背书节点可能会反对并选择不背书交易。提交客户端尝试使用可用的背书者来满足策略表达式。</p>
+<p>在下面，我们首先详细介绍“提议”消息格式，然后讨论提交客户端和背书者之间可能的交互模式。</p>
 </div>
 <div class="section" id="propose-message-format">
-<h3>2.1.1. <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message format<a class="headerlink" href="#propose-message-format" title="Permalink to this headline">¶</a></h3>
-<p>The format of a <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message is <code class="docutils literal notranslate"><span class="pre">&lt;PROPOSE,tx,[anchor]&gt;</span></code>, where
-<code class="docutils literal notranslate"><span class="pre">tx</span></code> is a mandatory and <code class="docutils literal notranslate"><span class="pre">anchor</span></code> optional argument explained in the
-following.</p>
+<h3>2.1.1. <a href="#id1"><span class="problematic" id="id2">``</span></a>提议``消息格式<a class="headerlink" href="#propose-message-format" title="永久链接至标题">¶</a></h3>
+<p>：’ ‘ proposal ‘ ‘消息的格式是’ ‘ &lt; proposal,tx，[anchor]&gt; ‘ ‘，其中’ ‘ tx ‘ ‘是必填参数，’ ‘ anchor ‘ ‘可选参数解释如下。
+<code class="docutils literal notranslate"><span class="pre">提议``消息的格式是</span> <span class="pre">``&lt;PROPOSE,tx,[anchor]&gt;</span></code>，其中``tx`` 是必填参数，可选参数 <code class="docutils literal notranslate"><span class="pre">anchor</span></code> 解释如下。</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">tx=&lt;clientID,chaincodeID,txPayload,timestamp,clientSig&gt;</span></code>, where</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">tx=&lt;clientID,chaincodeID,txPayload,timestamp,clientSig&gt;</span></code>, 其中</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">clientID</span></code> is an ID of the submitting client,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chaincodeID</span></code> refers to the chaincode to which the transaction
-pertains,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">txPayload</span></code> is the payload containing the submitted transaction
-itself,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">timestamp</span></code> is a monotonically increasing (for every new
-transaction) integer maintained by the client,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">clientSig</span></code> is signature of a client on other fields of <code class="docutils literal notranslate"><span class="pre">tx</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientID</span></code> 是提交客户端的ID，</p></li>
+<li><p>“chaincodeID”指向交易所属的链码，</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>txPayload``是包含提交交易本身的载荷，</p></li>
+<li><p>“timestamp”是客户端维护的一个简单递增的整数(对于每个新交易)，</p></li>
+<li><p>“clientSig”是客户端在“tx”的其他字段上的签名。</p></li>
 </ul>
-<p>The details of <code class="docutils literal notranslate"><span class="pre">txPayload</span></code> will differ between invoke transactions
-and deploy transactions (i.e., invoke transactions referring to a
-deploy-specific system chaincode). For an <strong>invoke transaction</strong>,
-<code class="docutils literal notranslate"><span class="pre">txPayload</span></code> would consist of two fields</p>
+<p>“txPayload”的详细信息在调用交易和部署交易(即调用交易引用特定于部署的系统链码)是不同的。对于**调用交易**， <a href="#id1"><span class="problematic" id="id2">``</span></a>txPayload``将包含两个字段</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">txPayload</span> <span class="pre">=</span> <span class="pre">&lt;operation,</span> <span class="pre">metadata&gt;</span></code>, where</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">txPayload</span> <span class="pre">=</span> <span class="pre">&lt;operation,</span> <span class="pre">metadata&gt;</span></code>, 其中</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">operation</span></code> denotes the chaincode operation (function) and
-arguments,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code> denotes attributes related to the invocation.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>operation``表示链码操作(函数)和参数，</p></li>
+<li><p>“metadata”表示与调用相关的属性。</p></li>
 </ul>
 </li>
 </ul>
-<p>For a <strong>deploy transaction</strong>, <code class="docutils literal notranslate"><span class="pre">txPayload</span></code> would consist of three
-fields</p>
+<p>对于一个**部署交易**，<code class="docutils literal notranslate"><span class="pre">txPayload</span></code> 将包含三个字段</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">txPayload</span> <span class="pre">=</span> <span class="pre">&lt;source,</span> <span class="pre">metadata,</span> <span class="pre">policies&gt;</span></code>, where</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">txPayload</span> <span class="pre">=</span> <span class="pre">&lt;source,</span> <span class="pre">metadata,</span> <span class="pre">policies&gt;</span></code>, 其中</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> denotes the source code of the chaincode,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code> denotes attributes related to the chaincode and
-application,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">policies</span></code> contains policies related to the chaincode that
-are accessible to all peers, such as the endorsement policy.
-Note that endorsement policies are not supplied with
-<code class="docutils literal notranslate"><span class="pre">txPayload</span></code> in a <code class="docutils literal notranslate"><span class="pre">deploy</span></code> transaction, but
-<code class="docutils literal notranslate"><span class="pre">txPayload</span></code> of a <code class="docutils literal notranslate"><span class="pre">deploy</span></code> contains endorsement policy ID and
-its parameters (see Section 3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> 表示链码的源代码，</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code> 表示与链码和应用程序相关的属性，</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>policies``包含与链码相关的策略，所有peer节点都可以访问这些策略，例如背书策略。注意，在“部署”事务中的“txPayload”中没有提供背书策略，但是“部署”的“txPayload”包含背书策略ID及其参数(参见第3节)。</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">anchor</span></code> contains <em>read version dependencies</em>, or more
-specifically, key-version pairs (i.e., <code class="docutils literal notranslate"><span class="pre">anchor</span></code> is a subset of
-<code class="docutils literal notranslate"><span class="pre">KxN</span></code>), that binds or “anchors” the <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> request to
-specified versions of keys in a KVS (see Section 1.2.). If the client
-specifies the <code class="docutils literal notranslate"><span class="pre">anchor</span></code> argument, an endorser endorses a transaction
-only upon <em>read</em> version numbers of corresponding keys in its local
-KVS match <code class="docutils literal notranslate"><span class="pre">anchor</span></code> (see Section 2.2. for more details).</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>锚定``包含*读取版本依赖项*，或者更具体地说，键版本对儿(即``anchor``是 <a href="#id3"><span class="problematic" id="id4">``</span></a>KxN``的子集)，它将 <a href="#id5"><span class="problematic" id="id6">``</span></a>提议``请求绑定或 “锚定”到KVS中指定版本的键(请参阅1.2.)。如果客户端指定了``锚定``参数，背书者仅在其本地KVS中对应键的*读*版本号匹配``锚定``时才背书交易(更多的细节参见第2.2节)。</p></li>
 </ul>
-<p>Cryptographic hash of <code class="docutils literal notranslate"><span class="pre">tx</span></code> is used by all nodes as a unique
-transaction identifier <code class="docutils literal notranslate"><span class="pre">tid</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">tid=HASH(tx)</span></code>). The client
-stores <code class="docutils literal notranslate"><span class="pre">tid</span></code> in memory and waits for responses from endorsing peers.</p>
+<p>所有node节点都使用``tx``的加密哈希作为惟一的交易标识符``tid`` (即``tid=HASH(tx)``)。客户端在内存中存储``tid``，并等待来自背书节点的响应。</p>
 <div class="section" id="message-patterns">
-<h4>2.1.2. Message patterns<a class="headerlink" href="#message-patterns" title="Permalink to this headline">¶</a></h4>
-<p>The client decides on the sequence of interaction with endorsers. For
-example, a client would typically send <code class="docutils literal notranslate"><span class="pre">&lt;PROPOSE,</span> <span class="pre">tx&gt;</span></code> (i.e., without
-the <code class="docutils literal notranslate"><span class="pre">anchor</span></code> argument) to a single endorser, which would then produce
-the version dependencies (<code class="docutils literal notranslate"><span class="pre">anchor</span></code>) which the client can later on use
-as an argument of its <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message to other endorsers. As another
-example, the client could directly send <code class="docutils literal notranslate"><span class="pre">&lt;PROPOSE,</span> <span class="pre">tx&gt;</span></code> (without
-<code class="docutils literal notranslate"><span class="pre">anchor</span></code>) to all endorsers of its choice. Different patterns of
-communication are possible and client is free to decide on those (see
-also Section 2.3.).</p>
+<h4>2.1.2. 消息模式<a class="headerlink" href="#message-patterns" title="永久链接至标题">¶</a></h4>
+<p>客户端决定与背书者交互的顺序。例如，客户端通常会发送``&lt;PROPOSE, tx&gt;`` (即没有“锚定”参数)到单个背书者，这将生成版本依赖关系(“锚定”)，客户端稍后可以将该依赖关系用作其向其他背书者发送的“提议”消息的参数。另一个例子是，客户端可以直接将``&lt;PROPOSE, tx&gt;``(没有’<code class="docutils literal notranslate"><span class="pre">锚定</span></code>)发送给它所选择的所有背书者。不同的通信模式是可能的，客户端可以自由决定这些模式(参见2.3.)。</p>
 </div>
 </div>
 <div class="section" id="the-endorsing-peer-simulates-a-transaction-and-produces-an-endorsement-signature">
-<h3>2.2. The endorsing peer simulates a transaction and produces an endorsement signature<a class="headerlink" href="#the-endorsing-peer-simulates-a-transaction-and-produces-an-endorsement-signature" title="Permalink to this headline">¶</a></h3>
-<p>On reception of a <code class="docutils literal notranslate"><span class="pre">&lt;PROPOSE,tx,[anchor]&gt;</span></code> message from a client, the
-endorsing peer <code class="docutils literal notranslate"><span class="pre">epID</span></code> first verifies the client’s signature
-<code class="docutils literal notranslate"><span class="pre">clientSig</span></code> and then simulates a transaction. If the client specifies
-<code class="docutils literal notranslate"><span class="pre">anchor</span></code> then endorsing peer simulates the transactions only upon read
-version numbers (i.e., <code class="docutils literal notranslate"><span class="pre">readset</span></code> as defined below) of corresponding
-keys in its local KVS match those version numbers specified by
-<code class="docutils literal notranslate"><span class="pre">anchor</span></code>.</p>
-<p>Simulating a transaction involves endorsing peer tentatively <em>executing</em>
-a transaction (<code class="docutils literal notranslate"><span class="pre">txPayload</span></code>), by invoking the chaincode to which the
-transaction refers (<code class="docutils literal notranslate"><span class="pre">chaincodeID</span></code>) and the copy of the state that the
-endorsing peer locally holds.</p>
-<p>As a result of the execution, the endorsing peer computes <em>read version
-dependencies</em> (<code class="docutils literal notranslate"><span class="pre">readset</span></code>) and <em>state updates</em> (<code class="docutils literal notranslate"><span class="pre">writeset</span></code>), also
-called <em>MVCC+postimage info</em> in DB language.</p>
-<p>Recall that the state consists of key-value pairs. All key-value entries
-are versioned; that is, every entry contains ordered version
-information, which is incremented each time the value stored under
-a key is updated. The peer that interprets the transaction records all
-key-value pairs accessed by the chaincode, either for reading or for writing,
-but the peer does not yet update its state. More specifically:</p>
+<h3>2.2. 背书节点模拟交易并生成背书签名<a class="headerlink" href="#the-endorsing-peer-simulates-a-transaction-and-produces-an-endorsement-signature" title="永久链接至标题">¶</a></h3>
+<p>当接收到来自客户端的``&lt;PROPOSE,tx,[anchor]&gt;`` 消息时，背书节点 <code class="docutils literal notranslate"><span class="pre">epID</span></code> 首先验证客户端的签名``clientSig``，然后模拟一个交易。如果客户端指定“锚定”，则背书节点在它的本地KVS中仅根据键对应的读版本号匹配由 <a href="#id1"><span class="problematic" id="id2">``</span></a>锚定``指定的版本号。</p>
+<p>通过调用交易引用的链码(“chaincodeID”)和背书节点本地持有的状态副本，模拟交易包括暂时*执行*一个交易(“txPayload”)。</p>
+<p>执行的结果是，背书节点计算*读版本依赖项* (<code class="docutils literal notranslate"><span class="pre">readset</span></code>)和*状态更新* (<code class="docutils literal notranslate"><span class="pre">writeset</span></code>)，在DB语言中也称为*MVCC+postimage info*。</p>
+<p>回想一下，状态由键值对组成。所有键值条目都有版本控制;也就是说，每个条目都包含有序的版本信息，每次更新存储在键下的值时，该信息都会增加。解释交易的peer节点记录链码访问的所有键值对(无论对于读取或写入)，但该peer节点尚未更新其状态。更具体地说:</p>
 <ul class="simple">
-<li><p>Given state <code class="docutils literal notranslate"><span class="pre">s</span></code> before an endorsing peer executes a transaction,
-for every key <code class="docutils literal notranslate"><span class="pre">k</span></code> read by the transaction, pair
-<code class="docutils literal notranslate"><span class="pre">(k,s(k).version)</span></code> is added to <code class="docutils literal notranslate"><span class="pre">readset</span></code>.</p></li>
-<li><p>Additionally, for every key <code class="docutils literal notranslate"><span class="pre">k</span></code> modified by the transaction to the
-new value <code class="docutils literal notranslate"><span class="pre">v'</span></code>, pair <code class="docutils literal notranslate"><span class="pre">(k,v')</span></code> is added to <code class="docutils literal notranslate"><span class="pre">writeset</span></code>.
-Alternatively, <code class="docutils literal notranslate"><span class="pre">v'</span></code> could be the delta of the new value to previous
-value (<code class="docutils literal notranslate"><span class="pre">s(k).value</span></code>).</p></li>
+<li><p>背书peer节点在执行一个交易之前的给定的状态``s`` ，交易读取的每个键``k`` ，键值对 <code class="docutils literal notranslate"><span class="pre">(k,s(k).version)``被添加到``readset</span></code>。</p></li>
+<li><p>此外，对于被交易修改为新值到 <code class="docutils literal notranslate"><span class="pre">v'``的每个键``k</span></code>，键值对``(k,v’)``被添加到``writeset``中。或者， <code class="docutils literal notranslate"><span class="pre">v'``可以是新值与旧值的差值</span> <span class="pre">(``s(k).value</span></code>)。</p></li>
 </ul>
-<p>If a client specifies <code class="docutils literal notranslate"><span class="pre">anchor</span></code> in the <code class="docutils literal notranslate"><span class="pre">PROPOSE</span></code> message then client
-specified <code class="docutils literal notranslate"><span class="pre">anchor</span></code> must equal <code class="docutils literal notranslate"><span class="pre">readset</span></code> produced by endorsing peer
-when simulating the transaction.</p>
-<p>Then, the peer forwards internally <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> (and possibly
-<code class="docutils literal notranslate"><span class="pre">tx</span></code>) to the part of its (peer’s) logic that endorses a transaction,
-referred to as <strong>endorsing logic</strong>. By default, endorsing logic at a
-peer accepts the <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> and simply signs the
-<code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code>. However, endorsing logic may interpret arbitrary
-functionality, to, e.g., interact with legacy systems with
-<code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> and <code class="docutils literal notranslate"><span class="pre">tx</span></code> as inputs to reach the decision whether to
-endorse a transaction or not.</p>
-<p>If endorsing logic decides to endorse a transaction, it sends
-<code class="docutils literal notranslate"><span class="pre">&lt;TRANSACTION-ENDORSED,</span> <span class="pre">tid,</span> <span class="pre">tran-proposal,epSig&gt;</span></code> message to the
-submitting client(<code class="docutils literal notranslate"><span class="pre">tx.clientID</span></code>), where:</p>
+<p>如果客户端在“提议”消息中指定“锚定”，则客户端指定的“锚定”必须等于模拟交易时由背书peer生成的“readset”。</p>
+<p>然后，peer节点将内部的“tran-proposal”(可能还有“tx”)转发给它的(peer节点的)背书交易的逻辑部分，称为**背书逻辑**。默认情况下，在peer节点中背书逻辑接受“tran-proposal”，并简单地签署“tran-proposal”。然而，背书逻辑可能会解释任意的功能，例如，使用“trans -proposal”和“tx”做输入与遗留系统交互，来决定是否为交易背书。</p>
+<p>如果背书逻辑决定背书一个交易，它会向提交客户端(<code class="docutils literal notranslate"><span class="pre">tx.clientID</span></code>)发送``&lt;TRANSACTION-ENDORSED, tid, tran-proposal,epSig&gt;``消息，其中:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">tran-proposal</span> <span class="pre">:=</span> <span class="pre">(epID,tid,chaincodeID,txContentBlob,readset,writeset)</span></code>,</p>
-<p>where <code class="docutils literal notranslate"><span class="pre">txContentBlob</span></code> is chaincode/transaction specific
-information. The intention is to have <code class="docutils literal notranslate"><span class="pre">txContentBlob</span></code> used as some
-representation of <code class="docutils literal notranslate"><span class="pre">tx</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">txContentBlob=tx.txPayload</span></code>).</p>
+<p>其中``txContentBlob``’是链码/交易指定信息。其目的是将``txContentBlob``用作 <code class="docutils literal notranslate"><span class="pre">tx</span></code> 的某种表示形式(例如``txContentBlob=tx.txPayload``)。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epSig</span></code> is the endorsing peer’s signature on <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code></p></li>
+<li><p>“epSig”是背书节点在“tran-proposal”上的签名。</p></li>
 </ul>
-<p>Else, in case the endorsing logic refuses to endorse the transaction, an
-endorser <em>may</em> send a message <code class="docutils literal notranslate"><span class="pre">(TRANSACTION-INVALID,</span> <span class="pre">tid,</span> <span class="pre">REJECTED)</span></code>
-to the submitting client.</p>
-<p>Notice that an endorser does not change its state in this step, the
-updates produced by transaction simulation in the context of endorsement
-do not affect the state!</p>
+<p>否则，如果背书逻辑拒绝对交易进行背书，背书者*可以*向提交的客户端发送一条消息``(TRANSACTION-INVALID, tid, REJECTED)`` 。</p>
+<p>请注意，背书者在此步骤中不会更改其状态，背书上下文中交易模拟生成的更新不会影响状态!</p>
 </div>
 <div class="section" id="the-submitting-client-collects-an-endorsement-for-a-transaction-and-broadcasts-it-through-ordering-service">
-<h3>2.3. The submitting client collects an endorsement for a transaction and broadcasts it through ordering service<a class="headerlink" href="#the-submitting-client-collects-an-endorsement-for-a-transaction-and-broadcasts-it-through-ordering-service" title="Permalink to this headline">¶</a></h3>
-<p>The submitting client waits until it receives “enough” messages and
-signatures on <code class="docutils literal notranslate"><span class="pre">(TRANSACTION-ENDORSED,</span> <span class="pre">tid,</span> <span class="pre">*,</span> <span class="pre">*)</span></code> statements to
-conclude that the transaction proposal is endorsed. As discussed in
-Section 2.1.2., this may involve one or more round-trips of interaction
-with endorsers.</p>
-<p>The exact number of “enough” depend on the chaincode endorsement policy
-(see also Section 3). If the endorsement policy is satisfied, the
-transaction has been <em>endorsed</em>; note that it is not yet committed. The
-collection of signed <code class="docutils literal notranslate"><span class="pre">TRANSACTION-ENDORSED</span></code> messages from endorsing
-peers which establish that a transaction is endorsed is called an
-<em>endorsement</em> and denoted by <code class="docutils literal notranslate"><span class="pre">endorsement</span></code>.</p>
-<p>If the submitting client does not manage to collect an endorsement for a
-transaction proposal, it abandons this transaction with an option to
-retry later.</p>
-<p>For transaction with a valid endorsement, we now start using the
-ordering service. The submitting client invokes ordering service using
-the <code class="docutils literal notranslate"><span class="pre">broadcast(blob)</span></code>, where <code class="docutils literal notranslate"><span class="pre">blob=endorsement</span></code>. If the client does
-not have capability of invoking ordering service directly, it may proxy
-its broadcast through some peer of its choice. Such a peer must be
-trusted by the client not to remove any message from the <code class="docutils literal notranslate"><span class="pre">endorsement</span></code>
-or otherwise the transaction may be deemed invalid. Notice that,
-however, a proxy peer may not fabricate a valid <code class="docutils literal notranslate"><span class="pre">endorsement</span></code>.</p>
+<h3>2.3. 提交客户端为交易收集背书并通过排序服务广播<a class="headerlink" href="#the-submitting-client-collects-an-endorsement-for-a-transaction-and-broadcasts-it-through-ordering-service" title="永久链接至标题">¶</a></h3>
+<p>提交客户端等待，直到它收到“足够”的消息和``(TRANSACTION-ENDORSED, tid, <a href="#id1"><span class="problematic" id="id2">*</span></a>, <a href="#id3"><span class="problematic" id="id4">*</span></a>)`` 语句上的签名，从而断定交易提议已被背书。如第2.1.2节所述，这可能涉及与背书者的一次或多次双向互动。</p>
+<p>确切数目是否“足够”由链码背书策略而定(另见第3条)。如背书策略符合，则交易已获*背书*；注意，它还没有提交。来自背书节点的已签章“ <a href="#id1"><span class="problematic" id="id2">``</span></a>TRANSACTION-ENDORSED``消息称为*背书*，并用“背书”表示。</p>
+<p>如果提交的客户端未能为交易提议收集到背书，它将放弃该交易，并提供稍后重试的选项。</p>
+<p>对于具有有效背书的交易，我们现在开始使用排序服务。提交客户端使用“broadcast(blob)”调用排序服务，其中“blob=背书”。如果客户端没有直接调用排序服务，它可以通过自己选择的某个peer节点代理其广播。客户端必须信任这样的peer节点不会从“背书”中删除任何消息，否则交易可能被视为无效。但是，请注意，代理peer节点不可以伪造有效的“背书”。</p>
 </div>
 <div class="section" id="the-ordering-service-delivers-a-transactions-to-the-peers">
-<h3>2.4. The ordering service delivers a transactions to the peers<a class="headerlink" href="#the-ordering-service-delivers-a-transactions-to-the-peers" title="Permalink to this headline">¶</a></h3>
-<p>When an event <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> occurs and a peer has
-applied all state updates for blobs with sequence number lower than
-<code class="docutils literal notranslate"><span class="pre">seqno</span></code>, a peer does the following:</p>
+<h3>2.4. 排序服务向peer节点交付交易<a class="headerlink" href="#the-ordering-service-delivers-a-transactions-to-the-peers" title="永久链接至标题">¶</a></h3>
+<p>当一个事件 <code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> 发生，并且一个peer节点为序号小于 <a href="#id1"><span class="problematic" id="id2">``</span></a>seqno``的blob应用了所有状态更新时，peer节点执行以下操作:</p>
 <ul class="simple">
-<li><p>It checks that the <code class="docutils literal notranslate"><span class="pre">blob.endorsement</span></code> is valid according to the
-policy of the chaincode (<code class="docutils literal notranslate"><span class="pre">blob.tran-proposal.chaincodeID</span></code>) to which
-it refers.</p></li>
-<li><p>In a typical case, it also verifies that the dependencies
-(<code class="docutils literal notranslate"><span class="pre">blob.endorsement.tran-proposal.readset</span></code>) have not been violated
-meanwhile. In more complex use cases, <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> fields in
-endorsement may differ and in this case endorsement policy (Section
-3) specifies how the state evolves.</p></li>
+<li><p>它根据所引用的链码(<code class="docutils literal notranslate"><span class="pre">blob.tran-proposal.chaincodeID</span></code>)的策略检查``blob.endorsement``’是有效的。</p></li>
+<li><p>在典型的情况下，它还验证依赖项(<code class="docutils literal notranslate"><span class="pre">blob.endorsement.tran-proposal.readset</span></code>)没有同时被违反。在更复杂的用例中，背书中的“trans -proposal”字段可能有所不同，在这种情况下，背书策略(第3节)指定状态如何发展。</p></li>
 </ul>
-<p>Verification of dependencies can be implemented in different ways,
-according to a consistency property or “isolation guarantee” that is
-chosen for the state updates. <strong>Serializability</strong> is a default isolation
-guarantee, unless chaincode endorsement policy specifies a different
-one. Serializability can be provided by requiring the version associated
-with <em>every</em> key in the <code class="docutils literal notranslate"><span class="pre">readset</span></code> to be equal to that key’s version in
-the state, and rejecting transactions that do not satisfy this
-requirement.</p>
+<p>根据为状态更新选择的一致性属性或“隔离保证”，可以以不同的方式实现依赖项的验证。<a href="#id1"><span class="problematic" id="id2">**</span></a>Serializability**是默认的隔离保证，除非链码背书策略指定了一个不同的隔离保证。通过要求``readset``中的*每个*键关联的版本等于该键在状态中的版本，提供了Serializability，并拒绝不满足此要求的交易。</p>
 <ul class="simple">
-<li><p>If all these checks pass, the transaction is deemed <em>valid</em> or
-<em>committed</em>. In this case, the peer marks the transaction with 1 in
-the bitmask of the <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>, applies
-<code class="docutils literal notranslate"><span class="pre">blob.endorsement.tran-proposal.writeset</span></code> to blockchain state (if
-<code class="docutils literal notranslate"><span class="pre">tran-proposals</span></code> are the same, otherwise endorsement policy logic
-defines the function that takes <code class="docutils literal notranslate"><span class="pre">blob.endorsement</span></code>).</p></li>
-<li><p>If the endorsement policy verification of <code class="docutils literal notranslate"><span class="pre">blob.endorsement</span></code> fails,
-the transaction is invalid and the peer marks the transaction with 0
-in the bitmask of the <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>. It is important to note that
-invalid transactions do not change the state.</p></li>
+<li><p>如果所有这些检查通过，交易将被视为“有效”或“已提交”。在本例中，peer节点在“PeerLedger”的比特掩码中使用1标记交易，应用``blob.endorsement.tran-proposal.writeset``到区块链状态(如果 <a href="#id1"><span class="problematic" id="id2">``</span></a>tran-proposals``相同，否则背书策略逻辑定义接受 <a href="#id3"><span class="problematic" id="id4">``</span></a>blob.endorsement``的函数)。</p></li>
+<li><p>如果背书策略验证``blob.endorsement``失败，交易无效，在``PeerLedger``的比特掩码中，peer节点将交易标记为0。需要注意的是，无效交易不会更改状态。</p></li>
 </ul>
-<p>Note that this is sufficient to have all (correct) peers have the same
-state after processing a deliver event (block) with a given sequence
-number. Namely, by the guarantees of the ordering service, all correct
-peers will receive an identical sequence of
-<code class="docutils literal notranslate"><span class="pre">deliver(seqno,</span> <span class="pre">prevhash,</span> <span class="pre">blob)</span></code> events. As the evaluation of the
-endorsement policy and evaluation of version dependencies in <code class="docutils literal notranslate"><span class="pre">readset</span></code>
-are deterministic, all correct peers will also come to the same
-conclusion whether a transaction contained in a blob is valid. Hence,
-all peers commit and apply the same sequence of transactions and update
-their state in the same way.</p>
-<img alt="Illustration of the transaction flow (common-case path)." id="swimlane" src="_images/flow-4.png" />
-<p><em>Figure 1. Illustration of one possible transaction flow (common-case path).</em></p>
+<p>注意，在使用给定的序列号处理一个交付事件(区块)之后，所有(正确的)peer节点都具有相同的状态就足够了。也就是说，通过排序服务的保证，所有正确的peer节点将接收相同的``deliver(seqno, prevhash, blob)``事件序列。由于对背书策略的评估和对“readset”中的版本依赖关系的评估是确定的，所以所有正确的peer节点也会得出相同的结论，即blob中包含的交易是否有效。因此，所有peer节点提交和应用相同的交易序列，并以相同的方式更新它们的状态。</p>
+<img alt="Illustration of the transaction flow (common-case path)." src="_images/flow-4.png" />
+<p><em>图1 . 说明一种可能的交易流程(常见情况路径)。</em></p>
 </div>
 </div>
 <div class="section" id="endorsement-policies">
-<h2>3. Endorsement policies<a class="headerlink" href="#endorsement-policies" title="Permalink to this headline">¶</a></h2>
+<h2>3. 背书策略<a class="headerlink" href="#endorsement-policies" title="永久链接至标题">¶</a></h2>
 <div class="section" id="endorsement-policy-specification">
-<h3>3.1. Endorsement policy specification<a class="headerlink" href="#endorsement-policy-specification" title="Permalink to this headline">¶</a></h3>
-<p>An <strong>endorsement policy</strong>, is a condition on what <em>endorses</em> a
-transaction. Blockchain peers have a pre-specified set of endorsement
-policies, which are referenced by a <code class="docutils literal notranslate"><span class="pre">deploy</span></code> transaction that installs
-specific chaincode. Endorsement policies can be parametrized, and these
-parameters can be specified by a <code class="docutils literal notranslate"><span class="pre">deploy</span></code> transaction.</p>
-<p>To guarantee blockchain and security properties, the set of endorsement
-policies <strong>should be a set of proven policies</strong> with limited set of
-functions in order to ensure bounded execution time (termination),
-determinism, performance and security guarantees.</p>
-<p>Dynamic addition of endorsement policies (e.g., by <code class="docutils literal notranslate"><span class="pre">deploy</span></code>
-transaction on chaincode deploy time) is very sensitive in terms of
-bounded policy evaluation time (termination), determinism, performance
-and security guarantees. Therefore, dynamic addition of endorsement
-policies is not allowed, but can be supported in future.</p>
+<h3>3.1. 背书策略规范<a class="headerlink" href="#endorsement-policy-specification" title="永久链接至标题">¶</a></h3>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>背书策略**是*背书*交易的条件。区块链peer节点有一组预先指定的背书策略，这些策略由安装特定链码的 <a href="#id3"><span class="problematic" id="id4">``</span></a>部署``交易引用。背书策略可以参数化，这些参数可以通过“部署”交易指定。</p>
+<p>为了保证区块链和安全性属性，背书策略集**应该是一组经过验证的策略**，具有有限的函数集，以确保有限的执行时间(终止)、确定性、性能和安全性保证。</p>
+<p>在有限的策略评估时间(终止)、确定性、性能和安全性保证方面，背书策略的动态添加(例如通过链码部署时的“部署”交易)非常敏感。因此，背书策略的动态添加是不允许的，但可以在将来支持。</p>
 </div>
 <div class="section" id="transaction-evaluation-against-endorsement-policy">
-<h3>3.2. Transaction evaluation against endorsement policy<a class="headerlink" href="#transaction-evaluation-against-endorsement-policy" title="Permalink to this headline">¶</a></h3>
-<p>A transaction is declared valid only if it has been endorsed according
-to the policy. An invoke transaction for a chaincode will first have to
-obtain an <em>endorsement</em> that satisfies the chaincode’s policy or it will
-not be committed. This takes place through the interaction between the
-submitting client and endorsing peers as explained in Section 2.</p>
-<p>Formally the endorsement policy is a predicate on the endorsement, and
-potentially further state that evaluates to TRUE or FALSE. For deploy
-transactions the endorsement is obtained according to a system-wide
-policy (for example, from the system chaincode).</p>
-<p>An endorsement policy predicate refers to certain variables. Potentially
-it may refer to:</p>
+<h3>3.2. 根据背书策略进行交易评估<a class="headerlink" href="#transaction-evaluation-against-endorsement-policy" title="永久链接至标题">¶</a></h3>
+<p>只有根据策略进行了背书，交易才被声明为有效。链码的调用交易首先必须获得一个满足链码策略的*背书*，否则不会提交。这是通过提交客户端和背书节点之间的交互来实现的，如第2节所述。</p>
+<p>形式上，背书策略是对背书的断言，并且可能是其计算结果为TRUE或FALSE的进一步的状态。对于部署交易，背书是根据系统范围的策略(例如从系统链码)获得的。</p>
+<p>背书策略断言引用某些变量。可能是指:</p>
 <ol class="arabic simple">
-<li><p>keys or identities relating to the chaincode (found in the metadata
-of the chaincode), for example, a set of endorsers;</p></li>
-<li><p>further metadata of the chaincode;</p></li>
-<li><p>elements of the <code class="docutils literal notranslate"><span class="pre">endorsement</span></code> and <code class="docutils literal notranslate"><span class="pre">endorsement.tran-proposal</span></code>;</p></li>
-<li><p>and potentially more.</p></li>
+<li><p>与链码相关的键或标识(可在链码元数据中找到)，例如，一组背书器;</p></li>
+<li><p>链码的进一步元数据;</p></li>
+<li><p>“endorsement”和``endorsement.tran-proposal``的元素;</p></li>
+<li><p>并且可能更多。</p></li>
 </ol>
-<p>The above list is ordered by increasing expressiveness and complexity,
-that is, it will be relatively simple to support policies that only
-refer to keys and identities of nodes.</p>
-<p><strong>The evaluation of an endorsement policy predicate must be
-deterministic.</strong> An endorsement shall be evaluated locally by every peer
-such that a peer does <em>not</em> need to interact with other peers, yet all
-correct peers evaluate the endorsement policy in the same way.</p>
+<p>上面的列表是通过渐增的表达性和复杂性来排序的，也就是说，支持只引用node节点的键和身份的策略将相对简单。</p>
+<p>背书策略断言的计算必须是确定的。<a href="#id1"><span class="problematic" id="id2">**</span></a>背书应由每一个peer节点在本地进行评估，以便该peer节点不需要与其他节点进行交互，但所有正直的peer节点对背书策略的评估是相同的。</p>
 </div>
 <div class="section" id="example-endorsement-policies">
-<h3>3.3. Example endorsement policies<a class="headerlink" href="#example-endorsement-policies" title="Permalink to this headline">¶</a></h3>
-<p>The predicate may contain logical expressions and evaluates to TRUE or
-FALSE. Typically the condition will use digital signatures on the
-transaction invocation issued by endorsing peers for the chaincode.</p>
-<p>Suppose the chaincode specifies the endorser set
-<code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">=</span> <span class="pre">{Alice,</span> <span class="pre">Bob,</span> <span class="pre">Charlie,</span> <span class="pre">Dave,</span> <span class="pre">Eve,</span> <span class="pre">Frank,</span> <span class="pre">George}</span></code>. Some example
-policies:</p>
+<h3>3.3. 背书策略的例子<a class="headerlink" href="#example-endorsement-policies" title="永久链接至标题">¶</a></h3>
+<p>断言可以包含逻辑表达式，并且计算为TRUE或FALSE。通常情况下，该条件将在交易调用上使用数字签名，签名由为链码背书的peer节点签发。</p>
+<p>假设链码指定背书集合 <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">=</span> <span class="pre">{Alice,</span> <span class="pre">Bob,</span> <span class="pre">Charlie,</span> <span class="pre">Dave,</span> <span class="pre">Eve,</span> <span class="pre">Frank,</span> <span class="pre">George}</span></code>。一些示例策略:</p>
 <ul class="simple">
-<li><p>A valid signature from on the same <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> from all members
-of E.</p></li>
-<li><p>A valid signature from any single member of E.</p></li>
-<li><p>Valid signatures on the same <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> from endorsing peers
-according to the condition
-<code class="docutils literal notranslate"><span class="pre">(Alice</span> <span class="pre">OR</span> <span class="pre">Bob)</span> <span class="pre">AND</span> <span class="pre">(any</span> <span class="pre">two</span> <span class="pre">of:</span> <span class="pre">Charlie,</span> <span class="pre">Dave,</span> <span class="pre">Eve,</span> <span class="pre">Frank,</span> <span class="pre">George)</span></code>.</p></li>
-<li><p>Valid signatures on the same <code class="docutils literal notranslate"><span class="pre">tran-proposal</span></code> by any 5 out of the 7
-endorsers. (More generally, for chaincode with <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">3f</span></code> endorsers,
-valid signatures by any <code class="docutils literal notranslate"><span class="pre">2f+1</span></code> out of the <code class="docutils literal notranslate"><span class="pre">n</span></code> endorsers, or by
-any group of <em>more</em> than <code class="docutils literal notranslate"><span class="pre">(n+f)/2</span></code> endorsers.)</p></li>
-<li><p>Suppose there is an assignment of “stake” or “weights” to the
-endorsers, like
-<code class="docutils literal notranslate"><span class="pre">{Alice=49,</span> <span class="pre">Bob=15,</span> <span class="pre">Charlie=15,</span> <span class="pre">Dave=10,</span> <span class="pre">Eve=7,</span> <span class="pre">Frank=3,</span> <span class="pre">George=1}</span></code>,
-where the total stake is 100: The policy requires valid signatures
-from a set that has a majority of the stake (i.e., a group with
-combined stake strictly more than 50), such as <code class="docutils literal notranslate"><span class="pre">{Alice,</span> <span class="pre">X}</span></code> with
-any <code class="docutils literal notranslate"><span class="pre">X</span></code> different from George, or
-<code class="docutils literal notranslate"><span class="pre">{everyone</span> <span class="pre">together</span> <span class="pre">except</span> <span class="pre">Alice}</span></code>. And so on.</p></li>
-<li><p>The assignment of stake in the previous example condition could be
-static (fixed in the metadata of the chaincode) or dynamic (e.g.,
-dependent on the state of the chaincode and be modified during the
-execution).</p></li>
-<li><p>Valid signatures from (Alice OR Bob) on <code class="docutils literal notranslate"><span class="pre">tran-proposal1</span></code> and valid
-signatures from <code class="docutils literal notranslate"><span class="pre">(any</span> <span class="pre">two</span> <span class="pre">of:</span> <span class="pre">Charlie,</span> <span class="pre">Dave,</span> <span class="pre">Eve,</span> <span class="pre">Frank,</span> <span class="pre">George)</span></code>
-on <code class="docutils literal notranslate"><span class="pre">tran-proposal2</span></code>, where <code class="docutils literal notranslate"><span class="pre">tran-proposal1</span></code> and
-<code class="docutils literal notranslate"><span class="pre">tran-proposal2</span></code> differ only in their endorsing peers and state
-updates.</p></li>
+<li><p>E所有成员在相同``tran-proposal`` 上的一个有效签名。</p></li>
+<li><p>E的任何一个成员的有效签名。</p></li>
+<li><p>根据条件``(Alice OR Bob) AND (any two of: Charlie, Dave, Eve, Frank, George)``，在相同``tran-proposal``上来自背书节点的有效签名。</p></li>
+<li><p>七名背书者中的五名在同一份``tran-proposal`` 上的有效签名。(更一般地说，对于具有``n &gt; 3f``个背书者的链码，由``n``背书者中的任意``2f+1``个进行有效签名，或由多于``(n+f)/2``个背书者组成的任何组合进行有效签名。)</p></li>
+<li><p>假设有一个“股份”或“权重”分配给背书者，如 <code class="docutils literal notranslate"><span class="pre">{Alice=49,</span> <span class="pre">Bob=15,</span> <span class="pre">Charlie=15,</span> <span class="pre">Dave=10,</span> <span class="pre">Eve=7,</span> <span class="pre">Frank=3,</span> <span class="pre">George=1}</span></code>，其中总股份为100：该策略要求的有效签名来自大多数股份的集合（例如组合股份严格大于50的组合），例如，<code class="docutils literal notranslate"><span class="pre">{Alice,</span> <span class="pre">X}</span></code> ，X不能是George，或 <code class="docutils literal notranslate"><span class="pre">{出了Alice的全体组合在一起}</span></code>。等等。</p></li>
+<li><p>在前面的示例条件中，股份的分配可以是静态的(在链码的元数据中固定)，也可以是动态的(例如，取决于链码的状态，并在执行过程中进行修改)。</p></li>
+<li><p>(Alice或Bob)在“tran-proposal1”上的有效签名，以及在“tran-proposal2”上的有效签名(查理、戴夫、伊芙、弗兰克、乔治中的任意两人)，其中“tran-proposal1”和“tran-proposal2”的有效签名仅在背书节点和状态更新上存在差异。</p></li>
 </ul>
-<p>How useful these policies are will depend on the application, on the
-desired resilience of the solution against failures or misbehavior of
-endorsers, and on various other properties.</p>
+<p>这些策略的有用程度将取决于应用程序、解决方案对背书者的失败或不当行为的预期弹性，以及各种其他属性。</p>
 </div>
 </div>
 <div class="section" id="post-v1-validated-ledger-and-peerledger-checkpointing-pruning">
-<h2>4 (post-v1). Validated ledger and <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> checkpointing (pruning)<a class="headerlink" href="#post-v1-validated-ledger-and-peerledger-checkpointing-pruning" title="Permalink to this headline">¶</a></h2>
+<h2>4 (post-v1). 验证账本和“PeerLedger”检查点(修剪)<a class="headerlink" href="#post-v1-validated-ledger-and-peerledger-checkpointing-pruning" title="永久链接至标题">¶</a></h2>
 <div class="section" id="validated-ledger-vledger">
-<h3>4.1. Validated ledger (VLedger)<a class="headerlink" href="#validated-ledger-vledger" title="Permalink to this headline">¶</a></h3>
-<p>To maintain the abstraction of a ledger that contains only valid and
-committed transactions (that appears in Bitcoin, for example), peers
-may, in addition to state and Ledger, maintain the <em>Validated Ledger (or
-VLedger)</em>. This is a hash chain derived from the ledger by filtering out
-invalid transactions.</p>
-<p>The construction of the VLedger blocks (called here <em>vBlocks</em>) proceeds
-as follows. As the <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> blocks may contain invalid
-transactions (i.e., transactions with invalid endorsement or with
-invalid version dependencies), such transactions are filtered out by
-peers before a transaction from a block becomes added to a vBlock. Every
-peer does this by itself (e.g., by using the bitmask associated with
-<code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>). A vBlock is defined as a block without the invalid
-transactions, that have been filtered out. Such vBlocks are inherently
-dynamic in size and may be empty. An illustration of vBlock construction
-is given in the figure below.</p>
+<h3>4.1. 已验证账本 (VLedger)<a class="headerlink" href="#validated-ledger-vledger" title="永久链接至标题">¶</a></h3>
+<p>为了维护只包含有效和已提交交易（例如比特币的作法）的账本抽象，peer节点可以在状态和账本之外维护*已验证(或VLedger)*。这是从账本中过滤掉无效交易而得到的哈希链。</p>
+<p>VLedger区块(这里称为*vBlocks*)的构建过程如下。因为“PeerLedger”区块可能包含无效的交易（例如具有无效背书或无效版本依赖项的交易)，在将来自区块的交易添加到vBlock之前，peer节点将筛选掉此类交易。每个peer节点都自己做这件事(例如，使用与``PeerLedger``关联的比特掩码)。vBlock被定义为一个不含无效交易的区块，无效交易被过滤掉了。这样的vblock在大小上是动态的，可能是空的。下图给出了vBlock构造的一个例子。</p>
 <img alt="Illustration of vBlock formation" src="_images/blocks-3.png" />
-<p><em>Figure 2. Illustration of validated ledger block (vBlock) formation from ledger (PeerLedger) blocks.</em></p>
-<p>vBlocks are chained together to a hash chain by every peer. More
-specifically, every block of a validated ledger contains:</p>
+<p><em>图2. 从账本(PeerLedger)区块中生成已验证区块(vBlock)的图解。</em></p>
+<p>每个peer节点都将vBlocks链接到一个哈希链上。更具体地说，每一个已验证账本包含:</p>
 <ul class="simple">
-<li><p>The hash of the previous vBlock.</p></li>
-<li><p>vBlock number.</p></li>
-<li><p>An ordered list of all valid transactions committed by the peers
-since the last vBlock was computed (i.e., list of valid transactions
-in a corresponding block).</p></li>
-<li><p>The hash of the corresponding block (in <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>) from which
-the current vBlock is derived.</p></li>
+<li><p>前一个vBlock的哈希值。</p></li>
+<li><p>vBlock号码。</p></li>
+<li><p>自最后一个vBlock被计算以来，peer节点提交的所有有效交易的有序列表(即相应区块中的有效交易列表)。</p></li>
+<li><p>对应区块的哈希值(在``PeerLedger``中)，当前vBlock就是从中派生出来的。</p></li>
 </ul>
-<p>All this information is concatenated and hashed by a peer, producing the
-hash of the vBlock in the validated ledger.</p>
+<p>所有这些信息都由一个peer节点连接和哈希，在已验证账本中生成vBlock的哈希。</p>
 </div>
 <div class="section" id="peerledger-checkpointing">
-<h3>4.2. <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> Checkpointing<a class="headerlink" href="#peerledger-checkpointing" title="Permalink to this headline">¶</a></h3>
-<p>The ledger contains invalid transactions, which may not necessarily be
-recorded forever. However, peers cannot simply discard <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>
-blocks and thereby prune <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> once they establish the
-corresponding vBlocks. Namely, in this case, if a new peer joins the
-network, other peers could not transfer the discarded blocks (pertaining
-to <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>) to the joining peer, nor convince the joining peer of
-the validity of their vBlocks.</p>
-<p>To facilitate pruning of the <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>, this document describes a
-<em>checkpointing</em> mechanism. This mechanism establishes the validity of
-the vBlocks across the peer network and allows checkpointed vBlocks to
-replace the discarded <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> blocks. This, in turn, reduces
-storage space, as there is no need to store invalid transactions. It
-also reduces the work to reconstruct the state for new peers that join
-the network (as they do not need to establish validity of individual
-transactions when reconstructing the state by replaying <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code>,
-but may simply replay the state updates contained in the validated
-ledger).</p>
+<h3>4.2. <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> 检查点<a class="headerlink" href="#peerledger-checkpointing" title="永久链接至标题">¶</a></h3>
+<p>账本包含无效的交易，不一定要永远记录。然而，peer节点不能简单地丢弃``PeerLedger``区块，从而在他们建立了相应的vBlocks之后修剪``PeerLedger``。也就是说，在这种情况下，如果一个新的peer节点加入网络，其他peer节点不能将丢弃的区块(属于“PeerLedger”)转移到加入的peer节点，也不能说服加入的peer节点他们的vBlock的有效性。</p>
+<p>为了方便修剪``PeerLedger``，本文档描述了一个*检查点*机制。该机制建立了跨peer网络的vBlock的有效性，并允许检查点vBlock替换被丢弃的``PeerLedger``区块。这进而减少了存储空间，因为不需要存储无效的交易。它还减少了为加入网络的新peer节点重构状态的工作(因为当通过重放``PeerLedger``来重构状态时，它们不需要建立单个交易的有效性，而只需重放已验证账本中包含的状态更新)。</p>
 <div class="section" id="checkpointing-protocol">
-<h4>4.2.1. Checkpointing protocol<a class="headerlink" href="#checkpointing-protocol" title="Permalink to this headline">¶</a></h4>
-<p>Checkpointing is performed periodically by the peers every <em>CHK</em> blocks,
-where <em>CHK</em> is a configurable parameter. To initiate a checkpoint, the
-peers broadcast (e.g., gossip) to other peers message
-<code class="docutils literal notranslate"><span class="pre">&lt;CHECKPOINT,blocknohash,blockno,stateHash,peerSig&gt;</span></code>, where
-<code class="docutils literal notranslate"><span class="pre">blockno</span></code> is the current blocknumber and <code class="docutils literal notranslate"><span class="pre">blocknohash</span></code> is its
-respective hash, <code class="docutils literal notranslate"><span class="pre">stateHash</span></code> is the hash of the latest state (produced
-by e.g., a Merkle hash) upon validation of block <code class="docutils literal notranslate"><span class="pre">blockno</span></code> and
-<code class="docutils literal notranslate"><span class="pre">peerSig</span></code> is peer’s signature on
-<code class="docutils literal notranslate"><span class="pre">(CHECKPOINT,blocknohash,blockno,stateHash)</span></code>, referring to the
-validated ledger.</p>
-<p>A peer collects <code class="docutils literal notranslate"><span class="pre">CHECKPOINT</span></code> messages until it obtains enough
-correctly signed messages with matching <code class="docutils literal notranslate"><span class="pre">blockno</span></code>, <code class="docutils literal notranslate"><span class="pre">blocknohash</span></code> and
-<code class="docutils literal notranslate"><span class="pre">stateHash</span></code> to establish a <em>valid checkpoint</em> (see Section 4.2.2.).</p>
-<p>Upon establishing a valid checkpoint for block number <code class="docutils literal notranslate"><span class="pre">blockno</span></code> with
-<code class="docutils literal notranslate"><span class="pre">blocknohash</span></code>, a peer:</p>
+<h4>4.2.1. 检查点协议<a class="headerlink" href="#checkpointing-protocol" title="永久链接至标题">¶</a></h4>
+<p>每个*CHK*区块的peer节点定期执行检查点，其中*CHK*是一个可配置参数。为了发起一个检查点，peer节点广播(例如gossip)消息``&lt;CHECKPOINT,blocknohash,blockno,stateHash,peerSig&gt;``到其它peer节点, 其中``blockno`` 是当前区块号和“blocknohash“是其各自的哈希,“stateHash“是根据区块的``blockno``验证的最新状态的哈希(例如,产生自Merkle哈希)，<a href="#id1"><span class="problematic" id="id2">``</span></a>peerSig``peer节点在``(CHECKPOINT,blocknohash,blockno,stateHash)``的签名，指的是已验证账本。</p>
+<p>一个peer节点收集``CHECKPOINT``消息，直到它获得与``blockno``、<code class="docutils literal notranslate"><span class="pre">blocknohash</span></code> 和``stateHash`` 匹配的足够正确签名的消息，以建立一个*有效的检查点*(参见4.2.2.)。</p>
+<p>在为区块号``blockno`` 和``blocknohash``建立一个有效的检查点时，一个peer节点:</p>
 <ul class="simple">
-<li><p>if <code class="docutils literal notranslate"><span class="pre">blockno&gt;latestValidCheckpoint.blockno</span></code>, then a peer assigns
-<code class="docutils literal notranslate"><span class="pre">latestValidCheckpoint=(blocknohash,blockno)</span></code>,</p></li>
-<li><p>stores the set of respective peer signatures that constitute a valid
-checkpoint into the set <code class="docutils literal notranslate"><span class="pre">latestValidCheckpointProof</span></code>,</p></li>
-<li><p>stores the state corresponding to <code class="docutils literal notranslate"><span class="pre">stateHash</span></code> to
-<code class="docutils literal notranslate"><span class="pre">latestValidCheckpointedState</span></code>,</p></li>
-<li><p>(optionally) prunes its <code class="docutils literal notranslate"><span class="pre">PeerLedger</span></code> up to block number <code class="docutils literal notranslate"><span class="pre">blockno</span></code>
-(inclusive).</p></li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">blockno&gt;latestValidCheckpoint.blockno</span></code>，则peer赋值 <code class="docutils literal notranslate"><span class="pre">latestValidCheckpoint=(blocknohash,blockno)</span></code>,</p></li>
+<li><p>将构成有效检查点的各peer节点签名集合存储到集合``latestValidCheckpointProof``中，</p></li>
+<li><p>存储与 <code class="docutils literal notranslate"><span class="pre">stateHash``对应的状态到``latestValidCheckpointedState</span></code>,</p></li>
+<li><p>(可选)修剪它的“PeerLedger”“到区块号“blockno”(包括)。</p></li>
 </ul>
 </div>
 <div class="section" id="valid-checkpoints">
-<h4>4.2.2. Valid checkpoints<a class="headerlink" href="#valid-checkpoints" title="Permalink to this headline">¶</a></h4>
-<p>Clearly, the checkpointing protocol raises the following questions:
-<em>When can a peer prune its ``PeerLedger``? How many ``CHECKPOINT``
-messages are “sufficiently many”?</em>. This is defined by a <em>checkpoint
-validity policy</em>, with (at least) two possible approaches, which may
-also be combined:</p>
+<h4>4.2.2. 有效的检查点<a class="headerlink" href="#valid-checkpoints" title="永久链接至标题">¶</a></h4>
+<p>显然，检查点协议提出了以下问题:<em>peer节点何时可以删除其“PeerLedger”?有多少“检查点”消息是“足够多的”?</em>。这是由一个*检查点有效性策略*定义的，有(至少)两种可能的方法，也可以组合使用:</p>
 <ul class="simple">
-<li><p><em>Local (peer-specific) checkpoint validity policy (LCVP).</em> A local
-policy at a given peer <em>p</em> may specify a set of peers which peer <em>p</em>
-trusts and whose <code class="docutils literal notranslate"><span class="pre">CHECKPOINT</span></code> messages are sufficient to establish
-a valid checkpoint. For example, LCVP at peer <em>Alice</em> may define that
-<em>Alice</em> needs to receive <code class="docutils literal notranslate"><span class="pre">CHECKPOINT</span></code> message from Bob, or from
-<em>both</em> <em>Charlie</em> and <em>Dave</em>.</p></li>
-<li><p><em>Global checkpoint validity policy (GCVP).</em> A checkpoint validity
-policy may be specified globally. This is similar to a local peer
-policy, except that it is stipulated at the system (blockchain)
-granularity, rather than peer granularity. For instance, GCVP may
-specify that:</p>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>本地(特定于peer节点)检查点有效性策略(LCVP)。<a href="#id3"><span class="problematic" id="id4">*</span></a>一个给定peer节点*p*的本地策略可以指定节点*p*信任的一组peer节点，并且它们的“CHECKPOINT”消息足以建立有效的检查点。例如，节点*Alice*的LCVP可能定义*Alice*需要从Bob、或同时从*Charlie*和*Dave*接收“CHECKPOINT”消息。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">*</span></a>全局检查点有效性策略(GCVP)。可以全局指定检查点有效性策略。这类似于本地peer节点策略，只是它是在系统粒度(区块链)而不是peer节点粒度中规定的。例如，GCVP可以指定:</p>
 <ul>
-<li><p>each peer may trust a checkpoint if confirmed by <em>11</em> different
-peers.</p></li>
-<li><p>in a specific deployment in which every orderer is collocated with
-a peer in the same machine (i.e., trust domain) and where up to
-<em>f</em> orderers may be (Byzantine) faulty, each peer may trust a
-checkpoint if confirmed by <em>f+1</em> different peers collocated with
-orderers.</p></li>
+<li><p>如果得到*11*个不同的peer节点确认，每个peer节点都可以信任这个检查点。</p></li>
+<li><p>在特定的部署中，每个排序器都在同一台机器中（即信任域）搭配了一个peer节点，即当多达*f* 个排序器可能(拜占庭式的)错误时，如果由*f+1*与排序器一起配置的不同peer节点确认，每个peer节点都可以信任检查点。</p></li>
 </ul>
 </li>
 </ul>
@@ -989,7 +535,7 @@ orderers.</p></li>
         <a href="txflow.html" class="btn btn-neutral float-right" title="Transaction Flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="architecture.html" class="btn btn-neutral" title="Architecture Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral" title="架构参考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

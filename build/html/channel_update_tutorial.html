@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Adding an Org to a Channel &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>向通道添加组织 &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -34,10 +35,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Upgrading Your Network Components" href="upgrading_your_network_tutorial.html" />
-    <link rel="prev" title="Building Your First Network" href="build_network.html" /> 
+    <link rel="prev" title="搭建你的第一个网络（BYFN）" href="build_network.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,48 +97,48 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="write_first_app.html">Writing Your First Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/commercial_paper.html">Commercial paper tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_network.html">Building Your First Network</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Adding an Org to a Channel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setup-the-environment">Setup the Environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bring-org3-into-the-channel-with-the-script">Bring Org3 into the Channel with the Script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bring-org3-into-the-channel-manually">Bring Org3 into the Channel Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generate-the-org3-crypto-material">Generate the Org3 Crypto Material</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#prepare-the-cli-environment">Prepare the CLI Environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fetch-the-configuration">Fetch the Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#convert-the-configuration-to-json-and-trim-it-down">Convert the Configuration to JSON and Trim It Down</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-the-org3-crypto-material">Add the Org3 Crypto Material</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sign-and-submit-the-config-update">Sign and Submit the Config Update</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-leader-election">Configuring Leader Election</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#join-org3-to-the-channel">Join Org3 to the Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-define-and-invoke-chaincode">Install, define, and invoke chaincode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_network.html">搭建你的第一个网络（BYFN）</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">向通道添加组织</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-the-environment">设置环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bring-org3-into-the-channel-with-the-script">使用脚本将Org3加入通道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bring-org3-into-the-channel-manually">手动将Org3导入通道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-the-org3-crypto-material">生成Org3加密材料</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-the-cli-environment">准备CLI环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fetch-the-configuration">获取配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-the-configuration-to-json-and-trim-it-down">将配置转换为JSON并对其进行修剪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-the-org3-crypto-material">添加Org3加密材料</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sign-and-submit-the-config-update">签署并提交配置更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-leader-election">配置领导选举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#join-org3-to-the-channel">将Org3加入通道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-define-and-invoke-chaincode">安装、定义和调用链码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">结论</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading_your_network_tutorial.html">Upgrading Your Network Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">Using Private Data in Fabric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode.html">Chaincode Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">Chaincode for Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private_data_tutorial.html">在Fabric里面使用私有数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode.html">链码教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaincode4ade.html">链码开发者</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaincode4noah.html">Chaincode for Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systemchaincode.html">System Chaincode Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="couchdb_tutorial.html">Using CouchDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html">Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html">视频</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Status</a></li>
 </ul>
@@ -187,7 +188,7 @@
         
           <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
         
-      <li>Adding an Org to a Channel</li>
+      <li>向通道添加组织</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,76 +208,43 @@
            <div itemprop="articleBody">
             
   <div class="section" id="adding-an-org-to-a-channel">
-<h1>Adding an Org to a Channel<a class="headerlink" href="#adding-an-org-to-a-channel" title="Permalink to this headline">¶</a></h1>
+<h1>向通道添加组织<a class="headerlink" href="#adding-an-org-to-a-channel" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Ensure that you have downloaded the appropriate images and binaries
-as outlined in <a class="reference internal" href="install.html"><span class="doc">Install Samples, Binaries and Docker Images</span></a> and <a class="reference internal" href="prereqs.html"><span class="doc">Prerequisites</span></a> that conform to the
-version of this documentation (which can be found at the bottom of the
-table of contents to the left). In particular, your version of the
-<code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> folder must include the <code class="docutils literal notranslate"><span class="pre">eyfn.sh</span></code> (“Extending
-Your First Network”) script and its related scripts.</p>
+<p class="admonition-title">注解</p>
+<p>确保您已经下载了适当的镜像和二进制文件，如 <a class="reference internal" href="install.html"><span class="doc">Install Samples, Binaries and Docker Images</span></a> 和:doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>prereqs`中所述，这些文件都符合本文档的版本(可以在左边目录的底部找到)。特别是，“fabric-samples”文件夹的版本必须包含``eyfn.sh``(“扩展您的第一个网络”)脚本及其相关脚本。</p>
 </div>
-<p>This tutorial serves as an extension to the <a class="reference internal" href="build_network.html"><span class="doc">Building Your First Network</span></a> (BYFN) tutorial,
-and will demonstrate the addition of a new organization – <code class="docutils literal notranslate"><span class="pre">Org3</span></code> – to the
-application channel (<code class="docutils literal notranslate"><span class="pre">mychannel</span></code>) autogenerated by BYFN. It assumes a strong
-understanding of BYFN, including the usage and functionality of the aforementioned
-utilities.</p>
-<p>While we will focus solely on the integration of a new organization here, the same
-approach can be adopted when performing other channel configuration updates (updating
-modification policies or altering batch size, for example). To learn more about the
-process and possibilities of channel config updates in general, check out
-<a class="reference internal" href="config_update.html"><span class="doc">Updating a Channel Configuration</span></a>). It’s also worth noting that channel configuration updates like
-the one demonstrated here will usually be the responsibility of an organization admin
-(rather than a chaincode or application developer).</p>
+<p>本教程作为对:doc:<cite>build_network</cite> (BYFN)教程的扩展，并将演示如何向BYFN自动生成的应用程序通道(<code class="docutils literal notranslate"><span class="pre">mychannel</span></code>)添加一个新的组织``Org3``。它假设对BYFN有很好的理解，包括前面提到的实用程序的用法和功能。</p>
+<p>虽然我们在这里只关注新组织的集成，但是在执行其他通道配置更新(例如，更新修改策略或更改批大小)时也可以采用相同的方法。要了解更多关于通道配置更新的过程和可能性，请查看:doc:<cite>config_update</cite>)。同样值得注意的是，像这里演示的通道配置更新通常由组织管理员(而不是链码或应用程序开发人员)负责。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure the automated <code class="docutils literal notranslate"><span class="pre">byfn.sh</span></code> script runs without error on
-your machine before continuing. If you have exported your binaries and
-the related tools (<code class="docutils literal notranslate"><span class="pre">cryptogen</span></code>, <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code>, etc) into your PATH
-variable, you’ll be able to modify the commands accordingly without
-passing the fully qualified path.</p>
+<p class="admonition-title">注解</p>
+<p>在继续之前确保自动’<code class="docutils literal notranslate"><span class="pre">byfn.sh``脚本在您的机器上没有错误地运行。如果您已经将二进制文件和相关工具(``cryptogen</span></code>, <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code>, 等)导出到PATH变量中，那么您就可以相应地修改命令，而无需传递完全限定的路径。</p>
 </div>
 <div class="section" id="setup-the-environment">
-<h2>Setup the Environment<a class="headerlink" href="#setup-the-environment" title="Permalink to this headline">¶</a></h2>
-<p>We will be operating from the root of the <code class="docutils literal notranslate"><span class="pre">first-network</span></code> subdirectory within
-your local clone of <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code>. Change into that directory now. You will
-also want to open a few extra terminals for ease of use.</p>
-<p>First, use the <code class="docutils literal notranslate"><span class="pre">byfn.sh</span></code> script to tidy up. This command will kill any active
-or stale docker containers and remove previously generated artifacts. It is by no
-means <strong>necessary</strong> to bring down a Fabric network in order to perform channel
-configuration update tasks. However, for the sake of this tutorial, we want to operate
-from a known initial state. Therefore let’s run the following command to clean up any
-previous environments:</p>
+<h2>设置环境<a class="headerlink" href="#setup-the-environment" title="永久链接至标题">¶</a></h2>
+<p>我们将在您的本地从``first-network`` 子目录克隆``fabric-samples``。现在切换到那个目录。您还需要打开一些额外的终端以方便使用。</p>
+<p>首先，使用``byfn.sh``脚本整理。该命令将杀死所有活动的或陈旧的docker容器，并删除以前生成的构件。要执行通道配置更新任务，并不**必需**关闭Fabric网络。但是，出于本教程的考虑，我们希望从已知的初始状态开始操作。因此，让我们运行以下命令来清理以前的环境:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh down
 </pre></div>
 </div>
-<p>Now generate the default BYFN artifacts:</p>
+<p>现在生成默认的BYFN构件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh generate
 </pre></div>
 </div>
-<p>And launch the network making use of the scripted execution within the CLI container:</p>
+<p>并利用CLI容器内的脚本执行启动网络:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh up
 </pre></div>
 </div>
-<p>Now that you have a clean version of BYFN running on your machine, you have two
-different paths you can pursue. First, we offer a fully commented script that will
-carry out a config transaction update to bring Org3 into the network.</p>
-<p>Also, we will show a “manual” version of the same process, showing each step
-and explaining what it accomplishes (since we show you how to bring down your
-network before this manual process, you could also run the script and then look at
-each step).</p>
+<p>现在您的机器上已经运行了一个干净的BYFN版本，您可以使用两条不同的路径。首先，我们提供了一个完整的带注释脚本，它将执行配置交易更新以将Org3引入网络。</p>
+<p>此外，我们还将显示相同流程的“手动”版本，显示每个步骤并解释它所完成的工作(因为我们在此手动过程之前向您展示了如何关闭您的网络，所以您也可以运行脚本，然后查看每个步骤)。</p>
 </div>
 <div class="section" id="bring-org3-into-the-channel-with-the-script">
-<h2>Bring Org3 into the Channel with the Script<a class="headerlink" href="#bring-org3-into-the-channel-with-the-script" title="Permalink to this headline">¶</a></h2>
-<p>You should be in <code class="docutils literal notranslate"><span class="pre">first-network</span></code>. To use the script, simply issue the following:</p>
+<h2>使用脚本将Org3加入通道<a class="headerlink" href="#bring-org3-into-the-channel-with-the-script" title="永久链接至标题">¶</a></h2>
+<p>你应该在``first-network``中。要使用该脚本，只需发出以下命令:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./eyfn.sh up
 </pre></div>
 </div>
-<p>The output here is well worth reading. You’ll see the Org3 crypto material being
-added, the config update being created and signed, and then chaincode being installed
-to allow Org3 to execute ledger queries.</p>
-<p>If everything goes well, you’ll get this message:</p>
+<p>这里的输出很值得一读。您将看到添加了Org3加密原料，创建并签名了配置更新，然后安装了链码，以允许Org3执行账本查询。</p>
+<p>如果一切顺利，你会得到这样的信息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">=========</span> All GOOD, EYFN <span class="nb">test</span> execution <span class="nv">completed</span> <span class="o">===========</span>
 </pre></div>
 </div>
@@ -285,22 +253,18 @@ as <code class="docutils literal notranslate"><span class="pre">byfn.sh</span></
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh up -c testchannel -s couchdb -l node
 </pre></div>
 </div>
-<p>And then:</p>
+<p>然后：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./eyfn.sh up -c testchannel -s couchdb -l node
 </pre></div>
 </div>
-<p>For those who want to take a closer look at this process, the rest of the doc will
-show you each command for making a channel update and what it does.</p>
+<p>对于那些希望更深入地了解这个过程的人，文档的其余部分将向您展示用于进行通道更新的每个命令及其功能。</p>
 </div>
 <div class="section" id="bring-org3-into-the-channel-manually">
-<h2>Bring Org3 into the Channel Manually<a class="headerlink" href="#bring-org3-into-the-channel-manually" title="Permalink to this headline">¶</a></h2>
+<h2>手动将Org3导入通道<a class="headerlink" href="#bring-org3-into-the-channel-manually" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The manual steps outlined below assume that the <code class="docutils literal notranslate"><span class="pre">FABRIC_LOGGING_SPEC</span></code>
-in the <code class="docutils literal notranslate"><span class="pre">cli</span></code> and <code class="docutils literal notranslate"><span class="pre">Org3cli</span></code> containers is set to <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>.</p>
-<p>For the <code class="docutils literal notranslate"><span class="pre">cli</span></code> container, you can set this by modifying the
-<code class="docutils literal notranslate"><span class="pre">docker-compose-cli.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">first-network</span></code> directory.
-e.g.</p>
+<p class="admonition-title">注解</p>
+<p>下面列出了手动步骤，假定“cli”和“Org3cli”容器中的“FABRIC_LOGGING_SPEC”设置为“DEBUG”。</p>
+<p>对于 <a href="#id1"><span class="problematic" id="id2">``</span></a>cli``容器，您可以通过修改 <a href="#id3"><span class="problematic" id="id4">``</span></a>first-network``目录下的文件 <a href="#id5"><span class="problematic" id="id6">``</span></a>docker-compose-cli.yaml``来设置它。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cli:
   container_name: cli
   image: hyperledger/fabric-tools:$IMAGE_TAG
@@ -313,9 +277,7 @@ e.g.</p>
     - FABRIC_LOGGING_SPEC=DEBUG
 </pre></div>
 </div>
-<p>For the <code class="docutils literal notranslate"><span class="pre">Org3cli</span></code> container, you can set this by modifying the
-<code class="docutils literal notranslate"><span class="pre">docker-compose-org3.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">first-network</span></code> directory.
-e.g.</p>
+<p>对于 <a href="#id1"><span class="problematic" id="id2">``</span></a>Org3cli``容器，您可以通过修改``first-network``目录下的文件``docker-compose-org3.yaml``来设置它。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Org3cli:
   container_name: Org3cli
   image: hyperledger/fabric-tools:$IMAGE_TAG
@@ -329,236 +291,146 @@ e.g.</p>
 </pre></div>
 </div>
 </div>
-<p>If you’ve used the <code class="docutils literal notranslate"><span class="pre">eyfn.sh</span></code> script, you’ll need to bring your network down.
-This can be done by issuing:</p>
+<p>如果你用过``eyfn.sh``脚本，你需要关闭你的网络。这可以通过发出下列命令做到:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./eyfn.sh down
 </pre></div>
 </div>
-<p>This will bring down the network, delete all the containers and undo what we’ve
-done to add Org3.</p>
-<p>When the network is down, bring it back up again.</p>
+<p>这将关闭网络，删除所有容器，并撤消我们为添加Org3所做的操作。</p>
+<p>当网络关闭时，请将其重新恢复。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh generate
 </pre></div>
 </div>
-<p>Then:</p>
+<p>然后：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./byfn.sh up
 </pre></div>
 </div>
-<p>This will bring your network back to the same state it was in before you executed
-the <code class="docutils literal notranslate"><span class="pre">eyfn.sh</span></code> script.</p>
-<p>Now we’re ready to add Org3 manually. As a first step, we’ll need to generate Org3’s
-crypto material.</p>
+<p>这将使您的网络恢复到执行 <a href="#id1"><span class="problematic" id="id2">``</span></a>eyfn.sh``之前的状态。</p>
+<p>现在我们准备手动添加Org3。作为第一步，我们需要生成Org3的加密材料。</p>
 </div>
 <div class="section" id="generate-the-org3-crypto-material">
-<h2>Generate the Org3 Crypto Material<a class="headerlink" href="#generate-the-org3-crypto-material" title="Permalink to this headline">¶</a></h2>
-<p>In another terminal, change into the <code class="docutils literal notranslate"><span class="pre">org3-artifacts</span></code> subdirectory from
-<code class="docutils literal notranslate"><span class="pre">first-network</span></code>.</p>
+<h2>生成Org3加密材料<a class="headerlink" href="#generate-the-org3-crypto-material" title="永久链接至标题">¶</a></h2>
+<p>在另一个终端，从``first-network``切换到``org3-artifacts``子目录。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> org3-artifacts
 </pre></div>
 </div>
-<p>There are two <code class="docutils literal notranslate"><span class="pre">yaml</span></code> files of interest here: <code class="docutils literal notranslate"><span class="pre">org3-crypto.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code>.
-First, generate the crypto material for Org3:</p>
+<p>这里有两个有趣的``yaml``文件: <code class="docutils literal notranslate"><span class="pre">org3-crypto.yaml</span></code> 和``configtx.yaml``。首先，生成Org3的加密材料:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>../../bin/cryptogen generate --config<span class="o">=</span>./org3-crypto.yaml
 </pre></div>
 </div>
-<p>This command reads in our new crypto <code class="docutils literal notranslate"><span class="pre">yaml</span></code> file – <code class="docutils literal notranslate"><span class="pre">org3-crypto.yaml</span></code> – and
-leverages <code class="docutils literal notranslate"><span class="pre">cryptogen</span></code> to generate the keys and certificates for an Org3
-CA as well as two peers bound to this new Org. As with the BYFN implementation,
-this crypto material is put into a newly generated <code class="docutils literal notranslate"><span class="pre">crypto-config</span></code> folder
-within the present working directory (in our case, <code class="docutils literal notranslate"><span class="pre">org3-artifacts</span></code>).</p>
-<p>Now use the <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> utility to print out the Org3-specific configuration
-material in JSON. We will preface the command by telling the tool to look in the
-current directory for the <code class="docutils literal notranslate"><span class="pre">configtx.yaml</span></code> file that it needs to ingest.</p>
+<p>这个命令读取我们新的密码 <code class="docutils literal notranslate"><span class="pre">yaml``文件——``org3-crypto.yaml</span></code>，并利用``cryptogen`` 为Org3 CA生成密钥和证书，以及绑定两个peer节点到这个新组织。与BYFN实现一样，这个加密材料被放入当前工作目录(在我们的示例中是“org3-artifacts”)中新生成的“crypto-config”文件夹中。</p>
+<p>现在使用 <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code> 实用程序用JSON格式输出Org3专用的配置材料。在命令开始之前，我们将告诉工具在当前目录中查找它需要提取的``configtx.yaml`` 文件。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">FABRIC_CFG_PATH</span><span class="o">=</span><span class="nv">$PWD</span> <span class="o">&amp;&amp;</span> ../../bin/configtxgen -printOrg Org3MSP &gt; ../channel-artifacts/org3.json
 </pre></div>
 </div>
-<p>The above command creates a JSON file – <code class="docutils literal notranslate"><span class="pre">org3.json</span></code> – and outputs it into the
-<code class="docutils literal notranslate"><span class="pre">channel-artifacts</span></code> subdirectory at the root of <code class="docutils literal notranslate"><span class="pre">first-network</span></code>. This
-file contains the policy definitions for Org3, as well as three important certificates
-presented in base 64 format: the admin user certificate (which will be needed to act as
-the admin of Org3 later on), a CA root cert, and a TLS root cert. In an upcoming step we
-will append this JSON file to the channel configuration.</p>
-<p>Our final piece of housekeeping is to port the Orderer Org’s MSP material into
-the Org3 <code class="docutils literal notranslate"><span class="pre">crypto-config</span></code> directory. In particular, we are concerned with the
-Orderer’s TLS root cert, which will allow for secure communication between
-Org3 entities and the network’s ordering node.</p>
+<p>上面的命令创建一个JSON文件– <code class="docutils literal notranslate"><span class="pre">org3.json</span></code> – 并将其输出到``first-network``根目录下的``channel-artifacts`` 子目录中。这个文件包含Org3策略定义，以及三个重要的base64格式的证书在：admin用户证书(之后用作Org3的管理员)、CA根证书和TLS根证书。在即将到来的步骤中,我们将这个JSON文件附加到通道配置。</p>
+<p>最后一项管理工作是将排序器Org的MSP材料转移到Org3``crypto-config`` 目录中。我们特别关注排序器的TLS根证书，它将允许在Org3实体和网络的排序节点之间进行安全通信。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../ <span class="o">&amp;&amp;</span> cp -r crypto-config/ordererOrganizations org3-artifacts/crypto-config/
 </pre></div>
 </div>
-<p>Now we’re ready to update the channel configuration…</p>
+<p>现在我们准备更新通道配置…</p>
 </div>
 <div class="section" id="prepare-the-cli-environment">
-<h2>Prepare the CLI Environment<a class="headerlink" href="#prepare-the-cli-environment" title="Permalink to this headline">¶</a></h2>
-<p>The update process makes use of the configuration translator tool – <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code>.
-This tool provides a stateless REST API independent of the SDK. Additionally it
-provides a CLI, to simplify configuration tasks in Fabric networks. The tool allows
-for the easy conversion between different equivalent data representations/formats
-(in this case, between protobufs and JSON). Additionally, the tool can compute a
-configuration update transaction based on the differences between two channel
-configurations.</p>
-<p>First, exec into the CLI container. Recall that this container has been
-mounted with the BYFN <code class="docutils literal notranslate"><span class="pre">crypto-config</span></code> library, giving us access to the MSP material
-for the two original peer organizations and the Orderer Org. The bootstrapped
-identity is the Org1 admin user, meaning that any steps where we want to act as
-Org2 will require the export of MSP-specific environment variables.</p>
+<h2>准备CLI环境<a class="headerlink" href="#prepare-the-cli-environment" title="永久链接至标题">¶</a></h2>
+<p>更新过程使用配置转换工具——’<code class="docutils literal notranslate"><span class="pre">configtxlator</span></code>。该工具提供了一个独立于SDK的无状态REST API。此外，它还提供了一个CLI，以简化Fabric网络中的配置工作。该工具允许在不同的等效数据表示/格式之间进行简单的转换(在本例中，是在protobufs和JSON之间)。此外，该工具可以根据两个通道配置之间的差异计算配置更新交易。</p>
+<p>首先，exec 进入CLI容器。回想一下，这个容器已经安装了BYFN``crypto-config``库，使我们能够访问两个最初的peer组织和排序器Org的MSP材料。引导的身份是Org1管理用户，这意味着我们想要扮演Org2的任何步骤都需要导出特定于MSP的环境变量。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it cli bash
 </pre></div>
 </div>
-<p>Export the <code class="docutils literal notranslate"><span class="pre">ORDERER_CA</span></code> and <code class="docutils literal notranslate"><span class="pre">CHANNEL_NAME</span></code> variables:</p>
+<p>导出“ORDERER_CA”和“CHANNEL_NAME”变量:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem  <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">CHANNEL_NAME</span><span class="o">=</span>mychannel
 </pre></div>
 </div>
-<p>Check to make sure the variables have been properly set:</p>
+<p>检查变量是否设置正确:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$ORDERER_CA</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$CHANNEL_NAME</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If for any reason you need to restart the CLI container, you will also need to
-re-export the two environment variables – <code class="docutils literal notranslate"><span class="pre">ORDERER_CA</span></code> and <code class="docutils literal notranslate"><span class="pre">CHANNEL_NAME</span></code>.</p>
+<p class="admonition-title">注解</p>
+<p>如果出于任何原因需要重新启动CLI容器，还需要重新导出两个环境变量—— <code class="docutils literal notranslate"><span class="pre">ORDERER_CA``和``CHANNEL_NAME</span></code>。</p>
 </div>
 </div>
 <div class="section" id="fetch-the-configuration">
-<h2>Fetch the Configuration<a class="headerlink" href="#fetch-the-configuration" title="Permalink to this headline">¶</a></h2>
-<p>Now we have a CLI container with our two key environment variables – <code class="docutils literal notranslate"><span class="pre">ORDERER_CA</span></code>
-and <code class="docutils literal notranslate"><span class="pre">CHANNEL_NAME</span></code> exported.  Let’s go fetch the most recent config block for the
-channel – <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>.</p>
-<p>The reason why we have to pull the latest version of the config is because channel
-config elements are versioned. Versioning is important for several reasons. It prevents
-config changes from being repeated or replayed (for instance, reverting to a channel config
-with old CRLs would represent a security risk). Also it helps ensure concurrency (if you
-want to remove an Org from your channel, for example, after a new Org has been added,
-versioning will help prevent you from removing both Orgs, instead of just the Org you want
-to remove).</p>
+<h2>获取配置<a class="headerlink" href="#fetch-the-configuration" title="永久链接至标题">¶</a></h2>
+<p>现在我们有了一个CLI容器，其中包含两个关键的环境变量—— <code class="docutils literal notranslate"><span class="pre">ORDERER_CA</span></code> 和``CHANNEL_NAME``已导出 。让我们去获取通道``mychannel``的最新配置块。</p>
+<p>我们必须提取配置的最新版本的原因是，通道配置元素是经过版本控制的。版本控制之所以重要，有几个原因。它可以防止配置更改被重复或重播(例如用旧的CRL恢复到通道配置会带来安全风险)。它还有助于确保并发性(例如如果您想从通道中删除一个组织，在添加了一个新的组织之后，版本控制将有助于防止您同时删除两个组织，从而只删除您想要删除的组织)。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer channel fetch config config_block.pb -o orderer.example.com:7050 -c <span class="nv">$CHANNEL_NAME</span> --tls --cafile <span class="nv">$ORDERER_CA</span>
 </pre></div>
 </div>
-<p>This command saves the binary protobuf channel configuration block to
-<code class="docutils literal notranslate"><span class="pre">config_block.pb</span></code>. Note that the choice of name and file extension is arbitrary.
-However, following a convention which identifies both the type of object being
-represented and its encoding (protobuf or JSON) is recommended.</p>
-<p>When you issued the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span></code> command, there was a decent amount of
-output in the terminal. The last line in the logs is of interest:</p>
+<p>该命令将二进制protobuf通道配置块保存为``config_block.pb``。注意，名称和文件扩展名的选择是任意的。但是，建议遵循一种约定，即同时标识所表示对象的类型及其编码(protobuf或JSON)。</p>
+<p>当您发出``peer channel fetch``命令时，终端中有相当数量的输出。日志中的最后一行很有趣:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2017</span>-11-07 <span class="m">17</span>:17:57.383 UTC <span class="o">[</span>channelCmd<span class="o">]</span> readBlock -&gt; DEBU <span class="m">011</span> Received block: <span class="m">2</span>
 </pre></div>
 </div>
-<p>This is telling us that the most recent configuration block for <code class="docutils literal notranslate"><span class="pre">mychannel</span></code> is
-actually block 2, <strong>NOT</strong> the genesis block. By default, the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span> <span class="pre">config</span></code>
-command returns the most <strong>recent</strong> configuration block for the targeted channel, which
-in this case is the third block. This is because the BYFN script defined anchor
-peers for our two organizations – <code class="docutils literal notranslate"><span class="pre">Org1</span></code> and <code class="docutils literal notranslate"><span class="pre">Org2</span></code> – in two separate channel update
-transactions.</p>
-<p>As a result, we have the following configuration sequence:</p>
+<p>这告诉我们，<code class="docutils literal notranslate"><span class="pre">mychannel``的最新配置区块实际上是2号区块，**不是**</span> <span class="pre">创世区块。默认情况下，</span> <span class="pre">``peer</span> <span class="pre">channel</span> <span class="pre">fetch</span> <span class="pre">config</span></code> 命令返回目标通道**最近的**配置区块，在本例中是第三个区块。这是因为BYFN脚本在两个独立的通道更新交易中为我们的两个组织(<code class="docutils literal notranslate"><span class="pre">Org1``和``Org2</span></code>)定义了锚点peer。</p>
+<p>因此，我们得到如下配置序列:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>block 0: genesis block</p></li>
-<li><p>block 1: Org1 anchor peer update</p></li>
-<li><p>block 2: Org2 anchor peer update</p></li>
+<li><p>区块0：创世区块</p></li>
+<li><p>区块1：Org1锚点区块更新</p></li>
+<li><p>区块2：Org2锚点区块更新</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="convert-the-configuration-to-json-and-trim-it-down">
-<h2>Convert the Configuration to JSON and Trim It Down<a class="headerlink" href="#convert-the-configuration-to-json-and-trim-it-down" title="Permalink to this headline">¶</a></h2>
-<p>Now we will make use of the <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> tool to decode this channel
-configuration block into JSON format (which can be read and modified by humans).
-We also must strip away all of the headers, metadata, creator signatures, and
-so on that are irrelevant to the change we want to make. We accomplish this by
-means of the <code class="docutils literal notranslate"><span class="pre">jq</span></code> tool:</p>
+<h2>将配置转换为JSON并对其进行修剪<a class="headerlink" href="#convert-the-configuration-to-json-and-trim-it-down" title="永久链接至标题">¶</a></h2>
+<p>现在，我们将使用``configtxlator``工具将这个通道配置块解码为JSON格式(可以由人类读取和修改)。我们还必须删除与我们想要进行的更改无关的所有头部、元数据、创建者签名等等。我们通过“jq”工具来实现:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator proto_decode --input config_block.pb --type common.Block <span class="p">|</span> jq .data.data<span class="o">[</span><span class="m">0</span><span class="o">]</span>.payload.data.config &gt; config.json
 </pre></div>
 </div>
-<p>This leaves us with a trimmed down JSON object – <code class="docutils literal notranslate"><span class="pre">config.json</span></code>, located in
-the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">first-network</span></code> – which
-will serve as the baseline for our config update.</p>
-<p>Take a moment to open this file inside your text editor of choice (or in your
-browser). Even after you’re done with this tutorial, it will be worth studying it
-as it reveals the underlying configuration structure and the other kind of channel
-updates that can be made. We discuss them in more detail in <a class="reference internal" href="config_update.html"><span class="doc">Updating a Channel Configuration</span></a>.</p>
+<p>这就留给我们一个经过修剪的JSON对象—— <code class="docutils literal notranslate"><span class="pre">config.json</span></code>，位于``first-network``中的``fabric-samples``文件夹中—这将作为配置更新的基线。</p>
+<p>花点时间在您选择的文本编辑器(或浏览器)中打开这个文件。即使您已经完成了本教程的学习，也值得研究它，因为它揭示了底层配置结构和其他可以进行的通道更新。我们将在:doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>config_update`中更详细地讨论它们。</p>
 </div>
 <div class="section" id="add-the-org3-crypto-material">
-<h2>Add the Org3 Crypto Material<a class="headerlink" href="#add-the-org3-crypto-material" title="Permalink to this headline">¶</a></h2>
+<h2>添加Org3加密材料<a class="headerlink" href="#add-the-org3-crypto-material" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The steps you’ve taken up to this point will be nearly identical no matter
-what kind of config update you’re trying to make. We’ve chosen to add an
-org with this tutorial because it’s one of the most complex channel
-configuration updates you can attempt.</p>
+<p class="admonition-title">注解</p>
+<p>到目前为止，您所采取的步骤几乎是相同的，无论您试图进行哪种配置更新。我们选择在本教程中添加一个组织，因为它是您可以尝试的最复杂的通道配置更新之一。</p>
 </div>
-<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">jq</span></code> tool once more to append the Org3 configuration definition
-– <code class="docutils literal notranslate"><span class="pre">org3.json</span></code> – to the channel’s application groups field, and name the output
-– <code class="docutils literal notranslate"><span class="pre">modified_config.json</span></code>.</p>
+<p>我们将再次使用``jq``工具来添加Org3配置定义—— <code class="docutils literal notranslate"><span class="pre">org3.json</span></code> ——到通道的应用程序groups字段，并将输出命名为——<code class="docutils literal notranslate"><span class="pre">modified_config.json</span></code>。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jq -s <span class="s1">&#39;.[0] * {&quot;channel_group&quot;:{&quot;groups&quot;:{&quot;Application&quot;:{&quot;groups&quot;: {&quot;Org3MSP&quot;:.[1]}}}}}&#39;</span> config.json ./channel-artifacts/org3.json &gt; modified_config.json
 </pre></div>
 </div>
-<p>Now, within the CLI container we have two JSON files of interest – <code class="docutils literal notranslate"><span class="pre">config.json</span></code>
-and <code class="docutils literal notranslate"><span class="pre">modified_config.json</span></code>. The initial file contains only Org1 and Org2 material,
-whereas “modified” file contains all three Orgs. At this point it’s simply
-a matter of re-encoding these two JSON files and calculating the delta.</p>
-<p>First, translate <code class="docutils literal notranslate"><span class="pre">config.json</span></code> back into a protobuf called <code class="docutils literal notranslate"><span class="pre">config.pb</span></code>:</p>
+<p>现在，在CLI容器中我们有两个感兴趣的JSON文件—— <code class="docutils literal notranslate"><span class="pre">config.json``和``modified_config.json</span></code>。初始文件只包含Org1和Org2材料，而“修改”文件包含所有三个Org。此时，只需重新编码这两个JSON文件并计算增量。</p>
+<p>首先，转换 <code class="docutils literal notranslate"><span class="pre">config.json</span></code> 回到名为 <a href="#id1"><span class="problematic" id="id2">``</span></a>config.pb``的protobuf :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator proto_encode --input config.json --type common.Config --output config.pb
 </pre></div>
 </div>
-<p>Next, encode <code class="docutils literal notranslate"><span class="pre">modified_config.json</span></code> to <code class="docutils literal notranslate"><span class="pre">modified_config.pb</span></code>:</p>
+<p>接下来，编码``modified_config.json``为``modified_config.pb``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator proto_encode --input modified_config.json --type common.Config --output modified_config.pb
 </pre></div>
 </div>
-<p>Now use <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> to calculate the delta between these two config
-protobufs. This command will output a new protobuf binary named <code class="docutils literal notranslate"><span class="pre">org3_update.pb</span></code>:</p>
+<p>现在使用 <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> 来计算这两个配置protobuf之间的增量。这个命令将输出一个新的protobuf二进制文件，名为``org3_update.pb``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator compute_update --channel_id <span class="nv">$CHANNEL_NAME</span> --original config.pb --updated modified_config.pb --output org3_update.pb
 </pre></div>
 </div>
-<p>This new proto – <code class="docutils literal notranslate"><span class="pre">org3_update.pb</span></code> – contains the Org3 definitions and high
-level pointers to the Org1 and Org2 material. We are able to forgo the extensive
-MSP material and modification policy information for Org1 and Org2 because this
-data is already present within the channel’s genesis block. As such, we only need
-the delta between the two configurations.</p>
-<p>Before submitting the channel update, we need to perform a few final steps. First,
-let’s decode this object into editable JSON format and call it <code class="docutils literal notranslate"><span class="pre">org3_update.json</span></code>:</p>
+<p>这个新的proto——<code class="docutils literal notranslate"><span class="pre">org3_update.pb</span></code>——包含Org3定义和指向Org1和Org2材料的高级指针。我们能够抛弃为Org1和Org2提供的大量MSP材料和修改策略信息，因为这些数据已经存在于通道的创世区块中。因此，我们只需要两个构型之间的增量。</p>
+<p>在提交通道更新之前，我们需要执行一些最后的步骤。首先，让我们将这个对象解码为可编辑的JSON格式，并将其命名为’<code class="docutils literal notranslate"><span class="pre">org3_update.json</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator proto_decode --input org3_update.pb --type common.ConfigUpdate <span class="p">|</span> jq . &gt; org3_update.json
 </pre></div>
 </div>
-<p>Now, we have a decoded update file – <code class="docutils literal notranslate"><span class="pre">org3_update.json</span></code> – that we need to wrap
-in an envelope message. This step will give us back the header field that we stripped away
-earlier. We’ll name this file <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.json</span></code>:</p>
+<p>现在，我们有一个解码的更新文件 – <code class="docutils literal notranslate"><span class="pre">org3_update.json</span></code> – 我们需要将其封装在信封消息中。这一步将返回我们之前删除的头部字段。我们将这个文件命名为``org3_update_in_envelope.json``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;{&quot;payload&quot;:{&quot;header&quot;:{&quot;channel_header&quot;:{&quot;channel_id&quot;:&quot;mychannel&quot;, &quot;type&quot;:2}},&quot;data&quot;:{&quot;config_update&quot;:&#39;</span><span class="k">$(</span>cat org3_update.json<span class="k">)</span><span class="s1">&#39;}}}&#39;</span> <span class="p">|</span> jq . &gt; org3_update_in_envelope.json
 </pre></div>
 </div>
-<p>Using our properly formed JSON – <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.json</span></code> – we will
-leverage the <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> tool one last time and convert it into the
-fully fledged protobuf format that Fabric requires. We’ll name our final update
-object <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.pb</span></code>:</p>
+<p>使用格式正确的JSON – <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.json</span></code> – 我们将最后一次使用``configtxlator``工具，并将其转换为Fabric所需的完全成熟的protobuf格式。我们将最终的更新对象命名为 <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.pb</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>configtxlator proto_encode --input org3_update_in_envelope.json --type common.Envelope --output org3_update_in_envelope.pb
 </pre></div>
 </div>
 </div>
 <div class="section" id="sign-and-submit-the-config-update">
-<h2>Sign and Submit the Config Update<a class="headerlink" href="#sign-and-submit-the-config-update" title="Permalink to this headline">¶</a></h2>
-<p>Almost done!</p>
-<p>We now have a protobuf binary – <code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.pb</span></code> – within
-our CLI container. However, we need signatures from the requisite Admin users
-before the config can be written to the ledger. The modification policy (mod_policy)
-for our channel Application group is set to the default of “MAJORITY”, which means that
-we need a majority of existing org admins to sign it. Because we have only two orgs –
-Org1 and Org2 – and the majority of two is two, we need both of them to sign. Without
-both signatures, the ordering service will reject the transaction for failing to
-fulfill the policy.</p>
-<p>First, let’s sign this update proto as the Org1 Admin. Remember that the CLI container
-is bootstrapped with the Org1 MSP material, so we simply need to issue the
-<code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">signconfigtx</span></code> command:</p>
+<h2>签署并提交配置更新<a class="headerlink" href="#sign-and-submit-the-config-update" title="永久链接至标题">¶</a></h2>
+<p>差不多完成了！</p>
+<p>在CLI容器中，现在我们有了一个protobuf二进制文件 ，<code class="docutils literal notranslate"><span class="pre">org3_update_in_envelope.pb</span></code>  。然而，在将配置写入账本之前，我们需要来自必需的管理用户的签名。通道应用程序组的修改策略(mod_policy)被设置为默认的“多数”，这意味着我们需要大多数现有的org管理员来签署它。因为我们只有两个org——Org1和Org2——而两个中的大多数是2，所以我们需要他们两个都签名。如果没有这两个签名，排序服务将因为未能满足策略而拒绝交易。</p>
+<p>首先，让我们以Org1管理员的身份签署这个更新proto。请记住，CLI容器是用Org1 MSP材料引导的，所以我们只需要发出``peer channel signconfigtx``命令:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer channel signconfigtx -f org3_update_in_envelope.pb
 </pre></div>
 </div>
-<p>The final step is to switch the CLI container’s identity to reflect the Org2 Admin
-user. We do this by exporting four environment variables specific to the Org2 MSP.</p>
+<p>最后一步是切换CLI容器的身份，以反映Org2管理用户。为此，我们导出了四个特定于Org2 MSP的环境变量。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Switching between organizations to sign a config transaction (or to do anything
-else) is not reflective of a real-world Fabric operation. A single container
-would never be mounted with an entire network’s crypto material. Rather, the
-config update would need to be securely passed out-of-band to an Org2
-Admin for inspection and approval.</p>
+<p class="admonition-title">注解</p>
+<p>在组织之间切换以签署配置交易(或执行任何其他操作)并不反映实际的Fabric操作。单个容器永远不会安装整个网络的加密材料。相反，配置更新将需要安全地通过带外传递给一个Org2管理员进行检查和批准。</p>
 </div>
-<p>Export the Org2 environment variables:</p>
+<p>导出Org2环境变量:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can issue all of these commands at once</span>
 
 <span class="nb">export</span> <span class="nv">CORE_PEER_LOCALMSPID</span><span class="o">=</span><span class="s2">&quot;Org2MSP&quot;</span>
@@ -570,58 +442,37 @@ Admin for inspection and approval.</p>
 <span class="nb">export</span> <span class="nv">CORE_PEER_ADDRESS</span><span class="o">=</span>peer0.org2.example.com:9051
 </pre></div>
 </div>
-<p>Lastly, we will issue the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">update</span></code> command. The Org2 Admin signature
-will be attached to this call so there is no need to manually sign the protobuf a
-second time:</p>
+<p>最后，我们会发出``peer channel update`` 命令。Org2管理员签名将附加到这个调用，所以不需要手动签署第二次protobuf:</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The upcoming update call to the ordering service will undergo a series
-of systematic signature and policy checks. As such you may find it
-useful to stream and inspect the ordering node’s logs. From another shell,
-issue a <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">orderer.example.com</span></code> command to display them.</p>
+<p class="admonition-title">注解</p>
+<p>即将对排序服务进行的更新调用将经过一系列系统签名和策略检查。因此，您可能会发现，对排序节点的日志进行流处理和检查非常有用。从另一个shell发出一个``docker logs -f orderer.example.com``命令来显示它们。</p>
 </div>
-<p>Send the update call:</p>
+<p>发送更新调用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer channel update -f org3_update_in_envelope.pb -c <span class="nv">$CHANNEL_NAME</span> -o orderer.example.com:7050 --tls --cafile <span class="nv">$ORDERER_CA</span>
 </pre></div>
 </div>
-<p>You should see a message digest indication similar to the following if your
-update has been submitted successfully:</p>
+<p>如果你的更新成功提交，你应该会看到一个类似于下面的消息摘要提示:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2018</span>-02-24 <span class="m">18</span>:56:33.499 UTC <span class="o">[</span>msp/identity<span class="o">]</span> Sign -&gt; DEBU 00f Sign: digest: 3207B24E40DE2FAB87A2E42BC004FEAA1E6FDCA42977CB78C64F05A88E556ABA
 </pre></div>
 </div>
-<p>You will also see the submission of our configuration transaction:</p>
+<p>您还将看到我们的配置交易提交:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2018</span>-02-24 <span class="m">18</span>:56:33.499 UTC <span class="o">[</span>channelCmd<span class="o">]</span> update -&gt; INFO <span class="m">010</span> Successfully submitted channel update
 </pre></div>
 </div>
-<p>The successful channel update call returns a new block – block 5 – to all of the
-peers on the channel. If you remember, blocks 0-2 are the initial channel
-configurations while blocks 3 and 4 are the instantiation and invocation of
-the <code class="docutils literal notranslate"><span class="pre">mycc</span></code> chaincode. As such, block 5 serves as the most recent channel
-configuration with Org3 now defined on the channel.</p>
-<p>Inspect the logs for <code class="docutils literal notranslate"><span class="pre">peer0.org1.example.com</span></code>:</p>
+<p>成功的通道更新调用将向通道上的所有peer节点返回一个新区块–区块5。可能您还记得，区块0-2是初始通道配置，而区块3和4是 <a href="#id1"><span class="problematic" id="id2">``</span></a>mycc``链码的实例化和调用。因此，第5区块作为最近的通道配置，现在在通道上定义了Org3。</p>
+<p>为了 <a href="#id1"><span class="problematic" id="id2">``</span></a>peer0.org1.example.com``检查日志:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker logs -f peer0.org1.example.com
 </pre></div>
 </div>
-<p>Follow the demonstrated process to fetch and decode the new config block if you wish to inspect
-its contents.</p>
+<p>如果希望检查新配置区块的内容，请遵循演示的过程来获取和解码新配置区块。</p>
 </div>
 <div class="section" id="configuring-leader-election">
-<h2>Configuring Leader Election<a class="headerlink" href="#configuring-leader-election" title="Permalink to this headline">¶</a></h2>
+<h2>配置领导选举<a class="headerlink" href="#configuring-leader-election" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section is included as a general reference for understanding
-the leader election settings when adding organizations to a network
-after the initial channel configuration has completed. This sample
-defaults to dynamic leader election, which is set for all peers in the
-network in <cite>peer-base.yaml</cite>.</p>
+<p class="admonition-title">注解</p>
+<p>本节作为一般参考，用于理解在初始通道配置完成后将组织添加到网络时的领导人选举设置。这个示例默认为动态领导人选举，它在“peer-base.yaml”中为网络中的所有peer节点设置。</p>
 </div>
-<p>Newly joining peers are bootstrapped with the genesis block, which does not
-contain information about the organization that is being added in the channel
-configuration update. Therefore new peers are not able to utilize gossip as
-they cannot verify blocks forwarded by other peers from their own organization
-until they get the configuration transaction which added the organization to the
-channel. Newly added peers must therefore have one of the following
-configurations so that they receive blocks from the ordering service:</p>
+<p>新加入的peer节点使用创世区块引导，该区块不包含有关正在通道配置更新中添加的组织的信息。因此，新peer节点不能使用gossip，因为它们无法验证其他peer节点从自己的组织转发的区块，直到它们获得将组织添加到通道的配置交易。因此，新添加的peer节点必须具有以下配置之一，以便从排序服务接收区块:</p>
 <p>1. To utilize static leader mode, configure the peer to be an organization
 leader:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CORE_PEER_GOSSIP_USELEADERELECTION</span><span class="o">=</span><span class="n">false</span>
@@ -629,9 +480,8 @@ leader:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This configuration must be the same for all new peers added to the
-channel.</p>
+<p class="admonition-title">注解</p>
+<p>对于添加到通道的所有新peer节点，此配置必须相同。</p>
 </div>
 <p>2. To utilize dynamic leader election, configure the peer to use leader
 election:</p>
@@ -640,67 +490,45 @@ election:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Because peers of the newly added organization won’t be able to form
-membership view, this option will be similar to the static
-configuration, as each peer will start proclaiming itself to be a
-leader. However, once they get updated with the configuration
-transaction that adds the organization to the channel, there will be
-only one active leader for the organization. Therefore, it is
-recommended to leverage this option if you eventually want the
-organization’s peers to utilize leader election.</p>
+<p class="admonition-title">注解</p>
+<p>因为新添加的组织的peer节点将无法形成成员视图，所以这个选项将类似于静态配置，因为每个peer节点将开始声明自己是领导人。然而，一旦使用将组织添加到通道的配置交易对其进行更新，组织将只有一个活动领导人。因此，如果您最终希望组织的peer节点利用领导人选举，建议利用这个选项。</p>
 </div>
 </div>
 <div class="section" id="join-org3-to-the-channel">
-<h2>Join Org3 to the Channel<a class="headerlink" href="#join-org3-to-the-channel" title="Permalink to this headline">¶</a></h2>
-<p>At this point, the channel configuration has been updated to include our new
-organization – <code class="docutils literal notranslate"><span class="pre">Org3</span></code> – meaning that peers attached to it can now join <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>.</p>
-<p>First, let’s launch the containers for the Org3 peers and an Org3-specific CLI.</p>
-<p>Open a new terminal and from <code class="docutils literal notranslate"><span class="pre">first-network</span></code> kick off the Org3 docker compose:</p>
+<h2>将Org3加入通道<a class="headerlink" href="#join-org3-to-the-channel" title="永久链接至标题">¶</a></h2>
+<p>此时，为了包含我们的新组织– <code class="docutils literal notranslate"><span class="pre">Org3</span></code>，通道配置已经更新， 这意味着连接到它的peer节点现在可以加入``mychannel``。</p>
+<p>首先，让我们启动Org3的peer节点和特定于Org3的CLI容器。</p>
+<p>打开一个新的终端，并从``first-network``启动Org3 docker compose:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose -f docker-compose-org3.yaml up -d
 </pre></div>
 </div>
-<p>This new compose file has been configured to bridge across our initial network,
-so the two peers and the CLI container will be able to resolve with the existing
-peers and ordering node. With the three new containers now running, exec into
-the Org3-specific CLI container:</p>
+<p>这个新的compose文件已配置为跨初始网络进行桥接，因此两个peer节点和CLI容器将能够使用现有peer节点和排序节点进行解析。现在运行了三个新的容器，exec到特定于org3的CLI容器中:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it Org3cli bash
 </pre></div>
 </div>
-<p>Just as we did with the initial CLI container, export the two key environment
-variables: <code class="docutils literal notranslate"><span class="pre">ORDERER_CA</span></code> and <code class="docutils literal notranslate"><span class="pre">CHANNEL_NAME</span></code>:</p>
+<p>正如我们对初始CLI容器所做的那样，导出两个关键的环境变量: <code class="docutils literal notranslate"><span class="pre">ORDERER_CA``和``CHANNEL_NAME</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ORDERER_CA</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">CHANNEL_NAME</span><span class="o">=</span>mychannel
 </pre></div>
 </div>
-<p>Check to make sure the variables have been properly set:</p>
+<p>检查变量是否设置正确:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$ORDERER_CA</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$CHANNEL_NAME</span>
 </pre></div>
 </div>
-<p>Now let’s send a call to the ordering service asking for the genesis block of
-<code class="docutils literal notranslate"><span class="pre">mychannel</span></code>. The ordering service is able to verify the Org3 signature
-attached to this call as a result of our successful channel update. If Org3
-has not been successfully appended to the channel config, the ordering
-service should reject this request.</p>
+<p>现在让我们向排序服务发送一个调用，请求“mychannel”的创世区块。由于我们的通道更新成功，排序服务能够验证附加到此调用的Org3签名。如果没有成功地将Org3附加到通道配置中，排序服务会拒绝此请求。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Again, you may find it useful to stream the ordering node’s logs
-to reveal the sign/verify logic and policy checks.</p>
+<p class="admonition-title">注解</p>
+<p>同样，您可能会发现，对排序节点的日志进行流处理以显示签名/验证逻辑和策略检查非常有用。</p>
 </div>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span></code> command to retrieve this block:</p>
+<p>使用 <a href="#id1"><span class="problematic" id="id2">``</span></a>peer channel fetch``命令检索此区块:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer channel fetch <span class="m">0</span> mychannel.block -o orderer.example.com:7050 -c <span class="nv">$CHANNEL_NAME</span> --tls --cafile <span class="nv">$ORDERER_CA</span>
 </pre></div>
 </div>
-<p>Notice, that we are passing a <code class="docutils literal notranslate"><span class="pre">0</span></code> to indicate that we want the first block on
-the channel’s ledger (i.e. the genesis block). If we simply passed the
-<code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span> <span class="pre">config</span></code> command, then we would have received block 5 – the
-updated config with Org3 defined. However, we can’t begin our ledger with a
-downstream block – we must start with block 0.</p>
-<p>Issue the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">join</span></code> command and pass in the genesis block – <code class="docutils literal notranslate"><span class="pre">mychannel.block</span></code>:</p>
+<p>注意，我们传递了一个``0``来表示我们想要通道账本上的第一个区块(即创世区块)。如果我们只是通过 <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">fetch</span> <span class="pre">config</span></code> 命令，那么我们将接收到区块5——定义了Org3的更新配置。然而，我们不能从下游区块开始账本——我们必须从区块0开始。</p>
+<p>发出``peer channel join``命令，并传入创世区块 – <code class="docutils literal notranslate"><span class="pre">mychannel.block</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer channel join -b mychannel.block
 </pre></div>
 </div>
-<p>If you want to join the second peer for Org3, export the <code class="docutils literal notranslate"><span class="pre">TLS</span></code> and <code class="docutils literal notranslate"><span class="pre">ADDRESS</span></code> variables
-and reissue the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span> <span class="pre">join</span> <span class="pre">command</span></code>:</p>
+<p>如果您想加入Org3的第二个peer节点，导出 <code class="docutils literal notranslate"><span class="pre">TLS``和``ADDRESS</span></code> 变量并重新发出``peer channel join command``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CORE_PEER_TLS_ROOTCERT_FILE</span><span class="o">=</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls/ca.crt <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">CORE_PEER_ADDRESS</span><span class="o">=</span>peer1.org3.example.com:12051
 
 peer channel join -b mychannel.block
@@ -708,117 +536,75 @@ peer channel join -b mychannel.block
 </div>
 </div>
 <div class="section" id="install-define-and-invoke-chaincode">
-<span id="upgrade-and-invoke"></span><h2>Install, define, and invoke chaincode<a class="headerlink" href="#install-define-and-invoke-chaincode" title="Permalink to this headline">¶</a></h2>
-<p>Once you have joined the channel, you can package and install a chaincode on a
-peer of Org3. You then need to approve the chaincode definition as org3.
-Because the chaincode definition has already been committed to the channel
-you have joined, you can start using the chaincode after you approve the
-definition.</p>
+<span id="upgrade-and-invoke"></span><h2>安装、定义和调用链码<a class="headerlink" href="#install-define-and-invoke-chaincode" title="永久链接至标题">¶</a></h2>
+<p>一旦您加入了通道，您就可以在Org3的peer节点上打包并安装一个链码。然后需要将链码定义批准为Org3。因为链码定义已经提交到您已经加入的通道，所以您可以在批准定义之后开始使用链码。</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These instructions use the Fabric chaincode lifecycle introduced in
-the v2.0 Alpha release. If you would like to use the previous
-lifecycle to install and instantiate a chaincode, visit the v1.4
-version of the <a class="reference external" href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html">Adding an org to a channel tutorial</a>.</p>
+<p class="admonition-title">注解</p>
+<p>这些指令使用了在v2.0 Alpha版本中引入的Fabric 链码生命周期。如果您想使用以前的生命周期来安装和实例化链码，请访问“将org添加到通道教程”的v1.4版本 &lt;<a class="reference external" href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html">https://hyperledger-fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html</a>&gt;`__。</p>
 </div>
-<p>The first step is to package the chaincode from the Org3 CLI:</p>
+<p>第一步是打包来自Org3 CLI的链码:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer lifecycle chaincode package mycc.tar.gz --path github.com/hyperledger/fabric-samples/chaincode/abstore/go/ --lang golang --label mycc_1
 </pre></div>
 </div>
-<p>This command will create a chaincode package named <code class="docutils literal notranslate"><span class="pre">mycc.tar.gz</span></code>, which we can
-use to install the chaincode on our peer. In this command, you need to provide a
-chaincode package label as a description of the chaincode. Modify the command
-accordingly if the channel is running a chaincode written in Java or Node.js.
-Issue the following command to install the package on peer0 of Org3:</p>
+<p>这个命令将创建一个名为``mycc.tar.gz``的链码包，我们可以使用它在我们的peer节点上安装链码。在这个命令中，您需要提供一个链码包标签来描述链码。如果通道正在运行用Java或Node.js编写的链码，则相应地修改该命令。发出以下命令在Org3的peer0上安装包:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this command installs a chaincode package on your peer</span>
 peer lifecycle chaincode install mycc.tar.gz
 </pre></div>
 </div>
-<p>You can also modify the environment variables and reissue the command if you
-want to install the chaincode on the second peer of Org3. Note that a second
-installation is not mandated, as you only need to install chaincode on peers
-that are going to serve as endorsers or otherwise interface with the ledger
-(i.e. query only). Peers will still run the validation logic and serve as
-committers without a running chaincode container.</p>
-<p>The next step is to approve the chaincode definition of <code class="docutils literal notranslate"><span class="pre">mycc</span></code> as Org3. Org3
-needs to approve the same definition that Org1 and Org2 approved and committed
-to the channel. The chaincode definition also needs to include the chaincode
-package identifier. You can find the package identifier by querying your peer:</p>
+<p>如果希望在Org3的第二个peer点上安装链码，还可以修改环境变量并重新发出命令。注意，第二次安装并不是强制的，因为您只需要将链码安装在peer节点充当背书者，或以其他方式与账本接口(即仅查询)。peer节点仍将运行验证逻辑，并在没有运行链码容器的情况下充当提交者。</p>
+<p>下一步是将``mycc``的链码定义批准为Org3。Org3需要批准与Org1和Org2已批准并提交给通道的相同的定义。链码定义还需要包括链码包标识符。你可以通过查询你的peer节点来找到包的标识符:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this returns the details of the packages installed on your peers</span>
 peer lifecycle chaincode queryinstalled
 </pre></div>
 </div>
-<p>You should see output similar to the following:</p>
+<p>您应该会看到类似如下的输出:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Get installed chaincodes on peer:
 Package ID: mycc_1:3a8c52d70c36313cfebbaf09d8616e7a6318ababa01c7cbe40603c373bcfe173, Label: mycc_1
 </pre></div>
 </div>
-<p>We are going to need the package ID in a future command, so lets go ahead and
-save it as an environment variable. Paste the package ID returned by the
-<cite>peer lifecycle chaincode queryinstalled</cite> into the command below. The package ID
-may not be the same for all users, so you need to complete this step using the
-package ID returned from your console.</p>
+<p>我们将在将来的命令中需要包ID，所以让我们继续将它保存为一个环境变量。将`peer lifecycle chaincode queryinstalled` 返回的包ID粘贴到下面的命令中。包ID可能不适合所有用户，因此需要使用从控制台返回的包ID完成此步骤。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the package ID as an environment variable.</span>
 
 <span class="nv">CC_PACKAGE_ID</span><span class="o">=</span>mycc_1:3a8c52d70c36313cfebbaf09d8616e7a6318ababa01c7cbe40603c373bcfe173
 </pre></div>
 </div>
-<p>Use the following command to approve a definition of the  <code class="docutils literal notranslate"><span class="pre">mycc</span></code> chaincode
-for Org3:</p>
+<p>使用以下命令来批准Org3的 <a href="#id1"><span class="problematic" id="id2">``</span></a>mycc``链码的定义:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this approves a chaincode definition for your org</span>
 <span class="c1"># use the --package-id flag to provide the package identifier</span>
 <span class="c1"># use the --init-required flag to request the ``Init`` function be invoked to initialize the chaincode</span>
 peer lifecycle chaincode approveformyorg --channelID <span class="nv">$CHANNEL_NAME</span> --name mycc --version <span class="m">1</span>.0 --init-required --package-id <span class="nv">$CC_PACKAGE_ID</span> --sequence <span class="m">1</span> --tls <span class="nb">true</span> --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem --waitForEvent
 </pre></div>
 </div>
-<p>You can use the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">querycommitted</span></code> command to check if
-the chaincode definition you have approved has already been committed to the
-channel.</p>
+<p>您可以使用 <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">querycommitted</span></code> 命令来检查您已批准的链码定义是否已提交到通道。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the --name flag to select the chaincode whose definition you want to query</span>
 peer lifecycle chaincode querycommitted --channelID <span class="nv">$CHANNEL_NAME</span> --name mycc --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 </pre></div>
 </div>
-<p>A successful command will return information about the committed definition:</p>
+<p>一个成功的命令将返回关于提交定义的信息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Committed chaincode definition <span class="k">for</span> chaincode <span class="s1">&#39;mycc&#39;</span> on channel <span class="s1">&#39;mychannel&#39;</span>:
 Version: <span class="m">1</span>, Sequence: <span class="m">1</span>, Endorsement Plugin: escc, Validation Plugin: vscc
 </pre></div>
 </div>
-<p>Since the chaincode definition has already been committed, you are ready to use
-the <code class="docutils literal notranslate"><span class="pre">mycc</span></code> chaincode after you approve the definition. The chaincode definition
-uses the default endorsement policy, which requires a majority of organizations
-on the channel endorse a transaction. This implies that if an organization is
-added to or removed from the channel, the endorsement policy is updated
-automatically. We previously needed endorsements from Org1 and Org2 (2 out of 2).
-Now we need endorsements from two organizations out of Org1, Org2, and Org3 (2
-out of 3).</p>
-<p>Query the chaincode to ensure that it has started. Note that you may need to
-wait for the chaincode container to start.</p>
+<p>由于链码定义已经提交，所以在您批准定义之后，就可以使用’<code class="docutils literal notranslate"><span class="pre">mycc</span></code> 链码了。链码定义使用默认的背书策略，这要求通道上的大多数组织对交易进行背书。这意味着，如果一个组织被添加到或从通道中删除，背书策略将自动更新。我们之前需要来自Org1和Org2(2个中的2个)的背书，现在我们需要来自Org1、Org2和Org3中的两个(3个中的2个)的背书。</p>
+<p>查询链码以确保它已经启动。注意，您可能需要等待链码容器启动。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer chaincode query -C <span class="nv">$CHANNEL_NAME</span> -n mycc -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</span>
 </pre></div>
 </div>
-<p>We should see a response of <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">Result:</span> <span class="pre">90</span></code>.</p>
-<p>Now issue an invocation to move <code class="docutils literal notranslate"><span class="pre">10</span></code> from <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>. In the command
-below, we target a peer in Org1 and Org3 to collect a sufficient number of
-endorsements.</p>
+<p>我们应该看到 <a href="#id1"><span class="problematic" id="id2">``</span></a>Query Result: 90``的响应。</p>
+<p>现在发出一个调用，将“10”从“a”转账到“b”。在下面的命令中，我们的目标是在Org1和Org3中收集足够数量的背书。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer chaincode invoke -o orderer.example.com:7050  --tls <span class="nv">$CORE_PEER_TLS_ENABLED</span> --cafile <span class="nv">$ORDERER_CA</span> -C <span class="nv">$CHANNEL_NAME</span> -n mycc -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;invoke&quot;,&quot;a&quot;,&quot;b&quot;,&quot;10&quot;]}&#39;</span> --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses peer0.org3.example.com:11051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt
 </pre></div>
 </div>
-<p>Query one final time:</p>
+<p>最后一次查询:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peer chaincode query -C <span class="nv">$CHANNEL_NAME</span> -n mycc -c <span class="s1">&#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</span>
 </pre></div>
 </div>
-<p>We should see a response of <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">Result:</span> <span class="pre">80</span></code>, accurately reflecting the
-update of this chaincode’s world state.</p>
+<p>我们应该看到 <a href="#id1"><span class="problematic" id="id2">``</span></a>Query Result: 80``的响应，准确地反映了这个链码的世界状态的更新。</p>
 </div>
 <div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>The channel configuration update process is indeed quite involved, but there is a
-logical method to the various steps. The endgame is to form a delta transaction object
-represented in protobuf binary format and then acquire the requisite number of admin
-signatures such that the channel configuration update transaction fulfills the channel’s
-modification policy.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">configtxlator</span></code> and <code class="docutils literal notranslate"><span class="pre">jq</span></code> tools, along with the ever-growing <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">channel</span></code>
-commands, provide us with the functionality to accomplish this task.</p>
+<h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题">¶</a></h2>
+<p>通道配置更新过程确实非常复杂，但是各个步骤都有一个逻辑方法。最终的目的是形成一个用protobuf二进制格式表示的delta交易对象，然后获得所需的管理签名数量，以便通道配置更新交易能够满足通道的修改策略。</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>configtxlator``和``jq``工具以及不断增长的“peer channel”命令为我们提供了完成这项任务的功能。</p>
 </div>
 </div>
 
@@ -833,7 +619,7 @@ commands, provide us with the functionality to accomplish this task.</p>
         <a href="upgrading_your_network_tutorial.html" class="btn btn-neutral float-right" title="Upgrading Your Network Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build_network.html" class="btn btn-neutral" title="Building Your First Network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build_network.html" class="btn btn-neutral" title="搭建你的第一个网络（BYFN）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

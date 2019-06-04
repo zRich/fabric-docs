@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptogen &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>cryptogen &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Service Discovery CLI" href="../discovery-cli.html" />
     <link rel="prev" title="configtxlator" href="configtxlator.html" /> 
 </head>
@@ -96,14 +97,14 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">开发应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">命令参考</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
@@ -127,11 +128,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -179,7 +180,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+          <li><a href="../command_ref.html">命令参考</a> &raquo;</li>
         
       <li>cryptogen</li>
     
@@ -201,12 +202,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cryptogen">
-<h1>cryptogen<a class="headerlink" href="#cryptogen" title="Permalink to this headline">¶</a></h1>
+<h1>cryptogen<a class="headerlink" href="#cryptogen" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">cryptogen</span></code> is an utility for generating Hyperledger Fabric key material.
 It is provided as a means of preconfiguring a network for testing purposes.
 It would normally not be used in the operation of a production network.</p>
 <div class="section" id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cryptogen</span></code> command has five subcommands, as follows:</p>
 <ul class="simple">
 <li><p>help</p></li>
@@ -217,7 +218,7 @@ It would normally not be used in the operation of a production network.</p>
 </ul>
 </div>
 <div class="section" id="cryptogen-help">
-<h2>cryptogen help<a class="headerlink" href="#cryptogen-help" title="Permalink to this headline">¶</a></h2>
+<h2>cryptogen help<a class="headerlink" href="#cryptogen-help" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cryptogen</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">args</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
 
 <span class="n">Utility</span> <span class="k">for</span> <span class="n">generating</span> <span class="n">Hyperledger</span> <span class="n">Fabric</span> <span class="n">key</span> <span class="n">material</span>
@@ -244,7 +245,7 @@ It would normally not be used in the operation of a production network.</p>
 </div>
 </div>
 <div class="section" id="cryptogen-generate">
-<h2>cryptogen generate<a class="headerlink" href="#cryptogen-generate" title="Permalink to this headline">¶</a></h2>
+<h2>cryptogen generate<a class="headerlink" href="#cryptogen-generate" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cryptogen</span> <span class="n">generate</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Generate</span> <span class="n">key</span> <span class="n">material</span>
@@ -258,7 +259,7 @@ It would normally not be used in the operation of a production network.</p>
 </div>
 </div>
 <div class="section" id="cryptogen-showtemplate">
-<h2>cryptogen showtemplate<a class="headerlink" href="#cryptogen-showtemplate" title="Permalink to this headline">¶</a></h2>
+<h2>cryptogen showtemplate<a class="headerlink" href="#cryptogen-showtemplate" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cryptogen</span> <span class="n">showtemplate</span>
 
 <span class="n">Show</span> <span class="n">the</span> <span class="n">default</span> <span class="n">configuration</span> <span class="n">template</span>
@@ -269,7 +270,7 @@ It would normally not be used in the operation of a production network.</p>
 </div>
 </div>
 <div class="section" id="cryptogen-extend">
-<h2>cryptogen extend<a class="headerlink" href="#cryptogen-extend" title="Permalink to this headline">¶</a></h2>
+<h2>cryptogen extend<a class="headerlink" href="#cryptogen-extend" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cryptogen</span> <span class="n">extend</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="n">Extend</span> <span class="n">existing</span> <span class="n">network</span>
@@ -283,7 +284,7 @@ It would normally not be used in the operation of a production network.</p>
 </div>
 </div>
 <div class="section" id="cryptogen-version">
-<h2>cryptogen version<a class="headerlink" href="#cryptogen-version" title="Permalink to this headline">¶</a></h2>
+<h2>cryptogen version<a class="headerlink" href="#cryptogen-version" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">cryptogen</span> <span class="n">version</span>
 
 <span class="n">Show</span> <span class="n">version</span> <span class="n">information</span>
@@ -294,7 +295,7 @@ It would normally not be used in the operation of a production network.</p>
 </div>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
 <p>Here’s an example using the different available flags on the <code class="docutils literal notranslate"><span class="pre">cryptogen</span> <span class="pre">extend</span></code>
 command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cryptogen</span> <span class="n">extend</span> <span class="o">--</span><span class="nb">input</span><span class="o">=</span><span class="s2">&quot;crypto-config&quot;</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">yaml</span>

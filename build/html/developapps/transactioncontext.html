@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Transaction context &mdash; hyperledger-fabricdocs master documentation</title>
+  <title>Transaction context &mdash; hyperledger-fabricdocs master 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -34,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Transaction handlers" href="transactionhandler.html" />
     <link rel="prev" title="Chaincode namespace" href="chaincodenamespace.html" /> 
 </head>
@@ -96,17 +97,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">v2.0 Alpha 新功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">开发应用程序</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="designelements.html">Application design elements</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="designelements.html">应用程序设计元素</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="contractname.html">Contract names</a></li>
 <li class="toctree-l3"><a class="reference internal" href="chaincodenamespace.html">Chaincode namespace</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Transaction context</a><ul>
@@ -128,13 +129,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">操作指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">发布</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
 </ul>
@@ -182,9 +183,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+          <li><a href="developing_applications.html">开发应用程序</a> &raquo;</li>
         
-          <li><a href="designelements.html">Application design elements</a> &raquo;</li>
+          <li><a href="designelements.html">应用程序设计元素</a> &raquo;</li>
         
       <li>Transaction context</li>
     
@@ -206,7 +207,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="transaction-context">
-<h1>Transaction context<a class="headerlink" href="#transaction-context" title="Permalink to this headline">¶</a></h1>
+<h1>Transaction context<a class="headerlink" href="#transaction-context" title="永久链接至标题">¶</a></h1>
 <p><strong>Audience</strong>: Architects, application and smart contract developers</p>
 <p>A transaction context performs two functions. Firstly, it allows a developer to
 define and maintain user variables across transaction invocations within a smart
@@ -227,7 +228,7 @@ easy to reason about.</p>
 <li><p><a class="reference external" href="#clientIdentity">Using a context <code class="docutils literal notranslate"><span class="pre">clientIdentity</span></code></a></p></li>
 </ul>
 <div class="section" id="scenario">
-<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
+<h2>Scenario<a class="headerlink" href="#scenario" title="永久链接至标题">¶</a></h2>
 <p>In the commercial paper sample,
 <a class="reference external" href="https://github.com/hyperledger/fabric-samples/blob/master/commercial-paper/organization/magnetocorp/contract/lib/papercontract.js">papercontract</a>
 initially defines the name of the list of commercial papers for which it’s
@@ -241,7 +242,7 @@ context allows smart contracts to define and maintain user variables across
 transaction invocations. Refer to the text for a detailed explanation.</em></p>
 </div>
 <div class="section" id="programming">
-<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
+<h2>Programming<a class="headerlink" href="#programming" title="永久链接至标题">¶</a></h2>
 <p>When a smart contract is constructed, a developer can optionally override the
 built-in <code class="docutils literal notranslate"><span class="pre">Context</span></code> class <code class="docutils literal notranslate"><span class="pre">createContext</span></code> method to create a custom context:</p>
 <div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">createContext</span><span class="p">()</span> <span class="p">{</span>
@@ -282,7 +283,7 @@ structure of this built-in context, these implicit variables and how to use
 them.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="永久链接至标题">¶</a></h2>
 <p>As we’ve seen from the <a class="reference external" href="#programming">example</a>, a transaction context can
 contain any number of user variables such as <code class="docutils literal notranslate"><span class="pre">paperList</span></code>.</p>
 <p>The transaction context also contains two built-in elements that provide access
@@ -302,7 +303,7 @@ range of functionality in a smart contract via the transaction context <code cla
 and <code class="docutils literal notranslate"><span class="pre">clientIdentity</span></code>. Refer to the text for a detailed explanation.</em></p>
 </div>
 <div class="section" id="stub">
-<h2>Stub<a class="headerlink" href="#stub" title="Permalink to this headline">¶</a></h2>
+<h2>Stub<a class="headerlink" href="#stub" title="永久链接至标题">¶</a></h2>
 <p>The APIs in the stub fall into the following categories:</p>
 <ul>
 <li><p><strong>World state data APIs</strong>. See interaction point <strong>(1)</strong>. These APIs enable
@@ -439,7 +440,7 @@ does all of this parameter marshalling automatically for developers.</p>
 </ul>
 </div>
 <div class="section" id="clientidentity">
-<h2>ClientIdentity<a class="headerlink" href="#clientidentity" title="Permalink to this headline">¶</a></h2>
+<h2>ClientIdentity<a class="headerlink" href="#clientidentity" title="永久链接至标题">¶</a></h2>
 <p>In most cases, the application submitting a transaction will be using an X.509
 certificate. In the <a class="reference external" href="#structure">example</a>, an X.509 certificate <strong>(6)</strong> issued
 by <code class="docutils literal notranslate"><span class="pre">CA1</span></code> <strong>(7)</strong> is being used by <code class="docutils literal notranslate"><span class="pre">Isabella</span></code> <strong>(8)</strong> in her application to sign
