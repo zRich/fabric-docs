@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Transaction context &mdash; hyperledger-fabricdocs master documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Transaction handlers" href="transactionhandler.html" />
+    <link rel="prev" title="Chaincode namespace" href="chaincodenamespace.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> hyperledger-fabricdocs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+<br><img style="background-color: #fff; height: unset; width: unset;" alt="Hyperledger Fabric" src=../_images/hyperledger_fabric_logo_color.png />
+<br>
+<a href="https://github.com/hyperledger/fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="GitHub" src="../_static/images/github_button.png"/></a>
+&nbsp;<a href="https://stackoverflow.com/questions/tagged/hyperledger-fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="StackOverflow" src="../_static/images/stackoverflow_button.png"/></a>
+&nbsp;<a href="https://chat.hyperledger.org"><img style="padding: 0px; margin: auto auto auto auto;" alt="Rocket Chat" src="../_static/images/rocketchat_button.png"/></a>
+&nbsp;<a href="https://www.youtube.com/playlist?list=PL0MZ85B_96CH7wvtrRzV7SvtRY0sI0DEg"><img style="padding: 0px; margin: auto auto auto auto;" alt="Youtube Channel" src="../_static/images/youtube_button.png"/></a>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="developing_applications.html">Developing Applications</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scenario.html">The scenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Process and Data Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smartcontract.html">Smart Contract Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="application.html">Application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="designelements.html">Application design elements</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="contractname.html">Contract names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chaincodenamespace.html">Chaincode namespace</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Transaction context</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scenario">Scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#programming">Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stub">Stub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clientidentity">ClientIdentity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="transactionhandler.html">Transaction handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endorsementpolicies.html">Endorsement policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connectionprofile.html">Connection Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connectionoptions.html">Connection Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wallet.html">Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gateway.html">Gateway</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">hyperledger-fabricdocs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="developing_applications.html">Developing Applications</a> &raquo;</li>
+        
+          <li><a href="designelements.html">Application design elements</a> &raquo;</li>
+        
+      <li>Transaction context</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/developapps/transactioncontext.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transaction-context">
+<h1>Transaction context<a class="headerlink" href="#transaction-context" title="Permalink to this headline">¶</a></h1>
+<p><strong>Audience</strong>: Architects, application and smart contract developers</p>
+<p>A transaction context performs two functions. Firstly, it allows a developer to
+define and maintain user variables across transaction invocations within a smart
+contract. Secondly, it provides access to a wide range of Fabric APIs that allow
+smart contract developers to perform operations relating to detailed transaction
+processing. These range from querying or updating the ledger, both the immutable
+blockchain and the modifiable world state, to retrieving the
+transaction-submitting application’s digital identity.</p>
+<p>A transaction context is created when a smart contract is instantiated, and
+made available to every subsequent transaction invocation. A transaction context
+helps smart contract developers write programs that are powerful, efficient and
+easy to reason about.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#scenario">Why a transaction context is important</a></p></li>
+<li><p><a class="reference external" href="#programming">How to use a transaction context</a></p></li>
+<li><p><a class="reference external" href="#structure">What’s in a transaction context</a></p></li>
+<li><p><a class="reference external" href="#stub">Using a context <code class="docutils literal notranslate"><span class="pre">stub</span></code></a></p></li>
+<li><p><a class="reference external" href="#clientIdentity">Using a context <code class="docutils literal notranslate"><span class="pre">clientIdentity</span></code></a></p></li>
+</ul>
+<div class="section" id="scenario">
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
+<p>In the commercial paper sample,
+<a class="reference external" href="https://github.com/hyperledger/fabric-samples/blob/master/commercial-paper/organization/magnetocorp/contract/lib/papercontract.js">papercontract</a>
+initially defines the name of the list of commercial papers for which it’s
+responsible. Each transaction subsequently refers to this list; the issue
+transaction adds new papers to it, the buy transaction changes its owner, and
+the redeem transaction marks it as complete. This is a common pattern; when
+writing a smart contract it’s often helpful to initialize and recall particular
+variables in sequential transactions.</p>
+<p><img alt="../_images/develop.diagram.40.png" src="../_images/develop.diagram.40.png" />transaction.scenario <em>A smart contract transaction
+context allows smart contracts to define and maintain user variables across
+transaction invocations. Refer to the text for a detailed explanation.</em></p>
+</div>
+<div class="section" id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
+<p>When a smart contract is constructed, a developer can optionally override the
+built-in <code class="docutils literal notranslate"><span class="pre">Context</span></code> class <code class="docutils literal notranslate"><span class="pre">createContext</span></code> method to create a custom context:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">createContext</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="nx">CommercialPaperContext</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In our example, the <code class="docutils literal notranslate"><span class="pre">CommercialPaperContext</span></code> is specialized for
+<code class="docutils literal notranslate"><span class="pre">CommercialPaperContract</span></code>. See how the custom context, addressed through <code class="docutils literal notranslate"><span class="pre">this</span></code>,
+adds the specific variable <code class="docutils literal notranslate"><span class="pre">PaperList</span></code> to itself:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">CommercialPaperContext</span> <span class="kr">extends</span> <span class="nx">Context</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">paperList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PaperList</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When the createContext() method returns at point <strong>(1)</strong> in the diagram
+<a class="reference external" href="#scenario">above</a>, a custom context <code class="docutils literal notranslate"><span class="pre">ctx</span></code> has been created which contains
+<code class="docutils literal notranslate"><span class="pre">paperList</span></code> as one of its variables.</p>
+<p>Subsequently, whenever a smart contract transaction such as issue, buy or redeem
+is called, this context will be passed to it. See how at points <strong>(2)</strong>, <strong>(3)</strong>
+and <strong>(4)</strong> the same commercial paper context is passed into the transaction
+method using the <code class="docutils literal notranslate"><span class="pre">ctx</span></code> variable.</p>
+<p>See how the context is then used at point <strong>(5)</strong>:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">ctx</span><span class="p">.</span><span class="nx">paperList</span><span class="p">.</span><span class="nx">addPaper</span><span class="p">(...);</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">stub</span><span class="p">.</span><span class="nx">putState</span><span class="p">(...);</span>
+</pre></div>
+</div>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">paperList</span></code> created in <code class="docutils literal notranslate"><span class="pre">CommercialPaperContext</span></code> is available to the
+issue transaction. See how <code class="docutils literal notranslate"><span class="pre">paperList</span></code> is similarly used by the <strong>redeem</strong> and
+<strong>buy</strong> transactions; <code class="docutils literal notranslate"><span class="pre">ctx</span></code> makes the smart contracts efficient and easy to
+reason about.</p>
+<p>You can also see that there’s another element in the context – <code class="docutils literal notranslate"><span class="pre">ctx.stub</span></code> –
+which was not explictly added by <code class="docutils literal notranslate"><span class="pre">CommercialPaperContext</span></code>. That’s because <code class="docutils literal notranslate"><span class="pre">stub</span></code>
+and other variables are part of the built-in context. Let’s now examine the
+structure of this built-in context, these implicit variables and how to use
+them.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>As we’ve seen from the <a class="reference external" href="#programming">example</a>, a transaction context can
+contain any number of user variables such as <code class="docutils literal notranslate"><span class="pre">paperList</span></code>.</p>
+<p>The transaction context also contains two built-in elements that provide access
+to a wide range of Fabric functionality ranging from the client application that
+submitted the transaction to ledger access.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctx.stub</span></code> is used to access APIs that provide a broad range of transaction
+processing operations from <code class="docutils literal notranslate"><span class="pre">putState()</span></code> and <code class="docutils literal notranslate"><span class="pre">getState()</span></code> to access the
+ledger, to <code class="docutils literal notranslate"><span class="pre">getTxID()</span></code> to retrieve the current transaction ID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctx.clientIdentity</span></code> is used to get information about the identity of the
+user who submitted the transaction.</p></li>
+</ul>
+<p>We’ll use the following diagram to show you what a smart contract can do using
+the <code class="docutils literal notranslate"><span class="pre">stub</span></code> and <code class="docutils literal notranslate"><span class="pre">clientIdentity</span></code> using the APIs available to it:</p>
+<p><img alt="../_images/develop.diagram.41.png" src="../_images/develop.diagram.41.png" />context.apis <em>A smart contract can access a
+range of functionality in a smart contract via the transaction context <code class="docutils literal notranslate"><span class="pre">stub</span></code>
+and <code class="docutils literal notranslate"><span class="pre">clientIdentity</span></code>. Refer to the text for a detailed explanation.</em></p>
+</div>
+<div class="section" id="stub">
+<h2>Stub<a class="headerlink" href="#stub" title="Permalink to this headline">¶</a></h2>
+<p>The APIs in the stub fall into the following categories:</p>
+<ul>
+<li><p><strong>World state data APIs</strong>. See interaction point <strong>(1)</strong>. These APIs enable
+smart contracts to get, put and delete state corresponding to individual
+objects from the world state, using their key:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getState__anchor">getState()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#putState__anchor">putState()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#deleteState__anchor">deleteState()</a></p></li>
+</ul>
+<p><br> These basic APIs are complemented by query APIs which enable contracts to
+retrieve a set of states, rather than an individual state. See interaction
+point <strong>(2)</strong>. The set is either defined by a range of key values, using full
+or partial keys, or a query according to values in the underlying world state
+<a class="reference external" href="../ledger/ledger.html#world-state-database-options">database</a>.  For large
+queries, the result sets can be paginated to reduce storage requirements:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStateByRange__anchor">getStateByRange()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStateByRangeWithPagination__anchor">getStateByRangeWithPagination()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStateByPartialCompositeKey__anchor">getStateByPartialCompositeKey()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStateByPartialCompositeKeyWithPagination__anchor">getStateByPartialCompositeKeyWithPagination()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getQueryResult__anchor">getQueryResult()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getQueryResultWithPagination__anchor">getQueryResultWithPagination()</a></p></li>
+</ul>
+</li>
+<li><p><strong>Private data APIs</strong>. See interaction point <strong>(3)</strong>. These APIs enable smart
+contracts to interact with a private data collection. They are analogous to
+the APIs for world state interactions, but for private data. There are APIs to
+get, put and delete a private data state by its key:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getPrivateData__anchor">getPrivateData()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#putPrivateData__anchor">putPrivateData()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#deletePrivateData__anchor">deletePrivateData()</a></p></li>
+</ul>
+<p><br> This set is complemented by set of APIs to query private data <strong>(4)</strong>.
+These APIs allow smart contracts to retrieve a set of states from a private
+data collection, according to a range of key values, either full or partial
+keys, or a query according to values in the underlying world state
+<a class="reference external" href="../ledger/ledger.html#world-state-database-options">database</a>. There are
+currently no pagination APIs for private data collections.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getPrivateDataByRange__anchor">getPrivateDataByRange()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getPrivateDataByPartialCompositeKey__anchor">getPrivateDataByPartialCompositeKey()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getPrivateDataQueryResult__anchor">getPrivateDataQueryResult()</a></p></li>
+</ul>
+</li>
+<li><p><strong>Transaction APIs</strong>. See interaction point <strong>(5)</strong>. These APIs are used by a
+smart contract to retrieve details about the current transaction proposal
+being processed by the smart contract. This includes the transaction
+identifier and the time when the transaction proposal was created.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getTxID__anchor">getTxID()</a>
+returns the identifier of the current transaction proposal <strong>(5)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getTxTimestamp__anchor">getTxTimestamp()</a>
+returns the timestamp when the current transaction proposal was created by
+the application <strong>(5)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getCreator__anchor">getCreator()</a>
+returns the raw identity (X.509 or otherwise) of the creator of
+transaction proposal. If this is an X.509 certificate then it is often
+more appropriate to use <a class="reference external" href="#clientidentity"><code class="docutils literal notranslate"><span class="pre">ctx.ClientIdentity</span></code></a>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getSignedProposal__anchor">getSignedProposal()</a>
+returns a signed copy of the current transaction proposal being processed
+by the smart contract.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getBinding__anchor">getBinding()</a>
+is used to prevent transactions being maliciously or accidentally replayed
+using a nonce. (For practical purposes, a nonce is a random number
+generated by the client application and incorporated in a cryptographic
+hash.) For example, this API could be used by a smart contract at <strong>(1)</strong>
+to detect a replay of the transaction <strong>(5)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getTransient__anchor">getTransient()</a>
+allows a smart contract to access the transient data an application passes
+to a smart contract. See interaction points <strong>(9)</strong> and <strong>(10)</strong>.
+Transient data is private to the application-smart contract interaction.
+It is not recorded on the ledger and is often used in conjunction with
+private data collections <strong>(3)</strong>.</p></li>
+</ul>
+<br></li>
+<li><p><strong>Key APIs</strong> are used by smart contracts to manipulate state key in the world
+state or a private data collection. See interaction points <strong>2</strong> and <strong>4</strong>.</p>
+<p>The simplest of these APIs allows smart contracts to form and split composite
+keys from their individual components. Slightly more advanced are the
+<code class="docutils literal notranslate"><span class="pre">ValidationParameter()</span></code> APIs which get and set the state based endorsement
+policies for world state <strong>(2)</strong> and private data <strong>(4)</strong>. Finally,
+<code class="docutils literal notranslate"><span class="pre">getHistoryForKey()</span></code> retrieves the history for a state by returning the set of
+stored values, including the transaction identifiers that performed the state
+update, allowing the transactions to be read from the blockchain <strong>(10)</strong>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#createCompositeKey__anchor">createCompositeKey()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#splitCompositeKey__anchor">splitCompositeKey()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#setStateValidationParameter__anchor">setStateValidationParameter()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStateValidationParameter__anchor">getStateValidationParameter()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getPrivateDataValidationParameter__anchor">getPrivateDataValidationParameter()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#setPrivateDataValidationParameter__anchor">setPrivateDataValidationParameter()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getHistoryForKey__anchor">getHistoryForKey()</a></p></li>
+</ul>
+<br></li>
+<li><p><strong>Event APIs</strong> are used manage event processing in a smart contract.</p>
+<ul>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#setEvent__anchor">setEvent()</a></p>
+<p>Smart contracts use this API to add user events to a transaction response.
+See interaction point <strong>(5)</strong>. These events are ultimately recorded on the
+blockchain and sent to listening applications at interaction point
+<strong>(11)</strong>.</p>
+</li>
+</ul>
+  <br></li>
+<li><p><strong>Utility APIs</strong> are a collection of useful APIs that don’t easily fit in a
+pre-defined category, so we’ve grouped them together! They include retrieving
+the current channel name and passing control to a different chaincode on the
+same peer.</p>
+<ul>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getChannelID__anchor">getChannelID()</a></p>
+<p>See interaction point <strong>(13)</strong>.  A smart contract running on any peer can
+use this API to determined on which channel the application invoked the
+smart contract.</p>
+</li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#invokeChaincode__anchor">invokeChaincode()</a></p>
+<p>See interaction point <strong>(14)</strong>.  Peer3 owned by MagnetoCorp has multiple
+smart contracts installed on it.  These smart contracts are able to call
+each other using this API. The smart contracts must be collocated; it is
+not possible to call a smart contract on a different peer.</p>
+</li>
+</ul>
+<p><br> Some of these utility APIs are only used if you’re using low-level
+chaincode, rather than smart contracts. These APIs are primarily for the
+detailed manipulation of chaincode input; the smart contract <code class="docutils literal notranslate"><span class="pre">Contract</span></code> class
+does all of this parameter marshalling automatically for developers.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getFunctionAndParameters__anchor">getFunctionAndParameters()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getStringArgs__anchor">getStringArgs()</a></p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ChaincodeStub.html#getArgs__anchor">getArgs()</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="clientidentity">
+<h2>ClientIdentity<a class="headerlink" href="#clientidentity" title="Permalink to this headline">¶</a></h2>
+<p>In most cases, the application submitting a transaction will be using an X.509
+certificate. In the <a class="reference external" href="#structure">example</a>, an X.509 certificate <strong>(6)</strong> issued
+by <code class="docutils literal notranslate"><span class="pre">CA1</span></code> <strong>(7)</strong> is being used by <code class="docutils literal notranslate"><span class="pre">Isabella</span></code> <strong>(8)</strong> in her application to sign
+the proposal in transaction <code class="docutils literal notranslate"><span class="pre">t6</span></code> <strong>(5)</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ClientIdentity</span></code> takes the information returned by <code class="docutils literal notranslate"><span class="pre">getCreator()</span></code> and puts a set
+of X.509 utility APIs on top of it to make it easier to use for this common use
+case.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ClientIdentity.html#getX509Certificate__anchor">getX509Certificate()</a>
+returns the full X.509 certificate of the transaction submitter, including all
+its attributes and their values. See interaction point <strong>(6)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ClientIdentity.html#getAttributeValue__anchor">getAttributeValue()</a>
+returns the value of a particular X.509 attribute, for example, the
+organizational unit <code class="docutils literal notranslate"><span class="pre">OU</span></code>, or distinguished name <code class="docutils literal notranslate"><span class="pre">DN</span></code>. See interaction point
+<strong>(6)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ClientIdentity.html#assertAttributeValue__anchor">assertAttributeValue()</a>
+returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if the specified attribute of the X.509 attribute has a
+specified value. See interaction point <strong>(6)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ClientIdentity.html#getID__anchor">getID()</a>
+returns the unique identity of the transaction submitter, according to their
+distinguished name and the issuing CA’s distinguished name. The format is
+<code class="docutils literal notranslate"><span class="pre">x509::{subject</span> <span class="pre">DN}::{issuer</span> <span class="pre">DN}</span></code>. See interaction point <strong>(6)</strong>.</p></li>
+<li><p><a class="reference external" href="https://fabric-shim.github.io/master/fabric-shim.ClientIdentity.html#getMSPID__anchor">getMSPID()</a>
+returns the channel MSP of the transaction submitter. This allows a smart
+contract to make processing decisions based on the submitter’s organizational
+identity. See interaction point <strong>(15)</strong> or <strong>(16)</strong>.</p></li>
+</ul>
+<!--- Licensed under Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/ --></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transactionhandler.html" class="btn btn-neutral float-right" title="Transaction handlers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chaincodenamespace.html" class="btn btn-neutral" title="Chaincode namespace" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Hyperledger 2019.
+    <br>
+      <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

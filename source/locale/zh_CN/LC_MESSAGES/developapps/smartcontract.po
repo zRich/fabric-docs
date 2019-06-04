@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:00+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/developapps/smartcontract.md:1
+msgid "Smart Contract Processing"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:3
 msgid "Audience: Architects, Application and smart contract developers"
@@ -40,6 +44,30 @@ msgstr ""
 msgid "We're going to cover:"
 msgstr "我们会讲到:"
 
+#: ../../source/developapps/smartcontract.md:14
+msgid "What is a smart contract and why it's important"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:15
+msgid "How to define a smart contract"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:16
+msgid "How to define a transaction"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:17
+msgid "How to implement a transaction"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:18
+msgid "How to represent a business object in a smart contract"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:19
+msgid "How to store and retrieve an object in the ledger"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:21
 msgid ""
 "If you'd like, you can download the sample and even run it locally. It is "
@@ -48,6 +76,10 @@ msgid ""
 "available for Java and GOLANG as well.)"
 msgstr ""
 "如果您愿意，可以下载示例，甚至在本地运行它。它是用JavaScript编写的，但是逻辑是完全独立于语言的，所以您可以很容易地看到发生了什么！(Java和GOLANG也将提供该示例。)"
+
+#: ../../source/developapps/smartcontract.md:26
+msgid "Smart Contract"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:28
 msgid ""
@@ -69,6 +101,10 @@ msgid ""
 "and data."
 msgstr ""
 "在PaperNet网络中，智能合约由不同的网络参与者共享，如MagnetoCorp和DigiBank。所有连接到网络的应用程序都必须使用相同版本的智能合约，以便它们共同实现相同的共享业务流程和数据。"
+
+#: ../../source/developapps/smartcontract.md:39
+msgid "Contract class"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:41
 msgid ""
@@ -137,6 +173,10 @@ msgid ""
 "can be disambiguated."
 msgstr ""
 "通常每个文件只有一个智能合约——合约往往有不同的生命周期，因此将它们分开是明智的。然而，在某些情况下，多个智能合约可能为应用程序提供语法帮助，例如EuroBond、DollarBond、YenBond，但本质上提供相同的功能。在这种情况下，可以消除智能合约和交易的歧义。"
+
+#: ../../source/developapps/smartcontract.md:98
+msgid "Transaction definition"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:100
 msgid "Within the class, locate the issue method."
@@ -222,6 +262,10 @@ msgid ""
 msgstr ""
 "在这两种情况下，观察商业票据交易与智能合约方法定义之间的1:1对应关系。不要担心异步，等待关键字——它们允许将异步JavaScript函数像其他编程语言中的同步函数一样对待。"
 
+#: ../../source/developapps/smartcontract.md:203
+msgid "Transaction logic"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:205
 msgid ""
 "Now that you've seen how contracts are structured and transactions are "
@@ -276,6 +320,10 @@ msgid ""
 "transaction?"
 msgstr "为什么不看看您是否理解赎回交易的逻辑?"
 
+#: ../../source/developapps/smartcontract.md:291
+msgid "Representing an object"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:293
 msgid ""
 "We've seen how to define and implement the issue, buy and redeem "
@@ -309,6 +357,37 @@ msgstr "查看每次调用发行交易时，如何创建包含交易数据的新
 msgid "A few important points to note:"
 msgstr "以下几点需要注意:"
 
+#: ../../source/developapps/smartcontract.md:325
+msgid ""
+"This is an in-memory representation; we'll see later how it appears on the "
+"ledger."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:329
+msgid ""
+"The CommercialPaper class extends the State class. State is an application-"
+"defined class which creates a common abstraction for a state. All states "
+"have a business object class which they represent, a composite key, can be "
+"serialized and de-serialized, and so on.  State helps our code be more "
+"legible when we are storing more than one business object type on the "
+"ledger. Examine the State class in the state.js file."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:338
+msgid ""
+"A paper computes its own key when it is created -- this key will be used "
+"when the ledger is accessed. The key is formed from a combination of issuer "
+"and paperNumber."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:350
+msgid ""
+"A paper is moved to the ISSUED state by the transaction, not by the paper "
+"class. That's because it's the smart contract that governs the lifecycle "
+"state of the paper. For example, an import transaction might create a new "
+"set of papers immediately in the TRADING state."
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:355
 msgid "The rest of the CommercialPaper class contains simple helper methods:"
 msgstr "CommercialPaper类的其余部分包含简单的辅助方法:"
@@ -319,6 +398,10 @@ msgid ""
 "commercial paper through its lifecycle. For example, in the redeem "
 "transaction we saw:"
 msgstr "回想一下智能合约如何使用这样的方法来移动商业票据通过生命周期。例如，在赎回交易中我们看到:"
+
+#: ../../source/developapps/smartcontract.md:374
+msgid "Access the ledger"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:376
 msgid "Now locate the PaperList class in the paperlist.js file:"
@@ -361,6 +444,22 @@ msgstr ""
 "账本中的每一项状态数据都需要这两个基本要素:\n"
 "- 键: 键由createCompositeKey()组成，使用固定的名称和状态键。构造PaperList对象时分配了名称，state. getsplitkey()确定每个状态的唯一键。\n"
 "- 数据:数据只是商业票据状态的序列化形式，使用State.serialize()实用程序方法创建。State类使用JSON序列化和反序列化数据，State的业务对象类(在我们的例子中是CommercialPaper)根据需要在构造PaperList对象时再次设置。"
+
+#: ../../source/developapps/smartcontract.md:415
+msgid ""
+"Key: key is formed with createCompositeKey() using a fixed name and the key "
+"of state. The name was assigned when the PaperList object was constructed, "
+"and state.getSplitKey() determines each state's unique key."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:420
+msgid ""
+"Data: data is simply the serialized form of the commercial paper state, "
+"created using the State.serialize() utility method. The State class "
+"serializes and deserializes data using JSON, and the State's business object"
+" class as required, in our case CommercialPaper, again set when the "
+"PaperList object was constructed."
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:427
 msgid ""

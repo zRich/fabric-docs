@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2019-04-22 19:58+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/metrics_reference.rst:2
 msgid "Metrics Reference"
@@ -28,19 +27,20 @@ msgstr ""
 
 #: ../../source/metrics_reference.rst:7
 msgid ""
-"The following metrics are currently exported for consumption by "
-"Prometheus."
+"The following metrics are currently exported for consumption by Prometheus."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:10
 msgid "Name"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:10 ../../source/metrics_reference.rst:273
+#: ../../source/metrics_reference.rst:10
+#: ../../source/metrics_reference.rst:273
 msgid "Type"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:10 ../../source/metrics_reference.rst:273
+#: ../../source/metrics_reference.rst:10
+#: ../../source/metrics_reference.rst:273
 msgid "Description"
 msgstr ""
 
@@ -55,7 +55,8 @@ msgstr ""
 #: ../../source/metrics_reference.rst:12 ../../source/metrics_reference.rst:15
 #: ../../source/metrics_reference.rst:23 ../../source/metrics_reference.rst:30
 #: ../../source/metrics_reference.rst:37 ../../source/metrics_reference.rst:70
-#: ../../source/metrics_reference.rst:80 ../../source/metrics_reference.rst:117
+#: ../../source/metrics_reference.rst:80
+#: ../../source/metrics_reference.rst:117
 #: ../../source/metrics_reference.rst:137
 #: ../../source/metrics_reference.rst:158
 #: ../../source/metrics_reference.rst:178
@@ -101,10 +102,10 @@ msgstr ""
 msgid "histogram"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:12 ../../source/metrics_reference.rst:275
+#: ../../source/metrics_reference.rst:12
+#: ../../source/metrics_reference.rst:275
 msgid ""
-"The time from first transaction enqueing to the block being cut in "
-"seconds."
+"The time from first transaction enqueing to the block being cut in seconds."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:12 ../../source/metrics_reference.rst:59
@@ -138,7 +139,8 @@ msgstr ""
 msgid "broadcast_enqueue_duration"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:15 ../../source/metrics_reference.rst:278
+#: ../../source/metrics_reference.rst:15
+#: ../../source/metrics_reference.rst:278
 msgid "The time to enqueue a transaction in seconds."
 msgstr ""
 
@@ -156,7 +158,8 @@ msgstr ""
 #: ../../source/metrics_reference.rst:42 ../../source/metrics_reference.rst:47
 #: ../../source/metrics_reference.rst:67 ../../source/metrics_reference.rst:77
 #: ../../source/metrics_reference.rst:86 ../../source/metrics_reference.rst:88
-#: ../../source/metrics_reference.rst:91 ../../source/metrics_reference.rst:121
+#: ../../source/metrics_reference.rst:91
+#: ../../source/metrics_reference.rst:121
 #: ../../source/metrics_reference.rst:124
 #: ../../source/metrics_reference.rst:128
 #: ../../source/metrics_reference.rst:131
@@ -222,7 +225,8 @@ msgstr ""
 msgid "counter"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:19 ../../source/metrics_reference.rst:280
+#: ../../source/metrics_reference.rst:19
+#: ../../source/metrics_reference.rst:280
 msgid "The number of transactions processed."
 msgstr ""
 
@@ -230,7 +234,8 @@ msgstr ""
 msgid "broadcast_validate_duration"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:23 ../../source/metrics_reference.rst:282
+#: ../../source/metrics_reference.rst:23
+#: ../../source/metrics_reference.rst:282
 msgid "The time to validate a transaction in seconds."
 msgstr ""
 
@@ -238,8 +243,10 @@ msgstr ""
 msgid "chaincode_execute_timeouts"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:27 ../../source/metrics_reference.rst:284
-msgid "The number of chaincode executions (Init or Invoke) that have timed out."
+#: ../../source/metrics_reference.rst:27
+#: ../../source/metrics_reference.rst:284
+msgid ""
+"The number of chaincode executions (Init or Invoke) that have timed out."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:27 ../../source/metrics_reference.rst:33
@@ -251,11 +258,13 @@ msgstr ""
 msgid "chaincode_launch_duration"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:30 ../../source/metrics_reference.rst:287
+#: ../../source/metrics_reference.rst:30
+#: ../../source/metrics_reference.rst:287
 msgid "The time to launch a chaincode."
 msgstr ""
 
-#: ../../source/metrics_reference.rst:30 ../../source/metrics_reference.rst:137
+#: ../../source/metrics_reference.rst:30
+#: ../../source/metrics_reference.rst:137
 msgid "chaincode success"
 msgstr ""
 
@@ -263,7 +272,8 @@ msgstr ""
 msgid "chaincode_launch_failures"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:33 ../../source/metrics_reference.rst:289
+#: ../../source/metrics_reference.rst:33
+#: ../../source/metrics_reference.rst:289
 msgid "The number of chaincode launches that have failed."
 msgstr ""
 
@@ -271,7 +281,8 @@ msgstr ""
 msgid "chaincode_launch_timeouts"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:35 ../../source/metrics_reference.rst:291
+#: ../../source/metrics_reference.rst:35
+#: ../../source/metrics_reference.rst:291
 msgid "The number of chaincode launches that have timed out."
 msgstr ""
 
@@ -279,7 +290,8 @@ msgstr ""
 msgid "chaincode_shim_request_duration"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:37 ../../source/metrics_reference.rst:293
+#: ../../source/metrics_reference.rst:37
+#: ../../source/metrics_reference.rst:293
 msgid "The time to complete chaincode shim requests."
 msgstr ""
 
@@ -291,7 +303,8 @@ msgstr ""
 msgid "chaincode_shim_requests_completed"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:42 ../../source/metrics_reference.rst:295
+#: ../../source/metrics_reference.rst:42
+#: ../../source/metrics_reference.rst:295
 msgid "The number of chaincode shim requests completed."
 msgstr ""
 
@@ -299,7 +312,8 @@ msgstr ""
 msgid "chaincode_shim_requests_received"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:47 ../../source/metrics_reference.rst:297
+#: ../../source/metrics_reference.rst:47
+#: ../../source/metrics_reference.rst:297
 msgid "The number of chaincode shim requests received."
 msgstr ""
 
@@ -317,7 +331,8 @@ msgstr ""
 #: ../../source/metrics_reference.rst:73 ../../source/metrics_reference.rst:75
 #: ../../source/metrics_reference.rst:83 ../../source/metrics_reference.rst:93
 #: ../../source/metrics_reference.rst:95 ../../source/metrics_reference.rst:97
-#: ../../source/metrics_reference.rst:99 ../../source/metrics_reference.rst:101
+#: ../../source/metrics_reference.rst:99
+#: ../../source/metrics_reference.rst:101
 #: ../../source/metrics_reference.rst:103
 #: ../../source/metrics_reference.rst:105
 #: ../../source/metrics_reference.rst:107
@@ -361,7 +376,8 @@ msgstr ""
 msgid "gauge"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:51 ../../source/metrics_reference.rst:299
+#: ../../source/metrics_reference.rst:51
+#: ../../source/metrics_reference.rst:299
 msgid "Capacity of the egress queue."
 msgstr ""
 
@@ -373,7 +389,8 @@ msgstr ""
 msgid "cluster_comm_egress_queue_length"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:55 ../../source/metrics_reference.rst:301
+#: ../../source/metrics_reference.rst:55
+#: ../../source/metrics_reference.rst:301
 msgid "Length of the egress queue."
 msgstr ""
 
@@ -381,7 +398,8 @@ msgstr ""
 msgid "cluster_comm_egress_queue_workers"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:59 ../../source/metrics_reference.rst:303
+#: ../../source/metrics_reference.rst:59
+#: ../../source/metrics_reference.rst:303
 msgid "Count of egress queue workers."
 msgstr ""
 
@@ -389,7 +407,8 @@ msgstr ""
 msgid "cluster_comm_egress_stream_count"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:61 ../../source/metrics_reference.rst:305
+#: ../../source/metrics_reference.rst:61
+#: ../../source/metrics_reference.rst:305
 msgid "Count of streams to other nodes."
 msgstr ""
 
@@ -397,7 +416,8 @@ msgstr ""
 msgid "cluster_comm_egress_tls_connection_count"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:63 ../../source/metrics_reference.rst:307
+#: ../../source/metrics_reference.rst:63
+#: ../../source/metrics_reference.rst:307
 msgid "Count of TLS connections to other nodes."
 msgstr ""
 
@@ -405,7 +425,8 @@ msgstr ""
 msgid "cluster_comm_ingress_stream_count"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:65 ../../source/metrics_reference.rst:309
+#: ../../source/metrics_reference.rst:65
+#: ../../source/metrics_reference.rst:309
 msgid "Count of streams from other nodes."
 msgstr ""
 
@@ -413,7 +434,8 @@ msgstr ""
 msgid "cluster_comm_msg_dropped_count"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:67 ../../source/metrics_reference.rst:311
+#: ../../source/metrics_reference.rst:67
+#: ../../source/metrics_reference.rst:311
 msgid "Count of messages dropped."
 msgstr ""
 
@@ -425,7 +447,8 @@ msgstr ""
 msgid "cluster_comm_msg_send_time"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:70 ../../source/metrics_reference.rst:313
+#: ../../source/metrics_reference.rst:70
+#: ../../source/metrics_reference.rst:313
 msgid "The time it takes to send a message in seconds."
 msgstr ""
 
@@ -433,7 +456,8 @@ msgstr ""
 msgid "consensus_etcdraft_cluster_size"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:73 ../../source/metrics_reference.rst:315
+#: ../../source/metrics_reference.rst:73
+#: ../../source/metrics_reference.rst:315
 msgid "Number of nodes in this channel."
 msgstr ""
 
@@ -441,7 +465,8 @@ msgstr ""
 msgid "consensus_etcdraft_committed_block_number"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:75 ../../source/metrics_reference.rst:317
+#: ../../source/metrics_reference.rst:75
+#: ../../source/metrics_reference.rst:317
 msgid "The block number of the latest block committed."
 msgstr ""
 
@@ -449,7 +474,8 @@ msgstr ""
 msgid "consensus_etcdraft_config_proposals_received"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:77 ../../source/metrics_reference.rst:319
+#: ../../source/metrics_reference.rst:77
+#: ../../source/metrics_reference.rst:319
 msgid "The total number of proposals received for config type transactions."
 msgstr ""
 
@@ -457,23 +483,28 @@ msgstr ""
 msgid "consensus_etcdraft_data_persist_duration"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:80 ../../source/metrics_reference.rst:322
-msgid "The time taken for etcd/raft data to be persisted in storage (in seconds)."
+#: ../../source/metrics_reference.rst:80
+#: ../../source/metrics_reference.rst:322
+msgid ""
+"The time taken for etcd/raft data to be persisted in storage (in seconds)."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:83
 msgid "consensus_etcdraft_is_leader"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:83 ../../source/metrics_reference.rst:325
-msgid "The leadership status of the current node: 1 if it is the leader else 0."
+#: ../../source/metrics_reference.rst:83
+#: ../../source/metrics_reference.rst:325
+msgid ""
+"The leadership status of the current node: 1 if it is the leader else 0."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:86
 msgid "consensus_etcdraft_leader_changes"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:86 ../../source/metrics_reference.rst:328
+#: ../../source/metrics_reference.rst:86
+#: ../../source/metrics_reference.rst:328
 msgid "The number of leader changes since process start."
 msgstr ""
 
@@ -481,7 +512,8 @@ msgstr ""
 msgid "consensus_etcdraft_normal_proposals_received"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:88 ../../source/metrics_reference.rst:330
+#: ../../source/metrics_reference.rst:88
+#: ../../source/metrics_reference.rst:330
 msgid "The total number of proposals received for normal type transactions."
 msgstr ""
 
@@ -489,7 +521,8 @@ msgstr ""
 msgid "consensus_etcdraft_proposal_failures"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:91 ../../source/metrics_reference.rst:333
+#: ../../source/metrics_reference.rst:91
+#: ../../source/metrics_reference.rst:333
 msgid "The number of proposal failures."
 msgstr ""
 
@@ -497,7 +530,8 @@ msgstr ""
 msgid "consensus_etcdraft_snapshot_block_number"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:93 ../../source/metrics_reference.rst:335
+#: ../../source/metrics_reference.rst:93
+#: ../../source/metrics_reference.rst:335
 msgid "The block number of the latest snapshot."
 msgstr ""
 
@@ -505,7 +539,8 @@ msgstr ""
 msgid "consensus_kafka_batch_size"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:95 ../../source/metrics_reference.rst:337
+#: ../../source/metrics_reference.rst:95
+#: ../../source/metrics_reference.rst:337
 msgid "The mean batch size in bytes sent to topics."
 msgstr ""
 
@@ -519,7 +554,8 @@ msgstr ""
 msgid "consensus_kafka_compression_ratio"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:97 ../../source/metrics_reference.rst:339
+#: ../../source/metrics_reference.rst:97
+#: ../../source/metrics_reference.rst:339
 msgid "The mean compression ratio (as percentage) for topics."
 msgstr ""
 
@@ -527,11 +563,13 @@ msgstr ""
 msgid "consensus_kafka_incoming_byte_rate"
 msgstr ""
 
-#: ../../source/metrics_reference.rst:99 ../../source/metrics_reference.rst:341
+#: ../../source/metrics_reference.rst:99
+#: ../../source/metrics_reference.rst:341
 msgid "Bytes/second read off brokers."
 msgstr ""
 
-#: ../../source/metrics_reference.rst:99 ../../source/metrics_reference.rst:101
+#: ../../source/metrics_reference.rst:99
+#: ../../source/metrics_reference.rst:101
 #: ../../source/metrics_reference.rst:107
 #: ../../source/metrics_reference.rst:109
 #: ../../source/metrics_reference.rst:111
@@ -664,7 +702,8 @@ msgstr ""
 
 #: ../../source/metrics_reference.rst:131
 #: ../../source/metrics_reference.rst:368
-msgid "The number of GRPC streams that have been closed for the deliver service."
+msgid ""
+"The number of GRPC streams that have been closed for the deliver service."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:134
@@ -673,7 +712,8 @@ msgstr ""
 
 #: ../../source/metrics_reference.rst:134
 #: ../../source/metrics_reference.rst:371
-msgid "The number of GRPC streams that have been opened for the deliver service."
+msgid ""
+"The number of GRPC streams that have been opened for the deliver service."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:137
@@ -901,8 +941,8 @@ msgstr ""
 #: ../../source/metrics_reference.rst:194
 #: ../../source/metrics_reference.rst:425
 msgid ""
-"Time it takes to retrieve missing private data elements from the ledger "
-"(in seconds)"
+"Time it takes to retrieve missing private data elements from the ledger (in "
+"seconds)"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:197
@@ -1074,8 +1114,7 @@ msgstr ""
 #: ../../source/metrics_reference.rst:244
 #: ../../source/metrics_reference.rst:463
 msgid ""
-"Time taken in seconds for committing the block and private data to "
-"storage."
+"Time taken in seconds for committing the block and private data to storage."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:247
@@ -1129,15 +1168,15 @@ msgstr ""
 
 #: ../../source/metrics_reference.rst:265
 msgid ""
-"The following metrics are currently emitted for consumption by StatsD. "
-"The ``%{variable_name}`` nomenclature represents segments that vary based"
-" on context."
+"The following metrics are currently emitted for consumption by StatsD. The "
+"``%{variable_name}`` nomenclature represents segments that vary based on "
+"context."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:269
 msgid ""
-"For example, ``%{channel}`` will be replaced with the name of the channel"
-" associated with the metric."
+"For example, ``%{channel}`` will be replaced with the name of the channel "
+"associated with the metric."
 msgstr ""
 
 #: ../../source/metrics_reference.rst:273
@@ -1177,11 +1216,13 @@ msgid "chaincode.launch_timeouts.%{chaincode}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:293
-msgid "chaincode.shim_request_duration.%{type}.%{channel}.%{chaincode}.%{success}"
+msgid ""
+"chaincode.shim_request_duration.%{type}.%{channel}.%{chaincode}.%{success}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:295
-msgid "chaincode.shim_requests_completed.%{type}.%{channel}.%{chaincode}.%{success}"
+msgid ""
+"chaincode.shim_requests_completed.%{type}.%{channel}.%{chaincode}.%{success}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:297
@@ -1325,7 +1366,8 @@ msgid "deliver.streams_opened"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:374
-msgid "dockercontroller.chaincode_container_build_duration.%{chaincode}.%{success}"
+msgid ""
+"dockercontroller.chaincode_container_build_duration.%{chaincode}.%{success}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:376
@@ -1337,7 +1379,8 @@ msgid "endorser.duplicate_transaction_failures.%{channel}.%{chaincode}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:382
-msgid "endorser.endorsement_failures.%{channel}.%{chaincode}.%{chaincodeerror}"
+msgid ""
+"endorser.endorsement_failures.%{channel}.%{chaincode}.%{chaincodeerror}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:384
@@ -1489,7 +1532,8 @@ msgid "ledger.statedb_commit_time.%{channel}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:469
-msgid "ledger.transaction_count.%{channel}.%{transaction_type}.%{chaincode}.%{validation_code}"
+msgid ""
+"ledger.transaction_count.%{channel}.%{transaction_type}.%{chaincode}.%{validation_code}"
 msgstr ""
 
 #: ../../source/metrics_reference.rst:471
@@ -1499,4 +1543,3 @@ msgstr ""
 #: ../../source/metrics_reference.rst:474
 msgid "logging.entries_written.%{level}"
 msgstr ""
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/commands/peerchaincode.md:1
+msgid "peer chaincode"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:3
 msgid "The peer chaincode command allows administrators to perform chaincode related operations on a peer, such as installing, instantiating, invoking, packaging, querying, and upgrading chaincode."
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:7
+msgid "Syntax"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:9
 msgid "The peer chaincode command has the following subcommands:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:11
+msgid "install"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:12
+msgid "instantiate"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:13
+msgid "invoke"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:14
+msgid "list"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:15
+msgid "package"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:16
+msgid "query"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:17
+msgid "signpackage"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:18
+msgid "upgrade"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:20
@@ -32,6 +72,10 @@ msgstr ""
 msgid "Each peer chaincode subcommand is described together with its options in its own section in this topic."
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:29
+msgid "Flags"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:31
 msgid "Each peer chaincode subcommand has both a set of flags specific to an individual subcommand, as well as a set of global flags that relate to all peer chaincode subcommands. Not all subcommands would use these flags. For instance, the query subcommand does not need the --orderer flag."
 msgstr ""
@@ -40,35 +84,167 @@ msgstr ""
 msgid "The individual flags are described with the relevant subcommand. The global flags are"
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:39
+msgid "--cafile <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:41
+msgid "Path to file containing PEM-encoded trusted certificate(s) for the ordering endpoint"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:44
+msgid "--certfile <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:46
+msgid "Path to file containing PEM-encoded X509 public key to use for mutual TLS communication with the orderer endpoint"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:49
+msgid "--keyfile <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:51
+msgid "Path to file containing PEM-encoded private key to use for mutual TLS communication with the orderer endpoint"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:54
+msgid "-o or --orderer <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:56
+msgid "Ordering service endpoint specified as <hostname or IP address>:<port>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:58
+msgid "--ordererTLSHostnameOverride <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:60
+msgid "The hostname override to use when validating the TLS connection to the orderer"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:62
+msgid "--tls"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:64
+msgid "Use TLS when communicating with the orderer endpoint"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:66
+msgid "--transient <string>"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:68
+msgid "Transient map of arguments in JSON encoding"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:70
+msgid "peer chaincode install"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:101
+msgid "peer chaincode instantiate"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:136
+msgid "peer chaincode invoke"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:168
+msgid "peer chaincode list"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:197
+msgid "peer chaincode package"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:228
+msgid "peer chaincode query"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:259
+msgid "peer chaincode signpackage"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:282
+msgid "peer chaincode upgrade"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:317
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:319
+msgid "peer chaincode instantiate examples"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:321
 msgid "Here are some examples of the peer chaincode instantiate command, which instantiates the chaincode named mycc at version 1.0 on channel mychannel:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:325
+msgid "Using the --tls and --cafile global flags to instantiate the chaincode in a network with TLS enabled:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:338
+msgid "Using only the command-specific options to instantiate the chaincode in a network with TLS disabled:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:350
+msgid "peer chaincode invoke example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:352
 msgid "Here is an example of the peer chaincode invoke command:"
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:354
+msgid "Invoke the chaincode named mycc at version 1.0 on channel mychannel on peer0.org1.example.com:7051 and peer0.org2.example.com:9051 (the peers defined by --peerAddresses), requesting to move 10 units from variable a to variable b:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:373
+msgid "Here you can see that the invoke was submitted successfully based on the log message:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:381
+msgid "A successful response indicates that the transaction was submitted for ordering successfully. The transaction will then be added to a block and, finally, validated or invalidated by each peer on the channel."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:385
+msgid "peer chaincode list example"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:387
-msgid "Here are some examples of the peer chaincode list command:"
+msgid "Here are some examples of the peer chaincode list  command:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:389
+msgid "Using the --installed flag to list the chaincodes installed on a peer."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:399
+msgid "You can see that the peer has installed a chaincode called mycc which is at version 1.0."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:402
+msgid "Using the --instantiated in combination with the -C (channel ID) flag to list the chaincodes instantiated on a channel."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:414
+msgid "You can see that chaincode mycc at version 1.0 is instantiated on channel mychannel."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:417
+msgid "peer chaincode package example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:419
 msgid "Here is an example of the peer chaincode package command, which packages the chaincode named mycc at version 1.1, creates the chaincode deployment spec, signs the package using the local MSP, and outputs it as ccpack.out:"
 msgstr ""
 
-#: ../../source/commands/peerchaincode.md:441
-msgid "Here is an example of the peer chaincode query command, which queries the peer ledger for the chaincode named mycc at version 1.0 for the value of variable a:"
-msgstr ""
-
-#: ../../source/commands/peerchaincode.md:459
-msgid "Here is an example of the peer chaincode signpackage command, which accepts an existing signed  package and creates a new one with signature of the local MSP appended to it."
-msgstr ""
-
-#: ../../source/commands/peerchaincode.md:471
-msgid "Here is an example of the peer chaincode upgrade command, which upgrades the chaincode named mycc at version 1.0 on channel mychannel to version 1.1, which contains a new variable c:"
-msgstr ""
-
-#: ../../source/commands/peerchaincode.md:524
-msgid "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>."
+#: ../../source/commands/peerchaincode.md:464
+msgid "peer chaincode signpackage ccwith1sig.pak ccwith2sig.pak Wrote signed package to ccwith2sig.pak successfully 2018-02-24 19:32:47.189 EST [main] main -> INFO 002 Exiting....."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-05-09 09:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/developapps/analysis.md:1
+msgid "Analysis"
+msgstr ""
+
 #: ../../source/developapps/analysis.md:3
 msgid "Audience: Architects, Application and smart contract developers, Business professionals"
 msgstr ""
 
 #: ../../source/developapps/analysis.md:6
 msgid "Let's analyze commercial paper in a little more detail. PaperNet participants such as MagnetoCorp and DigiBank use commercial paper transactions to achieve their business objectives -- let's examine the structure of a commercial paper and the transactions that affect it over time. We will also consider which organizations in PaperNet need to sign off on a transaction based on the trust relationships among the organizations in the network. Later we'll focus on how money flows between buyers and sellers; for now, let's focus on the first paper issued by MagnetoCorp."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:15
+msgid "Commercial paper lifecycle"
 msgstr ""
 
 #: ../../source/developapps/analysis.md:17
@@ -48,12 +56,20 @@ msgstr ""
 msgid "This final redeem transaction has ended the commercial paper's lifecycle -- it can be considered closed. It is often mandatory to keep a record of redeemed commercial papers, and the redeemed state allows us to quickly identify these. The value of Owner of a paper can be used to perform access control on the redeem transaction, by comparing the Owner against the identity of the transaction creator. Fabric supports this through the getCreator() chaincode API. If golang is used as a chaincode language, the client identity chaincode library can be used to retrieve additional attributes of the transaction creator."
 msgstr ""
 
+#: ../../source/developapps/analysis.md:81
+msgid "Transactions"
+msgstr ""
+
 #: ../../source/developapps/analysis.md:83
 msgid "We've seen that paper 00001's lifecycle is relatively straightforward -- it moves between issued, trading and redeemed as a result of an issue, buy, or redeem transaction."
 msgstr ""
 
 #: ../../source/developapps/analysis.md:87
 msgid "These three transactions are initiated by MagnetoCorp and DigiBank (twice), and drive the state changes of paper 00001. Let's have a look at the transactions that affect this paper in a little more detail:"
+msgstr ""
+
+#: ../../source/developapps/analysis.md:91
+msgid "Issue"
 msgstr ""
 
 #: ../../source/developapps/analysis.md:93
@@ -66,6 +82,10 @@ msgstr ""
 
 #: ../../source/developapps/analysis.md:112
 msgid "The only organization that is involved in the issue transaction is MagnetoCorp. Naturally, MagnetoCorp needs to sign off on the transaction. In general, the issuer of a paper is required to sign off on a transaction that issues a new paper."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:116
+msgid "Buy"
 msgstr ""
 
 #: ../../source/developapps/analysis.md:118
@@ -100,6 +120,10 @@ msgstr ""
 msgid "Intuitively, a buy transaction demands that both the selling as well as the buying organization need to sign off on such a transaction such that there is proof of the mutual agreement among the two parties that are part of the deal."
 msgstr ""
 
+#: ../../source/developapps/analysis.md:181
+msgid "Redeem"
+msgstr ""
+
 #: ../../source/developapps/analysis.md:183
 msgid "The redeem transaction for paper 00001 represents the end of its lifecycle. In our relatively simple example, DigiBank initiates the transaction which transfers the commercial paper back to MagnetoCorp:"
 msgstr ""
@@ -110,6 +134,10 @@ msgstr ""
 
 #: ../../source/developapps/analysis.md:201
 msgid "From a trust perspective, the same reasoning of the buy transaction also applies to the redeem instruction: both organizations involved in the transaction are required to sign off on it."
+msgstr ""
+
+#: ../../source/developapps/analysis.md:205
+msgid "The Ledger"
 msgstr ""
 
 #: ../../source/developapps/analysis.md:207

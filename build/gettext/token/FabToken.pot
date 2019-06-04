@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/token/FabToken.md:1
+msgid "Using FabToken"
+msgstr ""
+
 #: ../../source/token/FabToken.md:3
 msgid "FabToken allows users to easily tokenize assets on Hyperledger Fabric. Tokens are being introduced as an Alpha feature in Fabric v2.0. You can use the following operations guide to learn about FabToken and get started with tokens. You can find an example creating tokens on Fabric that extends the Building your First Network tutorial at the end of this guide."
+msgstr ""
+
+#: ../../source/token/FabToken.md:9
+#: ../../source/token/FabToken.md:15
+msgid "What is FabToken"
+msgstr ""
+
+#: ../../source/token/FabToken.md:10
+msgid "The Token lifecycle"
+msgstr ""
+
+#: ../../source/token/FabToken.md:11
+msgid "The Token transaction flow"
+msgstr ""
+
+#: ../../source/token/FabToken.md:12
+msgid "FabToken example"
+msgstr ""
+
+#: ../../source/token/FabToken.md:13
+#: ../../source/token/FabToken.md:517
+msgid "Future features"
 msgstr ""
 
 #: ../../source/token/FabToken.md:17
@@ -36,8 +62,24 @@ msgstr ""
 msgid "FabToken provides a simple interface for tokenizing assets on Fabric channels, while taking advantage of the validation and trust that channels provide. Tokens use the channel ordering services and peers for consensus and validation. Tokens also use channel policies to govern which members are allowed to own and issue tokens. However, users do not need to use smart contracts to create or manage tokens. Tokens can establish immutability and ownership of an asset without requiring that channel members write and approve complicated business logic to create and govern those assets. Token owners can use trusted peers to create token transactions, without having to rely on peers belonging to other organizations to execute and endorse a transaction."
 msgstr ""
 
+#: ../../source/token/FabToken.md:48
+msgid "The token lifecycle"
+msgstr ""
+
 #: ../../source/token/FabToken.md:50
 msgid "Tokens have a closed lifecycle within Hyperledger Fabric. They can be issued, transferred, and then redeemed."
+msgstr ""
+
+#: ../../source/token/FabToken.md:53
+msgid "Tokens are created by being issued. The token issuer defines the type of asset represented by the tokens and the quantity. The issuer also assigns issued tokens to their original owners."
+msgstr ""
+
+#: ../../source/token/FabToken.md:57
+msgid "Tokens are \"spent\" by being transferred. The token owner transfers the asset represented by token to a new owner that is a member of the fabric channel. Once the token has been transferred, it can no longer be spent or accessed by the previous owner."
+msgstr ""
+
+#: ../../source/token/FabToken.md:62
+msgid "Tokens are removed from the channel by being redeemed. Redeemed tokens are no longer owned by any channel member and thus can no longer be spent."
 msgstr ""
 
 #: ../../source/token/FabToken.md:65
@@ -52,12 +94,28 @@ msgstr ""
 msgid "The following guide describes how tokens are created and used in Fabric. The instructions provide details on what steps and information are required to work with FabToken whether you are using the Fabric token client, the API's provided by the Fabric SDKs, or Token CLI. You can find a FabToken example at the end of this guide."
 msgstr ""
 
+#: ../../source/token/FabToken.md:91
+msgid "Issuing tokens"
+msgstr ""
+
 #: ../../source/token/FabToken.md:93
 msgid "Tokens can only be created by Issuers. Issuers are channel members that are given permission to issue tokens by the IssuingPolicy. Users that meet the policy can add tokens to the ledger using an issue transaction."
 msgstr ""
 
 #: ../../source/token/FabToken.md:97
 msgid "Tokens are created with three attributes:"
+msgstr ""
+
+#: ../../source/token/FabToken.md:99
+msgid "Owner identifies the channel member that can transfer or redeem the new token through its MSP identity."
+msgstr ""
+
+#: ../../source/token/FabToken.md:101
+msgid "Type describes the asset the token represents, such as USD, EUR, or BYFNcoins in the example below."
+msgstr ""
+
+#: ../../source/token/FabToken.md:103
+msgid "Quantity is the number of units of Type that the Token represents."
 msgstr ""
 
 #: ../../source/token/FabToken.md:105
@@ -68,12 +126,44 @@ msgstr ""
 msgid "The IssuingPolicy can also restrict which users can issue tokens of specific types. Within the Fabric v2.0 Alpha release, IssuingPolicy is set to ANY, meaning that all channel members will be allowed to issue tokens of any type. Users will be allowed to restrict this policy in a future release."
 msgstr ""
 
+#: ../../source/token/FabToken.md:115
+msgid "List"
+msgstr ""
+
 #: ../../source/token/FabToken.md:117
 msgid "You can use the List method or command to query the unspent tokens that you own. A successful list command returns the following values:"
 msgstr ""
 
+#: ../../source/token/FabToken.md:120
+msgid "TokenID is the identifier of each token you own."
+msgstr ""
+
+#: ../../source/token/FabToken.md:121
+msgid "Type is the asset your tokens represent."
+msgstr ""
+
+#: ../../source/token/FabToken.md:122
+msgid "Quantity is number of units of Type in hexadecimal format of each asset that you own."
+msgstr ""
+
+#: ../../source/token/FabToken.md:125
+msgid "Transfer"
+msgstr ""
+
 #: ../../source/token/FabToken.md:127
 msgid "You can spend the tokens that you own by transferring them to other channel members. You can transfer a token by providing the following values:"
+msgstr ""
+
+#: ../../source/token/FabToken.md:130
+msgid "Token ID: The ID of the tokens you want to transfer."
+msgstr ""
+
+#: ../../source/token/FabToken.md:131
+msgid "Quantity: The amount of the asset represented by each token to be transferred."
+msgstr ""
+
+#: ../../source/token/FabToken.md:133
+msgid "Recipient: The MSP identifier of the channel member you want to transfer the assets to."
 msgstr ""
 
 #: ../../source/token/FabToken.md:136
@@ -88,6 +178,18 @@ msgstr ""
 msgid "To be successful, a transfer needs to meet the following conditions:"
 msgstr ""
 
+#: ../../source/token/FabToken.md:153
+msgid "The tokens being transferred need to belong to the transaction initiator and are unspent."
+msgstr ""
+
+#: ../../source/token/FabToken.md:155
+msgid "All input tokens of the transaction need to be of the same type."
+msgstr ""
+
+#: ../../source/token/FabToken.md:157
+msgid "Redeem"
+msgstr ""
+
 #: ../../source/token/FabToken.md:159
 msgid "Redeemed tokens can no longer be spent. Redeeming a token removes an asset from the business network being managed by the channel and guarantees that it can no longer be transferred or changed. If an item in a supply chain reaches its final destination, or a financial asset reaches its term, the token representing the asset can be redeemed since the asset no longer needs to be used by the members of the channel."
 msgstr ""
@@ -96,8 +198,20 @@ msgstr ""
 msgid "An owner needs to provide the following arguments to redeem tokens:"
 msgstr ""
 
+#: ../../source/token/FabToken.md:167
+msgid "Token ID: The ID of the token you want to redeem."
+msgstr ""
+
+#: ../../source/token/FabToken.md:168
+msgid "Quantity: The quantity of the asset represented by each token you want to redeem."
+msgstr ""
+
 #: ../../source/token/FabToken.md:171
 msgid "Tokens can only be redeemed if the token owner submits the redeem transaction. It is not necessary to redeem the entire quantity of the asset represented by the token. For example, if you have a token representing 100 dollars, and want to redeem 50, the redeem transaction will create a new token worth 50 dollars, and transfer another 50 to a restricted account without an owner. Because the account has no owner, the 50 dollars can no longer be transferred by any members of the channel."
+msgstr ""
+
+#: ../../source/token/FabToken.md:179
+msgid "The token transaction flow"
 msgstr ""
 
 #: ../../source/token/FabToken.md:181
@@ -108,8 +222,24 @@ msgstr ""
 msgid "The FabToken client used by the token CLI and the Fabric SDK for Node.js leverages trusted peers, referred to as prover peers to create token transactions. For example, a user belonging to an organization that operates a peer could use that peer to query their tokens and spend them. Any peer with the Fabric 2.0 Alpha code can be used as a prover peer if it is joined to a channel with V2_0 capabilities enabled."
 msgstr ""
 
+#: ../../source/token/FabToken.md:197
+msgid "In the case of an issue transaction, the prover peer will verify that the requested operation satisfies the IssuingPolicy associated with the tokens being created."
+msgstr ""
+
+#: ../../source/token/FabToken.md:200
+msgid "In the case of transfer, redeem and list, the peer checks that the input tokens are unspent and belong to the entity requesting the transaction."
+msgstr ""
+
+#: ../../source/token/FabToken.md:202
+msgid "In the case of transfer and redeem, the peer checks that the input and output tokens are all of the same type and that the output tokens have the same type and sum up to the same quantity as the input tokens."
+msgstr ""
+
 #: ../../source/token/FabToken.md:206
 msgid "Once the client has generated the token transaction with the help of the prover peer, it sends the transaction to the ordering service. The ordering service then sends the transaction to committing peers to be validated and added to the ledger. The committing peers check that the transaction conforms to the UTXO transaction model, and that the underlying asset is not being double spent or over spent."
+msgstr ""
+
+#: ../../source/token/FabToken.md:213
+msgid "FabToken Example"
 msgstr ""
 
 #: ../../source/token/FabToken.md:215
@@ -118,6 +248,10 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:221
 msgid "You can also work with tokens using the Fabric SDK for Node.js. Visit the How to perform token operations tutorial in the Node.js Fabric SDK documentation. You can also find a sample that uses the Node.js Fabric SDK to issue, transfer, and redeem tokens in the Fabric Samples repository."
+msgstr ""
+
+#: ../../source/token/FabToken.md:226
+msgid "Start the network"
 msgstr ""
 
 #: ../../source/token/FabToken.md:228
@@ -140,30 +274,12 @@ msgstr ""
 msgid "The Token CLI uses configuration files from each organization with information about which peers the organization trusts, and which ordering service to send the transactions. Below is the configuration file for Org1. Notice that Org1 uses its own peer as a prover peer, and provides the peer endpoint information in the \"ProverPeer\" section of the file."
 msgstr ""
 
-#: ../../source/token/FabToken.md:258
-msgid "<details> <summary> Org1 Configuration file </summary>"
-msgstr ""
-
-#: ../../source/token/FabToken.md:293
-#: ../../source/token/FabToken.md:335
-#: ../../source/token/FabToken.md:353
-msgid "</details>"
-msgstr ""
-
 #: ../../source/token/FabToken.md:295
 msgid "Paste the file above in a text editor and save it as configorg1.json. Once you have saved configorg1.json, create a new file in your text editor, and paste the JSON file below. Save the file as configorg2.json in the same location:"
 msgstr ""
 
-#: ../../source/token/FabToken.md:300
-msgid "<details> <summary> Org2 Configuration file </summary>"
-msgstr ""
-
 #: ../../source/token/FabToken.md:337
 msgid "We now need to save one additional file that we will use when we transfer our tokens. Create a new file in your text editor, and save the file below as shares.json:"
-msgstr ""
-
-#: ../../source/token/FabToken.md:341
-msgid "<details> <summary> shares.json </summary>"
 msgstr ""
 
 #: ../../source/token/FabToken.md:355
@@ -172,6 +288,10 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:362
 msgid "The command will create the organizations, peers, ordering service, and channel we will use to issue and transfer the tokens. When the command completes successfully, you should see the following result:"
+msgstr ""
+
+#: ../../source/token/FabToken.md:377
+msgid "Issue tokens"
 msgstr ""
 
 #: ../../source/token/FabToken.md:379
@@ -193,6 +313,10 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:422
 msgid "In the command output, you can find the tokenID, the token type, and the quantity. The tokenID is the transactionID of the transaction that created the token."
+msgstr ""
+
+#: ../../source/token/FabToken.md:426
+msgid "Transferring tokens"
 msgstr ""
 
 #: ../../source/token/FabToken.md:428
@@ -217,6 +341,10 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:469
 msgid "The tokenID of the coins owned by Org2 uses the same transaction ID as the coins owned by Org1 since it was created by the same transaction. However, because it was the second output of the transaction, it is also given an index to distinguish it from the token owned by Org1."
+msgstr ""
+
+#: ../../source/token/FabToken.md:479
+msgid "Redeeming tokens"
 msgstr ""
 
 #: ../../source/token/FabToken.md:481

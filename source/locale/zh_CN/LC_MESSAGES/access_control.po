@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-05-09 08:55+0800\n"
 "PO-Revision-Date: 2019-04-22 19:58+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/access_control.md:1
+msgid "Access Control Lists (ACL)"
+msgstr ""
+
+#: ../../source/access_control.md:3
+msgid "What is an Access Control List?"
+msgstr ""
 
 #: ../../source/access_control.md:5
 msgid ""
@@ -43,6 +51,10 @@ msgid ""
 "But before we can do that, it's necessary to understand a little about "
 "resources and policies."
 msgstr "但在此之前，有必要对资源和策略有一些了解。"
+
+#: ../../source/access_control.md:17
+msgid "Resources"
+msgstr ""
 
 #: ../../source/access_control.md:19
 msgid ""
@@ -69,6 +81,10 @@ msgid ""
 msgstr ""
 "在configtx.yaml中命名的资源是Fabric当前定义的所有内部资源的详细列表。那里采用的宽松约定是<component>/<resource>。因此cscc/GetConfigBlock是CSCC组件中GetConfigBlock调用的资源。"
 
+#: ../../source/access_control.md:33
+msgid "Policies"
+msgstr ""
+
 #: ../../source/access_control.md:35
 msgid ""
 "Policies are fundamental to the way Fabric works because they allow the "
@@ -86,6 +102,10 @@ msgid ""
 "Policies can be structured in one of two ways: as Signature policies or as "
 "an ImplicitMeta policy."
 msgstr "策略可以通过以下两种方式构建：签名策略或 ImplicitMeta策略。"
+
+#: ../../source/access_control.md:45
+msgid "Signature policies"
+msgstr ""
 
 #: ../../source/access_control.md:47
 msgid ""
@@ -108,6 +128,10 @@ msgid ""
 msgstr ""
 "签名策略支持AND、OR和NOutOf的任意组合，允许构造非常强大的规则，比如：“一个org "
 "A管理员和两个其他管理员，或者20个org管理员中的11个”。"
+
+#: ../../source/access_control.md:66
+msgid "ImplicitMeta policies"
+msgstr ""
 
 #: ../../source/access_control.md:68
 msgid ""
@@ -149,6 +173,10 @@ msgid ""
 "where Admins is eventually being specified by lower level Signature policy."
 msgstr "在这里，大多数管理员可以满足策略AnotherPolicy，其中管理员最终由下级的签名策略指定。"
 
+#: ../../source/access_control.md:99
+msgid "Where is access control specified?"
+msgstr ""
+
 #: ../../source/access_control.md:101
 msgid ""
 "Access control defaults exist inside configtx.yaml, the file that "
@@ -163,6 +191,10 @@ msgid ""
 "particular channel."
 msgstr ""
 "访问控制可以通过以下两种方式之一进行更新：编辑configtx.yaml，它将ACL更改传播到任何新通道，或者通过更新特定通道配置文件中的访问控制。"
+
+#: ../../source/access_control.md:108
+msgid "How ACLs are formatted in configtx.yaml"
+msgstr ""
 
 #: ../../source/access_control.md:110
 msgid ""
@@ -183,6 +215,10 @@ msgid ""
 "respectively."
 msgstr ""
 "这些ACL定义了对节点/提议和事件/区块资源的访问，仅限于满足分别在正则路径/Channel/Application/Writers和/Channel/Application/Readers上定义的策略。"
+
+#: ../../source/access_control.md:129
+msgid "Updating ACL defaults in configtx.yaml"
+msgstr ""
 
 #: ../../source/access_control.md:131
 msgid ""
@@ -257,6 +293,10 @@ msgid ""
 "following flow:"
 msgstr "如果已经创建了希望使用这个ACL的通道，则它们必须使用以下流程一次更新一个通道配置:"
 
+#: ../../source/access_control.md:193
+msgid "Updating ACL defaults in the channel config"
+msgstr ""
+
 #: ../../source/access_control.md:195
 msgid ""
 "If channels have already been created that want to use MyPolicy to restrict "
@@ -307,6 +347,10 @@ msgid ""
 " usual channel update process."
 msgstr "一旦更新了配置，就需要通过通常的通道更新流程来提交配置。"
 
+#: ../../source/access_control.md:263
+msgid "Satisfying an ACL that requires access to multiple resources"
+msgstr ""
+
 #: ../../source/access_control.md:265
 msgid ""
 "If a member makes a request that calls multiple system chaincodes, all of "
@@ -338,6 +382,11 @@ msgid ""
 "proposals are not impossible to satisfy (unless that is the intention)."
 msgstr ""
 "在默认配置中，Writer是一个签名策略，其规则是SampleOrg.member。换句话说，是“我组织的任何成员”。上面列出的MyPolicy有一个SampleOrg.admin规则，或“我的组织的任何管理员”。为了满足这些ACL，成员必须同时是管理员和SampleOrg成员。默认情况下，所有管理员都是成员（虽然不是所有管理员都是成员），但是可以将这些策略改写为您希望它们成为的任何内容。因此，重要的是跟踪这些策略，以确保节点提议的ACL是可以满足的（除非这是意图）。"
+
+#: ../../source/access_control.md:284
+msgid ""
+"Migration considerations for customers using the experimental ACL feature"
+msgstr ""
 
 #: ../../source/access_control.md:286
 msgid ""

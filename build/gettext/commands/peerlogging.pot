@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-05-09 09:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/commands/peerlogging.md:1
+#: ../../source/commands/peerlogging.md:27
+msgid "peer logging"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:3
 msgid "The peer logging subcommand allows administrators to dynamically view and configure the log levels of a peer."
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:6
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:8
@@ -36,20 +45,56 @@ msgstr ""
 msgid "Each peer logging subcommand is described together with its options in its own section in this topic."
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:48
+msgid "peer logging getlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:60
+msgid "peer logging revertlevels"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:72
+msgid "peer logging setlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:83
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:85
+msgid "Get Level Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:87
 msgid "Here is an example of the peer logging getlevel command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:98
+msgid "Get Log Spec Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:100
 msgid "Here is an example of the peer logging getlogspec command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:111
+msgid "Set Level Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:113
 msgid "Here are some examples of the peer logging setlevel command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:132
+msgid "Set Log Spec Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:134
 msgid "Here is an example of the peer logging setlogspec command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:150
+msgid "Revert Levels Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:152

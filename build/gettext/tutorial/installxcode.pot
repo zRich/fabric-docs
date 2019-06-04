@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/tutorial/installxcode.md:1
+msgid "Install Xcode"
+msgstr ""
+
 #: ../../source/tutorial/installxcode.md:3
 msgid "If your Mac OS is running Mojave, you will need to install Xcode."
 msgstr ""
 
+#: ../../source/tutorial/installxcode.md:5
+msgid "Install Xcode from this website."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:7
+msgid "Accept the Terms and Conditions."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:9
+msgid "Ensure that the Xcode app is in the /Applications directory. Do not put it in /Users/{user}/Applications)."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:12
+msgid "Point xcode-select to the Xcode app Developer directory using the following command:"
+msgstr ""
+
 #: ../../source/tutorial/installxcode.md:19
 msgid "Note: Make sure your Xcode application path is correct."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:20
+msgid "Xcode: /Applications/Xcode.app/Contents/Developer"
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:21
+msgid "Xcode-beta: /Applications/Xcode-beta.app/Contents/Developer"
 msgstr ""
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-05-09 09:03+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/developapps/analysis.md:1
+msgid "Analysis"
+msgstr ""
 
 #: ../../source/developapps/analysis.md:3
 msgid ""
@@ -39,6 +43,10 @@ msgid ""
 "sellers; for now, let's focus on the first paper issued by MagnetoCorp."
 msgstr ""
 "让我们更详细地分析一下商业票据。PaperNet的参与者，如MagnetoCorp和DigiBank，使用商业票据交易来实现他们的业务目标——让我们研究一下商业票据的结构以及随着时间的推移影响它的交易。我们还将根据网络中组织之间的信任关系，考虑PaperNet中的哪些组织需要签署交易。稍后我们将重点讨论资金如何在买家和卖家之间流动；现在，让我们专注于MagnetoCorp发表的第一篇论文。"
+
+#: ../../source/developapps/analysis.md:15
+msgid "Commercial paper lifecycle"
+msgstr ""
 
 #: ../../source/developapps/analysis.md:17
 msgid ""
@@ -100,6 +108,10 @@ msgstr ""
 "最后的赎回交易结束了商业票据的生命周期——可以认为已经结束。通常必须保存赎回的商业票据的记录，而赎回状态允许我们快速识别这些票据。通过比较所有者和交易创建者的身份，票据所有者这个值可以用于对赎回交易执行访问控制。Fabric通过getCreator()"
 " 链码API支持这一点。如果将GO语言用作链码语言，还可以使用客户端标识链码库检索交易创建者的其他属性。"
 
+#: ../../source/developapps/analysis.md:81
+msgid "Transactions"
+msgstr ""
+
 #: ../../source/developapps/analysis.md:83
 msgid ""
 "We've seen that paper 00001's lifecycle is relatively straightforward -- it "
@@ -113,6 +125,10 @@ msgid ""
 "and drive the state changes of paper 00001. Let's have a look at the "
 "transactions that affect this paper in a little more detail:"
 msgstr "这三笔交易由MagnetoCorp和DigiBank发起(两次)，驱动票据00001状态变化。让我们更详细地看看影响票据的交易:"
+
+#: ../../source/developapps/analysis.md:91
+msgid "Issue"
+msgstr ""
 
 #: ../../source/developapps/analysis.md:93
 msgid "Examine the first transaction initiated by MagnetoCorp:"
@@ -139,6 +155,10 @@ msgid ""
 "that issues a new paper."
 msgstr ""
 "参与此次发起交易的唯一组织是MagnetoCorp.。自然，MagnetoCorp需要批准这笔交易。一般来说，一张票据的发起者必须在发起新票据的交易上签字。"
+
+#: ../../source/developapps/analysis.md:116
+msgid "Buy"
+msgstr ""
 
 #: ../../source/developapps/analysis.md:118
 msgid ""
@@ -202,6 +222,10 @@ msgid ""
 "deal."
 msgstr "直观地说，购买交易要求销售和购买组织都需要在这样的交易上签名，这样就有证据表明交易双方达成了协议。"
 
+#: ../../source/developapps/analysis.md:181
+msgid "Redeem"
+msgstr ""
+
 #: ../../source/developapps/analysis.md:183
 msgid ""
 "The redeem transaction for paper 00001 represents the end of its lifecycle. "
@@ -225,6 +249,10 @@ msgid ""
 "applies to the redeem instruction: both organizations involved in the "
 "transaction are required to sign off on it."
 msgstr "从信任的角度来看，购买交易的相同推理也适用于赎回指令：参与交易的两个组织都需要在上面签名。"
+
+#: ../../source/developapps/analysis.md:205
+msgid "The Ledger"
+msgstr ""
 
 #: ../../source/developapps/analysis.md:207
 msgid ""

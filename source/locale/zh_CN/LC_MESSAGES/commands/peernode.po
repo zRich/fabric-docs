@@ -1,54 +1,79 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
+"PO-Revision-Date: 2019-04-22 20:01+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/commands/peernode.md:1
+msgid "peer node"
+msgstr ""
 
 #: ../../source/commands/peernode.md:3
 msgid ""
-"The peer node command allows an administrator to start a peer node or "
-"check the status of a peer node."
+"The peer node command allows an administrator to start a peer node or check "
+"the status of a peer node."
+msgstr ""
+
+#: ../../source/commands/peernode.md:6
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/peernode.md:8
 msgid "The peer node command has the following subcommands:"
 msgstr ""
 
-#: ../../source/commands/peernode.md:41
+#: ../../source/commands/peernode.md:10
+msgid "start"
+msgstr ""
+
+#: ../../source/commands/peernode.md:11
+msgid "status"
+msgstr ""
+
+#: ../../source/commands/peernode.md:13
+msgid "peer node start"
+msgstr ""
+
+#: ../../source/commands/peernode.md:25
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peernode.md:27
+msgid "peer node start example"
+msgstr ""
+
+#: ../../source/commands/peernode.md:29
 msgid "The following command:"
 msgstr ""
 
-#: ../../source/commands/peernode.md:47
+#: ../../source/commands/peernode.md:35
 msgid ""
 "starts a peer node in chaincode development mode. Normally chaincode "
 "containers are started and maintained by peer. However in chaincode "
-"development mode, chaincode is built and started by the user. This mode "
-"is useful during chaincode development phase for iterative development. "
-"See more information on development mode in the chaincode tutorial."
+"development mode, chaincode is built and started by the user. This mode is "
+"useful during chaincode development phase for iterative development. See "
+"more information on development mode in the chaincode tutorial."
 msgstr ""
 
-#: ../../source/commands/peernode.md:51
+#: ../../source/commands/peernode.md:39
 msgid ""
-"<a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative "
-"Commons License\" style=\"border-width:0\" "
-"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This"
-" work is licensed under a <a rel=\"license\" "
+"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img"
+" alt=\"Creative Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This "
+"work is licensed under a <a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
 "Attribution 4.0 International License</a>."
 msgstr ""
-

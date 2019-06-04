@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/smartcontract/smartcontract.md:1
+msgid "Smart Contracts and Chaincode"
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:3
 msgid "Audience: Architects, application and smart contract developers, administrators"
@@ -32,12 +36,53 @@ msgstr ""
 msgid "In this topic, we'll cover:"
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:24
+msgid "What is a smart contract"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:25
+msgid "A note on terminology"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:26
+msgid "Smart contracts and the ledger"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:27
+msgid "How to develop a smart contract"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:28
+msgid "The importance of endorsement policies"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:29
+#: ../../source/smartcontract/smartcontract.md:199
+msgid "Valid transactions"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:30
+msgid "Smart contracts and channels"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:31
+msgid "Communicating between smart contracts"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:32
+msgid "What is system chaincode?"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:34
+msgid "Smart contract"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:36
 msgid "Before businesses can transact with each other, they must define a common set of contracts covering common terms, data, rules, concept definitions, and processes. Taken together, these contracts lay out the business model that govern all of the interactions between transacting parties."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:41
-msgid "smart.diagram1 A smart contract defines the rules between different organizations in executable code. Applications invoke a smart contract to generate transactions that are recorded on the ledger."
+msgid "A smart contract defines the rules between different organizations in executable code. Applications invoke a smart contract to generate transactions that are recorded on the ledger."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:45
@@ -48,16 +93,24 @@ msgstr ""
 msgid "In the diagram above, we can see how two organizations, ORG1 and ORG2 have defined a car smart contract to query, transfer and update cars.  Applications from these organizations invoke this smart contract to perform an agreed step in a business process, for example to transfer ownership of a specific car from ORG1 to ORG2."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:62
+msgid "Terminology"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:64
 msgid "Hyperledger Fabric users often use the terms smart contract and chaincode interchangeably. In general, a smart contract defines the transaction logic that controls the lifecycle of a business object contained in the world state. It is then packaged into a chaincode which is then deployed to a blockchain network.  Think of smart contracts as governing transactions, whereas chaincode governs how smart contracts are packaged for deployment."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:71
-msgid "smart.diagram2 A smart contract is defined within a chaincode.  Multiple smart contracts can be defined within the same chaincode. When a chaincode is deployed, all smart contracts within it are made available to applications."
+msgid "A smart contract is defined within a chaincode.  Multiple smart contracts can be defined within the same chaincode. When a chaincode is deployed, all smart contracts within it are made available to applications."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:76
 msgid "In the diagram, we can see a vehicle chaincode that contains three smart contracts: cars, boats and trucks.  We can also see an insurance chaincode that contains four smart contracts: policy, liability, syndication and securitization.  In both cases these contracts cover key aspects of the business process relating to vehicles and insurance. In this topic, we will use the car contract as an example. We can see that a smart contract is a domain specific program which relates to specific business processes, whereas a chaincode is a technical container of a group of related smart contracts for installation and instantiation."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:87
+msgid "Ledger"
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:89
@@ -68,8 +121,24 @@ msgstr ""
 msgid "Smart contracts primarily put, get and delete states in the world state, and can also query the immutable blockchain record of transactions."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:99
+msgid "A get typically represents a query to retrieve information about the current state of a business object."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:101
+msgid "A put typically creates a new business object or modifies an existing one in the ledger world state."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:103
+msgid "A delete typically represents the removal of a business object from the current state of the ledger, but not its history."
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:106
 msgid "Smart contracts have many APIs available to them. Critically, in all cases, whether transactions create, read, update or delete business objects in the world state, the blockchain contains an immutable record of these changes."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:112
+msgid "Development"
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:114
@@ -88,12 +157,16 @@ msgstr ""
 msgid "A smart contract can describe an almost infinite array of business use cases relating to immutability of data in multi-organizational decision making. The job of a smart contract developer is to take an existing business process that might govern financial prices or delivery conditions, and express it as a smart contract in a programming language such as JavaScript, GOLANG or Java. The legal and technical skills required to convert centuries of legal language into programming language is increasingly practiced by smart contract auditors. You can learn about how to design and develop a smart contract in the Developing applications topic."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:155
+msgid "Endorsement"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:157
 msgid "Associated with every chaincode is an endorsement policy that applies to all of the smart contracts defined within it. An endorsement policy is very important; it indicates which organizations in a blockchain network must sign a transaction generated by a given smart contract in order for that transaction to be declared valid."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:163
-msgid "smart.diagram3 Every smart contract has an endorsement policy associated with it. This endorsement policy identifies which organizations must approve transactions generated by the smart contract before those transactions can be identified as valid."
+msgid "Every smart contract has an endorsement policy associated with it. This endorsement policy identifies which organizations must approve transactions generated by the smart contract before those transactions can be identified as valid."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:168
@@ -117,7 +190,7 @@ msgid "When a smart contract executes, it runs on a peer node owned by an organi
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:210
-msgid "smart.diagram4 All transactions have an identifier, a proposal, and a response signed by a set of organizations. All transactions are recorded on the blockchain, whether valid or invalid, but only valid transactions contribute to the world state."
+msgid "All transactions have an identifier, a proposal, and a response signed by a set of organizations. All transactions are recorded on the blockchain, whether valid or invalid, but only valid transactions contribute to the world state."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:215
@@ -136,12 +209,16 @@ msgstr ""
 msgid "Finally, to understand how to use a smart contract or chaincode with world state, read the chaincode namespace topic."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:244
+msgid "Channels"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:246
 msgid "Hyperledger Fabric allows an organization to simultaneously participate in multiple, separate blockchain networks via channels. By joining multiple channels, an organization can participate in a so-called network of networks.  Channels provide an efficient sharing of infrastructure while maintaining data and communications privacy. They are independent enough to help organizations separate their work traffic with different counterparties, but integrated enough to allow them to coordinate independent activities when necessary."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:255
-msgid "smart.diagram5 A channel provides a completely separate communication mechanism between a set of organizations. When a chaincode is instantiated on a channel, an endorsement policy is defined for it; all the smart contracts within the chaincode are made available to the applications on that channel."
+msgid "A channel provides a completely separate communication mechanism between a set of organizations. When a chaincode is instantiated on a channel, an endorsement policy is defined for it; all the smart contracts within the chaincode are made available to the applications on that channel."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:261
@@ -152,6 +229,10 @@ msgstr ""
 msgid "In the example above, the car contract is deployed to the VEHICLE channel, and an insurance contract is deployed to the INSURANCE channel.  The car contract has an endorsement policy that requires ORG1 and ORG2 to sign transactions before they are considered valid, whereas the insurance contract has an endorsement policy that only requires ORG3 to sign valid transactions. ORG1 participates in two networks, the VEHICLE channel and the INSURANCE network, and can coordinate activity across these two networks with ORG2 and ORG3 respectively."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:277
+msgid "Intercommunication"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:279
 msgid "Smart Contracts are able to call to other smart contracts both within the same channel and across different channels. It this way, they can read and write world state data to which they would not otherwise have access due to smart contract namespaces."
 msgstr ""
@@ -160,12 +241,36 @@ msgstr ""
 msgid "There are limitations to this inter-contract communication, which are described fully in the chaincode namespace topic."
 msgstr ""
 
+#: ../../source/smartcontract/smartcontract.md:289
+msgid "System chaincode"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:291
 msgid "The smart contracts defined within a chaincode encode the domain dependent rules for a business process agreed between a set of blockchain organizations. However, a chaincode can also define low-level program code which corresponds to domain independent system interactions, unrelated to these smart contracts for business processes."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:297
 msgid "The following are the different types of system chaincodes and their associated abbreviations:"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:300
+msgid "Lifecycle system chaincode (LSCC) runs in all peers to handle package signing, install, instantiate, and upgrade chaincode requests. You can read more about the LSCC implements this process."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:305
+msgid "Configuration system chaincode (CSCC) runs in all peers to handle changes to a channel configuration, such as a policy update.  You can read more about this process in the following chaincode topic."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:310
+msgid "Query system chaincode (QSCC) runs in all peers to provide ledger APIs which include block query, transaction query etc. You can read more about these ledger APIs in the transaction context topic."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:315
+msgid "Endorsement system chaincode (ESCC) runs in endorsing peers to cryptographically sign a transaction response. You can read more about how the ESCC implements this process."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:319
+msgid "Validation system chaincode (VSCC) validates a transaction, including checking endorsement policy and read-write set versioning. You can read more about the LSCC implements this process."
 msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:323

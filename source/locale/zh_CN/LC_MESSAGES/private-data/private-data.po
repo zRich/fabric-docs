@@ -5,21 +5,30 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/private-data/private-data.md:1
+msgid "Private data"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:3
+msgid "What is private data?"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:5
 msgid ""
@@ -43,24 +52,39 @@ msgid ""
 msgstr ""
 "这就是为什么从v1.2开始，Fabric就提供了创建私有数据集合的能力，这使得通道上定义的组织子集能够背书、提交或查询私有数据，而不必创建单独的通道。"
 
+#: ../../source/private-data/private-data.md:18
+msgid "What is a private data collection?"
+msgstr ""
+
 #: ../../source/private-data/private-data.md:20
 msgid "A collection is the combination of two elements:"
+msgstr "一个私有数据集合由两个元素组成："
+
+#: ../../source/private-data/private-data.md:22
+msgid ""
+"The actual private data, sent peer-to-peer via gossip protocol to only the "
+"organization(s) authorized to see it. This data is stored in a private state"
+" database on the peers of authorized organizations (sometimes called a "
+"\"side\" database, or \"SideDB\"), which can be accessed from chaincode on "
+"these authorized peers. The ordering service is not involved here and does "
+"not see the private data. Note that because gossip distributes the private "
+"data peer-to-peer across authorized organizations, it is required to set up "
+"anchor peers on the channel, and configure CORE_PEER_GOSSIP_EXTERNALENDPOINT"
+" on each peer, in order to bootstrap cross-organization communication."
 msgstr ""
-"集合是两个元素的组合:\n"
-"1. 实际的私有数据，通过gossip协议发送p2p消息到只有授权查看它的组织。此数据存储在授权组织peer上的私有状态数据库中(有时称为“侧”数据库，或“侧DB”)，可以从这些授权peer上的链码访问这些数据库。这里不涉及排序服务，也看不到私有数据。注意，由于gossip将私有数据p2p分发到授权的组织中，因此需要在通道上设置锚点，并在每个peer上配置CORE_PEER_GOSSIP_EXTERNALENDPOINT，以便引导跨组织通信。\n"
-"2. 该数据的哈希，它被背书、排序并写入通道上每个peer的账本。哈希用作交易的证据，用于状态验证，并可用于审计目的。"
+
+#: ../../source/private-data/private-data.md:33
+msgid ""
+"A hash of that data, which is endorsed, ordered, and written to the ledgers "
+"of every peer on the channel. The hash serves as evidence of the transaction"
+" and is used for state validation and can be used for audit purposes."
+msgstr ""
 
 #: ../../source/private-data/private-data.md:37
 msgid ""
 "The following diagram illustrates the ledger contents of a peer authorized "
 "to have private data and one which is not."
-msgstr "下图说明了一个授权了私有数据peer和一个无权peer的账本内容。"
-
-#: ../../source/private-data/private-data.md:40
-#: ../../source/private-data/private-data.md:89
-#: ../../source/private-data/private-data.md:98
-msgid "private-data.private-data"
-msgstr "private-data.private-data"
+msgstr "下图说明了一个被授权拥有私有数据的节点和一个未授权的节点的账本内容。"
 
 #: ../../source/private-data/private-data.md:42
 msgid ""
@@ -72,16 +96,60 @@ msgid ""
 msgstr ""
 "如果集合成员陷入争议，或者如果他们想将资产转让给第三方，则可以决定与其他方共享私有数据。然后，第三方可以计算私有数据的散列，并查看它是否与通道账本上的状态匹配，从而证明在某个时间点上集合成员之间的状态存在。"
 
+#: ../../source/private-data/private-data.md:48
+msgid "When to use a collection within a channel vs. a separate channel"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:50
+msgid ""
+"Use channels when entire transactions (and ledgers) must be kept "
+"confidential within a set of organizations that are members of the channel."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:53
+msgid ""
+"Use collections when transactions (and ledgers) must be shared among a set "
+"of organizations, but when only a subset of those organizations should have "
+"access to some (or all) of the data within a transaction.  Additionally, "
+"since private data is disseminated peer-to-peer rather than via blocks, use "
+"private data collections when transaction data must be kept confidential "
+"from ordering service nodes."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:60
+msgid "A use case to explain collections"
+msgstr ""
+
 #: ../../source/private-data/private-data.md:62
 msgid "Consider a group of five organizations on a channel who trade produce:"
-msgstr "考虑一个由5个组织组成的通道，他们交易农产品:"
+msgstr "考虑一个由5个组织组成的通道，他们交易农产品："
+
+#: ../../source/private-data/private-data.md:64
+msgid "A Farmer selling his goods abroad"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:65
+msgid "A Distributor moving goods abroad"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:66
+msgid "A Shipper moving goods between parties"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:67
+msgid "A Wholesaler purchasing goods from distributors"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:68
+msgid "A Retailer purchasing goods from shippers and wholesalers"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:70
 msgid ""
 "The Distributor might want to make private transactions with the Farmer and "
 "Shipper to keep the terms of the trades confidential from the Wholesaler and"
 " the Retailer (so as not to expose the markup they're charging)."
-msgstr "分销商可能希望与农场主和发货人进行私人交易，以对批发商和零售商保密交易条款(以免暴露他们收取的加价)。"
+msgstr "分销商可能希望与农场主和托运商之间保持私密交易，以对批发商和零售商保密交易条款(以免暴露他们收取的加价)。"
 
 #: ../../source/private-data/private-data.md:75
 msgid ""
@@ -94,14 +162,26 @@ msgstr "分销商还可能希望与批发商建立单独的私有数据关系，
 msgid ""
 "The Wholesaler may also want to have a private data relationship with the "
 "Retailer and the Shipper."
-msgstr "批发商还可能希望与零售商和发货人建立私有数据关系。"
+msgstr "批发商还可能希望与零售商和托运商建立私有数据关系。"
 
 #: ../../source/private-data/private-data.md:82
 msgid ""
 "Rather than defining many small channels for each of these relationships, "
 "multiple private data collections (PDC) can be defined to share private data"
 " between:"
-msgstr "不同于为这些关系定义许多小通道，可以定义多个私有数据集合(PDC)在以下各方之间共享私有数据:"
+msgstr "与其为这些关系定义许多小通道，不如定义多个私有数据集合(PDC)在以下各方之间共享私有数据："
+
+#: ../../source/private-data/private-data.md:85
+msgid "PDC1: Distributor, Farmer and Shipper"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:86
+msgid "PDC2: Distributor and Wholesaler"
+msgstr ""
+
+#: ../../source/private-data/private-data.md:87
+msgid "PDC3: Wholesaler, Retailer and Shipper"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:91
 msgid ""
@@ -112,7 +192,11 @@ msgid ""
 "database that holds the channel ledger, private data is sometimes referred "
 "to as \"SideDB\"."
 msgstr ""
-"使用此示例，分销商拥有的peer在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为“侧DB”。"
+"使用此示例，分销商拥有的节点在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为“SideDB”。"
+
+#: ../../source/private-data/private-data.md:100
+msgid "Transaction flow with private data"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:102
 msgid ""
@@ -120,13 +204,68 @@ msgid ""
 "flow is slightly different in order to protect the confidentiality of the "
 "private data as transactions are proposed, endorsed, and committed to the "
 "ledger."
-msgstr "当在链码中引用私有数据集合时，为了保护私有数据的机密性，在提案、背书的和提交到账本时，交易流程略有不同。"
+msgstr "当在链码中引用私有数据集合时，为了保护私有数据的机密性，在提案、背书的和提交交易到账本时，交易流程略有不同。"
 
 #: ../../source/private-data/private-data.md:106
 msgid ""
 "For details on transaction flows that don't use private data refer to our "
 "documentation on transaction flow."
-msgstr "有关不使用私有数据的交易流程的详细信息，请参阅我们关于交易流程的文档。"
+msgstr "关于不使用私有数据的交易流程的详细信息，请参阅我们关于交易流程的文档。"
+
+#: ../../source/private-data/private-data.md:109
+msgid ""
+"The client application submits a proposal request to invoke a chaincode "
+"function (reading or writing private data) to endorsing peers which are part"
+" of authorized organizations of the collection. The private data, or data "
+"used to generate private data in chaincode, is sent in a transient field of "
+"the proposal."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:115
+msgid ""
+"The endorsing peers simulate the transaction and store the private data in a"
+" transient data store (a temporary storage local to the peer). They "
+"distribute the private data, based on the collection policy, to authorized "
+"peers via gossip."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:120
+msgid ""
+"The endorsing peer sends the proposal response back to the client. The "
+"proposal response includes the endorsed read/write set, which includes "
+"public data, as well as a hash of any private data keys and values. No "
+"private data is sent back to the client. For more information on how "
+"endorsement works with private data, click here."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:126
+msgid ""
+"The client application submits the transaction (which includes the proposal "
+"response with the private data hashes) to the ordering service. The "
+"transactions with the private data hashes get included in blocks as normal. "
+"The block with the private data hashes is distributed to all the peers. In "
+"this way, all peers on the channel can validate transactions with the hashes"
+" of the private data in a consistent way, without knowing the actual private"
+" data."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:133
+msgid ""
+"At block commit time, authorized peers use the collection policy to "
+"determine if they are authorized to have access to the private data. If they"
+" do, they will first check their local transient data store to determine if "
+"they have already received the private data at chaincode endorsement time. "
+"If not, they will attempt to pull the private data from another authorized "
+"peer. Then they will validate the private data against the hashes in the "
+"public block and commit the transaction and the block. Upon "
+"validation/commit, the private data is moved to their copy of the private "
+"state database and private writeset storage. The private data is then "
+"deleted from the transient data store."
+msgstr ""
+
+#: ../../source/private-data/private-data.md:143
+msgid "Purging private data"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:145
 msgid ""
@@ -135,7 +274,8 @@ msgid ""
 "\"purge\" the data on their peers, leaving behind a hash of the data on the "
 "blockchain to serve as immutable evidence of the private data."
 msgstr ""
-"对于非常敏感的数据，即使共享私有数据的各方也可能希望(或政府法规要求)定期“清除”其peer的数据，留下区块链上的数据哈希作为私有数据的不可变证据。"
+"对于非常敏感的数据，即使共享私有数据的各方也可能希望 --- 或政府法规要求 --- "
+"定期“清除”其peer的数据，留下区块链上的数据哈希作为私有数据的不可变证据。"
 
 #: ../../source/private-data/private-data.md:150
 msgid ""
@@ -145,18 +285,23 @@ msgid ""
 " a chaincode business process is done with it (trade settled, contract "
 "fulfilled, etc)."
 msgstr ""
-"在某些情况下，私有数据只需要存在于peer的私有数据库上，直到可以将其复制到peer区块链外部的数据库中为止。数据也可能只需要存在于peer节点上，直到使用它完成链码业务流程(交易结算、合同履行等)。"
+"在某些情况下，私有数据只需要存在于节点的私有数据库上，直到可以将其复制到区块链外部的数据库中为止。数据也可能只需要存在于节点上，直到使用它完成链码业务流程(交易结算、合约履行等)。"
 
 #: ../../source/private-data/private-data.md:155
 msgid ""
 "To support these use cases, private data can be purged if it has not been "
 "modified for a configurable number of blocks. Purged private data cannot be "
 "queried from chaincode, and is not available to other requesting peers."
-msgstr "为了支持这些用例，如果私有数据没有为可配置的区块数量修改，则可以清除它。清除后的私有数据不能从链码查询，并且对其他的peer请求不可用。"
+msgstr ""
+"为了支持这些用例，如果已经持续N个块都没有修改私有数据了，N是可配置的，则可以清除它。清除的私有数据不能从链码查询，并且其他节点也请求不到。"
+
+#: ../../source/private-data/private-data.md:159
+msgid "How a private data collection is defined"
+msgstr ""
 
 #: ../../source/private-data/private-data.md:161
 msgid ""
 "For more details on collection definitions, and other low level information "
 "about private data and collections, refer to the private data reference "
 "topic."
-msgstr "有关集合定义的更多详细信息，以及关于私有数据和集合的其他低层信息，请参阅私有数据引用主题。"
+msgstr "有关集合定义的更多详细信息，以及关于私有数据和集合的其他更细层级的信息，请参阅私有数据主题。"

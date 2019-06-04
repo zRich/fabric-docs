@@ -4,22 +4,26 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Lidong Guo <690748277@qq.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
-"Last-Translator: Lidong Guo <690748277@qq.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/token/FabToken.md:1
+msgid "Using FabToken"
+msgstr ""
 
 #: ../../source/token/FabToken.md:3
 msgid ""
@@ -31,6 +35,26 @@ msgid ""
 msgstr ""
 "FabToken允许用户轻松标记Hyperledger Fabric上的资产。Token作为Fabric "
 "v2.0中的Alpha版本特性引入。您可以使用以下操作指南了解FabToken并开始使用token。您可以在本指南的末尾找到一个在Fabric上创建token的示例，该示例扩展了BYFN教程。"
+
+#: ../../source/token/FabToken.md:9 ../../source/token/FabToken.md:15
+msgid "What is FabToken"
+msgstr ""
+
+#: ../../source/token/FabToken.md:10
+msgid "The Token lifecycle"
+msgstr ""
+
+#: ../../source/token/FabToken.md:11
+msgid "The Token transaction flow"
+msgstr ""
+
+#: ../../source/token/FabToken.md:12
+msgid "FabToken example"
+msgstr ""
+
+#: ../../source/token/FabToken.md:13 ../../source/token/FabToken.md:517
+msgid "Future features"
+msgstr ""
 
 #: ../../source/token/FabToken.md:17
 msgid ""
@@ -83,11 +107,36 @@ msgstr ""
 "FabToken提供了一个简单的接口来标记Fabric "
 "channel上的资产，同时利用channel提供的验证和信任。Token使用channel排序节点和peer节点进行共识和验证。Token还使用channel策略来控制允许哪些成员拥有和发出Token。然而，用户不需要使用智能合约来创建或管理token。Token可以建立资产的不变性和所有权，而不需要channel成员编写和批准复杂的业务逻辑来创建和管理这些资产。Token所有者可以使用自己信任的节点来创建token交易，而不必依赖于属于其他组织的节点来执行或背书交易。"
 
+#: ../../source/token/FabToken.md:48
+msgid "The token lifecycle"
+msgstr ""
+
 #: ../../source/token/FabToken.md:50
 msgid ""
 "Tokens have a closed lifecycle within Hyperledger Fabric. They can be "
 "issued, transferred, and then redeemed."
 msgstr "Token在Hyperledger Fabric内部有一个闭环的生命周期，可以发行、转让、赎回。"
+
+#: ../../source/token/FabToken.md:53
+msgid ""
+"Tokens are created by being issued. The token issuer defines the type of "
+"asset represented by the tokens and the quantity. The issuer also assigns "
+"issued tokens to their original owners."
+msgstr ""
+
+#: ../../source/token/FabToken.md:57
+msgid ""
+"Tokens are \"spent\" by being transferred. The token owner transfers the "
+"asset represented by token to a new owner that is a member of the fabric "
+"channel. Once the token has been transferred, it can no longer be spent or "
+"accessed by the previous owner."
+msgstr ""
+
+#: ../../source/token/FabToken.md:62
+msgid ""
+"Tokens are removed from the channel by being redeemed. Redeemed tokens are "
+"no longer owned by any channel member and thus can no longer be spent."
+msgstr ""
 
 #: ../../source/token/FabToken.md:65
 msgid ""
@@ -130,6 +179,10 @@ msgstr ""
 "下面的指南描述了如何在Fabric中创建和使用token。这些说明详细说明了在使用Fabric token client、Fabric "
 "SDKs提供的API或token CLI时，使用FabToken需要哪些步骤和信息。您可以在本指南的末尾找到一个FabToken示例。"
 
+#: ../../source/token/FabToken.md:91
+msgid "Issuing tokens"
+msgstr ""
+
 #: ../../source/token/FabToken.md:93
 msgid ""
 "Tokens can only be created by Issuers. Issuers are channel members that are "
@@ -141,6 +194,22 @@ msgstr ""
 #: ../../source/token/FabToken.md:97
 msgid "Tokens are created with three attributes:"
 msgstr "Token有三个属性："
+
+#: ../../source/token/FabToken.md:99
+msgid ""
+"Owner identifies the channel member that can transfer or redeem the new "
+"token through its MSP identity."
+msgstr ""
+
+#: ../../source/token/FabToken.md:101
+msgid ""
+"Type describes the asset the token represents, such as USD, EUR, or "
+"BYFNcoins in the example below."
+msgstr ""
+
+#: ../../source/token/FabToken.md:103
+msgid "Quantity is the number of units of Type that the Token represents."
+msgstr ""
 
 #: ../../source/token/FabToken.md:105
 msgid ""
@@ -161,17 +230,55 @@ msgstr ""
 "发行策略还可以限制哪些用户可以发布特定类型的token。在Fabric v2.0 "
 "Alpha版中，IssuingPolicy被设置为ANY，这意味着所有通道成员都可以发出任何类型的token。在将来的版本中，用户可以限制此策略。"
 
+#: ../../source/token/FabToken.md:115
+msgid "List"
+msgstr ""
+
 #: ../../source/token/FabToken.md:117
 msgid ""
 "You can use the List method or command to query the unspent tokens that you "
 "own. A successful list command returns the following values:"
 msgstr "您可以使用List方法或命令查询您拥有的未花费的token。一个成功执行的list命令返回以下值:"
 
+#: ../../source/token/FabToken.md:120
+msgid "TokenID is the identifier of each token you own."
+msgstr ""
+
+#: ../../source/token/FabToken.md:121
+msgid "Type is the asset your tokens represent."
+msgstr ""
+
+#: ../../source/token/FabToken.md:122
+msgid ""
+"Quantity is number of units of Type in hexadecimal format of each asset that"
+" you own."
+msgstr ""
+
+#: ../../source/token/FabToken.md:125
+msgid "Transfer"
+msgstr ""
+
 #: ../../source/token/FabToken.md:127
 msgid ""
 "You can spend the tokens that you own by transferring them to other channel "
 "members. You can transfer a token by providing the following values:"
 msgstr "您可以通过将自己拥有的token转账给其他通道成员来花费它们。您可以通过提供以下值来进行token转账："
+
+#: ../../source/token/FabToken.md:130
+msgid "Token ID: The ID of the tokens you want to transfer."
+msgstr ""
+
+#: ../../source/token/FabToken.md:131
+msgid ""
+"Quantity: The amount of the asset represented by each token to be "
+"transferred."
+msgstr ""
+
+#: ../../source/token/FabToken.md:133
+msgid ""
+"Recipient: The MSP identifier of the channel member you want to transfer the"
+" assets to."
+msgstr ""
 
 #: ../../source/token/FabToken.md:136
 msgid ""
@@ -202,6 +309,20 @@ msgstr ""
 msgid "To be successful, a transfer needs to meet the following conditions:"
 msgstr "为取得成功，转账须符合下列条件："
 
+#: ../../source/token/FabToken.md:153
+msgid ""
+"The tokens being transferred need to belong to the transaction initiator and"
+" are unspent."
+msgstr ""
+
+#: ../../source/token/FabToken.md:155
+msgid "All input tokens of the transaction need to be of the same type."
+msgstr ""
+
+#: ../../source/token/FabToken.md:157
+msgid "Redeem"
+msgstr ""
+
 #: ../../source/token/FabToken.md:159
 msgid ""
 "Redeemed tokens can no longer be spent. Redeeming a token removes an asset "
@@ -217,6 +338,16 @@ msgstr ""
 msgid "An owner needs to provide the following arguments to redeem tokens:"
 msgstr "所有者赎回token需要提供以下参数："
 
+#: ../../source/token/FabToken.md:167
+msgid "Token ID: The ID of the token you want to redeem."
+msgstr ""
+
+#: ../../source/token/FabToken.md:168
+msgid ""
+"Quantity: The quantity of the asset represented by each token you want to "
+"redeem."
+msgstr ""
+
 #: ../../source/token/FabToken.md:171
 msgid ""
 "Tokens can only be redeemed if the token owner submits the redeem "
@@ -228,6 +359,10 @@ msgid ""
 "longer be transferred by any members of the channel."
 msgstr ""
 "只有token所有者提交赎回交易时才能赎回token。不需要赎回token所表示的全部资产数量。例如，如果您有一个表示100美元的token，并且想赎回50美元，那么赎回交易将创建一个值50美元的新token，并将另一个50美元转移到一个没有所有者的受限帐户。因为该账户没有所有者，50美元不能再被任何通道的成员转移。"
+
+#: ../../source/token/FabToken.md:179
+msgid "The token transaction flow"
+msgstr ""
 
 #: ../../source/token/FabToken.md:181
 msgid ""
@@ -256,6 +391,26 @@ msgstr ""
 "client模块，模块可以利用可信节点，或称为校准节点，创建token交易。例如，属于操作节点的组织的用户可以使用该节点查询其token并使用它们。如果连接到启用了V2_0功能的通道，那么任何具有Fabric"
 " 2.0 Alpha代码的节点都可以用作校准节点。"
 
+#: ../../source/token/FabToken.md:197
+msgid ""
+"In the case of an issue transaction, the prover peer will verify that the "
+"requested operation satisfies the IssuingPolicy associated with the tokens "
+"being created."
+msgstr ""
+
+#: ../../source/token/FabToken.md:200
+msgid ""
+"In the case of transfer, redeem and list, the peer checks that the input "
+"tokens are unspent and belong to the entity requesting the transaction."
+msgstr ""
+
+#: ../../source/token/FabToken.md:202
+msgid ""
+"In the case of transfer and redeem, the peer checks that the input and "
+"output tokens are all of the same type and that the output tokens have the "
+"same type and sum up to the same quantity as the input tokens."
+msgstr ""
+
 #: ../../source/token/FabToken.md:206
 msgid ""
 "Once the client has generated the token transaction with the help of the "
@@ -266,6 +421,10 @@ msgid ""
 " being double spent or over spent."
 msgstr ""
 "一旦client在校准节点的帮助下生成了token交易，它就将交易发送给排序服务。然后，排序服务将交易发送给提交节点以进行验证并添加到账本中。提交节点检查交易是否符合UTXO交易模型，以及基础资产是否被双花或超额使用。"
+
+#: ../../source/token/FabToken.md:213
+msgid "FabToken Example"
+msgstr ""
 
 #: ../../source/token/FabToken.md:215
 msgid ""
@@ -287,6 +446,10 @@ msgstr ""
 "您还可以使用Node.js版的Fabric SDK来处理token。访问Node.js版Fabric "
 "SDK文档中的“如何执行token操作”教程。您还可以找到一个示例，它使用Node.js版Fabric SDK，在fabric-"
 "samples中发行、转账和赎回token。"
+
+#: ../../source/token/FabToken.md:226
+msgid "Start the network"
+msgstr ""
 
 #: ../../source/token/FabToken.md:228
 msgid ""
@@ -328,15 +491,6 @@ msgstr ""
 "Token "
 "CLI使用的来自每个组织的配置文件，包含关于组织信任哪些节点以及往哪个排序节点发送交易的信息。下面是Org1的配置文件。请注意，Org1使用它自己的节点作为校准节点，并在文件的“ProverPeer”部分中提供节点端点信息。"
 
-#: ../../source/token/FabToken.md:258
-msgid "<details> <summary> Org1 Configuration file </summary>"
-msgstr "<details> <summary> Org1 Configuration file </summary>"
-
-#: ../../source/token/FabToken.md:293 ../../source/token/FabToken.md:335
-#: ../../source/token/FabToken.md:353
-msgid "</details>"
-msgstr "</details>"
-
 #: ../../source/token/FabToken.md:295
 msgid ""
 "Paste the file above in a text editor and save it as configorg1.json. Once "
@@ -346,20 +500,12 @@ msgid ""
 msgstr ""
 "将上面的文件粘贴到文本编辑器中，并将其保存为configorg1.json。保存configorg1之后，在文本编辑器中创建一个新文件，并粘贴下面的json文件。在相同位置将文件保存为configorg2.json："
 
-#: ../../source/token/FabToken.md:300
-msgid "<details> <summary> Org2 Configuration file </summary>"
-msgstr "<details> <summary> Org2 Configuration file </summary>"
-
 #: ../../source/token/FabToken.md:337
 msgid ""
 "We now need to save one additional file that we will use when we transfer "
 "our tokens. Create a new file in your text editor, and save the file below "
 "as shares.json:"
 msgstr "现在我们需要保存一个额外的文件，以便在转移token时使用。在文本编辑器中创建一个新文件，并将下面的文件保存为share.json："
-
-#: ../../source/token/FabToken.md:341
-msgid "<details> <summary> shares.json </summary>"
-msgstr "<details> <summary> shares.json </summary>"
 
 #: ../../source/token/FabToken.md:355
 msgid ""
@@ -373,6 +519,10 @@ msgid ""
 "channel we will use to issue and transfer the tokens. When the command "
 "completes successfully, you should see the following result:"
 msgstr "该命令将创建用于发行和转账token的orgs、peers、orderers和channel。当命令成功完成时，您应该会看到以下结果："
+
+#: ../../source/token/FabToken.md:377
+msgid "Issue tokens"
+msgstr ""
 
 #: ../../source/token/FabToken.md:379
 msgid ""
@@ -409,6 +559,10 @@ msgid ""
 "quantity. The tokenID is the transactionID of the transaction that created "
 "the token."
 msgstr "在命令输出中，您可以找到tokenID、类型和数量。tokenID是创建token的交易的transactionID。"
+
+#: ../../source/token/FabToken.md:426
+msgid "Transferring tokens"
+msgstr ""
 
 #: ../../source/token/FabToken.md:428
 msgid ""
@@ -462,6 +616,10 @@ msgid ""
 "index to distinguish it from the token owned by Org1."
 msgstr ""
 "Org2拥有的币的tokenID使用与Org1拥有的币相同的交易ID，因为它是由相同的交易创建的。但是，因为它是交易的第二个输出，所以还会给它一个索引，以区别于Org1拥有的token。"
+
+#: ../../source/token/FabToken.md:479
+msgid "Redeeming tokens"
+msgstr ""
 
 #: ../../source/token/FabToken.md:481
 msgid ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:55+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/config_update.md:1
+msgid "Updating a Channel Configuration"
+msgstr ""
+
+#: ../../source/config_update.md:3
+msgid "What is a Channel Configuration?"
+msgstr ""
 
 #: ../../source/config_update.md:5
 msgid ""
@@ -63,6 +71,10 @@ msgid ""
 "getting it signed."
 msgstr "要更深入地了解提取配置并将其转换为JSON的过程，请查看向通道添加Org。在这个文档中，我们将重点介绍编辑配置的不同方法以及签名的过程。"
 
+#: ../../source/config_update.md:32
+msgid "Editing a Config"
+msgstr ""
+
 #: ../../source/config_update.md:34
 msgid ""
 "Channels are highly configurable, but not infinitely so. Different "
@@ -82,14 +94,6 @@ msgstr ""
 "要查看可以更改的范围，查看JSON格式的配置非常重要。将一个组织添加到一个通道教程中会生成一个配置，因此，如果您已经阅读了该文档，您可以简单地引用它。对于那些没有配置的人，我们将在这里提供一个配置(为了便于阅读，将这个配置放入一个支持JSON折叠的查看器中可能会有帮助，比如atom或Visual"
 " Studio)。"
 
-#: ../../source/config_update.md:45
-msgid "<details> <summary> Click here to see the config </summary>"
-msgstr "<details> <summary>点击这里查看配置 </summary> "
-
-#: ../../source/config_update.md:747
-msgid "</details>"
-msgstr "</details>"
-
 #: ../../source/config_update.md:749
 msgid ""
 "A config might look intimidating in this form, but once you study it you’ll "
@@ -106,6 +110,87 @@ msgid ""
 "that are possible to change with a config update include:"
 msgstr ""
 "除了策略的定义(定义谁可以在通道级别做某些事情，以及谁有权更改谁可以更改配置)之外，通道还具有可以使用配置更新修改的其他类型的特性。将一个组织添加到一个通道中是最重要的——将一个组织添加到通道中。其他一些配置更新可以改变的事情包括:"
+
+#: ../../source/config_update.md:759
+msgid ""
+"Batch Size. These parameters dictate the number and size of transactions in "
+"a block. No block will appear larger than absolute_max_bytes large or with "
+"more than max_message_count transactions inside the block. If it is possible"
+" to construct a block under preferred_max_bytes, then a block will be cut "
+"prematurely, and transactions larger than this size will appear in their own"
+" block."
+msgstr ""
+
+#: ../../source/config_update.md:774
+msgid ""
+"Batch Timeout. The amount of time to wait after the first transaction "
+"arrives for additional transactions before cutting a block. Decreasing this "
+"value will improve latency, but decreasing it too much may decrease "
+"throughput by not allowing the block to fill to its maximum capacity."
+msgstr ""
+
+#: ../../source/config_update.md:783
+msgid ""
+"Channel Restrictions. The total number of channels the orderer is willing to"
+" allocate may be specified as max_count. This is primarily useful in pre-"
+"production environments with weak consortium ChannelCreation policies."
+msgstr ""
+
+#: ../../source/config_update.md:793
+msgid ""
+"Channel Creation Policy. Defines the policy value which will be set as the "
+"mod_policy for the Application group of new channels for the consortium it "
+"is defined in. The signature set attached to the channel creation request "
+"will be checked against the instantiation of this policy in the new channel "
+"to ensure that the channel creation is authorized. Note that this config "
+"value is only set in the orderer system channel."
+msgstr ""
+
+#: ../../source/config_update.md:810
+msgid ""
+"Kafka brokers. When ConsensusType is set to kafka, the brokers list "
+"enumerates some subset (or preferably all) of the Kafka brokers for the "
+"orderer to initially connect to at startup. Note that it is not possible to "
+"change your consensus type after it has been established (during the "
+"bootstrapping of the genesis block)."
+msgstr ""
+
+#: ../../source/config_update.md:827
+msgid ""
+"Anchor Peers Definition. Defines the location of the anchor peers for each "
+"Org."
+msgstr ""
+
+#: ../../source/config_update.md:837
+msgid ""
+"Hashing Structure. The block data is an array of byte arrays. The hash of "
+"the block data is computed as a Merkle tree. This value specifies the width "
+"of that Merkle tree. For the time being, this value is fixed to 4294967295 "
+"which corresponds to a simple flat hash of the concatenation of the block "
+"data bytes."
+msgstr ""
+
+#: ../../source/config_update.md:847
+msgid ""
+"Hashing Algorithm. The algorithm used for computing the hash values encoded "
+"into the blocks of the blockchain. In particular, this affects the data "
+"hash, and the previous block hash fields of the block. Note, this field "
+"currently only has one valid value (SHA256) and should not be changed."
+msgstr ""
+
+#: ../../source/config_update.md:856
+msgid ""
+"Block Validation. This policy specifies the signature requirements for a "
+"block to be considered valid. By default, it requires a signature from some "
+"member of the ordering org."
+msgstr ""
+
+#: ../../source/config_update.md:870
+msgid ""
+"Orderer Address. A list of addresses where clients may invoke the orderer "
+"Broadcast and Deliver functions. The peer randomly chooses among these "
+"addresses and fails over between them for retrieving blocks."
+msgstr ""
 
 #: ../../source/config_update.md:882
 msgid ""
@@ -174,6 +259,10 @@ msgid ""
 msgstr ""
 "一旦修改了JSON，就可以对其进行转换并提交了。将Org添加到通道中的脚本和步骤将指导您完成转换JSON的过程，所以让我们来看看提交它的过程。"
 
+#: ../../source/config_update.md:930
+msgid "Get the Necessary Signatures"
+msgstr ""
+
 #: ../../source/config_update.md:932
 msgid ""
 "Once you’ve successfully generated the protobuf file, it’s time to get it "
@@ -184,6 +273,30 @@ msgstr "一旦您成功地生成了protobuf文件，就可以对它进行签名�
 #: ../../source/config_update.md:936
 msgid "By default, editing the configuration of:"
 msgstr "默认情况下，编辑配置:"
+
+#: ../../source/config_update.md:937
+msgid ""
+"A particular org (for example, changing anchor peers) requires only the "
+"admin signature of that org."
+msgstr ""
+
+#: ../../source/config_update.md:939
+msgid ""
+"The application (like who the member orgs are) requires a majority of the "
+"application organizations’ admins to sign."
+msgstr ""
+
+#: ../../source/config_update.md:941
+msgid ""
+"The orderer requires a majority of the ordering organizations’ admins (of "
+"which there are by default only 1)."
+msgstr ""
+
+#: ../../source/config_update.md:943
+msgid ""
+"The top level channel group requires both the agreement of a majority of "
+"application organization admins and orderer organization admins."
+msgstr ""
 
 #: ../../source/config_update.md:946
 msgid ""

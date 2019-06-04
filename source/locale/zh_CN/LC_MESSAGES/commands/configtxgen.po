@@ -1,40 +1,60 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
+"PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/commands/configtxgen.md:1
+#: ../../source/commands/configtxgen.md:12
+msgid "configtxgen"
+msgstr ""
 
 #: ../../source/commands/configtxgen.md:3
 msgid ""
-"The configtxgen command allows users to create and inspect channel config"
-" related artifacts.  The content of the generated artifacts is dictated "
-"by the contents of configtx.yaml."
+"The configtxgen command allows users to create and inspect channel config "
+"related artifacts.  The content of the generated artifacts is dictated by "
+"the contents of configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:7
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:9
 msgid ""
-"The configtxgen tool has no sub-commands, but supports flags which can be"
-" set to accomplish a number of tasks."
+"The configtxgen tool has no sub-commands, but supports flags which can be "
+"set to accomplish a number of tasks."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:41
+msgid "Usage"
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:43
+msgid "Output a genesis block"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:45
 msgid ""
-"Write a genesis block to genesis_block.pb for channel orderer-system-"
-"channel for profile SampleSingleMSPSoloV1_1."
+"Write a genesis block to genesis_block.pb for channel orderer-system-channel"
+" for profile SampleSingleMSPSoloV1_1."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:52
+msgid "Output a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:54
@@ -43,31 +63,50 @@ msgid ""
 "SampleSingleMSPChannelV1_1."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:61
+msgid "Inspect a genesis block"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:63
 msgid ""
-"Print the contents of a genesis block named genesis_block.pb to the "
-"screen as JSON."
+"Print the contents of a genesis block named genesis_block.pb to the screen "
+"as JSON."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:70
+msgid "Inspect a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:72
 msgid ""
-"Print the contents of a channel creation tx named create_chan_tx.pb to "
-"the screen as JSON."
+"Print the contents of a channel creation tx named create_chan_tx.pb to the "
+"screen as JSON."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:79
+msgid "Print an organization definition"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:81
 msgid ""
-"Construct an organization definition based on the parameters such as "
-"MSPDir from configtx.yaml and print it as JSON to the screen. (This "
-"output is useful for channel reconfiguration workflows, such as adding a "
-"member)."
+"Construct an organization definition based on the parameters such as MSPDir "
+"from configtx.yaml and print it as JSON to the screen. (This output is "
+"useful for channel reconfiguration workflows, such as adding a member)."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:89
+msgid "Output anchor peer tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:91
 msgid ""
-"Output a configuration update transaction to anchor_peer_tx.pb which sets"
-" the anchor peers for organization Org1 as defined in profile "
+"Output a configuration update transaction to anchor_peer_tx.pb which sets "
+"the anchor peers for organization Org1 as defined in profile "
 "SampleSingleMSPChannelV1_1 based on configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:99
+msgid "Configuration"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:101
@@ -86,39 +125,36 @@ msgstr ""
 
 #: ../../source/commands/configtxgen.md:109
 msgid ""
-"For many configtxgen operations, a profile name must be supplied.  "
-"Profiles are a way to express multiple similar configurations in a single"
-" file.  For instance, one profile might define a channel with 3 orgs, and"
-" another might define one with 4 orgs.  To accomplish this without the "
-"length of the file becoming burdensome, configtx.yaml depends on the "
-"standard YAML feature of anchors and references.  Base parts of the "
-"configuration are tagged with an anchor like &OrdererDefaults and then "
-"merged into a profile with a reference like <<: *OrdererDefaults.  Note, "
-"when configtxgen is operating under a profile, environment variable "
-"overrides do not need to include the profile prefix and may be referenced"
-" relative to the root element of the profile.  For instance, do not "
-"specify CONFIGTX_PROFILE_SAMPLEINSECURESOLO_ORDERER_ORDERERTYPE, instead "
-"simply omit the profile specifics and use the CONFIGTX prefix followed by"
-" the elements relative to the profile name such as "
-"CONFIGTX_ORDERER_ORDERERTYPE."
+"For many configtxgen operations, a profile name must be supplied.  Profiles "
+"are a way to express multiple similar configurations in a single file.  For "
+"instance, one profile might define a channel with 3 orgs, and another might "
+"define one with 4 orgs.  To accomplish this without the length of the file "
+"becoming burdensome, configtx.yaml depends on the standard YAML feature of "
+"anchors and references.  Base parts of the configuration are tagged with an "
+"anchor like &OrdererDefaults and then merged into a profile with a reference"
+" like <<: *OrdererDefaults.  Note, when configtxgen is operating under a "
+"profile, environment variable overrides do not need to include the profile "
+"prefix and may be referenced relative to the root element of the profile.  "
+"For instance, do not specify "
+"CONFIGTX_PROFILE_SAMPLEINSECURESOLO_ORDERER_ORDERERTYPE, instead simply omit"
+" the profile specifics and use the CONFIGTX prefix followed by the elements "
+"relative to the profile name such as CONFIGTX_ORDERER_ORDERERTYPE."
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:125
 msgid ""
 "Refer to the sample configtx.yaml shipped with Fabric for all possible "
-"configuration options.  You may find this file in the config directory of"
-" the release artifacts tar, or you may find it under the sampleconfig "
-"folder if you are building from source."
+"configuration options.  You may find this file in the config directory of "
+"the release artifacts tar, or you may find it under the sampleconfig folder "
+"if you are building from source."
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:131
 msgid ""
-"<a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative "
-"Commons License\" style=\"border-width:0\" "
-"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This"
-" work is licensed under a <a rel=\"license\" "
+"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img"
+" alt=\"Creative Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This "
+"work is licensed under a <a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
 "Attribution 4.0 International License</a>."
 msgstr ""
-

@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/network/network.md:1
+msgid "Blockchain network"
+msgstr ""
 
 #: ../../source/network/network.md:3
 msgid "Note: This tutorial describes a network that uses the previous lifecycle process in which a chaincode is instantiated on a channel. This topic will be updated to reflect the Fabric chaincode lifecycle feature that is first introduced in the alpha release of v2.0.0."
@@ -28,12 +32,20 @@ msgstr ""
 msgid "After reading this topic and understanding the concept of policies, you will have a solid understanding of the decisions that organizations need to make to establish the policies that control a deployed Hyperledger Fabric network. You'll also understand how organizations manage network evolution using declarative policies -- a key feature of Hyperledger Fabric. In a nutshell, you'll understand the major technical components of Hyperledger Fabric and the decisions organizations need to make about them."
 msgstr ""
 
+#: ../../source/network/network.md:27
+msgid "What is a blockchain network?"
+msgstr ""
+
 #: ../../source/network/network.md:29
 msgid "A blockchain network is a technical infrastructure that provides ledger and smart contract (chaincode) services to applications. Primarily, smart contracts are used to generate transactions which are subsequently distributed to every peer node in the network where they are immutably recorded on their copy of the ledger. The users of applications might be end users using client applications or blockchain network administrators."
 msgstr ""
 
 #: ../../source/network/network.md:36
 msgid "In most cases, multiple organizations come together as a consortium to form the network and their permissions are determined by a set of policies that are agreed by the consortium when the network is originally configured. Moreover, network policies can change over time subject to the agreement of the organizations in the consortium, as we'll discover when we discuss the concept of modification policy."
+msgstr ""
+
+#: ../../source/network/network.md:44
+msgid "The sample network"
 msgstr ""
 
 #: ../../source/network/network.md:46
@@ -44,20 +56,16 @@ msgstr ""
 msgid "Don't worry that this might look complicated! As we go through this topic, we will build up the network piece by piece, so that you see how the organizations R1, R2, R3 and R4 contribute infrastructure to the network to help form it. This infrastructure implements the blockchain network, and it is governed by policies agreed by the organizations who form the network -- for example, who can add new organizations. You'll discover how applications consume the ledger and smart contract services provided by the blockchain network."
 msgstr ""
 
-#: ../../source/network/network.md:57
-msgid "network.structure"
-msgstr ""
-
 #: ../../source/network/network.md:59
 msgid "Four organizations, R1, R2, R3 and R4 have jointly decided, and written into an agreement, that they will set up and exploit a Hyperledger Fabric network. R4 has been assigned to be the network initiator  -- it has been given the power to set up the initial version of the network. R4 has no intention to perform business transactions on the network. R1 and R2 have a need for a private communications within the overall network, as do R2 and R3. Organization R1 has a client application that can perform business transactions within channel C1. Organization R2 has a client application that can do similar work both in channel C1 and C2. Organization R3 has a client application that can do this on channel C2. Peer node P1 maintains a copy of the ledger L1 associated with C1. Peer node P2 maintains a copy of the ledger L1 associated with C1 and a copy of ledger L2 associated with C2. Peer node P3 maintains a copy of the ledger L2 associated with C2. The network is governed according to policy rules specified in network configuration NC4, the network is under the control of organizations R1 and R4. Channel C1 is governed according to the policy rules specified in channel configuration CC1; the channel is under the control of organizations R1 and R2.  Channel C2 is governed according to the policy rules specified in channel configuration CC2; the channel is under the control of organizations R2 and R3. There is an ordering service O4 that services as a network administration point for N, and uses the system channel. The ordering service also supports application channels C1 and C2, for the purposes of transaction ordering into blocks for distribution. Each of the four organizations has a preferred Certificate Authority."
 msgstr ""
 
-#: ../../source/network/network.md:85
-msgid "Let's start at the beginning by creating the basis for the network:"
+#: ../../source/network/network.md:83
+msgid "Creating the Network"
 msgstr ""
 
-#: ../../source/network/network.md:87
-msgid "network.creation"
+#: ../../source/network/network.md:85
+msgid "Let's start at the beginning by creating the basis for the network:"
 msgstr ""
 
 #: ../../source/network/network.md:89
@@ -66,6 +74,10 @@ msgstr ""
 
 #: ../../source/network/network.md:95
 msgid "We can see that the first thing that defines a network, N, is an ordering service, O4. It's helpful to think of the ordering service as the initial administration point for the network. As agreed beforehand, O4 is initially configured and started by an administrator in organization R4, and hosted in R4. The configuration NC4 contains the policies that describe the starting set of administrative capabilities for the network. Initially this is set to only give R4 rights over the network. This will change, as we'll see later, but for now R4 is the only member of the network."
+msgstr ""
+
+#: ../../source/network/network.md:104
+msgid "Certificate Authorities"
 msgstr ""
 
 #: ../../source/network/network.md:106
@@ -88,12 +100,12 @@ msgstr ""
 msgid "Let's recap the basic structure of our example blockchain network. There's a resource, the network N, accessed by a set of users defined by a Certificate Authority CA4, who have a set of rights over the resources in the network N as described by policies contained inside a network configuration NC4.  All of this is made real when we configure and start the ordering service node O4."
 msgstr ""
 
-#: ../../source/network/network.md:152
-msgid "NC4 was initially configured to only allow R4 users administrative rights over the network. In this next phase, we are going to allow organization R1 users to administer the network. Let's see how the network evolves:"
+#: ../../source/network/network.md:150
+msgid "Adding Network Administrators"
 msgstr ""
 
-#: ../../source/network/network.md:156
-msgid "network.admins"
+#: ../../source/network/network.md:152
+msgid "NC4 was initially configured to only allow R4 users administrative rights over the network. In this next phase, we are going to allow organization R1 users to administer the network. Let's see how the network evolves:"
 msgstr ""
 
 #: ../../source/network/network.md:158
@@ -116,16 +128,16 @@ msgstr ""
 msgid "We'll discuss the ordering service a little more later in this topic, but for now just think of the ordering service as an administration point which provides different organizations controlled access to the network."
 msgstr ""
 
+#: ../../source/network/network.md:187
+msgid "Defining a Consortium"
+msgstr ""
+
 #: ../../source/network/network.md:189
 msgid "Although the network can now be administered by R1 and R4, there is very little that can be done. The first thing we need to do is define a consortium. This word literally means \"a group with a shared destiny\", so it's an appropriate choice for a set of organizations in a blockchain network."
 msgstr ""
 
 #: ../../source/network/network.md:194
 msgid "Let's see how a consortium is defined:"
-msgstr ""
-
-#: ../../source/network/network.md:196
-msgid "network.consortium"
 msgstr ""
 
 #: ../../source/network/network.md:198
@@ -148,16 +160,16 @@ msgstr ""
 msgid "We're now going to use consortium X1 to create a really important part of a Hyperledger Fabric blockchain -- a channel."
 msgstr ""
 
+#: ../../source/network/network.md:223
+msgid "Creating a channel for a consortium"
+msgstr ""
+
 #: ../../source/network/network.md:225
 msgid "So let's create this key part of the Fabric blockchain network -- a channel. A channel is a primary communications mechanism by which the members of a consortium can communicate with each other. There can be multiple channels in a network, but for now, we'll start with one."
 msgstr ""
 
 #: ../../source/network/network.md:230
 msgid "Let's see how the first channel has been added to the network:"
-msgstr ""
-
-#: ../../source/network/network.md:232
-msgid "network.channel"
 msgstr ""
 
 #: ../../source/network/network.md:234
@@ -188,12 +200,12 @@ msgstr ""
 msgid "As an aside, there is also a special system channel defined for use by the ordering service.  It behaves in exactly the same way as a regular channel, which are sometimes called application channels for this reason.  We don't normally need to worry about this channel, but we'll discuss a little bit more about it later in this topic."
 msgstr ""
 
-#: ../../source/network/network.md:292
-msgid "Let's now start to use the channel to connect the blockchain network and the organizational components together. In the next stage of network development, we can see that our network N has just acquired two new components, namely a peer node P1 and a ledger instance, L1."
+#: ../../source/network/network.md:290
+msgid "Peers and Ledgers"
 msgstr ""
 
-#: ../../source/network/network.md:297
-msgid "network.peersledger"
+#: ../../source/network/network.md:292
+msgid "Let's now start to use the channel to connect the blockchain network and the organizational components together. In the next stage of network development, we can see that our network N has just acquired two new components, namely a peer node P1 and a ledger instance, L1."
 msgstr ""
 
 #: ../../source/network/network.md:299
@@ -212,16 +224,16 @@ msgstr ""
 msgid "Notice how peers are joined to channels by the organizations that own them, and though we've only added one peer, we'll see how  there can be multiple peer nodes on multiple channels within the network. We'll see the different roles that peers can take on a little later."
 msgstr ""
 
+#: ../../source/network/network.md:320
+msgid "Applications and Smart Contract chaincode"
+msgstr ""
+
 #: ../../source/network/network.md:322
 msgid "Now that the channel C1 has a ledger on it, we can start connecting client applications to consume some of the services provided by workhorse of the ledger, the peer!"
 msgstr ""
 
 #: ../../source/network/network.md:326
 msgid "Notice how the network has grown:"
-msgstr ""
-
-#: ../../source/network/network.md:328
-msgid "network.appsmartcontract"
 msgstr ""
 
 #: ../../source/network/network.md:330
@@ -240,12 +252,20 @@ msgstr ""
 msgid "Smart contract chaincodes can be created by application developers in each organization to implement a business process shared by the consortium members. Smart contracts are used to help generate transactions which can be subsequently distributed to the every node in the network.  We'll discuss this idea a little later; it'll be easier to understand when the network is bigger. For now, the important thing to understand is that to get to this point two operations must have been performed on the smart contract; it must have been installed, and then instantiated."
 msgstr ""
 
+#: ../../source/network/network.md:360
+msgid "Installing a smart contract"
+msgstr ""
+
 #: ../../source/network/network.md:362
 msgid "After a smart contract S5 has been developed, an administrator in organization R1 must install it onto peer node P1. This is a straightforward operation; after it has occurred, P1 has full knowledge of S5. Specifically, P1 can see the implementation logic of S5 -- the program code that it uses to access the ledger L1. We contrast this to the S5 interface which merely describes the inputs and outputs of S5, without regard to its implementation."
 msgstr ""
 
 #: ../../source/network/network.md:370
 msgid "When an organization has multiple peers in a channel, it can choose the peers upon which it installs smart contracts; it does not need to install a smart contract on every peer."
+msgstr ""
+
+#: ../../source/network/network.md:374
+msgid "Instantiating a smart contract"
 msgstr ""
 
 #: ../../source/network/network.md:376
@@ -256,12 +276,20 @@ msgstr ""
 msgid "Note that although every component on the channel can now access S5, they are not able to see its program logic.  This remains private to those nodes who have installed it; in our example that means P1. Conceptually this means that it's the smart contract interface that is instantiated, in contrast to the smart contract implementation that is installed. To reinforce this idea; installing a smart contract shows how we think of it being physically hosted on a peer, whereas instantiating a smart contract shows how we consider it logically hosted by the channel."
 msgstr ""
 
+#: ../../source/network/network.md:393
+msgid "Endorsement policy"
+msgstr ""
+
 #: ../../source/network/network.md:395
 msgid "The most important piece of additional information supplied at instantiation is an endorsement policy. It describes which organizations must approve transactions before they will be accepted by other organizations onto their copy of the ledger. In our sample network, transactions can be only be accepted onto ledger L1 if R1 or R2 endorse them."
 msgstr ""
 
 #: ../../source/network/network.md:401
 msgid "The act of instantiation places the endorsement policy in channel configuration CC1; it enables it to be accessed by any member of the channel. You can read more about endorsement policies in the transaction flow topic."
+msgstr ""
+
+#: ../../source/network/network.md:406
+msgid "Invoking a smart contract"
 msgstr ""
 
 #: ../../source/network/network.md:408
@@ -276,16 +304,16 @@ msgstr ""
 msgid "By this stage in network development we can see that organization R1 is fully participating in the network. Its applications -- starting with A1 -- can access the ledger L1 via smart contract S5, to generate transactions that will be endorsed by R1, and therefore accepted onto the ledger because they conform to the endorsement policy."
 msgstr ""
 
+#: ../../source/network/network.md:428
+msgid "Network completed"
+msgstr ""
+
 #: ../../source/network/network.md:430
 msgid "Recall that our objective was to create a channel for consortium X1 -- organizations R1 and R2. This next phase of network development sees organization R2 add its infrastructure to the network."
 msgstr ""
 
 #: ../../source/network/network.md:434
 msgid "Let's see how the network has evolved:"
-msgstr ""
-
-#: ../../source/network/network.md:436
-msgid "network.grow"
 msgstr ""
 
 #: ../../source/network/network.md:438
@@ -300,6 +328,10 @@ msgstr ""
 msgid "We have created our first operational network! At this stage in network development, we have a channel in which organizations R1 and R2 can fully transact with each other.  Specifically, this means that applications A1 and A2 can generate transactions using smart contract S5 and ledger L1 on channel C1."
 msgstr ""
 
+#: ../../source/network/network.md:456
+msgid "Generating and accepting transactions"
+msgstr ""
+
 #: ../../source/network/network.md:458
 msgid "In contrast to peer nodes, which always host a copy of the ledger, we see that there are two different kinds of peer nodes; those which host smart contracts and those which do not. In our network, every peer hosts a copy of the smart contract, but in larger networks, there will be many more peer nodes that do not host a copy of the smart contract. A peer can only run a smart contract if it is installed on it, but it can know about the interface of a smart contract by being connected to a channel."
 msgstr ""
@@ -312,16 +344,52 @@ msgstr ""
 msgid "We don't need to worry about the exact details of how transactions are generated, distributed and accepted in this topic -- it is sufficient to understand that we have a blockchain network where organizations R1 and R2 can share information and processes as ledger-captured transactions.  We'll learn a lot more about transactions, ledgers, smart contracts in other topics."
 msgstr ""
 
+#: ../../source/network/network.md:480
+msgid "Types of peers"
+msgstr ""
+
 #: ../../source/network/network.md:482
 msgid "In Hyperledger Fabric, while all peers are the same, they can assume multiple roles depending on how the network is configured.  We now have enough understanding of a typical network topology to describe these roles."
+msgstr ""
+
+#: ../../source/network/network.md:486
+msgid "Committing peer. Every peer node in a channel is a committing peer. It receives blocks of generated transactions, which are subsequently validated before they are committed to the peer node's copy of the ledger as an append operation."
+msgstr ""
+
+#: ../../source/network/network.md:491
+msgid "Endorsing peer. Every peer with a smart contract can be an endorsing peer if it has a smart contract installed. However, to actually be an endorsing peer, the smart contract on the peer must be used by a client application to generate a digitally signed transaction response. The term endorsing peer is an explicit reference to this fact."
+msgstr ""
+
+#: ../../source/network/network.md:498
+msgid "An endorsement policy for a smart contract identifies the organizations whose peer should digitally sign a generated transaction before it can be accepted onto a committing peer's copy of the ledger."
 msgstr ""
 
 #: ../../source/network/network.md:502
 msgid "These are the two major types of peer; there are two other roles a peer can adopt:"
 msgstr ""
 
+#: ../../source/network/network.md:505
+msgid "Leader peer. When an organization has multiple peers in a channel, a leader peer is a node which takes responsibility for distributing transactions from the orderer to the other committing peers in the organization.  A peer can choose to participate in static or dynamic leadership selection."
+msgstr ""
+
+#: ../../source/network/network.md:511
+msgid "It is helpful, therefore to think of two sets of peers from leadership perspective -- those that have static leader selection, and those with dynamic leader selection. For the static set, zero or more peers can be configured as leaders. For the dynamic set, one peer will be elected leader by the set. Moreover, in the dynamic set, if a leader peer fails, then the remaining peers will re-elect a leader."
+msgstr ""
+
+#: ../../source/network/network.md:518
+msgid "It means that an organization's peers can have one or more leaders connected to the ordering service. This can help to improve resilience and scalability in large networks which process high volumes of transactions."
+msgstr ""
+
+#: ../../source/network/network.md:522
+msgid "Anchor peer. If a peer needs to communicate with a peer in another organization, then it can use one of the anchor peers defined in the channel configuration for that organization. An organization can have zero or more anchor peers defined for it, and an anchor peer can help with many different cross-organization communication scenarios."
+msgstr ""
+
 #: ../../source/network/network.md:529
 msgid "Note that a peer can be a committing peer, endorsing peer, leader peer and anchor peer all at the same time! Only the anchor peer is optional -- for all practical purposes there will always be a leader peer and at least one endorsing peer and at least one committing peer."
+msgstr ""
+
+#: ../../source/network/network.md:534
+msgid "Install not instantiate"
 msgstr ""
 
 #: ../../source/network/network.md:536
@@ -348,16 +416,16 @@ msgstr ""
 msgid "The careful use of network and channel policies allow even large networks to be well-governed.  Organizations are free to add peer nodes to the network so long as they conform to the policies agreed by the network. Network and channel policies create the balance between autonomy and control which characterizes a de-centralized network."
 msgstr ""
 
+#: ../../source/network/network.md:578
+msgid "Simplifying the visual vocabulary"
+msgstr ""
+
 #: ../../source/network/network.md:580
 msgid "We’re now going to simplify the visual vocabulary used to represent our sample blockchain network. As the size of the network grows, the lines initially used to help us understand channels will become cumbersome. Imagine how complicated our diagram would be if we added another peer or client application, or another channel?"
 msgstr ""
 
 #: ../../source/network/network.md:586
 msgid "That's what we're going to do in a minute, so before we do, let's simplify the visual vocabulary. Here's a simplified representation of the network we've developed so far:"
-msgstr ""
-
-#: ../../source/network/network.md:589
-msgid "network.vocabulary"
 msgstr ""
 
 #: ../../source/network/network.md:591
@@ -368,16 +436,16 @@ msgstr ""
 msgid "Note that the network diagram has been simplified by replacing channel lines with connection points, shown as blue circles which include the channel number. No information has been lost. This representation is more scalable because it eliminates crossing lines. This allows us to more clearly represent larger networks. We've achieved this simplification by focusing on the connection points between components and a channel, rather than the channel itself."
 msgstr ""
 
+#: ../../source/network/network.md:604
+msgid "Adding another consortium definition"
+msgstr ""
+
 #: ../../source/network/network.md:606
 msgid "In this next phase of network development, we introduce organization R3.  We're going to give organizations R2 and R3 a separate application channel which allows them to transact with each other.  This application channel will be completely separate to that previously defined, so that R2 and R3 transactions can be kept private to them."
 msgstr ""
 
 #: ../../source/network/network.md:612
 msgid "Let's return to the network level and define a new consortium, X2, for R2 and R3:"
-msgstr ""
-
-#: ../../source/network/network.md:615
-msgid "network.consortium2"
 msgstr ""
 
 #: ../../source/network/network.md:617
@@ -396,12 +464,12 @@ msgstr ""
 msgid "In practice, consortium definition X2 has been added to the network configuration NC4. We discuss the exact mechanics of this operation elsewhere in the documentation."
 msgstr ""
 
-#: ../../source/network/network.md:639
-msgid "Let's now use this new consortium definition, X2, to create a new channel, C2. To help reinforce your understanding of the simpler channel notation, we've used both visual styles -- channel C1 is represented with blue circular end points, whereas channel C2 is represented with red connecting lines:"
+#: ../../source/network/network.md:637
+msgid "Adding a new channel"
 msgstr ""
 
-#: ../../source/network/network.md:644
-msgid "network.channel2"
+#: ../../source/network/network.md:639
+msgid "Let's now use this new consortium definition, X2, to create a new channel, C2. To help reinforce your understanding of the simpler channel notation, we've used both visual styles -- channel C1 is represented with blue circular end points, whereas channel C2 is represented with red connecting lines:"
 msgstr ""
 
 #: ../../source/network/network.md:646
@@ -418,6 +486,10 @@ msgstr ""
 
 #: ../../source/network/network.md:669
 msgid "As the network and channels evolve, so will the network and channel configurations. There is a process by which this is accomplished in a controlled manner -- involving configuration transactions which capture the change to these configurations. Every configuration change results in a new configuration block transaction being generated, and later in this topic, we'll see how these blocks are validated and accepted to create updated network and channel configurations respectively."
+msgstr ""
+
+#: ../../source/network/network.md:677
+msgid "Network and channel configurations"
 msgstr ""
 
 #: ../../source/network/network.md:679
@@ -460,16 +532,16 @@ msgstr ""
 msgid "This balance between objects that are logically singular, by being physically distributed is a common pattern in Hyperledger Fabric. Objects like network configurations, that are logically single, turn out to be physically replicated among a set of ordering services nodes for example. We also see it with channel configurations, ledgers, and to some extent smart contracts which are installed in multiple places but whose interfaces exist logically at the channel level. It's a pattern you see repeated time and again in Hyperledger Fabric, and enables Hyperledger Fabric to be both de-centralized and yet manageable at the same time."
 msgstr ""
 
+#: ../../source/network/network.md:762
+msgid "Adding another peer"
+msgstr ""
+
 #: ../../source/network/network.md:764
 msgid "Now that organization R3 is able to fully participate in channel C2, let's add its infrastructure components to the channel.  Rather than do this one component at a time, we're going to add a peer, its local copy of a ledger, a smart contract and a client application all at once!"
 msgstr ""
 
 #: ../../source/network/network.md:769
 msgid "Let's see the network with organization R3's components added:"
-msgstr ""
-
-#: ../../source/network/network.md:771
-msgid "network.peer2"
 msgstr ""
 
 #: ../../source/network/network.md:773
@@ -488,12 +560,12 @@ msgstr ""
 msgid "At this point in time, we have a single network that has two completely separate channels defined within it.  These channels provide independently managed facilities for organizations to transact with each other. Again, this is de-centralization at work; we have a balance between control and autonomy. This is achieved through policies which are applied to channels which are controlled by, and affect, different organizations."
 msgstr ""
 
-#: ../../source/network/network.md:802
-msgid "In this final stage of network development, let's return our focus to organization R2. We can exploit the fact that R2 is a member of both consortia X1 and X2 by joining it to multiple channels:"
+#: ../../source/network/network.md:800
+msgid "Joining a peer to multiple channels"
 msgstr ""
 
-#: ../../source/network/network.md:806
-msgid "network.multichannel"
+#: ../../source/network/network.md:802
+msgid "In this final stage of network development, let's return our focus to organization R2. We can exploit the fact that R2 is a member of both consortia X1 and X2 by joining it to multiple channels:"
 msgstr ""
 
 #: ../../source/network/network.md:808
@@ -524,6 +596,10 @@ msgstr ""
 msgid "Similarly, we can see that client application A2 is now able to transact on channels C1 and C2.  And likewise, it too will be governed by the policies in the appropriate channel configurations.  As an aside, note that client application A2 and peer node P2 are using a mixed visual vocabulary -- both lines and connections. You can see that they are equivalent; they are visual synonyms."
 msgstr ""
 
+#: ../../source/network/network.md:849
+msgid "The ordering service"
+msgstr ""
+
 #: ../../source/network/network.md:851
 msgid "The observant reader may notice that the ordering service node appears to be a centralized component; it was used to create the network initially, and connects to every channel in the network.  Even though we added R1 and R4 to the network configuration policy NC4 which controls the orderer, the node was running on R4's infrastructure. In a world of de-centralization, this looks wrong!"
 msgstr ""
@@ -536,17 +612,16 @@ msgstr ""
 msgid "Let's have a look at a more realistic ordering service node configuration:"
 msgstr ""
 
-#: ../../source/network/network.md:866
-#: ../../source/network/network.md:974
-msgid "network.finalnetwork2"
-msgstr ""
-
 #: ../../source/network/network.md:868
 msgid "A multi-organization ordering service.  The ordering service comprises ordering service nodes O1 and O4. O1 is provided by organization R1 and node O4 is provided by organization R4. The network configuration NC4 defines network resource permissions for actors from both organizations R1 and R4."
 msgstr ""
 
 #: ../../source/network/network.md:873
 msgid "We can see that this ordering service completely de-centralized -- it runs in organization R1 and it runs in organization R4. The network configuration policy, NC4, permits R1 and R4 equal rights over network resources.  Client applications and peer nodes from organizations R1 and R4 can manage network resources by connecting to either node O1 or node O4, because both nodes behave the same way, as defined by the policies in network configuration NC4. In practice, actors from a particular organization tend to use infrastructure provided by their home organization, but that's certainly not always the case."
+msgstr ""
+
+#: ../../source/network/network.md:882
+msgid "De-centralized transaction distribution"
 msgstr ""
 
 #: ../../source/network/network.md:884
@@ -559,6 +634,10 @@ msgstr ""
 
 #: ../../source/network/network.md:904
 msgid "We can see that the ordering service, like the other components in Hyperledger Fabric, is a fully de-centralized component. Whether acting as a network management point, or as a distributor of blocks in a channel, its nodes can be distributed as required throughout the multiple organizations in a network."
+msgstr ""
+
+#: ../../source/network/network.md:909
+msgid "Changing policy"
 msgstr ""
 
 #: ../../source/network/network.md:911
@@ -597,6 +676,10 @@ msgstr ""
 msgid "We've only scratched the surface of the power of policies and mod_policy in particular in this subsection. It is discussed at much more length in the policy topic, but for now let's return to our finished network!"
 msgstr ""
 
+#: ../../source/network/network.md:968
+msgid "Network fully formed"
+msgstr ""
+
 #: ../../source/network/network.md:970
 msgid "Let's recap what our network looks like using a consistent visual vocabulary. We've re-organized it slightly using our more compact visual syntax, because it better accommodates larger topologies:"
 msgstr ""
@@ -609,8 +692,40 @@ msgstr ""
 msgid "We're at the end of our conceptual journey to build a sample Hyperledger Fabric blockchain network. We've created a four organization network with two channels and three peer nodes, with two smart contracts and an ordering service.  It is supported by four certificate authorities. It provides ledger and smart contract services to three client applications, who can interact with it via the two channels. Take a moment to look through the details of the network in the diagram, and feel free to read back through the topic to reinforce your knowledge, or go to a more detailed topic."
 msgstr ""
 
+#: ../../source/network/network.md:996
+msgid "Summary of network components"
+msgstr ""
+
 #: ../../source/network/network.md:998
 msgid "Here's a quick summary of the network components we've discussed:"
+msgstr ""
+
+#: ../../source/network/network.md:1000
+msgid "Ledger. One per channel. Comprised of the Blockchain and the World state"
+msgstr ""
+
+#: ../../source/network/network.md:1003
+msgid "Smart contract (aka chaincode)"
+msgstr ""
+
+#: ../../source/network/network.md:1004
+msgid "Peer nodes"
+msgstr ""
+
+#: ../../source/network/network.md:1005
+msgid "Ordering service"
+msgstr ""
+
+#: ../../source/network/network.md:1006
+msgid "Channel"
+msgstr ""
+
+#: ../../source/network/network.md:1007
+msgid "Certificate Authority"
+msgstr ""
+
+#: ../../source/network/network.md:1009
+msgid "Network summary"
 msgstr ""
 
 #: ../../source/network/network.md:1011

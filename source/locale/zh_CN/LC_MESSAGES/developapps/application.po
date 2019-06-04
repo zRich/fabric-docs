@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:00+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -21,13 +21,17 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../../source/developapps/application.md:1
+msgid "Application"
+msgstr ""
+
 #: ../../source/developapps/application.md:3
 msgid "Audience: Architects, Application and smart contract developers"
 msgstr "受众:架构师、应用程序和智能合约开发者"
 
 #: ../../source/developapps/application.md:5
 msgid ""
-"An application can interact with a blockhain network by submitting "
+"An application can interact with a blockchain network by submitting "
 "transactions to a ledger or querying ledger content. This topic covers the "
 "mechanics of how an application does this; in our scenario, organizations "
 "access PaperNet using applications which invoke issue, sell and redeem "
@@ -35,7 +39,6 @@ msgid ""
 "MagnetoCorp's application to issue a commercial paper is basic, it covers "
 "all the major points of understanding."
 msgstr ""
-"应用程序可以通过向账本提交交易或查询账本内容与区块链网络交互。本主题涵盖了应用程序如何实现这一点的机制;在我们的场景中，组织使用应用程序访问PaperNet，这些应用程序调用在商业票据智能合约中定义的发行、销售和赎回交易。尽管MagnetoCorp发行商业票据的应用程序很基础，但它涵盖了所有主要的理解要点。"
 
 #: ../../source/developapps/application.md:13
 msgid "In this topic, we're going to cover:"
@@ -49,6 +52,34 @@ msgstr ""
 "如何提交交易\n"
 "如何处理交易响应"
 
+#: ../../source/developapps/application.md:15
+msgid "The application flow to invoke a smart contract"
+msgstr ""
+
+#: ../../source/developapps/application.md:16
+msgid "How an application uses a wallet and identity"
+msgstr ""
+
+#: ../../source/developapps/application.md:17
+msgid "How an application connects using a gateway"
+msgstr ""
+
+#: ../../source/developapps/application.md:18
+msgid "How to access a particular network"
+msgstr ""
+
+#: ../../source/developapps/application.md:19
+msgid "How to construct a transaction request"
+msgstr ""
+
+#: ../../source/developapps/application.md:20
+msgid "How to submit a transaction"
+msgstr ""
+
+#: ../../source/developapps/application.md:21
+msgid "How to process a transaction response"
+msgstr ""
+
 #: ../../source/developapps/application.md:23
 msgid ""
 "To help your understanding, we'll make reference to the commercial paper "
@@ -59,6 +90,10 @@ msgid ""
 msgstr ""
 "为了帮助您理解，我们将参考超级账本Fabric提供的商业票据示例应用程序。您可以下载它并在本地运行它。它是用JavaScript编写的，但是逻辑是完全独立于语言的，所以您可以很容易地看到发生了什么!(Java和GOLANG也将提供该示例。)"
 
+#: ../../source/developapps/application.md:30
+msgid "Basic Flow"
+msgstr ""
+
 #: ../../source/developapps/application.md:32
 msgid ""
 "An application interacts with a blockchain network using the Fabric SDK. "
@@ -68,13 +103,37 @@ msgstr "应用程序使用Fabric SDK与区块链网络进行交互。下面是�
 
 #: ../../source/developapps/application.md:36
 msgid ""
-"develop.application A PaperNet application invokes the commercial paper "
-"smart contract to submit an issue transaction request."
-msgstr "PaperNet应用程序调用商业票据智能合约来提交发行交易请求。"
+"A PaperNet application invokes the commercial paper smart contract to submit"
+" an issue transaction request."
+msgstr ""
 
 #: ../../source/developapps/application.md:39
 msgid "An application has to follow six basic steps to submit a transaction:"
 msgstr "申请提交交易须遵循六个基本步骤:"
+
+#: ../../source/developapps/application.md:41
+msgid "Select an identity from a wallet"
+msgstr ""
+
+#: ../../source/developapps/application.md:42
+msgid "Connect to a gateway"
+msgstr ""
+
+#: ../../source/developapps/application.md:43
+msgid "Access the desired network"
+msgstr ""
+
+#: ../../source/developapps/application.md:44
+msgid "Construct a transaction request for a smart contract"
+msgstr ""
+
+#: ../../source/developapps/application.md:45
+msgid "Submit the transaction to the network"
+msgstr ""
+
+#: ../../source/developapps/application.md:46
+msgid "Process the response"
+msgstr ""
 
 #: ../../source/developapps/application.md:48
 msgid ""
@@ -86,6 +145,10 @@ msgid ""
 msgstr ""
 "您将看到一个典型的应用程序如何使用Fabric "
 "SDK执行这六个步骤。您将在issue.js文件中找到应用程序代码。在您的浏览器中查看它，或者在您最喜欢的编辑器中打开它(如果您已经下载了它)。花点时间看看应用程序的整体结构;即使有注释和间距，也只有100行代码!"
+
+#: ../../source/developapps/application.md:55
+msgid "Wallet"
+msgstr ""
 
 #: ../../source/developapps/application.md:57
 msgid ""
@@ -133,6 +196,10 @@ msgid ""
 "identities."
 msgstr "还要注意，钱包里没有任何形式的现金或代币——它们容纳身份。"
 
+#: ../../source/developapps/application.md:92
+msgid "Gateway"
+msgstr ""
+
 #: ../../source/developapps/application.md:94
 msgid ""
 "The second key class is a Fabric Gateway. Most importantly, a gateway "
@@ -147,6 +214,18 @@ msgstr ""
 "gateway.connect()有两个重要的参数:\n"
 "- connectionProfile:连接概要文件的文件系统位置，它将一组peer标识为到PaperNet的网关 \n"
 "- connectionOptions:一组用于控制issue.js如何与PaperNet交互的选项"
+
+#: ../../source/developapps/application.md:104
+msgid ""
+"connectionProfile: the file system location of a connection profile that "
+"identifies a set of peers as a gateway to PaperNet"
+msgstr ""
+
+#: ../../source/developapps/application.md:108
+msgid ""
+"connectionOptions: a set of options used to control how issue.js interacts "
+"with PaperNet"
+msgstr ""
 
 #: ../../source/developapps/application.md:112
 msgid ""
@@ -231,6 +310,10 @@ msgid ""
 "achieved."
 msgstr "如果您愿意，请阅读更多关于连接选项如何允许应用程序指定面向目标的行为，而不必担心如何实现该行为。"
 
+#: ../../source/developapps/application.md:210
+msgid "Network channel"
+msgstr ""
+
 #: ../../source/developapps/application.md:212
 msgid ""
 "The peers defined in the gateway connectionProfile.yaml provide issue.js "
@@ -267,6 +350,10 @@ msgid ""
 "identity provided in gateway.connect()."
 msgstr ""
 "我们可以在这里看到超级账本Fabric的一个强大特性——应用程序可以通过连接到多个网关peer(每个网关peer都加入到多个网络通道)，参与到一个网络网络中。根据gateway.connect()中提供的钱包身份，应用程序在不同的通道中具有不同的权限。"
+
+#: ../../source/developapps/application.md:240
+msgid "Construct request"
+msgstr ""
 
 #: ../../source/developapps/application.md:242
 msgid ""
@@ -309,6 +396,10 @@ msgstr "回忆一下MagnetoCorp发行第一份商业票据时的交易:"
 msgid "Let's now submit this transaction to PaperNet!"
 msgstr "现在让我们把这个交易提交到PaperNet!"
 
+#: ../../source/developapps/application.md:284
+msgid "Submit transaction"
+msgstr ""
+
 #: ../../source/developapps/application.md:286
 msgid "Submitting a transaction is a single method call to the SDK:"
 msgstr "提交交易是对SDK的一个方法调用:"
@@ -349,6 +440,10 @@ msgstr ""
 msgid ""
 "Let's now turn our attention to how the application handles the response!"
 msgstr "现在让我们将注意力转向应用程序如何处理响应!"
+
+#: ../../source/developapps/application.md:316
+msgid "Process response"
+msgstr ""
 
 #: ../../source/developapps/application.md:318
 msgid ""

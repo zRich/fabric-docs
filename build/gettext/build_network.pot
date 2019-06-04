@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -713,203 +713,199 @@ msgid "The state database can be switched from the default (goleveldb) to CouchD
 msgstr ""
 
 #: ../../source/build_network.rst:1191
-msgid "The Fabric chaincode lifecycle that is being introduced in the v2.0 Alpha release does not support using indexes with CouchDB. However, you can still use CouchDB as the state database and follow the steps below."
-msgstr ""
-
-#: ../../source/build_network.rst:1196
 msgid "To use CouchDB instead of the default database (goleveldb), follow the same procedures outlined earlier for generating the artifacts, except when starting the network pass ``docker-compose-couch.yaml`` as well:"
 msgstr ""
 
-#: ../../source/build_network.rst:1204
+#: ../../source/build_network.rst:1199
 msgid "**abstore** should now work using CouchDB underneath."
 msgstr ""
 
-#: ../../source/build_network.rst:1206
+#: ../../source/build_network.rst:1201
 msgid "If you choose to implement mapping of the fabric-couchdb container port to a host port, please make sure you are aware of the security implications. Mapping of the port in a development environment makes the CouchDB REST API available, and allows the visualization of the database via the CouchDB web interface (Fauxton). Production environments would likely refrain from implementing port mapping in order to restrict outside access to the CouchDB containers."
 msgstr ""
 
-#: ../../source/build_network.rst:1214
+#: ../../source/build_network.rst:1209
 msgid "You can use **abstore** chaincode against the CouchDB state database using the steps outlined above, however in order to exercise the CouchDB query capabilities you will need to use a chaincode that has data modeled as JSON. The sample chaincode **marbles02** has been written to demostrate the queries you can issue from your chaincode if you are using a CouchDB database. You can locate the **marbles02** chaincode in the ``fabric/examples/chaincode/go`` directory."
 msgstr ""
 
-#: ../../source/build_network.rst:1222
+#: ../../source/build_network.rst:1217
 msgid "We will follow the same process to create and join the channel as outlined in the :ref:`peerenvvars` section above.  Once you have joined your peer(s) to the channel, use the following steps to interact with the **marbles02** chaincode:"
 msgstr ""
 
-#: ../../source/build_network.rst:1227
+#: ../../source/build_network.rst:1222
 msgid "Package and install the chaincode on ``peer0.org1.example.com``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1242
+#: ../../source/build_network.rst:1237
 msgid "Save the packageID as an environment variable so you can pass it to future commands:"
 msgstr ""
 
-#: ../../source/build_network.rst:1249
+#: ../../source/build_network.rst:1244
 msgid "Approve a chaincode definition as Org1:"
 msgstr ""
 
-#: ../../source/build_network.rst:1257
+#: ../../source/build_network.rst:1252
 msgid "Install the chaincode on ``peer0.org2.example.com``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1267
+#: ../../source/build_network.rst:1262
 msgid "Approve a chaincode definition as Org2, and then commit the definition to the channel:"
 msgstr ""
 
-#: ../../source/build_network.rst:1277
+#: ../../source/build_network.rst:1272
 msgid "We can now create some marbles. The first invoke of the chaincode will start the chaincode container. You may need to wait for the container to start."
 msgstr ""
 
-#: ../../source/build_network.rst:1286
+#: ../../source/build_network.rst:1281
 msgid "Once the container has started, you can issue additional commands to create some marbles and move them around:"
 msgstr ""
 
-#: ../../source/build_network.rst:1299
+#: ../../source/build_network.rst:1294
 msgid "If you chose to map the CouchDB ports in docker-compose, you can now view the state database through the CouchDB web interface (Fauxton) by opening a browser and navigating to the following URL:"
 msgstr ""
 
-#: ../../source/build_network.rst:1303
+#: ../../source/build_network.rst:1298
 msgid "``http://localhost:5984/_utils``"
 msgstr ""
 
-#: ../../source/build_network.rst:1305
+#: ../../source/build_network.rst:1300
 msgid "You should see a database named ``mychannel`` (or your unique channel name) and the documents inside it."
 msgstr ""
 
-#: ../../source/build_network.rst:1308
+#: ../../source/build_network.rst:1303
 msgid "For the below commands, be sure to update the $CHANNEL_NAME variable appropriately."
 msgstr ""
 
-#: ../../source/build_network.rst:1310
+#: ../../source/build_network.rst:1305
 msgid "You can run regular queries from the CLI (e.g. reading ``marble2``):"
 msgstr ""
 
-#: ../../source/build_network.rst:1316
+#: ../../source/build_network.rst:1311
 msgid "The output should display the details of ``marble2``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1322
+#: ../../source/build_network.rst:1317
 msgid "You can retrieve the history of a specific marble - e.g. ``marble1``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1328
+#: ../../source/build_network.rst:1323
 msgid "The output should display the transactions on ``marble1``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1334
+#: ../../source/build_network.rst:1329
 msgid "You can also perform rich queries on the data content, such as querying marble fields by owner ``jerry``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1340
+#: ../../source/build_network.rst:1335
 msgid "The output should display the two marbles owned by ``jerry``:"
 msgstr ""
 
-#: ../../source/build_network.rst:1348
+#: ../../source/build_network.rst:1343
 msgid "Why CouchDB"
 msgstr ""
 
-#: ../../source/build_network.rst:1349
+#: ../../source/build_network.rst:1344
 msgid "CouchDB is a kind of NoSQL solution. It is a document-oriented database where document fields are stored as key-value maps. Fields can be either a simple key-value pair, list, or map. In addition to keyed/composite-key/key-range queries which are supported by LevelDB, CouchDB also supports full data rich queries capability, such as non-key queries against the whole blockchain data, since its data content is stored in JSON format and fully queryable. Therefore, CouchDB can meet chaincode, auditing, reporting requirements for many use cases that not supported by LevelDB."
 msgstr ""
 
-#: ../../source/build_network.rst:1353
+#: ../../source/build_network.rst:1348
 msgid "CouchDB can also enhance the security for compliance and data protection in the blockchain. As it is able to implement field-level security through the filtering and masking of individual attributes within a transaction, and only authorizing the read-only permission if needed."
 msgstr ""
 
-#: ../../source/build_network.rst:1355
+#: ../../source/build_network.rst:1350
 msgid "In addition, CouchDB falls into the AP-type (Availability and Partition Tolerance) of the CAP theorem. It uses a master-master replication model with ``Eventual Consistency``. More information can be found on the `Eventual Consistency page of the CouchDB documentation <http://docs.couchdb.org/en/latest/intro/consistency.html>`__. However, under each fabric peer, there is no database replicas, writes to database are guaranteed consistent and durable (not ``Eventual Consistency``)."
 msgstr ""
 
-#: ../../source/build_network.rst:1360
+#: ../../source/build_network.rst:1355
 msgid "CouchDB is the first external pluggable state database for Fabric, and there could and should be other external database options. For example, IBM enables the relational database for its blockchain. And the CP-type (Consistency and Partition Tolerance) databases may also in need, so as to enable data consistency without application level guarantee."
 msgstr ""
 
-#: ../../source/build_network.rst:1365
+#: ../../source/build_network.rst:1360
 msgid "A Note on Data Persistence"
 msgstr ""
 
-#: ../../source/build_network.rst:1367
+#: ../../source/build_network.rst:1362
 msgid "If data persistence is desired on the peer container or the CouchDB container, one option is to mount a directory in the docker-host into a relevant directory in the container. For example, you may add the following two lines in the peer container specification in the ``docker-compose-base.yaml`` file:"
 msgstr ""
 
-#: ../../source/build_network.rst:1377
+#: ../../source/build_network.rst:1372
 msgid "For the CouchDB container, you may add the following two lines in the CouchDB container specification:"
 msgstr ""
 
-#: ../../source/build_network.rst:1388
+#: ../../source/build_network.rst:1383
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../source/build_network.rst:1390
+#: ../../source/build_network.rst:1385
 msgid "Always start your network fresh.  Use the following command to remove artifacts, crypto, containers and chaincode images:"
 msgstr ""
 
-#: ../../source/build_network.rst:1397
+#: ../../source/build_network.rst:1392
 msgid "You **will** see errors if you do not remove old containers and images."
 msgstr ""
 
-#: ../../source/build_network.rst:1400
+#: ../../source/build_network.rst:1395
 msgid "If you see Docker errors, first check your docker version (:doc:`prereqs`), and then try restarting your Docker process.  Problems with Docker are oftentimes not immediately recognizable.  For example, you may see errors resulting from an inability to access crypto material mounted within a container."
 msgstr ""
 
-#: ../../source/build_network.rst:1406
+#: ../../source/build_network.rst:1401
 msgid "If they persist remove your images and start from scratch:"
 msgstr ""
 
-#: ../../source/build_network.rst:1413
+#: ../../source/build_network.rst:1408
 msgid "If you see errors on your create, approve, commit, invoke or query commands, make sure you have properly updated the channel name and chaincode name. There are placeholder values in the supplied sample commands."
 msgstr ""
 
-#: ../../source/build_network.rst:1417
-#: ../../source/build_network.rst:1441
+#: ../../source/build_network.rst:1412
+#: ../../source/build_network.rst:1436
 msgid "If you see the below error:"
 msgstr ""
 
-#: ../../source/build_network.rst:1423
+#: ../../source/build_network.rst:1418
 msgid "You likely have chaincode images (e.g. ``dev-peer1.org2.example.com-mycc-1.0`` or ``dev-peer0.org1.example.com-mycc-1.0``) from prior runs. Remove them and try again."
 msgstr ""
 
-#: ../../source/build_network.rst:1431
+#: ../../source/build_network.rst:1426
 msgid "If you see something similar to the following:"
 msgstr ""
 
-#: ../../source/build_network.rst:1438
+#: ../../source/build_network.rst:1433
 msgid "Make sure you are running your network against the \"1.0.0\" images that have been retagged as \"latest\"."
 msgstr ""
 
-#: ../../source/build_network.rst:1448
+#: ../../source/build_network.rst:1443
 msgid "Then you did not set the ``FABRIC_CFG_PATH`` environment variable properly.  The configtxgen tool needs this variable in order to locate the configtx.yaml.  Go back and execute an ``export FABRIC_CFG_PATH=$PWD``, then recreate your channel artifacts."
 msgstr ""
 
-#: ../../source/build_network.rst:1453
+#: ../../source/build_network.rst:1448
 msgid "To cleanup the network, use the ``down`` option:"
 msgstr ""
 
-#: ../../source/build_network.rst:1459
+#: ../../source/build_network.rst:1454
 msgid "If you see an error stating that you still have \"active endpoints\", then prune your Docker networks.  This will wipe your previous networks and start you with a fresh environment:"
 msgstr ""
 
-#: ../../source/build_network.rst:1467
+#: ../../source/build_network.rst:1462
 msgid "You will see the following message:"
 msgstr ""
 
-#: ../../source/build_network.rst:1474
+#: ../../source/build_network.rst:1469
 msgid "Select ``y``."
 msgstr ""
 
-#: ../../source/build_network.rst:1476
+#: ../../source/build_network.rst:1471
 msgid "If you see an error similar to the following:"
 msgstr ""
 
-#: ../../source/build_network.rst:1482
+#: ../../source/build_network.rst:1477
 msgid "Ensure that the file in question (**script.sh** in this example) is encoded in the Unix format. This was most likely caused by not setting ``core.autocrlf`` to ``false`` in your Git configuration (see :ref:`windows-extras`). There are several ways of fixing this. If you have access to the vim editor for instance, open the file:"
 msgstr ""
 
-#: ../../source/build_network.rst:1492
+#: ../../source/build_network.rst:1487
 msgid "Then change its format by executing the following vim command:"
 msgstr ""
 
-#: ../../source/build_network.rst:1498
+#: ../../source/build_network.rst:1493
 msgid "If you continue to see errors, share your logs on the **fabric-questions** channel on `Hyperledger Rocket Chat <https://chat.hyperledger.org/home>`__ or on `StackOverflow <https://stackoverflow.com/questions/tagged/hyperledger-fabric>`__."
 msgstr ""
 

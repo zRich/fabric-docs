@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2019-04-22 19:55+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/understand_fabcar_network.rst:2
 msgid "Understanding the Fabcar Network"
@@ -32,19 +31,18 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:9
 msgid ""
-"Obscuring the underpinnings of the network to that degree is fine for the"
-" majority of application developers. They don't necessarily need to know "
-"how network components actually work in detail in order to create their "
-"app."
+"Obscuring the underpinnings of the network to that degree is fine for the "
+"majority of application developers. They don't necessarily need to know how "
+"network components actually work in detail in order to create their app."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:13
 msgid ""
 "But for those who do want to know about the fun stuff going on under the "
-"covers, let's go through how applications **connect** to the network and "
-"how they propose **queries** and **updates** on a more granular level, as"
-" well as point out the differences between a small scale test network "
-"like Fabcar and how apps will usually end up working in the real world."
+"covers, let's go through how applications **connect** to the network and how"
+" they propose **queries** and **updates** on a more granular level, as well "
+"as point out the differences between a small scale test network like Fabcar "
+"and how apps will usually end up working in the real world."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:19
@@ -60,10 +58,10 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:26
 msgid ""
-"Fabcar uses the \"basic-network\" sample as its limited development "
-"network. It consists of a single peer node configured to use CouchDB as "
-"the state database, a single \"solo\" ordering node, a certificate "
-"authority (CA) and a CLI container for executing commands."
+"Fabcar uses the \"basic-network\" sample as its limited development network."
+" It consists of a single peer node configured to use CouchDB as the state "
+"database, a single \"solo\" ordering node, a certificate authority (CA) and "
+"a CLI container for executing commands."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:31
@@ -74,8 +72,8 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:34
 msgid ""
-"These components are bootstrapped by the ``./startFabric.sh`` script, "
-"which also:"
+"These components are bootstrapped by the ``./startFabric.sh`` script, which "
+"also:"
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:37
@@ -96,11 +94,10 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:41
 msgid ""
-"These operations would typically be done by an organizational or peer "
-"admin. The script uses the CLI to execute these commands, however there "
-"is support in the SDK as well. Refer to the `Hyperledger Fabric Node SDK "
-"repo <https://github.com/hyperledger/fabric-sdk-node>`__ for example "
-"scripts."
+"These operations would typically be done by an organizational or peer admin."
+" The script uses the CLI to execute these commands, however there is support"
+" in the SDK as well. Refer to the `Hyperledger Fabric Node SDK repo "
+"<https://github.com/hyperledger/fabric-sdk-node>`__ for example scripts."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:47
@@ -109,34 +106,34 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:49
 msgid ""
-"Applications use **APIs** to invoke smart contracts. These smart "
-"contracts are hosted in the network and identified by name and version. "
-"For example, our chaincode container is titled - ``dev-peer0.org1.example"
-".com-fabcar-1.0`` - where the name is ``fabcar``, the version is ``1.0``,"
-" and the peer it is running against is ``dev-peer0.org1.example.com``."
+"Applications use **APIs** to invoke smart contracts. These smart contracts "
+"are hosted in the network and identified by name and version. For example, "
+"our chaincode container is titled - ``dev-peer0.org1.example.com-"
+"fabcar-1.0`` - where the name is ``fabcar``, the version is ``1.0``, and the"
+" peer it is running against is ``dev-peer0.org1.example.com``."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:55
 msgid ""
-"APIs are accessible with an SDK. For purposes of this exercise, we're "
-"using the `Hyperledger Fabric Node SDK <https://fabric-sdk-"
-"node.github.io/>`__ though there is also a Java SDK and CLI that can be "
-"used to drive transactions. SDKs encapsulate all access to the ledger by "
-"allowing an application to communicate with smart contracts, run queries,"
-" or receive ledger updates. These APIs use several different network "
-"addresses and are run with a set of input parameters."
+"APIs are accessible with an SDK. For purposes of this exercise, we're using "
+"the `Hyperledger Fabric Node SDK <https://fabric-sdk-node.github.io/>`__ "
+"though there is also a Java SDK and CLI that can be used to drive "
+"transactions. SDKs encapsulate all access to the ledger by allowing an "
+"application to communicate with smart contracts, run queries, or receive "
+"ledger updates. These APIs use several different network addresses and are "
+"run with a set of input parameters."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:62
 msgid ""
-"Smart contracts are installed by a peer administrator and then "
-"instantiated on a channel by an identity fulfilling the chaincode's "
-"instantiation policy, which by default is comprised of channel "
-"administrators.  The instantiation of the smart contract follows the same"
-" transaction flow as a normal invocation - endorse, order, validate, "
-"commit - and is a prerequisite to interacting with a chaincode container."
-" The script that launched our simplified Fabcar test network took care of"
-" the installation and instantiation for us."
+"Smart contracts are installed by a peer administrator and then instantiated "
+"on a channel by an identity fulfilling the chaincode's instantiation policy,"
+" which by default is comprised of channel administrators.  The instantiation"
+" of the smart contract follows the same transaction flow as a normal "
+"invocation - endorse, order, validate, commit - and is a prerequisite to "
+"interacting with a chaincode container. The script that launched our "
+"simplified Fabcar test network took care of the installation and "
+"instantiation for us."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:71
@@ -145,33 +142,33 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:73
 msgid ""
-"Queries are the simplest kind of invocation: a call and response.  The "
-"most common query will interrogate the state database for the current "
-"value associated with a key (``GetState``).  However, the `chaincode shim"
-" interface "
+"Queries are the simplest kind of invocation: a call and response.  The most "
+"common query will interrogate the state database for the current value "
+"associated with a key (``GetState``).  However, the `chaincode shim "
+"interface "
 "<https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub>`__"
-" also allows for different types of ``Get`` calls (e.g. "
-"``GetHistoryForKey`` or ``GetCreator``)."
+" also allows for different types of ``Get`` calls (e.g. ``GetHistoryForKey``"
+" or ``GetCreator``)."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:78
 msgid ""
 "In our example, the peer holds a hash chain of all transactions and "
-"maintains chaincode state through use of a state database, which in our "
-"case is a CouchDB container.  CouchDB provides the added functionality of"
-" rich queries, contingent upon the chaincode data (key/val pairs) being "
-"modeled as JSON.  When we call the ``GetState`` API in our smart "
-"contract, we are retrieving the JSON value associated with a car from the"
-" CouchDB state database."
+"maintains chaincode state through use of a state database, which in our case"
+" is a CouchDB container.  CouchDB provides the added functionality of rich "
+"queries, contingent upon the chaincode data (key/val pairs) being modeled as"
+" JSON.  When we call the ``GetState`` API in our smart contract, we are "
+"retrieving the JSON value associated with a car from the CouchDB state "
+"database."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:84
 msgid ""
-"Queries are constructed by identifying a peer, a chaincode, a channel and"
-" a set of inputs (e.g. the key) for an available chaincode function and "
-"then utilizing the ``chain.queryByChaincode`` API to send the query to "
-"the peer.  The corresponding value to the supplied inputs is returned to "
-"the application client as a response."
+"Queries are constructed by identifying a peer, a chaincode, a channel and a "
+"set of inputs (e.g. the key) for an available chaincode function and then "
+"utilizing the ``chain.queryByChaincode`` API to send the query to the peer."
+"  The corresponding value to the supplied inputs is returned to the "
+"application client as a response."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:90
@@ -180,29 +177,28 @@ msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:92
 msgid ""
-"Ledger updates start with an application generating a transaction "
-"proposal. As with query, a request is constructed to identify a peer, "
-"chaincode, channel, function, and set of inputs for the transaction. The "
-"program then calls the ``channel.SendTransactionProposal`` API to send "
-"the transaction proposal to the peer(s) for endorsement."
+"Ledger updates start with an application generating a transaction proposal. "
+"As with query, a request is constructed to identify a peer, chaincode, "
+"channel, function, and set of inputs for the transaction. The program then "
+"calls the ``channel.SendTransactionProposal`` API to send the transaction "
+"proposal to the peer(s) for endorsement."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:98
 msgid ""
-"The network (i.e. the endorsing peer(s)) returns a proposal response, "
-"which the application uses to build and sign a transaction request. This "
-"request is sent to the ordering service by calling the "
-"``channel.sendTransaction`` API. The ordering service bundles the "
-"transaction into a block and delivers it to all peers on a channel for "
-"validation (the Fabcar network has only one peer and one channel)."
+"The network (i.e. the endorsing peer(s)) returns a proposal response, which "
+"the application uses to build and sign a transaction request. This request "
+"is sent to the ordering service by calling the ``channel.sendTransaction`` "
+"API. The ordering service bundles the transaction into a block and delivers "
+"it to all peers on a channel for validation (the Fabcar network has only one"
+" peer and one channel)."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:104
 msgid ""
-"Finally the application uses the :doc:`peer_event_services` to register "
-"for events associated with a specific transaction ID so that the "
-"application can be notified about the fate of a transaction (i.e. valid "
-"or invalid)."
+"Finally the application uses the :doc:`peer_event_services` to register for "
+"events associated with a specific transaction ID so that the application can"
+" be notified about the fate of a transaction (i.e. valid or invalid)."
 msgstr ""
 
 #: ../../source/understand_fabcar_network.rst:109
@@ -230,4 +226,3 @@ msgid ""
 "For a deeper dive into the architecture of Hyperledger Fabric, check out "
 ":doc:`arch-deep-dive`."
 msgstr ""
-

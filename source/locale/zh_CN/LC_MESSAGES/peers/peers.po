@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/peers/peers.md:1
+msgid "Peers"
+msgstr ""
 
 #: ../../source/peers/peers.md:3
 msgid ""
@@ -44,10 +48,6 @@ msgid ""
 msgstr ""
 "当然，区块链网络的其他元素也很重要:账本和智能合约、排序器、策略、通道、应用程序、组织、身份和成员，您可以在它们各自的专用部分中阅读更多关于它们的信息。本节主要讨论peer及其与Fabric网络中其他元素的关系。"
 
-#: ../../source/peers/peers.md:17
-msgid "Peer1"
-msgstr "Peer1"
-
 #: ../../source/peers/peers.md:19
 msgid ""
 "A blockchain network is comprised of peer nodes, each of which can hold "
@@ -68,6 +68,10 @@ msgid ""
 msgstr ""
 "可以创建、启动、停止、重新配置甚至删除peer。它们公开了一组API，使管理员和应用程序能够与它们提供的服务进行交互。在本节中，我们将更多地了解这些服务。"
 
+#: ../../source/peers/peers.md:30
+msgid "A word on terminology"
+msgstr ""
+
 #: ../../source/peers/peers.md:32
 msgid ""
 "Fabric implements smart contracts with a technology concept it calls "
@@ -81,6 +85,10 @@ msgstr ""
 "Fabric实现了一个称为链码的技术概念的智能合约——它只是访问账本的一段代码，用受支持的编程语言之一编写。在本主题中，我们通常使用术语链码，但是如果您更习惯这个术语，可以将其理解为智能合约。这是一回事!"
 " 如果您想了解更多关于链码和智能合约的信息，请查看我们关于智能合约和链码的文档。"
 
+#: ../../source/peers/peers.md:39
+msgid "Ledgers and Chaincode"
+msgstr ""
+
 #: ../../source/peers/peers.md:41
 msgid ""
 "Let's look at a peer in a little more detail. We can see that it's the peer "
@@ -91,10 +99,6 @@ msgid ""
 "nature of a blockchain network later in this section."
 msgstr ""
 "让我们更详细地看看peer。我们可以看到，peer承载了账本和链码。更准确地说，peer实际上承载着账本实例和链码实例。注意，这在Fabric网络中提供了故意的冗余——它避免了单点故障。在本节的后面，我们将更多地了解区块链网络的分布式和去中心特性。"
-
-#: ../../source/peers/peers.md:48
-msgid "Peer2"
-msgstr "Peer2"
 
 #: ../../source/peers/peers.md:50
 msgid ""
@@ -114,6 +118,10 @@ msgid ""
 msgstr ""
 "由于peer是账本和链码的宿主，如果应用程序和管理员想访问这些资源，就必须与peer进行交互。这就是为什么peer被认为是构成Fabric网络的最基本的构件。当第一次创建peer时，它既没有账本也没有链码。稍后我们将看到如何在peer节点上创建账本，以及如何安装链码。"
 
+#: ../../source/peers/peers.md:61
+msgid "Multiple Ledgers"
+msgstr ""
+
 #: ../../source/peers/peers.md:63
 msgid ""
 "A peer is able to host more than one ledger, which is helpful because it "
@@ -122,10 +130,6 @@ msgid ""
 "to host two or more ledgers when required."
 msgstr ""
 "peer能够承载多个账本，这很有帮助，因为它允许灵活的系统设计。最简单的配置是peer管理一个账本，但是当需要时，peer托管两个或多个账本是绝对合适的。"
-
-#: ../../source/peers/peers.md:68
-msgid "Peer3"
-msgstr "Peer3"
 
 #: ../../source/peers/peers.md:70
 msgid ""
@@ -151,16 +155,16 @@ msgid ""
 msgstr ""
 "虽然peer完全有可能在不加载任何访问该账本的链码的情况下托管账本实例，但是很少有peer是以这种方式配置的。绝大多数peer将至少安装一个链码，该链码可以查询或更新peer的账本实例。值得一提的是，无论用户是否安装了链码供外部应用程序使用，peer端也有始终存在的特殊系统链码。本主题不详细讨论这些。"
 
+#: ../../source/peers/peers.md:83
+msgid "Multiple Chaincodes"
+msgstr ""
+
 #: ../../source/peers/peers.md:85
 msgid ""
 "There isn't a fixed relationship between the number of ledgers a peer has "
 "and the number of chaincodes that can access that ledger. A peer might have "
 "many chaincodes and many ledgers available to it."
 msgstr "一个peer拥有的账本数量和能够访问该账本的链码数量之间没有固定的关系。一个peer可能有许多链码和许多账本可用。"
-
-#: ../../source/peers/peers.md:89
-msgid "Peer4"
-msgstr "Peer4"
 
 #: ../../source/peers/peers.md:91
 msgid ""
@@ -177,6 +181,10 @@ msgid ""
 "We'll see a little later why the concept of channels in Fabric is important "
 "when hosting multiple ledgers or multiple chaincodes on a peer."
 msgstr "稍后我们将看到为什么Fabric中的通道概念对于在peer节点上托管多个账本或多个链码非常重要。"
+
+#: ../../source/peers/peers.md:99
+msgid "Applications and Peers"
+msgstr ""
 
 #: ../../source/peers/peers.md:101
 msgid ""
@@ -210,10 +218,6 @@ msgid ""
 " more detail."
 msgstr ""
 "通过peer连接，应用程序可以执行链码来查询或更新账本。账本查询交易的结果将立即返回，而账本更新涉及应用程序、peer和排序器之间更复杂的交互。让我们更详细地研究一下。"
-
-#: ../../source/peers/peers.md:121
-msgid "Peer6"
-msgstr "Peer6"
 
 #: ../../source/peers/peers.md:123
 msgid ""
@@ -272,6 +276,10 @@ msgid ""
 "Transaction Flow topic."
 msgstr "在本节的稍后部分，您将了解关于此排序流程的详细性质的更多信息——要真正详细了解此流程，请参阅交易流程主题。"
 
+#: ../../source/peers/peers.md:162
+msgid "Peers and Channels"
+msgstr ""
+
 #: ../../source/peers/peers.md:164
 msgid ""
 "Although this section is about peers rather than channels, it's worth "
@@ -297,10 +305,6 @@ msgid ""
 msgstr ""
 "这些组件通常是peer节点、排序器和应用程序，通过加入一个通道，它们同意协作，共同地共享和管理与该通道关联的相同的账本副本。从概念上讲，您可以将通道看作类似于朋友组(尽管通道的成员当然不需要是朋友!)一个人可能有几组朋友，每组都有他们一起做的活动。这些群体可能是完全独立的(一群工作上的朋友和一群爱好上的朋友相比)，或者他们之间可能有交叉。然而，每个组都是自己的实体，具有某种“规则”。"
 
-#: ../../source/peers/peers.md:179
-msgid "Peer5"
-msgstr "Peer5"
-
 #: ../../source/peers/peers.md:181
 msgid ""
 "Channels allow a specific set of peers and applications to communicate with "
@@ -322,6 +326,10 @@ msgid ""
 msgstr ""
 "我们看到通道的存在方式与peer不同——将通道看作由物理peer集合组成的逻辑结构更合适。理解这一点非常重要——peer为通道的访问和管理提供控制点。"
 
+#: ../../source/peers/peers.md:193
+msgid "Peers and Organizations"
+msgstr ""
+
 #: ../../source/peers/peers.md:195
 msgid ""
 "Now that you understand peers and their relationship to ledgers, chaincodes "
@@ -337,10 +345,6 @@ msgid ""
 "connection points to the network for --- these organizations."
 msgstr ""
 "区块链网络由一组组织管理，而不是由一个组织管理。peer对于这种分布式网络的构建至关重要，因为它们属于这些组织，并且是这些组织与网络的连接点。"
-
-#: ../../source/peers/peers.md:204
-msgid "Peer8"
-msgstr "Peer8"
 
 #: ../../source/peers/peers.md:206
 msgid ""
@@ -407,6 +411,10 @@ msgid ""
 msgstr ""
 "应用程序可以连接到其组织中的peer，也可以连接到另一个组织中的peer，这取决于所需的账本交互的性质。对于账本查询交互，应用程序通常连接到它们自己组织的peer。对于账本更新交互，我们将在后面看到为什么应用程序需要连接到代表每个组织的peer，这些组织需要背书账本更新。"
 
+#: ../../source/peers/peers.md:248
+msgid "Peers and Identity"
+msgstr ""
+
 #: ../../source/peers/peers.md:250
 msgid ""
 "Now that you've seen how peers from different organizations come together to"
@@ -425,10 +433,6 @@ msgid ""
 "organization."
 msgstr ""
 "peer具有通过来自特定证书颁发机构的数字证书分配给它们的身份。在本指南的其他部分，您可以阅读更多关于X.509数字证书如何工作的信息，但是，就目前而言，可以将数字证书看作是一个ID卡，它提供了关于peer的大量可验证信息。网络中的每个peer都由所属组织的管理员分配一个数字证书。"
-
-#: ../../source/peers/peers.md:261
-msgid "Peer9"
-msgstr "Peer9"
 
 #: ../../source/peers/peers.md:263
 msgid ""
@@ -485,6 +489,10 @@ msgstr ""
 "最后,请注意,peer的物理位置在哪里不是很重要——它可以驻留在云端,或在数据中心旗下的一个组织,或者在一个本地机器- - "
 "-与它关联的身份标识出它属于一个特定的组织。在我们上面的例子中，P3可以托管在Org1的数据中心，但是只要与它相关联的数字证书由CA2颁发，那么它就属于Org2。"
 
+#: ../../source/peers/peers.md:299
+msgid "Peers and Orderers"
+msgstr ""
+
 #: ../../source/peers/peers.md:301
 msgid ""
 "We've seen that peers form the basis for a blockchain network, hosting "
@@ -535,6 +543,10 @@ msgid ""
 msgstr ""
 "正如您将看到的，排序器节点是这个过程的核心，所以让我们更详细地研究应用程序和peer如何使用排序器生成可以一致应用于分布式复制账本的账本更新。"
 
+#: ../../source/peers/peers.md:333
+msgid "Phase 1: Proposal"
+msgstr ""
+
 #: ../../source/peers/peers.md:335
 msgid ""
 "Phase 1 of the transaction workflow involves an interaction between an "
@@ -556,10 +568,6 @@ msgid ""
 "complete. Let's examine this phase in a little more detail."
 msgstr ""
 "要开始第1阶段，应用程序生成一个交易提案，并将其发送给每个所需的peer集以进行背书。然后，这些支持peer中的每一个都使用交易提案独立地执行链码，以生成交易提案响应。它不将此更新应用于账本，而只是简单地签名并将其返回给应用程序。一旦应用程序收到足够数量的签名提案响应，交易流程的第一阶段就完成了。让我们更详细地研究这个阶段。"
-
-#: ../../source/peers/peers.md:349
-msgid "Peer10"
-msgstr "Peer10"
 
 #: ../../source/peers/peers.md:351
 msgid ""
@@ -630,6 +638,10 @@ msgid ""
 msgstr ""
 "在阶段1的末尾，如果应用程序希望丢弃不一致的交易响应，它可以自由地丢弃这些响应，从而有效地提前终止交易工作流。稍后我们将看到，如果应用程序试图使用一组不一致的交易响应来更新账本，它将被拒绝。"
 
+#: ../../source/peers/peers.md:397
+msgid "Phase 2: Ordering and packaging transactions into blocks"
+msgstr ""
+
 #: ../../source/peers/peers.md:399
 msgid ""
 "The second phase of the transaction workflow is the packaging phase. The "
@@ -640,6 +652,10 @@ msgid ""
 "phase."
 msgstr ""
 "交易工作流的第二阶段是打包阶段。排序器是这个过程的关键——它接收包含来自许多应用程序的已背书交易提案响应的交易，并将交易排序为区块。有关排序和打包阶段的更多细节，请查看关于排序阶段的概念信息。"
+
+#: ../../source/peers/peers.md:406
+msgid "Phase 3: Validation and commit"
+msgstr ""
 
 #: ../../source/peers/peers.md:408
 msgid ""
@@ -659,10 +675,6 @@ msgid ""
 "transactions are retained for audit, but are not applied to the ledger."
 msgstr ""
 "交易工作流的最后一个阶段涉及到从排序器到peer的区块的分发和随后的验证，这些区块可以应用到账本中。具体来说，在每一个peer，一个区块内的每一笔交易都要经过验证，以确保它在应用到账本之前得到所有相关组织的一致认可。失败的交易保留下来进行审计，但不应用于账本。"
-
-#: ../../source/peers/peers.md:419
-msgid "Peer12"
-msgstr "Peer12"
 
 #: ../../source/peers/peers.md:421
 msgid ""
@@ -774,6 +786,10 @@ msgid ""
 "consistently applied across the blockchain network."
 msgstr ""
 "总之，第3阶段看到的是由排序器生成的区块一致地应用于账本。将事务严格地按区块排序，允许每个peer验证交易更新在整个区块链网络上一致地应用。"
+
+#: ../../source/peers/peers.md:492
+msgid "Orderers and Consensus"
+msgstr ""
 
 #: ../../source/peers/peers.md:494
 msgid ""

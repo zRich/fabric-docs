@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/whatis.md:1
+msgid "Introduction"
+msgstr ""
 
 #: ../../source/whatis.md:3
 msgid "In general terms, a blockchain is an immutable transaction ledger, maintained within a distributed network of peer nodes. These nodes each maintain a copy of the ledger by applying transactions that have been validated by a consensus protocol, grouped into blocks that include a hash that bind each block to the preceding block."
@@ -32,8 +36,32 @@ msgstr ""
 msgid "For enterprise use, we need to consider the following requirements:"
 msgstr ""
 
+#: ../../source/whatis.md:30
+msgid "Participants must be identified/identifiable"
+msgstr ""
+
+#: ../../source/whatis.md:31
+msgid "Networks need to be permissioned"
+msgstr ""
+
+#: ../../source/whatis.md:32
+msgid "High transaction throughput performance"
+msgstr ""
+
+#: ../../source/whatis.md:33
+msgid "Low latency of transaction confirmation"
+msgstr ""
+
+#: ../../source/whatis.md:34
+msgid "Privacy and confidentiality of transactions and data pertaining to business transactions"
+msgstr ""
+
 #: ../../source/whatis.md:37
 msgid "While many early blockchain platforms are currently being adapted for enterprise use, Hyperledger Fabric has been designed for enterprise use from the outset. The following sections describe how Hyperledger Fabric (Fabric) differentiates itself from other blockchain platforms and describes some of the motivation for its architectural decisions."
+msgstr ""
+
+#: ../../source/whatis.md:43
+msgid "Hyperledger Fabric"
 msgstr ""
 
 #: ../../source/whatis.md:45
@@ -72,6 +100,10 @@ msgstr ""
 msgid "Let's explore these differentiating features in more detail."
 msgstr ""
 
+#: ../../source/whatis.md:104
+msgid "Modularity"
+msgstr ""
+
 #: ../../source/whatis.md:106
 msgid "Hyperledger Fabric has been specifically architected to have a modular architecture. Whether it is pluggable consensus, pluggable identity management protocols such as LDAP or OpenID Connect, key management protocols or cryptographic libraries, the platform has been designed at its core to be configured to meet the diversity of enterprise use case requirements."
 msgstr ""
@@ -80,8 +112,36 @@ msgstr ""
 msgid "At a high level, Fabric is comprised of the following modular components:"
 msgstr ""
 
+#: ../../source/whatis.md:114
+msgid "A pluggable ordering service establishes consensus on the order of transactions and then broadcasts blocks to peers."
+msgstr ""
+
+#: ../../source/whatis.md:116
+msgid "A pluggable membership service provider is responsible for associating entities in the network with cryptographic identities."
+msgstr ""
+
+#: ../../source/whatis.md:118
+msgid "An optional peer-to-peer gossip service disseminates the blocks output by ordering service to other peers."
+msgstr ""
+
+#: ../../source/whatis.md:120
+msgid "Smart contracts (\"chaincode\") run within a container environment (e.g. Docker) for isolation. They can be written in standard programming languages but do not have direct access to the ledger state."
+msgstr ""
+
+#: ../../source/whatis.md:123
+msgid "The ledger can be configured to support a variety of DBMSs."
+msgstr ""
+
+#: ../../source/whatis.md:124
+msgid "A pluggable endorsement and validation policy enforcement that can be independently configured per application."
+msgstr ""
+
 #: ../../source/whatis.md:127
 msgid "There is fair agreement in the industry that there is no \"one blockchain to rule them all\". Hyperledger Fabric can be configured in multiple ways to satisfy the diverse solution requirements for multiple industry use cases."
+msgstr ""
+
+#: ../../source/whatis.md:131
+msgid "Permissioned vs Permissionless Blockchains"
 msgstr ""
 
 #: ../../source/whatis.md:133
@@ -96,6 +156,10 @@ msgstr ""
 msgid "Additionally, in such a permissioned context, the risk of a participant intentionally introducing malicious code through a smart contract is diminished. First, the participants are known to one another and all actions, whether submitting application transactions, modifying the configuration of the network or deploying a smart contract are recorded on the blockchain following an endorsement policy that was established for the network and relevant transaction type. Rather than being completely anonymous, the guilty party can be easily identified and the incident handled in accordance with the terms of the governance model."
 msgstr ""
 
+#: ../../source/whatis.md:160
+msgid "Smart Contracts"
+msgstr ""
+
 #: ../../source/whatis.md:162
 msgid "A smart contract, or what Fabric calls \"chaincode\", functions as a trusted distributed application that gains its security/trust from the blockchain and the underlying consensus among the peers. It is the business logic of a blockchain application."
 msgstr ""
@@ -104,8 +168,28 @@ msgstr ""
 msgid "There are three key points that apply to smart contracts, especially when applied to a platform:"
 msgstr ""
 
+#: ../../source/whatis.md:170
+msgid "many smart contracts run concurrently in the network,"
+msgstr ""
+
+#: ../../source/whatis.md:171
+msgid "they may be deployed dynamically (in many cases by anyone), and"
+msgstr ""
+
+#: ../../source/whatis.md:172
+msgid "application code should be treated as untrusted, potentially even malicious."
+msgstr ""
+
 #: ../../source/whatis.md:175
 msgid "Most existing smart-contract capable blockchain platforms follow an order-execute architecture in which the consensus protocol:"
+msgstr ""
+
+#: ../../source/whatis.md:178
+msgid "validates and orders transactions then propagates them to all peer nodes,"
+msgstr ""
+
+#: ../../source/whatis.md:179
+msgid "each peer then executes the transactions sequentially."
 msgstr ""
 
 #: ../../source/whatis.md:181
@@ -120,8 +204,24 @@ msgstr ""
 msgid "Further, since all transactions are executed sequentially by all nodes, performance and scale is limited. The fact that the smart contract code executes on every node in the system demands that complex measures be taken to protect the overall system from potentially malicious contracts in order to ensure resiliency of the overall system."
 msgstr ""
 
+#: ../../source/whatis.md:202
+msgid "A New Approach"
+msgstr ""
+
 #: ../../source/whatis.md:204
 msgid "Fabric introduces a new architecture for transactions that we call execute-order-validate. It addresses the resiliency, flexibility, scalability, performance and confidentiality challenges faced by the order-execute model by separating the transaction flow into three steps:"
+msgstr ""
+
+#: ../../source/whatis.md:209
+msgid "execute a transaction and check its correctness, thereby endorsing it,"
+msgstr ""
+
+#: ../../source/whatis.md:210
+msgid "order transactions via a (pluggable) consensus protocol, and"
+msgstr ""
+
+#: ../../source/whatis.md:211
+msgid "validate transactions against an application-specific endorsement policy before committing them to the ledger"
 msgstr ""
 
 #: ../../source/whatis.md:214
@@ -134,6 +234,10 @@ msgstr ""
 
 #: ../../source/whatis.md:225
 msgid "Because we have eliminated non-determinism, Fabric is the first blockchain technology that enables use of standard programming languages. In the 1.1.0 release, smart contracts can be written in either Go or Node.js, while there are plans to support other popular languages including Java in subsequent releases."
+msgstr ""
+
+#: ../../source/whatis.md:230
+msgid "Privacy and Confidentiality"
 msgstr ""
 
 #: ../../source/whatis.md:232
@@ -172,6 +276,10 @@ msgstr ""
 msgid "To improve upon its privacy and confidentiality capabilities, Fabric has added support for private data and is working on zero knowledge proofs (ZKP) available in the future. More on this as it becomes available."
 msgstr ""
 
+#: ../../source/whatis.md:283
+msgid "Pluggable Consensus"
+msgstr ""
+
 #: ../../source/whatis.md:285
 msgid "The ordering of transactions is delegated to a modular component for consensus that is logically decoupled from the peers that execute transactions and maintain the ledger. Specifically, the ordering service. Since consensus is modular, its implementation can be tailored to the trust assumption of a particular deployment or solution. This modular architecture allows the platform to rely on well-established toolkits for CFT (crash fault-tolerant) or BFT (byzantine fault-tolerant) ordering."
 msgstr ""
@@ -182,6 +290,10 @@ msgstr ""
 
 #: ../../source/whatis.md:299
 msgid "Note also that these are not mutually exclusive. A Fabric network can have multiple ordering services supporting different applications or application requirements."
+msgstr ""
+
+#: ../../source/whatis.md:303
+msgid "Performance and Scalability"
 msgstr ""
 
 #: ../../source/whatis.md:305
@@ -196,6 +308,10 @@ msgstr ""
 msgid "The benchmarking efforts that the research team did yielded a significant number of performance improvements for the Fabric v1.1.0 release that more than doubled the overall performance of the platform from the v1.0.0 release levels."
 msgstr ""
 
+#: ../../source/whatis.md:324
+msgid "Conclusion"
+msgstr ""
+
 #: ../../source/whatis.md:326
 msgid "Any serious evaluation of blockchain platforms should include Hyperledger Fabric in its short list."
 msgstr ""
@@ -206,6 +322,10 @@ msgstr ""
 
 #: ../../source/whatis.md:335
 msgid "More importantly, Hyperledger Fabric is the most active of the (currently) ten Hyperledger projects. The community building around the platform is growing steadily, and the innovation delivered with each successive release far out-paces any of the other enterprise blockchain platforms."
+msgstr ""
+
+#: ../../source/whatis.md:340
+msgid "Acknowledgement"
 msgstr ""
 
 #: ../../source/whatis.md:342

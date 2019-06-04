@@ -5,15 +5,16 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:00+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,11 +22,15 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../../source/ledger/ledger.md:1
+msgid "Ledger"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:3
 msgid ""
 "Audience: Architects, Application and smart contract developers, "
 "administrators"
-msgstr "受众:架构师、应用程序开发者和智能合约开发者、管理员"
+msgstr "受众：架构师、应用程序开发者和智能合约开发者、管理员"
 
 #: ../../source/ledger/ledger.md:6
 msgid ""
@@ -38,6 +43,50 @@ msgstr "账本是超级账本Fabric中的一个重要概念;它存储有关业�
 #: ../../source/ledger/ledger.md:11
 msgid "In this topic, we're going to cover:"
 msgstr "在这个主题中，我们将涉及:"
+
+#: ../../source/ledger/ledger.md:13 ../../source/ledger/ledger.md:25
+msgid "What is a Ledger?"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:14
+msgid "Storing facts about business objects"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:15
+msgid "A blockchain ledger"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:16
+msgid "The world state"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:17
+msgid "The blockchain data structure"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:18
+msgid "How blocks are stored in a blockchain"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:19 ../../source/ledger/ledger.md:246
+msgid "Transactions"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:20
+msgid "World state database options"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:21
+msgid "The Fabcar example ledger"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:22
+msgid "Ledgers and namespaces"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:23
+msgid "Ledgers and channels"
+msgstr ""
 
 #: ../../source/ledger/ledger.md:27
 msgid ""
@@ -61,6 +110,10 @@ msgid ""
 "transactions that determined these states."
 msgstr ""
 "你可能已经习惯查看你的银行账户了。对你来说，最重要的是可用的余额——它是你现在能花多少钱。如果你想知道你的余额是如何产生的，那么你可以查看决定它的交易贷项和借项。这是一个真实的账本示例——一个状态(您的银行余额)和一组确定账本的有序交易(贷记和借记)。超级账本Fabric的动机是出于这两个相同的考虑——显示一组账本状态的当前值，以及捕获决定这些状态的交易历史。"
+
+#: ../../source/ledger/ledger.md:43
+msgid "Ledgers, Facts and States"
+msgstr ""
 
 #: ../../source/ledger/ledger.md:45
 msgid ""
@@ -90,6 +143,10 @@ msgstr ""
 msgid ""
 "Let's now take a closer look at the Hyperledger Fabric ledger structure!"
 msgstr "现在让我们仔细看看超级账本Fabric的账本结构!"
+
+#: ../../source/ledger/ledger.md:63
+msgid "The Ledger"
+msgstr ""
 
 #: ../../source/ledger/ledger.md:65
 msgid ""
@@ -123,10 +180,10 @@ msgstr ""
 
 #: ../../source/ledger/ledger.md:84
 msgid ""
-"ledger.ledger A Ledger L comprises blockchain B and world state W, where "
-"blockchain B determines world state W. We can also say that world state W is"
-" derived from blockchain B."
-msgstr "一个账本L包括区块链B和世界状态W，其中区块链B决定世界状态W，我们也可以说世界状态W来源于区块链B。"
+"A Ledger L comprises blockchain B and world state W, where blockchain B "
+"determines world state W. We can also say that world state W is derived from"
+" blockchain B."
+msgstr ""
 
 #: ../../source/ledger/ledger.md:88
 msgid ""
@@ -145,6 +202,10 @@ msgid ""
 "detail."
 msgstr "现在让我们更详细地研究世界状态和区块链数据结构。"
 
+#: ../../source/ledger/ledger.md:97
+msgid "World State"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:99
 msgid ""
 "The world state holds the current value of the attributes of a business "
@@ -157,14 +218,10 @@ msgstr ""
 
 #: ../../source/ledger/ledger.md:105
 msgid ""
-"ledger.worldstate A ledger world state containing two states. The first "
-"state is: key=CAR1 and value=Audi. The second state has a more complex "
-"value: key=CAR2 and value={model:BMW, color=red, owner=Jane}. Both states "
-"are at version 0."
+"A ledger world state containing two states. The first state is: key=CAR1 and"
+" value=Audi. The second state has a more complex value: key=CAR2 and "
+"value={model:BMW, color=red, owner=Jane}. Both states are at version 0."
 msgstr ""
-"一个账本世界状态包含两个状态。第一种状态是:key=CAR1, "
-"value=Audi。第二个状态有一个更复杂的值:key=CAR2和value={model:BMW, color=red, "
-"owner=Jane}。两种状态都在版本0处。"
 
 #: ../../source/ledger/ledger.md:110
 msgid ""
@@ -229,6 +286,10 @@ msgid ""
 msgstr ""
 "最后，当第一次创建账本时，世界状态为空。因为表示对世界状态的有效更改的任何交易都记录在区块链上，这意味着可以随时从区块链重新生成世界状态。这非常方便——例如，创建peer时自动生成世界状态。此外，如果某个peer异常失败，则可以在peer重新启动时(在接受交易之前)重新生成世界状态。"
 
+#: ../../source/ledger/ledger.md:153
+msgid "Blockchain"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:155
 msgid ""
 "Let's now turn our attention from the world state to the blockchain. Whereas"
@@ -281,9 +342,9 @@ msgstr "让我们更详细地看看区块链的结构。"
 
 #: ../../source/ledger/ledger.md:185
 msgid ""
-"ledger.blockchain A blockchain B containing blocks B0, B1, B2, B3. B0 is the"
-" first block in the blockchain, the genesis block."
-msgstr "一个区块链B包含B0 B1 B2 B3区块。B0是区块链中的第一个区块，即创世区块。"
+"A blockchain B containing blocks B0, B1, B2, B3. B0 is the first block in "
+"the blockchain, the genesis block."
+msgstr ""
 
 #: ../../source/ledger/ledger.md:188
 msgid ""
@@ -311,11 +372,80 @@ msgid ""
 msgstr ""
 "最后，如图所示，区块链中的第一个区块称为创世区块。它是账本的起点，尽管它不包含任何用户交易。相反，它包含一个配置交易，其中包含网络通道的初始状态(未显示)。在文档中讨论区块链网络和通道时，我们将更详细地讨论创世区块。"
 
+#: ../../source/ledger/ledger.md:203
+msgid "Blocks"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:205
 msgid ""
 "Let's have a closer look at the structure of a block. It consists of three "
 "sections"
 msgstr "让我们仔细看看一个区块的结构。它由三个部分组成"
+
+#: ../../source/ledger/ledger.md:208
+msgid "Block Header"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:210
+msgid "This section comprises three fields, written when a block is created."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:212
+msgid ""
+"Block number: An integer starting at 0 (the genesis block), and increased by"
+" 1 for every new block appended to the blockchain."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:215
+msgid ""
+"Current Block Hash: The hash of all the transactions contained in the "
+"current block."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:218
+msgid ""
+"Previous Block Hash: A copy of the hash from the previous block in the "
+"blockchain."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:221
+msgid ""
+"These fields are internally derived by cryptographically hashing the block "
+"data. They ensure that each and every block is inextricably linked to its "
+"neighbour, leading to an immutable ledger."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:225
+msgid ""
+"Block header details. The header H2 of block B2 consists of block number 2, "
+"the hash CH2 of the current block data D2, and a copy of a hash PH1 from the"
+" previous block, block number 1."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:230
+msgid "Block Data"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:232
+msgid ""
+"This section contains a list of transactions arranged in order. It is "
+"written when the block is created by the ordering service. These "
+"transactions have a rich but straightforward structure, which we describe "
+"later in this topic."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:238
+msgid "Block Metadata"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:240
+msgid ""
+"This section contains the time when the block was written, as well as the "
+"certificate, public key and signature of the block writer. Subsequently, the"
+" block committer also adds a valid/invalid indicator for every transaction, "
+"though this information is not included in the hash, as that is created when"
+" the block is created."
+msgstr ""
 
 #: ../../source/ledger/ledger.md:248
 msgid ""
@@ -326,15 +456,78 @@ msgstr "正如我们所看到的，交易捕获对世界状态的更改。让我
 
 #: ../../source/ledger/ledger.md:252
 msgid ""
-"ledger.transaction Transaction details. Transaction T4 in blockdata D1 of "
-"block B1 consists of transaction header, H4, a transaction signature, S4, a "
-"transaction proposal P4, a transaction response, R4, and a list of "
-"endorsements, E4."
-msgstr "交易的细节。B1区块的区块数据D1中的交易T4由事务头部H4、交易签名S4、交易提案P4、交易响应R4、背书列表E4组成。"
+"Transaction details. Transaction T4 in blockdata D1 of block B1 consists of "
+"transaction header, H4, a transaction signature, S4, a transaction proposal "
+"P4, a transaction response, R4, and a list of endorsements, E4."
+msgstr ""
 
 #: ../../source/ledger/ledger.md:257
 msgid "In the above example, we can see the following fields:"
 msgstr "在上面的例子中，我们可以看到以下字段:"
+
+#: ../../source/ledger/ledger.md:260
+msgid "Header"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:262
+msgid ""
+"This section, illustrated by H4, captures some essential metadata about the "
+"transaction -- for example, the name of the relevant chaincode, and its "
+"version."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:267
+msgid "Signature"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:269
+msgid ""
+"This section, illustrated by S4, contains a cryptographic signature, created"
+" by the client application. This field is used to check that the transaction"
+" details have not been tampered with, as it requires the application's "
+"private key to generate it."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:275
+msgid "Proposal"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:277
+msgid ""
+"This field, illustrated by P4, encodes the input parameters supplied by an "
+"application to the smart contract which creates the proposed ledger update. "
+"When the smart contract runs, this proposal provides a set of input "
+"parameters, which, in combination with the current world state, determines "
+"the new world state."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:284
+msgid "Response"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:286
+msgid ""
+"This section, illustrated by R4, captures the before and after values of the"
+" world state, as a Read Write set (RW-set). It's the output of a smart "
+"contract, and if the transaction is successfully validated, it will be "
+"applied to the ledger to update the world state."
+msgstr ""
+
+#: ../../source/ledger/ledger.md:292
+msgid "Endorsements"
+msgstr ""
+
+#: ../../source/ledger/ledger.md:294
+msgid ""
+"As shown in E4, this is a list of signed transaction responses from each "
+"required organization sufficient to satisfy the endorsement policy. You'll "
+"notice that, whereas only one transaction response is included in the "
+"transaction, there are multiple endorsements. That's because each "
+"endorsement effectively encodes its organization's particular transaction "
+"response -- meaning that there's no need to include any transaction response"
+" that doesn't match sufficient endorsements as it will be rejected as "
+"invalid, and not update the world state."
+msgstr ""
 
 #: ../../source/ledger/ledger.md:303
 msgid ""
@@ -342,6 +535,10 @@ msgid ""
 "these are the essential ones that you need to understand to have a solid "
 "understanding of the ledger data structure."
 msgstr "这就总结了交易的主要领域——还有其他领域，但是这些是您需要了解的基本领域，以便对账本数据结构有一个坚实的了解。"
+
+#: ../../source/ledger/ledger.md:307
+msgid "World State database options"
+msgstr ""
 
 #: ../../source/ledger/ledger.md:309
 msgid ""
@@ -383,6 +580,10 @@ msgid ""
 msgstr ""
 "在LevelDB和CouchDB中，我们看到了超级账本Fabric的一个重要方面——它是可插入的。世界状态数据库可以是关系数据存储、图形存储或时态数据库。这为可以有效访问的账本状态类型提供了极大的灵活性，允许超级账本Fabric处理许多不同类型的问题。"
 
+#: ../../source/ledger/ledger.md:334
+msgid "Example Ledger: fabcar"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:336
 msgid ""
 "As we end this topic on the ledger, let's have a look at a sample ledger. If"
@@ -398,13 +599,10 @@ msgstr "fabcar样例应用程序创建一组10辆车，每辆车都有一个唯�
 
 #: ../../source/ledger/ledger.md:344
 msgid ""
-"ledger.transaction The ledger, L, comprises a world state, W and a "
-"blockchain, B. W contains four states with keys: CAR1, CAR2, CAR3 and CAR4. "
-"B contains two blocks, 0 and 1. Block 1 contains four transactions: T1, T2, "
-"T3, T4."
+"The ledger, L, comprises a world state, W and a blockchain, B. W contains "
+"four states with keys: CAR1, CAR2, CAR3 and CAR4. B contains two blocks, 0 "
+"and 1. Block 1 contains four transactions: T1, T2, T3, T4."
 msgstr ""
-"账本L，包括一个世界状态W和一个区块链B。W包含四个状态，键分别是:CAR1, CAR2, "
-"CAR3和CAR4。B包含两个区块，0和1。第1区块包含4个交易:T1、T2、T3、T4。"
 
 #: ../../source/ledger/ledger.md:349
 msgid ""
@@ -439,6 +637,10 @@ msgid ""
 msgstr ""
 "我们还没有显示区块或交易中的其他字段，特别是头部和散列。如果您对这些细节感兴趣，可以在文档的其他地方找到专门的参考主题。它为您提供了一个完整的工作示例，其中详细介绍了整个区块及其交易——但是现在，您已经对超级账本Fabric账本有了一个坚实的概念理解。做得好!"
 
+#: ../../source/ledger/ledger.md:369
+msgid "Namespaces"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:371
 msgid ""
 "Even though we have presented the ledger as though it were a single world "
@@ -462,6 +664,10 @@ msgid ""
 "Hyperledger Fabric channel."
 msgstr "现在让我们看看名称空间的概念是如何应用于超级账本Fabric通道中的。"
 
+#: ../../source/ledger/ledger.md:384
+msgid "Channels"
+msgstr ""
+
 #: ../../source/ledger/ledger.md:386
 msgid ""
 "In Hyperledger Fabric, each channel has a completely separate ledger. This "
@@ -475,6 +681,10 @@ msgstr ""
 #: ../../source/ledger/ledger.md:392
 msgid "You can read more about how ledgers work with channels in this topic."
 msgstr "在本主题中，您可以阅读更多关于账本如何与通道一起工作的信息。"
+
+#: ../../source/ledger/ledger.md:396
+msgid "More information"
+msgstr ""
 
 #: ../../source/ledger/ledger.md:398
 msgid ""

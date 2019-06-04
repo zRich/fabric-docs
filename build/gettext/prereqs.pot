@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgid "Hyperledger Fabric uses the Go Programming Language for many of its compo
 msgstr ""
 
 #: ../../source/prereqs.rst:60
-msgid "`Go <https://golang.org/dl/>`__ version 1.11.x is required."
+msgid "`Go <https://golang.org/dl/>`__ version 1.12.x is required."
 msgstr ""
 
 #: ../../source/prereqs.rst:62

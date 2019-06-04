@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:03+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -21,6 +21,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/smartcontract/smartcontract.md:1
+msgid "Smart Contracts and Chaincode"
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:3
 msgid ""
@@ -55,6 +59,47 @@ msgstr ""
 msgid "In this topic, we'll cover:"
 msgstr "在本主题中，我们将讨论:"
 
+#: ../../source/smartcontract/smartcontract.md:24
+msgid "What is a smart contract"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:25
+msgid "A note on terminology"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:26
+msgid "Smart contracts and the ledger"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:27
+msgid "How to develop a smart contract"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:28
+msgid "The importance of endorsement policies"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:29
+#: ../../source/smartcontract/smartcontract.md:199
+msgid "Valid transactions"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:30
+msgid "Smart contracts and channels"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:31
+msgid "Communicating between smart contracts"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:32
+msgid "What is system chaincode?"
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:34
+msgid "Smart contract"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:36
 msgid ""
 "Before businesses can transact with each other, they must define a common "
@@ -66,10 +111,10 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:41
 msgid ""
-"smart.diagram1 A smart contract defines the rules between different "
-"organizations in executable code. Applications invoke a smart contract to "
-"generate transactions that are recorded on the ledger."
-msgstr "智能合约在可执行代码中定义了不同组织之间的规则。应用程序调用一个智能合约来生成记录在账本上的交易。"
+"A smart contract defines the rules between different organizations in "
+"executable code. Applications invoke a smart contract to generate "
+"transactions that are recorded on the ledger."
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:45
 msgid ""
@@ -96,6 +141,10 @@ msgid ""
 msgstr ""
 "在上面的图中，我们可以看到两个组织，ORG1和ORG2，如何定义了一个汽车智能合约来查询、传输和更新汽车。来自这些组织的应用程序调用此智能合约来执行业务流程中商定的步骤，例如将特定汽车的所有权从ORG1转移到ORG2。"
 
+#: ../../source/smartcontract/smartcontract.md:62
+msgid "Terminology"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:64
 msgid ""
 "Hyperledger Fabric users often use the terms smart contract and chaincode "
@@ -109,11 +158,10 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:71
 msgid ""
-"smart.diagram2 A smart contract is defined within a chaincode.  Multiple "
-"smart contracts can be defined within the same chaincode. When a chaincode "
-"is deployed, all smart contracts within it are made available to "
-"applications."
-msgstr "智能合约是在链码中定义的。多个智能合约可以在同一个链码中定义。在部署链码时，应用程序可以使用链码中的所有智能合约。"
+"A smart contract is defined within a chaincode.  Multiple smart contracts "
+"can be defined within the same chaincode. When a chaincode is deployed, all "
+"smart contracts within it are made available to applications."
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:76
 msgid ""
@@ -128,6 +176,10 @@ msgid ""
 "contracts for installation and instantiation."
 msgstr ""
 "在图中，我们可以看到包含三个智能合约的车辆链码:轿车、船只和卡车。我们还可以看到包含四个智能合约的保险链码:保单、责任、联合和证券化。在这两种情况下，这些合约涵盖了与车辆和保险相关的业务流程的关键方面。在本主题中，我们将以汽合约为例。我们可以看到，智能合约是一个特定于领域的程序，它与特定的业务流程相关，而链码是一组用于安装和实例化的相关智能合约的技术容器。"
+
+#: ../../source/smartcontract/smartcontract.md:87
+msgid "Ledger"
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:89
 msgid ""
@@ -146,6 +198,24 @@ msgid ""
 " can also query the immutable blockchain record of transactions."
 msgstr "智能合约主要将put、get和delete状态置于世界状态，还可以查询不可变的区块链交易记录。"
 
+#: ../../source/smartcontract/smartcontract.md:99
+msgid ""
+"A get typically represents a query to retrieve information about the current"
+" state of a business object."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:101
+msgid ""
+"A put typically creates a new business object or modifies an existing one in"
+" the ledger world state."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:103
+msgid ""
+"A delete typically represents the removal of a business object from the "
+"current state of the ledger, but not its history."
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:106
 msgid ""
 "Smart contracts have many APIs available to them. Critically, in all cases, "
@@ -153,6 +223,10 @@ msgid ""
 "world state, the blockchain contains an immutable record of these changes."
 msgstr ""
 "智能合约有许多可用的API。关键的是，在所有情况下，无论交易创建、读取、更新还是删除处于世界状态的业务对象，区块链都包含了这些更改的不可变记录。"
+
+#: ../../source/smartcontract/smartcontract.md:112
+msgid "Development"
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:114
 msgid ""
@@ -192,6 +266,10 @@ msgid ""
 msgstr ""
 "智能合约可以描述与多组织决策中数据不可篡改相关的几乎无限的业务用例。智能合约开发人员的工作是获取一个可能控制财务价格或交付条件的现有业务流程，并用JavaScript、GOLANG或Java等编程语言将其表示为一个智能合约。将数百年的法律语言转换为编程语言所需要的法律和技术技能，越来越多的智能合约审核员正在实践。您可以在“开发应用程序”主题中了解如何设计和开发智能合约。"
 
+#: ../../source/smartcontract/smartcontract.md:155
+msgid "Endorsement"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:157
 msgid ""
 "Associated with every chaincode is an endorsement policy that applies to all"
@@ -204,11 +282,11 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:163
 msgid ""
-"smart.diagram3 Every smart contract has an endorsement policy associated "
-"with it. This endorsement policy identifies which organizations must approve"
-" transactions generated by the smart contract before those transactions can "
-"be identified as valid."
-msgstr "每一个智能合约都有一个与之相关的背书策略。此背书策略确定哪些组织必须批准智能合约生成的交易，然后才能将这些交易标识为有效的。"
+"Every smart contract has an endorsement policy associated with it. This "
+"endorsement policy identifies which organizations must approve transactions "
+"generated by the smart contract before those transactions can be identified "
+"as valid."
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:168
 msgid ""
@@ -273,12 +351,11 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:210
 msgid ""
-"smart.diagram4 All transactions have an identifier, a proposal, and a "
-"response signed by a set of organizations. All transactions are recorded on "
-"the blockchain, whether valid or invalid, but only valid transactions "
-"contribute to the world state."
+"All transactions have an identifier, a proposal, and a response signed by a "
+"set of organizations. All transactions are recorded on the blockchain, "
+"whether valid or invalid, but only valid transactions contribute to the "
+"world state."
 msgstr ""
-"所有交易都有一个标识符、一个提案和一个由一组组织签名的响应。所有交易都记录在区块链上，不管是有效的还是无效的，但是只有有效的交易才对世界状态做出贡献。"
 
 #: ../../source/smartcontract/smartcontract.md:215
 msgid ""
@@ -325,6 +402,10 @@ msgid ""
 "state, read the chaincode namespace topic."
 msgstr "最后，要了解如何使用具有世界状态的智能合约或链码，请阅读链码命名空间主题。"
 
+#: ../../source/smartcontract/smartcontract.md:244
+msgid "Channels"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:246
 msgid ""
 "Hyperledger Fabric allows an organization to simultaneously participate in "
@@ -340,13 +421,11 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:255
 msgid ""
-"smart.diagram5 A channel provides a completely separate communication "
-"mechanism between a set of organizations. When a chaincode is instantiated "
-"on a channel, an endorsement policy is defined for it; all the smart "
-"contracts within the chaincode are made available to the applications on "
-"that channel."
+"A channel provides a completely separate communication mechanism between a "
+"set of organizations. When a chaincode is instantiated on a channel, an "
+"endorsement policy is defined for it; all the smart contracts within the "
+"chaincode are made available to the applications on that channel."
 msgstr ""
-"通道提供了一组组织之间完全独立的通信机制。当链码在通道上实例化时，为其定义了一个背书策略，链码中的所有智能合约都对于该通道上的应用程序可用。"
 
 #: ../../source/smartcontract/smartcontract.md:261
 msgid ""
@@ -372,6 +451,10 @@ msgid ""
 msgstr ""
 "在上面的示例中，将汽车合约部署到车辆通道，并将保险合约部署到保险通道。汽车合约有一个背书策略，要求ORG1和ORG2在被认为有效之前签署交易，而保险合约有一个背书策略，只要求ORG3签署有效交易。ORG1参与车辆通道和保险网络两个网络，分别与ORG2和ORG3协调这两个网络之间的活动。"
 
+#: ../../source/smartcontract/smartcontract.md:277
+msgid "Intercommunication"
+msgstr ""
+
 #: ../../source/smartcontract/smartcontract.md:279
 msgid ""
 "Smart Contracts are able to call to other smart contracts both within the "
@@ -386,6 +469,10 @@ msgid ""
 "There are limitations to this inter-contract communication, which are "
 "described fully in the chaincode namespace topic."
 msgstr "这种内部合约通信有一些限制，这些限制将在链码名称空间主题中详细描述。"
+
+#: ../../source/smartcontract/smartcontract.md:289
+msgid "System chaincode"
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:291
 msgid ""
@@ -402,6 +489,41 @@ msgid ""
 "The following are the different types of system chaincodes and their "
 "associated abbreviations:"
 msgstr "以下是不同类型的系统链码及其相关缩写:"
+
+#: ../../source/smartcontract/smartcontract.md:300
+msgid ""
+"Lifecycle system chaincode (LSCC) runs in all peers to handle package "
+"signing, install, instantiate, and upgrade chaincode requests. You can read "
+"more about the LSCC implements this process."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:305
+msgid ""
+"Configuration system chaincode (CSCC) runs in all peers to handle changes to"
+" a channel configuration, such as a policy update.  You can read more about "
+"this process in the following chaincode topic."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:310
+msgid ""
+"Query system chaincode (QSCC) runs in all peers to provide ledger APIs which"
+" include block query, transaction query etc. You can read more about these "
+"ledger APIs in the transaction context topic."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:315
+msgid ""
+"Endorsement system chaincode (ESCC) runs in endorsing peers to "
+"cryptographically sign a transaction response. You can read more about how "
+"the ESCC implements this process."
+msgstr ""
+
+#: ../../source/smartcontract/smartcontract.md:319
+msgid ""
+"Validation system chaincode (VSCC) validates a transaction, including "
+"checking endorsement policy and read-write set versioning. You can read more"
+" about the LSCC implements this process."
+msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:323
 msgid ""

@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/developapps/contractname.md:1
+msgid "Contract names"
+msgstr ""
 
 #: ../../source/developapps/contractname.md:3
 msgid "Audience: Architects, application and smart contract developers, administrators"
@@ -28,6 +32,26 @@ msgstr ""
 msgid "In this topic, we're going to cover:"
 msgstr ""
 
+#: ../../source/developapps/contractname.md:13
+msgid "How a chaincode contains multiple smart contracts"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:14
+msgid "How to assign a smart contract name"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:15
+msgid "How to use a smart contract from an application"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:16
+msgid "The default smart contract"
+msgstr ""
+
+#: ../../source/developapps/contractname.md:18
+msgid "Chaincode"
+msgstr ""
+
 #: ../../source/developapps/contractname.md:20
 msgid "In the Developing Applications topic, we can see how the Fabric SDKs provide high level programming abstractions which help application and smart contract developers to focus on their business problem, rather than the low level details of how to interact with a Fabric network."
 msgstr ""
@@ -37,7 +61,7 @@ msgid "Smart contracts are one example of a high level programming abstraction, 
 msgstr ""
 
 #: ../../source/developapps/contractname.md:30
-msgid "contract.chaincode Multiple smart contracts can be defined within a chaincode. Each is uniquely identified by their name within a chaincode."
+msgid "Multiple smart contracts can be defined within a chaincode. Each is uniquely identified by their name within a chaincode."
 msgstr ""
 
 #: ../../source/developapps/contractname.md:34
@@ -50,6 +74,10 @@ msgstr ""
 
 #: ../../source/developapps/contractname.md:44
 msgid "In most cases, a chaincode will only have one smart contract defined within it. However, it can make sense to keep related smart contracts together in a single chaincode. For example, commercial papers denominated in different currencies might have contracts EuroPaperContract, DollarPaperContract, YenPaperContract which might need to be kept synchronized with each other in the channel to which they are deployed."
+msgstr ""
+
+#: ../../source/developapps/contractname.md:51
+msgid "Name"
 msgstr ""
 
 #: ../../source/developapps/contractname.md:53
@@ -80,6 +108,10 @@ msgstr ""
 msgid "Contract names must be unique within a chaincode file. Some code editors will detect multiple definitions of the same class name before deployment. Regardless the chaincode will return an error if multiple classes with the same contract name are explicitly or implicitly specified."
 msgstr ""
 
+#: ../../source/developapps/contractname.md:95
+msgid "Application"
+msgstr ""
+
 #: ../../source/developapps/contractname.md:97
 msgid "Once a chaincode has been installed on a peer and instantiated on a channel, the smart contracts in it are accessible to an application:"
 msgstr ""
@@ -88,12 +120,16 @@ msgstr ""
 msgid "See how the application accesses the smart contract with the contract.getContract() method. The papercontract chaincode name org.papernet.commercialpaper returns a contract reference which can be used to submit transactions to issue commercial paper with the contract.submitTransaction() API."
 msgstr ""
 
+#: ../../source/developapps/contractname.md:114
+msgid "Default contract"
+msgstr ""
+
 #: ../../source/developapps/contractname.md:116
 msgid "The first smart contract defined in a chaincode is the called the default smart contract. A default is helpful because a chaincode will usually have one smart contract defined within it; a default allows the application to access those transactions directly -- without specifying a contract name."
 msgstr ""
 
 #: ../../source/developapps/contractname.md:121
-msgid "default.contract A default smart contract is the first contract defined in a chaincode."
+msgid "A default smart contract is the first contract defined in a chaincode."
 msgstr ""
 
 #: ../../source/developapps/contractname.md:124

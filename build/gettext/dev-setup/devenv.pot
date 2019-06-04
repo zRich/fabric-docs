@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "`Git client <https://git-scm.com/downloads>`__"
 msgstr ""
 
 #: ../../source/dev-setup/devenv.rst:8
-msgid "`Go <https://golang.org/dl/>`__ - version 1.11.x"
+msgid "`Go <https://golang.org/dl/>`__ - version 1.12.x"
 msgstr ""
 
 #: ../../source/dev-setup/devenv.rst:9
@@ -49,74 +49,78 @@ msgid "(macOS) you may need to install gnutar, as macOS comes with bsdtar as the
 msgstr ""
 
 #: ../../source/dev-setup/devenv.rst:22
-msgid "(macOS) `Libtool <https://www.gnu.org/software/libtool/>`__. You can use Homebrew to install it as follows:"
+msgid "(macOS) If you install gnutar, you should prepend the \"gnubin\" directory to the $PATH environment variable with something like:"
 msgstr ""
 
 #: ../../source/dev-setup/devenv.rst:29
+msgid "(macOS) `Libtool <https://www.gnu.org/software/libtool/>`__. You can use Homebrew to install it as follows:"
+msgstr ""
+
+#: ../../source/dev-setup/devenv.rst:36
 msgid "(only if using Vagrant) - `Vagrant <https://www.vagrantup.com/>`__ - 1.9 or later"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:31
+#: ../../source/dev-setup/devenv.rst:38
 msgid "(only if using Vagrant) - `VirtualBox <https://www.virtualbox.org/>`__ - 5.0 or later"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:33
+#: ../../source/dev-setup/devenv.rst:40
 msgid "BIOS Enabled Virtualization - Varies based on hardware"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:35
+#: ../../source/dev-setup/devenv.rst:42
 msgid "Note: The BIOS Enabled Virtualization may be within the CPU or Security settings of the BIOS"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:40
+#: ../../source/dev-setup/devenv.rst:47
 msgid "Steps"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:43
+#: ../../source/dev-setup/devenv.rst:50
 msgid "Set your GOPATH"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:45
+#: ../../source/dev-setup/devenv.rst:52
 msgid "Make sure you have properly setup your Host's `GOPATH environment variable <https://github.com/golang/go/wiki/GOPATH>`__. This allows for both building within the Host and the VM."
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:49
+#: ../../source/dev-setup/devenv.rst:56
 msgid "In case you installed Go into a different location from the standard one your Go distribution assumes, make sure that you also set `GOROOT environment variable <https://golang.org/doc/install#install>`__."
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:54
+#: ../../source/dev-setup/devenv.rst:61
 msgid "Note to Windows users"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:56
+#: ../../source/dev-setup/devenv.rst:63
 msgid "If you are running Windows, before running any ``git clone`` commands, run the following command."
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:63
+#: ../../source/dev-setup/devenv.rst:70
 msgid "If ``core.autocrlf`` is set to ``true``, you must set it to ``false`` by running"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:70
+#: ../../source/dev-setup/devenv.rst:77
 msgid "If you continue with ``core.autocrlf`` set to ``true``, the ``vagrant up`` command will fail with the error:"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:73
+#: ../../source/dev-setup/devenv.rst:80
 msgid "``./setup.sh: /bin/bash^M: bad interpreter: No such file or directory``"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:76
+#: ../../source/dev-setup/devenv.rst:83
 msgid "Cloning the Hyperledger Fabric source"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:78
+#: ../../source/dev-setup/devenv.rst:85
 msgid "Since Hyperledger Fabric is written in ``Go``, you'll need to clone the source repository to your $GOPATH/src directory. If your $GOPATH has multiple path components, then you will want to use the first one. There's a little bit of setup needed:"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:89
+#: ../../source/dev-setup/devenv.rst:96
 msgid "Recall that we are using ``Gerrit`` for source control, which has its own internal git repositories. Hence, we will need to clone from :doc:`Gerrit <../Gerrit/gerrit>`. For brevity, the command is as follows:"
 msgstr ""
 
-#: ../../source/dev-setup/devenv.rst:98
+#: ../../source/dev-setup/devenv.rst:105
 msgid "**Note:** Of course, you would want to replace ``LFID`` with your own :doc:`Linux Foundation ID <../Gerrit/lf-account>`."
 msgstr ""
 

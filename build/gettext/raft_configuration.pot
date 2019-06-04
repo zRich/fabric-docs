@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/raft_configuration.md:1
+msgid "Configuring and operating a Raft ordering service"
+msgstr ""
+
 #: ../../source/raft_configuration.md:3
 msgid "Audience: Raft ordering node admins"
+msgstr ""
+
+#: ../../source/raft_configuration.md:5
+msgid "Conceptual overview"
 msgstr ""
 
 #: ../../source/raft_configuration.md:7
@@ -26,6 +34,10 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:11
 msgid "To learn about the process of setting up an ordering node --- including the creation of a local MSP and the creation of a genesis block --- check out our documentation on Setting up an ordering node."
+msgstr ""
+
+#: ../../source/raft_configuration.md:15
+msgid "Configuration"
 msgstr ""
 
 #: ../../source/raft_configuration.md:17
@@ -38,6 +50,14 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:27
 msgid "A Raft cluster is configured in two planes:"
+msgstr ""
+
+#: ../../source/raft_configuration.md:29
+msgid "Local configuration: Governs node specific aspects, such as TLS communication, replication behavior, and file storage."
+msgstr ""
+
+#: ../../source/raft_configuration.md:32
+msgid "Channel configuration: Defines the membership of the Raft cluster for the corresponding channel, as well as protocol specific parameters such as heartbeat frequency, leader timeouts, and more."
 msgstr ""
 
 #: ../../source/raft_configuration.md:36
@@ -54,6 +74,10 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:64
 msgid "When the channel config block is created, the configtxgen tool reads the paths to the TLS certificates, and replaces the paths with the corresponding bytes of the certificates."
+msgstr ""
+
+#: ../../source/raft_configuration.md:68
+msgid "Local configuration"
 msgstr ""
 
 #: ../../source/raft_configuration.md:70
@@ -76,6 +100,26 @@ msgstr ""
 msgid "This is useful for cases where you want TLS certificates issued by the organizational CAs, but used only by the cluster nodes to communicate among each other, and TLS certificates issued by a public TLS CA for the client facing API."
 msgstr ""
 
+#: ../../source/raft_configuration.md:87
+msgid "ClientCertificate, ClientPrivateKey: If you wish to use a different TLS client certificate key pair (otherwise, the certificate key pair is taken from the general TLS section, i.e., general.tls.{privateKey, certificate})"
+msgstr ""
+
+#: ../../source/raft_configuration.md:90
+msgid "ListenPort: The port the cluster listens on. If blank, the port is the same port as the orderer general port (general.listenPort)"
+msgstr ""
+
+#: ../../source/raft_configuration.md:92
+msgid "ListenAddress: The address the cluster service is listening on."
+msgstr ""
+
+#: ../../source/raft_configuration.md:93
+msgid "ServerCertificate, ServerPrivateKey: The TLS server certificate key pair which is used when the cluster service is running on a separate gRPC server (different port)."
+msgstr ""
+
+#: ../../source/raft_configuration.md:96
+msgid "SendBufferSize: Regulates the number of messages in the egress buffer."
+msgstr ""
+
 #: ../../source/raft_configuration.md:98
 msgid "Note: ListenPort, ListenAddress, ServerCertificate, ServerPrivateKey must be either set together or unset together."
 msgstr ""
@@ -84,12 +128,48 @@ msgstr ""
 msgid "There are also hidden configuration parameters for general.cluster which can be used to further fine tune the cluster communication or replication mechanisms:"
 msgstr ""
 
+#: ../../source/raft_configuration.md:104
+msgid "DialTimeout, RPCTimeout: Specify the timeouts of creating connections and establishing streams."
+msgstr ""
+
+#: ../../source/raft_configuration.md:106
+msgid "ReplicationBufferSize: the maximum number of bytes that can be allocated for each in-memory buffer used for block replication from other cluster nodes. Each channel has its own memory buffer. Defaults to 20971520 which is 20MB."
+msgstr ""
+
+#: ../../source/raft_configuration.md:109
+msgid "PullTimeout: the maximum duration the ordering node will wait for a block to be received before it aborts. Defaults to five seconds."
+msgstr ""
+
+#: ../../source/raft_configuration.md:111
+msgid "ReplicationRetryTimeout: The maximum duration the ordering node will wait between two consecutive attempts. Defaults to five seconds."
+msgstr ""
+
+#: ../../source/raft_configuration.md:113
+msgid "ReplicationBackgroundRefreshInterval: the time between two consecutive attempts to replicate existing channels that this node was added to, or channels that this node failed to replicate in the past. Defaults to five minutes."
+msgstr ""
+
 #: ../../source/raft_configuration.md:119
 msgid "Consensus parameters:"
 msgstr ""
 
+#: ../../source/raft_configuration.md:121
+msgid "WALDir: the location at which Write Ahead Logs for etcd/raft are stored. Each channel will have its own subdirectory named after the channel ID."
+msgstr ""
+
+#: ../../source/raft_configuration.md:123
+msgid "SnapDir: specifies the location at which snapshots for etcd/raft are stored. Each channel will have its own subdirectory named after the channel ID."
+msgstr ""
+
 #: ../../source/raft_configuration.md:126
 msgid "There is also a hidden configuration parameter that can be set by adding it to the consensus section in the orderer.yaml:"
+msgstr ""
+
+#: ../../source/raft_configuration.md:129
+msgid "EvictionSuspicion: The cumulative period of time of channel eviction suspicion that triggers the node to pull blocks from other nodes and see if it has been evicted from the channel in order to confirm its suspicion. If the suspicion is confirmed (the inspected block doesn't contain the node's TLS certificate), the node halts its operation for that channel. A node suspects its channel eviction when it doesn't know about any elected leader nor can be elected as leader in the channel. Defaults to 10 minutes."
+msgstr ""
+
+#: ../../source/raft_configuration.md:137
+msgid "Channel configuration"
 msgstr ""
 
 #: ../../source/raft_configuration.md:139
@@ -102,6 +182,34 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:146
 msgid "Note: It is recommended to avoid changing the following values, as a misconfiguration might lead to a state where a leader cannot be elected at all (i.e, if the TickInterval and ElectionTick are extremely low). Situations where a leader cannot be elected are impossible to resolve, as leaders are required to make changes. Because of such dangers, we suggest not tuning these parameters for most use cases."
+msgstr ""
+
+#: ../../source/raft_configuration.md:153
+msgid "TickInterval: The time interval between two Node.Tick invocations."
+msgstr ""
+
+#: ../../source/raft_configuration.md:154
+msgid "ElectionTick: The number of Node.Tick invocations that must pass between elections. That is, if a follower does not receive any message from the leader of current term before ElectionTick has elapsed, it will become candidate and start an election."
+msgstr ""
+
+#: ../../source/raft_configuration.md:158
+msgid "ElectionTick must be greater than HeartbeatTick."
+msgstr ""
+
+#: ../../source/raft_configuration.md:159
+msgid "HeartbeatTick: The number of Node.Tick invocations that must pass between heartbeats. That is, a leader sends heartbeat messages to maintain its leadership every HeartbeatTick ticks."
+msgstr ""
+
+#: ../../source/raft_configuration.md:162
+msgid "MaxInflightBlocks: Limits the max number of in-flight append blocks during optimistic replication phase."
+msgstr ""
+
+#: ../../source/raft_configuration.md:164
+msgid "SnapshotIntervalSize: Defines number of bytes per which a snapshot is taken."
+msgstr ""
+
+#: ../../source/raft_configuration.md:166
+msgid "Reconfiguration"
 msgstr ""
 
 #: ../../source/raft_configuration.md:168
@@ -120,6 +228,30 @@ msgstr ""
 msgid "Adding a new node to a Raft cluster is done by:"
 msgstr ""
 
+#: ../../source/raft_configuration.md:194
+msgid "Adding the TLS certificates of the new node to the channel through a channel configuration update transaction. Note: the new node must be added to the system channel before being added to one or more application channels."
+msgstr ""
+
+#: ../../source/raft_configuration.md:197
+msgid "Fetching the latest config block of the system channel from an orderer node that's part of the system channel."
+msgstr ""
+
+#: ../../source/raft_configuration.md:199
+msgid "Ensuring that the node that will be added is part of the system channel by checking that the config block that was fetched includes the certificate of (soon to be) added node."
+msgstr ""
+
+#: ../../source/raft_configuration.md:202
+msgid "Starting the new Raft node with the path to the config block in the General.GenesisFile configuration parameter."
+msgstr ""
+
+#: ../../source/raft_configuration.md:204
+msgid "Waiting for the Raft node to replicate the blocks from existing nodes for all channels its certificates have been added to. After this step has been completed, the node begins servicing the channel."
+msgstr ""
+
+#: ../../source/raft_configuration.md:207
+msgid "Adding the endpoint of the newly added Raft node to the channel configuration of all channels."
+msgstr ""
+
 #: ../../source/raft_configuration.md:210
 msgid "It is possible to add a node that is already running (and participates in some channels already) to a channel while the node itself is running. To do this, simply add the node’s certificate to the channel config of the channel. The node will autonomously detect its addition to the new channel (the default value here is five minutes, but if you want the node to detect the new channel more quickly, reboot the node) and will pull the channel blocks from an orderer in the channel, and then start the Raft instance for that chain."
 msgstr ""
@@ -132,8 +264,44 @@ msgstr ""
 msgid "Removing a node from a Raft cluster is done by:"
 msgstr ""
 
+#: ../../source/raft_configuration.md:223
+msgid "Removing its endpoint from the channel config for all channels, including the system channel controlled by the orderer admins."
+msgstr ""
+
+#: ../../source/raft_configuration.md:225
+msgid "Removing its entry (identified by its certificates) from the channel configuration for all channels. Again, this includes the system channel."
+msgstr ""
+
+#: ../../source/raft_configuration.md:227
+msgid "Shut down the node."
+msgstr ""
+
 #: ../../source/raft_configuration.md:229
 msgid "Removing a node from a specific channel, but keeping it servicing other channels is done by:"
+msgstr ""
+
+#: ../../source/raft_configuration.md:232
+msgid "Removing its endpoint from the channel config for the channel."
+msgstr ""
+
+#: ../../source/raft_configuration.md:233
+msgid "Removing its entry (identified by its certificates) from the channel configuration."
+msgstr ""
+
+#: ../../source/raft_configuration.md:235
+msgid "The second phase causes:"
+msgstr ""
+
+#: ../../source/raft_configuration.md:236
+msgid "The remaining orderer nodes in the channel to cease communicating with the removed orderer node in the context of the removed channel. They might still be communicating on other channels."
+msgstr ""
+
+#: ../../source/raft_configuration.md:239
+msgid "The node that is removed from the channel would autonomously detect its removal either immediately or after EvictionSuspicion time has passed (10 minutes by default) and will shut down its Raft instance."
+msgstr ""
+
+#: ../../source/raft_configuration.md:243
+msgid "TLS certificate rotation for an orderer node"
 msgstr ""
 
 #: ../../source/raft_configuration.md:245
@@ -144,12 +312,28 @@ msgstr ""
 msgid "For each channel the node participates in:"
 msgstr ""
 
+#: ../../source/raft_configuration.md:253
+msgid "Update the channel configuration with the new certificates."
+msgstr ""
+
+#: ../../source/raft_configuration.md:254
+msgid "Replace its certificates in the file system of the node."
+msgstr ""
+
+#: ../../source/raft_configuration.md:255
+msgid "Restart the node."
+msgstr ""
+
 #: ../../source/raft_configuration.md:257
 msgid "Because a node can only have a single TLS certificate key pair, the node will be unable to service channels its new certificates have not been added to during the update process, degrading the capacity of fault tolerance. Because of this, once the certificate rotation process has been started, it should be completed as quickly as possible."
 msgstr ""
 
 #: ../../source/raft_configuration.md:263
 msgid "If for some reason the rotation of the TLS certificates has started but cannot complete in all channels, it is advised to rotate TLS certificates back to what they were and attempt the rotation later."
+msgstr ""
+
+#: ../../source/raft_configuration.md:267
+msgid "Metrics"
 msgstr ""
 
 #: ../../source/raft_configuration.md:269
@@ -162,5 +346,21 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:275
 msgid "While the metrics you prioritize will have a lot to do with your particular use case and configuration, there are two metrics in particular you might want to monitor:"
+msgstr ""
+
+#: ../../source/raft_configuration.md:279
+msgid "consensus_etcdraft_is_leader: identifies which node in the cluster is currently leader. If no nodes have this set, you have lost quorum."
+msgstr ""
+
+#: ../../source/raft_configuration.md:281
+msgid "consensus_etcdraft_data_persist_duration: indicates how long write operations to the Raft cluster's persistent write ahead log take. For protocol safety, messages must be persisted durably, calling fsync where appropriate, before they can be shared with the consenter set. If this value begins to climb, this node may not be able to participate in consensus (which could lead to a service interruption for this node and possibly the network)."
+msgstr ""
+
+#: ../../source/raft_configuration.md:288
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/raft_configuration.md:290
+msgid "The more stress you put on your nodes, the more you might have to change certain parameters. As with any system, computer or mechanical, stress can lead to a drag in performance. As we noted in the conceptual documentation, leader elections in Raft are triggered when follower nodes do not receive either a \"heartbeat\" messages or an \"append\" message that carries data from the leader for a certain amount of time. Because Raft nodes share the same communication layer across channels (this does not mean they share data --- they do not!), if a Raft node is part of the consenter set in many channels, you might want to lengthen the amount of time it takes to trigger an election to avoid inadvertent leader elections."
 msgstr ""
 

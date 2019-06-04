@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:03+0000\n"
 "Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -21,6 +21,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/membership/membership.md:1
+msgid "Membership"
+msgstr ""
 
 #: ../../source/membership/membership.md:3
 msgid ""
@@ -77,6 +81,10 @@ msgid ""
 "what MSPs do in general."
 msgstr "稍后我们将更多地讨论本地和通道MSP。现在，让我们看看MSP通常做什么。"
 
+#: ../../source/membership/membership.md:35
+msgid "Mapping MSPs to Organizations"
+msgstr ""
+
 #: ../../source/membership/membership.md:37
 msgid ""
 "An organization is a managed group of members. This can be something as big "
@@ -103,10 +111,6 @@ msgstr ""
 "组织及其MSP之间的排他性关系使得以组织的名称命名MSP是明智的，您会发现在大多数策略配置中都采用了这种约定。例如，组织ORG1可能有一个名为ORG1-MSP之类的MSP。在某些情况下，组织可能需要多个成员组——例如，通道用于在组织之间执行非常不同的业务功能。在这些情况下，有多个MSP并相应地命名是有意义的，例如，ORG2"
 "-MSP-NATIONAL和ORG2-MSP-GOVERNMENT，这反映了与政府监管通道相比，ORG2在全国销售渠道中的成员信任根是不同的。"
 
-#: ../../source/membership/membership.md:54
-msgid "MSP1"
-msgstr "MSP1"
-
 #: ../../source/membership/membership.md:56
 msgid ""
 "Two different MSP configurations for an organization. The first "
@@ -117,6 +121,10 @@ msgid ""
 "governmental affiliation."
 msgstr ""
 "一个组织有两种不同的MSP配置。第一个配置显示了MSP和组织之间的典型关系——单个MSP定义了组织的成员列表。在第二种配置中，不同的MSP用于表示具有国家、国际和政府关联的不同组织组。"
+
+#: ../../source/membership/membership.md:62
+msgid "Organizational Units and MSPs"
+msgstr ""
 
 #: ../../source/membership/membership.md:64
 msgid ""
@@ -150,6 +158,10 @@ msgid ""
 "to achieve this later."
 msgstr ""
 "最后，尽管这是对OU的轻微滥用，但有时它们可以被联盟中的不同组织用来区分彼此。在这种情况下，不同的组织使用相同的根CA和中间CA作为它们的信任链，但是分配OU字段来标识每个组织的成员。稍后我们还将看到如何配置MSP来实现这一点。"
+
+#: ../../source/membership/membership.md:82
+msgid "Local and Channel MSPs"
+msgstr ""
 
 #: ../../source/membership/membership.md:84
 msgid ""
@@ -194,10 +206,6 @@ msgstr "本地和通道MSPs之间的关键区别不在于它们如何工作—�
 #: ../../source/membership/membership.md:108
 msgid "<a name=\"msp2img\"></a>"
 msgstr "<a name=\"msp2img\"></a>"
-
-#: ../../source/membership/membership.md:110
-msgid "MSP2"
-msgstr "MPS2"
 
 #: ../../source/membership/membership.md:112
 msgid ""
@@ -246,6 +254,10 @@ msgid ""
 msgstr ""
 "本地MSPs只在它们应用到的节点或用户的文件系统上的定义。因此，在物理和逻辑上，每个节点或用户只有一个本地MSP。但是，由于通道MSPs对通道中的所有节点都可用，所以它们在通道配置中逻辑上定义一次。然而，通道MSP也在通道中每个节点的文件系统上实例化，并通过协商一致保持同步。因此，虽然每个节点的本地文件系统上都有每个通道MSP的副本，但从逻辑上讲，通道MSP驻留在通道或网络上并由通道或网络维护。"
 
+#: ../../source/membership/membership.md:142
+msgid "MSP Levels"
+msgstr ""
+
 #: ../../source/membership/membership.md:144
 msgid ""
 "The split between channel and local MSPs reflects the needs of organizations"
@@ -259,10 +271,6 @@ msgid ""
 "network, channel, peer, orderer, and users."
 msgstr ""
 "通道和本地MSPs之间的分离反映了组织管理其本地资源(如peer节点或排序器节点)和通道资源(如账本、智能合约和联盟)的需求，这些资源在通道或网络级别运行。将这些MSPs看作是不同级别的是有帮助的，MSPs处于较高的级别，与网络管理相关，而处于较低级别的MSPs处理私有资源管理的身份。MSPs在每个管理级别都是强制性的——必须为网络、通道、peer、排序器和用户定义它们。"
-
-#: ../../source/membership/membership.md:154
-msgid "MSP3"
-msgstr "MSP3"
 
 #: ../../source/membership/membership.md:156
 msgid ""
@@ -279,6 +287,51 @@ msgid ""
 msgstr ""
 "MSP的级别。peer和排序器的MSPs是本地的，而通道(包括网络配置通道)的MSPs是跨该通道的所有参与者共享的。在这个图中，网络配置通道由ORG1管理，但是另一个应用程序通道可以由ORG1和ORG2管理。peer是ORG2的成员，由ORG2管理，而ORG1管理图的排序器。ORG1信任来自RCA1的身份，而ORG2信任来自RCA2的身份。注意，这些是管理员身份，反映了谁可以管理这些组件。所以当ORG1管理网络时，ORG2.MSP确实存在于网络定义中。"
 
+#: ../../source/membership/membership.md:166
+msgid ""
+"Network MSP: The configuration of a network defines who are the members in "
+"the network --- by defining the MSPs of the participant organizations --- as"
+" well as which of these members are authorized to perform administrative "
+"tasks (e.g., creating a channel)."
+msgstr ""
+
+#: ../../source/membership/membership.md:171
+msgid ""
+"Channel MSP: It is important for a channel to maintain the MSPs of its "
+"members separately. A channel provides private communications between a "
+"particular set of organizations which in turn have administrative control "
+"over it. Channel policies interpreted in the context of that channel's MSPs "
+"define who has ability to participate in certain action on the channel, "
+"e.g., adding organizations, or instantiating chaincodes. Note that there is "
+"no necessary relationship between the permission to administrate a channel "
+"and the ability to administrate the network configuration channel (or any "
+"other channel). Administrative rights exist within the scope of what is "
+"being administrated (unless the rules have been written otherwise --- see "
+"the discussion of the ROLE attribute below)."
+msgstr ""
+
+#: ../../source/membership/membership.md:182
+msgid ""
+"Peer MSP: This local MSP is defined on the file system of each peer and "
+"there is a single MSP instance for each peer. Conceptually, it performs "
+"exactly the same function as channel MSPs with the restriction that it only "
+"applies to the peer where it is defined. An example of an action whose "
+"authorization is evaluated using the peer's local MSP is the installation of"
+" a chaincode on the peer."
+msgstr ""
+
+#: ../../source/membership/membership.md:188
+msgid ""
+"Orderer MSP: Like a peer MSP, an orderer local MSP is also defined on the "
+"file system of the node and only applies to that node. Like peer nodes, "
+"orderers are also owned by a single organization and therefore have a single"
+" MSP to list the actors or nodes it trusts."
+msgstr ""
+
+#: ../../source/membership/membership.md:192
+msgid "MSP Structure"
+msgstr ""
+
 #: ../../source/membership/membership.md:194
 msgid ""
 "So far, you've seen that the most important element of an MSP are the "
@@ -288,10 +341,6 @@ msgid ""
 " with membership functions."
 msgstr ""
 "到目前为止，您已经看到MSP最重要的元素是根或中间CA的规范，这些CA用于在各自的组织中建立参与者或节点的成员关系。但是，还有更多的因素与这两个因素一起使用，以协助成员的职能。"
-
-#: ../../source/membership/membership.md:199
-msgid "MSP4"
-msgstr "MSP4"
 
 #: ../../source/membership/membership.md:201
 msgid ""
@@ -314,6 +363,196 @@ msgid ""
 "Let's describe these folders in a little more detail and see why they are "
 "important."
 msgstr "让我们更详细地描述这些文件夹，看看它们为什么重要。"
+
+#: ../../source/membership/membership.md:211
+msgid ""
+"Root CAs: This folder contains a list of self-signed X.509 certificates of "
+"the Root CAs trusted by the organization represented by this MSP. There must"
+" be at least one Root CA X.509 certificate in this MSP folder."
+msgstr ""
+
+#: ../../source/membership/membership.md:215
+msgid ""
+"This is the most important folder because it identifies the CAs from which "
+"all other certificates must be derived to be considered members of the "
+"corresponding organization."
+msgstr ""
+
+#: ../../source/membership/membership.md:220
+msgid ""
+"Intermediate CAs: This folder contains a list of X.509 certificates of the "
+"Intermediate CAs trusted by this organization. Each certificate must be "
+"signed by one of the Root CAs in the MSP or by an Intermediate CA whose "
+"issuing CA chain ultimately leads back to a trusted Root CA."
+msgstr ""
+
+#: ../../source/membership/membership.md:225
+msgid ""
+"An intermediate CA may represent a different subdivision of the organization"
+" (like ORG1-MANUFACTURING and ORG1-DISTRIBUTION do for ORG1), or the "
+"organization itself (as may be the case if a commercial CA is leveraged for "
+"the organization's identity management). In the latter case intermediate CAs"
+" can be used to represent organization subdivisions. Here you may find more "
+"information on best practices for MSP configuration. Notice, that it is "
+"possible to have a functioning network that does not have an Intermediate "
+"CA, in which case this folder would be empty."
+msgstr ""
+
+#: ../../source/membership/membership.md:234
+msgid ""
+"Like the Root CA folder, this folder defines the CAs from which certificates"
+" must be issued to be considered members of the organization."
+msgstr ""
+
+#: ../../source/membership/membership.md:238
+msgid ""
+"Organizational Units (OUs): These are listed in the "
+"$FABRIC_CFG_PATH/msp/config.yaml file and contain a list of organizational "
+"units, whose members are considered to be part of the organization "
+"represented by this MSP. This is particularly useful when you want to "
+"restrict the members of an organization to the ones holding an identity "
+"(signed by one of MSP designated CAs) with a specific OU in it."
+msgstr ""
+
+#: ../../source/membership/membership.md:245
+msgid ""
+"Specifying OUs is optional. If no OUs are listed, all the identities that "
+"are part of an MSP --- as identified by the Root CA and Intermediate CA "
+"folders --- will be considered members of the organization."
+msgstr ""
+
+#: ../../source/membership/membership.md:250
+msgid ""
+"Administrators: This folder contains a list of identities that define the "
+"actors who have the role of administrators for this organization. For the "
+"standard MSP type, there should be one or more X.509 certificates in this "
+"list."
+msgstr ""
+
+#: ../../source/membership/membership.md:254
+msgid ""
+"It's worth noting that just because an actor has the role of an "
+"administrator it doesn't mean that they can administer particular resources!"
+" The actual power a given identity has with respect to administering the "
+"system is determined by the policies that manage system resources. For "
+"example, a channel policy might specify that ORG1-MANUFACTURING "
+"administrators have the rights to add new organizations to the channel, "
+"whereas the ORG1-DISTRIBUTION administrators have no such rights."
+msgstr ""
+
+#: ../../source/membership/membership.md:261
+msgid ""
+"Even though an X.509 certificate has a ROLE attribute (specifying, for "
+"example, that an actor is an admin), this refers to an actor's role within "
+"its organization rather than on the blockchain network. This is similar to "
+"the purpose of the OU attribute, which --- if it has been defined --- refers"
+" to an actor's place in the organization."
+msgstr ""
+
+#: ../../source/membership/membership.md:267
+msgid ""
+"The ROLE attribute can be used to confer administrative rights at the "
+"channel level if the policy for that channel has been written to allow any "
+"administrator from an organization (or certain organizations) permission to "
+"perform certain channel functions (such as instantiating chaincode). In this"
+" way, an organizational role can confer a network role."
+msgstr ""
+
+#: ../../source/membership/membership.md:273
+msgid ""
+"Revoked Certificates: If the identity of an actor has been revoked, "
+"identifying information about the identity --- not the identity itself --- "
+"is held in this folder. For X.509-based identities, these identifiers are "
+"pairs of strings known as Subject Key Identifier (SKI) and Authority Access "
+"Identifier (AKI), and are checked whenever the X.509 certificate is being "
+"used to make sure the certificate has not been revoked."
+msgstr ""
+
+#: ../../source/membership/membership.md:280
+msgid ""
+"This list is conceptually the same as a CA's Certificate Revocation List "
+"(CRL), but it also relates to revocation of membership from the "
+"organization. As a result, the administrator of an MSP, local or channel, "
+"can quickly revoke an actor or node from an organization by advertising the "
+"updated CRL of the CA the revoked certificate as issued by. This \"list of "
+"lists\" is optional. It will only become populated as certificates are "
+"revoked."
+msgstr ""
+
+#: ../../source/membership/membership.md:288
+msgid ""
+"Node Identity: This folder contains the identity of the node, i.e., "
+"cryptographic material that --- in combination to the content of KeyStore "
+"--- would allow the node to authenticate itself in the messages that is "
+"sends to other participants of its channels and network. For X.509 based "
+"identities, this folder contains an X.509 certificate. This is the "
+"certificate a peer places in a transaction proposal response, for example, "
+"to indicate that the peer has endorsed it --- which can subsequently be "
+"checked against the resulting transaction's endorsement policy at validation"
+" time."
+msgstr ""
+
+#: ../../source/membership/membership.md:297
+msgid ""
+"This folder is mandatory for local MSPs, and there must be exactly one X.509"
+" certificate for the node. It is not used for channel MSPs."
+msgstr ""
+
+#: ../../source/membership/membership.md:301
+msgid ""
+"KeyStore for Private Key: This folder is defined for the local MSP of a peer"
+" or orderer node (or in an client's local MSP), and contains the node's "
+"signing key. This key matches cryptographically the node's identity included"
+" in Node Identity folder and is used to sign data --- for example to sign a "
+"transaction proposal response, as part of the endorsement phase."
+msgstr ""
+
+#: ../../source/membership/membership.md:307
+msgid ""
+"This folder is mandatory for local MSPs, and must contain exactly one "
+"private key. Obviously, access to this folder must be limited only to the "
+"identities of users who have administrative responsibility on the peer."
+msgstr ""
+
+#: ../../source/membership/membership.md:311
+msgid ""
+"Configuration of a channel MSPs does not include this folder, as channel "
+"MSPs solely aim to offer identity validation functionalities and not signing"
+" abilities."
+msgstr ""
+
+#: ../../source/membership/membership.md:315
+msgid ""
+"TLS Root CA: This folder contains a list of self-signed X.509 certificates "
+"of the Root CAs trusted by this organization for TLS communications. An "
+"example of a TLS communication would be when a peer needs to connect to an "
+"orderer so that it can receive ledger updates."
+msgstr ""
+
+#: ../../source/membership/membership.md:320
+msgid ""
+"MSP TLS information relates to the nodes inside the network --- the peers "
+"and the orderers, in other words, rather than the applications and "
+"administrations that consume the network."
+msgstr ""
+
+#: ../../source/membership/membership.md:324
+msgid ""
+"There must be at least one TLS Root CA X.509 certificate in this folder."
+msgstr ""
+
+#: ../../source/membership/membership.md:327
+msgid ""
+"TLS Intermediate CA: This folder contains a list intermediate CA "
+"certificates CAs trusted by the organization represented by this MSP for TLS"
+" communications. This folder is specifically useful when commercial CAs are "
+"used for TLS certificates of an organization. Similar to membership "
+"intermediate CAs, specifying intermediate TLS CAs is optional."
+msgstr ""
+
+#: ../../source/membership/membership.md:333
+msgid "For more information about TLS, click here."
+msgstr ""
 
 #: ../../source/membership/membership.md:335
 msgid ""

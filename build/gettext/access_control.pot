@@ -8,13 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-05-09 08:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/access_control.md:1
+msgid "Access Control Lists (ACL)"
+msgstr ""
+
+#: ../../source/access_control.md:3
+msgid "What is an Access Control List?"
+msgstr ""
 
 #: ../../source/access_control.md:5
 msgid "Note: This topic deals with access control and policies on a channel administration level. To learn about access control within a chaincode, check out our chaincode for developers tutorial."
@@ -26,6 +34,10 @@ msgstr ""
 
 #: ../../source/access_control.md:14
 msgid "But before we can do that, it's necessary to understand a little about resources and policies."
+msgstr ""
+
+#: ../../source/access_control.md:17
+msgid "Resources"
 msgstr ""
 
 #: ../../source/access_control.md:19
@@ -40,12 +52,20 @@ msgstr ""
 msgid "The resources named in configtx.yaml is an exhaustive list of all internal resources currently defined by Fabric. The loose convention adopted there is <component>/<resource>. So cscc/GetConfigBlock is the resource for the GetConfigBlock call in the CSCC component."
 msgstr ""
 
+#: ../../source/access_control.md:33
+msgid "Policies"
+msgstr ""
+
 #: ../../source/access_control.md:35
 msgid "Policies are fundamental to the way Fabric works because they allow the identity (or set of identities) associated with a request to be checked against the policy associated with the resource needed to fulfill the request. Endorsement policies are used to determine whether a transaction has been appropriately endorsed. The policies defined in the channel configuration are referenced as modification policies as well as for access control, and are defined in the channel configuration itself."
 msgstr ""
 
 #: ../../source/access_control.md:42
 msgid "Policies can be structured in one of two ways: as Signature policies or as an ImplicitMeta policy."
+msgstr ""
+
+#: ../../source/access_control.md:45
+msgid "Signature policies"
 msgstr ""
 
 #: ../../source/access_control.md:47
@@ -58,6 +78,10 @@ msgstr ""
 
 #: ../../source/access_control.md:62
 msgid "Signature policies support arbitrary combinations of AND, OR, and NOutOf, allowing the construction of extremely powerful rules like: \"An admin of org A and two other admins, or 11 of 20 org admins\"."
+msgstr ""
+
+#: ../../source/access_control.md:66
+msgid "ImplicitMeta policies"
 msgstr ""
 
 #: ../../source/access_control.md:68
@@ -80,12 +104,20 @@ msgstr ""
 msgid "Here, the policy AnotherPolicy can be satisfied by the MAJORITY of Admins, where Admins is eventually being specified by lower level Signature policy."
 msgstr ""
 
+#: ../../source/access_control.md:99
+msgid "Where is access control specified?"
+msgstr ""
+
 #: ../../source/access_control.md:101
 msgid "Access control defaults exist inside configtx.yaml, the file that configtxgen uses to build channel configurations."
 msgstr ""
 
 #: ../../source/access_control.md:104
 msgid "Access control can be updated one of two ways, either by editing configtx.yaml itself, which will propagate the ACL change to any new channels, or by updating access control in the channel configuration of a particular channel."
+msgstr ""
+
+#: ../../source/access_control.md:108
+msgid "How ACLs are formatted in configtx.yaml"
 msgstr ""
 
 #: ../../source/access_control.md:110
@@ -98,6 +130,10 @@ msgstr ""
 
 #: ../../source/access_control.md:125
 msgid "These ACLs define that access to peer/Propose and event/Block resources is restricted to identities satisfying the policy defined at the canonical path /Channel/Application/Writers and /Channel/Application/Readers, respectively."
+msgstr ""
+
+#: ../../source/access_control.md:129
+msgid "Updating ACL defaults in configtx.yaml"
 msgstr ""
 
 #: ../../source/access_control.md:131
@@ -145,6 +181,10 @@ msgstr ""
 msgid "If channels have already been created that want to use this ACL, they'll have to update their channel configurations one at a time using the following flow:"
 msgstr ""
 
+#: ../../source/access_control.md:193
+msgid "Updating ACL defaults in the channel config"
+msgstr ""
+
 #: ../../source/access_control.md:195
 msgid "If channels have already been created that want to use MyPolicy to restrict access to peer/Propose --- or if they want to create ACLs they don't want other channels to know about --- they'll have to update their channel configurations one at a time through config update transactions."
 msgstr ""
@@ -173,6 +213,10 @@ msgstr ""
 msgid "Once the configuration has been updated, it will need to be submitted by the usual channel update process."
 msgstr ""
 
+#: ../../source/access_control.md:263
+msgid "Satisfying an ACL that requires access to multiple resources"
+msgstr ""
+
 #: ../../source/access_control.md:265
 msgid "If a member makes a request that calls multiple system chaincodes, all of the ACLs for those system chaincodes must be satisfied."
 msgstr ""
@@ -183,6 +227,10 @@ msgstr ""
 
 #: ../../source/access_control.md:274
 msgid "In the default configuration, Writers is a signature policy whose rule is SampleOrg.member. In other words, \"any member of my organization\". MyPolicy, listed above, has a rule of SampleOrg.admin, or \"any admin of my organization\". To satisfy these ACLs, the member would have to be both an administrator and a member of SampleOrg. By default, all administrators are members (though not all administrators are members), but it is possible to overwrite these policies to whatever you want them to be. As a result, it's important to keep track of these policies to ensure that the ACLs for peer proposals are not impossible to satisfy (unless that is the intention)."
+msgstr ""
+
+#: ../../source/access_control.md:284
+msgid "Migration considerations for customers using the experimental ACL feature"
 msgstr ""
 
 #: ../../source/access_control.md:286

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/developapps/application.md:1
+msgid "Application"
+msgstr ""
+
 #: ../../source/developapps/application.md:3
 msgid "Audience: Architects, Application and smart contract developers"
 msgstr ""
 
 #: ../../source/developapps/application.md:5
-msgid "An application can interact with a blockhain network by submitting transactions to a ledger or querying ledger content. This topic covers the mechanics of how an application does this; in our scenario, organizations access PaperNet using applications which invoke issue, sell and redeem transactions defined in a commercial paper smart contract. Even though MagnetoCorp's application to issue a commercial paper is basic, it covers all the major points of understanding."
+msgid "An application can interact with a blockchain network by submitting transactions to a ledger or querying ledger content. This topic covers the mechanics of how an application does this; in our scenario, organizations access PaperNet using applications which invoke issue, sell and redeem transactions defined in a commercial paper smart contract. Even though MagnetoCorp's application to issue a commercial paper is basic, it covers all the major points of understanding."
 msgstr ""
 
 #: ../../source/developapps/application.md:13
 msgid "In this topic, we're going to cover:"
 msgstr ""
 
+#: ../../source/developapps/application.md:15
+msgid "The application flow to invoke a smart contract"
+msgstr ""
+
+#: ../../source/developapps/application.md:16
+msgid "How an application uses a wallet and identity"
+msgstr ""
+
+#: ../../source/developapps/application.md:17
+msgid "How an application connects using a gateway"
+msgstr ""
+
+#: ../../source/developapps/application.md:18
+msgid "How to access a particular network"
+msgstr ""
+
+#: ../../source/developapps/application.md:19
+msgid "How to construct a transaction request"
+msgstr ""
+
+#: ../../source/developapps/application.md:20
+msgid "How to submit a transaction"
+msgstr ""
+
+#: ../../source/developapps/application.md:21
+msgid "How to process a transaction response"
+msgstr ""
+
 #: ../../source/developapps/application.md:23
 msgid "To help your understanding, we'll make reference to the commercial paper sample application provided with Hyperledger Fabric. You can download it and run it locally. It is written in JavaScript, but the logic is quite language independent, so you'll be easily able to see what's going on! (The sample will become available for Java and GOLANG as well.)"
+msgstr ""
+
+#: ../../source/developapps/application.md:30
+msgid "Basic Flow"
 msgstr ""
 
 #: ../../source/developapps/application.md:32
@@ -37,15 +73,43 @@ msgid "An application interacts with a blockchain network using the Fabric SDK. 
 msgstr ""
 
 #: ../../source/developapps/application.md:36
-msgid "develop.application A PaperNet application invokes the commercial paper smart contract to submit an issue transaction request."
+msgid "A PaperNet application invokes the commercial paper smart contract to submit an issue transaction request."
 msgstr ""
 
 #: ../../source/developapps/application.md:39
 msgid "An application has to follow six basic steps to submit a transaction:"
 msgstr ""
 
+#: ../../source/developapps/application.md:41
+msgid "Select an identity from a wallet"
+msgstr ""
+
+#: ../../source/developapps/application.md:42
+msgid "Connect to a gateway"
+msgstr ""
+
+#: ../../source/developapps/application.md:43
+msgid "Access the desired network"
+msgstr ""
+
+#: ../../source/developapps/application.md:44
+msgid "Construct a transaction request for a smart contract"
+msgstr ""
+
+#: ../../source/developapps/application.md:45
+msgid "Submit the transaction to the network"
+msgstr ""
+
+#: ../../source/developapps/application.md:46
+msgid "Process the response"
+msgstr ""
+
 #: ../../source/developapps/application.md:48
 msgid "You're going to see how a typical application performs these six steps using the Fabric SDK. You'll find the application code in the issue.js file. View it in your browser, or open it in your favourite editor if you've downloaded it. Spend a few moments looking at the overall structure of the application; even with comments and spacing, it's only 100 lines of code!"
+msgstr ""
+
+#: ../../source/developapps/application.md:55
+msgid "Wallet"
 msgstr ""
 
 #: ../../source/developapps/application.md:57
@@ -68,12 +132,24 @@ msgstr ""
 msgid "Note also that wallets don't hold any form of cash or tokens -- they hold identities."
 msgstr ""
 
+#: ../../source/developapps/application.md:92
+msgid "Gateway"
+msgstr ""
+
 #: ../../source/developapps/application.md:94
 msgid "The second key class is a Fabric Gateway. Most importantly, a gateway identifies one or more peers that provide access to a network -- in our case, PaperNet. See how issue.js connects to its gateway:"
 msgstr ""
 
 #: ../../source/developapps/application.md:102
 msgid "gateway.connect() has two important parameters:"
+msgstr ""
+
+#: ../../source/developapps/application.md:104
+msgid "connectionProfile: the file system location of a connection profile that identifies a set of peers as a gateway to PaperNet"
+msgstr ""
+
+#: ../../source/developapps/application.md:108
+msgid "connectionOptions: a set of options used to control how issue.js interacts with PaperNet"
 msgstr ""
 
 #: ../../source/developapps/application.md:112
@@ -120,6 +196,10 @@ msgstr ""
 msgid "If you'd like to, read more about how connection options allow applications to specify goal-oriented behaviour without having to worry about how it is achieved."
 msgstr ""
 
+#: ../../source/developapps/application.md:210
+msgid "Network channel"
+msgstr ""
+
 #: ../../source/developapps/application.md:212
 msgid "The peers defined in the gateway connectionProfile.yaml provide issue.js with access to PaperNet. Because these peers can be joined to multiple network channels, the gateway actually provides the application with access to multiple network channels!"
 msgstr ""
@@ -138,6 +218,10 @@ msgstr ""
 
 #: ../../source/developapps/application.md:234
 msgid "We can see here a powerful feature of Hyperledger Fabric -- applications can participate in a network of networks, by connecting to multiple gateway peers, each of which is joined to multiple network channels. Applications will have different rights in different channels according to their wallet identity provided in gateway.connect()."
+msgstr ""
+
+#: ../../source/developapps/application.md:240
+msgid "Construct request"
 msgstr ""
 
 #: ../../source/developapps/application.md:242
@@ -164,6 +248,10 @@ msgstr ""
 msgid "Let's now submit this transaction to PaperNet!"
 msgstr ""
 
+#: ../../source/developapps/application.md:284
+msgid "Submit transaction"
+msgstr ""
+
 #: ../../source/developapps/application.md:286
 msgid "Submitting a transaction is a single method call to the SDK:"
 msgstr ""
@@ -182,6 +270,10 @@ msgstr ""
 
 #: ../../source/developapps/application.md:314
 msgid "Let's now turn our attention to how the application handles the response!"
+msgstr ""
+
+#: ../../source/developapps/application.md:316
+msgid "Process response"
 msgstr ""
 
 #: ../../source/developapps/application.md:318

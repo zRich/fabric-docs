@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-05-09 08:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,94 +101,90 @@ msgid "CouchDB indexes"
 msgstr ""
 
 #: ../../source/couchdb_as_state_database.rst:108
-msgid "The Fabric chaincode lifecycle that is being introduced in the v2.0 Alpha release does not support using indexes with CouchDB. As a result, the `previous lifecycle process <https://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`_  is required to install and instantiate a chaincode that includes CouchDB indexes. You can only use CouchDB indexes with the Fabric v2.0 Alpha if the channel capabilities are set with V1_4 as the highest version enabled in the Application Capabilities section of the `configtx.yaml file <https://github.com/hyperledger/fabric/blob/master/sampleconfig/configtx.yaml>`_. CouchDB indexes will not work on channels with v2_0 capabilities enabled."
-msgstr ""
-
-#: ../../source/couchdb_as_state_database.rst:118
 msgid "Indexes in CouchDB are required in order to make JSON queries efficient and are required for any JSON query with a sort. Indexes can be packaged alongside chaincode in a ``/META-INF/statedb/couchdb/indexes`` directory. Each index must be defined in its own text file with extension ``*.json`` with the index definition formatted in JSON following the `CouchDB index JSON syntax <http://docs.couchdb.org/en/2.1.1/api/database/find.html#db-index>`__. For example, to support the above marble query, a sample index on the ``docType`` and ``owner`` fields is provided:"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:130
+#: ../../source/couchdb_as_state_database.rst:120
 msgid "The sample index can be found `here <https://github.com/hyperledger/fabric-samples/blob/master/chaincode/marbles02/go/META-INF/statedb/couchdb/indexes/indexOwner.json>`__."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:132
+#: ../../source/couchdb_as_state_database.rst:122
 msgid "Any index in the chaincode’s ``META-INF/statedb/couchdb/indexes`` directory will be packaged up with the chaincode for deployment. When the chaincode is both installed on a peer and instantiated on one of the peer’s channels, the index will automatically be deployed to the peer’s channel and chaincode specific state database (if it has been configured to use CouchDB). If you install the chaincode first and then instantiate the chaincode on the channel, the index will be deployed at chaincode **instantiation** time. If the chaincode is already instantiated on a channel and you later install the chaincode on a peer, the index will be deployed at chaincode **installation** time."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:143
+#: ../../source/couchdb_as_state_database.rst:133
 msgid "Upon deployment, the index will automatically be utilized by chaincode queries. CouchDB can automatically determine which index to use based on the fields being used in a query. Alternatively, in the selector query the index can be specified using the ``use_index`` keyword."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:147
+#: ../../source/couchdb_as_state_database.rst:137
 msgid "The same index may exist in subsequent versions of the chaincode that gets installed. To change the index, use the same index name but alter the index definition. Upon installation/instantiation, the index definition will get re-deployed to the peer’s state database."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:151
+#: ../../source/couchdb_as_state_database.rst:141
 msgid "If you have a large volume of data already, and later install the chaincode, the index creation upon installation may take some time. Similarly, if you have a large volume of data already and instantiate a subsequent version of the chaincode, the index creation may take some time. Avoid calling chaincode functions that query the state database at these times as the chaincode query may time out while the index is getting initialized. During transaction processing, the indexes will automatically get refreshed as blocks are committed to the ledger."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:159
+#: ../../source/couchdb_as_state_database.rst:149
 msgid "CouchDB Configuration"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:161
+#: ../../source/couchdb_as_state_database.rst:151
 msgid "CouchDB is enabled as the state database by changing the ``stateDatabase`` configuration option from goleveldb to CouchDB. Additionally, the ``couchDBAddress`` needs to configured to point to the CouchDB to be used by the peer. The username and password properties should be populated with an admin username and password if CouchDB is configured with a username and password. Additional options are provided in the ``couchDBConfig`` section and are documented in place. Changes to the *core.yaml* will be effective immediately after restarting the peer."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:168
+#: ../../source/couchdb_as_state_database.rst:158
 msgid "You can also pass in docker environment variables to override core.yaml values, for example ``CORE_LEDGER_STATE_STATEDATABASE`` and ``CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS``."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:171
+#: ../../source/couchdb_as_state_database.rst:161
 msgid "Below is the ``stateDatabase`` section from *core.yaml*:"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:217
+#: ../../source/couchdb_as_state_database.rst:207
 msgid "CouchDB hosted in docker containers supplied with Hyperledger Fabric have the capability of setting the CouchDB username and password with environment variables passed in with the ``COUCHDB_USER`` and ``COUCHDB_PASSWORD`` environment variables using Docker Compose scripting."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:222
+#: ../../source/couchdb_as_state_database.rst:212
 msgid "For CouchDB installations outside of the docker images supplied with Fabric, the `local.ini file of that installation <http://docs.couchdb.org/en/2.1.1/config/intro.html#configuration-files>`__ must be edited to set the admin username and password."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:228
+#: ../../source/couchdb_as_state_database.rst:218
 msgid "Docker compose scripts only set the username and password at the creation of the container. The *local.ini* file must be edited if the username or password is to be changed after creation of the container."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:232
+#: ../../source/couchdb_as_state_database.rst:222
 msgid "CouchDB peer options are read on each peer startup."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:235
+#: ../../source/couchdb_as_state_database.rst:225
 msgid "Good practices for queries"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:237
+#: ../../source/couchdb_as_state_database.rst:227
 msgid "Avoid using chaincode for queries that will result in a scan of the entire CouchDB database. Full length database scans will result in long response times and will degrade the performance of your network. You can take some of the following steps to avoid long queries:"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:242
+#: ../../source/couchdb_as_state_database.rst:232
 msgid "When using JSON queries:"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:244
+#: ../../source/couchdb_as_state_database.rst:234
 msgid "Be sure to create indexes in the chaincode package."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:245
+#: ../../source/couchdb_as_state_database.rst:235
 msgid "Avoid query operators such as ``$or``, ``$in`` and ``$regex``, which lead to full database scans."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:248
+#: ../../source/couchdb_as_state_database.rst:238
 msgid "For range queries, composite key queries, and JSON queries:"
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:250
+#: ../../source/couchdb_as_state_database.rst:240
 msgid "Utilize paging support (as of v1.3) instead of one large result set."
 msgstr ""
 
-#: ../../source/couchdb_as_state_database.rst:252
+#: ../../source/couchdb_as_state_database.rst:242
 msgid "If you want to build a dashboard or collect aggregate data as part of your application, you can query an off-chain database that replicates the data from your blockchain network. This will allow you to query and analyze the blockchain data in a data store optimized for your needs, without degrading the performance of your network or disrupting transactions. To achieve this, applications may use block or chaincode events to write transaction data to an off-chain database or analytics engine. For each block received, the block listener application would iterate through the block transactions and build a data store using the key/value writes from each valid transaction's ``rwset``. The :doc:`peer_event_services` provide replayable events to ensure the integrity of downstream data stores."
 msgstr ""
 

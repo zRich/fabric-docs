@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2019-04-22 20:03+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/Gerrit/best-practices.rst:2
 msgid "Gerrit Recommended Practices"
@@ -25,9 +24,9 @@ msgstr ""
 #: ../../source/Gerrit/best-practices.rst:4
 msgid ""
 "This document presents some best practices to help you use Gerrit more "
-"effectively. The intent is to show how content can be submitted easily. "
-"Use the recommended practices to reduce your troubleshooting time and "
-"improve participation in the community."
+"effectively. The intent is to show how content can be submitted easily. Use "
+"the recommended practices to reduce your troubleshooting time and improve "
+"participation in the community."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:10
@@ -36,11 +35,10 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:12
 msgid ""
-"Visit `Gerrit "
-"<https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__ then select"
-" ``Projects --> List --> SELECT-PROJECT --> Branches``. Select the branch"
-" that interests you, click on ``gitweb`` located on the right-hand side. "
-"Now, ``gitweb`` loads your selection on the Git web interface and "
+"Visit `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__ "
+"then select ``Projects --> List --> SELECT-PROJECT --> Branches``. Select "
+"the branch that interests you, click on ``gitweb`` located on the right-hand"
+" side. Now, ``gitweb`` loads your selection on the Git web interface and "
 "redirects appropriately."
 msgstr ""
 
@@ -50,10 +48,9 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:22
 msgid ""
-"Visit `Gerrit "
-"<https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__, then "
-"select ``Settings``, located on the top right corner. Select ``Watched "
-"Projects`` and then add any projects that interest you."
+"Visit `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__,"
+" then select ``Settings``, located on the top right corner. Select ``Watched"
+" Projects`` and then add any projects that interest you."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:28
@@ -62,10 +59,9 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:30
 msgid ""
-"Gerrit follows the Git commit message format. Ensure the headers are at "
-"the bottom and don't contain blank lines between one another. The "
-"following example shows the format and content expected in a commit "
-"message:"
+"Gerrit follows the Git commit message format. Ensure the headers are at the "
+"bottom and don't contain blank lines between one another. The following "
+"example shows the format and content expected in a commit message:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:35
@@ -74,10 +70,9 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:37
 msgid ""
-"Elaborate summary of the changes made referencing why (motivation), what "
-"was changed and how it was tested. Note also any changes to documentation"
-" made to remain consistent with the code changes, wrapping text at 72 "
-"chars/line."
+"Elaborate summary of the changes made referencing why (motivation), what was"
+" changed and how it was tested. Note also any changes to documentation made "
+"to remain consistent with the code changes, wrapping text at 72 chars/line."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:42
@@ -98,8 +93,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:47
 msgid ""
-"The Gerrit server provides a precommit hook to autogenerate the Change-Id"
-" which is one time use."
+"The Gerrit server provides a precommit hook to autogenerate the Change-Id "
+"which is one time use."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:50
@@ -118,8 +113,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:58
 msgid ""
-"Check your work at least three times before pushing your change to "
-"Gerrit. Be mindful of what information you are publishing."
+"Check your work at least three times before pushing your change to Gerrit. "
+"Be mindful of what information you are publishing."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:62
@@ -133,27 +128,25 @@ msgstr ""
 #: ../../source/Gerrit/best-practices.rst:66
 msgid ""
 "Gerrit will add you to the email distribution list for a change if a "
-"developer adds you as a reviewer, or if you comment on a specific Patch "
-"Set."
+"developer adds you as a reviewer, or if you comment on a specific Patch Set."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:70
 msgid ""
-"Opening a change in Gerrit's review interface is a quick way to follow "
-"that change."
+"Opening a change in Gerrit's review interface is a quick way to follow that "
+"change."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:73
 msgid ""
-"Watch projects in the Gerrit projects section at ``Gerrit``, select at "
-"least *New Changes, New Patch Sets, All Comments* and *Submitted "
-"Changes*."
+"Watch projects in the Gerrit projects section at ``Gerrit``, select at least"
+" *New Changes, New Patch Sets, All Comments* and *Submitted Changes*."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:77
 msgid ""
-"Always track the projects you are working on; also see the "
-"feedback/comments mailing list to learn and help others ramp up."
+"Always track the projects you are working on; also see the feedback/comments"
+" mailing list to learn and help others ramp up."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:81
@@ -168,8 +161,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:86
 msgid ""
-"To push changes from ``REMOTE/master`` tree to Gerrit for being reviewed "
-"as a topic in **TopicName** use the following command as an example:"
+"To push changes from ``REMOTE/master`` tree to Gerrit for being reviewed as "
+"a topic in **TopicName** use the following command as an example:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:90
@@ -183,8 +176,8 @@ msgstr ""
 #: ../../source/Gerrit/best-practices.rst:92
 msgid ""
 "The topic will show up in the review ``UI`` and in the ``Open Changes "
-"List``. Topic branches will disappear from the master tree when its "
-"content is merged."
+"List``. Topic branches will disappear from the master tree when its content "
+"is merged."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:97
@@ -193,8 +186,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:99
 msgid ""
-"You may decide whether or not you'd like the cover letter to appear in "
-"the history."
+"You may decide whether or not you'd like the cover letter to appear in the "
+"history."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:102
@@ -213,11 +206,12 @@ msgid ""
 "steps:"
 msgstr ""
 
-#: ../../source/Gerrit/best-practices.rst
-msgid "Put the empty commit at the end of your commits list so it can be ignored"
+#: ../../source/Gerrit/best-practices.rst:0
+msgid ""
+"Put the empty commit at the end of your commits list so it can be ignored"
 msgstr ""
 
-#: ../../source/Gerrit/best-practices.rst
+#: ../../source/Gerrit/best-practices.rst:0
 msgid "without having to rebase."
 msgstr ""
 
@@ -233,15 +227,15 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:133
 msgid ""
-"If you already have commits but you want to set a cover letter, create an"
-" empty commit for the cover letter and move the commit so it becomes the "
-"last commit on the list. Use the following command as an example:"
+"If you already have commits but you want to set a cover letter, create an "
+"empty commit for the cover letter and move the commit so it becomes the last"
+" commit on the list. Use the following command as an example:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:141
 msgid ""
-"Be careful to uncomment the commit before moving it. ``#Commits`` is the "
-"sum of the commits plus your new cover letter."
+"Be careful to uncomment the commit before moving it. ``#Commits`` is the sum"
+" of the commits plus your new cover letter."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:145
@@ -250,8 +244,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:152
 msgid ""
-"`gerrit.hyperledger.org <https://gerrit.hyperledger.org>`__ Is the "
-"current URL where the project is hosted."
+"`gerrit.hyperledger.org <https://gerrit.hyperledger.org>`__ Is the current "
+"URL where the project is hosted."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:154
@@ -261,7 +255,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:156
-msgid "*project* Refers to the current name of the project, in this case fabric."
+msgid ""
+"*project* Refers to the current name of the project, in this case fabric."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:158
@@ -269,7 +264,8 @@ msgid "*branch* The topic is searched at this branch."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:159
-msgid "*topic* The name of an specific topic, leave it blank to include them all."
+msgid ""
+"*topic* The name of an specific topic, leave it blank to include them all."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:161
@@ -282,18 +278,17 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:166
 msgid ""
-"In the review UI, on the top right corner, the **Download** link provides"
-" a list of commands and hyperlinks to checkout or download diffs or "
-"files."
+"In the review UI, on the top right corner, the **Download** link provides a "
+"list of commands and hyperlinks to checkout or download diffs or files."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:170
 msgid ""
-"We recommend the use of the *git review* plugin. The steps to install git"
-" review are beyond the scope of this document. Refer to the `git review "
+"We recommend the use of the *git review* plugin. The steps to install git "
+"review are beyond the scope of this document. Refer to the `git review "
 "documentation "
-"<https://wiki.openstack.org/wiki/Documentation/HowTo/FirstTimers>`__ for "
-"the installation process."
+"<https://wiki.openstack.org/wiki/Documentation/HowTo/FirstTimers>`__ for the"
+" installation process."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:176
@@ -304,14 +299,14 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:183
 msgid ""
-"If you don't have Git-review installed, the following commands will do "
-"the same thing:"
+"If you don't have Git-review installed, the following commands will do the "
+"same thing:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:190
 msgid ""
-"For example, for the 4th version of change 2464, NN is the first two "
-"digits (24):"
+"For example, for the 4th version of change 2464, NN is the first two digits "
+"(24):"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:198
@@ -320,8 +315,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:200
 msgid ""
-"You can use draft branches to add specific reviewers before you "
-"publishing your change. The Draft Branches are pushed to "
+"You can use draft branches to add specific reviewers before you publishing "
+"your change. The Draft Branches are pushed to "
 "``refs/drafts/master/TopicName``"
 msgstr ""
 
@@ -387,32 +382,31 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:253
 msgid ""
-"During the review process, you might be asked to update your change. It "
-"is possible to submit multiple versions of the same change. Each version "
-"of the change is called a patch set."
+"During the review process, you might be asked to update your change. It is "
+"possible to submit multiple versions of the same change. Each version of the"
+" change is called a patch set."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:257
 msgid ""
-"Always maintain the **Change-Id** that was assigned. For example, there "
-"is a list of commits, **c0...c7**, which were submitted as a topic "
-"branch:"
+"Always maintain the **Change-Id** that was assigned. For example, there is a"
+" list of commits, **c0...c7**, which were submitted as a topic branch:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:271
 msgid ""
-"After you get reviewers' feedback, there are changes in **c3** and **c4**"
-" that must be fixed. If the fix requires rebasing, rebasing changes the "
-"commit Ids, see the `rebasing <https://git-scm.com/book/en/v2/Git-"
-"Branching-Rebasing>`__ section for more information. However, you must "
-"keep the same Change-Id and push the changes again:"
+"After you get reviewers' feedback, there are changes in **c3** and **c4** "
+"that must be fixed. If the fix requires rebasing, rebasing changes the "
+"commit Ids, see the `rebasing <https://git-scm.com/book/en/v2/Git-Branching-"
+"Rebasing>`__ section for more information. However, you must keep the same "
+"Change-Id and push the changes again:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:282
 msgid ""
 "This new push creates a patches revision, your local history is then "
-"cleared. However you can still access the history of your changes in "
-"Gerrit on the ``review UI`` section, for each change."
+"cleared. However you can still access the history of your changes in Gerrit "
+"on the ``review UI`` section, for each change."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:286
@@ -426,8 +420,8 @@ msgstr ""
 #: ../../source/Gerrit/best-practices.rst:291
 msgid ""
 "Rebasing is usually the last step before pushing changes to Gerrit; this "
-"allows you to make the necessary *Change-Ids*. The *Change-Ids* must be "
-"kept the same."
+"allows you to make the necessary *Change-Ids*. The *Change-Ids* must be kept"
+" the same."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:295
@@ -462,14 +456,14 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:307
 msgid ""
-"For example, your ``REMOTE/master`` has the list of commits from **a0** "
-"to **a4**; Then, your changes **c0...c7** are on top of **a4**; thus:"
+"For example, your ``REMOTE/master`` has the list of commits from **a0** to "
+"**a4**; Then, your changes **c0...c7** are on top of **a4**; thus:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:324
 msgid ""
-"If ``REMOTE/master`` receives commits **a5**, **a6** and **a7**. Pull "
-"with a rebase as follows:"
+"If ``REMOTE/master`` receives commits **a5**, **a6** and **a7**. Pull with a"
+" rebase as follows:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:331
@@ -482,8 +476,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:347
 msgid ""
-"Use these commands to change the configuration of Git in order to produce"
-" better logs:"
+"Use these commands to change the configuration of Git in order to produce "
+"better logs:"
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:354
@@ -492,8 +486,8 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:360
 msgid ""
-"The command above sets the abbreviation length to the last 5 characters "
-"of the hash."
+"The command above sets the abbreviation length to the last 5 characters of "
+"the hash."
 msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:367
@@ -504,7 +498,6 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:370
 msgid ""
-"To make these configuration changes specifically for the current Git "
-"user, you must add the path option ``--global`` to ``config`` as follows:"
+"To make these configuration changes specifically for the current Git user, "
+"you must add the path option ``--global`` to ``config`` as follows:"
 msgstr ""
-

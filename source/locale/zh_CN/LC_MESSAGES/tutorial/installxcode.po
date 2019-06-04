@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: Allan Lee <allanlee2019@hotmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -21,10 +21,42 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../../source/tutorial/installxcode.md:1
+msgid "Install Xcode"
+msgstr ""
+
 #: ../../source/tutorial/installxcode.md:3
 msgid "If your Mac OS is running Mojave, you will need to install Xcode."
 msgstr "如果您的Mac OS运行的是mojave，则需要安装xcode。"
 
+#: ../../source/tutorial/installxcode.md:5
+msgid "Install Xcode from this website."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:7
+msgid "Accept the Terms and Conditions."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:9
+msgid ""
+"Ensure that the Xcode app is in the /Applications directory. Do not put it "
+"in /Users/{user}/Applications)."
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:12
+msgid ""
+"Point xcode-select to the Xcode app Developer directory using the following "
+"command:"
+msgstr ""
+
 #: ../../source/tutorial/installxcode.md:19
 msgid "Note: Make sure your Xcode application path is correct."
 msgstr "注意：确保Xcode应用程序路径正确。"
+
+#: ../../source/tutorial/installxcode.md:20
+msgid "Xcode: /Applications/Xcode.app/Contents/Developer"
+msgstr ""
+
+#: ../../source/tutorial/installxcode.md:21
+msgid "Xcode-beta: /Applications/Xcode-beta.app/Contents/Developer"
+msgstr ""

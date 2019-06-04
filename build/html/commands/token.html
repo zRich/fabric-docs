@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>token &mdash; hyperledger-fabricdocs master documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="configtxgen" href="configtxgen.html" />
+    <link rel="prev" title="peer node" href="peernode.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> hyperledger-fabricdocs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+<br><img style="background-color: #fff; height: unset; width: unset;" alt="Hyperledger Fabric" src=../_images/hyperledger_fabric_logo_color.png />
+<br>
+<a href="https://github.com/hyperledger/fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="GitHub" src="../_static/images/github_button.png"/></a>
+&nbsp;<a href="https://stackoverflow.com/questions/tagged/hyperledger-fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="StackOverflow" src="../_static/images/stackoverflow_button.png"/></a>
+&nbsp;<a href="https://chat.hyperledger.org"><img style="padding: 0px; margin: auto auto auto auto;" alt="Rocket Chat" src="../_static/images/rocketchat_button.png"/></a>
+&nbsp;<a href="https://www.youtube.com/playlist?list=PL0MZ85B_96CH7wvtrRzV7SvtRY0sI0DEg"><img style="padding: 0px; margin: auto auto auto auto;" alt="Youtube Channel" src="../_static/images/youtube_button.png"/></a>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerlifecycle.html">peer lifecycle chaincode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerchannel.html">peer channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerversion.html">peer version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peernode.html">peer node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">token</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#token-issue">token issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#token-list">token list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#token-transfer">token transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#token-redeem">token redeem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#token-saveconfig">token saveConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#token-issue-example">token issue example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#token-list-example">token list example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#token-transfer-example">token transfer example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#token-redeem-example">token redeem example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-file-example">Configuration file example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shares-file-example">Shares file example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configtxgen.html">configtxgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configtxlator.html">configtxlator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptogen.html">cryptogen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery-cli.html">Service Discovery CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">hyperledger-fabricdocs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+        
+      <li>token</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/commands/token.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="token">
+<h1>token<a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">token</span></code> CLI allows you to use the Fabtoken client to issue, list, transfer,
+and redeem tokens.</p>
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">token</span></code> command has the following subcommands:</p>
+<ul class="simple">
+<li><p>issue</p></li>
+<li><p>list</p></li>
+<li><p>transfer</p></li>
+<li><p>redeem</p></li>
+<li><p>saveConfig</p></li>
+</ul>
+</div>
+<div class="section" id="token-issue">
+<h2>token issue<a class="headerlink" href="#token-issue" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">issue</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="n">Import</span> <span class="n">token</span> <span class="n">command</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">context</span><span class="o">-</span><span class="n">sensitive</span> <span class="n">help</span> <span class="p">(</span><span class="n">also</span> <span class="k">try</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">long</span> <span class="ow">and</span>
+                           <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">man</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">configFile</span><span class="o">=</span><span class="n">CONFIGFILE</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">configuration</span>
+                           <span class="kn">from</span>
+  <span class="o">--</span><span class="n">peerTLSCA</span><span class="o">=</span><span class="n">PEERTLSCA</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="n">verifies</span>
+                           <span class="n">the</span> <span class="n">TLS</span> <span class="n">peer</span><span class="s1">&#39;s certificate</span>
+  <span class="o">--</span><span class="n">tlsCert</span><span class="o">=</span><span class="n">TLSCERT</span>        <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span>
+                           <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span>
+                           <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">tlsKey</span><span class="o">=</span><span class="n">TLSKEY</span>          <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">key</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="ow">is</span>
+                           <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span> <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">userKey</span><span class="o">=</span><span class="n">USERKEY</span>        <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s key file path that is used to sign</span>
+                           <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">userCert</span><span class="o">=</span><span class="n">USERCERT</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s certificate file path that is used to</span>
+                           <span class="n">authenticate</span> <span class="n">the</span> <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">MSP</span><span class="o">=</span><span class="n">MSP</span>                <span class="n">Sets</span> <span class="n">the</span> <span class="n">MSP</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">the</span>
+                           <span class="n">CA</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">issued</span> <span class="n">its</span> <span class="n">user</span> <span class="n">certificate</span>
+  <span class="o">--</span><span class="n">channel</span><span class="o">=</span><span class="n">CHANNEL</span>        <span class="n">Overrides</span> <span class="n">channel</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspPath</span><span class="o">=</span><span class="n">MSPPATH</span>        <span class="n">Overrides</span> <span class="n">msp</span> <span class="n">path</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspId</span><span class="o">=</span><span class="n">MSPID</span>            <span class="n">Overrides</span> <span class="n">msp</span> <span class="nb">id</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span>          <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">configuration</span> <span class="n">path</span>
+  <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="n">TYPE</span>              <span class="n">Sets</span> <span class="n">the</span> <span class="n">token</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">issue</span>
+  <span class="o">--</span><span class="n">quantity</span><span class="o">=</span><span class="n">QUANTITY</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">quantity</span> <span class="n">of</span> <span class="n">tokens</span> <span class="n">to</span> <span class="n">issue</span>
+  <span class="o">--</span><span class="n">recipient</span><span class="o">=</span><span class="n">RECIPIENT</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">recipient</span> <span class="n">of</span> <span class="n">tokens</span> <span class="n">to</span> <span class="n">issue</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="token-list">
+<h2>token list<a class="headerlink" href="#token-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="nb">list</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="n">List</span> <span class="n">tokens</span> <span class="n">command</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">context</span><span class="o">-</span><span class="n">sensitive</span> <span class="n">help</span> <span class="p">(</span><span class="n">also</span> <span class="k">try</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">long</span> <span class="ow">and</span>
+                           <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">man</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">configFile</span><span class="o">=</span><span class="n">CONFIGFILE</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">configuration</span>
+                           <span class="kn">from</span>
+  <span class="o">--</span><span class="n">peerTLSCA</span><span class="o">=</span><span class="n">PEERTLSCA</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="n">verifies</span>
+                           <span class="n">the</span> <span class="n">TLS</span> <span class="n">peer</span><span class="s1">&#39;s certificate</span>
+  <span class="o">--</span><span class="n">tlsCert</span><span class="o">=</span><span class="n">TLSCERT</span>        <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span>
+                           <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span>
+                           <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">tlsKey</span><span class="o">=</span><span class="n">TLSKEY</span>          <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">key</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="ow">is</span>
+                           <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span> <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">userKey</span><span class="o">=</span><span class="n">USERKEY</span>        <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s key file path that is used to sign</span>
+                           <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">userCert</span><span class="o">=</span><span class="n">USERCERT</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s certificate file path that is used to</span>
+                           <span class="n">authenticate</span> <span class="n">the</span> <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">MSP</span><span class="o">=</span><span class="n">MSP</span>                <span class="n">Sets</span> <span class="n">the</span> <span class="n">MSP</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">the</span>
+                           <span class="n">CA</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">issued</span> <span class="n">its</span> <span class="n">user</span> <span class="n">certificate</span>
+  <span class="o">--</span><span class="n">channel</span><span class="o">=</span><span class="n">CHANNEL</span>        <span class="n">Overrides</span> <span class="n">channel</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspPath</span><span class="o">=</span><span class="n">MSPPATH</span>        <span class="n">Overrides</span> <span class="n">msp</span> <span class="n">path</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspId</span><span class="o">=</span><span class="n">MSPID</span>            <span class="n">Overrides</span> <span class="n">msp</span> <span class="nb">id</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span>          <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">configuration</span> <span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="token-transfer">
+<h2>token transfer<a class="headerlink" href="#token-transfer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">transfer</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="n">Transfer</span> <span class="n">tokens</span> <span class="n">command</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">context</span><span class="o">-</span><span class="n">sensitive</span> <span class="n">help</span> <span class="p">(</span><span class="n">also</span> <span class="k">try</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">long</span> <span class="ow">and</span>
+                           <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">man</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">configFile</span><span class="o">=</span><span class="n">CONFIGFILE</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">configuration</span>
+                           <span class="kn">from</span>
+  <span class="o">--</span><span class="n">peerTLSCA</span><span class="o">=</span><span class="n">PEERTLSCA</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="n">verifies</span>
+                           <span class="n">the</span> <span class="n">TLS</span> <span class="n">peer</span><span class="s1">&#39;s certificate</span>
+  <span class="o">--</span><span class="n">tlsCert</span><span class="o">=</span><span class="n">TLSCERT</span>        <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span>
+                           <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span>
+                           <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">tlsKey</span><span class="o">=</span><span class="n">TLSKEY</span>          <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">key</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="ow">is</span>
+                           <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span> <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">userKey</span><span class="o">=</span><span class="n">USERKEY</span>        <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s key file path that is used to sign</span>
+                           <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">userCert</span><span class="o">=</span><span class="n">USERCERT</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s certificate file path that is used to</span>
+                           <span class="n">authenticate</span> <span class="n">the</span> <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">MSP</span><span class="o">=</span><span class="n">MSP</span>                <span class="n">Sets</span> <span class="n">the</span> <span class="n">MSP</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">the</span>
+                           <span class="n">CA</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">issued</span> <span class="n">its</span> <span class="n">user</span> <span class="n">certificate</span>
+  <span class="o">--</span><span class="n">channel</span><span class="o">=</span><span class="n">CHANNEL</span>        <span class="n">Overrides</span> <span class="n">channel</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspPath</span><span class="o">=</span><span class="n">MSPPATH</span>        <span class="n">Overrides</span> <span class="n">msp</span> <span class="n">path</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspId</span><span class="o">=</span><span class="n">MSPID</span>            <span class="n">Overrides</span> <span class="n">msp</span> <span class="nb">id</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span>          <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">configuration</span> <span class="n">path</span>
+  <span class="o">--</span><span class="n">tokenIDs</span><span class="o">=</span><span class="n">TOKENIDS</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">token</span> <span class="n">IDs</span> <span class="n">to</span> <span class="n">transfer</span>
+  <span class="o">--</span><span class="n">shares</span><span class="o">=</span><span class="n">SHARES</span>          <span class="n">Sets</span> <span class="n">the</span> <span class="n">shares</span> <span class="n">of</span> <span class="n">the</span> <span class="n">recipients</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="token-redeem">
+<h2>token redeem<a class="headerlink" href="#token-redeem" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">redeem</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="n">Redeem</span> <span class="n">tokens</span> <span class="n">command</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">context</span><span class="o">-</span><span class="n">sensitive</span> <span class="n">help</span> <span class="p">(</span><span class="n">also</span> <span class="k">try</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">long</span> <span class="ow">and</span>
+                           <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">man</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">configFile</span><span class="o">=</span><span class="n">CONFIGFILE</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">configuration</span>
+                           <span class="kn">from</span>
+  <span class="o">--</span><span class="n">peerTLSCA</span><span class="o">=</span><span class="n">PEERTLSCA</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="n">verifies</span>
+                           <span class="n">the</span> <span class="n">TLS</span> <span class="n">peer</span><span class="s1">&#39;s certificate</span>
+  <span class="o">--</span><span class="n">tlsCert</span><span class="o">=</span><span class="n">TLSCERT</span>        <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span>
+                           <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span>
+                           <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">tlsKey</span><span class="o">=</span><span class="n">TLSKEY</span>          <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">key</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="ow">is</span>
+                           <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span> <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">userKey</span><span class="o">=</span><span class="n">USERKEY</span>        <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s key file path that is used to sign</span>
+                           <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">userCert</span><span class="o">=</span><span class="n">USERCERT</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s certificate file path that is used to</span>
+                           <span class="n">authenticate</span> <span class="n">the</span> <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">MSP</span><span class="o">=</span><span class="n">MSP</span>                <span class="n">Sets</span> <span class="n">the</span> <span class="n">MSP</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">the</span>
+                           <span class="n">CA</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">issued</span> <span class="n">its</span> <span class="n">user</span> <span class="n">certificate</span>
+  <span class="o">--</span><span class="n">channel</span><span class="o">=</span><span class="n">CHANNEL</span>        <span class="n">Overrides</span> <span class="n">channel</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspPath</span><span class="o">=</span><span class="n">MSPPATH</span>        <span class="n">Overrides</span> <span class="n">msp</span> <span class="n">path</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">mspId</span><span class="o">=</span><span class="n">MSPID</span>            <span class="n">Overrides</span> <span class="n">msp</span> <span class="nb">id</span> <span class="n">configuration</span>
+  <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span>          <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">configuration</span> <span class="n">path</span>
+  <span class="o">--</span><span class="n">tokenIDs</span><span class="o">=</span><span class="n">TOKENIDS</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">token</span> <span class="n">IDs</span> <span class="n">to</span> <span class="n">redeem</span>
+  <span class="o">--</span><span class="n">quantity</span><span class="o">=</span><span class="n">QUANTITY</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">quantity</span> <span class="n">of</span> <span class="n">tokens</span> <span class="n">to</span> <span class="n">redeem</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="token-saveconfig">
+<h2>token saveConfig<a class="headerlink" href="#token-saveconfig" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">token</span> <span class="n">saveConfig</span>
+
+<span class="n">Save</span> <span class="n">the</span> <span class="n">config</span> <span class="n">passed</span> <span class="n">by</span> <span class="n">flags</span> <span class="n">into</span> <span class="n">the</span> <span class="n">file</span> <span class="n">specified</span> <span class="n">by</span> <span class="o">--</span><span class="n">configFile</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">help</span>                   <span class="n">Show</span> <span class="n">context</span><span class="o">-</span><span class="n">sensitive</span> <span class="n">help</span> <span class="p">(</span><span class="n">also</span> <span class="k">try</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">long</span> <span class="ow">and</span>
+                           <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">man</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">configFile</span><span class="o">=</span><span class="n">CONFIGFILE</span>  <span class="n">Specifies</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">configuration</span>
+                           <span class="kn">from</span>
+  <span class="o">--</span><span class="n">peerTLSCA</span><span class="o">=</span><span class="n">PEERTLSCA</span>    <span class="n">Sets</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="n">verifies</span>
+                           <span class="n">the</span> <span class="n">TLS</span> <span class="n">peer</span><span class="s1">&#39;s certificate</span>
+  <span class="o">--</span><span class="n">tlsCert</span><span class="o">=</span><span class="n">TLSCERT</span>        <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">certificate</span> <span class="n">file</span> <span class="n">path</span>
+                           <span class="n">that</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span>
+                           <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">tlsKey</span><span class="o">=</span><span class="n">TLSKEY</span>          <span class="p">(</span><span class="n">Optional</span><span class="p">)</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">client</span> <span class="n">TLS</span> <span class="n">key</span> <span class="n">file</span> <span class="n">path</span> <span class="n">that</span> <span class="ow">is</span>
+                           <span class="n">used</span> <span class="n">when</span> <span class="n">the</span> <span class="n">peer</span> <span class="n">enforces</span> <span class="n">client</span> <span class="n">authentication</span>
+  <span class="o">--</span><span class="n">userKey</span><span class="o">=</span><span class="n">USERKEY</span>        <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s key file path that is used to sign</span>
+                           <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">userCert</span><span class="o">=</span><span class="n">USERCERT</span>      <span class="n">Sets</span> <span class="n">the</span> <span class="n">user</span><span class="s1">&#39;s certificate file path that is used to</span>
+                           <span class="n">authenticate</span> <span class="n">the</span> <span class="n">messages</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">peer</span>
+  <span class="o">--</span><span class="n">MSP</span><span class="o">=</span><span class="n">MSP</span>                <span class="n">Sets</span> <span class="n">the</span> <span class="n">MSP</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">user</span><span class="p">,</span> <span class="n">which</span> <span class="n">represents</span> <span class="n">the</span>
+                           <span class="n">CA</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">issued</span> <span class="n">its</span> <span class="n">user</span> <span class="n">certificate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="token-issue-example">
+<h3>token issue example<a class="headerlink" href="#token-issue-example" title="Permalink to this headline">¶</a></h3>
+<p>You can use the following command to issue 100 <code class="docutils literal notranslate"><span class="pre">Fabcoins</span></code> belonging to
+<code class="docutils literal notranslate"><span class="pre">User1&#64;org1.example.com</span></code>. The tokens are issued by <code class="docutils literal notranslate"><span class="pre">Admin&#64;org1.example.com</span></code>.</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">--config</span></code> flag to provide the path to a file that contains the
+connection information for your fabric network, including your
+<strong>Prover peer</strong>. You can find a sample configuration file <a class="reference external" href="#configuration-file-example">below</a>. Use the
+<code class="docutils literal notranslate"><span class="pre">--mspPath</span></code> flag to provide the path to the MSP of the token issuer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
+export MSP_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+.
+token issue --config $CONFIG_FILE --mspPath $MSP_PATH --channel mychannel --type Fabcoins --quantity 100 --recipient Org1MSP:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
+.
+2019-03-28 18:19:29.438 UTC [token.client] BroadcastReceive -&gt; INFO 001 calling OrdererClient.broadcastReceive
+Orderer Status [SUCCESS]
+Committed [true]
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="token-list-example">
+<h3>token list example<a class="headerlink" href="#token-list-example" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">list</span></code> command to discover the tokenIDs of the tokens that
+you own.</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">--mspPath</span></code> flag to provide the path to the MSP of the token owner.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
+export MSP_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
+.
+token list --config $CONFIG_FILE --mspPath $MSP_PATH --channel mychannel
+</pre></div>
+</div>
+<p>If successful, the command will return the tokenID, which is the ID of the
+transaction that created the token, as well as the type and quantity of
+assets represented by the token.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tx_id&quot;</span><span class="p">:</span><span class="s2">&quot;23604056d205c656fa757f568a6a4f0105567ebc208303065aa7e5a11849c0c8&quot;</span><span class="p">}</span>
+<span class="p">[</span><span class="n">Fabcoins</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="token-transfer-example">
+<h3>token transfer example<a class="headerlink" href="#token-transfer-example" title="Permalink to this headline">¶</a></h3>
+<p>You can transfer the tokens that you own to another member of the channel using
+the <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">transfer</span></code> command.</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">--tokenIDs</span></code> flag to select the tokens that you want to transfer.
+Use the <code class="docutils literal notranslate"><span class="pre">--shares</span></code> flag to provide a path to a JSON file that describes
+how the input token will be distributed to the recipients of the transaction.
+You can find a sample shares file <a class="reference external" href="#shares-file-example">below</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
+export MSP_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
+export SHARES=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/shares.json
+.
+token transfer --config $CONFIG_FILE --mspPath $MSP_PATH --channel mychannel --tokenIDs &#39;[{&quot;tx_id&quot;:&quot;23604056d205c656fa757f568a6a4f0105567ebc208303065aa7e5a11849c0c8&quot;}]&#39; --shares $SHARES
+.
+2019-03-28 18:27:43.468 UTC [token.client] BroadcastReceive -&gt; INFO 001 calling OrdererClient.broadcastReceive
+Orderer Status [SUCCESS]
+Committed [true]
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="token-redeem-example">
+<h3>token redeem example<a class="headerlink" href="#token-redeem-example" title="Permalink to this headline">¶</a></h3>
+<p>Redeemed tokens can no longer be transferred to other channel members. Tokens
+can only be redeemed by their owner. You can use the following command to redeem
+50 <code class="docutils literal notranslate"><span class="pre">Fabcoins</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
+export CONFIG_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/configorg1.json
+export MSP_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
+.
+token redeem --config $CONFIG_FILE --mspPath $MSP_PATH --channel mychannel --tokenIDs &#39;[{&quot;tx_id&quot;:&quot;30e6337fdc0d07a5c46f51d6b58c4958992e21fed0aed5c822b30f9f28366698&quot;}]&#39; --quantity 50
+.
+2019-03-28 18:29:29.656 UTC [token.client] BroadcastReceive -&gt; INFO 001 calling OrdererClient.broadcastReceive
+Orderer Status [SUCCESS]
+Committed [true]
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-file-example">
+<h3>Configuration file example<a class="headerlink" href="#configuration-file-example" title="Permalink to this headline">¶</a></h3>
+<p>The configuration file provides the token CLI the endpoint information of your
+network. The file include the <strong>Prover Peer</strong> that your organization will use to
+assemble token transactions.</p>
+<details>
+  <summary>
+    **Sample configuration file**
+  </summary>
+```
+{
+  "ChannelID":"",
+  "MSPInfo":{
+    "MSPConfigPath":"",
+    "MSPID":"Org1MSP",
+    "MSPType":"bccsp"
+  },
+  "Orderer":{
+    "Address":"orderer.example.com:7050",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem",
+    "ServerNameOverride":""
+  },
+  "CommitterPeer":{
+    "Address":"peer0.org1.example.com:7051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  },
+  "ProverPeer":{
+    "Address":"peer0.org1.example.com:7051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  }
+}
+```
+</details></div>
+<div class="section" id="shares-file-example">
+<h3>Shares file example<a class="headerlink" href="#shares-file-example" title="Permalink to this headline">¶</a></h3>
+<p>The shares file is used by the transfer transaction to allocate the assets
+represented by the input token between the recipients of the transfer. Any
+quantity of the input token that is not transferred to a recipient is
+automatically provided to the original owner in a new token.</p>
+<details>
+  <summary>
+    **Sample shares file**
+  </summary>
+```
+[
+    {
+    "recipient":"Org2MSP:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp",
+    "quantity":"50"
+    }
+]
+```
+</details><p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configtxgen.html" class="btn btn-neutral float-right" title="configtxgen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="peernode.html" class="btn btn-neutral" title="peer node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Hyperledger 2019.
+    <br>
+      <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

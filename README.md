@@ -61,19 +61,43 @@ You can easily build your own staging repo following these steps:
 Now anytime you modify or add documentation content to your fork, this
 URL will automatically get updated with your changes!
 
-### Building the docs on your machine
+### Building the docs on your local machine
 
 Here are the quick steps to achieve this on a local machine without
 depending on ReadTheDocs, starting from the main fabric
 directory. Note: you may need to adjust depending on your OS.
 
+**You're highly recommended to use a seprated python virtual environment.**  
+**Make sure you are using python 3.6 or higher version.**
+
+You can use virtual environment like [Virtualenv](https://virtualenv.pypa.io/en/latest/) to manage your python environment.
+
+
 ```
-sudo pip install Sphinx
-sudo pip install sphinx_rtd_theme
-sudo pip install recommonmark==0.4.0
+pip install -r requirements.txt
 cd fabric/docs # Be in this directory. Makefile sits there.
 make html
 ```
+
+## Translating to other languages
+
+- Extract translatable messages into pot files.
+```
+make gettext
+```
+- Generate po files(Chinese in below example). 
+```
+sphinx-intl update -p build/gettext -l zh_CN
+```
+Once completed, the generated po files will be placed in the **source/locale/zh_CN/LC_MESSAGE/**
+- Translate po files(you can either edit these po files or use online tools)
+- Build translated document.
+```
+make -e SPHINXOPTS="-D lanagauge='zh_CN'" html
+```
+
+For more detail reference to [Multi-Lanaguage Support](https://docs.google.com/document/d/1lOF9kxjN4hK0b4YzlEVsHO8BcB2BjA3CMSemkfdDTdM/edit) 
+
 
 This will generate all the html files in `docs/build/html` which you can
 then start browsing locally using your browser. Every time you make a

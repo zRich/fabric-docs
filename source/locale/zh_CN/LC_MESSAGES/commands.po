@@ -1,40 +1,69 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-05-09 08:55+0800\n"
+"PO-Revision-Date: 2019-06-01 14:52+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/commands/configtxgen.md:1
+#: ../../source/commands/configtxgen.md:12
+msgid "configtxgen"
+msgstr ""
 
 #: ../../source/commands/configtxgen.md:3
 msgid ""
-"The configtxgen command allows users to create and inspect channel config"
-" related artifacts.  The content of the generated artifacts is dictated "
-"by the contents of configtx.yaml."
+"The configtxgen command allows users to create and inspect channel config "
+"related artifacts.  The content of the generated artifacts is dictated by "
+"the contents of configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:7
+#: ../../source/commands/configtxlator.md:8
+#: ../../source/commands/cryptogen.md:7
+#: ../../source/commands/peerchaincode.md:7
+#: ../../source/commands/peerchannel.md:7
+#: ../../source/commands/peercommand.md:11
+#: ../../source/commands/peerlogging.md:6 ../../source/commands/peernode.md:6
+#: ../../source/commands/peerversion.md:20
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:9
 msgid ""
-"The configtxgen tool has no sub-commands, but supports flags which can be"
-" set to accomplish a number of tasks."
+"The configtxgen tool has no sub-commands, but supports flags which can be "
+"set to accomplish a number of tasks."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:39
+#: ../../source/commands/cryptogen.md:100
+#: ../../source/commands/peercommand.md:53
+msgid "Usage"
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:41
+msgid "Output a genesis block"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:43
 msgid ""
-"Write a genesis block to genesis_block.pb for channel orderer-system-"
-"channel for profile SampleSingleMSPSoloV1_1."
+"Write a genesis block to genesis_block.pb for channel orderer-system-channel"
+" for profile SampleSingleMSPSoloV1_1."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:50
+msgid "Output a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:52
@@ -43,31 +72,50 @@ msgid ""
 "SampleSingleMSPChannelV1_1."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:59
+msgid "Inspect a genesis block"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:61
 msgid ""
-"Print the contents of a genesis block named genesis_block.pb to the "
-"screen as JSON."
+"Print the contents of a genesis block named genesis_block.pb to the screen "
+"as JSON."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:68
+msgid "Inspect a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:70
 msgid ""
-"Print the contents of a channel creation tx named create_chan_tx.pb to "
-"the screen as JSON."
+"Print the contents of a channel creation tx named create_chan_tx.pb to the "
+"screen as JSON."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:77
+msgid "Print an organization definition"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:79
 msgid ""
-"Construct an organization definition based on the parameters such as "
-"MSPDir from configtx.yaml and print it as JSON to the screen. (This "
-"output is useful for channel reconfiguration workflows, such as adding a "
-"member)."
+"Construct an organization definition based on the parameters such as MSPDir "
+"from configtx.yaml and print it as JSON to the screen. (This output is "
+"useful for channel reconfiguration workflows, such as adding a member)."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:87
+msgid "Output anchor peer tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:89
 msgid ""
-"Output a configuration update transaction to anchor_peer_tx.pb which sets"
-" the anchor peers for organization Org1 as defined in profile "
+"Output a configuration update transaction to anchor_peer_tx.pb which sets "
+"the anchor peers for organization Org1 as defined in profile "
 "SampleSingleMSPChannelV1_1 based on configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:97
+msgid "Configuration"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:99
@@ -86,29 +134,28 @@ msgstr ""
 
 #: ../../source/commands/configtxgen.md:107
 msgid ""
-"For many configtxgen operations, a profile name must be supplied.  "
-"Profiles are a way to express multiple similar configurations in a single"
-" file.  For instance, one profile might define a channel with 3 orgs, and"
-" another might define one with 4 orgs.  To accomplish this without the "
-"length of the file becoming burdensome, configtx.yaml depends on the "
-"standard YAML feature of anchors and references.  Base parts of the "
-"configuration are tagged with an anchor like &OrdererDefaults and then "
-"merged into a profile with a reference like <<: *OrdererDefaults.  Note, "
-"when configtxgen is operating under a profile, environment variable "
-"overrides do not need to include the profile prefix and may be referenced"
-" relative to the root element of the profile.  For instance, do not "
-"specify CONFIGTX_PROFILE_SAMPLEINSECURESOLO_ORDERER_ORDERERTYPE, instead "
-"simply omit the profile specifics and use the CONFIGTX prefix followed by"
-" the elements relative to the profile name such as "
-"CONFIGTX_ORDERER_ORDERERTYPE."
+"For many configtxgen operations, a profile name must be supplied.  Profiles "
+"are a way to express multiple similar configurations in a single file.  For "
+"instance, one profile might define a channel with 3 orgs, and another might "
+"define one with 4 orgs.  To accomplish this without the length of the file "
+"becoming burdensome, configtx.yaml depends on the standard YAML feature of "
+"anchors and references.  Base parts of the configuration are tagged with an "
+"anchor like &OrdererDefaults and then merged into a profile with a reference"
+" like <<: *OrdererDefaults.  Note, when configtxgen is operating under a "
+"profile, environment variable overrides do not need to include the profile "
+"prefix and may be referenced relative to the root element of the profile.  "
+"For instance, do not specify "
+"CONFIGTX_PROFILE_SAMPLEINSECURESOLO_ORDERER_ORDERERTYPE, instead simply omit"
+" the profile specifics and use the CONFIGTX prefix followed by the elements "
+"relative to the profile name such as CONFIGTX_ORDERER_ORDERERTYPE."
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:123
 msgid ""
 "Refer to the sample configtx.yaml shipped with Fabric for all possible "
-"configuration options.  You may find this file in the config directory of"
-" the release artifacts tar, or you may find it under the sampleconfig "
-"folder if you are building from source."
+"configuration options.  You may find this file in the config directory of "
+"the release artifacts tar, or you may find it under the sampleconfig folder "
+"if you are building from source."
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:129
@@ -117,27 +164,59 @@ msgstr ""
 #: ../../source/commands/peerchaincode.md:523
 #: ../../source/commands/peerchannel.md:417
 #: ../../source/commands/peerlogging.md:163
-#: ../../source/commands/peernode.md:52 ../../source/commands/peerversion.md:33
+#: ../../source/commands/peernode.md:52
+#: ../../source/commands/peerversion.md:33
 msgid ""
-"<a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative "
-"Commons License\" style=\"border-width:0\" "
-"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This"
-" work is licensed under a <a rel=\"license\" "
+"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img"
+" alt=\"Creative Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This "
+"work is licensed under a <a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
 "Attribution 4.0 International License</a>."
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:1
+msgid "configtxlator"
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:3
 msgid ""
 "The configtxlator command allows users to translate between protobuf and "
 "JSON versions of fabric data structures and create config updates.  The "
-"command may either start a REST server to expose its functions over HTTP "
-"or may be utilized directly as a command line tool."
+"command may either start a REST server to expose its functions over HTTP or "
+"may be utilized directly as a command line tool."
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:10
 msgid "The configtxlator tool has five sub-commands, as follows:"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:18
+msgid "configtxlator start"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:33
+msgid "configtxlator proto_encode"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:50
+msgid "configtxlator proto_decode"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:67
+msgid "configtxlator compute_update"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:85
+msgid "configtxlator version"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:96
+msgid "Examples"
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:98
+msgid "Decoding"
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:100
@@ -147,34 +226,47 @@ msgstr ""
 #: ../../source/commands/configtxlator.md:106
 #: ../../source/commands/configtxlator.md:121
 msgid ""
-"Alternatively, after starting the REST server, the following curl command"
-" performs the same operation through the REST API."
+"Alternatively, after starting the REST server, the following curl command "
+"performs the same operation through the REST API."
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:113
+msgid "Encoding"
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:115
-msgid "Convert a JSON document for a policy from stdin to a file named policy.pb."
+msgid ""
+"Convert a JSON document for a policy from stdin to a file named policy.pb."
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:128
+msgid "Pipelines"
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:130
 msgid ""
-"Compute a config update from original_config.pb and modified_config.pb "
-"and decode it to JSON to stdout."
+"Compute a config update from original_config.pb and modified_config.pb and "
+"decode it to JSON to stdout."
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:136
 msgid ""
-"Alternatively, after starting the REST server, the following curl "
-"commands perform the same operations through the REST API."
+"Alternatively, after starting the REST server, the following curl commands "
+"perform the same operations through the REST API."
+msgstr ""
+
+#: ../../source/commands/configtxlator.md:143
+msgid "Additional Notes"
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:145
 msgid ""
-"The tool name is a portmanteau of configtx and translator and is intended"
-" to convey that the tool simply converts between different equivalent "
-"data representations. It does not generate configuration. It does not "
-"submit or retrieve configuration. It does not modify configuration "
-"itself, it simply provides some bijective operations between different "
-"views of the configtx format."
+"The tool name is a portmanteau of configtx and translator and is intended to"
+" convey that the tool simply converts between different equivalent data "
+"representations. It does not generate configuration. It does not submit or "
+"retrieve configuration. It does not modify configuration itself, it simply "
+"provides some bijective operations between different views of the configtx "
+"format."
 msgstr ""
 
 #: ../../source/commands/configtxlator.md:152
@@ -183,22 +275,45 @@ msgid ""
 "authorization facilities included for the REST server.  Because "
 "configtxlator does not have any access to data, key material, or other "
 "information which might be considered sensitive, there is no risk to the "
-"owner of the server in exposing it to other clients.  However, because "
-"the data sent by a user to the REST server might be confidential, the "
-"user should either trust the administrator of the server, run a local "
-"instance, or operate via the CLI."
+"owner of the server in exposing it to other clients.  However, because the "
+"data sent by a user to the REST server might be confidential, the user "
+"should either trust the administrator of the server, run a local instance, "
+"or operate via the CLI."
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:1
+msgid "cryptogen"
 msgstr ""
 
 #: ../../source/commands/cryptogen.md:3
 msgid ""
-"cryptogen is an utility for generating Hyperledger Fabric key material. "
-"It is provided as a means of preconfiguring a network for testing "
-"purposes. It would normally not be used in the operation of a production "
-"network."
+"cryptogen is an utility for generating Hyperledger Fabric key material. It "
+"is provided as a means of preconfiguring a network for testing purposes. It "
+"would normally not be used in the operation of a production network."
 msgstr ""
 
 #: ../../source/commands/cryptogen.md:9
 msgid "The cryptogen command has five subcommands, as follows:"
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:18
+msgid "cryptogen help"
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:47
+msgid "cryptogen generate"
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:62
+msgid "cryptogen showtemplate"
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:74
+msgid "cryptogen extend"
+msgstr ""
+
+#: ../../source/commands/cryptogen.md:89
+msgid "cryptogen version"
 msgstr ""
 
 #: ../../source/commands/cryptogen.md:102
@@ -217,9 +332,9 @@ msgstr ""
 
 #: ../../source/commands/fabric-ca-commands.rst:4
 msgid ""
-"The Hyperledger Fabric CA is a Certificate Authority (CA) for Hyperledger"
-" Fabric. The commands available for the fabric-ca client and fabric-ca "
-"server are described in the links below."
+"The Hyperledger Fabric CA is a Certificate Authority (CA) for Hyperledger "
+"Fabric. The commands available for the fabric-ca client and fabric-ca server"
+" are described in the links below."
 msgstr ""
 
 #: ../../source/commands/fabric-ca-commands.rst:9
@@ -229,16 +344,14 @@ msgstr ""
 #: ../../source/commands/fabric-ca-commands.rst:11
 msgid ""
 "The fabric-ca-client command allows you to manage identities (including "
-"attribute management) and certificates (including renewal and "
-"revocation)."
+"attribute management) and certificates (including renewal and revocation)."
 msgstr ""
 
 #: ../../source/commands/fabric-ca-commands.rst:14
 msgid ""
-"More information on ``fabric-ca-client`` commands can be found `here "
-"<https://hyperledger-fabric-"
-"ca.readthedocs.io/en/release-1.1/clientcli.html#fabric-ca-"
-"client-s-cli>`__."
+"More information on ``fabric-ca-client`` commands can be found `here <https"
+"://hyperledger-fabric-ca.readthedocs.io/en/release-1.1/clientcli.html"
+"#fabric-ca-client-s-cli>`__."
 msgstr ""
 
 #: ../../source/commands/fabric-ca-commands.rst:17
@@ -253,17 +366,20 @@ msgstr ""
 
 #: ../../source/commands/fabric-ca-commands.rst:22
 msgid ""
-"More information on ``fabric-ca-server`` commands can be found `here "
-"<https://hyperledger-fabric-"
-"ca.readthedocs.io/en/release-1.1/servercli.html#fabric-ca-"
-"server-s-cli>`__."
+"More information on ``fabric-ca-server`` commands can be found `here <https"
+"://hyperledger-fabric-ca.readthedocs.io/en/release-1.1/servercli.html"
+"#fabric-ca-server-s-cli>`__."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:1
+msgid "peer chaincode"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:3
 msgid ""
 "The peer chaincode command allows administrators to perform chaincode "
-"related operations on a peer, such as installing, instantiating, "
-"invoking, packaging, querying, and upgrading chaincode."
+"related operations on a peer, such as installing, instantiating, invoking, "
+"packaging, querying, and upgrading chaincode."
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:9
@@ -273,129 +389,267 @@ msgstr ""
 #: ../../source/commands/peerchaincode.md:20
 msgid ""
 "The different subcommand options (install, instantiate...) relate to the "
-"different chaincode operations that are relevant to a peer. For example, "
-"use the peer chaincode install subcommand option to install a chaincode "
-"on a peer, or the peer chaincode query subcommand option to query a "
-"chaincode for the current value on a peer's ledger."
+"different chaincode operations that are relevant to a peer. For example, use"
+" the peer chaincode install subcommand option to install a chaincode on a "
+"peer, or the peer chaincode query subcommand option to query a chaincode for"
+" the current value on a peer's ledger."
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:26
 msgid ""
-"Each peer chaincode subcommand is described together with its options in "
-"its own section in this topic."
+"Each peer chaincode subcommand is described together with its options in its"
+" own section in this topic."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:29
+#: ../../source/commands/peercommand.md:30
+msgid "Flags"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:31
 msgid ""
 "Each peer chaincode subcommand has both a set of flags specific to an "
-"individual subcommand, as well as a set of global flags that relate to "
-"all peer chaincode subcommands. Not all subcommands would use these "
-"flags. For instance, the query subcommand does not need the --orderer "
-"flag."
+"individual subcommand, as well as a set of global flags that relate to all "
+"peer chaincode subcommands. Not all subcommands would use these flags. For "
+"instance, the query subcommand does not need the --orderer flag."
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:36
 msgid ""
-"The individual flags are described with the relevant subcommand. The "
-"global flags are"
+"The individual flags are described with the relevant subcommand. The global "
+"flags are"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:70
+msgid "peer chaincode install"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:101
+msgid "peer chaincode instantiate"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:136
+msgid "peer chaincode invoke"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:167
+msgid "peer chaincode list"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:196
+msgid "peer chaincode package"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:227
+msgid "peer chaincode query"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:258
+msgid "peer chaincode signpackage"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:281
+msgid "peer chaincode upgrade"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:316
+#: ../../source/commands/peerchannel.md:213
+#: ../../source/commands/peerlogging.md:83
+#: ../../source/commands/peernode.md:38
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:318
+msgid "peer chaincode instantiate examples"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:320
 msgid ""
 "Here are some examples of the peer chaincode instantiate command, which "
-"instantiates the chaincode named mycc at version 1.0 on channel "
-"mychannel:"
+"instantiates the chaincode named mycc at version 1.0 on channel mychannel:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:349
+msgid "peer chaincode invoke example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:351
 msgid "Here is an example of the peer chaincode invoke command:"
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:384
+msgid "peer chaincode list example"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:386
 msgid "Here are some examples of the peer chaincode list command:"
 msgstr ""
 
+#: ../../source/commands/peerchaincode.md:416
+msgid "peer chaincode package example"
+msgstr ""
+
 #: ../../source/commands/peerchaincode.md:418
 msgid ""
-"Here is an example of the peer chaincode package command, which packages "
-"the chaincode named mycc at version 1.1, creates the chaincode deployment"
-" spec, signs the package using the local MSP, and outputs it as "
-"ccpack.out:"
+"Here is an example of the peer chaincode package command, which packages the"
+" chaincode named mycc at version 1.1, creates the chaincode deployment spec,"
+" signs the package using the local MSP, and outputs it as ccpack.out:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:438
+msgid "peer chaincode query example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:440
 msgid ""
-"Here is an example of the peer chaincode query command, which queries the"
-" peer ledger for the chaincode named mycc at version 1.0 for the value of"
-" variable a:"
+"Here is an example of the peer chaincode query command, which queries the "
+"peer ledger for the chaincode named mycc at version 1.0 for the value of "
+"variable a:"
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:456
+msgid "peer chaincode signpackage example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:458
 msgid ""
-"Here is an example of the peer chaincode signpackage command, which "
-"accepts an existing signed  package and creates a new one with signature "
-"of the local MSP appended to it."
+"Here is an example of the peer chaincode signpackage command, which accepts "
+"an existing signed  package and creates a new one with signature of the "
+"local MSP appended to it."
+msgstr ""
+
+#: ../../source/commands/peerchaincode.md:468
+msgid "peer chaincode upgrade example"
 msgstr ""
 
 #: ../../source/commands/peerchaincode.md:470
 msgid ""
-"Here is an example of the peer chaincode upgrade command, which upgrades "
-"the chaincode named mycc at version 1.1 on channel mychannel to version "
-"1.2, which contains a new variable c:"
+"Here is an example of the peer chaincode upgrade command, which upgrades the"
+" chaincode named mycc at version 1.0 on channel mychannel to version 1.1, "
+"which contains a new variable c:"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:1
+#: ../../source/commands/peerchannel.md:19
+msgid "peer channel"
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:3
 msgid ""
-"The peer channel command allows administrators to perform channel related"
-" operations on a peer, such as joining a channel or listing the channels "
-"to which a peer is joined."
+"The peer channel command allows administrators to perform channel related "
+"operations on a peer, such as joining a channel or listing the channels to "
+"which a peer is joined."
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:9
 msgid "The peer channel command has the following subcommands:"
 msgstr ""
 
+#: ../../source/commands/peerchannel.md:50
+msgid "peer channel create"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:76
+msgid "peer channel fetch"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:99
+msgid "peer channel getinfo"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:122
+msgid "peer channel join"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:145
+msgid "peer channel list"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:167
+msgid "peer channel signconfigtx"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:190
+msgid "peer channel update"
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:215
+msgid "peer channel create examples"
+msgstr ""
+
 #: ../../source/commands/peerchannel.md:217
 msgid ""
-"Here's an example that uses the --orderer global flag on the peer channel"
-" create command."
+"Here's an example that uses the --orderer global flag on the peer channel "
+"create command."
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:235
 msgid "Here's an example of the peer channel create command option."
 msgstr ""
 
+#: ../../source/commands/peerchannel.md:266
+msgid "peer channel fetch example"
+msgstr ""
+
 #: ../../source/commands/peerchannel.md:268
 msgid "Here's some examples of the peer channel fetch command."
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:314
+msgid "peer channel getinfo example"
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:316
 msgid "Here's an example of the peer channel getinfo command."
 msgstr ""
 
+#: ../../source/commands/peerchannel.md:333
+msgid "peer channel join example"
+msgstr ""
+
 #: ../../source/commands/peerchannel.md:335
 msgid "Here's an example of the peer channel join command."
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:352
+msgid "peer channel list example"
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:354
 msgid "Here's an example of the peer channel list command."
 msgstr ""
 
+#: ../../source/commands/peerchannel.md:370
+msgid "peer channel signconfigtx example"
+msgstr ""
+
 #: ../../source/commands/peerchannel.md:372
 msgid "Here's an example of the peer channel signconfigtx command."
+msgstr ""
+
+#: ../../source/commands/peerchannel.md:398
+msgid "peer channel update example"
 msgstr ""
 
 #: ../../source/commands/peerchannel.md:400
 msgid "Here's an example of the peer channel update command."
 msgstr ""
 
+#: ../../source/commands/peercommand.md:1
+msgid "peer"
+msgstr ""
+
+#: ../../source/commands/peercommand.md:3
+msgid "Description"
+msgstr ""
+
 #: ../../source/commands/peercommand.md:5
 msgid ""
 "The peer command has five different subcommands, each of which allows "
-"administrators to perform a specific set of tasks related to a peer.  For"
-" example, you can use the peer channel subcommand to join a peer to a "
-"channel, or the peer chaincode command to deploy a smart contract "
-"chaincode to a peer."
+"administrators to perform a specific set of tasks related to a peer.  For "
+"example, you can use the peer channel subcommand to join a peer to a "
+"channel, or the peer chaincode command to deploy a smart contract chaincode "
+"to a peer."
 msgstr ""
 
 #: ../../source/commands/peercommand.md:13
@@ -404,10 +658,9 @@ msgstr ""
 
 #: ../../source/commands/peercommand.md:23
 msgid ""
-"Each subcommand has different options available, and these are described "
-"in their own dedicated topic. For brevity, we often refer to a command "
-"(peer), a subcommand (channel), or subcommand option (fetch) simply as a "
-"command."
+"Each subcommand has different options available, and these are described in "
+"their own dedicated topic. For brevity, we often refer to a command (peer), "
+"a subcommand (channel), or subcommand option (fetch) simply as a command."
 msgstr ""
 
 #: ../../source/commands/peercommand.md:27
@@ -418,10 +671,9 @@ msgstr ""
 
 #: ../../source/commands/peercommand.md:32
 msgid ""
-"Each peer subcommand has a specific set of flags associated with it, many"
-" of which are designated global because they can be used in all "
-"subcommand options. These flags are described with the relevant peer "
-"subcommand."
+"Each peer subcommand has a specific set of flags associated with it, many of"
+" which are designated global because they can be used in all subcommand "
+"options. These flags are described with the relevant peer subcommand."
 msgstr ""
 
 #: ../../source/commands/peercommand.md:36
@@ -432,10 +684,15 @@ msgstr ""
 msgid "Here is an example using the available flag on the peer command."
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:1
+#: ../../source/commands/peerlogging.md:27
+msgid "peer logging"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:3
 msgid ""
-"The peer logging subcommand allows administrators to dynamically view and"
-" configure the log levels of a peer."
+"The peer logging subcommand allows administrators to dynamically view and "
+"configure the log levels of a peer."
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:8
@@ -444,51 +701,99 @@ msgstr ""
 
 #: ../../source/commands/peerlogging.md:13
 msgid ""
-"and the following deprecated subcommands, which will be removed in a "
-"future release:"
+"and the following deprecated subcommands, which will be removed in a future "
+"release:"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:20
 msgid ""
 "The different subcommand options (getlogspec, setlogspec, getlevel, "
-"setlevel, and revertlevels) relate to the different logging operations "
-"that are relevant to a peer."
+"setlevel, and revertlevels) relate to the different logging operations that "
+"are relevant to a peer."
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:24
 msgid ""
-"Each peer logging subcommand is described together with its options in "
-"its own section in this topic."
+"Each peer logging subcommand is described together with its options in its "
+"own section in this topic."
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:48
+msgid "peer logging getlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:60
+msgid "peer logging revertlevels"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:72
+msgid "peer logging setlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:85
+msgid "Get Level Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:87
 msgid "Here is an example of the peer logging getlevel command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:98
+msgid "Get Log Spec Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:100
 msgid "Here is an example of the peer logging getlogspec command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:111
+msgid "Set Level Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:113
 msgid "Here are some examples of the peer logging setlevel command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:132
+msgid "Set Log Spec Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:134
 msgid "Here is an example of the peer logging setlogspec command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:150
+msgid "Revert Levels Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:152
 msgid "Here is an example of the peer logging revertlevels command:"
 msgstr ""
 
+#: ../../source/commands/peernode.md:1
+msgid "peer node"
+msgstr ""
+
 #: ../../source/commands/peernode.md:3
 msgid ""
-"The peer node command allows an administrator to start a peer node or "
-"check the status of a peer node."
+"The peer node command allows an administrator to start a peer node or check "
+"the status of a peer node."
 msgstr ""
 
 #: ../../source/commands/peernode.md:8
 msgid "The peer node command has the following subcommands:"
+msgstr ""
+
+#: ../../source/commands/peernode.md:13
+msgid "peer node start"
+msgstr ""
+
+#: ../../source/commands/peernode.md:27
+msgid "peer node status"
+msgstr ""
+
+#: ../../source/commands/peernode.md:40
+msgid "peer node start example"
 msgstr ""
 
 #: ../../source/commands/peernode.md:42
@@ -499,15 +804,18 @@ msgstr ""
 msgid ""
 "starts a peer node in chaincode development mode. Normally chaincode "
 "containers are started and maintained by peer. However in chaincode "
-"development mode, chaincode is built and started by the user. This mode "
-"is useful during chaincode development phase for iterative development. "
-"See more information on development mode in the chaincode tutorial."
+"development mode, chaincode is built and started by the user. This mode is "
+"useful during chaincode development phase for iterative development. See "
+"more information on development mode in the chaincode tutorial."
+msgstr ""
+
+#: ../../source/commands/peerversion.md:1
+msgid "peer version"
 msgstr ""
 
 #: ../../source/commands/peerversion.md:3
 msgid ""
-"The peer version command displays the version information of the peer. It"
-" displays version, Commit SHA, Go version, OS/architecture, and chaincode"
-" information. For example:"
+"The peer version command displays the version information of the peer. It "
+"displays version, Commit SHA, Go version, OS/architecture, and chaincode "
+"information. For example:"
 msgstr ""
-

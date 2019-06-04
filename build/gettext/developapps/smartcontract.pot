@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/developapps/smartcontract.md:1
+msgid "Smart Contract Processing"
+msgstr ""
 
 #: ../../source/developapps/smartcontract.md:3
 msgid "Audience: Architects, Application and smart contract developers"
@@ -28,8 +32,36 @@ msgstr ""
 msgid "We're going to cover:"
 msgstr ""
 
+#: ../../source/developapps/smartcontract.md:14
+msgid "What is a smart contract and why it's important"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:15
+msgid "How to define a smart contract"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:16
+msgid "How to define a transaction"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:17
+msgid "How to implement a transaction"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:18
+msgid "How to represent a business object in a smart contract"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:19
+msgid "How to store and retrieve an object in the ledger"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:21
 msgid "If you'd like, you can download the sample and even run it locally. It is written in JavaScript, but the logic is quite language independent, so you'll be easily able to see what's going on! (The sample will become available for Java and GOLANG as well.)"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:26
+msgid "Smart Contract"
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:28
@@ -38,6 +70,10 @@ msgstr ""
 
 #: ../../source/developapps/smartcontract.md:34
 msgid "In the PaperNet network, the smart contract is shared by the different network participants, such as MagnetoCorp and DigiBank.  The same version of the smart contract must be used by all applications connected to the network so that they jointly implement the same shared business processes and data."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:39
+msgid "Contract class"
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:41
@@ -70,6 +106,10 @@ msgstr ""
 
 #: ../../source/developapps/smartcontract.md:92
 msgid "Usually there will only be one smart contract per file -- contracts tend to have different lifecycles, which makes it sensible to separate them. However, in some cases, multiple smart contracts might provide syntactic help for applications, e.g. EuroBond, DollarBond, YenBond, but essentially provide the same function. In such cases, smart contracts and transactions can be disambiguated."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:98
+msgid "Transaction definition"
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:100
@@ -120,6 +160,10 @@ msgstr ""
 msgid "In both cases, observe the 1:1 correspondence between the commercial paper transaction and the smart contract method definition.  And don't worry about the async and await keywords -- they allow asynchronous JavaScript functions to be treated like their synchronous cousins in other programming languages."
 msgstr ""
 
+#: ../../source/developapps/smartcontract.md:203
+msgid "Transaction logic"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:205
 msgid "Now that you've seen how contracts are structured and transactions are defined, let's focus on the logic within the smart contract."
 msgstr ""
@@ -152,6 +196,10 @@ msgstr ""
 msgid "Why don't you see if you can understand the logic for the redeem transaction?"
 msgstr ""
 
+#: ../../source/developapps/smartcontract.md:291
+msgid "Representing an object"
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:293
 msgid "We've seen how to define and implement the issue, buy and redeem transactions using the CommercialPaper and PaperList classes. Let's end this topic by seeing how these classes work."
 msgstr ""
@@ -176,12 +224,32 @@ msgstr ""
 msgid "A few important points to note:"
 msgstr ""
 
+#: ../../source/developapps/smartcontract.md:325
+msgid "This is an in-memory representation; we'll see later how it appears on the ledger."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:329
+msgid "The CommercialPaper class extends the State class. State is an application-defined class which creates a common abstraction for a state. All states have a business object class which they represent, a composite key, can be serialized and de-serialized, and so on.  State helps our code be more legible when we are storing more than one business object type on the ledger. Examine the State class in the state.js file."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:338
+msgid "A paper computes its own key when it is created -- this key will be used when the ledger is accessed. The key is formed from a combination of issuer and paperNumber."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:350
+msgid "A paper is moved to the ISSUED state by the transaction, not by the paper class. That's because it's the smart contract that governs the lifecycle state of the paper. For example, an import transaction might create a new set of papers immediately in the TRADING state."
+msgstr ""
+
 #: ../../source/developapps/smartcontract.md:355
 msgid "The rest of the CommercialPaper class contains simple helper methods:"
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:363
 msgid "Recall how methods like this were used by the smart contract to move the commercial paper through its lifecycle. For example, in the redeem transaction we saw:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:374
+msgid "Access the ledger"
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:376
@@ -206,6 +274,14 @@ msgstr ""
 
 #: ../../source/developapps/smartcontract.md:413
 msgid "Every piece of state data in a ledger requires these two fundamental elements:"
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:415
+msgid "Key: key is formed with createCompositeKey() using a fixed name and the key of state. The name was assigned when the PaperList object was constructed, and state.getSplitKey() determines each state's unique key."
+msgstr ""
+
+#: ../../source/developapps/smartcontract.md:420
+msgid "Data: data is simply the serialized form of the commercial paper state, created using the State.serialize() utility method. The State class serializes and deserializes data using JSON, and the State's business object class as required, in our case CommercialPaper, again set when the PaperList object was constructed."
 msgstr ""
 
 #: ../../source/developapps/smartcontract.md:427

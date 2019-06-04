@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
+"PO-Revision-Date: 2019-04-22 20:01+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/dev-setup/build.rst:2
 msgid "Building Hyperledger Fabric"
@@ -38,12 +37,12 @@ msgstr ""
 
 #: ../../source/dev-setup/build.rst:17
 msgid ""
-"Before running the unit tests, a PKCS #11 cryptographic token "
-"implementation must be installed and configured. The PKCS #11 API is used"
-" by the bccsp component of Fabric to interact with devices, such as "
-"hardware security modules (HSMs), that store cryptographic information "
-"and perform cryptographic computations. For test environments, SoftHSM "
-"can be used to satisfy this requirement."
+"Before running the unit tests, a PKCS #11 cryptographic token implementation"
+" must be installed and configured. The PKCS #11 API is used by the bccsp "
+"component of Fabric to interact with devices, such as hardware security "
+"modules (HSMs), that store cryptographic information and perform "
+"cryptographic computations. For test environments, SoftHSM can be used to "
+"satisfy this requirement."
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:24
@@ -61,8 +60,8 @@ msgstr ""
 msgid ""
 "Configuration typically involves copying ``/etc/softhsm2.conf`` to "
 "``$HOME/.config/softhsm2/softhsm2.conf`` and changing "
-"``directories.tokendir`` to an appropriate location. Please see the man "
-"page for ``softhsm2.conf`` for details."
+"``directories.tokendir`` to an appropriate location. Please see the man page"
+" for ``softhsm2.conf`` for details."
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:41
@@ -74,8 +73,8 @@ msgstr ""
 #: ../../source/dev-setup/build.rst:48
 msgid ""
 "If the test cannot find libsofthsm2.so in your environment, specify its "
-"path, the PIN and the label of the token through environment variables. "
-"For example, on macOS:"
+"path, the PIN and the label of the token through environment variables. For "
+"example, on macOS:"
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:58
@@ -84,17 +83,16 @@ msgstr ""
 
 #: ../../source/dev-setup/build.rst:65
 msgid ""
-"To run a subset of tests, set the TEST_PKGS environment variable. Specify"
-" a list of packages (separated by space), for example:"
+"To run a subset of tests, set the TEST_PKGS environment variable. Specify a "
+"list of packages (separated by space), for example:"
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:73
 msgid ""
 "To run a specific test use the ``-run RE`` flag where RE is a regular "
-"expression that matches the test case name. To run tests with verbose "
-"output use the ``-v`` flag. For example, to run the ``TestGetFoo`` test "
-"case, change to the directory containing the ``foo_test.go`` and "
-"call/execute"
+"expression that matches the test case name. To run tests with verbose output"
+" use the ``-v`` flag. For example, to run the ``TestGetFoo`` test case, "
+"change to the directory containing the ``foo_test.go`` and call/execute"
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:85
@@ -103,9 +101,9 @@ msgstr ""
 
 #: ../../source/dev-setup/build.rst:87
 msgid ""
-"You must also run the Node.js unit tests to ensure that the Node.js "
-"client SDK is not broken by your changes. To run the Node.js unit tests, "
-"follow the instructions `here <https://github.com/hyperledger/fabric-sdk-"
+"You must also run the Node.js unit tests to ensure that the Node.js client "
+"SDK is not broken by your changes. To run the Node.js unit tests, follow the"
+" instructions `here <https://github.com/hyperledger/fabric-sdk-"
 "node/blob/master/README.md>`__."
 msgstr ""
 
@@ -115,16 +113,15 @@ msgstr ""
 
 #: ../../source/dev-setup/build.rst:95
 msgid ""
-"Configuration utilizes the `viper <https://github.com/spf13/viper>`__ and"
-" `cobra <https://github.com/spf13/cobra>`__ libraries."
+"Configuration utilizes the `viper <https://github.com/spf13/viper>`__ and "
+"`cobra <https://github.com/spf13/cobra>`__ libraries."
 msgstr ""
 
 #: ../../source/dev-setup/build.rst:98
 msgid ""
-"There is a **core.yaml** file that contains the configuration for the "
-"peer process. Many of the configuration settings can be overridden on the"
-" command line by setting ENV variables that match the configuration "
-"setting, but by prefixing with *'CORE\\_'*. For example, logging level "
-"manipulation through the environment is shown below:"
+"There is a **core.yaml** file that contains the configuration for the peer "
+"process. Many of the configuration settings can be overridden on the command"
+" line by setting ENV variables that match the configuration setting, but by "
+"prefixing with *'CORE\\_'*. For example, setting `peer.networkId` can be "
+"accomplished with:"
 msgstr ""
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,52 +16,131 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/commands/token.md:1
+msgid "token"
+msgstr ""
+
 #: ../../source/commands/token.md:3
 msgid "The token CLI allows you to use the Fabtoken client to issue, list, transfer, and redeem tokens."
+msgstr ""
+
+#: ../../source/commands/token.md:6
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/token.md:8
 msgid "The token command has the following subcommands:"
 msgstr ""
 
-#: ../../source/commands/token.md:182
+#: ../../source/commands/token.md:10
+msgid "issue"
+msgstr ""
+
+#: ../../source/commands/token.md:11
+msgid "list"
+msgstr ""
+
+#: ../../source/commands/token.md:12
+msgid "transfer"
+msgstr ""
+
+#: ../../source/commands/token.md:13
+msgid "redeem"
+msgstr ""
+
+#: ../../source/commands/token.md:14
+msgid "saveConfig"
+msgstr ""
+
+#: ../../source/commands/token.md:16
+msgid "token issue"
+msgstr ""
+
+#: ../../source/commands/token.md:50
+msgid "token list"
+msgstr ""
+
+#: ../../source/commands/token.md:81
+msgid "token transfer"
+msgstr ""
+
+#: ../../source/commands/token.md:114
+msgid "token redeem"
+msgstr ""
+
+#: ../../source/commands/token.md:147
+msgid "token saveConfig"
+msgstr ""
+
+#: ../../source/commands/token.md:173
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/token.md:175
+msgid "token issue example"
+msgstr ""
+
+#: ../../source/commands/token.md:177
 msgid "You can use the following command to issue 100 Fabcoins belonging to User1@org1.example.com. The tokens are issued by Admin@org1.example.com."
 msgstr ""
 
-#: ../../source/commands/token.md:203
+#: ../../source/commands/token.md:180
+msgid "Use the --config flag to provide the path to a file that contains the connection information for your fabric network, including your Prover peer. You can find a sample configuration file below. Use the --mspPath flag to provide the path to the MSP of the token issuer."
+msgstr ""
+
+#: ../../source/commands/token.md:196
+msgid "token list example"
+msgstr ""
+
+#: ../../source/commands/token.md:198
 msgid "You can use the token list command to discover the tokenIDs of the tokens that you own."
 msgstr ""
 
-#: ../../source/commands/token.md:224
+#: ../../source/commands/token.md:201
+msgid "Use the --mspPath flag to provide the path to the MSP of the token owner."
+msgstr ""
+
+#: ../../source/commands/token.md:209
+msgid "If successful, the command will return the tokenID, which is the ID of the transaction that created the token, as well as the type and quantity of assets represented by the token."
+msgstr ""
+
+#: ../../source/commands/token.md:217
+msgid "token transfer example"
+msgstr ""
+
+#: ../../source/commands/token.md:219
 msgid "You can transfer the tokens that you own to another member of the channel using the token transfer command."
 msgstr ""
 
-#: ../../source/commands/token.md:246
+#: ../../source/commands/token.md:222
+msgid "Use the --tokenIDs flag to select the tokens that you want to transfer. Use the --shares flag to provide a path to a JSON file that describes how the input token will be distributed to the recipients of the transaction. You can find a sample shares file below."
+msgstr ""
+
+#: ../../source/commands/token.md:239
+msgid "token redeem example"
+msgstr ""
+
+#: ../../source/commands/token.md:241
 msgid "Redeemed tokens can no longer be transferred to other channel members. Tokens can only be redeemed by their owner. You can use the following command to redeem 50 Fabcoins:"
 msgstr ""
 
-#: ../../source/commands/token.md:263
+#: ../../source/commands/token.md:256
+msgid "Configuration file example"
+msgstr ""
+
+#: ../../source/commands/token.md:258
 msgid "The configuration file provides the token CLI the endpoint information of your network. The file include the Prover Peer that your organization will use to assemble token transactions."
 msgstr ""
 
-#: ../../source/commands/token.md:267
-msgid "<details> <summary> Sample configuration file </summary>"
+#: ../../source/commands/token.md:300
+msgid "Shares file example"
 msgstr ""
 
 #: ../../source/commands/token.md:302
-#: ../../source/commands/token.md:324
-msgid "</details>"
-msgstr ""
-
-#: ../../source/commands/token.md:307
 msgid "The shares file is used by the transfer transaction to allocate the assets represented by the input token between the recipients of the transfer. Any quantity of the input token that is not transferred to a recipient is automatically provided to the original owner in a new token."
 msgstr ""
 
-#: ../../source/commands/token.md:312
-msgid "<details> <summary> Sample shares file </summary>"
-msgstr ""
-
-#: ../../source/commands/token.md:328
+#: ../../source/commands/token.md:323
 msgid "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>."
 msgstr ""
 

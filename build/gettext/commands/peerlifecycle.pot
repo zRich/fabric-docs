@@ -8,13 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/commands/peerlifecycle.md:1
+#: ../../source/commands/peerlifecycle.md:47
+msgid "peer lifecycle chaincode"
+msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:3
 msgid "The peer lifecycle chaincode subcommand allows administrators to use the Fabric chaincode lifecycle to package a chaincode, install it on your peers, approve a chaincode definition for your organization, and then commit the definition to a channel. The chaincode is ready to be used after the definition has been successfully committed to the channel. For more information, visit Chaincode for Operators."
@@ -24,24 +29,120 @@ msgstr ""
 msgid "Note: These instructions use the Fabric chaincode lifecycle introduced in the v2.0 Alpha release. If you would like to use the old lifecycle to install and instantiate a chaincode, visit the peer chaincode command reference."
 msgstr ""
 
+#: ../../source/commands/peerlifecycle.md:15
+msgid "Syntax"
+msgstr ""
+
 #: ../../source/commands/peerlifecycle.md:17
 msgid "The peer lifecycle chaincode command has the following subcommands:"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:19
+msgid "package"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:20
+msgid "install"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:21
+msgid "queryinstalled"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:22
+msgid "approveformyorg"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:23
+msgid "queryapprovalstatus"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:24
+msgid "commit"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:25
+msgid "querycommitted"
 msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:27
 msgid "Each peer lifecycle chaincode subcommand is described together with its options in its own section in this topic."
 msgstr ""
 
+#: ../../source/commands/peerlifecycle.md:30
+msgid "peer lifecycle"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:78
+msgid "peer lifecycle chaincode package"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:106
+msgid "peer lifecycle chaincode install"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:131
+msgid "peer lifecycle chaincode queryinstalled"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:156
+msgid "peer lifecycle chaincode approveformyorg"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:194
+msgid "peer lifecycle chaincode queryapprovalstatus"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:229
+msgid "peer lifecycle chaincode commit"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:266
+msgid "peer lifecycle chaincode querycommitted"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:292
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:294
+msgid "peer lifecycle chaincode package example"
+msgstr ""
+
 #: ../../source/commands/peerlifecycle.md:296
 msgid "A chaincode needs to be packaged before it can be installed on your peers. This example uses the peer lifecycle chaincode package command to package a Golang chaincode."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:300
+msgid "Use the --label flag to provide a chaincode package label of myccv1 that your organization will use to identify the package."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:307
+msgid "peer lifecycle chaincode install example"
 msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:309
 msgid "After the chaincode is packaged, you can use the peer chaincode install command to install the chaincode on your peers."
 msgstr ""
 
+#: ../../source/commands/peerlifecycle.md:312
+msgid "Install the mycc.tar.gz  package on peer0.org1.example.com:7051 (the peer defined by --peerAddresses)."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:318
+msgid "If successful, the command will return the package identifier. The package ID is the package label combined with a hash of the chaincode package taken by the peer."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:326
+msgid "peer lifecycle chaincode queryinstalled example"
+msgstr ""
+
 #: ../../source/commands/peerlifecycle.md:328
 msgid "You need to use the chaincode package identifier to approve a chaincode definition for your organization. You can find the package ID for the chaincodes you have installed by using the peer lifecycle chaincode queryinstalled command:"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:342
+msgid "peer lifecycle chaincode approveformyorg example"
 msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:344
@@ -52,16 +153,48 @@ msgstr ""
 msgid "Here is an example of the peer lifecycle chaincode approveformyorg command, which approves the definition of a chaincode  named mycc at version 1.0 on channel mychannel."
 msgstr ""
 
+#: ../../source/commands/peerlifecycle.md:353
+msgid "Use the --package-id to pass in the chaincode package identifier. Use the --signature-policy flag to define an endorsement policy for the chaincode. Use the init-required flag to request the execution of the Init function to initialize the chaincode."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:367
+msgid "You can also use the --channel-config-policy flag use a policy inside the channel configuration as the chaincode endorsement policy. The default endorsement policy is Channel/Application/Endorsement"
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:380
+msgid "peer lifecycle chaincode queryapprovalstatus example"
+msgstr ""
+
 #: ../../source/commands/peerlifecycle.md:382
 msgid "You can query which organizations have approved a chaincode definition before you commit the definition to the channel using the peer lifecycle chaincode queryapprovalstatus command. If an organization has approved the chaincode definition specified in the command, the command will return a value of true. You can use this command to learn whether enough channel members have approved a chaincode definition to meet the Application/Channel/Endorsement policy (a majority by default) before the definition can be committed to a channel."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:397
+msgid "If successful, the command will return a JSON map that shows if an organization has approved the chaincode definition."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:408
+msgid "peer lifecycle chaincode commit example"
 msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:410
 msgid "Once a sufficient number of organizations approve a chaincode definition for their organizations (a majority by default), one organization can commit the definition the channel using the peer lifecycle chaincode commit command:"
 msgstr ""
 
+#: ../../source/commands/peerlifecycle.md:414
+msgid "This command needs to target the peers of other organizations on the channel to collect their organization endorsement for the definition."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:426
+msgid "peer lifecycle chaincode querycommitted example"
+msgstr ""
+
 #: ../../source/commands/peerlifecycle.md:428
 msgid "You can query the chaincode definitions that have been committed to a channel by using the peer lifecycle chaincode querycommitted command. You can use this command to query the current definition sequence number before upgrading a chaincode."
+msgstr ""
+
+#: ../../source/commands/peerlifecycle.md:433
+msgid "You need to supply the chaincode name and channel name in order to query the chaincode definition."
 msgstr ""
 
 #: ../../source/commands/peerlifecycle.md:445

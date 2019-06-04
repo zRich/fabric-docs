@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/Gerrit/lf-account.rst:2
 msgid "Requesting a Linux Foundation Account"
@@ -25,8 +24,8 @@ msgstr ""
 #: ../../source/Gerrit/lf-account.rst:4
 msgid ""
 "Contributions to the Hyperledger Fabric code base require a `Linux "
-"Foundation <https://linuxfoundation.org/>`__ account --- follow the steps"
-" below to create one if you don't already have one."
+"Foundation <https://linuxfoundation.org/>`__ account --- follow the steps "
+"below to create one if you don't already have one."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:10
@@ -41,14 +40,14 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:15
 msgid ""
-"Select the option ``I need to create a Linux Foundation ID``, and fill "
-"out the form that appears."
+"Select the option ``I need to create a Linux Foundation ID``, and fill out "
+"the form that appears."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:18
 msgid ""
-"Wait a few minutes, then look for an email message with the subject line:"
-" \"Validate your Linux Foundation ID email\"."
+"Wait a few minutes, then look for an email message with the subject line: "
+"\"Validate your Linux Foundation ID email\"."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:21
@@ -63,8 +62,8 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:26
 msgid ""
-"Access Gerrit by selecting ``Sign In``, and use your new Linux Foundation"
-" account ID to sign in."
+"Access Gerrit by selecting ``Sign In``, and use your new Linux Foundation "
+"account ID to sign in."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:30
@@ -73,15 +72,15 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:32
 msgid ""
-"Gerrit uses SSH to interact with your Git client. If you already have an "
-"SSH key pair, you can skip the part of this section that explains how to "
+"Gerrit uses SSH to interact with your Git client. If you already have an SSH"
+" key pair, you can skip the part of this section that explains how to "
 "generate one."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:35
 msgid ""
-"What follows explains how to generate an SSH key pair in a Linux "
-"environment --- follow the equivalent steps on your OS."
+"What follows explains how to generate an SSH key pair in a Linux environment"
+" --- follow the equivalent steps on your OS."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:38
@@ -90,31 +89,31 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:44
 msgid ""
-"**Note:** This will ask you for a password to protect the private key as "
-"it generates a unique key. Please keep this password private, and DO NOT "
-"enter a blank password."
+"**Note:** This will ask you for a password to protect the private key as it "
+"generates a unique key. Please keep this password private, and DO NOT enter "
+"a blank password."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:48
 msgid ""
-"The generated SSH key pair can be found in the files ``~/.ssh/id_rsa`` "
-"and ``~/.ssh/id_rsa.pub``."
+"The generated SSH key pair can be found in the files ``~/.ssh/id_rsa`` and "
+"``~/.ssh/id_rsa.pub``."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:51
-msgid "Next, add the private key in the ``id_rsa`` file to your key ring, e.g.:"
+msgid ""
+"Next, add the private key in the ``id_rsa`` file to your key ring, e.g.:"
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:57
 msgid ""
-"Finally, add the public key of the generated key pair to the Gerrit "
-"server, with the following steps:"
+"Finally, add the public key of the generated key pair to the Gerrit server, "
+"with the following steps:"
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:60
 msgid ""
-"Go to `Gerrit "
-"<https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__."
+"Go to `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:63
@@ -131,33 +130,32 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:69
 msgid ""
-"Paste the contents of your public key ``~/.ssh/id_rsa.pub`` and click "
-"``Add key``."
+"Paste the contents of your public key ``~/.ssh/id_rsa.pub`` and click ``Add "
+"key``."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:72
 msgid ""
-"**Note:** The ``id_rsa.pub`` file can be opened with any text editor. "
-"Ensure that all the contents of the file are selected, copied and pasted "
-"into the ``Add SSH key`` window in Gerrit."
+"**Note:** The ``id_rsa.pub`` file can be opened with any text editor. Ensure"
+" that all the contents of the file are selected, copied and pasted into the "
+"``Add SSH key`` window in Gerrit."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:76
 msgid ""
-"**Note:** The SSH key generation instructions operate on the assumption "
-"that you are using the default naming. It is possible to generate "
-"multiple SSH keys and to name the resulting files differently. See the "
-"`ssh-keygen <https://en.wikipedia.org/wiki/Ssh-keygen>`__ documentation "
-"for details on how to do that. Once you have generated non-default keys, "
-"you need to configure SSH to use the correct key for Gerrit. In that "
-"case, you need to create a ``~/.ssh/config`` file modeled after the one "
-"below."
+"**Note:** The SSH key generation instructions operate on the assumption that"
+" you are using the default naming. It is possible to generate multiple SSH "
+"keys and to name the resulting files differently. See the `ssh-keygen "
+"<https://en.wikipedia.org/wiki/Ssh-keygen>`__ documentation for details on "
+"how to do that. Once you have generated non-default keys, you need to "
+"configure SSH to use the correct key for Gerrit. In that case, you need to "
+"create a ``~/.ssh/config`` file modeled after the one below."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:92
 msgid ""
-"where <LFID> is your Linux Foundation ID and the value of IdentityFile is"
-" the name of the public key file you generated."
+"where <LFID> is your Linux Foundation ID and the value of IdentityFile is "
+"the name of the public key file you generated."
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:95
@@ -172,8 +170,8 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:101
 msgid ""
-"Once you've set up SSH as explained in the previous section, you can "
-"clone the source code repository with the command:"
+"Once you've set up SSH as explained in the previous section, you can clone "
+"the source code repository with the command:"
 msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:108
@@ -181,4 +179,3 @@ msgid ""
 "You have now successfully checked out a copy of the source code to your "
 "local machine."
 msgstr ""
-

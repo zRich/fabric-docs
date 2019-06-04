@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
+"PO-Revision-Date: 2019-04-22 19:57+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/peer-chaincode-devmode.rst:2
 msgid "Using dev mode"
@@ -25,16 +24,16 @@ msgstr ""
 #: ../../source/peer-chaincode-devmode.rst:4
 msgid ""
 "Normally chaincodes are started and maintained by peer. However in “dev” "
-"mode, chaincode is built and started by the user. This mode is useful "
-"during chaincode development phase for rapid code/build/run/debug cycle "
+"mode, chaincode is built and started by the user. This mode is useful during"
+" chaincode development phase for rapid code/build/run/debug cycle "
 "turnaround."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:9
 msgid ""
-"To keep this a realistic “dev” environment, we are going to keep it “out "
-"of the box” - with one exception: we create two channels to show how the "
-"single running instance can be accessed from multiple channels."
+"To keep this a realistic “dev” environment, we are going to keep it “out of "
+"the box” - with one exception: we create two channels to show how the single"
+" running instance can be accessed from multiple channels."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:13
@@ -75,8 +74,8 @@ msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:52
 msgid ""
-"Above assumes orderer is reachable on ``127.0.0.1:7050``. The orderer now"
-" is tracking channels ch1 and ch2 for the default configuration."
+"Above assumes orderer is reachable on ``127.0.0.1:7050``. The orderer now is"
+" tracking channels ch1 and ch2 for the default configuration."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:60
@@ -89,10 +88,10 @@ msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:71
 msgid ""
-"The chaincode is started with peer and chaincode logs indicating "
-"successful registration with the peer. Note that at this stage the "
-"chaincode is not associated with any channel. This is done in subsequent "
-"steps using the ``instantiate`` command."
+"The chaincode is started with peer and chaincode logs indicating successful "
+"registration with the peer. Note that at this stage the chaincode is not "
+"associated with any channel. This is done in subsequent steps using the "
+"``instantiate`` command."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:76
@@ -102,9 +101,9 @@ msgstr ""
 #: ../../source/peer-chaincode-devmode.rst:78
 msgid ""
 "Even though you are in ``--peer-chaincodedev`` mode, you still have to "
-"install the chaincode so the life-cycle system chaincode can go through "
-"its checks normally. This requirement may be removed in future when in "
-"``--peer-chaincodedev`` mode."
+"install the chaincode so the life-cycle system chaincode can go through its "
+"checks normally. This requirement may be removed in future when in ``--peer-"
+"chaincodedev`` mode."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:86
@@ -114,8 +113,7 @@ msgstr ""
 #: ../../source/peer-chaincode-devmode.rst:94
 msgid ""
 "The above instantiates the chaincode with the two channels. With default "
-"settings it might take a few seconds for the transactions to be "
-"committed."
+"settings it might take a few seconds for the transactions to be committed."
 msgstr ""
 
 #: ../../source/peer-chaincode-devmode.rst:103
@@ -125,4 +123,3 @@ msgstr ""
 #: ../../source/peer-chaincode-devmode.rst:105
 msgid "Finally, query the chaincode on the two channels."
 msgstr ""
-

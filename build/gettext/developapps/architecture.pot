@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/developapps/architecture.md:1
+msgid "Process and Data Design"
+msgstr ""
+
 #: ../../source/developapps/architecture.md:3
 msgid "Audience: Architects, Application and smart contract developers, Business professionals"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:6
 msgid "This topic shows you how to design the commercial paper processes and their related data structures in PaperNet. Our analysis highlighted that modelling PaperNet using states and transactions provided a precise way to understand what's happening. We're now going to elaborate on these two strongly related concepts to help us subsequently design the smart contracts and applications of PaperNet."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:13
+msgid "Lifecycle"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:15
@@ -33,11 +41,15 @@ msgid "We can represent the life cycle of a commercial paper using a state trans
 msgstr ""
 
 #: ../../source/developapps/architecture.md:25
-msgid "develop.statetransition The state transition diagram for commercial paper. Commercial papers transition between issued, trading and redeemed states by means of the issue, buy and redeem transactions."
+msgid "The state transition diagram for commercial paper. Commercial papers transition between issued, trading and redeemed states by means of the issue, buy and redeem transactions."
 msgstr ""
 
 #: ../../source/developapps/architecture.md:30
 msgid "See how the state diagram describes how commercial papers change over time, and how specific transactions govern the life cycle transitions. In Hypledger Fabric, smart contracts implement transaction logic that transition commercial papers between their different states. Commercial paper states are actually held in the ledger world state; so let's take a closer look at them."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:36
+msgid "Ledger state"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:38
@@ -45,7 +57,7 @@ msgid "Recall the structure of a commercial paper:"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:40
-msgid "develop.paperstructure A commercial paper can be represented as a set of properties, each with a value. Typically, some combination of these properties will provide a unique key for each paper."
+msgid "A commercial paper can be represented as a set of properties, each with a value. Typically, some combination of these properties will provide a unique key for each paper."
 msgstr ""
 
 #: ../../source/developapps/architecture.md:44
@@ -61,7 +73,7 @@ msgid "See how MagnetoCorp's paper 00001 is represented as a state vector that t
 msgstr ""
 
 #: ../../source/developapps/architecture.md:67
-msgid "develop.paperstates A commercial paper state is brought into existence and transitions as a result of different transactions. Hyperledger Fabric states have multiple properties, making them vectors rather than scalars."
+msgid "A commercial paper state is brought into existence and transitions as a result of different transactions. Hyperledger Fabric states have multiple properties, making them vectors rather than scalars."
 msgstr ""
 
 #: ../../source/developapps/architecture.md:72
@@ -70,6 +82,10 @@ msgstr ""
 
 #: ../../source/developapps/architecture.md:78
 msgid "Notice how each state is self-describing; each property has a name and a value. Although all our commercial papers currently have the same properties, this need not be the case for all time, as Hyperledger Fabric supports different states having different properties. This allows the same ledger world state to contain different forms of the same asset as well as different types of asset. It also makes it possible to update a state's structure; imagine a new regulation that requires an additional data field. Flexible state properties support the fundamental requirement of data evolution over time."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:87
+msgid "State keys"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:89
@@ -84,6 +100,10 @@ msgstr ""
 msgid "When a unique key is not available from the available set of properties, an application-determined unique key is specified as an input to the transaction that creates the state. This unique key is usually with some form of UUID, which although less readable, is a standard practice. What's important is that every individual state object in a ledger must have a unique key."
 msgstr ""
 
+#: ../../source/developapps/architecture.md:105
+msgid "Multiple states"
+msgstr ""
+
 #: ../../source/developapps/architecture.md:107
 msgid "As we've seen, commercial papers in PaperNet are stored as state vectors in a ledger. It's a reasonable requirement to be able to query different commercial papers from the ledger; for example: find all the papers issued by MagnetoCorp, or: find all the papers issued by MagnetoCorp in the redeemed state."
 msgstr ""
@@ -92,16 +112,24 @@ msgstr ""
 msgid "To make these kinds of search tasks possible, it's helpful to group all related papers together in a logical list. The PaperNet design incorporates the idea of a commercial paper list -- a logical container which is updated whenever commercial papers are issued or otherwise changed."
 msgstr ""
 
+#: ../../source/developapps/architecture.md:117
+msgid "Logical representation"
+msgstr ""
+
 #: ../../source/developapps/architecture.md:119
 msgid "It's helpful to think of all PaperNet commercial papers being in a single list of commercial papers:"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:122
-msgid "develop.paperlist MagnetoCorp's newly created commercial  paper 00004 is added to the list of existing commercial papers."
+msgid "MagnetoCorp's newly created commercial  paper 00004 is added to the list of existing commercial papers."
 msgstr ""
 
 #: ../../source/developapps/architecture.md:126
 msgid "New papers can be added to the list as a result of an issue transaction, and papers already in the list can be updated with buy or redeem transactions. See how the list has a descriptive name: org.papernet.papers; it's a really good idea to use this kind of DNS name because well-chosen names will make your blockchain designs intuitive to other people. This idea applies equally well to smart contract names."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:134
+msgid "Physical representation"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:136
@@ -109,15 +137,27 @@ msgid "While it's correct to think of a single list of papers in PaperNet -- org
 msgstr ""
 
 #: ../../source/developapps/architecture.md:141
-msgid "develop.paperphysical Representing a list of PaperNet commercial papers as a set of distinct Hyperledger Fabric states"
+msgid "Representing a list of PaperNet commercial papers as a set of distinct Hyperledger Fabric states"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:144
 msgid "Notice how each paper in the list is represented by a vector state, with a unique composite key formed by the concatenation of org.papernet.paper, Issuer and Paper properties. This structure is helpful for two reasons:"
 msgstr ""
 
+#: ../../source/developapps/architecture.md:148
+msgid "It allows us to examine any state vector in the ledger to determine which list it's in, without reference to a separate list. It's analogous to looking at set of sports fans, and identifying which team they support by the colour of the shirt they are wearing. The sports fans self-declare their allegiance; we don't need a list of fans."
+msgstr ""
+
+#: ../../source/developapps/architecture.md:155
+msgid "Hyperlegder Fabric internally uses a concurrency control mechanism to update a ledger, such that keeping papers in separate state vectors vastly reduces the opportunity for shared-state collisions. Such collisions require transaction re-submission, complicate application design, and decrease performance."
+msgstr ""
+
 #: ../../source/developapps/architecture.md:162
 msgid "This second point is actually a key take-away for Hyperledger Fabric; the physical design of state vectors is very important to optimum performance and behaviour. Keep your states separate!"
+msgstr ""
+
+#: ../../source/developapps/architecture.md:166
+msgid "Trust relationships"
 msgstr ""
 
 #: ../../source/developapps/architecture.md:168

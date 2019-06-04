@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:58+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/chaincode4noah.md:1
+msgid "Chaincode for Operators"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:3
+msgid "What is Chaincode?"
+msgstr ""
 
 #: ../../source/chaincode4noah.md:5
 msgid ""
@@ -50,6 +58,10 @@ msgid ""
 msgstr ""
 "在接下来的部分中，我们将通过区块链网络操作者而不是应用程序开发者的视角来研究链码。链码操作者可以使用本教程学习如何使用Fabric链码生命周期在其网络上部署和管理链码。"
 
+#: ../../source/chaincode4noah.md:23
+msgid "Chaincode lifecycle"
+msgstr ""
+
 #: ../../source/chaincode4noah.md:25
 msgid ""
 "The Fabric chaincode lifecycle is a process that allows multiple "
@@ -60,12 +72,34 @@ msgstr ""
 "Fabric "
 "链码生命周期是一个允许多个组织在链码在通道上使用之前，就如何操作达成一致意见的程序。本教程将讨论链码操作员如何使用Fabric生命周期来执行以下任务："
 
+#: ../../source/chaincode4noah.md:30 ../../source/chaincode4noah.md:46
+msgid "Install and define a chaincode"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:31 ../../source/chaincode4noah.md:208
+msgid "Upgrade a chaincode"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:32 ../../source/chaincode4noah.md:245
+msgid "Migrate to the new Fabric lifecycle"
+msgstr ""
+
 #: ../../source/chaincode4noah.md:34
 msgid ""
 "Note: The new Fabric chaincode lifecycle in the v2.0 Alpha release is not "
 "yet feature complete. Specifically, be aware of the following limitations in"
 " the Alpha release:"
 msgstr "注意:在v2.0 Alpha版本中，新的Fabric链码生命周期还没有完成。具体来说，要注意Alpha发行版中的以下限制:"
+
+#: ../../source/chaincode4noah.md:38
+msgid "Service Discovery is not yet supported"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:39
+msgid ""
+"Chaincodes defined with the new lifecycle are not yet discoverable via "
+"service discovery"
+msgstr ""
 
 #: ../../source/chaincode4noah.md:42
 msgid ""
@@ -83,6 +117,37 @@ msgid ""
 msgstr ""
 "Fabric链码生命周期要求组织同意定义链码的参数，例如名称、版本和链码背书策略。通道成员通过以下四个步骤达成协议。并不是每个通道上的组织都需要完成每个步骤。"
 
+#: ../../source/chaincode4noah.md:53
+msgid ""
+"Package the chaincode: This step can be completed by one organization or by "
+"each organization."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:55
+msgid ""
+"Install the chaincode on your peers: Every organization that will use the "
+"chaincode to endorse a transaction or query the ledger needs to complete "
+"this step."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:58
+msgid ""
+"Approve a chaincode definition for your organization: Every organization "
+"that will use the chaincode needs to complete this step. The chaincode "
+"definition needs to be approved by a sufficient number of organizations to "
+"satisfy the channel's LifecycleEndorsment policy (a majority, by default) "
+"before the chaincode can be started on the channel."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:63
+msgid ""
+"Commit the chaincode definition to the channel: The commit transaction needs"
+" to be submitted by one organization once the required number of "
+"organizations on the channel have approved. The submitter first collects "
+"endorsements from enough peers of the organizations that have approved, and "
+"then submits the transaction to commit the chaincode definition."
+msgstr ""
+
 #: ../../source/chaincode4noah.md:69
 msgid ""
 "This tutorial provides a detailed overview of the operations of the Fabric "
@@ -95,6 +160,10 @@ msgid ""
 msgstr ""
 "本教程提供了Fabric链码生命周期操作的详细概述，而不是具体的命令。要了解关于如何使用节点的CLI来使用Fabric生命周期的更多信息，请参见在构建您的第一个网络教程或节点的生命周期命令引用中安装和定义链码。要了解关于如何使用Fabric"
 " SDK for Node.js使用Fabric生命周期的更多信息，请访问如何安装和启动链码。"
+
+#: ../../source/chaincode4noah.md:76
+msgid "Step One: Packaging the smart contract"
+msgstr ""
 
 #: ../../source/chaincode4noah.md:78
 msgid ""
@@ -113,6 +182,30 @@ msgid ""
 "needs to be in the format below. The Fabric peer binaries and the Fabric "
 "SDKs will automatically create a file in this format."
 msgstr "如果使用第三方工具来打包链码，则生成的文件需要采用以下格式。Fabric节点二进制文件和Fabric SDKs将自动创建这种格式的文件。"
+
+#: ../../source/chaincode4noah.md:87
+msgid ""
+"The chaincode needs to be packaged in a tar file, ending with a .tar.gz file"
+" extension."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:89
+msgid ""
+"The tar file needs to contain two files (no directory): a metadata file "
+"\"Chaincode-Package-Metadata.json\" and another tar containing the chaincode"
+" files."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:92
+msgid ""
+"\"Chaincode-Package-Metadata.json\" contains JSON that specifies the "
+"chaincode language, code path, and package label. You can see an example of "
+"a metadata file below:"
+msgstr ""
+
+#: ../../source/chaincode4noah.md:99
+msgid "Step Two: Install the chaincode on your peers"
+msgstr ""
 
 #: ../../source/chaincode4noah.md:101
 msgid ""
@@ -139,6 +232,10 @@ msgid ""
 msgstr ""
 "一个成功的安装命令将返回一个链码包标识符，它是一个包标签和包的散列组合。此包标识符用于将安装在节点上的链码包与组织批准的链码定义关联起来。为下一步保存标识符。您还可以通过使用节点CLI查询安装在您的节点上的包来找到包标识符。"
 
+#: ../../source/chaincode4noah.md:117
+msgid "Step Three: Approve a chaincode definition for your organization"
+msgstr ""
+
 #: ../../source/chaincode4noah.md:119
 msgid ""
 "The chaincode is governed by a chaincode definition. When channel members "
@@ -149,6 +246,58 @@ msgid ""
 "following parameters, which need to be consistent across organizations:"
 msgstr ""
 "链码由链码定义控制。当通道成员批准链码定义时，该批准作为组织对其接受的链码参数的表决。这些经过批准的组织定义允许通道成员在链码在通道上使用之前就链码达成一致。链码定义包括以下参数，这些参数需要跨组织保持一致:"
+
+#: ../../source/chaincode4noah.md:126
+msgid "Name: The name that applications will use when invoking the chaincode."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:127
+msgid ""
+"Version: A version number or value associated with a given chaincodes "
+"package. If you upgrade the chaincode binaries, you need to change your "
+"chaincode version as well."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:130
+msgid ""
+"Sequence: The number of times the chaincode has been defined. This value is "
+"an integer, and is used to keep track of chaincode upgrades. For example, "
+"when you first install and approve a chaincode definition, the sequence "
+"number will be 1. When you next upgrade the chaincode, the sequence number "
+"will be incremented to 2."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:135
+msgid ""
+"Endorsement Policy: Which organizations need to execute and validate the "
+"transaction output. The endorsement policy can be expressed as a string "
+"passed to the CLI or the SDK, or it can reference a policy in the channel "
+"config. By default, the endorsement policy is set to "
+"Channel/Application/Endorsement, which defaults to require that a majority "
+"of organizations in the channel endorse a transaction."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:141
+msgid ""
+"Collection Configuration: The path to a private data collection definition "
+"file associated with your chaincode. For more information about private data"
+" collections, see the Private Data architecture reference."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:144
+msgid ""
+"Initialization: All chaincode need to contain an Init function that is used "
+"to initialize the chaincode. By default, this function is never executed. "
+"However, you can use the chaincode definition to request that the Init "
+"function be callable. If execution of Init is requested, fabric will ensure "
+"that Init is invoked before any other function and is only invoked once."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:149
+msgid ""
+"ESCC/VSCC Plugins: The name of a custom endorsement or validation plugin to "
+"be used by this chaincode."
+msgstr ""
 
 #: ../../source/chaincode4noah.md:152
 msgid ""
@@ -174,6 +323,10 @@ msgid ""
 "have multiple peers."
 msgstr ""
 "希望使用链码的每个通道成员都需要为其组织批准一个链码定义。此批准需要提交给排序服务，然后分发给所有节点。此批准需要由组织管理员提交，其签名证书在组织定义的MSP中作为管理证书列出。成功提交批准交易后，已批准的定义存储在一个集合中，该集合可用于组织的所有节点。因此，即使您有多个节点，也只需要为您的组织批准一次链码。"
+
+#: ../../source/chaincode4noah.md:168
+msgid "Step Four: Commit the chaincode definition to the channel"
+msgstr ""
 
 #: ../../source/chaincode4noah.md:170
 msgid ""
@@ -239,6 +392,51 @@ msgid ""
 "binaries, or only update the chaincode policies. Follow these steps to "
 "upgrade a chaincode:"
 msgstr "您可以使用与安装和启动链码相同的Fabric生命周期过程来升级链码。您可以升级链码二进制文件，或者只更新链码策略。按照以下步骤升级链码:"
+
+#: ../../source/chaincode4noah.md:214
+msgid ""
+"Repackage the chaincode: You only need to complete this step if you are "
+"upgrading the chaincode binaries."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:216
+msgid ""
+"Install the new chaincode package on your peers: Once again, you only need "
+"to complete this step if you are upgrading the chaincode binaries. "
+"Installing the new chaincode package will generate a package ID, which you "
+"will need to pass to the new chaincode definition. You also need to change "
+"the chaincode version."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:221
+msgid ""
+"Approve a new chaincode definition: If you are upgrading the chaincode "
+"binaries, you need to update the chaincode version and the package ID in the"
+" chaincode definition. You can also update your chaincode endorsement policy"
+" without having to repackage your chaincode binaries. Channel members simply"
+" need to approve a definition with the new policy. The new definition needs "
+"to increment the sequence variable in the definition by one."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:227
+msgid ""
+"Commit the definition to the channel: When a sufficient number of channel "
+"members have approved the new chaincode definition, one organization can "
+"commit the new definition to upgrade the chaincode definition to the "
+"channel. There is no separate upgrade command as part of the lifecycle "
+"process."
+msgstr ""
+
+#: ../../source/chaincode4noah.md:231
+msgid ""
+"Upgrade the chaincode container: If you updated the chaincode definition "
+"without upgrading the chaincode package, you do not need to upgrade the "
+"chaincode container. If you did upgrade the chaincode binaries, a new invoke"
+" will upgrade the chaincode container. If you requested the execution of the"
+" Init function in the chaincode definition, you need to upgrade the "
+"chaincode container by invoking the Init function again after the new "
+"definition is successfully committed."
+msgstr ""
 
 #: ../../source/chaincode4noah.md:239
 msgid ""

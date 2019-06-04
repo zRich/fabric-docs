@@ -1,27 +1,35 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-05-09 09:03+0800\n"
+"PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/commands/peerlogging.md:1
+#: ../../source/commands/peerlogging.md:27
+msgid "peer logging"
+msgstr ""
 
 #: ../../source/commands/peerlogging.md:3
 msgid ""
-"The peer logging subcommand allows administrators to dynamically view and"
-" configure the log levels of a peer."
+"The peer logging subcommand allows administrators to dynamically view and "
+"configure the log levels of a peer."
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:6
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:8
@@ -30,37 +38,73 @@ msgstr ""
 
 #: ../../source/commands/peerlogging.md:13
 msgid ""
-"and the following deprecated subcommands, which will be removed in a "
-"future release:"
+"and the following deprecated subcommands, which will be removed in a future "
+"release:"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:20
 msgid ""
 "The different subcommand options (getlogspec, setlogspec, getlevel, "
-"setlevel, and revertlevels) relate to the different logging operations "
-"that are relevant to a peer."
+"setlevel, and revertlevels) relate to the different logging operations that "
+"are relevant to a peer."
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:24
 msgid ""
-"Each peer logging subcommand is described together with its options in "
-"its own section in this topic."
+"Each peer logging subcommand is described together with its options in its "
+"own section in this topic."
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:48
+msgid "peer logging getlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:60
+msgid "peer logging revertlevels"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:72
+msgid "peer logging setlevel"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:83
+msgid "Example Usage"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:85
+msgid "Get Level Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:87
 msgid "Here is an example of the peer logging getlevel command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:98
+msgid "Get Log Spec Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:100
 msgid "Here is an example of the peer logging getlogspec command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:111
+msgid "Set Level Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:113
 msgid "Here are some examples of the peer logging setlevel command:"
 msgstr ""
 
+#: ../../source/commands/peerlogging.md:132
+msgid "Set Log Spec Usage"
+msgstr ""
+
 #: ../../source/commands/peerlogging.md:134
 msgid "Here is an example of the peer logging setlogspec command:"
+msgstr ""
+
+#: ../../source/commands/peerlogging.md:150
+msgid "Revert Levels Usage"
 msgstr ""
 
 #: ../../source/commands/peerlogging.md:152
@@ -69,12 +113,10 @@ msgstr ""
 
 #: ../../source/commands/peerlogging.md:163
 msgid ""
-"<a rel=\"license\" "
-"href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative "
-"Commons License\" style=\"border-width:0\" "
-"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This"
-" work is licensed under a <a rel=\"license\" "
+"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img"
+" alt=\"Creative Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This "
+"work is licensed under a <a rel=\"license\" "
 "href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
 "Attribution 4.0 International License</a>."
 msgstr ""
-

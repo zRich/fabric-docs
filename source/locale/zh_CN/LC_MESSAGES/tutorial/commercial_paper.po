@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: zhonghui  geng <396071808@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/tutorial/commercial_paper.md:1
+msgid "Commercial paper tutorial"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:3
 msgid ""
@@ -38,10 +42,10 @@ msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:12
 msgid ""
-"commercialpaper.tutorial In this tutorial two organizations, MagnetoCorp and"
-" DigiBank, trade commercial paper with each other using PaperNet, a "
-"Hyperledger Fabric blockchain network."
-msgstr "在本教程中，MagnetoCorp和DigiBank这两个组织使用PaperNet(一个超级账本搭建的区块链网络)相互交换商业票据"
+"In this tutorial two organizations, MagnetoCorp and DigiBank, trade "
+"commercial paper with each other using PaperNet, a Hyperledger Fabric "
+"blockchain network."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:16
 msgid ""
@@ -63,11 +67,57 @@ msgid ""
 msgstr ""
 "您将扮演不同组织中的开发人员、最终用户和管理员的角色，执行以下步骤，这些步骤旨在帮助您理解作为两个独立工作的不同组织协作是什么样子的，但是要根据超级账本网络中相互同意的规则进行协作。"
 
+#: ../../source/tutorial/commercial_paper.md:28
+msgid "Set up machine and download samples"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:29
+msgid "Create a network"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:30
+msgid "Understand the structure of a smart contract"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:31
+msgid ""
+"Work as an organization, MagnetoCorp, to install and instantiate smart "
+"contract"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:34
+msgid ""
+"Understand the structure of a MagnetoCorp application, including its "
+"dependencies"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:37
+msgid "Configure and use a wallet and identities"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:38
+msgid "Run a MagnetoCorp application to issue a commercial paper"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:40
+msgid ""
+"Understand how a second organization, Digibank, uses the smart contract in "
+"their applications"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:42
+msgid "As Digibank, run applications that buy and redeem commercial paper"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:45
 msgid ""
 "This tutorial has been tested on MacOS and Ubuntu, and should work on other "
 "Linux distributions. A Windows version is under development."
 msgstr "本教程已经在MacOS和Ubuntu上进行了测试，应该可以在其他Linux发行版上使用。Windows版本正在开发中。"
+
+#: ../../source/tutorial/commercial_paper.md:48
+msgid "Prerequisites"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:50
 msgid ""
@@ -80,9 +130,38 @@ msgstr "在开始之前，您必须安装本教程所需的一些必备技术软
 msgid "You must have the following technologies installed:"
 msgstr "你必须安装以下技术软件:"
 
+#: ../../source/tutorial/commercial_paper.md:55
+msgid ""
+"Node version 8.9.0, or higher. Node is a JavaScript runtime that you can use"
+" to run applications and smart contracts. You are recommended to use the LTS"
+" (Long Term Support) version of node. Install node here."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:61
+msgid ""
+"Docker version 18.06, or higher. Docker help developers and administrators "
+"create standard environments for building and running applications and smart"
+" contracts. Hyperledger Fabric is provided as a set of Docker images, and "
+"the PaperNet smart contract will run in a docker container. Install Docker "
+"here."
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:68
 msgid "You will find it helpful to install the following technologies:"
 msgstr "你会发现安装以下技术软件很有帮助:"
+
+#: ../../source/tutorial/commercial_paper.md:70
+msgid ""
+"A source code editor, such as Visual Studio Code version 1.28, or higher. VS"
+" Code will help you develop and test your application and smart contract. "
+"Install VS Code here."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:75
+msgid ""
+"Many excellent code editors are available including Atom, Sublime Text and "
+"Brackets."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:79
 msgid ""
@@ -90,6 +169,17 @@ msgid ""
 "more experienced with application and smart contract development. There's no"
 " requirement to install these when you first run the tutorial:"
 msgstr "随着您对应用程序和智能合约开发越来越有经验，您可能会发现安装以下技术很有帮助。当你第一次运行教程时，不需要安装这些:"
+
+#: ../../source/tutorial/commercial_paper.md:83
+msgid ""
+"Node Version Manager. NVM helps you easily switch between different versions"
+" of node -- it can be really helpful if you're working on multiple projects "
+"at the same time. Install NVM here."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:88
+msgid "Download samples"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:90
 msgid ""
@@ -102,10 +192,8 @@ msgstr ""
 "，您的第一个任务是下载fabric-samples仓库。"
 
 #: ../../source/tutorial/commercial_paper.md:96
-msgid ""
-"commercialpaper.download Download the fabric-samples GitHub repository to "
-"your local machine."
-msgstr "将fabric-samples GitHub仓库下载到本地机器。"
+msgid "Download the fabric-samples GitHub repository to your local machine."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:99
 msgid ""
@@ -122,9 +210,9 @@ msgstr "如果没有设置$GOPATH，请使用以下说明"
 
 #: ../../source/tutorial/commercial_paper.md:117
 msgid ""
-"You can now create a directory relative to $GOPATHwhere fabric-samples will "
-"be installed:"
-msgstr "现在，您可以创建一个相对于$GOPATH的目录，其中将安装fabric-samples:"
+"You can now create a directory relative to $GOPATH where fabric-samples will"
+" be installed:"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:125
 msgid ""
@@ -148,6 +236,22 @@ msgid ""
 "example:"
 msgstr "您现在已经完成了教程的第一阶段!在继续操作时，将为不同的用户和组件打开多个命令窗口。例如:"
 
+#: ../../source/tutorial/commercial_paper.md:153
+msgid ""
+"to run applications on behalf of Isabella and Balaji who will trade "
+"commercial paper with each other"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:155
+msgid ""
+"to issue commands to on behalf of administrators from MagnetoCorp and "
+"DigiBank, including installing and instantiating smart contracts"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:157
+msgid "to show peer, orderer and CA log output"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:159
 msgid ""
 "We'll make it clear when you should run a command from particular command "
@@ -157,6 +261,10 @@ msgstr "我们将清楚地说明什么时候应该从特定的命令窗口运行
 #: ../../source/tutorial/commercial_paper.md:166
 msgid "indicates that you should run the ls command from Isabella's window."
 msgstr "指示您应该从Isabella的窗口运行ls命令。"
+
+#: ../../source/tutorial/commercial_paper.md:168
+msgid "Create network"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:170
 msgid ""
@@ -169,10 +277,10 @@ msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:175
 msgid ""
-"commercialpaper.network The Hyperledger Fabric basic network comprises a "
-"peer and its ledger database, an orderer and a certificate authority (CA). "
-"Each of these components runs as a docker container."
-msgstr "超级账本基本网络包括一个peer节点及其分类帐数据库、一个order节点和一个证书颁发机构(CA)。每个组件都作为docker容器运行。"
+"The Hyperledger Fabric basic network comprises a peer and its ledger "
+"database, an orderer and a certificate authority (CA). Each of these "
+"components runs as a docker container."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:180
 msgid ""
@@ -217,6 +325,22 @@ msgid ""
 "horizontally scroll to locate the information):"
 msgstr "看看你是否可以将这些容器映射到基本网络(你可能需要水平滚动来定位信息):"
 
+#: ../../source/tutorial/commercial_paper.md:247
+msgid "A peer peer0.org1.example.com is running in container ada3d078989b"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:248
+msgid "An orderer orderer.example.com is running in container 1fa1fd107bfb"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:249
+msgid "A CouchDB database couchdb is running in container 53fe614274f7"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:250
+msgid "A CA ca.example.com is running in container 469201085a20"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:252
 msgid ""
 "These containers all form a docker network called net_basic. You can view "
@@ -238,6 +362,10 @@ msgid ""
 msgstr ""
 "回顾一下:您已经从GitHub下载了Hyperledger "
 "Fabric样例库，并且已经在本地机器上运行了基本网络。现在让我们开始扮演磁石公司的角色，他们希望交易商业票据。"
+
+#: ../../source/tutorial/commercial_paper.md:291
+msgid "Working as MagnetoCorp"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:293
 msgid ""
@@ -276,9 +404,9 @@ msgstr "这个窗口现在将显示docker容器的输出，所以让我们启动
 
 #: ../../source/tutorial/commercial_paper.md:327
 msgid ""
-"commercialpaper.workmagneto A MagnetoCorp administrator interacts with the "
-"network via a docker container."
-msgstr "MagnetoCorp管理员通过docker容器与网络交互。"
+"A MagnetoCorp administrator interacts with the network via a docker "
+"container."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:330
 msgid ""
@@ -316,6 +444,10 @@ msgid ""
 " administrator."
 msgstr "现在让我们使用这个命令行作为MagnetoCorp管理员与PaperNet进行交互。"
 
+#: ../../source/tutorial/commercial_paper.md:374
+msgid "Smart contract"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:376
 msgid ""
 "issue, buy and redeem are the three functions at the heart of the PaperNet "
@@ -342,9 +474,9 @@ msgstr "在文件夹的lib目录中，您将看到papercontract.js文件——�
 
 #: ../../source/tutorial/commercial_paper.md:393
 msgid ""
-"commercialpaper.vscode1 An example code editor displaying the commercial "
-"paper smart contract in papercontract.js"
-msgstr "一个示例代码编辑器，在papercontract.js中显示商业票据智能合约"
+"An example code editor displaying the commercial paper smart contract in "
+"papercontract.js"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:396
 msgid ""
@@ -352,12 +484,93 @@ msgid ""
 "environment. Note the following key program lines:"
 msgstr "papercontract.js是一个JavaScript程序，设计用于运行在node.js环境中。注意以下关键程序行:"
 
+#: ../../source/tutorial/commercial_paper.md:399
+msgid "const { Contract, Context } = require('fabric-contract-api');"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:401
+msgid ""
+"This statement brings into scope two key Hyperledger Fabric classes that "
+"will be used extensively by the smart contract  -- Contract and Context. You"
+" can learn more about these classes in the fabric-shim JSDOCS."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:407
+msgid "class CommercialPaperContract extends Contract {"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:409
+msgid ""
+"This defines the smart contract class CommercialPaperContract based on the "
+"built-in Fabric Contract class.  The methods which implement the key "
+"transactions to issue, buy and redeem commercial paper are defined within "
+"this class."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:415
+msgid ""
+"async issue(ctx, issuer, paperNumber, issueDateTime, maturityDateTime...) {"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:417
+msgid ""
+"This method defines the commercial paper issue transaction for PaperNet. The"
+" parameters that are passed to this method will be used to create the new "
+"commercial paper."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:421
+msgid ""
+"Locate and examine the buy and redeem transactions within the smart "
+"contract."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:425
+msgid ""
+"let paper = CommercialPaper.createInstance(issuer, paperNumber, "
+"issueDateTime...);"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:427
+msgid ""
+"Within the issue transaction, this statement creates a new commercial paper "
+"in memory using the CommercialPaper class with the supplied transaction "
+"inputs. Examine the buy and redeem transactions to see how they similarly "
+"use this class."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:433
+msgid "await ctx.paperList.addPaper(paper);"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:435
+msgid ""
+"This statement adds the new commercial paper to the ledger using "
+"ctx.paperList, an instance of a PaperList class that was created when the "
+"smart contract context CommercialPaperContext was initialized. Again, "
+"examine the buy and redeem methods to see how they use this class."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:441
+msgid "return paper.toBuffer();"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:443
+msgid ""
+"This statement returns a binary buffer as response from the issue "
+"transaction for processing by the caller of the smart contract."
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:447
 msgid ""
 "Feel free to examine other files in the contract directory to understand how"
 " the smart contract works, and read in detail how papercontract.js is "
 "designed in the smart contract topic."
 msgstr "请随意查看合同目录中的其他文件，以了解智能合约是如何工作的，并在智能合约主题中详细阅读papercontract.js是如何设计的。"
+
+#: ../../source/tutorial/commercial_paper.md:451
+msgid "Install contract"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:453
 msgid ""
@@ -370,9 +583,9 @@ msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:458
 msgid ""
-"commercialpaper.install A MagnetoCorp administrator installs a copy of the "
-"papercontract onto a MagnetoCorp peer."
-msgstr "MagnetoCorp的管理员将papercontract合约的副本安装到MagnetoCorp的peer节点上。"
+"A MagnetoCorp administrator installs a copy of the papercontract onto a "
+"MagnetoCorp peer."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:461
 msgid ""
@@ -450,6 +663,10 @@ msgid ""
 "command here."
 msgstr "您可以在这里阅读更多关于docker compose和peer chaincode install 命令。"
 
+#: ../../source/tutorial/commercial_paper.md:520
+msgid "Instantiate contract"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:522
 msgid ""
 "Now that papercontract chaincode containing the CommercialPaper smart "
@@ -463,11 +680,10 @@ msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:529
 msgid ""
-"commercialpaper.instant A MagnetoCorp administrator instantiates "
-"papercontract chaincode containing the smart contract. A new docker "
-"chaincode container will be created to run papercontract."
+"A MagnetoCorp administrator instantiates papercontract chaincode containing "
+"the smart contract. A new docker chaincode container will be created to run "
+"papercontract."
 msgstr ""
-"MagnetoCorp管理员实例化包含商业票据智能合约的papercontract链码。将创建一个新的docker链码容器来运行papercontract。"
 
 #: ../../source/tutorial/commercial_paper.md:534
 msgid ""
@@ -527,6 +743,10 @@ msgid ""
 msgstr ""
 "现在我们已经建立并运行了一个基本的PaperNet，并且安装并实例化了papercontract，接下来让我们将注意力转向MagnetoCorp应用程序，它发行了一份商业票据。"
 
+#: ../../source/tutorial/commercial_paper.md:581
+msgid "Application structure"
+msgstr ""
+
 #: ../../source/tutorial/commercial_paper.md:583
 msgid ""
 "The smart contract contained in papercontract is called by MagnetoCorp's "
@@ -534,13 +754,14 @@ msgid ""
 " to the ledger which issues commercial paper 00001. Let's quickly examine "
 "how the issue application works."
 msgstr ""
+"包含在papercontract中的智能合约被称为MagnetoCorp的应用 "
+"issue.js。Isabella使用此应用程序向账本发出一笔交易，发行商业票据00001。让我们快速研究一下发行应用程序是如何工作的。"
 
 #: ../../source/tutorial/commercial_paper.md:588
 msgid ""
-"commercialpaper.application A gateway allows an application to focus on "
-"transaction generation, submission and response. It coordinates transaction "
-"proposal, ordering and notification processing between the different network"
-" components."
+"A gateway allows an application to focus on transaction generation, "
+"submission and response. It coordinates transaction proposal, ordering and "
+"notification processing between the different network components."
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:593
@@ -554,6 +775,8 @@ msgid ""
 "delegating network interaction to the gateway. Gateways and wallets make it "
 "straightforward to write Hyperledger Fabric applications."
 msgstr ""
+"由于发行应用程序代表Isabella提交事务，它首先从Isabella的钱包中检索Isabella的X.509证书，该证书可能存储在本地文件系统或硬件安全模块HSM中。然后，发行应用程序可以利用网关在通道上提交事务。Hyperledger"
+" Fabric SDK提供了一个抽象网关，这样应用程序可以在将网络交互委托给网关的同时专注于应用程序逻辑。网关和钱包使编写超级账应用程序变得很简单。"
 
 #: ../../source/tutorial/commercial_paper.md:605
 msgid ""
@@ -561,6 +784,8 @@ msgid ""
 " separate terminal window for her, and in fabric-samples locate the "
 "MagnetoCorp /application folder:"
 msgstr ""
+"让我们来看看伊莎贝拉将要使用的发行应用程序。为她打开一个单独的终端窗口，在fabric-samples中找到MagnetoCorp "
+"/application文件夹:"
 
 #: ../../source/tutorial/commercial_paper.md:616
 msgid ""
@@ -568,27 +793,85 @@ msgid ""
 "identity into her wallet, and issue.js will use this identity to create "
 "commercial paper 00001 on behalf of MagnetoCorp by invoking papercontract."
 msgstr ""
+"addToWalle.js是Isabella将用来将她的身份载入钱包的程序，而publish.js将通过调用papercontract来使用这个身份来代表MagnetoCorp创建商业票据00001。"
 
 #: ../../source/tutorial/commercial_paper.md:620
 msgid ""
 "Change to the directory that contains MagnetoCorp's copy of the application "
 "issue.js, and use your code editor to examine it:"
-msgstr ""
+msgstr "更改为包含MagnetoCorp的应用程序issue.js的副本目录。，并使用你的代码编辑器来检查它:"
 
 #: ../../source/tutorial/commercial_paper.md:628
 msgid ""
 "Examine this directory; it contains the issue application and all its "
 "dependencies."
-msgstr ""
+msgstr "检查该目录;它包含发行应用程序及其所有依赖项。"
 
 #: ../../source/tutorial/commercial_paper.md:631
 msgid ""
-"commercialpaper.vscode2 A code editor displaying the contents of the "
-"commercial paper application directory."
+"A code editor displaying the contents of the commercial paper application "
+"directory."
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:634
 msgid "Note the following key program lines in issue.js:"
+msgstr "注意issue.js中的以下关键程序行:"
+
+#: ../../source/tutorial/commercial_paper.md:636
+msgid "const { FileSystemWallet, Gateway } = require('fabric-network');"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:638
+msgid ""
+"This statement brings two key Hyperledger Fabric SDK classes into scope -- "
+"Wallet and Gateway. Because Isabella's X.509 certificate is in the local "
+"file system, the application uses FileSystemWallet."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:643
+msgid ""
+"const wallet = new FileSystemWallet('../identity/user/isabella/wallet');"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:645
+msgid ""
+"This statement identifies that the application will use isabella wallet when"
+" it connects to the blockchain network channel. The application will select "
+"a particular identity within isabella wallet. (The wallet must have been "
+"loaded with the Isabella's X.509 certificate -- that's what addToWallet.js "
+"does.)"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:652
+msgid "await gateway.connect(connectionProfile, connectionOptions);"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:654
+msgid ""
+"This line of code connects to the network using the gateway identified by "
+"connectionProfile, using the identity referred to in ConnectionOptions."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:657
+msgid ""
+"See how ../gateway/networkConnection.yaml and User1@org1.example.com are "
+"used for these values respectively."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:661
+msgid "const network = await gateway.getNetwork('mychannel');"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:663
+msgid ""
+"This connects the application to the network channel mychannel, where the "
+"papercontract was previously instantiated."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:667
+msgid ""
+"const contract = await network.getContract('papercontract', "
+"'org.papernet.comm...');"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:669
@@ -598,12 +881,43 @@ msgid ""
 "Once an application has issued getContract, it can submit any transaction "
 "implemented within it."
 msgstr ""
+"此语句使应用程序可寻址到papercontract中的命名空间org.papernet.commercial "
+"alpaper定义的智能合约。一旦应用程序发出getContract，它就可以提交在其中实现的任何事务。"
+
+#: ../../source/tutorial/commercial_paper.md:675
+msgid ""
+"const issueResponse = await contract.submitTransaction('issue', "
+"'MagnetoCorp', '00001'...);"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:677
+msgid ""
+"This line of code submits the a transaction to the network using the issue "
+"transaction defined within the smart contract. MagnetoCorp, 00001... are the"
+" values to be used by the issue transaction to create a new commercial "
+"paper."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:682
+msgid "let paper = CommercialPaper.fromBuffer(issueResponse);"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:684
+msgid ""
+"This statement processes the response from the issue transaction. The "
+"response needs to deserialized from a buffer into paper, a CommercialPaper "
+"object which can interpreted correctly by the application."
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:689
 msgid ""
 "Feel free to examine other files in the /application directory to understand"
 " how issue.js works, and read in detail how it is implemented in the "
 "application topic."
+msgstr "请随意检查/application目录中的其他文件，以了解issue.js是如何工作的，并详细阅读它在应用程序主题中是如何实现的"
+
+#: ../../source/tutorial/commercial_paper.md:693
+msgid "Application dependencies"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:695
@@ -616,6 +930,8 @@ msgid ""
 " profile, or the fabric-network package to access the Gateway and Wallet "
 "classes:"
 msgstr ""
+"issues.js应用程序是用JavaScript编写的，设计运行在node.js环境中，充当PaperNet网络的客户端。与通常的做法一样，MagnetoCorp的应用程序构建在许多外部节点包之上——以提高开发的质量和速度。考虑一下problem"
+".js是如何包含js-yaml包来处理YAML网关连接概要文件的，或者包含fabric-network包来访问网关和钱包类的:"
 
 #: ../../source/tutorial/commercial_paper.md:710
 msgid ""
@@ -623,26 +939,28 @@ msgid ""
 " the npm install command. By convention, packages must be installed into an "
 "application-relative /node_modules directory for use at runtime."
 msgstr ""
+"必须使用npm "
+"install命令将这些包从npm下载到本地文件系统。按照惯例，必须将包安装到应用程序相关/node_modules目录中，以便在运行时使用。"
 
 #: ../../source/tutorial/commercial_paper.md:715
 msgid ""
 "Examine the package.json file to see how issue.js identifies the packages to"
 " download and their exact versions:"
-msgstr ""
+msgstr "检查包装。查看issue.js如何识别要下载的包及其确切版本:"
 
 #: ../../source/tutorial/commercial_paper.md:726
 msgid "npm versioning is very powerful; you can read more about it here."
-msgstr ""
+msgstr "npm版本控制非常强大;你可以在这里阅读更多。"
 
 #: ../../source/tutorial/commercial_paper.md:729
 msgid ""
 "Let's install these packages with the npm install command -- this may take "
 "up to a minute to complete:"
-msgstr ""
+msgstr "让我们用npm install命令安装这些包——这可能需要一分钟来完成:"
 
 #: ../../source/tutorial/commercial_paper.md:741
 msgid "See how this command has updated the directory:"
-msgstr ""
+msgstr "查看此命令如何更新目录:"
 
 #: ../../source/tutorial/commercial_paper.md:750
 msgid ""
@@ -653,6 +971,12 @@ msgid ""
 "want to exactly reproduce environments; to test, diagnose problems or "
 "deliver proven applications for example."
 msgstr ""
+"检查node_modules目录，查看已安装的包。有很多，因为js-yaml和fabric-"
+"network本身是建立在其他npm包之上的!有助的是，package_json文件标识所安装的确切版本，如果您想准确地重现环境，这将是非常宝贵的;例如，测试、诊断问题或交付经过验证的应用程序。"
+
+#: ../../source/tutorial/commercial_paper.md:758
+msgid "Wallet"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:760
 msgid ""
@@ -662,12 +986,13 @@ msgid ""
 "her wallet that reflects these facts. We now need to perform this one-time "
 "activity of adding appropriate X.509 credentials to her wallet."
 msgstr ""
+"伊莎贝拉几乎准备好运行issue.js发行MagnetoCorp商业票据00001,只剩一项任务要做了!issue.js代表伊莎贝拉，因此磁石公司将使用她钱包里的身份来反映这些事实。现在，我们需要执行这个一次性活动，将适当的X.509凭证添加到她的钱包中。"
 
 #: ../../source/tutorial/commercial_paper.md:767
 msgid ""
 "In Isabella's terminal window, run the addToWallet.js program to add "
 "identity information to her wallet:"
-msgstr ""
+msgstr "在Isabella的终端窗口中，运行addToWallet.js程序将身份信息添加到她的钱包中:"
 
 #: ../../source/tutorial/commercial_paper.md:776
 msgid ""
@@ -676,6 +1001,7 @@ msgid ""
 "associated with the basic network, rather than a more realistic PaperNet "
 "configuration -- we'll update this tutorial soon."
 msgstr ""
+"Isabella可以在她的钱包中存储多个身份，但是在我们的示例中，她只使用一个——User1@org.example.com。这个身份目前与现在的基本网络相关，而不是更实际的PaperNet配置——我们将很快更新本教程。"
 
 #: ../../source/tutorial/commercial_paper.md:781
 msgid ""
@@ -684,6 +1010,7 @@ msgid ""
 "Isabella's wallet. Let's focus on the result of this program -- the contents"
 " of the wallet which will be used to submit transactions to PaperNet:"
 msgstr ""
+"addToWallet.js是一个简单的文件复制程序，您可以在空闲时查看。它从基本网络移动一个身份样本到Isabella的钱包。让我们关注一下这个程序的结果——用于向PaperNet提交交易的钱包的内容:"
 
 #: ../../source/tutorial/commercial_paper.md:792
 msgid ""
@@ -692,16 +1019,50 @@ msgid ""
 "directory you'll find the identity information that issue.js will use on "
 "behalf of isabella:"
 msgstr ""
+"查看目录结构如何映射User1@org1.example.com身份标识——Isabella使用的其他标识将拥有自己的文件夹。在这个目录中，您将找到issue.js将代表isabella使用的身份信息:"
 
 #: ../../source/tutorial/commercial_paper.md:804
 msgid "Notice:"
+msgstr "注意："
+
+#: ../../source/tutorial/commercial_paper.md:806
+msgid ""
+"a private key c75bd6911a...-priv used to sign transactions on Isabella's "
+"behalf, but not distributed outside of her immediate control."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:810
+msgid ""
+"a public key c75bd6911a...-pub which is cryptographically linked to "
+"Isabella's private key. This is wholly contained within Isabella's X.509 "
+"certificate."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:815
+msgid ""
+"a certificate User1@org.example.com which contains Isabella's public key and"
+" other X.509 attributes added by the Certificate Authority at certificate "
+"creation. This certificate is distributed to the network so that different "
+"actors at different times can cryptographically verify information created "
+"by Isabella's private key."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:821
+msgid ""
+"Learn more about certificates here. In practice, the certificate file also "
+"contains some Fabric-specific metadata such as Isabella's organization and "
+"role -- read more in the wallet topic."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:827
+msgid "Issue application"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:829
 msgid ""
 "Isabella can now use issue.js to submit a transaction that will issue "
 "MagnetoCorp commercial paper 00001:"
-msgstr ""
+msgstr "Isabella现在可以使用issue.js提交一笔交易，该交易将发行MagnetoCorp的商业票据00001:"
 
 #: ../../source/tutorial/commercial_paper.md:846
 msgid ""
@@ -709,6 +1070,7 @@ msgid ""
 "can see from the program output that MagnetoCorp commercial paper 00001 was "
 "issued with a face value of 5M USD."
 msgstr ""
+"node命令初始化node.js环境，并运行issue.js。从程序输出可以看出，MagnetoCorp 商业票据 00001发行的面值为500万美元。"
 
 #: ../../source/tutorial/commercial_paper.md:850
 msgid ""
@@ -721,6 +1083,9 @@ msgid ""
 " We'll see how this vector state is subsequently manipulated by the buy and "
 "redeem transactions also defined within the smart contract."
 msgstr ""
+"如您所见，为了实现这一点，应用程序调用papercontract.js中的CommercialPaper智能合约中定义的发行事务。这是由MagnetoCorp管理员在网络中安装和实例化的。智能合约通过Fabric"
+" "
+"api与分类账本交互，最显著的是putState()和getState()，以表示新的商业票据作为世界状态中的向量状态。我们将看到这个向量状态是如何被smart合约中定义的buy和redeem事务控制的。"
 
 #: ../../source/tutorial/commercial_paper.md:859
 msgid ""
@@ -730,11 +1095,17 @@ msgid ""
 " connectionOptions to declare more advanced processing strategies such as "
 "transaction retry."
 msgstr ""
+"底层Fabric "
+"SDK始终处理事务背书、排序和通知过程，使应用程序的逻辑更加直观;SDK使用网关来抽象网络细节，connectionOptions来声明更高级的处理策略，比如事务重试。"
 
 #: ../../source/tutorial/commercial_paper.md:866
 msgid ""
 "Let's now follow the lifecycle of MagnetoCorp 00001 by switching our "
 "emphasis to DigiBank, who will buy the commercial paper."
+msgstr "现在让我们跟随MagnetoCorp 00001的生命周期，将重点转向购买商业票据的DigiBank。"
+
+#: ../../source/tutorial/commercial_paper.md:869
+msgid "Working as DigiBank"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:871
@@ -745,11 +1116,11 @@ msgid ""
 "PaperNet. Then Balaji, an end user, will use Digibank's buy application to "
 "buy commercial paper 00001, moving it to the next stage in its lifecycle."
 msgstr ""
+"现在商业票据00001已经由MagnetoCorp发行，让我们切换上下文，作为DigiBank的员工与PaperNet进行交互。首先，我们将作为管理员创建一个配置为与PaperNet交互的控制台。然后，终端用户Balaji将使用Digibank的buy应用程序购买商业票据00001，将其移动到生命周期的下一个阶段。"
 
 #: ../../source/tutorial/commercial_paper.md:877
 msgid ""
-"commercialpaper.workdigi DigiBank administrators and applications interact "
-"with the PaperNet network."
+"DigiBank administrators and applications interact with the PaperNet network."
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:880
@@ -763,18 +1134,19 @@ msgid ""
 "process, and the ledger which holds the shared business data, no matter "
 "which applications call them."
 msgstr ""
+"由于本教程目前使用的是PaperNet的基本网络，所以网络配置非常简单。管理员使用类似于MagnetoCorp的控制台，但配置为Digibank的文件系统。同样，digbank终端用户将使用与MagnetoCorp应用程序调用相同智能合约的应用程序，尽管它们包含的是digbank的逻辑和配置。智能合约捕获共享的业务流程，而分类账保存共享的业务数据，无论哪个应用程序调用它们。"
 
 #: ../../source/tutorial/commercial_paper.md:889
 msgid ""
 "Let's open up a separate terminal to allow the DigiBank administrator to "
 "interact with PaperNet. In fabric-samples:"
-msgstr ""
+msgstr "让我们打开一个单独的终端，允许DigiBank管理员与PaperNet交互。在 fabric-samples中:"
 
 #: ../../source/tutorial/commercial_paper.md:900
 msgid ""
 "This docker container is now available for Digibank administrators to "
 "interact with the network:"
-msgstr ""
+msgstr "Digibank银行管理人员现在可以使用这个docker容器与网络进行互动:"
 
 #: ../../source/tutorial/commercial_paper.md:908
 msgid ""
@@ -783,12 +1155,17 @@ msgid ""
 "docker containers, and in the real world DigiBank users would only see the "
 "network components (peers, orderers, CAs) to which they have access."
 msgstr ""
+"在本教程中，您将使用名为cliDigiBank的命令行容器代表DigiBank与网络进行交互。我们还没有显示所有docker容器，在现实世界中，digbank用户只能看到他们可以访问的网络组件(peers、orderers、ca)。"
 
 #: ../../source/tutorial/commercial_paper.md:913
 msgid ""
 "Digibank's administrator doesn't have much to do in this tutorial right now "
 "because the PaperNet network configuration is so simple. Let's turn our "
 "attention to Balaji."
+msgstr "由于PaperNet网络配置非常简单，所以digbank的管理员目前在本教程中没有什么要做的。让我们把注意力转向Balaji。"
+
+#: ../../source/tutorial/commercial_paper.md:917
+msgid "Digibank applications"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:919
@@ -799,6 +1176,7 @@ msgid ""
 "MagnetoCorp's application, however the transaction is different this time --"
 " it's buy rather than issue. Let's examine how DigiBank's application works."
 msgstr ""
+"Balaji使用DigiBank的buy应用程序向超级账本提交一笔交易，该账本将商业票据00001的所有权从MagnetoCorp转移到DigiBank。商业票据智能合约与MagnetoCorp的应用程序使用的合约是一样的，但这次的交易不同——它是购买而不是发行。让我们来看看DigiBank的应用程序是如何工作的。"
 
 #: ../../source/tutorial/commercial_paper.md:925
 msgid ""
@@ -806,23 +1184,48 @@ msgid ""
 " DigiBank application directory that contains the application, buy.js, and "
 "open it with your editor:"
 msgstr ""
+"为Balaji打开一个单独的终端窗口。在fabric-samples中，切换到包含buy.js程序的DigiBank应用程序目录。然后用编辑器打开:"
 
 #: ../../source/tutorial/commercial_paper.md:934
 msgid ""
 "As you can see, this directory contains both the buy and redeem applications"
 " that will be used by Balaji."
-msgstr ""
+msgstr "如您所见，这个目录包含Balaji将使用的buy和redeem应用程序。"
 
 #: ../../source/tutorial/commercial_paper.md:939
 msgid ""
-"commercialpaper.vscode3 DigiBank's commercial paper directory containing the"
-" buy.js and redeem.js applications."
+"DigiBank's commercial paper directory containing the buy.js and redeem.js "
+"applications."
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:943
 msgid ""
 "DigiBank's buy.js application is very similar in structure to MagnetoCorp's "
 "issue.js with two important differences:"
+msgstr "DigiBank的buy.js应用程序在结构上与MagnetoCorp的issue.js非常相似，除了两点不同："
+
+#: ../../source/tutorial/commercial_paper.md:947
+msgid ""
+"Identity: the user is a DigiBank user Balaji rather than MagnetoCorp's "
+"Isabella"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:954
+msgid ""
+"See how the application uses the balaji wallet when it connects to the "
+"PaperNet network channel. buy.js selects a particular identity within balaji"
+" wallet."
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:959
+msgid "Transaction: the invoked transaction is buy rather than issue"
+msgstr ""
+
+#: ../../source/tutorial/commercial_paper.md:965
+msgid ""
+"A buy transaction is submitted with the values MagnetoCorp, 00001..., that "
+"are used by the CommercialPaper smart contract class to transfer ownership "
+"of commercial paper 00001 to DigiBank."
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:969
@@ -830,6 +1233,10 @@ msgid ""
 "Feel free to examine other files in the application directory to understand "
 "how the application works, and read in detail how buy.js is implemented in "
 "the application topic."
+msgstr "请随意检查应用程序目录中的其他文件，以了解应用程序如何工作，并详细阅读应用程序主题中buy.js是如何实现的。"
+
+#: ../../source/tutorial/commercial_paper.md:973
+msgid "Run as DigiBank"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:975
@@ -839,24 +1246,25 @@ msgid ""
 "install their dependencies and set up Balaji's wallet so that he can use "
 "these applications to buy and redeem commercial paper."
 msgstr ""
+"购买和赎回商业票据的DigiBank应用程序与MagnetoCorp的发行应用程序具有非常相似的结构。因此，让我们安装它们的依赖项并设置Balaji的钱包，这样他就可以使用这些应用程序购买和赎回商业票据。"
 
 #: ../../source/tutorial/commercial_paper.md:980
 msgid ""
 "Like MagnetoCorp, Digibank must the install the required application "
 "packages using the npm install command, and again, this make take a short "
 "time to complete."
-msgstr ""
+msgstr "与MagnetoCorp一样，Digibank必须使用npm install命令安装所需的应用程序包，同样，这需要很短的时间来完成。"
 
 #: ../../source/tutorial/commercial_paper.md:984
 msgid ""
 "In the DigiBank administrator window, install the application dependencies:"
-msgstr ""
+msgstr "在 DigiBank 的管理员窗口下，安装应用程式的依赖项:"
 
 #: ../../source/tutorial/commercial_paper.md:995
 msgid ""
 "In Balaji's terminal window, run the addToWallet.js program to add identity "
 "information to his wallet:"
-msgstr ""
+msgstr "在Balaji的终端窗口，运行addToWallet.js程序，将身份信息添加到他的钱包:"
 
 #: ../../source/tutorial/commercial_paper.md:1004
 msgid ""
@@ -864,6 +1272,7 @@ msgid ""
 " wallet, which will be used by buy.js and redeem.js to submit transactions "
 "to PaperNet."
 msgstr ""
+"addToWallet.js程序将balaji的身份信息添加到他的钱包中，buy.js和redeemm .js将使用该钱包向PaperNet提交交易。"
 
 #: ../../source/tutorial/commercial_paper.md:1008
 msgid ""
@@ -872,16 +1281,23 @@ msgid ""
 "wallet structure digibank/identity/user/balaji/wallet/Admin@org1.example.com"
 " contains is very similar Isabella's -- feel free to examine it."
 msgstr ""
+"和Isabella一样，Balaji可以在他的钱包中存储多个身份，但是在我们的示例中，他只使用一个——Admin@org.example.com。他相应的钱包结构digbank"
+" "
+"/identity/user/balaji/wallet/Admin@org1.example.com包含的与Isabella的非常相似——请随意查看。"
+
+#: ../../source/tutorial/commercial_paper.md:1013
+msgid "Buy application"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:1015
 msgid ""
 "Balaji can now use buy.js to submit a transaction that will transfer "
 "ownership of MagnetoCorp commercial paper 00001 to DigiBank."
-msgstr ""
+msgstr "Balaji现在可以使用buy.js提交一笔交易，该交易将把MagnetoCorp商业票据00001的所有权转让给DigiBank。"
 
 #: ../../source/tutorial/commercial_paper.md:1018
 msgid "Run the buy application in Balaji's window:"
-msgstr ""
+msgstr "在Balaji的窗口中运行buy应用程序:"
 
 #: ../../source/tutorial/commercial_paper.md:1034
 msgid ""
@@ -892,6 +1308,14 @@ msgid ""
 "getState() Fabric APIs. As you've seen, the application logic to buy and "
 "issue commercial paper is very similar, as is the smart contract logic."
 msgstr ""
+"您可以看到程序输出，MagnetoCorp commercial paper "
+"00001被代表DigiBank的Balaji成功购买。js调用了businessalpaper smart "
+"contract中定义的buy事务，该事务使用putState()和getState() Fabric "
+"api在世界范围内更新了商业票据00001。正如您所看到的，购买和发行商业票据的应用程序逻辑非常类似，智能合约逻辑也是如此。"
+
+#: ../../source/tutorial/commercial_paper.md:1041
+msgid "Redeem application"
+msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:1043
 msgid ""
@@ -899,10 +1323,11 @@ msgid ""
 "DigiBank to redeem it with MagnetoCorp. Balaji uses redeem.js to submit a "
 "transaction to perform the redeem logic within the smart contract."
 msgstr ""
+"商业票据00001生命周期的最后一笔交易是由DigiBank与MagnetoCorp进行赎回。Balaji使用redeem.js提交事务来执行smart合约中的赎回逻辑。"
 
 #: ../../source/tutorial/commercial_paper.md:1047
 msgid "Run the redeem transaction in Balaji's window:"
-msgstr ""
+msgstr "在Balaji的窗口中运行赎回交易:"
 
 #: ../../source/tutorial/commercial_paper.md:1063
 msgid ""
@@ -910,6 +1335,12 @@ msgid ""
 "redeem.js invoked the redeem transaction defined in CommercialPaper. Again, "
 "it updated commercial paper 00001 within the world state to reflect that the"
 " ownership returned to MagnetoCorp, the issuer of the paper."
+msgstr ""
+"再次，请查看当redeem.js调用commercial "
+"paper中定义的赎回事务时，商业票据00001是如何成功赎回的。再次，它更新了世界范围内的商业票据00001，以反映所有权回到了发行该票据的MagnetoCorp。"
+
+#: ../../source/tutorial/commercial_paper.md:1068
+msgid "Further reading"
 msgstr ""
 
 #: ../../source/tutorial/commercial_paper.md:1070
@@ -920,9 +1351,10 @@ msgid ""
 "scenario, the PaperNet business network, its actors, and how the "
 "applications and smart contracts they use work in detail."
 msgstr ""
+"要更详细地了解本教程中显示的应用程序和智能合约是如何工作的，您将发现阅读开发应用程序很有帮助。本主题将更全面地解释商业票据场景、PaperNet业务网络及其参与者，以及它们使用的应用程序和智能契约如何工作。"
 
 #: ../../source/tutorial/commercial_paper.md:1077
 msgid ""
 "Also feel free to use this sample to start creating your own applications "
 "and smart contracts!"
-msgstr ""
+msgstr "也可以使用这个示例开始创建您自己的应用程序和智能合约!"

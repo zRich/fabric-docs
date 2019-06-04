@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,36 +16,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/commands/configtxgen.md:1
+#: ../../source/commands/configtxgen.md:12
+msgid "configtxgen"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:3
 msgid "The configtxgen command allows users to create and inspect channel config related artifacts.  The content of the generated artifacts is dictated by the contents of configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:7
+msgid "Syntax"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:9
 msgid "The configtxgen tool has no sub-commands, but supports flags which can be set to accomplish a number of tasks."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:41
+msgid "Usage"
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:43
+msgid "Output a genesis block"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:45
 msgid "Write a genesis block to genesis_block.pb for channel orderer-system-channel for profile SampleSingleMSPSoloV1_1."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:52
+msgid "Output a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:54
 msgid "Write a channel creation transaction to create_chan_tx.pb for profile SampleSingleMSPChannelV1_1."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:61
+msgid "Inspect a genesis block"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:63
 msgid "Print the contents of a genesis block named genesis_block.pb to the screen as JSON."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:70
+msgid "Inspect a channel creation tx"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:72
 msgid "Print the contents of a channel creation tx named create_chan_tx.pb to the screen as JSON."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:79
+msgid "Print an organization definition"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:81
 msgid "Construct an organization definition based on the parameters such as MSPDir from configtx.yaml and print it as JSON to the screen. (This output is useful for channel reconfiguration workflows, such as adding a member)."
 msgstr ""
 
+#: ../../source/commands/configtxgen.md:89
+msgid "Output anchor peer tx"
+msgstr ""
+
 #: ../../source/commands/configtxgen.md:91
 msgid "Output a configuration update transaction to anchor_peer_tx.pb which sets the anchor peers for organization Org1 as defined in profile SampleSingleMSPChannelV1_1 based on configtx.yaml."
+msgstr ""
+
+#: ../../source/commands/configtxgen.md:99
+msgid "Configuration"
 msgstr ""
 
 #: ../../source/commands/configtxgen.md:101

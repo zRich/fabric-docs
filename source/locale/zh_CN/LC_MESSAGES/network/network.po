@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/network/network.md:1
+msgid "Blockchain network"
+msgstr ""
 
 #: ../../source/network/network.md:3
 msgid ""
@@ -57,6 +61,10 @@ msgid ""
 msgstr ""
 "阅读本主题并理解策略的概念之后，您将对组织需要做出的决策有一个坚实的理解，以便建立控制已部署的超级账本Fabric的策略。您还将了解组织如何使用声明性策略(超级账本Fabric的一个关键特性)管理网络演化。简而言之，您将了解超级账本Fabric的主要技术组件以及组织需要对此做出的决策。"
 
+#: ../../source/network/network.md:27
+msgid "What is a blockchain network?"
+msgstr ""
+
 #: ../../source/network/network.md:29
 msgid ""
 "A blockchain network is a technical infrastructure that provides ledger and "
@@ -79,6 +87,10 @@ msgid ""
 msgstr ""
 "在大多数情况下，多个组织作为一个联盟聚集在一起形成网络，它们的权限由一组策略决定，这些策略在最初配置网络时由联盟商定。此外，网络策略可以随着时间的推移而变化，这取决于联盟中的组织的协议，我们将在讨论修改策略的概念时发现这一点。"
 
+#: ../../source/network/network.md:44
+msgid "The sample network"
+msgstr ""
+
 #: ../../source/network/network.md:46
 msgid ""
 "Before we start, let's show you what we're aiming at! Here's a diagram "
@@ -97,10 +109,6 @@ msgid ""
 "network."
 msgstr ""
 "不要担心这看起来会很复杂!在学习本主题的过程中，我们将逐步构建网络，以便您了解R1、R2、R3和R4组织如何为网络贡献基础设施来帮助形成网络。这个基础设施实现了区块链网络，它由组成网络的组织(如谁可以添加新的组织)同意的策略控制。"
-
-#: ../../source/network/network.md:57
-msgid "network.structure"
-msgstr "network.structure"
 
 #: ../../source/network/network.md:59
 msgid ""
@@ -131,13 +139,13 @@ msgid ""
 msgstr ""
 "R1、R2、R3和R4这四个组织已经共同决定，并签署了一份协议，他们将建立和开发一个超级账本Fabric网络。R4被指定为网络启动器——它被赋予设置网络初始版本的权力。R4无意在网络上执行业务交易。R1和R2需要在整个网络中进行私有通信，R2和R3也是如此。组织R1有一个客户端应用程序，可以在通道C1中执行业务交易。R2组织有一个客户端应用程序，它可以在通道C1和C2中执行类似的工作。组织R3有一个客户端应用程序可以在通道C2上实现这一点。peer节点P1维护与C1关联的账本L1的副本。peer节点P2维护与C1关联的账本L1和与C2关联的账本L2的副本。peer节点P3维护与C2关联的账本L2的副本。网络根据网络配置NC4中指定的策略规则进行治理，网络受组织R1和R4的控制。通道C1根据通道配置CC1中指定的策略规则进行管理;通道由R1和R2组织控制。通道C2按照通道配置CC2中指定的策略规则进行管理;通道在R2和R3组织的控制下。有一个排序服务O4作为N的网络管理点，并使用系统通道。排序服务还支持应用程序通道C1和C2，以便将交易排序为区块以便分发。这四个组织都有一个首选的证书颁发机构。"
 
+#: ../../source/network/network.md:83
+msgid "Creating the Network"
+msgstr ""
+
 #: ../../source/network/network.md:85
 msgid "Let's start at the beginning by creating the basis for the network:"
 msgstr "让我们从创建网络的基础开始:"
-
-#: ../../source/network/network.md:87
-msgid "network.creation"
-msgstr "network.creation"
 
 #: ../../source/network/network.md:89
 msgid ""
@@ -162,6 +170,10 @@ msgid ""
 " but for now R4 is the only member of the network."
 msgstr ""
 "我们可以看到，定义网络N的第一个东西是排序服务O4。将排序服务看作是网络的初始管理点是有帮助的。如前所述，O4最初由组织R4中的管理员配置和启动，并托管在R4中。配置NC4包含描述网络初始管理功能集的策略。最初，这只设置为在网络上只授予R4权限。这将会改变，我们稍后会看到，但是现在R4是网络中唯一的成员。"
+
+#: ../../source/network/network.md:104
+msgid "Certificate Authorities"
+msgstr ""
 
 #: ../../source/network/network.md:106
 msgid ""
@@ -225,16 +237,16 @@ msgid ""
 msgstr ""
 "让我们回顾一下示例区块链网络的基本结构。有一个资源，网络N，由证书颁发机构CA4定义的一组用户访问，这些用户对网络N中的资源拥有一组权限，这些权限由网络配置NC4中包含的策略描述。当我们配置并启动排序服务节点O4时，所有这些都变为现实。"
 
+#: ../../source/network/network.md:150
+msgid "Adding Network Administrators"
+msgstr ""
+
 #: ../../source/network/network.md:152
 msgid ""
 "NC4 was initially configured to only allow R4 users administrative rights "
 "over the network. In this next phase, we are going to allow organization R1 "
 "users to administer the network. Let's see how the network evolves:"
 msgstr "NC4最初配置为只允许R4用户在网络上拥有管理权限。在下一阶段，我们将允许组织R1用户管理网络。让我们看看网络是如何发展的:"
-
-#: ../../source/network/network.md:156
-msgid "network.admins"
-msgstr "network.admins"
 
 #: ../../source/network/network.md:158
 msgid ""
@@ -282,6 +294,10 @@ msgid ""
 "provides different organizations controlled access to the network."
 msgstr "我们将在本主题的稍后部分进一步讨论排序服务，但是现在只将排序服务看作一个管理点，它提供对网络的不同组织控制的访问。"
 
+#: ../../source/network/network.md:187
+msgid "Defining a Consortium"
+msgstr ""
+
 #: ../../source/network/network.md:189
 msgid ""
 "Although the network can now be administered by R1 and R4, there is very "
@@ -295,10 +311,6 @@ msgstr ""
 #: ../../source/network/network.md:194
 msgid "Let's see how a consortium is defined:"
 msgstr "让我们来看看联盟是如何定义的:"
-
-#: ../../source/network/network.md:196
-msgid "network.consortium"
-msgstr "network.consortium"
 
 #: ../../source/network/network.md:198
 msgid ""
@@ -344,6 +356,10 @@ msgid ""
 "Hyperledger Fabric blockchain -- a channel."
 msgstr "现在，我们将使用联盟X1创建一个非常重要的超级账本Fabric区块链的部分——一个通道。"
 
+#: ../../source/network/network.md:223
+msgid "Creating a channel for a consortium"
+msgstr ""
+
 #: ../../source/network/network.md:225
 msgid ""
 "So let's create this key part of the Fabric blockchain network -- a channel."
@@ -356,10 +372,6 @@ msgstr ""
 #: ../../source/network/network.md:230
 msgid "Let's see how the first channel has been added to the network:"
 msgstr "让我们看看第一个通道是如何添加到网络的:"
-
-#: ../../source/network/network.md:232
-msgid "network.channel"
-msgstr "network.channel"
 
 #: ../../source/network/network.md:234
 msgid ""
@@ -448,6 +460,10 @@ msgid ""
 msgstr ""
 "另外，还定义了一个特殊的系统通道供排序服务使用。它的行为与常规通道完全相同，因此常规通道有时称为应用程序通道。我们通常不需要担心这个通道，但是我们将在本主题的后面对此进行更多的讨论。"
 
+#: ../../source/network/network.md:290
+msgid "Peers and Ledgers"
+msgstr ""
+
 #: ../../source/network/network.md:292
 msgid ""
 "Let's now start to use the channel to connect the blockchain network and the"
@@ -456,10 +472,6 @@ msgid ""
 "components, namely a peer node P1 and a ledger instance, L1."
 msgstr ""
 "现在让我们开始使用通道将区块链网络和组织组件连接在一起。在网络开发的下一个阶段，我们可以看到我们的网络N刚刚获得了两个新的组件，即peer节点P1和账本实例L1。"
-
-#: ../../source/network/network.md:297
-msgid "network.peersledger"
-msgstr "network.peersledger"
 
 #: ../../source/network/network.md:299
 msgid ""
@@ -498,6 +510,10 @@ msgid ""
 msgstr ""
 "注意peer点是如何由拥有它们的组织连接到通道的，尽管我们只添加了一个peer节点，但是我们将看到网络中的多个通道上如何有多个peer节点。稍后我们将看到peer可以扮演的不同角色。"
 
+#: ../../source/network/network.md:320
+msgid "Applications and Smart Contract chaincode"
+msgstr ""
+
 #: ../../source/network/network.md:322
 msgid ""
 "Now that the channel C1 has a ledger on it, we can start connecting client "
@@ -508,10 +524,6 @@ msgstr "既然通道C1上有一个账本，我们就可以开始连接客户端�
 #: ../../source/network/network.md:326
 msgid "Notice how the network has grown:"
 msgstr "注意网络是如何发展的:"
-
-#: ../../source/network/network.md:328
-msgid "network.appsmartcontract"
-msgstr "network.appsmartcontract"
 
 #: ../../source/network/network.md:330
 msgid ""
@@ -560,6 +572,10 @@ msgid ""
 msgstr ""
 "每个组织中的应用程序开发人员都可以创建智能合约链码，以实现联盟成员共享的业务流程。智能合约用于帮助生成交易，这些交易随后可以分布到网络中的每个节点。我们稍后会讨论这个想法;当网络更大时，就更容易理解了。现在，需要理解的重要事情是，要达到这一点，必须对智能合约执行两个操作;它必须已经安装，然后实例化。"
 
+#: ../../source/network/network.md:360
+msgid "Installing a smart contract"
+msgstr ""
+
 #: ../../source/network/network.md:362
 msgid ""
 "After a smart contract S5 has been developed, an administrator in "
@@ -578,6 +594,10 @@ msgid ""
 "peers upon which it installs smart contracts; it does not need to install a "
 "smart contract on every peer."
 msgstr "当一个组织在一个通道中有多个peer时，它可以选择在其上安装智能合约的peer;它不需要在每个peer上都安装智能合约。"
+
+#: ../../source/network/network.md:374
+msgid "Instantiating a smart contract"
+msgstr ""
 
 #: ../../source/network/network.md:376
 msgid ""
@@ -604,6 +624,10 @@ msgid ""
 msgstr ""
 "注意，尽管通道上的每个组件现在都可以访问S5，但是它们不能看到它的程序逻辑。这对安装了它的节点仍然是私有的;在我们的例子中，这意味着P1。从概念上讲，这意味着实例化的是智能合约接口，而不是安装的智能合约实现。加强这一观念;安装智能合约显示了我们如何认为它是物理上托管在peer节点上的，而实例化智能合约则显示了我们如何从逻辑上考虑它是由通道托管的。"
 
+#: ../../source/network/network.md:393
+msgid "Endorsement policy"
+msgstr ""
+
 #: ../../source/network/network.md:395
 msgid ""
 "The most important piece of additional information supplied at instantiation"
@@ -621,6 +645,10 @@ msgid ""
 "channel. You can read more about endorsement policies in the transaction "
 "flow topic."
 msgstr "实例化行为将背书策略放置在通道配置CC1中;它使通道的任何成员都可以访问它。您可以在交易流程主题中阅读更多关于背书策略的信息。"
+
+#: ../../source/network/network.md:406
+msgid "Invoking a smart contract"
+msgstr ""
 
 #: ../../source/network/network.md:408
 msgid ""
@@ -654,6 +682,10 @@ msgid ""
 msgstr ""
 "在网络开发的这个阶段，我们可以看到组织R1完全参与了网络。它的应用程序(从A1开始)可以通过智能合约S5访问账本L1，生成将由R1背书的交易，并因此被账本接受，因为它们符合背书策略。"
 
+#: ../../source/network/network.md:428
+msgid "Network completed"
+msgstr ""
+
 #: ../../source/network/network.md:430
 msgid ""
 "Recall that our objective was to create a channel for consortium X1 -- "
@@ -664,10 +696,6 @@ msgstr "回想一下，我们的目标是为联盟X1——组织R1和R2创建一
 #: ../../source/network/network.md:434
 msgid "Let's see how the network has evolved:"
 msgstr "让我们看看网络是如何演化的:"
-
-#: ../../source/network/network.md:436
-msgid "network.grow"
-msgstr "network.grow"
 
 #: ../../source/network/network.md:438
 msgid ""
@@ -701,6 +729,10 @@ msgid ""
 "channel C1."
 msgstr ""
 "我们已经创建了我们的第一个运行网络!在网络开发的这个阶段，我们有一个通道，R1和R2组织可以在其中完全相互交易。具体来说，这意味着应用程序A1和A2可以使用通道C1上的智能合约S5和账本L1生成交易。"
+
+#: ../../source/network/network.md:456
+msgid "Generating and accepting transactions"
+msgstr ""
 
 #: ../../source/network/network.md:458
 msgid ""
@@ -737,6 +769,10 @@ msgid ""
 msgstr ""
 "在本主题中，我们不需要担心交易是如何生成、分发和接受的确切细节——只要了解我们有一个区块链网络，其中组织R1和R2可以作为账本捕获的交易共享信息和流程，就足够了。我们将在其他主题中学习更多关于交易、账本、智能合约的知识。"
 
+#: ../../source/network/network.md:480
+msgid "Types of peers"
+msgstr ""
+
 #: ../../source/network/network.md:482
 msgid ""
 "In Hyperledger Fabric, while all peers are the same, they can assume "
@@ -747,6 +783,30 @@ msgstr ""
 "-提交peer\n"
 "- 背书peer"
 
+#: ../../source/network/network.md:486
+msgid ""
+"Committing peer. Every peer node in a channel is a committing peer. It "
+"receives blocks of generated transactions, which are subsequently validated "
+"before they are committed to the peer node's copy of the ledger as an append"
+" operation."
+msgstr ""
+
+#: ../../source/network/network.md:491
+msgid ""
+"Endorsing peer. Every peer with a smart contract can be an endorsing peer if"
+" it has a smart contract installed. However, to actually be an endorsing "
+"peer, the smart contract on the peer must be used by a client application to"
+" generate a digitally signed transaction response. The term endorsing peer "
+"is an explicit reference to this fact."
+msgstr ""
+
+#: ../../source/network/network.md:498
+msgid ""
+"An endorsement policy for a smart contract identifies the organizations "
+"whose peer should digitally sign a generated transaction before it can be "
+"accepted onto a committing peer's copy of the ledger."
+msgstr ""
+
 #: ../../source/network/network.md:502
 msgid ""
 "These are the two major types of peer; there are two other roles a peer can "
@@ -756,6 +816,40 @@ msgstr ""
 "- 领导人peer\n"
 "- 锚点peer"
 
+#: ../../source/network/network.md:505
+msgid ""
+"Leader peer. When an organization has multiple peers in a channel, a leader "
+"peer is a node which takes responsibility for distributing transactions from"
+" the orderer to the other committing peers in the organization.  A peer can "
+"choose to participate in static or dynamic leadership selection."
+msgstr ""
+
+#: ../../source/network/network.md:511
+msgid ""
+"It is helpful, therefore to think of two sets of peers from leadership "
+"perspective -- those that have static leader selection, and those with "
+"dynamic leader selection. For the static set, zero or more peers can be "
+"configured as leaders. For the dynamic set, one peer will be elected leader "
+"by the set. Moreover, in the dynamic set, if a leader peer fails, then the "
+"remaining peers will re-elect a leader."
+msgstr ""
+
+#: ../../source/network/network.md:518
+msgid ""
+"It means that an organization's peers can have one or more leaders connected"
+" to the ordering service. This can help to improve resilience and "
+"scalability in large networks which process high volumes of transactions."
+msgstr ""
+
+#: ../../source/network/network.md:522
+msgid ""
+"Anchor peer. If a peer needs to communicate with a peer in another "
+"organization, then it can use one of the anchor peers defined in the channel"
+" configuration for that organization. An organization can have zero or more "
+"anchor peers defined for it, and an anchor peer can help with many different"
+" cross-organization communication scenarios."
+msgstr ""
+
 #: ../../source/network/network.md:529
 msgid ""
 "Note that a peer can be a committing peer, endorsing peer, leader peer and "
@@ -764,6 +858,10 @@ msgid ""
 "endorsing peer and at least one committing peer."
 msgstr ""
 "请注意，peer可以同时是提交peer、背书peer、领导人peer和锚点peer!只有锚点peer是可选的——对于所有实际目的，总是会有一个领导peer、至少一个背书peer和至少一个提交peer。"
+
+#: ../../source/network/network.md:534
+msgid "Install not instantiate"
+msgstr ""
 
 #: ../../source/network/network.md:536
 msgid ""
@@ -832,6 +930,10 @@ msgid ""
 msgstr ""
 "谨慎地使用网络和通道策略，甚至可以对大型网络进行良好的治理。组织可以自由地向网络添加peer节点，只要它们符合网络商定的策略。网络和通道策略创造了自治和控制之间的平衡，这是去中心化网络的特征。"
 
+#: ../../source/network/network.md:578
+msgid "Simplifying the visual vocabulary"
+msgstr ""
+
 #: ../../source/network/network.md:580
 msgid ""
 "We’re now going to simplify the visual vocabulary used to represent our "
@@ -848,10 +950,6 @@ msgid ""
 "the visual vocabulary. Here's a simplified representation of the network "
 "we've developed so far:"
 msgstr "这就是我们马上要做的，在我们做之前，让我们先简化一下视觉词汇表。下面是我们目前开发的网络的一个简化表示:"
-
-#: ../../source/network/network.md:589
-msgid "network.vocabulary"
-msgstr "network.vocabulary"
 
 #: ../../source/network/network.md:591
 msgid ""
@@ -877,6 +975,10 @@ msgid ""
 msgstr ""
 "注意，通过用连接点替换通道线，简化了网络图，连接点显示为包含通道号的蓝色圆圈。没有任何信息丢失。这种表示更具有可伸缩性，因为它消除了交叉行。这使我们能够更清晰地表示更大的网络。通过关注组件和通道之间的连接点，而不是通道本身，我们实现了这种简化。"
 
+#: ../../source/network/network.md:604
+msgid "Adding another consortium definition"
+msgstr ""
+
 #: ../../source/network/network.md:606
 msgid ""
 "In this next phase of network development, we introduce organization R3.  "
@@ -892,10 +994,6 @@ msgid ""
 "Let's return to the network level and define a new consortium, X2, for R2 "
 "and R3:"
 msgstr "让我们回到网络层，为R2和R3定义一个新的联盟X2:"
-
-#: ../../source/network/network.md:615
-msgid "network.consortium2"
-msgstr "network.consortium2"
 
 #: ../../source/network/network.md:617
 msgid ""
@@ -930,6 +1028,10 @@ msgid ""
 "elsewhere in the documentation."
 msgstr "在实践中，联盟定义X2被添加到网络配置NC4中。我们将在文档的其他部分讨论此操作的确切机制。"
 
+#: ../../source/network/network.md:637
+msgid "Adding a new channel"
+msgstr ""
+
 #: ../../source/network/network.md:639
 msgid ""
 "Let's now use this new consortium definition, X2, to create a new channel, "
@@ -939,10 +1041,6 @@ msgid ""
 "lines:"
 msgstr ""
 "现在让我们使用这个新的联盟定义X2来创建一个新的通道C2。为了帮助你加深对更简单的通道符号的理解，我们使用了两种视觉样式——通道C1用蓝色的圆形端点表示，而通道C2用红色连接线表示:"
-
-#: ../../source/network/network.md:644
-msgid "network.channel2"
-msgstr "network.channel2"
 
 #: ../../source/network/network.md:646
 msgid ""
@@ -990,6 +1088,10 @@ msgid ""
 "network and channel configurations respectively."
 msgstr ""
 "随着网络和通道的发展，网络和通道的配置也将发生变化。有一个过程可以通过受控的方式完成这一过程——包括捕获对这些配置的更改的配置交易。每个配置更改都会生成一个新的配置区块交易，在本主题的后面，我们将看到如何验证和接受这些区块来分别创建更新的网络和通道配置。"
+
+#: ../../source/network/network.md:677
+msgid "Network and channel configurations"
+msgstr ""
 
 #: ../../source/network/network.md:679
 msgid ""
@@ -1115,6 +1217,10 @@ msgid ""
 msgstr ""
 "物理上分布而逻辑上单一，这种对象之间的平衡是超级账本Fabric中的一种常见模式。例如，象网络配置这种对象，它逻辑上是单一的，但最终会在一组排序服务节点之间进行物理复制。我们还可以在通道配置、账本和某种程度上的智能合约中看到它，这些合约安装在多个位置，但是它们的接口逻辑上存在于通道级别。您可以在超级账本Fabric中多次看到这种模式，它使超级账本Fabric能够同时去中心化和可管理。"
 
+#: ../../source/network/network.md:762
+msgid "Adding another peer"
+msgstr ""
+
 #: ../../source/network/network.md:764
 msgid ""
 "Now that organization R3 is able to fully participate in channel C2, let's "
@@ -1127,10 +1233,6 @@ msgstr ""
 #: ../../source/network/network.md:769
 msgid "Let's see the network with organization R3's components added:"
 msgstr "让我们看看添加了组织R3组件的网络:"
-
-#: ../../source/network/network.md:771
-msgid "network.peer2"
-msgstr "network.peer2"
 
 #: ../../source/network/network.md:773
 msgid ""
@@ -1179,16 +1281,16 @@ msgid ""
 msgstr ""
 "此时，我们有一个单独的网络，其中定义了两个完全独立的通道。这些通道为组织之间的交易提供了独立管理的设施。这就是工作中的去中心化;我们在控制和自主之间取得了平衡。这是通过应用于由不同组织控制和影响的通道的策略来实现的。"
 
+#: ../../source/network/network.md:800
+msgid "Joining a peer to multiple channels"
+msgstr ""
+
 #: ../../source/network/network.md:802
 msgid ""
 "In this final stage of network development, let's return our focus to "
 "organization R2. We can exploit the fact that R2 is a member of both "
 "consortia X1 and X2 by joining it to multiple channels:"
 msgstr "在网络开发的最后阶段，让我们将重点放在组织R2上。我们可以利用R2是联盟X1和X2的成员这一事实，将其加入多个通道:"
-
-#: ../../source/network/network.md:806
-msgid "network.multichannel"
-msgstr "network.multichannel"
 
 #: ../../source/network/network.md:808
 msgid ""
@@ -1265,6 +1367,10 @@ msgid ""
 msgstr ""
 "类似地，我们可以看到客户端应用程序A2现在能够在通道C1和C2上进行交易。同样，它也将由适当通道配置中的策略控制。另外，请注意客户端应用程序A2和peer节点P2使用的是混合的可视化词汇表——包括行和连接。可以看到它们是等价的;它们是视觉上的同义词。"
 
+#: ../../source/network/network.md:849
+msgid "The ordering service"
+msgstr ""
+
 #: ../../source/network/network.md:851
 msgid ""
 "The observant reader may notice that the ordering service node appears to be"
@@ -1292,10 +1398,6 @@ msgid ""
 "Let's have a look at a more realistic ordering service node configuration:"
 msgstr "让我们来看看一个更真实的排序服务节点配置:"
 
-#: ../../source/network/network.md:866 ../../source/network/network.md:974
-msgid "network.finalnetwork2"
-msgstr "network.finalnetwork2"
-
 #: ../../source/network/network.md:868
 msgid ""
 "A multi-organization ordering service.  The ordering service comprises "
@@ -1318,6 +1420,10 @@ msgid ""
 " always the case."
 msgstr ""
 "我们可以看到这个排序服务完全去中心化了——它在组织R1中运行，在组织R4中运行。网络配置策略NC4允许R1和R4对网络资源拥有相同的权限。来自组织R1和R4的客户端应用程序和peer节点可以通过连接到节点O1或节点O4来管理网络资源，因为这两个节点的行为方式相同，这是由网络配置NC4中的策略定义的。在实践中，来自特定组织的参与者倾向于使用由其母组织提供的基础设施，但情况并非总是如此。"
+
+#: ../../source/network/network.md:882
+msgid "De-centralized transaction distribution"
+msgstr ""
 
 #: ../../source/network/network.md:884
 msgid ""
@@ -1357,6 +1463,10 @@ msgid ""
 "in a network."
 msgstr ""
 "我们可以看到，与超级账本Fabric中的其他组件一样，排序服务也是一个完全去中心的组件。无论是作为网络管理点，还是作为通道中区块的分发器，其节点都可以根据需要分布到网络中的多个组织中。"
+
+#: ../../source/network/network.md:909
+msgid "Changing policy"
+msgstr ""
 
 #: ../../source/network/network.md:911
 msgid ""
@@ -1451,6 +1561,10 @@ msgid ""
 "policy topic, but for now let's return to our finished network!"
 msgstr "在本小节中，我们只讨论了策略和mod_policy的功能的皮毛。在策略主题中会详细讨论这个问题，但是现在让我们回到已经完成的网络!"
 
+#: ../../source/network/network.md:968
+msgid "Network fully formed"
+msgstr ""
+
 #: ../../source/network/network.md:970
 msgid ""
 "Let's recap what our network looks like using a consistent visual "
@@ -1488,9 +1602,42 @@ msgid ""
 msgstr ""
 "我们已经完成了构建一个示例超级账本Fabric区块链网络的概念之旅。我们创建了一个包含两个通道和三个peer节点、两个智能合约和一个排序服务的四个组织网络。它由四个证书颁发机构支持。它为三个客户端应用程序提供账本和智能合约服务，客户端应用程序可以通过这两个通道与它交互。花点时间浏览一下图表中网络的细节，并随时回顾主题以加强您的知识，或者转到更详细的主题。"
 
+#: ../../source/network/network.md:996
+msgid "Summary of network components"
+msgstr ""
+
 #: ../../source/network/network.md:998
 msgid "Here's a quick summary of the network components we've discussed:"
 msgstr "下面是我们讨论过的网络组件的快速总结:"
+
+#: ../../source/network/network.md:1000
+msgid ""
+"Ledger. One per channel. Comprised of the Blockchain and the World state"
+msgstr ""
+
+#: ../../source/network/network.md:1003
+msgid "Smart contract (aka chaincode)"
+msgstr ""
+
+#: ../../source/network/network.md:1004
+msgid "Peer nodes"
+msgstr ""
+
+#: ../../source/network/network.md:1005
+msgid "Ordering service"
+msgstr ""
+
+#: ../../source/network/network.md:1006
+msgid "Channel"
+msgstr ""
+
+#: ../../source/network/network.md:1007
+msgid "Certificate Authority"
+msgstr ""
+
+#: ../../source/network/network.md:1009
+msgid "Network summary"
+msgstr ""
 
 #: ../../source/network/network.md:1011
 msgid ""

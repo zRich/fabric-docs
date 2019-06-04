@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -608,26 +608,22 @@ msgid "Using indexes with private data"
 msgstr ""
 
 #: ../../source/private_data_tutorial.rst:965
-msgid "The Fabric chaincode lifecycle that is being introduced in the Fabric v2.0 Alpha does not support using couchDB indexes with your chaincode. To use the previous lifecycle model to deploy couchDB indexes with private data collections, visit the v1.4 version of the `Using Private Data in Fabric tutorial <https://hyperledger-fabric.readthedocs.io/en/release-1.4/private_data_tutorial.html>`_"
-msgstr ""
-
-#: ../../source/private_data_tutorial.rst:970
 msgid "Indexes can also be applied to private data collections, by packaging indexes in the ``META-INF/statedb/couchdb/collections/<collection_name>/indexes`` directory alongside the chaincode. An example index is available `here <https://github.com/hyperledger/fabric-samples/blob/master/chaincode/marbles02_private/go/META-INF/statedb/couchdb/collections/collectionMarbles/indexes/indexOwner.json>`__ ."
 msgstr ""
 
-#: ../../source/private_data_tutorial.rst:974
+#: ../../source/private_data_tutorial.rst:969
 msgid "For deployment of chaincode to production environments, it is recommended to define any indexes alongside chaincode so that the chaincode and supporting indexes are deployed automatically as a unit, once the chaincode has been installed on a peer and instantiated on a channel. The associated indexes are automatically deployed upon chaincode instantiation on the channel when the  ``--collections-config`` flag is specified pointing to the location of the collection JSON file."
 msgstr ""
 
-#: ../../source/private_data_tutorial.rst:986
+#: ../../source/private_data_tutorial.rst:981
 msgid "Additional resources"
 msgstr ""
 
-#: ../../source/private_data_tutorial.rst:988
+#: ../../source/private_data_tutorial.rst:983
 msgid "For additional private data education, a video tutorial has been created."
 msgstr ""
 
-#: ../../source/private_data_tutorial.rst:990
+#: ../../source/private_data_tutorial.rst:985
 msgid "The video uses the previous lifecycle model to install private data collections with chaincode."
 msgstr ""
 

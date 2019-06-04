@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/Gerrit/changes.rst:2
 msgid "Submitting a Change to Gerrit"
@@ -24,9 +23,9 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:4
 msgid ""
-"Carefully review the following before submitting a change to the "
-"Hyperledger Fabric code base. These guidelines apply to developers that "
-"are new to open source, as well as to experienced open source developers."
+"Carefully review the following before submitting a change to the Hyperledger"
+" Fabric code base. These guidelines apply to developers that are new to open"
+" source, as well as to experienced open source developers."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:9
@@ -35,15 +34,15 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:11
 msgid ""
-"This section contains guidelines for submitting code changes for review. "
-"For more information on how to submit a change using Gerrit, please see "
+"This section contains guidelines for submitting code changes for review. For"
+" more information on how to submit a change using Gerrit, please see "
 ":doc:`Working with Gerrit <gerrit>`."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:15
 msgid ""
-"All changes to Hyperledger Fabric are submitted as Git commits via "
-"Gerrit. Each commit must contain:"
+"All changes to Hyperledger Fabric are submitted as Git commits via Gerrit. "
+"Each commit must contain:"
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:18
@@ -54,8 +53,8 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:20
 msgid ""
-"a change description with the logic or reasoning for your changes, "
-"followed by a blank line,"
+"a change description with the logic or reasoning for your changes, followed "
+"by a blank line,"
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:22
@@ -64,8 +63,8 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:23
 msgid ""
-"a Change-Id identifier line, followed by a colon (Change-Id:). Gerrit "
-"won't accept patches without this identifier."
+"a Change-Id identifier line, followed by a colon (Change-Id:). Gerrit won't "
+"accept patches without this identifier."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:26
@@ -74,19 +73,18 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:28
 msgid ""
-"You don't need to supply the Change-Id identifier for a new commit; this "
-"is added automatically by the ``commit-msg`` Git hook associated with the"
-" repository. If you subsequently amend your commit and resubmit it, using"
-" the same Change-Id value as the initial commit will guarantee that "
-"Gerrit will recognize that subsequent commit as an amended commit with "
-"respect to the earlier one."
+"You don't need to supply the Change-Id identifier for a new commit; this is "
+"added automatically by the ``commit-msg`` Git hook associated with the "
+"repository. If you subsequently amend your commit and resubmit it, using the"
+" same Change-Id value as the initial commit will guarantee that Gerrit will "
+"recognize that subsequent commit as an amended commit with respect to the "
+"earlier one."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:36
 msgid ""
-"All changes and topics sent to Gerrit must be well-formed. In addition to"
-" the above mandatory content in a commit, a commit message should "
-"include:"
+"All changes and topics sent to Gerrit must be well-formed. In addition to "
+"the above mandatory content in a commit, a commit message should include:"
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:40
@@ -103,12 +101,12 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:44
 msgid ""
-"Commits must :doc:`build cleanly <../dev-setup/build>` when applied on "
-"top of each other, thus avoiding breaking bisectability. Each commit "
-"should address a single identifiable JIRA issue and should be logically "
-"self-contained. For example, one commit might fix whitespace issues, "
-"another commit might rename a function, while a third commit could change"
-" some code's functionality."
+"Commits must :doc:`build cleanly <../dev-setup/build>` when applied on top "
+"of each other, thus avoiding breaking bisectability. Each commit should "
+"address a single identifiable JIRA issue and should be logically self-"
+"contained. For example, one commit might fix whitespace issues, another "
+"commit might rename a function, while a third commit could change some "
+"code's functionality."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:51
@@ -117,15 +115,15 @@ msgstr ""
 
 #: ../../source/Gerrit/changes.rst:63
 msgid ""
-"The name in the ``Signed-off-by:`` line and your email must match the "
-"change authorship information. Make sure your personal ``.gitconfig`` "
-"file is set up correctly."
+"The name in the ``Signed-off-by:`` line and your email must match the change"
+" authorship information. Make sure your personal ``.gitconfig`` file is set "
+"up correctly."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:67
 msgid ""
-"When a change is included in the set to enable other changes, but it will"
-" not be part of the final set, please let the reviewers know this."
+"When a change is included in the set to enable other changes, but it will "
+"not be part of the final set, please let the reviewers know this."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:71
@@ -135,44 +133,42 @@ msgstr ""
 #: ../../source/Gerrit/changes.rst:73
 msgid ""
 "To ensure stability of the code and limit possible regressions, we use a "
-"Continuous Integration (CI) process based on Jenkins which triggers a "
-"build on several platforms and runs tests against every change request "
-"being submitted. It is your responsibility to check that your CR passes "
-"these tests. No CR will ever be merged if it fails the tests and you "
-"shouldn't expect anybody to pay attention to your CRs until they pass the"
-" CI tests."
+"Continuous Integration (CI) process based on Jenkins which triggers a build "
+"on several platforms and runs tests against every change request being "
+"submitted. It is your responsibility to check that your CR passes these "
+"tests. No CR will ever be merged if it fails the tests and you shouldn't "
+"expect anybody to pay attention to your CRs until they pass the CI tests."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:81
 msgid ""
-"To check on the status of the CI process, simply look at your CR on "
-"Gerrit, following the URL that was given to you as the result of the push"
-" in the previous step. The History section at the bottom of the page will"
-" display a set of actions taken by \"Hyperledger Jobbuilder\" "
-"corresponding to the CI process being executed."
+"To check on the status of the CI process, simply look at your CR on Gerrit, "
+"following the URL that was given to you as the result of the push in the "
+"previous step. The History section at the bottom of the page will display a "
+"set of actions taken by \"Hyperledger Jobbuilder\" corresponding to the CI "
+"process being executed."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:87
 msgid ""
-"Upon completion, \"Hyperledger Jobbuilder\" will add to the CR a *+1 "
-"vote* if successful and a *-1 vote* otherwise."
+"Upon completion, \"Hyperledger Jobbuilder\" will add to the CR a *+1 vote* "
+"if successful and a *-1 vote* otherwise."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:90
 msgid ""
-"In case of failure, explore the logs linked from the CR History. If you "
-"spot a problem with your CR, amend your commit and push it to update it, "
-"which will automatically kick off the CI process again."
+"In case of failure, explore the logs linked from the CR History. If you spot"
+" a problem with your CR, amend your commit and push it to update it, which "
+"will automatically kick off the CI process again."
 msgstr ""
 
 #: ../../source/Gerrit/changes.rst:94
 msgid ""
 "If you see nothing wrong with your CR, it might be that the CI process "
-"simply failed for some reason unrelated to your change. In that case you "
-"may want to restart the CI process by posting a reply to your CR with the"
-" simple content \"reverify\". Check the `CI management page "
+"simply failed for some reason unrelated to your change. In that case you may"
+" want to restart the CI process by posting a reply to your CR with the "
+"simple content \"reverify\". Check the `CI management page "
 "<https://github.com/hyperledger/ci-"
-"management/blob/master/docs/source/fabric_ci_process.rst>`__ for "
-"additional information and options on this."
+"management/blob/master/docs/source/fabric_ci_process.rst>`__ for additional "
+"information and options on this."
 msgstr ""
-

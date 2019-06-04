@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,16 +16,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/developapps/connectionprofile.md:1
+msgid "Connection Profile"
+msgstr ""
+
 #: ../../source/developapps/connectionprofile.md:3
 msgid "Audience: Architects, application and smart contract developers"
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:5
-msgid "A connection profile describes a set of components, including peers, orderers and certificate authorities in a Hyperledger Fabric blockchain network. It also contains channel and organization information relating to these components. A connection profile is primarily used by an application to configure a gateway that handles all network interactions, allowing it it to focus on business logic. A connection profile is normally created by an administrator who understands the network topology."
+msgid "A connection profile describes a set of components, including peers, orderers and certificate authorities in a Hyperledger Fabric blockchain network. It also contains channel and organization information relating to these components. A connection profile is primarily used by an application to configure a gateway that handles all network interactions, allowing it to focus on business logic. A connection profile is normally created by an administrator who understands the network topology."
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:13
 msgid "In this topic, we're going to cover:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:15
+msgid "Why connection profiles are important"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:16
+msgid "How applications use a connection profile"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:17
+msgid "How to define a connection profile"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:19
+msgid "Scenario"
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:21
@@ -33,7 +53,7 @@ msgid "A connection profile is used to configure a gateway. Gateways are importa
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:25
-msgid "profile.scenario Two applications, issue and buy, use gateways 1&2 configured with connection profiles 1&2. Each profile describes a different subset of MagnetoCorp and DigiBank network components. Each connection profile must contain sufficient information for a gateway to interact with the network on behalf of the issue and buy applications. See the text for a detailed explanation."
+msgid "Two applications, issue and buy, use gateways 1&2 configured with connection profiles 1&2. Each profile describes a different subset of MagnetoCorp and DigiBank network components. Each connection profile must contain sufficient information for a gateway to interact with the network on behalf of the issue and buy applications. See the text for a detailed explanation."
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:32
@@ -48,8 +68,28 @@ msgstr ""
 msgid "It's easiest to think of a connection profile as describing a view of the network. It could be a comprehensive view, but that's unrealistic for a few reasons:"
 msgstr ""
 
+#: ../../source/developapps/connectionprofile.md:50
+msgid "Peers, orderers, certificate authorities, channels, and organizations are added and removed according to demand."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:53
+msgid "Components can start and stop, or fail unexpectedly (e.g. power outage)."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:55
+msgid "A gateway doesn't need a view of the whole network, only what's necessary to successfully handle transaction submission or event notification for example."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:58
+msgid "Service Discovery can augment the information in a connection profile. Specifically, dynamic gateways can be configured with minimal Fabric topology information; the rest can be discovered."
+msgstr ""
+
 #: ../../source/developapps/connectionprofile.md:62
 msgid "A static connection profile is normally created by an administrator who understands the network topology in detail. That's because a static profile can contain quite a lot of information, and an administrator needs to capture this in the corresponding connection profile. In contrast, dynamic profiles minimize the amount of definition required, and therefore can be a better choice for developers who want to get going quickly, or administrators who want to create a more responsive gateway. Connection profiles are created in either the YAML or JSON format using an editor of choice."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:71
+msgid "Usage"
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:73
@@ -76,8 +116,136 @@ msgstr ""
 msgid "The connectionOptions passed to a gateway complement the connection profile. They allow an application to declare how it would like the gateway to use the connection profile. They are interpreted by the SDK to control interaction patterns with network components, for example to select which identity to connect with, or which peers to use for event notifications. Read about the list of available connection options and when to use them."
 msgstr ""
 
+#: ../../source/developapps/connectionprofile.md:117
+msgid "Structure"
+msgstr ""
+
 #: ../../source/developapps/connectionprofile.md:119
 msgid "To help you understand the structure of a connection profile, we're going to step through an example for the network shown above. Its connection profile is based on the PaperNet commercial paper sample, and stored in the GitHub repository. For convenience, we've reproduced it below. You will find it helpful to display it in another browser window as you now read about it:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:127
+msgid "Line 9: name: \"papernet.magnetocorp.profile.sample\""
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:129
+msgid "This is the name of the connection profile. Try to use DNS style names; they are a very easy way to convey meaning."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:133
+msgid "Line 16: x-type: \"hlfv1\""
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:135
+msgid "Users can add their own x- properties that are \"application-specific\" -- just like with HTTP headers. They are provided primarily for future use."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:139
+msgid "Line 20: description: \"Sample connection profile for documentation topic\""
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:141
+msgid "A short description of the connection profile. Try to make this helpful for the reader who might be seeing this for the first time!"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:145
+msgid "Line 25: version: \"1.0\""
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:147
+msgid "The schema version for this connection profile.  Currently only version 1.0 is supported, and it is not envisioned that this schema will change frequently."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:151
+msgid "Line 32: channels:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:153
+msgid "This is the first really important line. channels: identifies that what follows are all the channels that this connection profile describes. However, it is good practice to keep different channels in different connection profiles, especially if they are used independently of each other."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:159
+msgid "Line 36: papernet:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:161
+msgid "Details of papernet, the first channel in this connection profile, will follow."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:165
+msgid "Line 41: orderers:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:167
+msgid "Details of all the orderers for papernet follow. You can see in line 45 that the orderer for this channel is orderer1.magnetocorp.example.com. This is just a logical name; later in the connection profile (lines 134 - 147), there will be details of how to connect to this orderer. Notice that orderer2.digibank.example.com is not in this list; it makes sense that applications use their own organization's orderers, rather than those from a different organization."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:176
+msgid "Line 49: peers:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:178
+msgid "Details of all the peers for papernet will follow."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:180
+msgid "You can see three peers listed from MagnetoCorp: peer1.magnetocorp.example.com, peer2.magnetocorp.example.com and peer3.magnetocorp.example.com. It's not necessary to list all the peers in MagnetoCorp, as has been done here. You can see only one peer listed from DigiBank: peer9.digibank.example.com; including this peer starts to imply that the endorsement policy requires MagnetoCorp and DigiBank to endorse transactions, as we'll now confirm. It's good practice to have multiple peers to avoid single points of failure."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:189
+msgid "Underneath each peer you can see four non-exclusive roles: endorsingPeer, chaincodeQuery, ledgerQuery and eventSource. See how peer1 and peer2 can perform all roles as they host papercontract. Contrast to peer3, which can only be used for notifications, or ledger queries that access the blockchain component of the ledger rather than the world state, and hence do not need to have smart contracts installed. Notice how peer9 should not be used for anything other than endorsement, because those roles are better served by MagnetoCorp peers."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:198
+msgid "Again, see how the peers are described according to their logical names and their roles. Later in the profile, we'll see the physical information for these peers."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:203
+msgid "Line 97: organizations:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:205
+msgid "Details of all the organizations will follow, for all channels.  Note that these organizations are for all channels, even though papernet is currently the only one listed.  That's because organizations can be in multiple channels, and channels can have multiple organizations. Moreover, some application operations relate to organizations rather than channels. For example, an application can request notification from one or all peers within its organization, or all organizations within the network -- using connection options.  For this, there needs to be an organization to peer mapping, and this section provides it."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:215
+msgid "Line 101: MagnetoCorp:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:217
+msgid "All peers that are considered part of MagnetoCorp are listed: peer1, peer2 and peer3. Likewise for Certificate Authorities. Again, note the logical name usages, the same as the channels: section; physical information will follow later in the profile."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:223
+msgid "Line 121: DigiBank:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:225
+msgid "Only peer9 is listed as part of DigiBank, and no Certificate Authorities. That's because these other peers and the DigiBank CA are not relevant for users of this connection profile."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:230
+msgid "Line 134: orderers:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:232
+msgid "The physical information for orderers is now listed. As this connection profile only mentioned one orderer for papernet, you see orderer1.magnetocorp.example.com details listed. These include its IP address and port, and gRPC options that can override the defaults used when communicating with the orderer, if necessary. As with peers:, for high availability, specifying more than one orderer is a good idea."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:240
+msgid "Line 152: peers:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:242
+msgid "The physical information for all previous peers is now listed.  This connection profile has three peers for MagnetoCorp: peer1, peer2, and peer3; for DigiBank, a single peer peer9 has its information listed. For each peer, as with orderers, their IP address and port is listed, together with gRPC options that can override the defaults used when communicating with a particular peer, if necessary."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:250
+msgid "Line 194: certificateAuthorities:"
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:252
+msgid "The physical information for certificate authorities is now listed.  The connection profile has a single CA listed for MagnetoCorp, ca1-magnetocorp, and its physical information follows. As well as IP details, the registrar information allows this CA to be used for Certificate Signing Requests (CSR). These are used to request new certificates for locally generated public/private key pairs."
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:259
@@ -86,6 +254,10 @@ msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:266
 msgid "That's everything you need to know about connection profiles. In summary, a connection profile defines sufficient channels, organizations, peers, orderers and certificate authorities for an application to configure a gateway. The gateway allows the application to focus on business logic rather than the details of the network topology."
+msgstr ""
+
+#: ../../source/developapps/connectionprofile.md:272
+msgid "Sample"
 msgstr ""
 
 #: ../../source/developapps/connectionprofile.md:274

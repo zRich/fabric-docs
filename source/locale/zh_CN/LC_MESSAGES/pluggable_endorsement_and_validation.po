@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
+"PO-Revision-Date: 2019-04-22 19:57+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/pluggable_endorsement_and_validation.rst:2
 msgid "Pluggable transaction endorsement and validation"
@@ -28,9 +27,9 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:7
 msgid ""
-"When a transaction is validated at time of commit, the peer performs "
-"various checks before applying the state changes that come with the "
-"transaction itself:"
+"When a transaction is validated at time of commit, the peer performs various"
+" checks before applying the state changes that come with the transaction "
+"itself:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:10
@@ -62,8 +61,8 @@ msgstr ""
 #: ../../source/pluggable_endorsement_and_validation.rst:20
 msgid ""
 "**Anonymous transactions:** When the endorsement doesn't contain the "
-"identity of the peer, but a signature and a public key are shared that "
-"can't be linked to the peer's identity."
+"identity of the peer, but a signature and a public key are shared that can't"
+" be linked to the peer's identity."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:25
@@ -72,19 +71,19 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:27
 msgid ""
-"Fabric allows for the implementation and deployment of custom endorsement"
-" and validation logic into the peer to be associated with chaincode "
-"handling in a pluggable manner. This logic can be either compiled into "
-"the peer as built in selectable logic, or compiled and deployed alongside"
-" the peer as a `Golang plugin <https://golang.org/pkg/plugin/>`_."
+"Fabric allows for the implementation and deployment of custom endorsement "
+"and validation logic into the peer to be associated with chaincode handling "
+"in a pluggable manner. This logic can be either compiled into the peer as "
+"built in selectable logic, or compiled and deployed alongside the peer as a "
+"`Golang plugin <https://golang.org/pkg/plugin/>`_."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:33
 msgid ""
 "By default, A chaincode will use the built in endorsement and validation "
-"logic. However, users have the option of selecting custom endorsement and"
-" validation plugins as part of the chaincode definition. An administrator"
-" can extend the endorsement/validation logic available to the peer by "
+"logic. However, users have the option of selecting custom endorsement and "
+"validation plugins as part of the chaincode definition. An administrator can"
+" extend the endorsement/validation logic available to the peer by "
 "customizing the peer's local configuration."
 msgstr ""
 
@@ -94,32 +93,32 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:42
 msgid ""
-"Each peer has a local configuration (``core.yaml``) that declares a "
-"mapping between the endorsement/validation logic name and the "
-"implementation that is to be run."
+"Each peer has a local configuration (``core.yaml``) that declares a mapping "
+"between the endorsement/validation logic name and the implementation that is"
+" to be run."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:46
 msgid ""
 "The default logic are called ``ESCC`` (with the \"E\" standing for "
-"endorsement) and ``VSCC`` (validation), and they can be found in the peer"
-" local configuration in the ``handlers`` section:"
+"endorsement) and ``VSCC`` (validation), and they can be found in the peer "
+"local configuration in the ``handlers`` section:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:60
 msgid ""
-"When the endorsement or validation implementation is compiled into the "
-"peer, the ``name`` property represents the initialization function that "
-"is to be run in order to obtain the factory that creates instances of the"
-" endorsement/validation logic."
+"When the endorsement or validation implementation is compiled into the peer,"
+" the ``name`` property represents the initialization function that is to be "
+"run in order to obtain the factory that creates instances of the "
+"endorsement/validation logic."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:64
 msgid ""
-"The function is an instance method of the ``HandlerLibrary`` construct "
-"under ``core/handlers/library/library.go`` and in order for custom "
-"endorsement or validation logic to be added, this construct needs to be "
-"extended with any additional methods."
+"The function is an instance method of the ``HandlerLibrary`` construct under"
+" ``core/handlers/library/library.go`` and in order for custom endorsement or"
+" validation logic to be added, this construct needs to be extended with any "
+"additional methods."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:69
@@ -146,19 +145,17 @@ msgstr ""
 msgid ""
 "The name of the custom plugin needs to be referenced by the chaincode "
 "definition to be used by the chaincode. If you are using the peer CLI to "
-"approve the chaincode definition, use the ``--escc`` and ``--vscc`` flag "
-"to select the name of the custom endorsement or validation library. If "
-"you are using the Fabric SDK for Node.js, visit `How to install and start"
-" your chaincode <https://fabric-sdk-node.github.io/master/tutorial-"
-"chaincode-lifecycle.html>`__. For more information, see "
-":doc:`chaincode4noah`."
+"approve the chaincode definition, use the ``--escc`` and ``--vscc`` flag to "
+"select the name of the custom endorsement or validation library. If you are "
+"using the Fabric SDK for Node.js, visit `How to install and start your "
+"chaincode <https://fabric-sdk-node.github.io/master/tutorial-chaincode-"
+"lifecycle.html>`__. For more information, see :doc:`chaincode4noah`."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:102
 msgid ""
-"Hereafter, custom endorsement or validation logic implementation is going"
-" to be referred to as \"plugins\", even if they are compiled into the "
-"peer."
+"Hereafter, custom endorsement or validation logic implementation is going to"
+" be referred to as \"plugins\", even if they are compiled into the peer."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:107
@@ -173,18 +170,18 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:127
 msgid ""
-"An endorsement plugin instance of a given plugin type (identified either "
-"by the method name as an instance method of the ``HandlerLibrary`` or by "
-"the plugin ``.so`` file path) is created for each channel by having the "
-"peer invoke the ``New`` method in the ``PluginFactory`` interface which "
-"is also expected to be implemented by the plugin developer:"
+"An endorsement plugin instance of a given plugin type (identified either by "
+"the method name as an instance method of the ``HandlerLibrary`` or by the "
+"plugin ``.so`` file path) is created for each channel by having the peer "
+"invoke the ``New`` method in the ``PluginFactory`` interface which is also "
+"expected to be implemented by the plugin developer:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:141
 msgid ""
 "The ``Init`` method is expected to receive as input all the dependencies "
-"declared under ``core/handlers/endorsement/api/``, identified as "
-"embedding the ``Dependency`` interface."
+"declared under ``core/handlers/endorsement/api/``, identified as embedding "
+"the ``Dependency`` interface."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:145
@@ -201,14 +198,14 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:150
 msgid ""
-"``SigningIdentityFetcher``: Returns an instance of ``SigningIdentity`` "
-"based on a given signed proposal:"
+"``SigningIdentityFetcher``: Returns an instance of ``SigningIdentity`` based"
+" on a given signed proposal:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:165
 msgid ""
-"``StateFetcher``: Fetches a **State** object which interacts with the "
-"world state:"
+"``StateFetcher``: Fetches a **State** object which interacts with the world "
+"state:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:186
@@ -223,26 +220,26 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:203
 msgid ""
-"Each ``ContextDatum`` is additional runtime-derived metadata that is "
-"passed by the peer to the validation plugin. Currently, the only "
-"``ContextDatum`` that is passed is one that represents the endorsement "
-"policy of the chaincode:"
+"Each ``ContextDatum`` is additional runtime-derived metadata that is passed "
+"by the peer to the validation plugin. Currently, the only ``ContextDatum`` "
+"that is passed is one that represents the endorsement policy of the "
+"chaincode:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:217
 msgid ""
-"A validation plugin instance of a given plugin type (identified either by"
-" the method name as an instance method of the ``HandlerLibrary`` or by "
-"the plugin ``.so`` file path) is created for each channel by having the "
-"peer invoke the ``New`` method in the ``PluginFactory`` interface which "
-"is also expected to be implemented by the plugin developer:"
+"A validation plugin instance of a given plugin type (identified either by "
+"the method name as an instance method of the ``HandlerLibrary`` or by the "
+"plugin ``.so`` file path) is created for each channel by having the peer "
+"invoke the ``New`` method in the ``PluginFactory`` interface which is also "
+"expected to be implemented by the plugin developer:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:230
 msgid ""
 "The ``Init`` method is expected to receive as input all the dependencies "
-"declared under ``core/handlers/validation/api/``, identified as embedding"
-" the ``Dependency`` interface."
+"declared under ``core/handlers/validation/api/``, identified as embedding "
+"the ``Dependency`` interface."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:234
@@ -259,12 +256,11 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:239
 msgid ""
-"``IdentityDeserializer``: Converts byte representation of identities into"
-" ``Identity`` objects that can be used to verify signatures signed by "
-"them, be validated themselves against their corresponding MSP, and see "
-"whether they satisfy a given **MSP Principal**. The full specification "
-"can be found in "
-"``core/handlers/validation/api/identities/identities.go``."
+"``IdentityDeserializer``: Converts byte representation of identities into "
+"``Identity`` objects that can be used to verify signatures signed by them, "
+"be validated themselves against their corresponding MSP, and see whether "
+"they satisfy a given **MSP Principal**. The full specification can be found "
+"in ``core/handlers/validation/api/identities/identities.go``."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:245
@@ -273,8 +269,8 @@ msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:258
 msgid ""
-"``StateFetcher``: Fetches a ``State`` object which interacts with the "
-"world state:"
+"``StateFetcher``: Fetches a ``State`` object which interacts with the world "
+"state:"
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:285
@@ -284,47 +280,45 @@ msgstr ""
 #: ../../source/pluggable_endorsement_and_validation.rst:287
 msgid ""
 "**Validation plugin consistency across peers:** In future releases, the "
-"Fabric channel infrastructure would guarantee that the same validation "
-"logic is used for a given chaincode by all peers in the channel at any "
-"given blockchain height in order to eliminate the chance of mis-"
-"configuration which would might lead to state divergence among peers that"
-" accidentally run different implementations. However, for now it is the "
-"sole responsibility of the system operators and administrators to ensure "
-"this doesn't happen."
+"Fabric channel infrastructure would guarantee that the same validation logic"
+" is used for a given chaincode by all peers in the channel at any given "
+"blockchain height in order to eliminate the chance of mis-configuration "
+"which would might lead to state divergence among peers that accidentally run"
+" different implementations. However, for now it is the sole responsibility "
+"of the system operators and administrators to ensure this doesn't happen."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:295
 msgid ""
 "**Validation plugin error handling:** Whenever a validation plugin can't "
 "determine whether a given transaction is valid or not, because of some "
-"transient execution problem like inability to access the database, it "
-"should return an error of type **ExecutionFailureError** that is defined "
-"in ``core/handlers/validation/api/validation.go``. Any other error that "
-"is returned, is treated as an endorsement policy error and marks the "
+"transient execution problem like inability to access the database, it should"
+" return an error of type **ExecutionFailureError** that is defined in "
+"``core/handlers/validation/api/validation.go``. Any other error that is "
+"returned, is treated as an endorsement policy error and marks the "
 "transaction as invalidated by the validation logic. However, if an "
-"``ExecutionFailureError`` is returned, the chain processing halts instead"
-" of marking the transaction as invalid. This is to prevent state "
-"divergence between different peers."
+"``ExecutionFailureError`` is returned, the chain processing halts instead of"
+" marking the transaction as invalid. This is to prevent state divergence "
+"between different peers."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:305
 msgid ""
 "**Error handling for private metadata retrieval**: In case a plugin "
-"retrieves metadata for private data by making use of the ``StateFetcher``"
-" interface, it is important that errors are handled as follows: "
-"``CollConfigNotDefinedError'' and ``InvalidCollNameError'', signalling "
-"that the specified collection does not exist, should be handled as "
-"deterministic errors and should not lead the plugin to return an "
+"retrieves metadata for private data by making use of the ``StateFetcher`` "
+"interface, it is important that errors are handled as follows: "
+"``CollConfigNotDefinedError'' and ``InvalidCollNameError'', signalling that "
+"the specified collection does not exist, should be handled as deterministic "
+"errors and should not lead the plugin to return an "
 "``ExecutionFailureError``."
 msgstr ""
 
 #: ../../source/pluggable_endorsement_and_validation.rst:312
 msgid ""
-"**Importing Fabric code into the plugin**: Importing code that belongs to"
-" Fabric other than protobufs as part of the plugin is highly discouraged,"
-" and can lead to issues when the Fabric code changes between releases, or"
-" can cause inoperability issues when running mixed peer versions. "
-"Ideally, the plugin code should only use the dependencies given to it, "
-"and should import the bare minimum other than protobufs."
+"**Importing Fabric code into the plugin**: Importing code that belongs to "
+"Fabric other than protobufs as part of the plugin is highly discouraged, and"
+" can lead to issues when the Fabric code changes between releases, or can "
+"cause inoperability issues when running mixed peer versions. Ideally, the "
+"plugin code should only use the dependencies given to it, and should import "
+"the bare minimum other than protobufs."
 msgstr ""
-

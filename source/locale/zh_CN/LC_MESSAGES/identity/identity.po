@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/identity/identity.md:1
+msgid "Identity"
+msgstr ""
+
+#: ../../source/identity/identity.md:3
+msgid "What is an Identity?"
+msgstr ""
 
 #: ../../source/identity/identity.md:5
 msgid ""
@@ -57,6 +65,10 @@ msgid ""
 msgstr ""
 "要使身份可验证，它必须来自可信的权威。成员服务提供者(MSP)在Fabric中实现了这一点。更具体地说，MSP是一个组件，它定义了管理组织的有效身份的规则。Fabric中的默认MSP实现使用X.509证书作为身份，采用传统公钥基础设施(PKI)层次模型(稍后将详细介绍PKI)。"
 
+#: ../../source/identity/identity.md:28
+msgid "A Simple Scenario to Explain the Use of an Identity"
+msgstr ""
+
 #: ../../source/identity/identity.md:30
 msgid ""
 "Imagine that you visit a supermarket to buy some groceries. At the checkout "
@@ -66,10 +78,6 @@ msgid ""
 "have sufficient funds in your account. It will be not be accepted."
 msgstr ""
 "假设你去超市买一些杂货。在收银台，你会看到一个牌子，上面写着只接受Visa、万事达卡和美国运通卡。如果你想用另一张卡支付——我们称之为“ImagineCard”——不管这张卡是否真实，你的账户里是否有足够的资金。我们不会接受的。"
-
-#: ../../source/identity/identity.md:36
-msgid "Scenario"
-msgstr "场景"
 
 #: ../../source/identity/identity.md:38
 msgid ""
@@ -95,6 +103,10 @@ msgstr ""
 msgid "Let's drill into these concepts in a little more detail."
 msgstr "让我们更详细地研究一下这些概念。"
 
+#: ../../source/identity/identity.md:52
+msgid "What are PKIs?"
+msgstr ""
+
 #: ../../source/identity/identity.md:54
 msgid ""
 "A public key infrastructure (PKI) is a collection of internet technologies "
@@ -103,10 +115,6 @@ msgid ""
 "you're probably using a PKI to make sure it comes from a verified source."
 msgstr ""
 "公钥基础设施(PKI)是一组互联网技术，它在网络中提供安全的通信。将S放入HTTPS的是PKI——如果您在web浏览器上阅读本文，您可能正在使用PKI来确保它来自经过验证的源。"
-
-#: ../../source/identity/identity.md:59
-msgid "PKI"
-msgstr "PKI"
 
 #: ../../source/identity/identity.md:61
 msgid ""
@@ -136,6 +144,22 @@ msgstr ""
 msgid "There are four key elements to PKI:"
 msgstr "PKI有四个要素:"
 
+#: ../../source/identity/identity.md:77 ../../source/identity/identity.md:86
+msgid "Digital Certificates"
+msgstr ""
+
+#: ../../source/identity/identity.md:78
+msgid "Public and Private Keys"
+msgstr ""
+
+#: ../../source/identity/identity.md:79 ../../source/identity/identity.md:151
+msgid "Certificate Authorities"
+msgstr ""
+
+#: ../../source/identity/identity.md:80 ../../source/identity/identity.md:230
+msgid "Certificate Revocation Lists"
+msgstr ""
+
 #: ../../source/identity/identity.md:82
 msgid ""
 "Let's quickly describe these PKI basics, and if you want to know more "
@@ -163,10 +187,6 @@ msgstr ""
 "例如，密歇根州底特律市Mitchell Cars公司制造部门的玛丽莫里斯可能拥有一个SUBJECT 属性为C=US, ST=Michigan, "
 "L=Detroit, O=Mitchell Cars, OU=Manufacturing, CN=Mary Morris "
 "/UID=123456的数字证书。玛丽的证件类似于她的政府身份证——它提供了有关玛丽的信息，她可以用这些信息来证明有关她的关键事实。在X.509证书中还有许多其他属性，但是现在让我们只关注这些属性。"
-
-#: ../../source/identity/identity.md:101
-msgid "DigitalCertificate"
-msgstr "数字证书"
 
 #: ../../source/identity/identity.md:103
 msgid ""
@@ -196,6 +216,10 @@ msgstr ""
 "重要的是，玛丽的所有属性都可以使用一种称为密码学的数学技术(字面意思是“秘密写作”)记录下来，这样篡改会使证书失效。密码学允许玛丽向其他人提供她的证书，以证明她的身份，只要另一方信任证书颁发者，即证书颁发机构(certificate"
 " Authority, "
 "CA)。只要CA安全地保存某些加密信息(即它自己的私有签名密钥)，任何阅读证书的人都可以确保关于玛丽的信息没有被篡改——它始终具有玛丽莫里斯的那些特定属性。将玛丽的X.509证书看作是无法更改的数字身份证。"
+
+#: ../../source/identity/identity.md:119
+msgid "Authentication, Public keys, and Private Keys"
+msgstr ""
 
 #: ../../source/identity/identity.md:121
 msgid ""
@@ -239,10 +263,6 @@ msgid ""
 msgstr ""
 "私钥和各自的公钥之间的独特关系是使安全通信成为可能的密码术。密钥之间独特的数学关系使得私钥可以用于对消息生成签名，只有对应的公钥可以匹配该签名，而且只能对同一消息进行签名。"
 
-#: ../../source/identity/identity.md:146
-msgid "AuthenticationKeys"
-msgstr "认证密钥"
-
 #: ../../source/identity/identity.md:148
 msgid ""
 "In the example above, Mary uses her private key to sign the message. The "
@@ -268,10 +288,6 @@ msgid ""
 "GeoTrust, DigiCert, GoDaddy, and Comodo, among others."
 msgstr ""
 "CA是互联网安全协议的一个常见部分，您可能听说过一些比较流行的协议:赛门铁克(最初是Verisign)、GeoTrust、DigiCert、GoDaddy和Comodo等等。"
-
-#: ../../source/identity/identity.md:163
-msgid "CertificateAuthorities"
-msgstr "证书颁发机构"
 
 #: ../../source/identity/identity.md:165
 msgid ""
@@ -310,6 +326,10 @@ msgid ""
 msgstr ""
 "在区块链设置中，希望与网络交互的每个参与者都需要一个身份。在这种情况下，您可能会说可以使用一个或多个CA从数字的角度定义组织的成员。CA为组织的参与者提供了一个可验证的数字身份的基础。"
 
+#: ../../source/identity/identity.md:187
+msgid "Root CAs, Intermediate CAs and Chains of Trust"
+msgstr ""
+
 #: ../../source/identity/identity.md:189
 msgid ""
 "CAs come in two flavors: Root CAs and Intermediate CAs. Because Root CAs "
@@ -326,10 +346,6 @@ msgid ""
 " is compromised, on the other hand, there will be a much smaller exposure."
 msgstr ""
 "CA有两种类型:根CA和中间CA。由于根CA(赛门铁克、Geotrust等)必须向互联网用户安全分发数亿个证书，因此将此过程分散到所谓的中间CA是有意义的。这些中间CA的证书由根CA或其他中间机构颁发，允许为链中的任何CA颁发的任何证书建立“信任链”。这种能力来追踪回根CA不仅让CA上规模，同时仍然提供安全的功能——允许使用证书的组织对使用中间CA有信心——它限制了根CA的曝光,如果妥协,会危及整个链的信任。另一方面，如果中间CA受到损害，则会有更小的风险。"
-
-#: ../../source/identity/identity.md:202
-msgid "ChainOfTrust"
-msgstr "信任链"
 
 #: ../../source/identity/identity.md:204
 msgid ""
@@ -349,6 +365,10 @@ msgid ""
 "the needs of the network."
 msgstr ""
 "当涉及到跨多个组织颁发证书时，中间CA提供了巨大的灵活性，这在经过许可的区块链系统(如Fabric)中非常有用。例如，您将看到不同的组织可能使用不同的根CA，或者使用相同的根CA和不同的中间CA——这确实取决于网络的需要。"
+
+#: ../../source/identity/identity.md:214
+msgid "Fabric CA"
+msgstr ""
 
 #: ../../source/identity/identity.md:216
 msgid ""
@@ -393,10 +413,6 @@ msgid ""
 "run the risk of accepting a compromised identity."
 msgstr ""
 "当第三方想要验证另一方的身份时，它首先检查发出CA的CRL，以确保证书没有被撤销。验证者不需要检查CRL，但是如果他们不检查CRL，他们将冒着接受被盗身份的风险。"
-
-#: ../../source/identity/identity.md:241
-msgid "CRL"
-msgstr "CRL"
 
 #: ../../source/identity/identity.md:243
 msgid ""

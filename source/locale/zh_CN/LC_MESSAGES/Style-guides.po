@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2017, hyperledger
-# This file is distributed under the same license as the
-# hyperledger-fabricdocs package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
-#
+# This file is distributed under the same license as the hyperledger-fabricdocs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-16 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-05-09 08:55+0800\n"
+"PO-Revision-Date: 2019-06-01 14:50+0000\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../source/Style-guides/go-style.rst:2
 msgid "Coding guidelines"
@@ -30,9 +29,9 @@ msgstr ""
 msgid ""
 "We code in Go™ and strictly follow the `best practices "
 "<https://golang.org/doc/effective_go.html>`__ and will not accept any "
-"deviations. You must run the following tools against your Go code and fix"
-" all errors and warnings: - `golint <https://github.com/golang/lint>`__ -"
-" `go vet <https://golang.org/cmd/vet/>`__ - `goimports "
+"deviations. You must run the following tools against your Go code and fix "
+"all errors and warnings: - `golint <https://github.com/golang/lint>`__ - `go"
+" vet <https://golang.org/cmd/vet/>`__ - `goimports "
 "<https://godoc.org/golang.org/x/tools/cmd/goimports>`__"
 msgstr ""
 
@@ -42,8 +41,8 @@ msgstr ""
 
 #: ../../source/Style-guides/go-style.rst:18
 msgid ""
-"The API documentation for Hyperledger Fabric's Golang APIs is available "
-"in `GoDoc <https://godoc.org/github.com/hyperledger/fabric>`_."
+"The API documentation for Hyperledger Fabric's Golang APIs is available in "
+"`GoDoc <https://godoc.org/github.com/hyperledger/fabric>`_."
 msgstr ""
 
 #: ../../source/Style-guides/go-style.rst:23
@@ -62,11 +61,10 @@ msgstr ""
 
 #: ../../source/Style-guides/go-style.rst:36
 msgid ""
-"Hyperledger Fabric uses Go Vendoring for package management. This means "
-"that all required packages reside in the "
+"Hyperledger Fabric uses Go Vendoring for package management. This means that"
+" all required packages reside in the "
 "``$GOPATH/src/github.com/hyperledger/fabric/vendor`` folder. Go will use "
 "packages in this folder instead of the GOPATH when the ``go install`` or "
-"``go build`` commands are executed. To manage the packages in the "
-"``vendor`` folder, we use `dep <https://golang.github.io/dep/>`__."
+"``go build`` commands are executed. To manage the packages in the ``vendor``"
+" folder, we use `dep <https://golang.github.io/dep/>`__."
 msgstr ""
-

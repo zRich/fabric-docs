@@ -1,0 +1,723 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>peer lifecycle chaincode &mdash; hyperledger-fabricdocs master documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="peer channel" href="peerchannel.html" />
+    <link rel="prev" title="peer chaincode" href="peerchaincode.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> hyperledger-fabricdocs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+<br><img style="background-color: #fff; height: unset; width: unset;" alt="Hyperledger Fabric" src=../_images/hyperledger_fabric_logo_color.png />
+<br>
+<a href="https://github.com/hyperledger/fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="GitHub" src="../_static/images/github_button.png"/></a>
+&nbsp;<a href="https://stackoverflow.com/questions/tagged/hyperledger-fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="StackOverflow" src="../_static/images/stackoverflow_button.png"/></a>
+&nbsp;<a href="https://chat.hyperledger.org"><img style="padding: 0px; margin: auto auto auto auto;" alt="Rocket Chat" src="../_static/images/rocketchat_button.png"/></a>
+&nbsp;<a href="https://www.youtube.com/playlist?list=PL0MZ85B_96CH7wvtrRzV7SvtRY0sI0DEg"><img style="padding: 0px; margin: auto auto auto auto;" alt="Youtube Channel" src="../_static/images/youtube_button.png"/></a>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ops_guide.html">Operations Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../command_ref.html">Commands Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="peercommand.html">peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerchaincode.html">peer chaincode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">peer lifecycle chaincode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle">peer lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">peer lifecycle chaincode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-package">peer lifecycle chaincode package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-install">peer lifecycle chaincode install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-queryinstalled">peer lifecycle chaincode queryinstalled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-approveformyorg">peer lifecycle chaincode approveformyorg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-queryapprovalstatus">peer lifecycle chaincode queryapprovalstatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-commit">peer lifecycle chaincode commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peer-lifecycle-chaincode-querycommitted">peer lifecycle chaincode querycommitted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-package-example">peer lifecycle chaincode package example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-install-example">peer lifecycle chaincode install example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-queryinstalled-example">peer lifecycle chaincode queryinstalled example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-approveformyorg-example">peer lifecycle chaincode approveformyorg example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-queryapprovalstatus-example">peer lifecycle chaincode queryapprovalstatus example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-commit-example">peer lifecycle chaincode commit example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#peer-lifecycle-chaincode-querycommitted-example">peer lifecycle chaincode querycommitted example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peerchannel.html">peer channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peerversion.html">peer version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peernode.html">peer node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="token.html">token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configtxgen.html">configtxgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configtxlator.html">configtxlator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptogen.html">cryptogen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery-cli.html">Service Discovery CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fabric-ca-commands.html">Fabric-CA Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">hyperledger-fabricdocs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../command_ref.html">Commands Reference</a> &raquo;</li>
+        
+      <li>peer lifecycle chaincode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/commands/peerlifecycle.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="peer-lifecycle-chaincode">
+<h1>peer lifecycle chaincode<a class="headerlink" href="#peer-lifecycle-chaincode" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span></code> subcommand allows administrators to use the
+Fabric chaincode lifecycle to package a chaincode, install it on your peers,
+approve a chaincode definition for your organization, and then commit the
+definition to a channel. The chaincode is ready to be used after the definition
+has been successfully committed to the channel. For more information, visit
+<a class="reference external" href="../chaincode4noah.html">Chaincode for Operators</a>.</p>
+<p><em>Note: These instructions use the Fabric chaincode lifecycle introduced in the
+v2.0 Alpha release. If you would like to use the old lifecycle to install and
+instantiate a chaincode, visit the <a class="reference external" href="peerchaincode.html">peer chaincode</a> command
+reference.</em></p>
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span></code> command has the following subcommands:</p>
+<ul class="simple">
+<li><p>package</p></li>
+<li><p>install</p></li>
+<li><p>queryinstalled</p></li>
+<li><p>approveformyorg</p></li>
+<li><p>queryapprovalstatus</p></li>
+<li><p>commit</p></li>
+<li><p>querycommitted</p></li>
+</ul>
+<p>Each peer lifecycle chaincode subcommand is described together with its options in its own
+section in this topic.</p>
+</div>
+<div class="section" id="peer-lifecycle">
+<h2>peer lifecycle<a class="headerlink" href="#peer-lifecycle" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Perform</span> <span class="n">_lifecycle</span> <span class="n">operations</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+
+<span class="n">Available</span> <span class="n">Commands</span><span class="p">:</span>
+  <span class="n">chaincode</span>   <span class="n">Perform</span> <span class="n">chaincode</span> <span class="n">operations</span><span class="p">:</span> <span class="n">package</span><span class="o">|</span><span class="n">install</span><span class="o">|</span><span class="n">queryinstalled</span><span class="o">|</span><span class="n">approveformyorg</span><span class="o">|</span><span class="n">queryapprovalstatus</span><span class="o">|</span><span class="n">commit</span><span class="o">|</span><span class="n">querycommitted</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>   <span class="n">help</span> <span class="k">for</span> <span class="n">lifecycle</span>
+
+<span class="n">Use</span> <span class="s2">&quot;peer lifecycle [command] --help&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>peer lifecycle chaincode<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Perform</span> <span class="n">_lifecycle</span> <span class="n">operations</span><span class="p">:</span> <span class="n">package</span><span class="o">|</span><span class="n">install</span><span class="o">|</span><span class="n">queryinstalled</span><span class="o">|</span><span class="n">approveformyorg</span><span class="o">|</span><span class="n">queryapprovalstatus</span><span class="o">|</span><span class="n">commit</span><span class="o">|</span><span class="n">querycommitted</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+
+<span class="n">Available</span> <span class="n">Commands</span><span class="p">:</span>
+  <span class="n">approveformyorg</span>     <span class="n">Approve</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">my</span> <span class="n">org</span><span class="o">.</span>
+  <span class="n">commit</span>              <span class="n">Commit</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">on</span> <span class="n">the</span> <span class="n">channel</span><span class="o">.</span>
+  <span class="n">install</span>             <span class="n">Install</span> <span class="n">a</span> <span class="n">chaincode</span><span class="o">.</span>
+  <span class="n">package</span>             <span class="n">Package</span> <span class="n">a</span> <span class="n">chaincode</span>
+  <span class="n">queryapprovalstatus</span> <span class="n">Query</span> <span class="n">approval</span> <span class="n">status</span> <span class="k">for</span> <span class="n">chaincode</span> <span class="n">definition</span><span class="o">.</span>
+  <span class="n">querycommitted</span>      <span class="n">Query</span> <span class="n">a</span> <span class="n">committed</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">by</span> <span class="n">channel</span> <span class="ow">and</span> <span class="n">name</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
+  <span class="n">queryinstalled</span>      <span class="n">Query</span> <span class="n">the</span> <span class="n">installed</span> <span class="n">chaincodes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                                <span class="n">help</span> <span class="k">for</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+
+<span class="n">Use</span> <span class="s2">&quot;peer lifecycle chaincode [command] --help&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-package">
+<h2>peer lifecycle chaincode package<a class="headerlink" href="#peer-lifecycle-chaincode-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">the</span> <span class="n">package</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">package</span> <span class="p">[</span><span class="n">outputfile</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">package</span>
+      <span class="o">--</span><span class="n">label</span> <span class="n">string</span>                   <span class="n">The</span> <span class="n">package</span> <span class="n">label</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">human</span><span class="o">-</span><span class="n">readable</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">package</span>
+  <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="n">lang</span> <span class="n">string</span>                    <span class="n">Language</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="ow">is</span> <span class="n">written</span> <span class="ow">in</span> <span class="p">(</span><span class="n">default</span> <span class="s2">&quot;golang&quot;</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">path</span> <span class="n">string</span>                    <span class="n">Path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-install">
+<h2>peer lifecycle chaincode install<a class="headerlink" href="#peer-lifecycle-chaincode-install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Install</span> <span class="n">a</span> <span class="n">chaincode</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">install</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">install</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-queryinstalled">
+<h2>peer lifecycle chaincode queryinstalled<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">the</span> <span class="n">installed</span> <span class="n">chaincodes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">queryinstalled</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">queryinstalled</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-approveformyorg">
+<h2>peer lifecycle chaincode approveformyorg<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Approve</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">my</span> <span class="n">organization</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">approveformyorg</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">channel</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">config</span> <span class="n">policy</span> <span class="n">reference</span>
+  <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">channelID</span> <span class="n">string</span>               <span class="n">The</span> <span class="n">channel</span> <span class="n">on</span> <span class="n">which</span> <span class="n">this</span> <span class="n">command</span> <span class="n">should</span> <span class="n">be</span> <span class="n">executed</span>
+      <span class="o">--</span><span class="n">collections</span><span class="o">-</span><span class="n">config</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">collection</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">including</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">E</span><span class="p">,</span> <span class="o">--</span><span class="n">endorsement</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">endorsement</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">approveformyorg</span>
+      <span class="o">--</span><span class="n">init</span><span class="o">-</span><span class="n">required</span>                  <span class="n">Whether</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">requires</span> <span class="n">invoking</span> <span class="s1">&#39;init&#39;</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">name</span> <span class="n">string</span>                    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">package</span><span class="o">-</span><span class="nb">id</span> <span class="n">string</span>              <span class="n">The</span> <span class="n">identifier</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">install</span> <span class="n">package</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">sequence</span> <span class="nb">int</span>                   <span class="n">The</span> <span class="n">sequence</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">the</span> <span class="n">channel</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">signature</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>        <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">signature</span> <span class="n">policy</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+  <span class="o">-</span><span class="n">V</span><span class="p">,</span> <span class="o">--</span><span class="n">validation</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">validation</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span> <span class="n">string</span>                 <span class="n">Version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">waitForEvent</span>                   <span class="n">Whether</span> <span class="n">to</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">event</span> <span class="kn">from</span> <span class="nn">each</span> <span class="n">peer</span><span class="s1">&#39;s deliver filtered service signifying that the transaction has been committed successfully (default true)</span>
+      <span class="o">--</span><span class="n">waitForEventTimeout</span> <span class="n">duration</span>   <span class="n">Time</span> <span class="n">to</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">event</span> <span class="kn">from</span> <span class="nn">each</span> <span class="n">peer</span><span class="s1">&#39;s deliver filtered service signifying that the &#39;</span><span class="n">invoke</span><span class="s1">&#39; transaction has been committed successfully (default 30s)</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-queryapprovalstatus">
+<h2>peer lifecycle chaincode queryapprovalstatus<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">approval</span> <span class="n">status</span> <span class="k">for</span> <span class="n">chaincode</span> <span class="n">definition</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">queryapprovalstatus</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">channel</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">config</span> <span class="n">policy</span> <span class="n">reference</span>
+  <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">channelID</span> <span class="n">string</span>               <span class="n">The</span> <span class="n">channel</span> <span class="n">on</span> <span class="n">which</span> <span class="n">this</span> <span class="n">command</span> <span class="n">should</span> <span class="n">be</span> <span class="n">executed</span>
+      <span class="o">--</span><span class="n">collections</span><span class="o">-</span><span class="n">config</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">collection</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">including</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">E</span><span class="p">,</span> <span class="o">--</span><span class="n">endorsement</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">endorsement</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">queryapprovalstatus</span>
+      <span class="o">--</span><span class="n">init</span><span class="o">-</span><span class="n">required</span>                  <span class="n">Whether</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">requires</span> <span class="n">invoking</span> <span class="s1">&#39;init&#39;</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">name</span> <span class="n">string</span>                    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">sequence</span> <span class="nb">int</span>                   <span class="n">The</span> <span class="n">sequence</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">the</span> <span class="n">channel</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">signature</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>        <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">signature</span> <span class="n">policy</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+  <span class="o">-</span><span class="n">V</span><span class="p">,</span> <span class="o">--</span><span class="n">validation</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">validation</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span> <span class="n">string</span>                 <span class="n">Version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-commit">
+<h2>peer lifecycle chaincode commit<a class="headerlink" href="#peer-lifecycle-chaincode-commit" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">on</span> <span class="n">the</span> <span class="n">channel</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">commit</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">channel</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">channel</span> <span class="n">config</span> <span class="n">policy</span> <span class="n">reference</span>
+  <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">channelID</span> <span class="n">string</span>               <span class="n">The</span> <span class="n">channel</span> <span class="n">on</span> <span class="n">which</span> <span class="n">this</span> <span class="n">command</span> <span class="n">should</span> <span class="n">be</span> <span class="n">executed</span>
+      <span class="o">--</span><span class="n">collections</span><span class="o">-</span><span class="n">config</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">collection</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">including</span> <span class="n">the</span> <span class="n">file</span> <span class="n">name</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">E</span><span class="p">,</span> <span class="o">--</span><span class="n">endorsement</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>      <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">endorsement</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">commit</span>
+      <span class="o">--</span><span class="n">init</span><span class="o">-</span><span class="n">required</span>                  <span class="n">Whether</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">requires</span> <span class="n">invoking</span> <span class="s1">&#39;init&#39;</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">name</span> <span class="n">string</span>                    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">sequence</span> <span class="nb">int</span>                   <span class="n">The</span> <span class="n">sequence</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">the</span> <span class="n">channel</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">signature</span><span class="o">-</span><span class="n">policy</span> <span class="n">string</span>        <span class="n">The</span> <span class="n">endorsement</span> <span class="n">policy</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">this</span> <span class="n">chaincode</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">signature</span> <span class="n">policy</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+  <span class="o">-</span><span class="n">V</span><span class="p">,</span> <span class="o">--</span><span class="n">validation</span><span class="o">-</span><span class="n">plugin</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">validation</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">this</span> <span class="n">chaincode</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span> <span class="n">string</span>                 <span class="n">Version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">waitForEvent</span>                   <span class="n">Whether</span> <span class="n">to</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">event</span> <span class="kn">from</span> <span class="nn">each</span> <span class="n">peer</span><span class="s1">&#39;s deliver filtered service signifying that the transaction has been committed successfully (default true)</span>
+      <span class="o">--</span><span class="n">waitForEventTimeout</span> <span class="n">duration</span>   <span class="n">Time</span> <span class="n">to</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">event</span> <span class="kn">from</span> <span class="nn">each</span> <span class="n">peer</span><span class="s1">&#39;s deliver filtered service signifying that the &#39;</span><span class="n">invoke</span><span class="s1">&#39; transaction has been committed successfully (default 30s)</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-querycommitted">
+<h2>peer lifecycle chaincode querycommitted<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span> <span class="n">a</span> <span class="n">committed</span> <span class="n">chaincode</span> <span class="n">definition</span> <span class="n">by</span> <span class="n">channel</span> <span class="ow">and</span> <span class="n">name</span> <span class="n">on</span> <span class="n">a</span> <span class="n">peer</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">querycommitted</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">Flags</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">channelID</span> <span class="n">string</span>               <span class="n">The</span> <span class="n">channel</span> <span class="n">on</span> <span class="n">which</span> <span class="n">this</span> <span class="n">command</span> <span class="n">should</span> <span class="n">be</span> <span class="n">executed</span>
+      <span class="o">--</span><span class="n">connectionProfile</span> <span class="n">string</span>       <span class="n">The</span> <span class="n">fully</span> <span class="n">qualified</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">profile</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">connection</span> <span class="n">information</span> <span class="k">for</span> <span class="n">the</span> <span class="n">network</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">currently</span> <span class="n">only</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">providing</span> <span class="n">peer</span> <span class="n">connection</span> <span class="n">information</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                           <span class="n">help</span> <span class="k">for</span> <span class="n">querycommitted</span>
+  <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">name</span> <span class="n">string</span>                    <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">chaincode</span>
+      <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">stringArray</span>      <span class="n">The</span> <span class="n">addresses</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+      <span class="o">--</span><span class="n">tlsRootCertFiles</span> <span class="n">stringArray</span>   <span class="n">If</span> <span class="n">TLS</span> <span class="ow">is</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">the</span> <span class="n">paths</span> <span class="n">to</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">root</span> <span class="n">cert</span> <span class="n">files</span> <span class="n">of</span> <span class="n">the</span> <span class="n">peers</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">order</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">certs</span> <span class="n">specified</span> <span class="n">should</span> <span class="n">match</span> <span class="n">the</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">flag</span>
+
+<span class="n">Global</span> <span class="n">Flags</span><span class="p">:</span>
+      <span class="o">--</span><span class="n">cafile</span> <span class="n">string</span>                       <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">trusted</span> <span class="n">certificate</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">the</span> <span class="n">ordering</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">certfile</span> <span class="n">string</span>                     <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">X509</span> <span class="n">public</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">clientauth</span>                          <span class="n">Use</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">connTimeout</span> <span class="n">duration</span>                <span class="n">Timeout</span> <span class="k">for</span> <span class="n">client</span> <span class="n">to</span> <span class="n">connect</span> <span class="p">(</span><span class="n">default</span> <span class="mi">3</span><span class="n">s</span><span class="p">)</span>
+      <span class="o">--</span><span class="n">keyfile</span> <span class="n">string</span>                      <span class="n">Path</span> <span class="n">to</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">PEM</span><span class="o">-</span><span class="n">encoded</span> <span class="n">private</span> <span class="n">key</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">mutual</span> <span class="n">TLS</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">orderer</span> <span class="n">string</span>                      <span class="n">Ordering</span> <span class="n">service</span> <span class="n">endpoint</span>
+      <span class="o">--</span><span class="n">ordererTLSHostnameOverride</span> <span class="n">string</span>   <span class="n">The</span> <span class="n">hostname</span> <span class="n">override</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">validating</span> <span class="n">the</span> <span class="n">TLS</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">orderer</span><span class="o">.</span>
+      <span class="o">--</span><span class="n">tls</span>                                 <span class="n">Use</span> <span class="n">TLS</span> <span class="n">when</span> <span class="n">communicating</span> <span class="k">with</span> <span class="n">the</span> <span class="n">orderer</span> <span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="peer-lifecycle-chaincode-package-example">
+<h3>peer lifecycle chaincode package example<a class="headerlink" href="#peer-lifecycle-chaincode-package-example" title="Permalink to this headline">¶</a></h3>
+<p>A chaincode needs to be packaged before it can be installed on your peers.
+This example uses the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">package</span></code> command to package
+a Golang chaincode.</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">--label</span></code> flag to provide a chaincode package label of <code class="docutils literal notranslate"><span class="pre">myccv1</span></code>
+that your organization will use to identify the package.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">package</span> <span class="n">mycc</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">path</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">-</span><span class="n">samples</span><span class="o">/</span><span class="n">chaincode</span><span class="o">/</span><span class="n">abstore</span><span class="o">/</span><span class="n">go</span><span class="o">/</span> <span class="o">--</span><span class="n">lang</span> <span class="n">golang</span> <span class="o">--</span><span class="n">label</span> <span class="n">myccv1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-install-example">
+<h3>peer lifecycle chaincode install example<a class="headerlink" href="#peer-lifecycle-chaincode-install-example" title="Permalink to this headline">¶</a></h3>
+<p>After the chaincode is packaged, you can use the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">chaincode</span> <span class="pre">install</span></code> command
+to install the chaincode on your peers.</p>
+<ul>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">mycc.tar.gz</span> </code> package on <code class="docutils literal notranslate"><span class="pre">peer0.org1.example.com:7051</span></code> (the
+peer defined by <code class="docutils literal notranslate"><span class="pre">--peerAddresses</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peer</span> <span class="n">lifecycle</span> <span class="n">chaincode</span> <span class="n">install</span> <span class="n">mycc</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">peerAddresses</span> <span class="n">peer0</span><span class="o">.</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">7051</span>
+</pre></div>
+</div>
+<p>If successful, the command will return the package identifier. The
+package ID is the package label combined with a hash of the chaincode
+package taken by the peer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2019</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">53.691</span> <span class="n">UTC</span> <span class="p">[</span><span class="n">cli</span><span class="o">.</span><span class="n">lifecycle</span><span class="o">.</span><span class="n">chaincode</span><span class="p">]</span> <span class="n">submitInstallProposal</span> <span class="o">-&gt;</span> <span class="n">INFO</span> <span class="mi">001</span> <span class="n">Installed</span> <span class="n">remotely</span><span class="p">:</span> <span class="n">response</span><span class="p">:</span><span class="o">&lt;</span><span class="n">status</span><span class="p">:</span><span class="mi">200</span> <span class="n">payload</span><span class="p">:</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Emycc:ebd89878c2bbccf62f68c36072626359376aa83c36435a058d453e8dbfd894cc&quot;</span> <span class="o">&gt;</span>
+<span class="mi">2019</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">13</span> <span class="mi">13</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">53.691</span> <span class="n">UTC</span> <span class="p">[</span><span class="n">cli</span><span class="o">.</span><span class="n">lifecycle</span><span class="o">.</span><span class="n">chaincode</span><span class="p">]</span> <span class="n">submitInstallProposal</span> <span class="o">-&gt;</span> <span class="n">INFO</span> <span class="mi">002</span> <span class="n">Chaincode</span> <span class="n">code</span> <span class="n">package</span> <span class="n">identifier</span><span class="p">:</span> <span class="n">mycc</span><span class="p">:</span><span class="n">a7ca45a7cc85f1d89c905b775920361ed089a364e12a9b6d55ba75c965ddd6a9</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-queryinstalled-example">
+<h3>peer lifecycle chaincode queryinstalled example<a class="headerlink" href="#peer-lifecycle-chaincode-queryinstalled-example" title="Permalink to this headline">¶</a></h3>
+<p>You need to use the chaincode package identifier to approve a chaincode
+definition for your organization. You can find the package ID for the
+chaincodes you have installed by using the
+<code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">queryinstalled</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
+peer lifecycle chaincode queryinstalled --peerAddresses peer0.org1.example.com:7051
+```
+A successful command will return the package ID associated with the
+package label.
+```
+Get installed chaincodes on peer:
+Package ID: myccv1:a7ca45a7cc85f1d89c905b775920361ed089a364e12a9b6d55ba75c965ddd6a9, Label: myccv1
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-approveformyorg-example">
+<h3>peer lifecycle chaincode approveformyorg example<a class="headerlink" href="#peer-lifecycle-chaincode-approveformyorg-example" title="Permalink to this headline">¶</a></h3>
+<p>Once the chaincode package has been installed on your peers, you can approve
+a chaincode definition for your organization. The chaincode definition includes
+the important parameters of chaincode governance, including the chaincode name,
+version and the endorsement policy.</p>
+<p>Here is an example of the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">approveformyorg</span></code> command,
+which approves the definition of a chaincode  named <code class="docutils literal notranslate"><span class="pre">mycc</span></code> at version <code class="docutils literal notranslate"><span class="pre">1.0</span></code> on
+channel <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>.</p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">--package-id</span></code> to pass in the chaincode package identifier. Use the
+<code class="docutils literal notranslate"><span class="pre">--signature-policy</span></code> flag to define an endorsement policy for the chaincode.
+Use the <code class="docutils literal notranslate"><span class="pre">init-required</span></code> flag to request the execution of the <code class="docutils literal notranslate"><span class="pre">Init</span></code>
+function to initialize the chaincode.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+.
+peer lifecycle chaincode approveformyorg  -o orderer.example.com:7050 --tls --cafile $ORDERER_CA --channelID mychannel --name mycc --version 1.0 --init-required --package-id myccv1:a7ca45a7cc85f1d89c905b775920361ed089a364e12a9b6d55ba75c965ddd6a9 --sequence 1 --signature-policy &quot;AND (&#39;Org1MSP.peer&#39;,&#39;Org2MSP.peer&#39;)&quot;
+.
+2019-03-18 16:04:09.046 UTC [cli.lifecycle.chaincode] InitCmdFactory -&gt; INFO 001 Retrieved channel (mychannel) orderer endpoint: orderer.example.com:7050
+2019-03-18 16:04:11.253 UTC [chaincodeCmd] ClientWait -&gt; INFO 002 txid [efba188ca77889cc1c328fc98e0bb12d3ad0abcda3f84da3714471c7c1e6c13c] committed with status (VALID) at peer0.org1.example.com:7051
+</pre></div>
+</div>
+</li>
+<li><p>You can also use the <code class="docutils literal notranslate"><span class="pre">--channel-config-policy</span></code> flag use a policy inside
+the channel configuration as the chaincode endorsement policy. The default
+endorsement policy is <code class="docutils literal notranslate"><span class="pre">Channel/Application/Endorsement</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+.
+peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 --tls --cafile $ORDERER_CA --channelID mychannel --name mycc --version 1.0 --init-required --package-id myccv1:a7ca45a7cc85f1d89c905b775920361ed089a364e12a9b6d55ba75c965ddd6a9 --sequence 1 --channel-config-policy Channel/Application/Admins
+.
+2019-03-18 16:04:09.046 UTC [cli.lifecycle.chaincode] InitCmdFactory -&gt; INFO 001 Retrieved channel (mychannel) orderer endpoint: orderer.example.com:7050
+2019-03-18 16:04:11.253 UTC [chaincodeCmd] ClientWait -&gt; INFO 002 txid [efba188ca77889cc1c328fc98e0bb12d3ad0abcda3f84da3714471c7c1e6c13c] committed with status (VALID) at peer0.org1.example.com:7051
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-queryapprovalstatus-example">
+<h3>peer lifecycle chaincode queryapprovalstatus example<a class="headerlink" href="#peer-lifecycle-chaincode-queryapprovalstatus-example" title="Permalink to this headline">¶</a></h3>
+<p>You can query which organizations have approved a chaincode definition before
+you commit the definition to the channel using the
+<code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">queryapprovalstatus</span></code> command. If an organization
+has approved the chaincode definition specified in the command, the command
+will return a value of true. You can use this command to learn whether enough
+channel members have approved a chaincode definition to meet the
+<code class="docutils literal notranslate"><span class="pre">Application/Channel/Endorsement</span></code> policy (a majority by default) before the
+definition can be committed to a channel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
+export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+.
+peer lifecycle chaincode queryapprovalstatus -o orderer.example.com:7050 --channelID mychannel --tls --cafile $ORDERER_CA --name mycc --version 1.0 --init-required --sequence 1
+```
+</pre></div>
+</div>
+<ul>
+<li><p>If successful, the command will return a JSON map that shows if an
+organization has approved the chaincode definition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span>
+        <span class="s2">&quot;Approved&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Org1MSP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                <span class="s2">&quot;Org2MSP&quot;</span><span class="p">:</span> <span class="n">true</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-commit-example">
+<h3>peer lifecycle chaincode commit example<a class="headerlink" href="#peer-lifecycle-chaincode-commit-example" title="Permalink to this headline">¶</a></h3>
+<p>Once a sufficient number of organizations approve a chaincode definition for
+their organizations (a majority by default), one organization can commit the
+definition the channel using the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">commit</span></code> command:</p>
+<ul>
+<li><p>This command needs to target the peers of other organizations on the channel
+to collect their organization endorsement for the definition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+.
+peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID mychannel --name mycc --version 1.0 --sequence 1 --init-required --tls --cafile $ORDERER_CA --peerAddresses peer0.org1.example.com:7051 --peerAddresses peer0.org2.example.com:9051
+.
+2019-03-18 16:14:27.258 UTC [chaincodeCmd] ClientWait -&gt; INFO 001 txid [b6f657a14689b27d69a50f39590b3949906b5a426f9d7f0dcee557f775e17882] committed with status (VALID) at peer0.org2.example.com:9051
+2019-03-18 16:14:27.321 UTC [chaincodeCmd] ClientWait -&gt; INFO 002 txid [b6f657a14689b27d69a50f39590b3949906b5a426f9d7f0dcee557f775e17882] committed with status (VALID) at peer0.org1.example.com:7051
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="peer-lifecycle-chaincode-querycommitted-example">
+<h3>peer lifecycle chaincode querycommitted example<a class="headerlink" href="#peer-lifecycle-chaincode-querycommitted-example" title="Permalink to this headline">¶</a></h3>
+<p>You can query the chaincode definitions that have been committed to a channel by
+using the <code class="docutils literal notranslate"><span class="pre">peer</span> <span class="pre">lifecycle</span> <span class="pre">chaincode</span> <span class="pre">querycommitted</span></code> command. You can use this
+command to query the current definition sequence number before upgrading a
+chaincode.</p>
+<ul>
+<li><p>You need to supply the chaincode name and channel name in order to query the
+chaincode definition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+.
+peer lifecycle chaincode querycommitted -o orderer.example.com:7050 --channelID mychannel --name mycc --tls --cafile $ORDERER_CA --peerAddresses peer0.org1.example.com:7051
+.
+Committed chaincode definition for chaincode &#39;mycc&#39; on channel &#39;mychannel&#39;:
+Version: 1, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc
+</pre></div>
+</div>
+</li>
+</ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="peerchannel.html" class="btn btn-neutral float-right" title="peer channel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="peerchaincode.html" class="btn btn-neutral" title="peer chaincode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Hyperledger 2019.
+    <br>
+      <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

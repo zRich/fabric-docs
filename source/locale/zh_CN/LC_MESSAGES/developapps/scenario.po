@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:00+0000\n"
 "Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -21,6 +21,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/developapps/scenario.md:1
+msgid "The scenario"
+msgstr ""
 
 #: ../../source/developapps/scenario.md:3
 msgid ""
@@ -39,15 +43,15 @@ msgid ""
 msgstr ""
 "在本主题中，我们将描述一个涉及六个组织的业务场景，这些组织使用PaperNet发行、购买和赎回商业票据。PaperNet是一个建立在超级账本FAbric的商业票据网络。我们将使用该场景概述开发商业票据应用程序和参与者组织使用的智能合约的需求。"
 
+#: ../../source/developapps/scenario.md:12
+msgid "PaperNet network"
+msgstr ""
+
 #: ../../source/developapps/scenario.md:14
 msgid ""
 "PaperNet is a commercial paper network that allows suitably authorized "
 "participants to issue, trade, redeem and rate commercial paper."
 msgstr "PaperNet是一个商业票据网络，允许适当授权的参与者发行、交易、赎回和定价商业票据。"
-
-#: ../../source/developapps/scenario.md:17
-msgid "develop.systemscontext"
-msgstr "develop.systemscontext"
 
 #: ../../source/developapps/scenario.md:19
 msgid ""
@@ -64,6 +68,10 @@ msgid ""
 "Let's see how MagnetoCorp uses PaperNet and commercial paper to help its "
 "business."
 msgstr "让我们看看MagnetoCorp 是如何使用PaperNet和商业票据来帮助其业务的。"
+
+#: ../../source/developapps/scenario.md:28
+msgid "Introducing the actors"
+msgstr ""
 
 #: ../../source/developapps/scenario.md:30
 msgid ""

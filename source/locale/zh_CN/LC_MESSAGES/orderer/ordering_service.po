@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 03:45+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
 "Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
@@ -20,6 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/orderer/ordering_service.md:1
+msgid "The Ordering Service"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:3
 msgid "Audience: Architects, ordering service admins, channel creators"
@@ -35,6 +39,10 @@ msgid ""
 msgstr ""
 "这个话题是一个概念性的介绍顺序的概念,排序器与peer相互作用,如何在一个交易流程中所发挥的作用,和当前可用的排序服务的实现概述,尤其关注 Raft "
 "排序服务实现。"
+
+#: ../../source/orderer/ordering_service.md:10
+msgid "What is ordering?"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:12
 msgid ""
@@ -70,6 +78,10 @@ msgid ""
 msgstr ""
 "除了促进确定性之外，将链码执行的背书(发生在peer)与排序分离，还在性能和可伸缩性方面提供了Fabric的优势，消除了由相同节点执行和排序时可能出现的瓶颈。"
 
+#: ../../source/orderer/ordering_service.md:34
+msgid "Orderer nodes and channel configuration"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:36
 msgid ""
 "In addition to their ordering role, orderers also maintain the list of "
@@ -102,6 +114,10 @@ msgid ""
 msgstr ""
 "排序器还对通道执行基本访问控制，限制谁可以读写数据，以及谁可以配置数据。请记住，谁有权修改通道中的配置元素取决于相关管理员在创建联盟或通道时设置的策略。配置交易由排序器处理，因为它需要知道当前策略集合来执行其基本形式的访问控制。在这种情况下，排序器处理配置更新，以确保请求者拥有正确的管理权限。如果是，排序器将根据现有配置验证更新请求，生成一个新的配置交易，并将其打包到一个区块中，该区块将转发给通道上的所有peer。然后peer处理配置交易，以验证排序器批准的修改确实满足通道中定义的策略。"
 
+#: ../../source/orderer/ordering_service.md:59
+msgid "Orderer nodes and Identity"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:61
 msgid ""
 "Everything that interacts with a blockchain network, including peers, "
@@ -125,6 +141,14 @@ msgid ""
 "root CA, is up to you."
 msgstr ""
 "与peer一样，排序节点属于组织。与peer类似，应该为每个组织使用单独的证书颁发机构(CA)。这个CA是否将作为根CA发挥作用，或者您是否选择部署根CA，然后部署与该根CA关联的中间CA，这取决于您。"
+
+#: ../../source/orderer/ordering_service.md:73
+msgid "Orderers and the transaction flow"
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:75
+msgid "Phase one: Proposal"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:77
 msgid ""
@@ -157,6 +181,10 @@ msgstr ""
 msgid ""
 "For an in-depth look at the first phase, refer back to the Peers topic."
 msgstr "要深入了解第一个阶段，请参阅peer主题。"
+
+#: ../../source/orderer/ordering_service.md:96
+msgid "Phase two: Ordering and packaging transactions into blocks"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:98
 msgid ""
@@ -196,10 +224,6 @@ msgid ""
 " processed by peers in the third phase."
 msgstr ""
 "区块中的交易数量取决于区块的期望大小和最大运行时间相关的通道配置参数(确切地说，是BatchSize和BatchTimeout参数)。然后将这些区块保存到排序器的账本中，并分发给已经加入通道的所有peer。如果此时恰好有一个peer关闭，或者稍后加入通道，则在重新连接到排序服务节点或与另一个peer通信（闲聊）之后，通道将接收到这些区块。我们将在第三阶段看到peer如何处理这个区块。"
-
-#: ../../source/orderer/ordering_service.md:122
-msgid "Orderer1"
-msgstr "Orderer1"
 
 #: ../../source/orderer/ordering_service.md:124
 msgid ""
@@ -256,6 +280,10 @@ msgid ""
 "ordering them, and packaging them into blocks, ready for distribution."
 msgstr "在第二阶段的末尾，我们看到排序器负责收集提议的交易更新、排序它们并将它们打包成区块，以便分发，这些简单但重要的过程。"
 
+#: ../../source/orderer/ordering_service.md:160
+msgid "Phase three: Validation and commit"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:162
 msgid ""
 "The third phase of the transaction workflow involves the distribution and "
@@ -286,10 +314,6 @@ msgid ""
 msgstr ""
 "每个peer将独立地验证分布式区块，但以确定的方式验证，确保账本保持一致。具体来说,每个peer的通道将区块中的每个交易进行验证,以确保得到需要的组织peer的背书,其背书吻合,它还没有被其他最近已提交交易搞失效。无效的交易仍然保留在排序器创建的不可变区块中，但是peer将它们标记为无效，并且不更新账本的状态。"
 
-#: ../../source/orderer/ordering_service.md:180
-msgid "Orderer2"
-msgstr "Orderer2"
-
 #: ../../source/orderer/ordering_service.md:182
 msgid ""
 "The second role of an ordering node is to distribute blocks to peers. In "
@@ -318,6 +342,10 @@ msgstr ""
 msgid "For a deeper look at phase 3, refer back to the Peers topic."
 msgstr "要更深入地了解阶段3，请参阅peer主题。"
 
+#: ../../source/orderer/ordering_service.md:197
+msgid "Ordering service implementations"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:199
 msgid ""
 "While every ordering service currently available handles transactions and "
@@ -332,6 +360,54 @@ msgid ""
 "implementation the node will be used in), check out our documentation on "
 "standing up an ordering node."
 msgstr "有关如何建立排序节点(无论该节点将在什么实现中使用)的信息，请参阅关于建立排序节点的文档。"
+
+#: ../../source/orderer/ordering_service.md:207
+#: ../../source/orderer/ordering_service.md:237
+msgid "Solo"
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:209
+msgid ""
+"The Solo implementation of the ordering service is aptly named: it features "
+"only a single ordering node. As a result, it is not, and never will be, "
+"fault tolerant. For that reason, Solo implementations cannot be considered "
+"for production, but they are a good choice for testing applications and "
+"smart contracts, or for creating proofs of concept. However, if you ever "
+"want to extend this PoC network into production, you might want to start "
+"with a single node Raft cluster, as it may be reconfigured to add additional"
+" nodes."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:218
+#: ../../source/orderer/ordering_service.md:251
+msgid "Raft"
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:220
+msgid ""
+"New as of v1.4.1, Raft is a crash fault tolerant (CFT) ordering service "
+"based on an implementation of Raft protocol in etcd. Raft follows a \"leader"
+" and follower\" model, where a leader node is elected (per channel) and its "
+"decisions are replicated by the followers. Raft ordering services should be "
+"easier to set up and manage than Kafka-based ordering services, and their "
+"design allows different organizations to contribute nodes to a distributed "
+"ordering service."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:229
+#: ../../source/orderer/ordering_service.md:432
+msgid "Kafka"
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:231
+msgid ""
+"Similar to Raft-based ordering, Apache Kafka is a CFT implementation that "
+"uses a \"leader and follower\" node configuration. Kafka utilizes a "
+"ZooKeeper ensemble for management purposes. The Kafka based ordering service"
+" has been available since Fabric v1.0, but many users may find the "
+"additional administrative overhead of managing a Kafka cluster intimidating "
+"or undesirable."
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:239
 msgid ""
@@ -386,6 +462,61 @@ msgid ""
 msgstr ""
 "从它们提供给网络或通道的服务的角度来看，Raft和现有的基于kafka的排序服务我们将在稍后讨论)是相似的。它们都是使用领导者和跟随者设计的CFT排序服务。如果您是应用程序开发人员、智能合约开发人员或peer管理员，您不会注意到基于Raft和Kafka的排序服务之间的功能差异。然而，有几个主要的差异值得考虑，特别是如果你打算管理一个排序服务:"
 
+#: ../../source/orderer/ordering_service.md:276
+msgid ""
+"Raft is easier to set up. Although Kafka has scores of admirers, even those "
+"admirers will (usually) admit that deploying a Kafka cluster and its "
+"ZooKeeper ensemble can be tricky, requiring a high level of expertise in "
+"Kafka infrastructure and settings. Additionally, there are many more "
+"components to manage with Kafka than with Raft, which means that there are "
+"more places where things can go wrong. And Kafka has its own versions, which"
+" must be coordinated with your orderers. With Raft, everything is embedded "
+"into your ordering node."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:284
+msgid ""
+"Kafka and Zookeeper are not designed to be run across large networks. They "
+"are designed to be CFT but should be run in a tight group of hosts. This "
+"means that practically speaking you need to have one organization run the "
+"Kafka cluster. Given that, having ordering nodes run by different "
+"organizations when using Kafka (which Fabric supports) doesn't give you much"
+" in terms of decentralization because the nodes will all go to the same "
+"Kafka cluster which is under the control of a single organization. With "
+"Raft, each organization can have its own ordering nodes, participating in "
+"the ordering service, which leads to a more decentralized system."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:294
+msgid ""
+"Raft is supported natively. While Kafka-based ordering services are "
+"currently compatible with Fabric, users are required to get the requisite "
+"images and learn how to use Kafka and ZooKeeper on their own. Likewise, "
+"support for Kafka-related issues is handled through Apache, the open-source "
+"developer of Kafka, not Hyperledger Fabric. The Fabric Raft implementation, "
+"on the other hand, has been developed and will be supported within the "
+"Fabric developer community and its support apparatus."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:302
+msgid ""
+"Where Kafka uses a pool of servers (called \"Kafka brokers\") and the admin "
+"of the orderer organization specifies how many nodes they want to use on a "
+"particular channel, Raft allows the users to specify which ordering nodes "
+"will be deployed to which channel. In this way, peer organizations can make "
+"sure that, if they also own an orderer, this node will be made a part of a "
+"ordering service of that channel, rather than trusting and depending on a "
+"central admin to manage the Kafka nodes."
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:310
+msgid ""
+"Raft is the first step toward Fabric's development of a byzantine fault "
+"tolerant (BFT) ordering service. As we'll see, some decisions in the "
+"development of Raft were driven by this. If you are interested in BFT, "
+"learning how to use Raft should ease the transition."
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:315
 msgid ""
 "Note: Similar to Solo and Kafka, a Raft ordering service can lose "
@@ -400,6 +531,10 @@ msgid ""
 "endorsements upon such a timeout."
 msgstr ""
 "注:与Solo和Kafka类似，Raft排序服务在向客户发送收据确认后可能会丢失交易。例如，如果领导者崩溃的时间与跟随者崩溃的时间大致相同时提供接收确认。因此，无论如何，应用程序客户端都应该侦听peer的交易提交事件(检查交易有效性)，但是应该格外小心，以确保客户端还能优雅地容忍一个超时，在这个超时中，交易没有在配置的时间范围内提交。根据应用程序的不同，可能需要在这样的超时之后重新提交交易或收集一组新的背书。"
+
+#: ../../source/orderer/ordering_service.md:325
+msgid "Raft concepts"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:327
 msgid ""
@@ -473,6 +608,10 @@ msgid ""
 msgstr ""
 "跟随者。再次强调，这不是一个新概念，但是理解跟随者的关键是跟随者从领导者那里接收日志并确定地复制它们，确保日志保持一致。我们将在关于领导者选举的部分中看到，跟随者也会收到来自领导者的“心跳”消息。如果领导者在一段可配置的时间内停止发送这些消息，跟随者将发起一次领导者选举，其中一人将当选为新的领导者。"
 
+#: ../../source/orderer/ordering_service.md:371
+msgid "Raft in a transaction flow"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:373
 msgid ""
 "Every channel runs on a separate instance of the Raft protocol, which allows"
@@ -510,6 +649,14 @@ msgid ""
 "in phase two of our transaction flow."
 msgstr "当排序器验证检查完成后，将按照我们交易流程的第二阶段的描述，对交易进行排序、打包成区块、协商并分发。"
 
+#: ../../source/orderer/ordering_service.md:395
+msgid "Architectural notes"
+msgstr ""
+
+#: ../../source/orderer/ordering_service.md:397
+msgid "How leader election works in Raft"
+msgstr ""
+
 #: ../../source/orderer/ordering_service.md:399
 msgid ""
 "Although the process of electing a leader happens within the orderer's "
@@ -534,6 +681,10 @@ msgid ""
 "For a visual representation of how the leader election process works, check "
 "out The Secret Lives of Data."
 msgstr "要了解领导者选举过程的可视化表示，请查看数据的秘密生活。"
+
+#: ../../source/orderer/ordering_service.md:414
+msgid "Snapshots"
+msgstr ""
 
 #: ../../source/orderer/ordering_service.md:416
 msgid ""

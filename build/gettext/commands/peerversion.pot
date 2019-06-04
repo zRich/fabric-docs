@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../../source/commands/peerversion.md:1
+#: ../../source/commands/peerversion.md:24
+msgid "peer version"
+msgstr ""
+
 #: ../../source/commands/peerversion.md:3
 msgid "The peer version command displays the version information of the peer. It displays version, Commit SHA, Go version, OS/architecture, and chaincode information. For example:"
 msgstr ""
 
-#: ../../source/commands/peerversion.md:33
+#: ../../source/commands/peerversion.md:20
+msgid "Syntax"
+msgstr ""
+
+#: ../../source/commands/peerversion.md:22
+msgid "The peer version command takes no arguments."
+msgstr ""
+
+#: ../../source/commands/peerversion.md:36
 msgid "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>."
 msgstr ""
 

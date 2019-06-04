@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using FabToken &mdash; hyperledger-fabricdocs master documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pluggable transaction endorsement and validation" href="../pluggable_endorsement_and_validation.html" />
+    <link rel="prev" title="Endorsement policies" href="../endorsement-policies.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+
+          
+            <a href="../index.html" class="icon icon-home"> hyperledger-fabricdocs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+<br><img style="background-color: #fff; height: unset; width: unset;" alt="Hyperledger Fabric" src=../_images/hyperledger_fabric_logo_color.png />
+<br>
+<a href="https://github.com/hyperledger/fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="GitHub" src="../_static/images/github_button.png"/></a>
+&nbsp;<a href="https://stackoverflow.com/questions/tagged/hyperledger-fabric"><img style="padding: 0px; margin: auto auto auto auto;" alt="StackOverflow" src="../_static/images/stackoverflow_button.png"/></a>
+&nbsp;<a href="https://chat.hyperledger.org"><img style="padding: 0px; margin: auto auto auto auto;" alt="Rocket Chat" src="../_static/images/rocketchat_button.png"/></a>
+&nbsp;<a href="https://www.youtube.com/playlist?list=PL0MZ85B_96CH7wvtrRzV7SvtRY0sI0DEg"><img style="padding: 0px; margin: auto auto auto auto;" alt="Youtube Channel" src="../_static/images/youtube_button.png"/></a>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatis.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html">What’s new in the v2.0 Alpha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whatsnew.html#release-notes">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developapps/developing_applications.html">Developing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ops_guide.html">Operations Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../upgrade_to_newest_version.html">Upgrading to the Newest Version of Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../orderer_deploy.html">Setting up an ordering node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config_update.html">Updating a Channel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msp.html">Membership Service Providers (MSP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configtx.html">Channel Configuration (configtx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endorsement-policies.html">Endorsement policies</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using FabToken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-fabtoken">What is FabToken</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-token-lifecycle">The token lifecycle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#issuing-tokens">Issuing tokens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer">Transfer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redeem">Redeem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-token-transaction-flow">The token transaction flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fabtoken-example">FabToken Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#start-the-network">Start the network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issue-tokens">Issue tokens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transferring-tokens">Transferring tokens</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#redeeming-tokens">Redeeming tokens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#future-features">Future features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pluggable_endorsement_and_validation.html">Pluggable transaction endorsement and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access_control.html">Access Control Lists (ACL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../idemix.html">MSP Implementation with Identity Mixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../idemixgen.html">Identity Mixer MSP configuration generator (idemixgen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations_service.html">The Operations Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_reference.html">Metrics Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../error-handling.html">Error handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logging-control.html">Logging Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enable_tls.html">Securing Communication With Transport Layer Security (TLS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raft_configuration.html">Configuring and operating a Raft ordering service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kafka.html">Bringing up a Kafka-based Ordering Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../command_ref.html">Commands Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Fabric-FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributions Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releases.html">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Still Have Questions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../status.html">Status</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">hyperledger-fabricdocs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../ops_guide.html">Operations Guides</a> &raquo;</li>
+        
+      <li>Using FabToken</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/token/FabToken.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-fabtoken">
+<h1>Using FabToken<a class="headerlink" href="#using-fabtoken" title="Permalink to this headline">¶</a></h1>
+<p><strong>FabToken</strong> allows users to easily tokenize assets on Hyperledger Fabric.
+Tokens are being introduced as an Alpha feature in Fabric v2.0. You can use
+the following operations guide to learn about FabToken and get started with
+tokens. You can find an example creating tokens on Fabric that extends the
+Building your First Network tutorial at the end of this guide.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#what-is-fabtoken">What is FabToken</a></p></li>
+<li><p><a class="reference external" href="#the-token-lifecycle">The Token lifecycle</a></p></li>
+<li><p><a class="reference external" href="#the-token-transaction-flow">The Token transaction flow</a></p></li>
+<li><p><a class="reference external" href="#fabtoken-example">FabToken example</a></p></li>
+<li><p><a class="reference external" href="#future-features">Future features</a></p></li>
+</ul>
+<div class="section" id="what-is-fabtoken">
+<h2>What is FabToken<a class="headerlink" href="#what-is-fabtoken" title="Permalink to this headline">¶</a></h2>
+<p>Representing assets as tokens allows you to use the blockchain ledger to
+establish the unique state and ownership of an item, and transfer ownership
+using a consensus mechanism that is trusted by multiple parties. As long as the
+ledger is secure, the asset is immutable and cannot be transferred without the
+owners consent.</p>
+<p>Tokens can represent <em>tangible assets</em>, such as goods moving through a supply
+chain or a financial instrument being traded. Tokens can also represent
+<em>intangible assets</em> such as loyalty points. Because tokens cannot be transferred
+without the consent of the owner, and transactions are validated on a
+distributed ledger, representing assets as tokens allows you to reduce the risk
+and difficulty of transferring assets across multiple parties.</p>
+<p><strong>FabToken</strong> is a token management system that allows you to issue, transfer,
+and redeem tokens using Hyperledger Fabric. Tokens are stored on channel
+ledgers and can be owned by any member of the channel. FabToken uses the
+membership services of Fabric to authenticate the identity of token owners and
+manage their public and private keys. Fabric token transactions are only valid
+if they are issued by a token owner with a valid MSP identifier.</p>
+<p>FabToken provides a simple interface for tokenizing assets on Fabric channels,
+while taking advantage of the validation and trust that channels provide. Tokens
+use the channel ordering services and peers for consensus and validation. Tokens
+also use channel policies to govern which members are allowed to own and issue
+tokens. However, users do not need to use smart contracts to create or manage
+tokens. Tokens can establish immutability and ownership of an asset without
+requiring that channel members write and approve complicated business logic to
+create and govern those assets. Token owners can use trusted peers to create
+token transactions, without having to rely on peers belonging to other
+organizations to execute and endorse a transaction.</p>
+</div>
+<div class="section" id="the-token-lifecycle">
+<h2>The token lifecycle<a class="headerlink" href="#the-token-lifecycle" title="Permalink to this headline">¶</a></h2>
+<p>Tokens have a closed lifecycle within Hyperledger Fabric. They can be <strong>issued</strong>,
+<strong>transferred</strong>, and then <strong>redeemed</strong>.</p>
+<ul class="simple">
+<li><p>Tokens are created by being <strong>issued</strong>. The token issuer defines the type of
+asset represented by the tokens and the quantity. The issuer also assigns
+issued tokens to their original owners.</p></li>
+<li><p>Tokens are “spent” by being <strong>transferred</strong>. The token owner transfers the asset
+represented by token to a new owner that is a member of the fabric channel.
+Once the token has been transferred, it can no longer be spent or accessed by
+the previous owner.</p></li>
+<li><p>Tokens are removed from the channel by being <strong>redeemed</strong>. Redeemed tokens are
+no longer owned by any channel member and thus can no longer be spent.</p></li>
+</ul>
+<p>FabToken uses an <strong>Unspent Transaction Output (UTXO)</strong> model to validate token
+transactions. UTXO transactions are a powerful guarantee that an asset is
+unique, can only be transferred by its owner, and cannot be double spent. Each
+transaction needs to have a specific set of outputs and inputs. The output are
+new tokens created by the transaction. These are listed on the ledger in an
+“unspent” state. The input needs to be unspent tokens created as the output of
+another transaction. When a transaction is validated, the spent tokens are
+destroyed by being removed from the state database of the channel ledger.</p>
+<p>The token lifecycle builds on the UTXO model to ensure that tokens are unique and
+can only be spent once. When a token is <strong>issued</strong>, it is created in an unspent
+state belonging to the owner that was specified by the issuer. The owner can then
+transfer or redeem the token. When the token is <strong>transferred</strong>, the token owned
+by the creator is taken as input. The output of the transaction are new tokens
+owned by the recipients of the transfer. The input token becomes “spent” and is
+removed from the state database. The quantity of assets represented by the
+tokens transferred need to be of the same quantity as the output. Tokens that are
+<strong>redeemed</strong> are transferred to an empty owner. This makes redeemed tokens
+impossible to transfer again by any member of the channel.</p>
+<p>The following guide describes how tokens are created and used in Fabric. The
+instructions provide details on what steps and information are required to work
+with FabToken whether you are using the Fabric token client, the API’s provided
+by the Fabric SDKs, or Token CLI. You can find a <a class="reference external" href="#fabtoken-example">FabToken example</a>
+at the end of this guide.</p>
+<div class="section" id="issuing-tokens">
+<h3>Issuing tokens<a class="headerlink" href="#issuing-tokens" title="Permalink to this headline">¶</a></h3>
+<p>Tokens can only be created by <strong>Issuers</strong>. Issuers are channel members that are
+given permission to issue tokens by the <code class="docutils literal notranslate"><span class="pre">IssuingPolicy</span></code>. Users that meet the
+policy can add tokens to the ledger using an <code class="docutils literal notranslate"><span class="pre">issue</span></code> transaction.</p>
+<p>Tokens are created with three attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Owner</span></code> identifies the channel member that can transfer or redeem the new
+token through its MSP identity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code> describes the asset the token represents, such as USD, EUR, or
+BYFNcoins in the example below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quantity</span></code> is the number of units of <code class="docutils literal notranslate"><span class="pre">Type</span></code> that the <code class="docutils literal notranslate"><span class="pre">Token</span></code> represents.</p></li>
+</ul>
+<p>For example, each token of type <code class="docutils literal notranslate"><span class="pre">US</span> <span class="pre">dollar</span></code> can represent 100 dollars. Each
+dollar does not need to be a separate token. In order to spend 50 dollars of
+the token, or add 50 dollars, new tokens are created which represent the new
+quantities.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">IssuingPolicy</span></code> can also restrict which users can issue tokens of specific
+types. Within the Fabric v2.0 Alpha release, <code class="docutils literal notranslate"><span class="pre">IssuingPolicy</span></code> is set to <code class="docutils literal notranslate"><span class="pre">ANY</span></code>,
+meaning that all channel members will be allowed to issue tokens of any type.
+Users will be allowed to restrict this policy in a future release.</p>
+</div>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">List</span></code> method or command to query the unspent tokens that you
+own. A successful list command returns the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TokenID</span></code> is the identifier of each token you own.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code> is the asset your tokens represent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quantity</span></code> is number of units of <code class="docutils literal notranslate"><span class="pre">Type</span></code> in hexadecimal format of each asset
+that you own.</p></li>
+</ul>
+</div>
+<div class="section" id="transfer">
+<h3>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h3>
+<p>You can spend the tokens that you own by transferring them to other channel
+members. You can transfer a token by providing the following values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Token</span> <span class="pre">ID</span></code>: The ID of the tokens you want to transfer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quantity</span></code>: The amount of the asset represented by each token to be
+transferred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Recipient</span></code>: The MSP identifier of the channel member you want to transfer the
+assets to.</p></li>
+</ul>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> transaction is against the underlying asset that the
+tokens represent, and does not transfer the tokens themselves. Rather, new tokens
+are created by the transfer transaction. For example, if you own a token that is
+worth 100 dollars, you can spend 50 dollars using that token. The transfer
+transaction will create two new tokens as output. One token worth 50 dollars will
+belong to you, and another token worth 50 dollars will belong to the recipient.</p>
+<p>The quantity of the assets being transferred to the recipients of the transaction
+needs to be the same quantity as the input tokens. If you do not want to
+transfer the entire quantity of the asset represented by the token, you can
+transfer a portion of the asset and the transaction will automatically make you
+the owner of the remaining balance. Using the example above, if only spend 50
+dollars of the 100 dollar token, the transfer transaction will automatically
+create a new token worth 50 dollars with you as the owner.</p>
+<p>To be successful, a transfer needs to meet the following conditions:</p>
+<ul class="simple">
+<li><p>The tokens being transferred need to belong to the transaction initiator and
+are unspent.</p></li>
+<li><p>All input tokens of the transaction need to be of the same type.</p></li>
+</ul>
+</div>
+<div class="section" id="redeem">
+<h3>Redeem<a class="headerlink" href="#redeem" title="Permalink to this headline">¶</a></h3>
+<p>Redeemed tokens can no longer be spent. Redeeming a token removes an asset from
+the business network being managed by the channel and guarantees that it can no
+longer be transferred or changed. If an item in a supply chain reaches its final
+destination, or a financial asset reaches its term, the token representing the
+asset can be redeemed since the asset no longer needs to be used by the members
+of the channel.</p>
+<p>An owner needs to provide the following arguments to <code class="docutils literal notranslate"><span class="pre">redeem</span></code> tokens:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Token</span> <span class="pre">ID</span></code>: The ID of the token you want to redeem.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Quantity</span></code>: The quantity of the asset represented by each token you want to
+redeem.</p></li>
+</ul>
+<p>Tokens can only be redeemed if the token owner submits the redeem transaction.
+It is not necessary to redeem the entire quantity of the asset represented by
+the token. For example, if you have a token representing 100 dollars, and want
+to redeem 50, the redeem transaction will create a new token worth 50 dollars,
+and transfer another 50 to a restricted account without an owner. Because the
+account has no owner, the 50 dollars can no longer be transferred by any members
+of the channel.</p>
+</div>
+</div>
+<div class="section" id="the-token-transaction-flow">
+<h2>The token transaction flow<a class="headerlink" href="#the-token-transaction-flow" title="Permalink to this headline">¶</a></h2>
+<p>Fabtoken bypasses the standard Hyperledger Fabric endorsement flow. Transactions
+against chaincode need to be invoked on the peers of enough organizations to
+meet the chaincode endorsement policy. This ensures that the result of the
+transaction is consistent with the logic of the smart contract and that the
+result of that logic has been validated by multiple organizations. Because
+tokens are unique representations of an asset that can only be transferred or
+redeemed by their owner, there is no need for multiple organizations to validate
+the initial transaction.</p>
+<p>The FabToken client used by the token CLI and the Fabric SDK for Node.js leverages
+trusted peers, referred to as <strong>prover peers</strong> to create token transactions.
+For example, a user belonging to an organization that operates a peer could use
+that peer to query their tokens and spend them. Any peer with the Fabric 2.0
+Alpha code can be used as a prover peer if it is joined to a channel with <code class="docutils literal notranslate"><span class="pre">V2_0</span></code>
+capabilities enabled.</p>
+<ul class="simple">
+<li><p>In the case of an <code class="docutils literal notranslate"><span class="pre">issue</span></code> transaction, the prover peer will verify that
+the requested operation satisfies the <code class="docutils literal notranslate"><span class="pre">IssuingPolicy</span></code> associated with the
+tokens being created.</p></li>
+<li><p>In the case of <code class="docutils literal notranslate"><span class="pre">transfer</span></code>, <code class="docutils literal notranslate"><span class="pre">redeem</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code>, the peer checks that the
+input tokens are unspent and belong to the entity requesting the transaction.</p></li>
+<li><p>In the case of <code class="docutils literal notranslate"><span class="pre">transfer</span></code> and <code class="docutils literal notranslate"><span class="pre">redeem</span></code>, the peer checks that the input
+and output tokens are all of the same <code class="docutils literal notranslate"><span class="pre">type</span></code> and that the output tokens have
+the same <code class="docutils literal notranslate"><span class="pre">type</span></code> and sum up to the same <code class="docutils literal notranslate"><span class="pre">quantity</span></code> as the input tokens.</p></li>
+</ul>
+<p>Once the client has generated the token transaction with the help of the prover
+peer, it sends the transaction to the ordering service. The ordering service
+then sends the transaction to <strong>committing peers</strong> to be validated and added
+to the ledger. The committing peers check that the transaction conforms to the
+<strong>UTXO</strong> transaction model, and that the underlying asset is not being double
+spent or over spent.</p>
+</div>
+<div class="section" id="fabtoken-example">
+<h2>FabToken Example<a class="headerlink" href="#fabtoken-example" title="Permalink to this headline">¶</a></h2>
+<p>You can try working with tokens yourself using the sample network inside the
+<a class="reference external" href="../build_network.html">Building your first network tutorial</a> to issue and transfer
+tokens. In this example, we will use the Token CLI to trade some tokenized
+<em>BYFNcoins</em>  on a channel created by the <code class="docutils literal notranslate"><span class="pre">./byfn.sh</span></code> script.</p>
+<p>You can also work with tokens using the Fabric SDK for Node.js. Visit the
+<a class="reference external" href="https://fabric-sdk-node.github.io/master/tutorial-fabtoken.html">How to perform token operations</a> tutorial in the Node.js Fabric SDK documentation. You can also find a sample that uses the Node.js
+Fabric SDK to issue, transfer, and redeem tokens in the
+<a class="reference external" href="https://github.com/hyperledger/fabric-samples/tree/master/fabtoken">Fabric Samples repository</a>.</p>
+<div class="section" id="start-the-network">
+<h3>Start the network<a class="headerlink" href="#start-the-network" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to bring up the sample network. The <code class="docutils literal notranslate"><span class="pre">./byfn.sh</span></code> script
+creates a Fabric network with two organizations, Org1 and Org2, with peers
+joined to a channel called <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>. We are going to use <code class="docutils literal notranslate"><span class="pre">mychannel</span></code>
+to issue tokens and transfer them between Org1 and Org2.</p>
+<p>First we need to clean up our environment. The following command will
+navigate to the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> directory, kill any active or stale Docker
+containers, and remove previously generated artifacts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">fabric</span><span class="o">-</span><span class="n">samples</span><span class="o">/</span><span class="n">first</span><span class="o">-</span><span class="n">network</span>
+<span class="o">./</span><span class="n">byfn</span><span class="o">.</span><span class="n">sh</span> <span class="n">down</span>
+</pre></div>
+</div>
+<p>You first need to generate the artifacts required by the sample network. Run the
+following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">byfn</span><span class="o">.</span><span class="n">sh</span> <span class="n">generate</span>
+</pre></div>
+</div>
+<p>We need to add some files that we will need in future steps. Navigate to the
+<code class="docutils literal notranslate"><span class="pre">crypto-config</span></code> directory inside the <code class="docutils literal notranslate"><span class="pre">first-network</span></code> directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">crypto</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>The Token CLI uses configuration files from each organization with information
+about which peers the organization trusts, and which ordering service to send
+the transactions. Below is the configuration file for Org1. Notice that Org1
+uses its own peer as a prover peer, and provides the peer endpoint information
+in the <code class="docutils literal notranslate"><span class="pre">&quot;ProverPeer&quot;</span></code> section of the file.</p>
+<details>
+  <summary>
+    **Org1 Configuration file**
+  </summary>
+```
+{
+  "ChannelID":"",
+  "MSPInfo":{
+    "MSPConfigPath":"",
+    "MSPID":"Org1MSP",
+    "MSPType":"bccsp"
+  },
+  "Orderer":{
+    "Address":"orderer.example.com:7050",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem",
+    "ServerNameOverride":""
+  },
+  "CommitterPeer":{
+    "Address":"peer0.org1.example.com:7051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  },
+  "ProverPeer":{
+    "Address":"peer0.org1.example.com:7051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  }
+}
+```
+</details><p>Paste the file above in a text editor and save it as <code class="docutils literal notranslate"><span class="pre">configorg1.json</span></code>.
+Once you have saved <code class="docutils literal notranslate"><span class="pre">configorg1.json</span></code>, create a new file in your text editor,
+and paste the JSON file below. Save the file as <code class="docutils literal notranslate"><span class="pre">configorg2.json</span></code> in the same
+location:</p>
+<details>
+  <summary>
+    **Org2 Configuration file**
+  </summary>
+```
+{
+  "ChannelID":"",
+  "MSPInfo":{
+    "MSPConfigPath":"",
+    "MSPID":"Org2MSP",
+    "MSPType":"bccsp"
+  },
+  "Orderer":{
+    "Address":"orderer.example.com:7050",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem",
+    "ServerNameOverride":""
+  },
+  "CommitterPeer":{
+    "Address":"peer0.org2.example.com:9051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  },
+  "ProverPeer":{
+    "Address":"peer0.org2.example.com:9051",
+    "ConnectionTimeout":0,
+    "TLSEnabled":true,
+    "TLSRootCertFile":"/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt",
+    "ServerNameOverride":""
+  }
+}
+```
+</details><p>We now need to save one additional file that we will use when we transfer our
+tokens. Create a new file in your text editor, and save the file below as
+<code class="docutils literal notranslate"><span class="pre">shares.json</span></code>:</p>
+<details>
+  <summary>
+    **shares.json**
+  </summary>
+```
+[
+    {
+    "recipient":"Org2MSP:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp",
+    "quantity":"50"
+    }
+]
+```
+</details><p>You are now ready to navigate back to the <code class="docutils literal notranslate"><span class="pre">fabric-samples</span></code> directory and bring
+up the sample network:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
+<span class="o">/</span><span class="n">byfn</span><span class="o">.</span><span class="n">sh</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>The command will create the organizations, peers, ordering service, and channel
+we will use to issue and transfer the tokens. When the command completes
+successfully, you should see the following result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=========</span> <span class="n">All</span> <span class="n">GOOD</span><span class="p">,</span> <span class="n">BYFN</span> <span class="n">execution</span> <span class="n">completed</span> <span class="o">===========</span>
+
+ <span class="n">_____</span>   <span class="n">_</span>   <span class="n">_</span>   <span class="n">____</span>
+<span class="o">|</span> <span class="n">____</span><span class="o">|</span> <span class="o">|</span> \ <span class="o">|</span> <span class="o">|</span> <span class="o">|</span>  <span class="n">_</span> \
+<span class="o">|</span>  <span class="n">_</span><span class="o">|</span>   <span class="o">|</span>  \<span class="o">|</span> <span class="o">|</span> <span class="o">|</span> <span class="o">|</span> <span class="o">|</span> <span class="o">|</span>
+<span class="o">|</span> <span class="o">|</span><span class="n">___</span>  <span class="o">|</span> <span class="o">|</span>\  <span class="o">|</span> <span class="o">|</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span> <span class="o">|</span>
+<span class="o">|</span><span class="n">_____</span><span class="o">|</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span> \<span class="n">_</span><span class="o">|</span> <span class="o">|</span><span class="n">____</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="issue-tokens">
+<h3>Issue tokens<a class="headerlink" href="#issue-tokens" title="Permalink to this headline">¶</a></h3>
+<p>We are going to tokenize 100 <strong>BYFNcoins</strong>, which can only be issued and traded by
+our trusted friends on our sample network. Navigate into the CLI container using
+the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">cli</span> <span class="n">bash</span>
+</pre></div>
+</div>
+<p>Use the command below to issue a token worth 100 BYFNcoins as the Org1 admin.
+The command uses the <code class="docutils literal notranslate"><span class="pre">configorg1.json</span></code> to find the endpoint of org1’s prover
+peer, which it will use to assemble the transaction. Note that the Org1
+administrator submits the transaction, but the User1 of Org1 will be the token
+owner.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Issue the token as Org1</span>
+
+<span class="n">token</span> <span class="n">issue</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg1</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">Admin</span><span class="nd">@org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span> <span class="o">--</span><span class="nb">type</span> <span class="n">BYFNcoins</span> <span class="o">--</span><span class="n">quantity</span> <span class="mi">100</span> <span class="o">--</span><span class="n">recipient</span> <span class="n">Org1MSP</span><span class="p">:</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span>
+</pre></div>
+</div>
+<p>A successful command will generate a response similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2019</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">12</span> <span class="mi">00</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">43.864</span> <span class="n">UTC</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">client</span><span class="p">]</span> <span class="n">BroadcastReceive</span> <span class="o">-&gt;</span> <span class="n">INFO</span> <span class="mi">001</span> <span class="n">calling</span> <span class="n">OrdererClient</span><span class="o">.</span><span class="n">broadcastReceive</span>
+<span class="n">Orderer</span> <span class="n">Status</span> <span class="p">[</span><span class="n">SUCCESS</span><span class="p">]</span>
+<span class="n">Committed</span> <span class="p">[</span><span class="n">true</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can use the list command to view the token that was created. This command is
+issued by User1, which is the owner of new token.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the tokens belonging to User1 of Org1</span>
+
+<span class="n">token</span> <span class="nb">list</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg1</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>
+</pre></div>
+</div>
+<p>A successful command will generate a response similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tx_id&quot;</span><span class="p">:</span><span class="s2">&quot;4e2664225d6a67508cfa539108383e682f3d03debb768aa7920851fdeea6f5b7&quot;</span><span class="p">}</span>
+<span class="p">[</span><span class="n">BYFNcoins</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the command output, you can find the tokenID, the token <code class="docutils literal notranslate"><span class="pre">type</span></code>, and the
+<code class="docutils literal notranslate"><span class="pre">quantity</span></code>. The tokenID is the transactionID of the transaction that created the
+token.</p>
+</div>
+<div class="section" id="transferring-tokens">
+<h3>Transferring tokens<a class="headerlink" href="#transferring-tokens" title="Permalink to this headline">¶</a></h3>
+<p>Now that the tokens have been created, User1 of Org1 can now spend the token
+by transferring BYFNcoins to another user. User1 of Org1 will give User1 of
+Org2 50 BYFNcoins, while keeping 50 for himself.</p>
+<p>Use the command below to initiate the transfer. Use the <code class="docutils literal notranslate"><span class="pre">tokenIDs</span></code> flag to
+transfer the tokenID returned by the list flag. Notice how the <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">Shares</span></code>
+flag passes the Token CLI a JSON file that allocates 50 BYFNcoins to User1 in
+Org2. This is the file that you created in the <code class="docutils literal notranslate"><span class="pre">crypto-config</span></code> folder before
+you started the network. Because the input token represents 100 BYFNcoins, the
+transfer transaction will automatically create a new token belonging to User1 of
+Org1 that represents the 50 BYFNcoins that were not transferred to Org2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transfer 50 BYFNcoins to User1 of Org2</span>
+<span class="c1"># The split of coins tranfered to Org1 and Org2 is in shares.json</span>
+
+<span class="n">token</span> <span class="n">transfer</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg1</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span> <span class="o">--</span><span class="n">tokenIDs</span> <span class="s1">&#39;[{&quot;tx_id&quot;:&quot;4e2664225d6a67508cfa539108383e682f3d03debb768aa7920851fdeea6f5b7&quot;}]&#39;</span> <span class="o">--</span><span class="n">shares</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">shares</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>Once you have submitted the command above, you can run the <code class="docutils literal notranslate"><span class="pre">list</span></code> command again to
+verify that User1 of Org1 now only has 50 BYFNcoins:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the tokens belonging to User1 of Org1</span>
+
+<span class="n">token</span> <span class="nb">list</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg1</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>
+</pre></div>
+</div>
+<p>Note that the BYFNcoins have a different tokenID than the previous coins. The
+transfer destroyed the previous token and created a new token worth 50 BYFNcoins.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tx_id&quot;</span><span class="p">:</span><span class="s2">&quot;4eaf466884586106f480dd0bb4f675ddaa54d1290ea53e9c24a2c1344fb71d2c&quot;</span><span class="p">}</span>
+<span class="p">[</span><span class="n">BYFNcoins</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can run the command below to verify that User1 of Org2 received the
+50 BYFNcoins:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the tokens belonging to User1 of Org2</span>
+
+<span class="n">token</span> <span class="nb">list</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg2</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>
+</pre></div>
+</div>
+<p>The tokenID of the coins owned by Org2 uses the same transaction ID as the coins
+owned by Org1 since it was created by the same transaction. However, because it
+was the second output of the transaction, it is also given an index to
+distinguish it from the token owned by Org1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;tx_id&quot;</span><span class="p">:</span><span class="s2">&quot;4eaf466884586106f480dd0bb4f675ddaa54d1290ea53e9c24a2c1344fb71d2c&quot;</span><span class="p">,</span><span class="s2">&quot;index&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">[</span><span class="n">BYFNcoins</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="redeeming-tokens">
+<h2>Redeeming tokens<a class="headerlink" href="#redeeming-tokens" title="Permalink to this headline">¶</a></h2>
+<p>Tokens can only be redeemed by their owners. Once an asset represented by a
+token is redeemed, the token can no longer be transferred to any other owners.</p>
+<p>Use the command below to redeem 25 BYFNcoins belonging to Org2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Redeem tokens belonging to User1 of Org2</span>
+
+<span class="n">token</span> <span class="n">redeem</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg2</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>  <span class="o">--</span><span class="n">tokenIDs</span> <span class="s1">&#39;[{&quot;tx_id&quot;:&quot;4eaf466884586106f480dd0bb4f675ddaa54d1290ea53e9c24a2c1344fb71d2c&quot;,&quot;index&quot;:1}]&#39;</span> <span class="o">--</span><span class="n">quantity</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Org2 now only has one token worth 25 BYFNcoins. Use the list command to verify
+the number of BYFNcoins owned by User1 of Org2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the tokens belonging to User1 of Org2</span>
+
+<span class="n">token</span> <span class="nb">list</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg2</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>
+</pre></div>
+</div>
+<p>Note that the new TokenID created as output of the redeem transaction.</p>
+<p>Let’s try to redeem tokens that belong to another user. Use the command below to
+attempt as Org2 to redeem the token worth 50 BYFNcoins that belongs to Org1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Redeem tokens as Org1 belonging to Org2</span>
+
+<span class="n">token</span> <span class="n">redeem</span> <span class="o">--</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">configorg2</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">mspPath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">gopath</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hyperledger</span><span class="o">/</span><span class="n">fabric</span><span class="o">/</span><span class="n">peer</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">peerOrganizations</span><span class="o">/</span><span class="n">org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">User1</span><span class="nd">@org2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">msp</span> <span class="o">--</span><span class="n">channel</span> <span class="n">mychannel</span>  <span class="o">--</span><span class="n">tokenIDs</span> <span class="s1">&#39;[{&quot;tx_id&quot;:&quot;4eaf466884586106f480dd0bb4f675ddaa54d1290ea53e9c24a2c1344fb71d2c&quot;}]&#39;</span> <span class="o">--</span><span class="n">quantity</span> <span class="mi">50</span>
+</pre></div>
+</div>
+<p>The result will be the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span> <span class="kn">from</span> <span class="nn">prover</span><span class="p">:</span> <span class="n">the</span> <span class="n">requestor</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">own</span> <span class="n">inputs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="future-features">
+<h2>Future features<a class="headerlink" href="#future-features" title="Permalink to this headline">¶</a></h2>
+<p>The FabToken Alpha only supports limited issuing and trading functionality.
+Future releases will provide users a greater ability to integrate tokens into
+business logic by supporting <strong>non-fungible tokens</strong> and
+<strong>chaincode interoperability</strong>,</p>
+<p>Non fungible tokens cannot be merged or divided. Once they are created, they can
+only be transferred to a new owner or redeemed. You can use non-fungible tokens
+to represent unique assets such a concert ticket that is mapped to a particular
+seat.</p>
+<p>Chaincode interoperability allows tokens to be issued, transferred, and redeemed
+by chaincode. This would allow the channel to issue and define tokens using
+business logic agreed to by members of the channel. For example, you can use
+chaincode to set the attributes of a chaincode, and associate certain attributes
+with different transactions.</p>
+<!--- Licensed under Creative Commons Attribution 4.0 International License
+https://creativecommons.org/licenses/by/4.0/ --></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pluggable_endorsement_and_validation.html" class="btn btn-neutral float-right" title="Pluggable transaction endorsement and validation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../endorsement-policies.html" class="btn btn-neutral" title="Endorsement policies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Hyperledger 2019.
+    <br>
+      <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

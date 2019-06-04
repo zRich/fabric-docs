@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,131 +48,123 @@ msgstr ""
 msgid "In pretty-printed logs the logging level is indicated both by color and by a four-character code, e.g, \"ERRO\" for ERROR, \"DEBU\" for DEBUG, etc. In the logging context a *logger* is an arbitrary name (string) given by developers to groups of related messages. In the pretty-printed example below, the loggers ``ledgermgmt``, ``kvledger``, and ``peer`` are generating logs."
 msgstr ""
 
-#: ../../source/logging-control.rst:36
-msgid "::"
-msgstr ""
-
-#: ../../source/logging-control.rst:31
-msgid "2018-11-01 15:32:38.268 UTC [ledgermgmt] initialize -> INFO 002 Initializing ledger mgmt 2018-11-01 15:32:38.268 UTC [kvledger] NewProvider -> INFO 003 Initializing ledger provider 2018-11-01 15:32:38.342 UTC [kvledger] NewProvider -> INFO 004 ledger provider Initialized 2018-11-01 15:32:38.357 UTC [ledgermgmt] initialize -> INFO 005 ledger mgmt initialized 2018-11-01 15:32:38.357 UTC [peer] func1 -> INFO 006 Auto-detected peer address: 172.24.0.3:7051 2018-11-01 15:32:38.357 UTC [peer] func1 -> INFO 007 Returning peer0.org1.example.com:7051"
-msgstr ""
-
-#: ../../source/logging-control.rst:38
+#: ../../source/logging-control.rst:39
 msgid "An arbitrary number of loggers can be created at runtime, therefore there is no \"master list\" of loggers, and logging control constructs can not check whether logging loggers actually do or will exist."
 msgstr ""
 
-#: ../../source/logging-control.rst:43
+#: ../../source/logging-control.rst:44
 msgid "Logging specification"
 msgstr ""
 
-#: ../../source/logging-control.rst:45
+#: ../../source/logging-control.rst:46
 msgid "The logging levels of the ``peer`` and ``orderer`` commands are controlled by a logging specification, which is set via the ``FABRIC_LOGGING_SPEC`` environment variable."
 msgstr ""
 
-#: ../../source/logging-control.rst:49
+#: ../../source/logging-control.rst:50
 msgid "The full logging level specification is of the form"
 msgstr ""
 
-#: ../../source/logging-control.rst:55
+#: ../../source/logging-control.rst:56
 msgid "Logging severity levels are specified using case-insensitive strings chosen from"
 msgstr ""
 
-#: ../../source/logging-control.rst:63
+#: ../../source/logging-control.rst:64
 msgid "A logging level by itself is taken as the overall default. Otherwise, overrides for individual or groups of loggers can be specified using the"
 msgstr ""
 
-#: ../../source/logging-control.rst:70
+#: ../../source/logging-control.rst:71
 msgid "syntax. Examples of specifications:"
 msgstr ""
 
-#: ../../source/logging-control.rst:79
+#: ../../source/logging-control.rst:80
 msgid "Logging format"
 msgstr ""
 
-#: ../../source/logging-control.rst:81
+#: ../../source/logging-control.rst:82
 msgid "The logging format of the ``peer`` and ``orderer`` commands is controlled via the ``FABRIC_LOGGING_FORMAT`` environment variable. This can be set to a format string, such as the default"
 msgstr ""
 
-#: ../../source/logging-control.rst:89
+#: ../../source/logging-control.rst:90
 msgid "to print the logs in a human-readable console format. It can be also set to ``json`` to output logs in JSON format."
 msgstr ""
 
-#: ../../source/logging-control.rst:94
+#: ../../source/logging-control.rst:95
 msgid "Go chaincodes"
 msgstr ""
 
-#: ../../source/logging-control.rst:96
+#: ../../source/logging-control.rst:97
 msgid "The standard mechanism to log within a chaincode application is to integrate with the logging transport exposed to each chaincode instance via the peer. The chaincode ``shim`` package provides APIs that allow a chaincode to create and manage logging objects whose logs will be formatted and interleaved consistently with the ``shim`` logs."
 msgstr ""
 
-#: ../../source/logging-control.rst:102
+#: ../../source/logging-control.rst:103
 msgid "As independently executed programs, user-provided chaincodes may technically also produce output on stdout/stderr. While naturally useful for \"devmode\", these channels are normally disabled on a production network to mitigate abuse from broken or malicious code. However, it is possible to enable this output even for peer-managed containers (e.g. \"netmode\") on a per-peer basis via the CORE\\_VM\\_DOCKER\\_ATTACHSTDOUT=true configuration option."
 msgstr ""
 
-#: ../../source/logging-control.rst:110
+#: ../../source/logging-control.rst:111
 msgid "Once enabled, each chaincode will receive its own logging channel keyed by its container-id. Any output written to either stdout or stderr will be integrated with the peer's log on a per-line basis. It is not recommended to enable this for production."
 msgstr ""
 
-#: ../../source/logging-control.rst:116
+#: ../../source/logging-control.rst:117
 msgid "API"
 msgstr ""
 
-#: ../../source/logging-control.rst:118
+#: ../../source/logging-control.rst:119
 msgid "``NewLogger(name string) *ChaincodeLogger`` - Create a logging object for use by a chaincode"
 msgstr ""
 
-#: ../../source/logging-control.rst:121
+#: ../../source/logging-control.rst:122
 msgid "``(c *ChaincodeLogger) SetLevel(level LoggingLevel)`` - Set the logging level of the logger"
 msgstr ""
 
-#: ../../source/logging-control.rst:124
+#: ../../source/logging-control.rst:125
 msgid "``(c *ChaincodeLogger) IsEnabledFor(level LoggingLevel) bool`` - Return true if logs will be generated at the given level"
 msgstr ""
 
-#: ../../source/logging-control.rst:127
+#: ../../source/logging-control.rst:128
 msgid "``LogLevel(levelString string) (LoggingLevel, error)`` - Convert a string to a ``LoggingLevel``"
 msgstr ""
 
-#: ../../source/logging-control.rst:130
+#: ../../source/logging-control.rst:131
 msgid "A ``LoggingLevel`` is a member of the enumeration"
 msgstr ""
 
-#: ../../source/logging-control.rst:136
+#: ../../source/logging-control.rst:137
 msgid "which can be used directly, or generated by passing a case-insensitive version of the strings"
 msgstr ""
 
-#: ../../source/logging-control.rst:143
+#: ../../source/logging-control.rst:144
 msgid "to the ``LogLevel`` API."
 msgstr ""
 
-#: ../../source/logging-control.rst:145
+#: ../../source/logging-control.rst:146
 msgid "Formatted logging at various severity levels is provided by the functions"
 msgstr ""
 
-#: ../../source/logging-control.rst:164
+#: ../../source/logging-control.rst:165
 msgid "The ``f`` forms of the logging APIs provide for precise control over the formatting of the logs. The non-\\ ``f`` forms of the APIs currently insert a space between the printed representations of the arguments, and arbitrarily choose the formats to use."
 msgstr ""
 
-#: ../../source/logging-control.rst:169
+#: ../../source/logging-control.rst:170
 msgid "In the current implementation, the logs produced by the ``shim`` and a ``ChaincodeLogger`` are timestamped, marked with the logger *name* and severity level, and written to ``stderr``. Note that logging level control is currently based on the *name* provided when the ``ChaincodeLogger`` is created. To avoid ambiguities, all ``ChaincodeLogger`` should be given unique names other than \"shim\". The logger *name* will appear in all log messages created by the logger. The ``shim`` logs as \"shim\"."
 msgstr ""
 
-#: ../../source/logging-control.rst:178
+#: ../../source/logging-control.rst:179
 msgid "The default logging level for loggers within the Chaincode container can be set in the `core.yaml <https://github.com/hyperledger/fabric/blob/master/sampleconfig/core.yaml>`__ file. The key ``chaincode.logging.level`` sets the default level for all loggers within the Chaincode container. The key ``chaincode.logging.shim`` overrides the default level for the ``shim`` logger."
 msgstr ""
 
-#: ../../source/logging-control.rst:194
+#: ../../source/logging-control.rst:195
 msgid "The default logging level can be overridden by using environment variables. ``CORE_CHAINCODE_LOGGING_LEVEL`` sets the default logging level for all loggers. ``CORE_CHAINCODE_LOGGING_SHIM`` overrides the level for the ``shim`` logger."
 msgstr ""
 
-#: ../../source/logging-control.rst:199
+#: ../../source/logging-control.rst:200
 msgid "Go language chaincodes can also control the logging level of the chaincode ``shim`` interface through the ``SetLoggingLevel`` API."
 msgstr ""
 
-#: ../../source/logging-control.rst:202
+#: ../../source/logging-control.rst:203
 msgid "``SetLoggingLevel(LoggingLevel level)`` - Control the logging level of the shim"
 msgstr ""
 
-#: ../../source/logging-control.rst:205
+#: ../../source/logging-control.rst:206
 msgid "Below is a simple example of how a chaincode might create a private logging object logging at the ``LogInfo`` level."
 msgstr ""
 

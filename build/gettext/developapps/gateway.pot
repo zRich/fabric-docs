@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hyperledger-fabricdocs master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:48+0800\n"
+"POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/developapps/gateway.md:1
+msgid "Gateway"
+msgstr ""
 
 #: ../../source/developapps/gateway.md:3
 msgid "Audience: Architects, application and smart contract developers"
@@ -28,16 +32,56 @@ msgstr ""
 msgid "In this topic, we're going to cover:"
 msgstr ""
 
+#: ../../source/developapps/gateway.md:11
+msgid "Why gateways are important"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:12
+msgid "How applications use a gateway"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:13
+msgid "How to define a static gateway"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:14
+msgid "How to define a dynamic gateway for service discovery"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:15
+msgid "Using multiple gateways"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:17
+msgid "Scenario"
+msgstr ""
+
 #: ../../source/developapps/gateway.md:19
 msgid "A Hyperledger Fabric network channel can constantly change.  The peer, orderer and CA components, contributed by the different organizations in the network, will come and go. Reasons for this include increased or reduced business demand, and both planned and unplanned outages. A gateway relieves an application of this burden, allowing it to focus on the business problem it is trying to solve."
 msgstr ""
 
 #: ../../source/developapps/gateway.md:25
-msgid "gateway.scenario A MagnetoCorp and DigiBank applications (issue and buy) delegate their respective network interactions to their gateways. Each gateway understands the network channel topology comprising the multiple peers and orderers of two organizations MagnetoCorp and DigiBank, leaving applications to focus on business logic. Peers can talk to each other both within and across organizations using the gossip protocol."
+msgid "A MagnetoCorp and DigiBank applications (issue and buy) delegate their respective network interactions to their gateways. Each gateway understands the network channel topology comprising the multiple peers and orderers of two organizations MagnetoCorp and DigiBank, leaving applications to focus on business logic. Peers can talk to each other both within and across organizations using the gossip protocol."
 msgstr ""
 
 #: ../../source/developapps/gateway.md:32
 msgid "A gateway can be used by an application in two different ways:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:34
+msgid "Static: The gateway configuration is completely defined in a connection profile. All the peers, orderers and CAs available to an application are statically defined in the connection profile used to configure the gateway. For peers, this includes their role as an endorsing peer or event notification hub, for example. You can read more about these roles in the connection profile topic."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:41
+msgid "The SDK will use this static topology, in conjunction with gateway connection options, to manage the transaction submission and notification processes. The connection profile must contain enough of the network topology to allow a gateway to interact with the network on behalf of the application; this includes the network channels, organizations, orderers, peers and their roles."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:49
+msgid "Dynamic: The gateway configuration is minimally defined in a connection profile. Typically, one or two peers from the application's organization are specified, and they use service discovery to discover the available network topology. This includes peers, orderers, channels, instantiated smart contracts and their endorsement policies. (In production environments, a gateway configuration should specify at least two peers for availability.)"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:57
+msgid "The SDK will use all of the static and discovered topology information, in conjunction with gateway connection options, to manage the transaction submission and notification processes. As part of this, it will also intelligently use the discovered topology; for example, it will calculate the minimum required endorsing peers using the discovered endorsement policy for the smart contract."
 msgstr ""
 
 #: ../../source/developapps/gateway.md:64
@@ -52,8 +96,32 @@ msgstr ""
 msgid "Both styles of gateway are transparent to the application; the application program design does not change whether static or dynamic gateways are used. This also means that some applications may use service discovery, while others may not. In general using dynamic discovery means less definition and more intelligence by the SDK; it is the default."
 msgstr ""
 
+#: ../../source/developapps/gateway.md:84
+msgid "Connect"
+msgstr ""
+
 #: ../../source/developapps/gateway.md:86
 msgid "When an application connects to a gateway, two options are provided. These are used in subsequent SDK processing:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:93
+msgid "Connection profile: connectionProfile is the gateway configuration that will be used for transaction processing by the SDK, whether statically or dynamically. It can be specified in YAML or JSON, though it must be converted to a JSON object when passed to the gateway:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:102
+msgid "Read more about connection profiles and how to configure them."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:106
+msgid "Connection options: connectionOptions allow an application to declare rather than implement desired transaction processing behaviour. Connection options are interpreted by the SDK to control interaction patterns with network components, for example to select which identity to connect with, or which peers to use for event notifications. These options significantly reduce application complexity without compromising functionality. This is possible because the SDK has implemented much of the low level logic that would otherwise be required by applications; connection options control this logic flow."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:116
+msgid "Read about the list of available connection options and when to use them."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:119
+msgid "Static"
 msgstr ""
 
 #: ../../source/developapps/gateway.md:121
@@ -72,6 +140,10 @@ msgstr ""
 msgid "It's worth bearing in mind that a static gateway represents a view of a network at a moment in time.  As networks change, it may be important to reflect this in a change to the gateway file. Applications will automatically pick up these changes when they re-load the gateway file."
 msgstr ""
 
+#: ../../source/developapps/gateway.md:143
+msgid "Dynamic"
+msgstr ""
+
 #: ../../source/developapps/gateway.md:145
 msgid "Dynamic gateways define a small, fixed starting point for a network. In the MagnetoCorp scenario, a dynamic gateway might identify just a single peer from MagnetoCorp; everything else will be discovered! (To provide resiliency, it might be better to define two such bootstrap peers.)"
 msgstr ""
@@ -88,11 +160,27 @@ msgstr ""
 msgid "A dynamic gateway represents an up-to-date view of a network. As networks change, service discovery will ensure that the network view is an accurate reflection of the topology visible to the application. Applications will automatically pick up these changes; they do not even need to re-load the gateway file."
 msgstr ""
 
+#: ../../source/developapps/gateway.md:173
+msgid "Multiple gateways"
+msgstr ""
+
 #: ../../source/developapps/gateway.md:175
 msgid "Finally, it is straightforward for an application to define multiple gateways, both for the same or different networks. Moreover, applications can use the name gateway both statically and dynamically."
 msgstr ""
 
 #: ../../source/developapps/gateway.md:179
 msgid "It can be helpful to have multiple gateways. Here are a few reasons:"
+msgstr ""
+
+#: ../../source/developapps/gateway.md:181
+msgid "Handling requests on behalf of different users."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:183
+msgid "Connecting to different networks simultaneously."
+msgstr ""
+
+#: ../../source/developapps/gateway.md:185
+msgid "Testing a network configuration, by simultaneously comparing its behaviour with an existing configuration."
 msgstr ""
 
