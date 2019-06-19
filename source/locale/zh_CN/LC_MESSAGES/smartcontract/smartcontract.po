@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yang Cheng <cystone@aliyun.com>, 2019
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:03+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../source/smartcontract/smartcontract.md:1
 msgid "Smart Contracts and Chaincode"
-msgstr ""
+msgstr "智能合约和链码"
 
 #: ../../source/smartcontract/smartcontract.md:3
 msgid ""
@@ -39,7 +39,8 @@ msgid ""
 "be updated to reflect the Fabric chaincode lifecycle feature that is first "
 "introduced in the alpha release of v2.0.0."
 msgstr ""
-"注意:本教程描述的网络使用以前的生命周期过程，其中链码在通道上实例化。这个主题将被更新，以反映Fabric链码生命周期特性，该特性在v2.0.0的alpha版本中首次引入。"
+"注意：本教程描述的网络使用以前的生命周期过程，其中链码在通道上实例化。这个主题将被更新，以反映 Fabric 链码生命周期特性，该特性在 v2.0.0 "
+"的 alpha 版本中首次引入。"
 
 #: ../../source/smartcontract/smartcontract.md:12
 msgid ""
@@ -53,52 +54,53 @@ msgid ""
 "we'll focus on why both smart contracts and chaincode exist, and how and "
 "when to use them."
 msgstr ""
-"从应用程序开发人员的角度来看，智能合约与账本一起构成了超级账本Fabric区块链系统的核心。账本包含关于一组业务对象的当前和历史状态的事实，而智能合约定义了生成添加到账本中的新事实的可执行逻辑。链码通常被管理员用于对相关的智能合约进行分组，以便部署，但也可以用于Fabric的低级系统编程。在本主题中，我们将重点讨论为什么智能合约和链码都存在，以及如何和何时使用它们。"
+"从应用程序开发人员的角度来看，智能合约与账本一起构成了 Hyperledger Fabric "
+"区块链系统的核心。账本包含关于一组业务对象的当前和历史状态的事实，而智能合约定义了生成添加到账本中的新事实的可执行逻辑。链码通常被管理员用于对相关的智能合约进行分组，以便部署，但也可以用于Fabric的低级系统编程。在本主题中，我们将重点讨论为什么智能合约和链码都存在，以及如何和何时使用它们。"
 
 #: ../../source/smartcontract/smartcontract.md:22
 msgid "In this topic, we'll cover:"
-msgstr "在本主题中，我们将讨论:"
+msgstr "在本主题中，我们将讨论："
 
 #: ../../source/smartcontract/smartcontract.md:24
 msgid "What is a smart contract"
-msgstr ""
+msgstr "什么是智能合约"
 
 #: ../../source/smartcontract/smartcontract.md:25
 msgid "A note on terminology"
-msgstr ""
+msgstr "术语上的注意"
 
 #: ../../source/smartcontract/smartcontract.md:26
 msgid "Smart contracts and the ledger"
-msgstr ""
+msgstr "智能合约和账本"
 
 #: ../../source/smartcontract/smartcontract.md:27
 msgid "How to develop a smart contract"
-msgstr ""
+msgstr "怎么开发一个智能合约"
 
 #: ../../source/smartcontract/smartcontract.md:28
 msgid "The importance of endorsement policies"
-msgstr ""
+msgstr "背书策略的重要性"
 
 #: ../../source/smartcontract/smartcontract.md:29
 #: ../../source/smartcontract/smartcontract.md:199
 msgid "Valid transactions"
-msgstr ""
+msgstr "验证交易"
 
 #: ../../source/smartcontract/smartcontract.md:30
 msgid "Smart contracts and channels"
-msgstr ""
+msgstr "智能合约和通道"
 
 #: ../../source/smartcontract/smartcontract.md:31
 msgid "Communicating between smart contracts"
-msgstr ""
+msgstr "智能合约之间的通信"
 
 #: ../../source/smartcontract/smartcontract.md:32
 msgid "What is system chaincode?"
-msgstr ""
+msgstr "什么是系统链码"
 
 #: ../../source/smartcontract/smartcontract.md:34
 msgid "Smart contract"
-msgstr ""
+msgstr "智能合约"
 
 #: ../../source/smartcontract/smartcontract.md:36
 msgid ""
@@ -114,7 +116,7 @@ msgid ""
 "A smart contract defines the rules between different organizations in "
 "executable code. Applications invoke a smart contract to generate "
 "transactions that are recorded on the ledger."
-msgstr ""
+msgstr "智能合约在可执行的代码中定义了不同组织之间的规则。应用程序调用智能合约来生成记录到账本上的交易。"
 
 #: ../../source/smartcontract/smartcontract.md:45
 msgid ""
@@ -129,7 +131,7 @@ msgid ""
 " however, the execution of a smart contract is much more efficient than a "
 "manual human business process."
 msgstr ""
-"通过使用区块链网络，我们可以将这些合约转换为可执行程序(业内称为智能合约)，从而打开各种各样的新可能性。这是因为智能合约可以为任何类型的业务对象实现治理规则，以便在执行智能合约时自动执行这些规则。例如，一个智能合约可能会确保新车在指定的时间内交付，或者根据预先安排的条款释放资金，分别改善货物或资本的流动。然而，最重要的是，智能合约的执行要比人工业务流程高效得多。"
+"通过使用区块链网络，我们可以将这些合约转换为可执行程序（业内称为智能合约），从而打开各种各样的新可能性。这是因为智能合约可以为任何类型的业务对象实现治理规则，以便在执行智能合约时自动执行这些规则。例如，一个智能合约可能会确保新车在指定的时间内交付，或者根据预先安排的条款释放资金，分别改善货物或资本的流动。然而，最重要的是，智能合约的执行要比人工业务流程高效得多。"
 
 #: ../../source/smartcontract/smartcontract.md:55
 msgid ""
@@ -139,11 +141,13 @@ msgid ""
 "an agreed step in a business process, for example to transfer ownership of a"
 " specific car from ORG1 to ORG2."
 msgstr ""
-"在上面的图中，我们可以看到两个组织，ORG1和ORG2，如何定义了一个汽车智能合约来查询、传输和更新汽车。来自这些组织的应用程序调用此智能合约来执行业务流程中商定的步骤，例如将特定汽车的所有权从ORG1转移到ORG2。"
+"在上面的图中，我们可以看到两个组织，ORG1 和 "
+"ORG2，如何定义了一个汽车智能合约来查询、传输和更新汽车。来自这些组织的应用程序调用此智能合约来执行业务流程中商定的步骤，例如将特定汽车的所有权从 "
+"ORG1 转移到 ORG2。"
 
 #: ../../source/smartcontract/smartcontract.md:62
 msgid "Terminology"
-msgstr ""
+msgstr "术语"
 
 #: ../../source/smartcontract/smartcontract.md:64
 msgid ""
@@ -154,14 +158,15 @@ msgid ""
 "blockchain network.  Think of smart contracts as governing transactions, "
 "whereas chaincode governs how smart contracts are packaged for deployment."
 msgstr ""
-"超级账本Fabric用户经常交替使用术语智能合约和链码。通常，智能合约定义交易逻辑，控制包含在世界状态中的业务对象的生命周期。然后将其打包成链码，然后部署到区块链网络。可以将智能合约看作管理交易，而链码则控制如何打包用于部署的智能合约。"
+"Hyperledger Fabric "
+"用户经常交替使用智能合约和链码。通常，智能合约定义交易逻辑，来控制包含在世界状态中的业务对象的生命周期。将其打包成链码，然后部署到区块链网络。可以将智能合约看作管理交易，而链码则控制如何打包用于部署的智能合约。"
 
 #: ../../source/smartcontract/smartcontract.md:71
 msgid ""
 "A smart contract is defined within a chaincode.  Multiple smart contracts "
 "can be defined within the same chaincode. When a chaincode is deployed, all "
 "smart contracts within it are made available to applications."
-msgstr ""
+msgstr "一个链码定义了一个智能合约。多个智能合约可以定义在同一个链码中。当链码部署以后，它包含的所有只能合约都可以被应用程序使用。"
 
 #: ../../source/smartcontract/smartcontract.md:76
 msgid ""
@@ -175,11 +180,11 @@ msgid ""
 "whereas a chaincode is a technical container of a group of related smart "
 "contracts for installation and instantiation."
 msgstr ""
-"在图中，我们可以看到包含三个智能合约的车辆链码:轿车、船只和卡车。我们还可以看到包含四个智能合约的保险链码:保单、责任、联合和证券化。在这两种情况下，这些合约涵盖了与车辆和保险相关的业务流程的关键方面。在本主题中，我们将以汽合约为例。我们可以看到，智能合约是一个特定于领域的程序，它与特定的业务流程相关，而链码是一组用于安装和实例化的相关智能合约的技术容器。"
+"在图中，我们可以看到包含三个智能合约的车辆链码：汽车、船只和卡车。我们还可以看到包含四个智能合约的保险链码：保单、责任、联合和证券化。在这两种情况下，这些合约涵盖了与车辆和保险相关的业务流程的关键方面。在本主题中，我们将以汽合约为例。我们可以看到，智能合约是一个特定领域的程序，它与特定的业务流程相关，而链码是一组用于安装和实例化的相关智能合约的技术容器。"
 
 #: ../../source/smartcontract/smartcontract.md:87
 msgid "Ledger"
-msgstr ""
+msgstr "账本"
 
 #: ../../source/smartcontract/smartcontract.md:89
 msgid ""
@@ -190,31 +195,32 @@ msgid ""
 "current value of these states, as it's the current value of an object that "
 "is usually required."
 msgstr ""
-"在最简单的层次上，区块链不可更改地记录交易，交易在账本中更新状态。智能合约以编程方式访问两个不同的账本区块链,永恒地记录所有交易的历史,和世界状态保存缓存这些状态的当前值,因为它是一个对象的当前值,通常是必需的。"
+"最简单的，区块链使更新账本状态的交易不可更改。智能合约以编程方式访问账本两个不同的部分—— **区块** ，不可篡改地记录者所有交易的历史，和 "
+"**世界状态** 保存这些状态的当前值的缓存，它是一个对象的当前值，这通常是必需的。"
 
 #: ../../source/smartcontract/smartcontract.md:96
 msgid ""
 "Smart contracts primarily put, get and delete states in the world state, and"
 " can also query the immutable blockchain record of transactions."
-msgstr "智能合约主要将put、get和delete状态置于世界状态，还可以查询不可变的区块链交易记录。"
+msgstr "智能合约主要将状态 写入（put）、读取（get）和删除（delete）到世界状态中，还可以查询不可更改的区块链交易记录。"
 
 #: ../../source/smartcontract/smartcontract.md:99
 msgid ""
 "A get typically represents a query to retrieve information about the current"
 " state of a business object."
-msgstr ""
+msgstr " **读取（get）** 操作，一边表示查询交易对象当前状态的信息。"
 
 #: ../../source/smartcontract/smartcontract.md:101
 msgid ""
 "A put typically creates a new business object or modifies an existing one in"
 " the ledger world state."
-msgstr ""
+msgstr "**写入（put）** 操作 ，一边表示创建或者更新一个交易对象到账本世界状态。"
 
 #: ../../source/smartcontract/smartcontract.md:103
 msgid ""
 "A delete typically represents the removal of a business object from the "
 "current state of the ledger, but not its history."
-msgstr ""
+msgstr "**删除（delete）** 操作，表示从账本的当前状态删除一个交易对象，但是不会删除它的历史。"
 
 #: ../../source/smartcontract/smartcontract.md:106
 msgid ""
@@ -222,11 +228,12 @@ msgid ""
 "whether transactions create, read, update or delete business objects in the "
 "world state, the blockchain contains an immutable record of these changes."
 msgstr ""
-"智能合约有许多可用的API。关键的是，在所有情况下，无论交易创建、读取、更新还是删除处于世界状态的业务对象，区块链都包含了这些更改的不可变记录。"
+"智能合约有许多可用的 "
+"API。关键的是，在所有情况下，无论交易创建、读取、更新还是删除世界状态中的业务对象，区块链都包含了这些更改的记录，并且这些记录也是不可更改的。"
 
 #: ../../source/smartcontract/smartcontract.md:112
 msgid "Development"
-msgstr ""
+msgstr "开发"
 
 #: ../../source/smartcontract/smartcontract.md:114
 msgid ""
@@ -237,20 +244,20 @@ msgid ""
 " to worry about chaincode; everyone else can think in terms of smart "
 "contracts."
 msgstr ""
-"智能合约是应用程序开发的重点，正如我们所看到的，可以在一个链码中定义一个或多个智能合约。将链码部署到网络中，可以使其中包含的所有智能合约对该网络中的组织可用。这意味着只有管理员才需要担心链码;每个人都可以用智能合约来思考。"
+"智能合约是应用程序开发的重点，正如我们所看到的，可以在一个链码中定义一个或多个智能合约。将链码部署到网络中，可以使其中包含的所有智能合约对该网络中的组织可用。这意味着只有管理员才需要担心链码；其他人都只用考虑智能合约。"
 
 #: ../../source/smartcontract/smartcontract.md:120
 msgid ""
 "At the heart of a smart contract is a set of transaction definitions. For "
 "example, look at fabcar.js, where you can see a smart contract transaction "
 "that creates a new car:"
-msgstr "智能合约的核心是一组交易定义。例如，看看fabcar.js，你可以看到一个创建一辆新车的智能合约交易:"
+msgstr "智能合约的核心是一组 ``交易`` 的定义。例如，看看 ``fabcar.js`` ，你可以看到一个创建一辆新车的智能合约的交易："
 
 #: ../../source/smartcontract/smartcontract.md:140
 msgid ""
 "You can learn more about the Fabcar smart contract in the Writing your first"
 " application tutorial."
-msgstr "在编写您的第一个应用程序教程中，您可以了解更多关于Fabcar 智能合约的信息。"
+msgstr "在编写您的第一个应用程序教程中，您可以了解更多关于 ``Fabcar`` 智能合约的信息。"
 
 #: ../../source/smartcontract/smartcontract.md:143
 msgid ""
@@ -264,11 +271,14 @@ msgid ""
 "practiced by smart contract auditors. You can learn about how to design and "
 "develop a smart contract in the Developing applications topic."
 msgstr ""
-"智能合约可以描述与多组织决策中数据不可篡改相关的几乎无限的业务用例。智能合约开发人员的工作是获取一个可能控制财务价格或交付条件的现有业务流程，并用JavaScript、GOLANG或Java等编程语言将其表示为一个智能合约。将数百年的法律语言转换为编程语言所需要的法律和技术技能，越来越多的智能合约审核员正在实践。您可以在“开发应用程序”主题中了解如何设计和开发智能合约。"
+"智能合约几乎可以描述无穷多的业务用例，只要他们与多个组织决策中数据的不可篡改相关。智能合约开发人员的工作是获取一个现有的业务流程，它们可能是可控制财务价格或交付条件，并用"
+" JavaScript、GOLANG 或 Java "
+"等编程语言将其表示为一个智能合约。将数百年的法律语言转换为编程语言是需要的法律和技术技能的，越来越多的 **智能合约审核员** "
+"也正在实践。您可以在开发应用程序主题中了解如何设计和开发智能合约。"
 
 #: ../../source/smartcontract/smartcontract.md:155
 msgid "Endorsement"
-msgstr ""
+msgstr "背书"
 
 #: ../../source/smartcontract/smartcontract.md:157
 msgid ""
@@ -278,7 +288,7 @@ msgid ""
 "sign a transaction generated by a given smart contract in order for that "
 "transaction to be declared valid."
 msgstr ""
-"与每个链码相关联的是一个背书策略，它适用于其中定义的所有智能合约。背书策略非常重要;它指示区块链网络中的哪些组织必须签署由给定智能合约生成的交易，以便该交易被声明为有效。"
+"与每个链码相关联的是一个背书策略，它适用于其中定义的所有智能合约。背书策略非常重要；它指示区块链网络中的哪些组织必须签署智能合约生成的交易，以便该交易被声明为有效的。"
 
 #: ../../source/smartcontract/smartcontract.md:163
 msgid ""
@@ -286,7 +296,7 @@ msgid ""
 "endorsement policy identifies which organizations must approve transactions "
 "generated by the smart contract before those transactions can be identified "
 "as valid."
-msgstr ""
+msgstr "每一个智能合约都有一个与之关联的背书策略。这个背书策略定义了在智能合约生成交易被认证为有效交易之前，哪些组织必须为其签名。"
 
 #: ../../source/smartcontract/smartcontract.md:168
 msgid ""
@@ -296,7 +306,7 @@ msgid ""
 "are added to a distributed ledger, but only valid transactions update the "
 "world state."
 msgstr ""
-"一个示例背书策略可能定义参与区块链网络的四个组织中的三个必须在交易被认为有效之前签署该交易。所有的交易，无论是有效的还是无效的，都被添加到分布式账本中，但是只有有效的交易更新世界状态。"
+"一个示例背书策略可能会定义，区块链网络四个组织中的三个必须在交易被认为有效之前签署该交易。所有的交易，无论是有效的还是无效的，都被添加到分布式账本中，但是只有有效的交易更新世界状态。"
 
 #: ../../source/smartcontract/smartcontract.md:174
 msgid ""
@@ -306,7 +316,8 @@ msgid ""
 "example above, a smart contract transaction to transfer a car would need to "
 "be executed and signed by both ORG1 and ORG2 for it to be valid."
 msgstr ""
-"如果背书策略指定必须有多个组织签署交易，则必须由足够多的组织执行智能合约，以便生成有效的交易。在上面的示例中，要使汽车有效，需要由ORG1和ORG2执行并签署一个用于转移汽车的智能合约交易。"
+"如果背书策略指定必须有多个组织签署交易，则必须由足够多的组织执行智能合约，以便生成有效的交易。在上面的示例中，要使汽车有效，需要由 ORG1 和 "
+"ORG2 执行并签署一个用于转移汽车的智能合约交易。"
 
 #: ../../source/smartcontract/smartcontract.md:180
 msgid ""
@@ -320,7 +331,11 @@ msgid ""
 "designed to allow Hyperledger Fabric to better model these types of real-"
 "world interactions."
 msgstr ""
-"背书策略使得超级账本Fabric不同于其他区块链，比如以太坊(Ethereum)或比特币(Bitcoin)。在这些系统中，网络中的任何节点都可以生成有效的交易。超级账本Fabric更真实地模拟现实世界;交易必须由网络中的可信组织验证。例如，政府机构必须签署有效的证件交易，或者购车者和销售者都必须签署汽车转让交易。背书策略旨在允许超级账本Fabric更好地为这些类型的真实交互建模。"
+"背书策略是 Hyperledger Fabric "
+"不同于其他区块链的地方，比如以太坊（Ethereum）或比特币（Bitcoin）。在这些系统中，网络中的任何节点都可以生成有效的交易。Hyperledger"
+" Fabric "
+"更真实地模拟了现实世界；交易必须由网络中可信的组织验证。例如，政府机构必须签署有效的证件交易，或者购车者和销售者都必须签署汽车转让交易。背书策略旨在让 "
+"Hyperledger Fabric 更好地为这些真实世界的交互建模。"
 
 #: ../../source/smartcontract/smartcontract.md:189
 msgid ""
@@ -333,7 +348,9 @@ msgid ""
 "an advanced topic, it is also possible to define custom endorsement policy "
 "rules over and above those provided by Fabric."
 msgstr ""
-"最后，背书策略只是超级账本Fabric中策略的一个例子。还可以定义其他策略来确定谁可以查询或更新账本，或者从网络中添加或删除参与者。一般来说，策略应该由区块链网络中的组织联盟事先商定，尽管它们不是一成不变的。实际上，策略本身可以定义可以更改它们的规则。虽然这是一个高级主题，但是也可以在Fabric提供的规则之上定义定制的背书策略规则。"
+"最后，背书策略只是 Hyperledger Fabric "
+"中策略的一个例子。还可以定义其他策略来确定谁可以查询或更新账本，或者从网络中添加或删除参与者。一般来说，策略应该由区块链网络中的组织联盟事先商定，尽管它们不是一成不变的。实际上，策略本身可以定义更改它们的规则。虽然这是一个高级主题，但是也可以在"
+" Fabric 提供的规则之上定义自定义的背书策略规则。"
 
 #: ../../source/smartcontract/smartcontract.md:201
 msgid ""
@@ -347,7 +364,7 @@ msgid ""
 "valid. Notice that the world state is not updated when the smart contract is"
 " executed!"
 msgstr ""
-"当智能合约执行时，它运行在区块链网络中组织所拥有的peer节点上。合约接受一组称为交易提案的输入参数，并将其与程序逻辑结合使用来读写账本。对世界状态的更改被捕获为交易提案响应(或者仅仅是交易响应)，该响应包含一个读写集，其中包含已读取的状态，以及如果交易有效，将写入新的状态。注意，在执行智能合约时，世界状态没有更新!"
+"当智能合约执行时，它运行在区块链网络中组织所拥有的节点上。合约接受一组称为交易提案的输入参数，并将其与程序逻辑结合使用来读写账本。对世界状态的更改被捕获为交易提案响应（或者仅仅是交易响应），该响应包含一个读写集，其中包含已读取的状态，以及如果交易有效，将写入新的状态。注意，在执行智能合约时，世界状态没有更新！"
 
 #: ../../source/smartcontract/smartcontract.md:210
 msgid ""
@@ -356,6 +373,7 @@ msgid ""
 "whether valid or invalid, but only valid transactions contribute to the "
 "world state."
 msgstr ""
+"所有的交易都有一个身份、一个交易和一个被一组组织签名的响应。所有的交易都记录在区块上，无论是有效的或者无效的，但是只有有效的交易会记录在世界状态上。"
 
 #: ../../source/smartcontract/smartcontract.md:215
 msgid ""
@@ -369,9 +387,10 @@ msgid ""
 "anyone in the network can verify that all actors in the network are in "
 "agreement about the transaction details."
 msgstr ""
-"检查汽车转移交易。您可以看到一个交易t3，用于ORG1和ORG2之间的汽车转移。查看交易如何具有输入{CAR1, ORG1, "
-"ORG2}和输出{CAR1.owner=ORG1, "
-"CAR1.owner=ORG2}，表示所有者从ORG1更改为ORG2。注意，输入是如何由应用程序的组织ORG1签名的，输出是如何由背书策略ORG1和ORG2标识的两个组织签名的。这些签名是使用每个参与者的私钥生成的，这意味着网络中的任何人都可以验证网络中的所有参与者在交易细节上达成一致。"
+"检查汽车转移交易。您可以看到一个交易 ``t3``，用于 ORG1 和 ORG2 之间的汽车转移。查看交易如何具有输入 {CAR1，ORG1，ORG2}"
+" 和输出 {CAR1.owner=ORG1， CAR1.owner=ORG2}，表示所有者从 ORG1 更改为 "
+"ORG2。注意，输入是如何由应用程序的组织 ORG1 签名的，输出是如何由背书策略 ORG1 和 ORG2 "
+"标识的两个组织签名的。这些签名是使用每个参与者的私钥生成的，这意味着网络中的任何人都可以验证网络中的所有参与者在交易细节上达成了一致。"
 
 #: ../../source/smartcontract/smartcontract.md:225
 msgid ""
@@ -385,7 +404,8 @@ msgid ""
 " are added to the blockchain history, whether valid or invalid, but only "
 "valid transactions result in an update to the world state."
 msgstr ""
-"分发到网络中所有peer节点的交易分两个阶段进行验证。首先，根据背书策略检查交易，确保有足够的组织签署。其次，对其进行检查，以确保当交易由背书的peer节点签名时，世界状态的当前值与交易的读集匹配;没有中间更新。如果一个交易通过了这两个测试，它就被标记为有效。所有交易都被添加到区块链历史记录中，不管是有效的还是无效的，但是只有有效的交易才会导致对世界状态的更新。"
+"分发到网络中所有节点的交易分两个阶段进行 "
+"**验证**。首先，根据背书策略检查交易，确保有足够的组织签署。其次，对其进行检查，以确保当交易由背书节点签名时，世界状态的当前值与交易的读集匹配；没有中间更新。如果一个交易通过了这两个测试，它就被标记为有效。所有交易都被添加到区块链历史记录中，不管是有效的还是无效的，但是只有有效的交易才会导致对世界状态的更新。"
 
 #: ../../source/smartcontract/smartcontract.md:235
 msgid ""
@@ -394,7 +414,8 @@ msgid ""
 " it was recorded in the ledger, the world state was not updated, and CAR2 "
 "remains owned by ORG2."
 msgstr ""
-"在我们的示例中，t3是一个有效的交易，因此CAR1的所有者已更新为ORG2。但是t4(未显示)是无效的交易，所以当它在账本记录时，世界状态没有更新，CAR2仍然属于ORG2所有。"
+"在我们的示例中，t3 是一个有效的交易，因此 CAR1 的所有者已更新为 ORG2。但是 t4 "
+"（未显示）是无效的交易，所以当它在账本记录时，世界状态没有更新，CAR2 仍然属于 ORG2 所有。"
 
 #: ../../source/smartcontract/smartcontract.md:240
 msgid ""
@@ -404,7 +425,7 @@ msgstr "最后，要了解如何使用具有世界状态的智能合约或链码
 
 #: ../../source/smartcontract/smartcontract.md:244
 msgid "Channels"
-msgstr ""
+msgstr "通道"
 
 #: ../../source/smartcontract/smartcontract.md:246
 msgid ""
@@ -417,7 +438,8 @@ msgid ""
 "counterparties, but integrated enough to allow them to coordinate "
 "independent activities when necessary."
 msgstr ""
-"超级账本Fabric允许组织通过通道同时参与多个单独的区块链网络。通过加入多个通道，一个组织可以参与一个所谓的网络的网络。通道提供高效的基础设施共享，同时维护数据和通信隐私。它们足够独立，可以帮助组织将它们的工作流量与不同的对手方分开，但又足够集成，以便在必要时协调独立的活动。"
+"Hyperledger Fabric "
+"允许组织通过通道同时参与多个单独的区块链网络。通过加入多个通道，一个组织可以参与一个所谓的网络的网络。通道提供高效的基础设施共享，同时维护数据和通信隐私。它们足够独立，可以帮助组织将它们的工作流量与不同的对手方分开，但又足够集成，以便在必要时协调独立的活动。"
 
 #: ../../source/smartcontract/smartcontract.md:255
 msgid ""
@@ -426,6 +448,7 @@ msgid ""
 "endorsement policy is defined for it; all the smart contracts within the "
 "chaincode are made available to the applications on that channel."
 msgstr ""
+"通道在组织中提供了隔离的通信机制。当链码在通道上实例化时，就为这个链码定义了一个背书策略；在那个通道上，链码中所有的智能合约对应用程序都是可用的。"
 
 #: ../../source/smartcontract/smartcontract.md:261
 msgid ""
@@ -449,11 +472,13 @@ msgid ""
 " INSURANCE network, and can coordinate activity across these two networks "
 "with ORG2 and ORG3 respectively."
 msgstr ""
-"在上面的示例中，将汽车合约部署到车辆通道，并将保险合约部署到保险通道。汽车合约有一个背书策略，要求ORG1和ORG2在被认为有效之前签署交易，而保险合约有一个背书策略，只要求ORG3签署有效交易。ORG1参与车辆通道和保险网络两个网络，分别与ORG2和ORG3协调这两个网络之间的活动。"
+"在上面的示例中，将汽车合约部署到车辆通道，并将保险合约部署到保险通道。汽车合约有一个背书策略，要求 ORG1 和 ORG2 "
+"在交易被认为有效之前签署该交易，而保险合约也有一个背书策略，只要求 ORG3 签署有效交易。ORG1 参与车辆通道和保险网络两个网络，分别与 ORG2 "
+"和 ORG3 协调这两个网络之间的活动。"
 
 #: ../../source/smartcontract/smartcontract.md:277
 msgid "Intercommunication"
-msgstr ""
+msgstr "互相通信"
 
 #: ../../source/smartcontract/smartcontract.md:279
 msgid ""
@@ -462,7 +487,7 @@ msgid ""
 "write world state data to which they would not otherwise have access due to "
 "smart contract namespaces."
 msgstr ""
-"智能合约能够调用同一通道内和跨不同通道的其他智能合约。通过这种方式，他们可以读写世界状态数据，否则由于智能合约名称空间，他们将无法访问这些数据。"
+"智能合约能够调用同一通道和不同通道的其他智能合约。通过这种方式，他们可以读写世界状态数据，否则由于智能合约名称空间的约束，他们将无法访问这些数据。"
 
 #: ../../source/smartcontract/smartcontract.md:284
 msgid ""
@@ -472,7 +497,7 @@ msgstr "这种内部合约通信有一些限制，这些限制将在链码名称
 
 #: ../../source/smartcontract/smartcontract.md:289
 msgid "System chaincode"
-msgstr ""
+msgstr "系统链码"
 
 #: ../../source/smartcontract/smartcontract.md:291
 msgid ""
@@ -482,13 +507,13 @@ msgid ""
 "which corresponds to domain independent system interactions, unrelated to "
 "these smart contracts for business processes."
 msgstr ""
-"链码中定义的智能合约为一组区块链组织之间达成一致的业务流程，编码领域相关规则。然而，链码还可以定义低层程序代码，这些代码对应独立于领域的系统交互，与这些业务流程的智能合约无关。"
+"链码中定义的智能合约编码了区块链组织之间达成一致的业务流程的相关规则。然而，链码还可以定义底层程序代码，这些代码对应独立的系统交互，与这些业务流程的智能合约无关。"
 
 #: ../../source/smartcontract/smartcontract.md:297
 msgid ""
 "The following are the different types of system chaincodes and their "
 "associated abbreviations:"
-msgstr "以下是不同类型的系统链码及其相关缩写:"
+msgstr "以下是不同类型的系统链码及其相关缩写："
 
 #: ../../source/smartcontract/smartcontract.md:300
 msgid ""
@@ -496,6 +521,7 @@ msgid ""
 "signing, install, instantiate, and upgrade chaincode requests. You can read "
 "more about the LSCC implements this process."
 msgstr ""
+"生命周期系统链码（LSCC）运行在所有 peer 节点上，处理链码包签名，安装、实例化和升级链码的请求。你可以在 这里 阅读更多 LSCC 实现的内容。"
 
 #: ../../source/smartcontract/smartcontract.md:305
 msgid ""
@@ -503,6 +529,7 @@ msgid ""
 " a channel configuration, such as a policy update.  You can read more about "
 "this process in the following chaincode topic."
 msgstr ""
+"配置系统链码（CSCC）运行在所有 peer 节点上，用来处理通道配置的变化，比如策略升级。你可以在 这里 阅读更多 CSCC 实现的内容。"
 
 #: ../../source/smartcontract/smartcontract.md:310
 msgid ""
@@ -510,20 +537,22 @@ msgid ""
 " include block query, transaction query etc. You can read more about these "
 "ledger APIs in the transaction context topic."
 msgstr ""
+"查询系统链码（QSCC）运行在所有 peer 节点上，提供账本 API，包括区块查询、交易查询等。你可以在 交易上下文 主题中查阅更多这些账本 API "
+"的信息。"
 
 #: ../../source/smartcontract/smartcontract.md:315
 msgid ""
 "Endorsement system chaincode (ESCC) runs in endorsing peers to "
 "cryptographically sign a transaction response. You can read more about how "
 "the ESCC implements this process."
-msgstr ""
+msgstr "背书系统链码（ESCC）运行在所有背书节点中，来签名交易响应。你可以在 这里 阅读更多 ESCC 实现的内容。"
 
 #: ../../source/smartcontract/smartcontract.md:319
 msgid ""
 "Validation system chaincode (VSCC) validates a transaction, including "
 "checking endorsement policy and read-write set versioning. You can read more"
 " about the LSCC implements this process."
-msgstr ""
+msgstr "验证系统链码（VSCC）验证一个交易，包括检查背书策略和读写集版本。你可以在 这里 阅读更多 VSCC 实现的内容。"
 
 #: ../../source/smartcontract/smartcontract.md:323
 msgid ""
@@ -538,4 +567,7 @@ msgid ""
 "peer node. This lack of of consensus is one form of a ledger fork, a very "
 "undesirable situation."
 msgstr ""
-"底层的Fabric开发人员和管理员可以根据自己的需要修改这些系统链码。然而，系统链码的开发和管理是一项专门的活动，与智能合约的开发完全分离，通常没有必要。对系统链码的更改必须非常小心地处理，因为它们是超级账本Fabric网络正确运行的基础。例如，如果没有正确地开发系统链代码，一个peer节点可能会以不同的方式更新其世界状态或区块链副本。这种缺乏共识是账本分叉的一种形式，是一种非常不可取的情况。"
+"底层的 Fabric "
+"开发人员和管理员可以根据自己的需要修改这些系统链码。然而，系统链码的开发和管理是一项专门的活动，与智能合约的开发完全分离，通常没有必要。对系统链码的更改必须非常小心地处理，因为它们是"
+" Hyperledger Fabric 网络正确运行的基础。例如，如果没有正确地开发系统链代码，一个 peer "
+"节点可能会以不同的方式更新其世界状态或区块链副本。这种缺乏共识是账本分叉的一种形式，是一种非常不可取的情况。"

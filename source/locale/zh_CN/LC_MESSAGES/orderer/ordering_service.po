@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,11 +24,11 @@ msgstr ""
 
 #: ../../source/orderer/ordering_service.md:1
 msgid "The Ordering Service"
-msgstr ""
+msgstr "排序服务"
 
 #: ../../source/orderer/ordering_service.md:3
 msgid "Audience: Architects, ordering service admins, channel creators"
-msgstr "涉众:架构师、排序服务管理员、通道创建者"
+msgstr "受众：架构师、排序服务管理员、通道创建者"
 
 #: ../../source/orderer/ordering_service.md:5
 msgid ""
@@ -37,12 +38,12 @@ msgid ""
 "service, with a particular focus on the Raft ordering service "
 "implementation."
 msgstr ""
-"这个话题是一个概念性的介绍顺序的概念,排序器与peer相互作用,如何在一个交易流程中所发挥的作用,和当前可用的排序服务的实现概述,尤其关注 Raft "
-"排序服务实现。"
+"本主题将概念性的介绍排序的概念、排序节点是如何与 peer 节点相互的、它们在交易流程中如何所发挥作用以及当前可用的排序服务的实现方式，尤其关注 "
+"Raft 排序服务实现。"
 
 #: ../../source/orderer/ordering_service.md:10
 msgid "What is ordering?"
-msgstr ""
+msgstr "什么是排序？"
 
 #: ../../source/orderer/ordering_service.md:12
 msgid ""
@@ -55,7 +56,7 @@ msgid ""
 "\"fork\"), where different participants in the network have a different view"
 " of the accepted order of transactions."
 msgstr ""
-"许多分布式区块链，如以太坊(Ethereum)和比特币(Bitcoin)，都不是许可链的，这意味着任何节点都可以参与共识过程，在共识过程中，交易被排序并捆绑成区块。因为这个事实,这些系统依靠概率共识算法最终保证账本一致性高的概率,但仍容易受到不同的账本(有时也称为一个账本“分叉”),在网络中不同的参与者对于交易顺序有不同的观点。"
+"许多分布式区块链，如以太坊（Ethereum）和比特币（Bitcoin），都是非许可链的，这意味着任何节点都可以参与共识过程，在共识过程中，交易被排序并捆绑成区块。因为这个事实，这些系统依靠概率共识算法最终保证账本一致性高的概率，但仍容易受到不同的账本（有时也称为一个账本“分叉”），在网络中不同的参与者对于交易顺序有不同的观点。"
 
 #: ../../source/orderer/ordering_service.md:21
 msgid ""
@@ -67,7 +68,9 @@ msgid ""
 "is guaranteed to be final and correct. Ledgers cannot fork the way they do "
 "in many other distributed blockchains."
 msgstr ""
-"超级账本Fabric的工作方式不同。它具有一种称为排序器的节点(也称为“排序节点”)，它执行交易排序，并与其他节点一起形成一个排序服务。因为Fabric的设计依赖于确定性的共识算法，所以由排序服务生成的任何区块由peer验证都能保证是最终的和正确的。账本不能像在其他分布式区块链中那样分叉。"
+"Hyperledger Fabric "
+"的工作方式不同。它具有一种称为排序器的节点（也称为“排序节点”），使交易有序，并与其他节点一起形成一个排序服务。因为 Fabric "
+"的设计依赖于确定性的共识算法，所以 peer 节点验证的排序服务生成的任何区块都能保证是最终的和正确的。账本不会能像在其他分布式区块链中那样分叉。"
 
 #: ../../source/orderer/ordering_service.md:29
 msgid ""
@@ -76,11 +79,12 @@ msgid ""
 " in performance and scalability, eliminating bottlenecks which can occur "
 "when execution and ordering are performed by the same nodes."
 msgstr ""
-"除了促进确定性之外，将链码执行的背书(发生在peer)与排序分离，还在性能和可伸缩性方面提供了Fabric的优势，消除了由相同节点执行和排序时可能出现的瓶颈。"
+"除了促进确定性之外，将链码执行的背书（发生在节点）与排序分离，还在性能和可伸缩性方面给 Fabric "
+"提供了优势，消除了由相同节点执行和排序时可能出现的瓶颈。"
 
 #: ../../source/orderer/ordering_service.md:34
 msgid "Orderer nodes and channel configuration"
-msgstr ""
+msgstr "排序节点和通道配置"
 
 #: ../../source/orderer/ordering_service.md:36
 msgid ""
@@ -93,7 +97,8 @@ msgid ""
 "for an ordering service to hold several of these lists, which makes the "
 "consortium a vehicle for Fabric multi-tenancy."
 msgstr ""
-"除了排序角色之外，排序器还维护允许创建通道的组织列表。此组织列表称为“联盟”，列表本身保存在“排序器系统通道”(也称为“排序系统通道”)的配置中。默认情况下，此列表及其所在的通道只能由排序器管理员编辑。请注意，排序服务可以保存这些列表中的几个，这使得联盟成为Fabric多租户的载体。"
+"除了排序角色之外，排序节点还维护允许创建通道的组织列表。此组织列表称为“联盟”，列表本身保存在“排序节点系统通道”（也称为“排序系统通道”）的配置中。默认情况下，此列表及其所在的通道只能由排序节点管理员编辑。请注意，排序服务可以保存这些列表中的几个，这使得联盟成为"
+" Fabric 多租户的载体。"
 
 #: ../../source/orderer/ordering_service.md:44
 msgid ""
@@ -112,11 +117,11 @@ msgid ""
 " to verify that the modifications approved by the orderer do indeed satisfy "
 "the policies defined in the channel."
 msgstr ""
-"排序器还对通道执行基本访问控制，限制谁可以读写数据，以及谁可以配置数据。请记住，谁有权修改通道中的配置元素取决于相关管理员在创建联盟或通道时设置的策略。配置交易由排序器处理，因为它需要知道当前策略集合来执行其基本形式的访问控制。在这种情况下，排序器处理配置更新，以确保请求者拥有正确的管理权限。如果是，排序器将根据现有配置验证更新请求，生成一个新的配置交易，并将其打包到一个区块中，该区块将转发给通道上的所有peer。然后peer处理配置交易，以验证排序器批准的修改确实满足通道中定义的策略。"
+"排序节点还对通道执行基本访问控制，限制谁可以读写数据，以及谁可以配置数据。请记住，谁有权修改通道中的配置元素取决于相关管理员在创建联盟或通道时设置的策略。配置交易由排序节点处理，因为它需要知道当前策略集合来执行其基本的访问控制。在这种情况下，排序节点处理配置更新，以确保请求者拥有正确的管理权限。如果是，排序节点将根据现有配置验证更新请求，生成一个新的配置交易，并将其打包到一个区块中，该区块将转发给通道上的所有节点。然后节点处理配置交易，以验证排序节点批准的修改确实满足通道中定义的策略。"
 
 #: ../../source/orderer/ordering_service.md:59
 msgid "Orderer nodes and Identity"
-msgstr ""
+msgstr "排序节点和身份"
 
 #: ../../source/orderer/ordering_service.md:61
 msgid ""
@@ -124,13 +129,13 @@ msgid ""
 "applications, admins, and orderers, acquires their organizational identity "
 "from their digital certificate and their Membership Service Provider (MSP) "
 "definition."
-msgstr "与区块链网络交互的所有东西，包括peer、应用程序、管理员和排序器，都从它们的数字证书和成员服务提供者(MSP)定义中获取它们的组织身份。"
+msgstr "与区块链网络交互的所有东西，包括节点、应用程序、管理员和排序节点，都从它们的数字证书和成员服务提供者（MSP）定义中获取它们的组织身份。"
 
 #: ../../source/orderer/ordering_service.md:65
 msgid ""
 "For more information about identities and MSPs, check out our documentation "
 "on Identity and Membership."
-msgstr "有关身份和MSP的更多信息，请查看我们关于身份和成员的文档。"
+msgstr "有关身份和 MSP 的更多信息，请查看我们关于身份和成员的文档。"
 
 #: ../../source/orderer/ordering_service.md:68
 msgid ""
@@ -140,29 +145,30 @@ msgid ""
 "choose to deploy a root CA and then intermediate CAs associated with that "
 "root CA, is up to you."
 msgstr ""
-"与peer一样，排序节点属于组织。与peer类似，应该为每个组织使用单独的证书颁发机构(CA)。这个CA是否将作为根CA发挥作用，或者您是否选择部署根CA，然后部署与该根CA关联的中间CA，这取决于您。"
+"与节点一样，排序节点属于组织。与节点类似，应该为每个组织使用单独的证书授权中心（CA）。这个 CA 是否将作为根 CA 发挥作用，或者您是否选择部署根 "
+"CA，然后部署与该根 CA 关联的中间 CA，这取决于您。"
 
 #: ../../source/orderer/ordering_service.md:73
 msgid "Orderers and the transaction flow"
-msgstr ""
+msgstr "排序节点和交易流程"
 
 #: ../../source/orderer/ordering_service.md:75
 msgid "Phase one: Proposal"
-msgstr ""
+msgstr "阶段一：提案"
 
 #: ../../source/orderer/ordering_service.md:77
 msgid ""
 "We've seen from our topic on Peers that they form the basis for a blockchain"
 " network, hosting ledgers, which can be queried and updated by applications "
 "through smart contracts."
-msgstr "从我们对peer节点的讨论中，我们已经看到它们构成了区块链网络的基础，托管账本，应用程序可以通过智能合约查询和更新这些账本。"
+msgstr "从我们对节点的讨论中，我们已经看到它们构成了区块链网络的基础，托管账本，应用程序可以通过智能合约查询和更新这些账本。"
 
 #: ../../source/orderer/ordering_service.md:81
 msgid ""
 "Specifically, applications that want to update the ledger are involved in a "
 "process with three phases that ensures all of the peers in a blockchain "
 "network keep their ledgers consistent with each other."
-msgstr "具体地说，希望更新账本的应用程序涉及到一个分三个阶段的过程，该过程确保区块链网络中的所有peer保持它们的账本彼此一致。"
+msgstr "具体地说，希望更新账本的应用程序涉及到一个分三个阶段的过程，该过程确保区块链网络中的所有节点保持它们的账本彼此一致。"
 
 #: ../../source/orderer/ordering_service.md:85
 msgid ""
@@ -175,23 +181,23 @@ msgid ""
 "phase two, and then distributed to all peers for final validation and commit"
 " in phase three."
 msgstr ""
-"在第一阶段，客户端应用程序将交易提案发送给一组peer，这些peer将调用一个智能合约来生成一个提议的账本更新，然后背书结果。背书peer此时不将提案的更新应用于其账本副本。相反，背书的peer将向客户机应用程序返回一个提案响应。已背书的交易提案最终将在第二阶段被排序为区块，然后在第三阶段分发给所有peer进行最终验证和提交。"
+"在第一阶段，客户端应用程序将交易提案发送给一组节点，这些节点将调用一个智能合约来生成一个提案过的账本更新，然后背书结果。背书节点此时不将提案的更新应用于其账本副本。相反，背书节点将向客户端应用程序返回一个提案响应。已背书的交易提案最终将在第二阶段被排序为区块，然后在第三阶段分发给所有节点进行最终验证和提交。"
 
 #: ../../source/orderer/ordering_service.md:94
 msgid ""
 "For an in-depth look at the first phase, refer back to the Peers topic."
-msgstr "要深入了解第一个阶段，请参阅peer主题。"
+msgstr "要深入了解第一个阶段，请参阅节点题。"
 
 #: ../../source/orderer/ordering_service.md:96
 msgid "Phase two: Ordering and packaging transactions into blocks"
-msgstr ""
+msgstr "阶段二：将交易排序并打包到区块中"
 
 #: ../../source/orderer/ordering_service.md:98
 msgid ""
 "After the completion of the first phase of a transaction, a client "
 "application has received an endorsed transaction proposal response from a "
 "set of peers. It's now time for the second phase of a transaction."
-msgstr "在完成交易的第一阶段之后，客户端应用程序已经从一组peer接收到一个经过背书的交易提案响应。现在是交易的第二阶段。"
+msgstr "在完成交易的第一阶段之后，客户端应用程序已经从一组节点接收到一个经过背书的交易提案响应。现在是交易的第二阶段。"
 
 #: ../../source/orderer/ordering_service.md:102
 msgid ""
@@ -200,7 +206,7 @@ msgid ""
 "service creates blocks of transactions which will ultimately be distributed "
 "to all peers on the channel for final validation and commit in phase three."
 msgstr ""
-"在此阶段，应用程序客户端将包含已背书交易提案响应的交易提交到排序服务节点。排序服务创建交易区块，这些交易区块最终将分发给通道上的所有peer，以便在第三阶段进行最终验证和提交。"
+"在此阶段，应用程序客户端把包含已背书交易提案响应的交易提交到排序服务节点。排序服务创建交易区块，这些交易区块最终将分发给通道上的所有节点，以便在第三阶段进行最终验证和提交。"
 
 #: ../../source/orderer/ordering_service.md:107
 msgid ""
@@ -210,7 +216,7 @@ msgid ""
 "submitted transactions into a well-defined sequence and package them into "
 "blocks. These blocks will become the blocks of the blockchain!"
 msgstr ""
-"排序服务节点同时接收来自许多不同应用程序客户端的交易。这些排序服务节点一起工作，共同组成排序服务。它的工作是将提交的交易按定义良好的顺序安排成批次，并将它们打包成区块。这些区块将成为区块链的区块!"
+"排序服务节点同时接收来自许多不同应用程序客户端的交易。这些排序服务节点一起工作，共同组成排序服务。它的工作是将提交的交易按定义好的顺序安排成批次，并将它们打包成区块。这些区块将成为区块链的区块！"
 
 #: ../../source/orderer/ordering_service.md:113
 msgid ""
@@ -223,7 +229,8 @@ msgid ""
 "service node, or by gossiping with another peer. We'll see how this block is"
 " processed by peers in the third phase."
 msgstr ""
-"区块中的交易数量取决于区块的期望大小和最大运行时间相关的通道配置参数(确切地说，是BatchSize和BatchTimeout参数)。然后将这些区块保存到排序器的账本中，并分发给已经加入通道的所有peer。如果此时恰好有一个peer关闭，或者稍后加入通道，则在重新连接到排序服务节点或与另一个peer通信（闲聊）之后，通道将接收到这些区块。我们将在第三阶段看到peer如何处理这个区块。"
+"区块中的交易数量取决于区块的期望大小和最大运行时间相关的通道配置参数（确切地说，是 BatchSize 和 BatchTimeout "
+"参数）。然后将这些区块保存到排序节点的账本中，并分发给已经加入通道的所有节点。如果此时恰好有一个节点关闭，或者稍后加入通道，它将在重新连接到排序服务节点或与另一个节点通信之后接收到这些区块。我们将在第三阶段看到节点如何处理这个区块。"
 
 #: ../../source/orderer/ordering_service.md:124
 msgid ""
@@ -237,7 +244,10 @@ msgid ""
 "which these transactions arrived at the orderer! (This example shows a very "
 "simplified ordering service configuration with only one ordering node.)"
 msgstr ""
-"排序节点的第一个角色是打包提案的账本更新。在本例中，应用程序A1向排序器O1发送由E1和E2背书的交易T1。同时，应用程序A2将E1背书的交易T2发送给排序器O1。O1将来自应用程序A1的交易T1和来自应用程序A2的交易T2以及来自网络中其他应用程序的交易打包到区块B2中。我们可以看到，在B2中，交易顺序是T1、T2、T3、T4、T6、T5——这可能不是这些交易到达排序器的顺序!(这个例子显示了一个非常简单的排序服务配置，只有一个排序节点。)"
+"排序节点的第一个角色是打包提案的账本更新。在本例中，应用程序 A1 向排序节点 O1 发送由 E1 和 E2 背书的交易 T1。同时，应用程序 A2 将"
+" E1 背书的交易 T2 发送给排序节点 O1。O1 将来自应用程序 A1 的交易 T1 和来自应用程序 A2 的交易 T2 "
+"以及来自网络中其他应用程序的交易打包到区块 B2 中。我们可以看到，在 B2 中，交易顺序是 "
+"T1、T2、T3、T4、T6、T5——这可能不是这些交易到达排序节点的顺序！（这个例子显示了一个非常简单的排序服务配置，只有一个排序节点。）"
 
 #: ../../source/orderer/ordering_service.md:134
 msgid ""
@@ -248,7 +258,7 @@ msgid ""
 "puts the transactions into a strict order, and peers will use this order "
 "when validating and committing transactions."
 msgstr ""
-"值得注意的是，一个区块中交易的顺序不一定与排序服务接收的顺序相同，因为可能有多个排序服务节点几乎同时接收交易。重要的是，排序服务将交易放入严格的顺序中，并且peer在验证和提交交易时将使用这个顺序。"
+"值得注意的是，一个区块中交易的顺序不一定与排序服务接收的顺序相同，因为可能有多个排序服务节点几乎同时接收交易。重要的是，排序服务将交易放入严格的顺序中，并且节点在验证和提交交易时将使用这个顺序。"
 
 #: ../../source/orderer/ordering_service.md:141
 msgid ""
@@ -261,7 +271,10 @@ msgid ""
 "means that there are no ledger forks --- validated transactions will never "
 "be reverted or dropped."
 msgstr ""
-"区块内交易的严格排序使得超级账本Fabric与其他区块链稍有不同，在其他区块链中，相同的交易可以被打包成多个不同的区块，从而形成一个链。在超级账本Fabric中，由排序服务生成的区块是最终的。一旦一笔交易被写进一个区块，它在账本中的地位就得到了不可动摇的保证。正如我们前面所说，超级账本Fabric的终结性意味着没有账本分支——经过验证的交易永远不会被还原或删除。"
+"区块内交易的严格排序使得 Hyperledger Fabric "
+"与其他区块链稍有不同，在其他区块链中，相同的交易可以被打包成多个不同的区块，从而形成一个链。在 Hyperledger Fabric "
+"中，由排序服务生成的区块是最终的。一旦一笔交易被写进一个区块，它在账本中的地位就得到了保证。正如我们前面所说，Hyperledger Fabric "
+"的最终性意味着没有账本分叉——经过验证的交易永远不会被重写或删除。"
 
 #: ../../source/orderer/ordering_service.md:150
 msgid ""
@@ -271,25 +284,25 @@ msgid ""
 "orderer makes no judgement as to the content of a transaction (except for "
 "channel configuration transactions, as mentioned earlier)."
 msgstr ""
-"我们还可以看到，虽然peer执行智能合约并处理交易，但是排序器绝对不会这样做。到达排序器的每个授权交易都被机械地打包在一个区块中——排序器不判断交易的内容(前面提到的通道配置交易除外)。"
+"我们还可以看到，虽然节点执行智能合约并处理交易，但是排序节点绝对不会这样做。到达排序节点的每个授权交易都被机械地打包在一个区块中——排序节点不判断交易的内容（前面提到的通道配置交易除外）。"
 
 #: ../../source/orderer/ordering_service.md:156
 msgid ""
 "At the end of phase two, we see that orderers have been responsible for the "
 "simple but vital processes of collecting proposed transaction updates, "
 "ordering them, and packaging them into blocks, ready for distribution."
-msgstr "在第二阶段的末尾，我们看到排序器负责收集提议的交易更新、排序它们并将它们打包成区块，以便分发，这些简单但重要的过程。"
+msgstr "在第二阶段的末尾，我们看到排序节点负责一些简单但重要的过程，包括收集已提案的交易更新、排序并将它们打包成区块、准备分发。"
 
 #: ../../source/orderer/ordering_service.md:160
 msgid "Phase three: Validation and commit"
-msgstr ""
+msgstr "阶段三：验证和提交"
 
 #: ../../source/orderer/ordering_service.md:162
 msgid ""
 "The third phase of the transaction workflow involves the distribution and "
 "subsequent validation of blocks from the orderer to the peers, where they "
 "can be applied to the ledger."
-msgstr "交易工作流的第三个阶段涉及到从排序器到peer的区块的分发和随后的验证，这些区块可以应用到账本中。"
+msgstr "交易工作流的第三个阶段涉及到从排序节点到 peer 节点的区块的分发和随后的验证，这些区块可能会被应用到账本中。"
 
 #: ../../source/orderer/ordering_service.md:166
 msgid ""
@@ -298,7 +311,8 @@ msgid ""
 "an orderer --- peers can cascade blocks to other peers using the gossip "
 "protocol."
 msgstr ""
-"阶段3从排序器将区块分发给连接到它的所有peer开始。同样值得注意的是，并不是每个peer都需要连接到一个排序器——peer可以使用gossip协议将区块级联到其他peer。"
+"阶段三从排序节点将区块分发给连接到它的所有节点开始。同样值得注意的是，并不是每个节点都需要连接到一个排序节点—— peer 节点可以使用 gossip "
+"协议将区块关联到其他节点。"
 
 #: ../../source/orderer/ordering_service.md:171
 msgid ""
@@ -312,7 +326,7 @@ msgid ""
 "retained in the immutable block created by the orderer, but they are marked "
 "as invalid by the peer and do not update the ledger's state."
 msgstr ""
-"每个peer将独立地验证分布式区块，但以确定的方式验证，确保账本保持一致。具体来说,每个peer的通道将区块中的每个交易进行验证,以确保得到需要的组织peer的背书,其背书吻合,它还没有被其他最近已提交交易搞失效。无效的交易仍然保留在排序器创建的不可变区块中，但是peer将它们标记为无效，并且不更新账本的状态。"
+"每个节点将独立地验证分布式区块，但以确定的方式验证，确保账本保持一致。具体来说，通道中每个节点都将验证区块中的每个交易，以确保得到了所需组织的节点背书，也就是节点的背书和背书策略相匹配，并且不会因最初认可该事务时可能正在运行的其他最近提交的事务而失效。无效的交易仍然保留在排序器创建的不可变区块中，但是节点将它们标记为无效，并且不更新账本的状态。"
 
 #: ../../source/orderer/ordering_service.md:182
 msgid ""
@@ -324,10 +338,9 @@ msgid ""
 "been consistently updated on peers P1 and P2, and each may inform connected "
 "applications that the transaction has been processed."
 msgstr ""
-"排序节点的第二个角色是将区块分发给peer节点。在本例中，排序器O1将区块B2分配给peer P1和peer P2。peer "
-"P1处理区块B2，导致在P1上的账本L1中添加一个新区块。同时，peer "
-"P2处理区块B2，从而将一个新区块添加到P2上的账本L1中。一旦这个过程完成，peer "
-"P1和P2上的账本L1就会一直更新，并且每个账本L1都可以通知连接的应用程序交易已经被处理。"
+"排序节点的第二个角色是将区块分发给节点。在本例中，排序节点 O1 将区块 B2 分配给节点 P1 和 P2。节点 P1 处理区块 B2，在 P1 "
+"上的账本 L1 中添加一个新区块。同时，节点 P2 处理区块 B2，从而将一个新区块添加到 P2 上的账本 L1中。一旦这个过程完成，节点 P1 和 "
+"P2 上的账本 L1 就会保持一致的更新，并且每个节点都可以通知与之连接的应用程序交易已经被处理。"
 
 #: ../../source/orderer/ordering_service.md:190
 msgid ""
@@ -336,15 +349,15 @@ msgid ""
 " blocks allows each peer to validate that transaction updates are "
 "consistently applied across the blockchain network."
 msgstr ""
-"总之，第三阶段看到的是由排序服务生成的区块一致地应用于账本。将交易严格地按区块排序，允许每个peer验证交易更新是否在整个区块链网络上一致地应用。"
+"总之，第三阶段看到的是由排序服务生成的区块一致地应用于账本。将交易严格地按区块排序，允许每个节点验证交易更新是否在整个区块链网络上一致地应用。"
 
 #: ../../source/orderer/ordering_service.md:195
 msgid "For a deeper look at phase 3, refer back to the Peers topic."
-msgstr "要更深入地了解阶段3，请参阅peer主题。"
+msgstr "要更深入地了解阶段三，请参阅节点题。"
 
 #: ../../source/orderer/ordering_service.md:197
 msgid "Ordering service implementations"
-msgstr ""
+msgstr "排序服务实现"
 
 #: ../../source/orderer/ordering_service.md:199
 msgid ""
@@ -359,12 +372,12 @@ msgid ""
 "For information about how to stand up an ordering node (regardless of the "
 "implementation the node will be used in), check out our documentation on "
 "standing up an ordering node."
-msgstr "有关如何建立排序节点(无论该节点将在什么实现中使用)的信息，请参阅关于建立排序节点的文档。"
+msgstr "有关如何建立排序节点（无论该节点将在什么实现中使用）的信息，请参阅关于建立排序节点的文档。"
 
 #: ../../source/orderer/ordering_service.md:207
 #: ../../source/orderer/ordering_service.md:237
 msgid "Solo"
-msgstr ""
+msgstr "Solo"
 
 #: ../../source/orderer/ordering_service.md:209
 msgid ""
@@ -377,11 +390,14 @@ msgid ""
 "with a single node Raft cluster, as it may be reconfigured to add additional"
 " nodes."
 msgstr ""
+"排序服务的 Solo 实现就像它的名字一样： 它只具有一个排序节点。因此，它不是，也永远不会是容错的。出于这个原因，Solo "
+"实现不能用于生产环境，但对于测试应用程序和智能合约，或者创建概念证明来说，它们是一个很好的选择。但是，如果您曾经希望将这个 POC "
+"网络扩展到生产环境中，那么您可能希望从单个节点 Raft 集群开始，因为它可能被重新配置以添加其他节点。"
 
 #: ../../source/orderer/ordering_service.md:218
 #: ../../source/orderer/ordering_service.md:251
 msgid "Raft"
-msgstr ""
+msgstr "Raft"
 
 #: ../../source/orderer/ordering_service.md:220
 msgid ""
@@ -393,11 +409,14 @@ msgid ""
 "design allows different organizations to contribute nodes to a distributed "
 "ordering service."
 msgstr ""
+"作为 v1.4.1 的新特性，Raft 是一种基于 etcd 中 Raft 协议实现的容错（CFT）排序服务。Raft "
+"遵循一个“领导者和追随者”模型，在这个模型中，领导者节点被选中（每个通道），其决策被追随者复制。Raft  排序服务应该会比基于 Kafka "
+"的排序服务更容易设置和管理，它们的设计允许不同的组织为分布式排序服务贡献节点。"
 
 #: ../../source/orderer/ordering_service.md:229
 #: ../../source/orderer/ordering_service.md:432
 msgid "Kafka"
-msgstr ""
+msgstr "Kafka"
 
 #: ../../source/orderer/ordering_service.md:231
 msgid ""
@@ -408,6 +427,9 @@ msgid ""
 "additional administrative overhead of managing a Kafka cluster intimidating "
 "or undesirable."
 msgstr ""
+"与基于 Raft 的排序类似，Apache Kafka 是一个 CFT "
+"的实现，它使用一个“领导者（leader）和追随者（follower）”节点配置。Kafka 利用一个 ZooKeeper 进行管理。基于 Kafka "
+"的排序服务从 Fabric v1.0 开始就可以使用，但许多用户可能会发现管理 Kafka 集群的额外管理开销令人生畏或不受欢迎。"
 
 #: ../../source/orderer/ordering_service.md:239
 msgid ""
@@ -423,13 +445,16 @@ msgid ""
 " wish to start with only a single ordering node but might wish to grow in "
 "the future, a single node Raft cluster is a better option."
 msgstr ""
-"如上所述，在开发测试、开发或概念验证网络时，单独排序服务是一个不错的选择。出于这个原因,它是默认的排序服务部署在我们构建第一个网络教程),从其他网络组件的角度来看,一个Solo排序服务处理交易相同于更复杂的Kafka和Raft实现，而节省维护和升级多个节点和集群的管理开销。由于Solo排序服务不能容错，因此它永远不应该被认为是生产区块链网络的可行替代方案。对于只希望从单个排序节点开始但将来可能希望增长的网络，单节点Raft集群是更好的选择。"
+"如上所述，在开发测试、开发或概念验证网络时，单独排序服务是一个不错的选择。出于这个原因，它是部署在我们构建第一个网络教程中默认的排序服务，从其他网络组件的角度来看，"
+" Solo 排序服务处理交易和更复杂的 Kafka 和 Raft 实现相同，同时节省了维护和升级多个节点和集群的管理开销。由于 Solo "
+"排序服务不能容错，因此它永远不应该被认为是生产区块链网络的可行替代方案。对于只希望从 Solo 排序节点开始但将来可能希望增长的网络，单节点 Raft "
+"集群是更好的选择。"
 
 #: ../../source/orderer/ordering_service.md:253
 msgid ""
 "For information on how to configure a Raft ordering service, check out our "
 "documentation on configuring a Raft ordering service."
-msgstr "有关如何配置Raft排序服务的信息，请参阅有关配置Raft排序服务的文档。"
+msgstr "有关如何配置 Raft 排序服务的信息，请参阅有关配置 Raft 排序服务的文档。"
 
 #: ../../source/orderer/ordering_service.md:256
 msgid ""
@@ -445,9 +470,10 @@ msgid ""
 "loss of one node (leaving two remaining). If you have five nodes in a "
 "channel, you can lose two nodes (leaving three remaining nodes)."
 msgstr ""
-"生产网络的排序服务选择,建立Raft协议的Fabric实现使用一个“领导者和跟随者”模式,一个领导者的动态排序节点中选出一个通道(这个集合的节点称为“同意者”),和领导者将信息复制到跟随者节点。因为系统可以承受节点的损失，包括领导者节点，只要还有大量的有序节点(称为“quorum”)剩余，Raft被称为“崩溃容错”(crash"
-" fault tolerant, "
-"CFT)。换句话说，如果一个通道中有三个节点，它可以承受一个节点的丢失(剩下两个)。如果一个通道中有五个节点，则可能会丢失两个节点(留下三个剩余节点)。"
+"对于将用于生产网络的排序服务，建立了 Raft 协议的 Fabric "
+"实现使用一个“领导者和跟随者”模式，领导者是在一个通道的排序节点中动态选择的（这个集合的节点称为“同意者集”），领导者将信息复制到跟随者节点。因为系统可以承受节点的损失，包括领导者节点，只要还有大量的排序节点（称为“法定人数（quorum）”）剩余，Raft"
+" 被称为“崩溃容错”（crash fault tolerant, "
+"CFT）。换句话说，如果一个通道中有三个节点，它可以承受一个节点的丢失（剩下两个节点）。如果一个通道中有五个节点，则可以丢失两个节点（剩下下三个节点）。"
 
 #: ../../source/orderer/ordering_service.md:268
 msgid ""
@@ -460,7 +486,9 @@ msgid ""
 "there are a few major differences worth considering, especially if you "
 "intend to manage an ordering service:"
 msgstr ""
-"从它们提供给网络或通道的服务的角度来看，Raft和现有的基于kafka的排序服务我们将在稍后讨论)是相似的。它们都是使用领导者和跟随者设计的CFT排序服务。如果您是应用程序开发人员、智能合约开发人员或peer管理员，您不会注意到基于Raft和Kafka的排序服务之间的功能差异。然而，有几个主要的差异值得考虑，特别是如果你打算管理一个排序服务:"
+"从它们提供给网络或通道的服务的角度来看，Raft 和现有的基于 Kafka 的排序服务（我们将在稍后讨论）是相似的。它们都是使用领导者和跟随者设计的 "
+"CFT 排序服务。如果您是应用程序开发人员、智能合约开发人员或节点管理员，您不会注意到基于 Raft 和 Kafka "
+"的排序服务之间的功能差异。然而，有几个主要的差异值得考虑，特别是如果你打算管理一个排序服务："
 
 #: ../../source/orderer/ordering_service.md:276
 msgid ""
@@ -473,6 +501,9 @@ msgid ""
 " must be coordinated with your orderers. With Raft, everything is embedded "
 "into your ordering node."
 msgstr ""
+"Raft 更容易设置。虽然 Kafka 有很多崇拜者，但即使是那些崇拜者也会（通常）承认部署 Kafka 集群及其 ZooKeeper "
+"集群可能很棘手，需要在 Kafka 基础设施和设置方面拥有高水平的专业知识。此外，使用 Kafka 管理的组件比使用 Raft "
+"管理的组件多，这意味着有更多的地方会出现问题。Kafka 有自己的版本，必须与排序节点协调。使用 Raft，所有内容都会嵌入到您的排序节点中。"
 
 #: ../../source/orderer/ordering_service.md:284
 msgid ""
@@ -486,6 +517,10 @@ msgid ""
 "Raft, each organization can have its own ordering nodes, participating in "
 "the ordering service, which leads to a more decentralized system."
 msgstr ""
+"Kafka 和 Zookeeper 并不是为了在大型网络上运行。它们被设计为 CFT，但应该在一组紧密的主机中运行。这意味着实际上，您需要有一个组织运行"
+" Kafka 集群。考虑到这一点，在使用 "
+"Kafka（Fabric支持）时，让不同组织运行排序节点不会给您带来太多的分散性，因为这些节点都将进入同一个由单个组织控制的 Kafka 集群。使用 "
+"Raft，每个组织都可以有自己的排序节点，参与排序服务，从而形成一个更加分散的系统。"
 
 #: ../../source/orderer/ordering_service.md:294
 msgid ""
@@ -497,6 +532,9 @@ msgid ""
 "on the other hand, has been developed and will be supported within the "
 "Fabric developer community and its support apparatus."
 msgstr ""
+"Raft 是原生支持的。虽然基于 Kafka 的排序服务目前与 Fabric 兼容，但用户需要获得相关的镜像，并学习如何单独使用 Kafka 和 "
+"ZooKeeper。同样，对 Kafka 相关问题的支持是通过 Apache 来处理的，Apache 是 Kafka 的开源开发这，而不是 "
+"Hyperledge Fabric。另一方面，Fabric 的实现已经开发出来，并将在 Fabric 开发人员社区及其支持设备中得到支持。"
 
 #: ../../source/orderer/ordering_service.md:302
 msgid ""
@@ -508,6 +546,9 @@ msgid ""
 "ordering service of that channel, rather than trusting and depending on a "
 "central admin to manage the Kafka nodes."
 msgstr ""
+"如果 Kafka 使用一个服务器池（称为“Kafka "
+"代理”），并且排序组织的管理员要指定在特定通道上使用多少个节点，Raft允许用户指定要部署到哪个通道的排序节点。通过这种方式，节点组织可以确保，如果他们也拥有一个排序节点，那么这个节点将成为该通道的排序服务的一部分，而不是信任并依赖与一个中心来管理"
+" Kafka 节点。"
 
 #: ../../source/orderer/ordering_service.md:310
 msgid ""
@@ -516,6 +557,8 @@ msgid ""
 "development of Raft were driven by this. If you are interested in BFT, "
 "learning how to use Raft should ease the transition."
 msgstr ""
+"Raft 是向开发拜占庭容错（BFT）排序服务迈出的第一步。正如我们将看到的，Fabric 开发中的一些决策是由这个驱动的。如果你对 BFT "
+"感兴趣，学习如何使用 Raft 应该可以慢慢过渡。"
 
 #: ../../source/orderer/ordering_service.md:315
 msgid ""
@@ -530,11 +573,13 @@ msgid ""
 "may be desirable to resubmit the transaction or collect a new set of "
 "endorsements upon such a timeout."
 msgstr ""
-"注:与Solo和Kafka类似，Raft排序服务在向客户发送收据确认后可能会丢失交易。例如，如果领导者崩溃的时间与跟随者崩溃的时间大致相同时提供接收确认。因此，无论如何，应用程序客户端都应该侦听peer的交易提交事件(检查交易有效性)，但是应该格外小心，以确保客户端还能优雅地容忍一个超时，在这个超时中，交易没有在配置的时间范围内提交。根据应用程序的不同，可能需要在这样的超时之后重新提交交易或收集一组新的背书。"
+" 注：与 Solo 和 Kafka 类似，在向客户发送回执后，Raft "
+"排序务可能会丢失交易。例如，如果领导者与追随者提供回执是几乎同时崩溃。因此，应用程序客户机应该监听节点上的交易提交事件，而不检查交易的有效性，但是应该格外小心，以确保客户机也能优雅地容忍在配置的时间框架内没有提交交易的超时。根据应用程序的不同，在这种超时情况下可能需要重新提交交易或收集一组新的背书。"
+" "
 
 #: ../../source/orderer/ordering_service.md:325
 msgid "Raft concepts"
-msgstr ""
+msgstr "Raft 概念"
 
 #: ../../source/orderer/ordering_service.md:327
 msgid ""
@@ -543,7 +588,8 @@ msgid ""
 "the covers from Kafka and introduces a number of new concepts, or twists on "
 "existing concepts, to Fabric."
 msgstr ""
-"尽管Raft提供了许多与Kafka相同的功能(尽管是在一个更简单、更容易使用的包中)，但它在幕后的功能与Kafka有本质上的不同，并向Fabric引入了许多新概念，或对现有概念进行了扭曲。"
+"虽然 Raft 提供了许多与 Kafka 相同的功能——尽管它是一个简单易用的软件包——但它在与 Kafka 的功能却大不相同，它向 Fabric "
+"引入了许多新的概念，或改变了现有的概念。"
 
 #: ../../source/orderer/ordering_service.md:332
 msgid ""
@@ -553,7 +599,8 @@ msgid ""
 "members agree on the entries and their order, making the logs on the various"
 " orderers replicated."
 msgstr ""
-"日志条目。Raft排序服务中的主要工作单元是一个“日志条目”，其中包含称为“日志”的完整序列。如果大多数成员(换句话说是一个法定人数)同意条目及其顺序，从而复制不同排序器上的日志，那么我们认为日志是一致的。"
+"日志项。Raft "
+"排序服务中的主要工作单元是一个“日志项”，该项的完整序列称为“日志”。如果大多数成员（换句话说是一个法定人数）同意条目及其顺序，则我们认为日志是一致的，从而将日志复制到不同排序节点上。"
 
 #: ../../source/orderer/ordering_service.md:337
 msgid ""
@@ -563,14 +610,15 @@ msgid ""
 "multiple clusters contributing to the system channel), or a subset of those "
 "nodes."
 msgstr ""
-"批准者集合。排序节点积极参与给定通道的共识机制，并接收该通道的复制日志。这可以是所有可用的节点(在单个集群中或者在多个集群中)，也可以是这些节点的子集。"
+"批准者集合。 "
+"主动参与给定通道的共识机制并接收该通道的日志副本的排序节点。这可以是所有可用的节点（在单个集群中或在多个集群中为系统通道提供服务），也可以是这些节点的一个子集。"
 
 #: ../../source/orderer/ordering_service.md:343
 msgid ""
 "Finite-State Machine (FSM). Every ordering node in Raft has an FSM and "
 "collectively they're used to ensure that the sequence of logs in the various"
 " ordering nodes is deterministic (written in the same sequence)."
-msgstr "有限状态机(FSM)。Raft中的每个排序节点都有一个FSM，它们共同用于确保各个排序节点中的日志序列是确定的(以相同的顺序编写)。"
+msgstr "有限状态机（FSM）。Raft 中的每个排序节点都有一个FSM，它们共同用于确保各个排序节点中的日志序列是确定的（以相同的顺序编写）。"
 
 #: ../../source/orderer/ordering_service.md:347
 msgid ""
@@ -594,7 +642,9 @@ msgid ""
 "only a role that an orderer may have at certain times, and then not others, "
 "as circumstances determine."
 msgstr ""
-"领导者。这并不是一个新概念——正如我们所说，Kafka也使用了领导者——但是在任何给定的时间，通道的批准者集合都选择一个节点作为领导者，这一点非常重要(我们稍后将在Raft中描述这是如何发生的)。领导者负责接收新的日志条目，将它们复制到跟随者的排序节点，并在认为提交了某个条目时进行管理。这不是一种特殊类型的排序器。它只是排序器在某些时候可能扮演的角色，而不是由环境决定的其他角色。"
+"领导者。这并不是一个新概念——正如我们所说，Kafka "
+"也使用了领导者——但是在任何给定的时间，通道的批准者集合都选择一个节点作为领导者，这一点非常重要（我们稍后将在 Raft "
+"中描述这是如何发生的）。领导者负责接收新的日志条目，将它们复制到跟随者的排序节点，并在认为提交了某个条目时进行管理。这不是一种特殊类型的排序节点。它只是排序节点在某些时候可能扮演的角色，而不是由环境决定的其他角色。"
 
 #: ../../source/orderer/ordering_service.md:363
 msgid ""
@@ -606,11 +656,11 @@ msgid ""
 "sending those message for a configurable amount of time, the followers will "
 "initiate a leader election and one of them will be elected the new leader."
 msgstr ""
-"跟随者。再次强调，这不是一个新概念，但是理解跟随者的关键是跟随者从领导者那里接收日志并确定地复制它们，确保日志保持一致。我们将在关于领导者选举的部分中看到，跟随者也会收到来自领导者的“心跳”消息。如果领导者在一段可配置的时间内停止发送这些消息，跟随者将发起一次领导者选举，其中一人将当选为新的领导者。"
+"跟随者。再次强调，这不是一个新概念，但是理解跟随者的关键是跟随者从领导者那里接收日志并复制它们，确保日志保持一致。我们将在关于领导者选举的部分中看到，跟随者也会收到来自领导者的“心跳”消息。如果领导者在一段可配置的时间内停止发送这些消息，跟随者将发起一次领导者选举，其中一人将当选为新的领导者。"
 
 #: ../../source/orderer/ordering_service.md:371
 msgid "Raft in a transaction flow"
-msgstr ""
+msgstr "交易流程中的 Raft"
 
 #: ../../source/orderer/ordering_service.md:373
 msgid ""
@@ -624,13 +674,15 @@ msgid ""
 "remove ordering nodes as needed (as long as only a single node is added or "
 "removed at a time)."
 msgstr ""
-"每个通道都在Raft协议的单独实例上运行，该协议允许每个实例选择不同的领导者。这种配置还允许在集群由不同组织控制的有序节点组成的用例中进一步分散服务。虽然所有Raft节点都必须是系统通道的一部分，但它们不一定必须是所有应用程序通道的一部分。通道创建者(和通道管理员)能够选择可用排序器的子集，并根据需要添加或删除排序节点(只要一次只添加或删除一个节点)。"
+"每个通道都在 Raft "
+"协议的单独实例上运行，该协议允许每个实例选择不同的领导者。这种配置还允许在集群由不同组织控制的排序节点组成的用例中进一步分散服务。虽然所有 Raft "
+"节点都必须是系统通道的一部分，但它们不一定必须是所有应用程序通道的一部分。通道创建者（和通道管理员）能够选择可用排序节点的子集，并根据需要添加或删除排序节点（只要一次只添加或删除一个节点）。"
 
 #: ../../source/orderer/ordering_service.md:382
 msgid ""
 "While this configuration creates more overhead in the form of redundant "
 "heartbeat messages and goroutines, it lays necessary groundwork for BFT."
-msgstr "虽然这种配置以冗余心跳消息和线程的形式产生了更多的开销，但它为BFT奠定了必要的基础。"
+msgstr "虽然这种配置以冗余心跳消息和线程的形式产生了更多的开销，但它为 BFT 奠定了必要的基础。"
 
 #: ../../source/orderer/ordering_service.md:385
 msgid ""
@@ -640,28 +692,29 @@ msgid ""
 "applications do not need to know who the leader node is at any particular "
 "time. Only the ordering nodes need to know."
 msgstr ""
-"在Raft中，交易(以提案或配置更新的形式)由接收交易的排序节点自动路由到该通道的当前领导者。这意味着peer和应用程序在任何特定时间都不需要知道谁是领导者节点。只有排序节点需要知道。"
+"在 Raft "
+"中，交易（以提案或配置更新的形式）由接收交易的排序节点自动路由到该通道的当前领导者。这意味着节点和应用程序在任何特定时间都不需要知道谁是领导者节点。只有排序节点需要知道。"
 
 #: ../../source/orderer/ordering_service.md:391
 msgid ""
 "When the orderer validation checks have been completed, the transactions are"
 " ordered, packaged into blocks, consented on, and distributed, as described "
 "in phase two of our transaction flow."
-msgstr "当排序器验证检查完成后，将按照我们交易流程的第二阶段的描述，对交易进行排序、打包成区块、协商并分发。"
+msgstr "当排序节点检查完成后，将按照我们交易流程的第二阶段的描述，对交易进行排序、打包成区块、协商并分发。"
 
 #: ../../source/orderer/ordering_service.md:395
 msgid "Architectural notes"
-msgstr ""
+msgstr "架构说明"
 
 #: ../../source/orderer/ordering_service.md:397
 msgid "How leader election works in Raft"
-msgstr ""
+msgstr "Raft 是如何选举领导者的"
 
 #: ../../source/orderer/ordering_service.md:399
 msgid ""
 "Although the process of electing a leader happens within the orderer's "
 "internal processes, it's worth noting how the process works."
-msgstr "尽管选举领导者的过程发生在排序器的内部过程中，但是值得注意的是这个过程是如何工作的。"
+msgstr "尽管选举领导者的过程发生在排序节点的内部过程中，但是值得注意一下这个过程是如何工作的。"
 
 #: ../../source/orderer/ordering_service.md:402
 msgid ""
@@ -674,7 +727,8 @@ msgid ""
 "candidate receives a quorum of votes, then it is promoted to a leader. The "
 "leader must accept new log entries and replicate them to the followers."
 msgstr ""
-"Raft节点总是处于以下三种状态之一:跟随者、候选人或领导者。所有节点最初都是作为跟随者开始的。在这种状态下，他们可以接受来自领导者的日志条目(如果其中一个已经当选)，或者为领导者投票。如果在一段时间内没有接收到日志条目或心跳(例如，5秒)，节点将自我提升到候选状态。在候选状态中，节点从其他节点请求选票。如果候选人获得法定人数的选票，那么他就被提升为领导者。领导者必须接受新的日志条目并将其复制到跟随者。"
+"Raft "
+"节点总是处于以下三种状态之一：跟随者、候选人或领导者。所有节点最初都是作为跟随者开始的。在这种状态下，他们可以接受来自领导者的日志条目（如果其中一个已经当选），或者为领导者投票。如果在一段时间内没有接收到日志条目或心跳（例如，5秒），节点将自己提升到候选状态。在候选状态中，节点从其他节点请求选票。如果候选人获得法定人数的选票，那么他就被提升为领导者。领导者必须接受新的日志条目并将其复制到跟随者。"
 
 #: ../../source/orderer/ordering_service.md:411
 msgid ""
@@ -684,7 +738,7 @@ msgstr "要了解领导者选举过程的可视化表示，请查看数据的秘
 
 #: ../../source/orderer/ordering_service.md:414
 msgid "Snapshots"
-msgstr ""
+msgstr "快照"
 
 #: ../../source/orderer/ordering_service.md:416
 msgid ""
@@ -700,7 +754,8 @@ msgid ""
 "will conform to a certain number of blocks (which depends on the amount of "
 "data in the blocks. Note that only full blocks are stored in a snapshot)."
 msgstr ""
-"虽然可以无限期地保留所有日志，但是为了节省磁盘空间，Raft使用了一个称为“快照”的过程，在这个过程中，用户可以定义日志中要保留多少字节的数据。这个数据量将符合一定数量的区块(这取决于区块中的数据量)。注意，快照中只存储完整的区块)。"
+"虽然可以无限期地保留所有日志，但是为了节省磁盘空间，Raft "
+"使用了一个称为“快照”的过程，在这个过程中，用户可以定义日志中要保留多少字节的数据。这个数据量将符合一定数量的区块（这取决于区块中的数据量。注意，快照中只存储完整的区块）。"
 
 #: ../../source/orderer/ordering_service.md:425
 msgid ""
@@ -711,7 +766,8 @@ msgid ""
 "request for blocks 101 to 180. Blocks 180 to 196 would then be replicated to"
 " R1 through the normal Raft protocol."
 msgstr ""
-"例如，假设滞后副本R1刚刚重新连接到网络。它最新的区块是100。领导者L位于第196块，并被配置为在本例中快照20区块数据量。R1因此将从L接收区块180，然后为区块101到180发送请求。区块180到196然后将通过正常Raft协议复制到R1。"
+"例如，假设滞后副本 R1 刚刚重新连接到网络。它最新的区块是 100。领导者 L 位于第 196 块，并被配置为在本例中快照 20 区块数据量。R1 "
+"因此将从 L 接收区块 180，然后为区块 101 到 180 发送请求。区块 180 到 196 然后将通过正常 Raft 协议复制到 R1。"
 
 #: ../../source/orderer/ordering_service.md:434
 msgid ""
@@ -724,16 +780,16 @@ msgid ""
 "the event the leader node goes down, one of the followers becomes the leader"
 " and ordering can continue, ensuring fault tolerance, just as with Raft."
 msgstr ""
-"Fabric支持的另一个容错崩溃排序服务是对Kafka分布式流平台的改编，将其用作排序节点集群。您可以在Apache "
-"Kafka网站上阅读更多关于Kafka的信息，但是在更高的层次上，Kafka使用与Raft相同的概念上的“领导者和跟随者”配置，其中交易(Kafka称之为“消息”)从领导者节点复制到跟随者节点。在领导者节点宕机的情况下，一个跟随者成为领导者,"
-" 排序可以继续，确保容错，就像Raft一样。"
+"Fabric 支持的另一个容错崩溃排序服务是对 Kafka 分布式流平台的改编，将其用作排序节点集群。您可以在 Apache Kafka "
+"网站上阅读更多关于 Kafka 的信息，但是在更高的层次上，Kafka 使用与 Raft 相同的概念上的“领导者和跟随者”配置，其中交易（Kafka "
+"称之为“消息”）从领导者节点复制到跟随者节点。就像 Raft 一样，在领导者节点宕机的情况下，一个跟随者成为领导者，排序可以继续，来确保容错。"
 
 #: ../../source/orderer/ordering_service.md:443
 msgid ""
 "The management of the Kafka cluster, including the coordination of tasks, "
 "cluster membership, access control, and controller election, among others, "
 "is handled by a ZooKeeper ensemble and its related APIs."
-msgstr "Kafka集群的管理，包括任务协调、集群成员、访问控制和控制器选择等，由ZooKeeper集合及其相关api来处理。"
+msgstr "Kafka 集群的管理，包括任务协调、集群成员、访问控制和控制器选择等，由 ZooKeeper 集合及其相关 API 来处理。"
 
 #: ../../source/orderer/ordering_service.md:447
 msgid ""
@@ -745,11 +801,12 @@ msgid ""
 "this sample configuration file for a brief explanation of the sensible "
 "defaults for Kafka and ZooKeeper."
 msgstr ""
-"Kafka集群和ZooKeeper 集合的设置是出了名的棘手，所以我们的文档假设您对Kafka和ZooKeeper "
-"有一定的了解。如果您决定在不具备此专业知识的情况下使用Kafka，那么在试验基于Kafka的排序服务之前，至少应该完成Kafka快速入门指南的前六个步骤。您还可以参考这个示例配置文件来简要解释Kafka和ZooKeeper的合理默认值。"
+"Kafka 集群和 ZooKeeper 集合的设置是出了名的棘手，所以我们的文档假设您对 Kafka 和 ZooKeeper "
+"有一定的了解。如果您决定在不具备此专业知识的情况下使用 Kafka，那么在试验基于 Kafka 的排序服务之前，至少应该完成 Kafka "
+"快速入门指南的前六个步骤。您还可以参考这个示例配置文件来简要解释 Kafka 和 ZooKeeper 的合理默认值。"
 
 #: ../../source/orderer/ordering_service.md:455
 msgid ""
 "To learn how to bring up a a Kafka-based ordering service, check out our "
 "documentation on Kafka."
-msgstr "要了解如何启动基于Kafka的排序服务，请查看我们关于Kafka的文档。"
+msgstr "要了解如何启动基于 Kafka 的排序服务，请查看我们关于Kafka 的文档。"

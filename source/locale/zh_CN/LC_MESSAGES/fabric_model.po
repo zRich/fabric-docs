@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 19:53+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,36 +24,38 @@ msgstr ""
 
 #: ../../source/fabric_model.rst:2
 msgid "Hyperledger Fabric Model"
-msgstr "超级账本Fabric模型"
+msgstr "Hyperledger Fabric 模型"
 
 #: ../../source/fabric_model.rst:4
 msgid ""
 "This section outlines the key design features woven into Hyperledger Fabric "
 "that fulfill its promise of a comprehensive, yet customizable, enterprise "
 "blockchain solution:"
-msgstr "本节概述了超级账本Fabric结构中的关键设计特性，实现了其全面、可定制的企业区块链解决方案的承诺:"
+msgstr "本节概述了 Hyperledger Fabric 的关键设计特性，实现了对全面又可定制的企业区块链解决方案的承诺："
 
 #: ../../source/fabric_model.rst:7
 msgid ""
 ":ref:`Assets` --- Asset definitions enable the exchange of almost anything "
 "with monetary value over the network, from whole foods to antique cars to "
 "currency futures."
-msgstr ""
-":ref:`资产` --- 资产定义使得几乎任何具有货币价值的东西都可以通过网络进行交换，从全食超市(whole foods)到古董车，再到货币期货。"
+msgstr ":ref:`Assets` --- 资产的定义使得几乎任何具有货币价值的东西都可以通过网络进行交换，从所有食品、到古董车、到货币期货。"
 
 #: ../../source/fabric_model.rst:10
 msgid ""
 ":ref:`Chaincode` --- Chaincode execution is partitioned from transaction "
 "ordering, limiting the required levels of trust and verification across node"
 " types, and optimizing network scalability and performance."
-msgstr ":ref:`链码` --- 链码的执行与交易排序是分开的，这限制了跨节点类型的信任和验证所需的级别，并优化了网络的可伸缩性和性能。"
+msgstr ""
+":ref:`Chaincode` --- 链码的执行与交易排序是分开的，这限制了跨节点类型所需的信任和验证级别，并优化了网络可扩展性和性能。"
 
 #: ../../source/fabric_model.rst:13
 msgid ""
 ":ref:`Ledger-Features` --- The immutable, shared ledger encodes the entire "
 "transaction history for each channel, and includes SQL-like query capability"
 " for efficient auditing and dispute resolution."
-msgstr ":ref:`账本特点` --- 不可改的、共享的账本为每个通道编码整个交易历史，并包含类似sql的查询功能，用于有效的审计和争议解决。"
+msgstr ""
+":ref:`Ledger-Features` --- 不可变的共享账本为每个通道编码整个交易历史，并包含类似 SQL "
+"的查询功能，用于有效的审计和解决争议。"
 
 #: ../../source/fabric_model.rst:16
 msgid ""
@@ -60,7 +63,8 @@ msgid ""
 "confidential multi-lateral transactions that are usually required by "
 "competing businesses and regulated industries that exchange assets on a "
 "common network."
-msgstr ":ref:`隐私` --- 通道和私有数据收集支持私有和机密的多边交易，这通常是在公共网络上交换资产的竞争企业和受监管的行业所需要的。"
+msgstr ""
+":ref:`Privacy` --- 通道和私有数据收集支持私有和机密的多边交易，这通常是在公共网络上交换资产的竞争企业和受监管的行业所需要的。"
 
 #: ../../source/fabric_model.rst:20
 msgid ""
@@ -68,13 +72,14 @@ msgid ""
 "trusted blockchain network, where participants know that all transactions "
 "can be detected and traced by authorized regulators and auditors."
 msgstr ""
-":ref:`安全会员服务` --- 被许可的成员资格提供了一个可信的区块链网络，参与者知道所有的交易都可以被授权的监管机构和审计人员检测和跟踪。"
+":ref:`Security-Membership-Services` --- "
+"被许可的成员资格提供了一个可信的区块链网络，参与者知道所有的交易都可以被授权的监管机构和审计人员检测和跟踪。"
 
 #: ../../source/fabric_model.rst:23
 msgid ""
 ":ref:`Consensus` --- A unique approach to consensus enables the flexibility "
 "and scalability needed for the enterprise."
-msgstr ":ref:`共识` --- 达成共识的独特方法支持企业所需的灵活性和可伸缩性。"
+msgstr ":ref:`Consensus` --- 达成共识的独特方法支持企业所需的灵活性和可扩展性。"
 
 #: ../../source/fabric_model.rst:29
 msgid "Assets"
@@ -85,14 +90,17 @@ msgid ""
 "Assets can range from the tangible (real estate and hardware) to the "
 "intangible (contracts and intellectual property).  Hyperledger Fabric "
 "provides the ability to modify assets using chaincode transactions."
-msgstr "资产可以是有形的(房地产和硬件)，也可以是无形的(合同和知识产权)。超级账本Fabric提供了使用链码交易修改资产的能力。"
+msgstr ""
+"资产的范围可以从有形的（房地产和硬件）到无形的（合同和知识产权）资产。Hyperledger Fabric 提供了使用链码交易修改资产的能力。"
 
 #: ../../source/fabric_model.rst:35
 msgid ""
 "Assets are represented in Hyperledger Fabric as a collection of key-value "
 "pairs, with state changes recorded as transactions on a :ref:`Channel` "
 "ledger.  Assets can be represented in binary and/or JSON form."
-msgstr "资产在超级账本Fabric中表示为键值对的集合，状态更改记录为在:ref:`通道`账本上的交易。资产可以用二进制和/或JSON格式表示。"
+msgstr ""
+"资产在 Hyperledger Fabric 中表示为键值对的集合，状态更改记录为在 :ref:`Channel`  账本上的交易。资产可以用二进制或 "
+"JSON 格式表示。"
 
 #: ../../source/fabric_model.rst:39
 msgid ""
@@ -100,8 +108,8 @@ msgid ""
 " using the `Hyperledger Composer "
 "<https://github.com/hyperledger/composer>`__ tool."
 msgstr ""
-"在超级账本Fabric应用程序中，您可以使用`Hyperledger Composer "
-"<https://github.com/hyperledger/composer>`__ 工具轻松定义和使用的资产。"
+"在 Hyperledger Fabric 应用程序中，您可以使用 `Hyperledger Composer "
+"<https://github.com/hyperledger/composer>`__ 工具轻松定义和使用资产。"
 
 #: ../../source/fabric_model.rst:45
 msgid "Chaincode"
@@ -118,11 +126,11 @@ msgid ""
 "set) that can be submitted to the network and applied to the ledger on all "
 "peers."
 msgstr ""
-"链码是定义一项或多项资产的软件，以及修改资产的交易指令;换句话说，这就是业务逻辑。链码强制执行读取或更改键值对（或其他状态数据库信息）的规则。链码函数针对账本的当前状态数据库执行，并通过交易提议发起。链码执行产生一组键值写(写集)，可以提交给网络并应用于所有peer节点上的账本。"
+"链码是定义一项或多项资产的软件，以及修改资产的交易指令；换句话说，它就是业务逻辑。链码强制执行读取或更改键值对或其他状态数据库信息的规则。链码函数针对账本的当前状态数据库执行，并通过交易提案发起。链码执行产生一组键值写集，可以提交给网络并应用于所有节点上的账本。"
 
 #: ../../source/fabric_model.rst:57
 msgid "Ledger Features"
-msgstr "账本特性"
+msgstr "账本特征"
 
 #: ../../source/fabric_model.rst:59
 msgid ""
@@ -132,7 +140,8 @@ msgid ""
 "transaction results in a set of asset key-value pairs that are committed to "
 "the ledger as creates, updates, or deletes."
 msgstr ""
-"账本是Fabric中所有状态转变的有序的、防篡改的记录。状态转换是参与方提交的链码调用(“交易”)的结果。每笔交易都会产生一组资产键值对，这些键值对在创建、更新或删除时提交到账本。"
+"账本是 Fabric "
+"中所有状态转变的有序的、防篡改的记录。状态转换是参与方提交的链码调用（“交易”）的结果。每笔交易都会产生一组资产键值对，这些键值对在创建、更新或删除时提交到账本。"
 
 #: ../../source/fabric_model.rst:64
 msgid ""
@@ -141,11 +150,12 @@ msgid ""
 "fabric state.  There is one ledger per channel. Each peer maintains a copy "
 "of the ledger for each channel of which they are a member."
 msgstr ""
-"账本由一个区块链(“链”)组成，它以区块的形式存储不可变的、有序的记录，以及一个状态数据库来维护当前的fabric状态。每个通道有一个账本。每个peer为其所属的每个通道维护一份账本副本。"
+"账本由一个区块链（“链”）组成，它以区块的形式存储不可变的、有序的记录，以及一个状态数据库来维护当前的 Fabric "
+"状态。每个通道有一个账本。每个节点为其所属的每个通道维护一份账本副本。"
 
 #: ../../source/fabric_model.rst:68
 msgid "Some features of a Fabric ledger:"
-msgstr "Fabric账本的一些特点:"
+msgstr "Fabric 账本的一些特点:"
 
 #: ../../source/fabric_model.rst:70
 msgid ""
@@ -157,49 +167,49 @@ msgstr "查询和使用基于键的查找更新账本、范围查询和组合键
 msgid ""
 "Read-only queries using a rich query language (if using CouchDB as state "
 "database)"
-msgstr "使用富查询语言的只读查询(如果使用CouchDB作为状态数据库)"
+msgstr "使用富查询语言的只读查询（如果使用 CouchDB 作为状态数据库）"
 
 #: ../../source/fabric_model.rst:72
 msgid ""
 "Read-only history queries --- Query ledger history for a key, enabling data "
 "provenance scenarios"
-msgstr "只读历史查询——查询某键的账本历史记录，支持数据溯源场景"
+msgstr "只读历史查询——查询某一个键的账本历史记录，支持数据溯源场景"
 
 #: ../../source/fabric_model.rst:73
 msgid ""
 "Transactions consist of the versions of keys/values that were read in "
 "chaincode (read set) and keys/values that were written in chaincode (write "
 "set)"
-msgstr "交易由链码中读取的键/值(读集)版本和链码中写入的键/值(写集)的版本组成"
+msgstr "交易由链码中读取的键/值（读集）版本和链码中写入的键/值（写集）的版本组成"
 
 #: ../../source/fabric_model.rst:74
 msgid ""
 "Transactions contain signatures of every endorsing peer and are submitted to"
 " ordering service"
-msgstr "交易包含每个背书peer的签名，并提交给排序服务"
+msgstr "交易包含每个背书节点的签名，并提交给排序服务"
 
 #: ../../source/fabric_model.rst:75
 msgid ""
 "Transactions are ordered into blocks and are \"delivered\" from an ordering "
 "service to peers on a channel"
-msgstr "交易排序后进入区块，并从排序服务“交付”到通道上的peer"
+msgstr "交易排序后进入区块，并从排序服务“交付”到通道上的节点"
 
 #: ../../source/fabric_model.rst:76
 msgid ""
 "Peers validate transactions against endorsement policies and enforce the "
 "policies"
-msgstr "peer根据背书策略验证交易并执行这些策略"
+msgstr "节点根据背书策略验证交易并执行这些策略"
 
 #: ../../source/fabric_model.rst:77
 msgid ""
 "Prior to appending a block, a versioning check is performed to ensure that "
 "states for assets that were read have not changed since chaincode execution "
 "time"
-msgstr "在添加区块之前，执行版本控制检查，以确保所读取的资产的状态自链码执行时间以来没有更改"
+msgstr "在添加到区块之前，执行版本控制检查，以确保所读取的资产的状态自链码执行时间以来没有更改"
 
 #: ../../source/fabric_model.rst:78
 msgid "There is immutability once a transaction is validated and committed"
-msgstr "一旦交易被验证和提交，就会有不变性"
+msgstr "一旦交易被验证和提交，就不可改变"
 
 #: ../../source/fabric_model.rst:79
 msgid ""
@@ -217,7 +227,7 @@ msgstr "通道包含 :ref:`MSP` 实例，允许从不同的证书颁发机构派
 msgid ""
 "See the :doc:`ledger` topic for a deeper dive on the databases, storage "
 "structure, and \"query-ability.\""
-msgstr "有关数据库、存储结构和“查询能力”的更深入研究，请参阅 :doc:`账本` 主题。"
+msgstr "有关数据库、存储结构和“查询能力”的更深入研究，请参阅  :doc:`ledger` 。"
 
 #: ../../source/fabric_model.rst:87
 msgid "Privacy"
@@ -232,7 +242,8 @@ msgid ""
 "is operating on one common channel) --- or it can be privatized to include "
 "only a specific set of participants."
 msgstr ""
-"超级账本Fabric在每个通道的基础上使用一个不可变的账本，以及可以操作和修改资产当前状态(即更新键值对)的链码。一个账本存在于一个通道的范围内——它可以在整个网络中共享(假设每个参与者都在一个公共通道上操作)——或者它可以私有化，只包含一组特定的参与者。"
+"Hyperledger Fabric "
+"在每个通道的基础上使用一个不可变的账本，以及可以操作和修改资产当前状态（即更新键值对）的链码。账本存在于通道的范围内——它可以在整个网络中共享（假设每个参与者都在一个公共通道上操作）——或者它可以私有化，只包含一组特定的参与者。"
 
 #: ../../source/fabric_model.rst:95
 msgid ""
@@ -244,7 +255,8 @@ msgid ""
 "not installed on a peer, it will not be able to properly interface with the "
 "ledger)."
 msgstr ""
-"在后一种情况下，这些参与者将创建一个单独的通道，从而隔离/分离他们的交易和账本。为了解决跨越透明度和隐私之间的差距,链码只可以安装于peer,需要访问执行读取和写入的资产状态(换句话说,如果一个链码不是安装在peer,它将无法正确地与账本接口)。"
+"在后一种情况下，这些参与者将创建一个单独的通道，从而隔离他们的交易和账本。为了解决跨越透明度和隐私之间的差距，链码只可以安装于 peer "
+"节点上，需要访问执行读取和写入的资产状态（换句话说，如果一个链码不是安装在 peer 节点上，它将无法正确地与账本接口）。"
 
 #: ../../source/fabric_model.rst:102
 msgid ""
@@ -254,7 +266,7 @@ msgid ""
 "the channel ledger, accessible only to the authorized subset of "
 "organizations."
 msgstr ""
-"当该通道上的一个组织子集需要对其交易数据保密时，将使用一个私有数据集合(集合)将该数据隔离在一个私有数据库中，从逻辑上与通道账本分离，只有经过授权的组织子集才能访问该数据。"
+"当该通道上的一个组织子集需要对其交易数据保密时，将使用一个私有数据集将该数据隔离在一个私有数据库中，从逻辑上与通道账本分离，只有经过授权的组织子集才能访问该数据。"
 
 #: ../../source/fabric_model.rst:107
 msgid ""
@@ -273,13 +285,15 @@ msgid ""
 "used to generate the cipher text. For further details on chaincode "
 "encryption, see the :doc:`chaincode4ade` topic."
 msgstr ""
-"为了进一步混淆数据，可以使用常见的加密算法(如AES)对链码中的值进行加密(部分或全部)，然后再将交易发送给排序服务并将区块添加到账本中。一旦加密数据被写入账本，就只能由拥有用于生成密码文本的相应密钥的用户解密。有关链码加密的详细信息，请参阅:doc:`chaincode4ade`主题。"
+"为了进一步模糊数据，可以使用常见的加密算法（如 "
+"AES）对链码中的值进行加密（部分或全部），然后再将交易发送给排序服务并将区块添加到账本中。一旦加密数据被写入账本，就只能由拥有用于生成密码文本的相应密钥的用户解密。有关链码加密的详细信息，请参阅"
+" :doc:`chaincode4ade` 。"
 
 #: ../../source/fabric_model.rst:118
 msgid ""
 "See the :doc:`private-data-arch` topic for more details on how to achieve "
 "privacy on your blockchain network."
-msgstr "有关如何在区块链网络上实现隐私的更多细节，请参阅 :doc:`private-data-arch` 主题。"
+msgstr "有关如何在区块链网络上实现隐私的更多细节，请参阅 :doc:`private-data-arch` 。"
 
 #: ../../source/fabric_model.rst:124
 msgid "Security & Membership Services"
@@ -296,13 +310,15 @@ msgid ""
 " with the existence and capabilities of channels, helps address scenarios "
 "where privacy and confidentiality are paramount concerns."
 msgstr ""
-"超级账本Fabric支撑着一个所有参与者都知道身份的交易网络。公钥基础设施用于生成与组织、网络组件、最终用户或客户端应用程序绑定的加密证书。因此，可以在更广泛的网络和通道级别上操纵和控制数据访问控制。这种“许可”概念的超级账本Fabirc，加上通道的存在和功能，有助于解决隐私和机密性是最重要的问题。"
+"Hyperledger Fabric "
+"支撑着一个所有参与者都知道身份的交易网络。公钥基础设施用于生成与组织、网络组件、最终用户或客户端应用程序绑定的加密证书。因此，可以在更广泛的网络和通道级别上操纵和控制数据访问控制。这种“许可”概念的"
+" Hyperledger Fabirc，加上通道的存在和功能，有助于解决隐私和机密性是最重要的问题。"
 
 #: ../../source/fabric_model.rst:134
 msgid ""
 "See the :doc:`msp` topic to better understand cryptographic implementations,"
 " and the sign, verify, authenticate approach used in Hyperledger Fabric."
-msgstr "请参阅 :doc:`msp` 主题，以更好地理解密码实现，以及在超级账本Fabric中使用的签名、验证和身份验证方法。"
+msgstr "请参阅 :doc:`msp` 主题，以更好地理解密码实现，以及在 Hyperledger Fabric 中使用的签名、验证和身份验证方法。"
 
 #: ../../source/fabric_model.rst:141
 msgid "Consensus"
@@ -319,7 +335,8 @@ msgid ""
 "consensus is defined as the full-circle verification of the correctness of a"
 " set of transactions comprising a block."
 msgstr ""
-"在分布式账本技术中，共识最近已经成为特定算法的同义词，在单个函数中。然而，共识不只是简单地同意交易的顺序，这种差异在超级账本Fabric中通过其在整个交易流程(从提议和背书，到排序、验证和担保)中的基本作用得到了强调。简而言之，共识被定义为包含在一个区块中的一组交易的正确性的全循环验证。"
+"在分布式账本技术中，共识已成为单个函数内特定算法的同义词。然而，共识不仅包括简单地就交易顺序达成一致，而且 Hyperledger Fabric "
+"通过其在整个交易流程中的基本角色，从提案和背书，到排序，验证和提交，突出了这种区别。简而言之，共识被定义为包含在一个区块中的一组交易的正确性的全循环验证。"
 
 #: ../../source/fabric_model.rst:151
 msgid ""
@@ -338,7 +355,7 @@ msgid ""
 "compromise data integrity, and allows for functions to be executed against "
 "non-static variables."
 msgstr ""
-"当区块的交易的顺序和结果满足显式策略标准检查时，最终就会达成共识。这些检查和平衡发生在交易的生命周期中，包括使用背书策略来规定哪些特定成员必须背书某个交易类，以及系统链码来确保这些策略得到执行和维护。在作出担保之前，peer将使用这些系统链码，以确保存在足够的背书，并且背书来自适当的实体。此外，在将任何包含交易的区块添加到账本之前，还将进行版本检查，在此期间对账本的当前状态达成共识。最后的检查提供了对双重开销操作和其他可能损害数据完整性的威胁的保护，并允许对非静态变量执行函数。"
+"当区块的交易的顺序和结果满足显式策略标准检查时，最终就会达成共识。这些检查和平衡发生在交易的生命周期中，包括使用背书策略来规定哪些特定成员必须背书某个交易类，以及系统链码来确保这些策略得到执行和维护。在提交之前，节点将使用这些系统链码来确保存在足够的背书，并且背书来自适当的实体。此外，在将任何包含交易的区块添加到账本之前，还将进行版本检查，在此期间对账本的当前状态达成共识。最后的检查提供了对双花操作和其他可能损害数据完整性的威胁的保护，并允许对非静态变量执行功能。"
 
 #: ../../source/fabric_model.rst:165
 msgid ""
@@ -354,7 +371,7 @@ msgid ""
 "verifications that take place during a transaction's journey from proposal "
 "to commitment."
 msgstr ""
-"除了进行大量的背书、有效性和版本检查之外，还在交易流的各个方向进行身份验证。访问控制列表是在网络的层次结构层上实现的(从排序服务到通道)，当交易提议通过不同的架构组件时，将重复签名、验证和认证有效负载。综上所述，共识并不仅仅局限于一批交易的商定顺序;相反，它是一个全面的特性，是在交易从提议到担保的过程中进行的验证的副产品。"
+"除了进行大量的背书、有效性和版本检查之外，还在交易流的各个方向进行身份验证。访问控制列表是在网络的层次结构层上实现的（从排序服务到通道），当交易提案通过不同的架构组件时，有效负载被重复签名，确认和验证。总而言之，共识并不仅仅局限于一批交易的商定顺序；相反，它是一种总体特征，是在交易从提议到担保的过程中进行的验证的附属产物。"
 
 #: ../../source/fabric_model.rst:176
 msgid ""

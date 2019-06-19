@@ -6,6 +6,7 @@
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
 # JulienGuo郭立冬 <690748277@qq.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
-"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,11 +25,11 @@ msgstr ""
 
 #: ../../source/private-data/private-data.md:1
 msgid "Private data"
-msgstr ""
+msgstr "私有数据"
 
 #: ../../source/private-data/private-data.md:3
 msgid "What is private data?"
-msgstr ""
+msgstr "什么是私有数据？"
 
 #: ../../source/private-data/private-data.md:5
 msgid ""
@@ -41,7 +42,9 @@ msgid ""
 "channel participants to see a transaction while keeping a portion of the "
 "data private."
 msgstr ""
-"在某个通道上的一组组织需要对该通道上的其他组织保持数据私密的情况下，它们可以选择创建一个新通道，其中只包含需要访问数据的组织。但是，在每一种情况下创建单独的通道会产生额外的管理开销(维护链码版本、策略、MSPs等)，并且不允许在保持部分数据私有的同时，让所有通道参与者都看到交易。"
+"如果一个通道上的一组组织需要对该通道上的其他组织保持数据私有，则可以选择创建一个新通道，其中只包含 "
+"需要访问数据的组织。但是，在每一种情况下都创建单独的通道会产生额外的管理开销（维护链码版本、策略、MSP "
+"等），并且不允许在保持部分数据私有的同时，希望让所有通道参与者都看到交易。"
 
 #: ../../source/private-data/private-data.md:13
 msgid ""
@@ -50,15 +53,16 @@ msgid ""
 " the ability to endorse, commit, or query private data without having to "
 "create a separate channel."
 msgstr ""
-"这就是为什么从v1.2开始，Fabric就提供了创建私有数据集合的能力，这使得通道上定义的组织子集能够背书、提交或查询私有数据，而不必创建单独的通道。"
+"这就是为什么从 v1.2 开始，Fabric "
+"就提供了创建私有数据集的能力，这使得通道上定义的组织子集能够背书、提交或查询私有数据，而不必创建单独的通道。"
 
 #: ../../source/private-data/private-data.md:18
 msgid "What is a private data collection?"
-msgstr ""
+msgstr "什么是私有数据集？"
 
 #: ../../source/private-data/private-data.md:20
 msgid "A collection is the combination of two elements:"
-msgstr "一个私有数据集合由两个元素组成："
+msgstr "集合是两个元素的组合："
 
 #: ../../source/private-data/private-data.md:22
 msgid ""
@@ -72,13 +76,17 @@ msgid ""
 "anchor peers on the channel, and configure CORE_PEER_GOSSIP_EXTERNALENDPOINT"
 " on each peer, in order to bootstrap cross-organization communication."
 msgstr ""
+"实际的私有数据，通过 Gossip 协议点对点地发送给授权可以看到它的组织。私有数据保存在被授权的组织的节点上的私有数据库上（有时候成为 "
+"“侧（Side）”数据库或者“SideDB”），它们可以被授权节点的链码访问。排序节点不能影响这里也不能看到私有数据。注意，由于 gossip "
+"以点对点的方式想授权组织分发私有数据，所以必须设置通道上的锚节点，也就是每个节点上的 CORE_PEER_GOSSIP_EXTERNALENDPOINT"
+" 配置，一次来引导跨组织的通信。"
 
 #: ../../source/private-data/private-data.md:33
 msgid ""
 "A hash of that data, which is endorsed, ordered, and written to the ledgers "
 "of every peer on the channel. The hash serves as evidence of the transaction"
 " and is used for state validation and can be used for audit purposes."
-msgstr ""
+msgstr "该数据的哈希值，该哈希值被背书、排序之后写入通道上每个节点的账本。哈希值作为交易的证明用于状态验证，还可用于审计。"
 
 #: ../../source/private-data/private-data.md:37
 msgid ""
@@ -94,17 +102,17 @@ msgid ""
 " if it matches the state on the channel ledger, proving that the state "
 "existed between the collection members at a certain point in time."
 msgstr ""
-"如果集合成员陷入争议，或者如果他们想将资产转让给第三方，则可以决定与其他方共享私有数据。然后，第三方可以计算私有数据的散列，并查看它是否与通道账本上的状态匹配，从而证明在某个时间点上集合成员之间的状态存在。"
+"如果集合成员陷入争议，或者如果他们想将资产转让给第三方，则可以决定与其他方共享私有数据。然后，第三方可以计算私有数据的哈希，并查看它是否与通道账本上的状态匹配，从而证明在某个时间点上，集合成员之间存在该状态。"
 
 #: ../../source/private-data/private-data.md:48
 msgid "When to use a collection within a channel vs. a separate channel"
-msgstr ""
+msgstr "什么时候在通道内使用集合和单独的通道"
 
 #: ../../source/private-data/private-data.md:50
 msgid ""
 "Use channels when entire transactions (and ledgers) must be kept "
 "confidential within a set of organizations that are members of the channel."
-msgstr ""
+msgstr "当所有交易（账本）都必须在通道成员的组织之中保密时，使用通道比较合适。"
 
 #: ../../source/private-data/private-data.md:53
 msgid ""
@@ -115,41 +123,43 @@ msgid ""
 "private data collections when transaction data must be kept confidential "
 "from ordering service nodes."
 msgstr ""
+"当交易（和账本）必须共享给一部分组织，并且只有其中的一部分组织可以在交易中使用这些数据的一部分（或者全部）时， "
+"使用集合比较合适。此外，由于私有数据是点对点传播的，而不是通过块传播的， 所以在交易数据必须对排序服务节点保密时，应该使用私有数据集合。"
 
 #: ../../source/private-data/private-data.md:60
 msgid "A use case to explain collections"
-msgstr ""
+msgstr "解释集合的用例"
 
 #: ../../source/private-data/private-data.md:62
 msgid "Consider a group of five organizations on a channel who trade produce:"
-msgstr "考虑一个由5个组织组成的通道，他们交易农产品："
+msgstr "设想一个由五个组织组成的通道，他们交易农产品："
 
 #: ../../source/private-data/private-data.md:64
 msgid "A Farmer selling his goods abroad"
-msgstr ""
+msgstr "农民在国外售卖他的货物"
 
 #: ../../source/private-data/private-data.md:65
 msgid "A Distributor moving goods abroad"
-msgstr ""
+msgstr "分销商将货物运往国外"
 
 #: ../../source/private-data/private-data.md:66
 msgid "A Shipper moving goods between parties"
-msgstr ""
+msgstr "托运商负责参与方之间的货物运输"
 
 #: ../../source/private-data/private-data.md:67
 msgid "A Wholesaler purchasing goods from distributors"
-msgstr ""
+msgstr "批发商从分销商采购商品"
 
 #: ../../source/private-data/private-data.md:68
 msgid "A Retailer purchasing goods from shippers and wholesalers"
-msgstr ""
+msgstr "零售商从托运人和批发商采购商品"
 
 #: ../../source/private-data/private-data.md:70
 msgid ""
 "The Distributor might want to make private transactions with the Farmer and "
 "Shipper to keep the terms of the trades confidential from the Wholesaler and"
 " the Retailer (so as not to expose the markup they're charging)."
-msgstr "分销商可能希望与农场主和托运商之间保持私密交易，以对批发商和零售商保密交易条款(以免暴露他们收取的加价)。"
+msgstr "分销商可能希望与农场主和托运商之间保持私密交易，以对批发商和零售商保密交易条款（以免暴露他们收取的加价）。"
 
 #: ../../source/private-data/private-data.md:75
 msgid ""
@@ -169,19 +179,19 @@ msgid ""
 "Rather than defining many small channels for each of these relationships, "
 "multiple private data collections (PDC) can be defined to share private data"
 " between:"
-msgstr "与其为这些关系定义许多小通道，不如定义多个私有数据集合(PDC)在以下各方之间共享私有数据："
+msgstr "与其为这些关系定义许多小通道，不如定义多个私有数据集合（PDC）在以下各方之间共享私有数据："
 
 #: ../../source/private-data/private-data.md:85
 msgid "PDC1: Distributor, Farmer and Shipper"
-msgstr ""
+msgstr "PDC 1： 分销商， 农民和托运商"
 
 #: ../../source/private-data/private-data.md:86
 msgid "PDC2: Distributor and Wholesaler"
-msgstr ""
+msgstr "PDC 2：分销商和批发商"
 
 #: ../../source/private-data/private-data.md:87
 msgid "PDC3: Wholesaler, Retailer and Shipper"
-msgstr ""
+msgstr "PDC 3：批发商、零售商和托运商"
 
 #: ../../source/private-data/private-data.md:91
 msgid ""
@@ -192,11 +202,12 @@ msgid ""
 "database that holds the channel ledger, private data is sometimes referred "
 "to as \"SideDB\"."
 msgstr ""
-"使用此示例，分销商拥有的节点在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为“SideDB”。"
+"使用此示例，分销商拥有的节点在其账本中拥有多个私有数据库，其中包括来自分销商、农民和发货人关系以及分销商和批发商关系的私有数据。因为这些数据库与保存通道账本的数据库是分开的，所以私有数据有时被称为"
+" “侧数据库（SideDB）”。"
 
 #: ../../source/private-data/private-data.md:100
 msgid "Transaction flow with private data"
-msgstr ""
+msgstr "私有数据的交易流"
 
 #: ../../source/private-data/private-data.md:102
 msgid ""
@@ -220,6 +231,8 @@ msgid ""
 "used to generate private data in chaincode, is sent in a transient field of "
 "the proposal."
 msgstr ""
+"客户端应用程序提交一个提案请求，让属于授权集合的背书节点调用链码函数（读取或写入私有数据）。 私有数据，或用于在链码中生成私有数据的数据，被发送到提案的"
+" transient 字段中。"
 
 #: ../../source/private-data/private-data.md:115
 msgid ""
@@ -228,6 +241,7 @@ msgid ""
 "distribute the private data, based on the collection policy, to authorized "
 "peers via gossip."
 msgstr ""
+"背书节点模拟交易，并将私有数据存储在临时数据存储（节点的本地临时存储）中。 它们根据组织集合的策略将私有数据通过 gossip 分发给授权的节点。"
 
 #: ../../source/private-data/private-data.md:120
 msgid ""
@@ -237,6 +251,7 @@ msgid ""
 "private data is sent back to the client. For more information on how "
 "endorsement works with private data, click here."
 msgstr ""
+"背书节点将提案响应发送回客户端。提案响应中包含经过背书的读写集，该读写集中包含了公共数据和私有数据键和值的哈希。私有数据不会被发送回客户端。更多关于带有私有数据的背书的信息，请查看这里。"
 
 #: ../../source/private-data/private-data.md:126
 msgid ""
@@ -248,6 +263,7 @@ msgid ""
 " of the private data in a consistent way, without knowing the actual private"
 " data."
 msgstr ""
+"客户端应用程序将交易（包含带有私有数据哈希值的提案响应）提交给排序服务。带有私有数据哈希的交易同样被包含在区块中。带有私有数据哈希的区块被分发给所有节点。这样，通道中的所有节点就可以以同样的方式来验证带有私有数据哈希值的交易，但不需要知道实际的私有数据。"
 
 #: ../../source/private-data/private-data.md:133
 msgid ""
@@ -262,10 +278,11 @@ msgid ""
 "state database and private writeset storage. The private data is then "
 "deleted from the transient data store."
 msgstr ""
+"在区块提交的时候，授权节点会根据集合策略来决定它们是否有权访问私有数据。如果是，它们就先检查它们本地临时数据存储，以确定它们在链码背书的时候是否已经接收到了私有数据。如果没有收到数据，它们会尝试从其他授权节点拉取私有数据。然后它们会根据公共区块上的哈希值验证私有数据并将交易提交到账本。当验证和提交结束后，私有数据会被移动到他们私有数据库和私有读写存储的副本中。然后私有数据会从临时数据存储中删除。"
 
 #: ../../source/private-data/private-data.md:143
 msgid "Purging private data"
-msgstr ""
+msgstr "清除私有数据"
 
 #: ../../source/private-data/private-data.md:145
 msgid ""
@@ -274,8 +291,7 @@ msgid ""
 "\"purge\" the data on their peers, leaving behind a hash of the data on the "
 "blockchain to serve as immutable evidence of the private data."
 msgstr ""
-"对于非常敏感的数据，即使共享私有数据的各方也可能希望 --- 或政府法规要求 --- "
-"定期“清除”其peer的数据，留下区块链上的数据哈希作为私有数据的不可变证据。"
+"对于非常敏感的数据，即使共享私有数据的各方也可能希望——或政府法规要求——定期“清除”节点的数据，留下区块链上的数据哈希作为私有数据的不可变证据。"
 
 #: ../../source/private-data/private-data.md:150
 msgid ""
@@ -285,7 +301,7 @@ msgid ""
 " a chaincode business process is done with it (trade settled, contract "
 "fulfilled, etc)."
 msgstr ""
-"在某些情况下，私有数据只需要存在于节点的私有数据库上，直到可以将其复制到区块链外部的数据库中为止。数据也可能只需要存在于节点上，直到使用它完成链码业务流程(交易结算、合约履行等)。"
+"在某些情况下，私有数据只需要存在于节点的私有数据库上，直到可以将其复制到区块链外部的数据库中为止。数据也可能只需要存在于节点上，直到使用它完成链码业务流程（交易结算、合约履行等）。"
 
 #: ../../source/private-data/private-data.md:155
 msgid ""
@@ -293,15 +309,15 @@ msgid ""
 "modified for a configurable number of blocks. Purged private data cannot be "
 "queried from chaincode, and is not available to other requesting peers."
 msgstr ""
-"为了支持这些用例，如果已经持续N个块都没有修改私有数据了，N是可配置的，则可以清除它。清除的私有数据不能从链码查询，并且其他节点也请求不到。"
+"为了支持这些情况，如果已经持续 N 个块都没有修改私有数据了则可以清除它，N 是可配置的。清除的私有数据不能从链码查询，并且其他节点也请求不到。"
 
 #: ../../source/private-data/private-data.md:159
 msgid "How a private data collection is defined"
-msgstr ""
+msgstr "私有数据集合怎么定义"
 
 #: ../../source/private-data/private-data.md:161
 msgid ""
 "For more details on collection definitions, and other low level information "
 "about private data and collections, refer to the private data reference "
 "topic."
-msgstr "有关集合定义的更多详细信息，以及关于私有数据和集合的其他更细层级的信息，请参阅私有数据主题。"
+msgstr "有关集合定义的更多详细信息，以及关于私有数据和集合的其他更底层的信息，请参阅私有数据主题。"

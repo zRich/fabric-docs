@@ -6,6 +6,7 @@
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
 # Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
-"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,8 @@ msgid ""
 "resources and access to information that actors have in a blockchain "
 "network."
 msgstr ""
-"区块链网络中的不同参与者包括peer、排序器、客户端应用程序、管理员等等。这些参与者中的每一个——能够消费服务的网络内外的活动元素——都有一个封装在X.509数字证书中的数字身份。这些身份非常重要，因为它们决定了参与者在区块链网络中对资源的确切权限和对信息的访问权限。"
+"区块链网络中的不同参与者包括节点、排序器、客户端应用程序、管理员等等。这些参与者中的每一个——能够消费服务的网络内外的活动元素——都有一个封装在 "
+"X.509 数字证书中的数字身份。这些身份非常重要，因为它们决定了参与者在区块链网络中对资源的确切权限和对信息的访问权限。"
 
 #: ../../source/identity/identity.md:12
 msgid ""
@@ -53,7 +55,9 @@ msgid ""
 " identity. When we talk about principals, they are the properties which "
 "determine their permissions."
 msgstr ""
-"此外，数字身份还具有一些额外的属性，Fabric使用这些属性来确定权限，并为身份和相关属性的联合提供了一个特殊的名称——主体。主体与userid或groupid类似，但是更加灵活，因为它们可以包含参与者身份的广泛属性，比如参与者的组织、组织单元、角色，甚至参与者的特定身份。当我们讨论主体时，它们是决定其权限的属性。"
+"此外，数字身份还具有一些额外的属性，Fabric 使用这些属性来确定权限，并为身份和相关属性的联合提供了一个特殊的名称——主体。主体与 userid 或"
+" groupid "
+"类似，但是更加灵活，因为它们可以包含参与者身份的广泛属性，比如参与者的组织、组织单元、角色，甚至参与者的特定身份。当我们讨论主体时，它们是决定其权限的属性。"
 
 #: ../../source/identity/identity.md:20
 msgid ""
@@ -64,7 +68,9 @@ msgid ""
 "Fabric uses X.509 certificates as identities, adopting a traditional Public "
 "Key Infrastructure (PKI) hierarchical model (more on PKI later)."
 msgstr ""
-"要使身份可验证，它必须来自可信的权威。成员服务提供者(MSP)在Fabric中实现了这一点。更具体地说，MSP是一个组件，它定义了管理组织的有效身份的规则。Fabric中的默认MSP实现使用X.509证书作为身份，采用传统公钥基础设施(PKI)层次模型(稍后将详细介绍PKI)。"
+"要使身份可验证，它必须来自可信的权威。成员服务提供者（MSP）在 Fabric 中实现了这一点。更具体地说，MSP "
+"是一个组件，它定义了管理组织的有效身份的规则。Fabric 中的默认 MSP 实现使用 X.509 "
+"证书作为身份，采用传统公钥基础设施（PKI）层次模型（稍后将详细介绍PKI）。"
 
 #: ../../source/identity/identity.md:28
 msgid "A Simple Scenario to Explain the Use of an Identity"
@@ -78,7 +84,8 @@ msgid ""
 "\"ImagineCard\" --- it doesn't matter whether the card is authentic and you "
 "have sufficient funds in your account. It will be not be accepted."
 msgstr ""
-"假设你去超市买一些杂货。在收银台，你会看到一个牌子，上面写着只接受Visa、万事达卡和美国运通卡。如果你想用另一张卡支付——我们称之为“ImagineCard”——不管这张卡是否真实，你的账户里是否有足够的资金。我们不会接受的。"
+"假设你去超市买一些杂货。在收银台，你会看到一个牌子，上面写着只接受 Visa、Mastercard 和 AMEX "
+"卡。如果你想用另一张卡支付——我们称之为 “ImagineCard”——不管这张卡是否真实，你的账户里是否有足够的资金。我们不会接受的。"
 
 #: ../../source/identity/identity.md:38
 msgid ""
@@ -87,7 +94,8 @@ msgid ""
 "list of identities, and an MSP says which of these are members of a given "
 "organization that participates in the network."
 msgstr ""
-"拥有一张有效的信用卡是不够的——它还必须被商店接受!PKIs和MSP以相同的方式协同工作——PKI提供了一个身份列表，MSP表示这些身份中哪些是参与网络的给定组织的成员。"
+"拥有一张有效的信用卡是不够的——它还必须被商店接受！PKI 和 MSP 以相同的方式协同工作——PKI 提供了一个身份列表，MSP "
+"表示这些身份中哪些是参与网络的给定组织的成员。"
 
 #: ../../source/identity/identity.md:43
 msgid ""
@@ -98,7 +106,8 @@ msgid ""
 "identities are the trusted members (actors) of the store payment network. "
 "MSPs turn verifiable identities into the members of a blockchain network."
 msgstr ""
-"PKI证书颁发机构和MSP提供了类似的功能组合。PKI就像一个卡提供商——它提供许多不同类型的可验证身份。另一方面，MSP类似于商店接受的卡片提供者列表，确定哪些身份是商店支付网络的可信成员(参与者)。MSP将可验证的身份转换为区块链网络的成员。"
+"PKI 证书授权中心和 MSP 提供了类似的功能组合。PKI 就像一个卡提供商——它提供许多不同类型的可验证身份。另一方面，MSP "
+"类似于商店接受的卡片提供者列表，确定哪些身份是商店支付网络的可信成员（参与者）。MSP 将可验证的身份转换为区块链网络的成员。"
 
 #: ../../source/identity/identity.md:50
 msgid "Let's drill into these concepts in a little more detail."
@@ -115,7 +124,8 @@ msgid ""
 "in HTTPS --- and if you're reading this documentation on a web browser, "
 "you're probably using a PKI to make sure it comes from a verified source."
 msgstr ""
-"公钥基础设施(PKI)是一组互联网技术，它在网络中提供安全的通信。将S放入HTTPS的是PKI——如果您在web浏览器上阅读本文，您可能正在使用PKI来确保它来自经过验证的源。"
+"公钥基础设施（PKI）是一组互联网技术，它在网络中提供安全的通信。将 S 放入 HTTPS 的是 PKI——如果您在 web "
+"浏览器上阅读本文，您可能正在使用 PKI 来确保它来自经过验证的源。"
 
 #: ../../source/identity/identity.md:61
 msgid ""
@@ -129,7 +139,9 @@ msgid ""
 "because the cryptographic private material associated to the certificate has"
 " been exposed."
 msgstr ""
-"公钥基础设施(PKI)的元素。PKI由证书颁发机构组成，这些证书颁发机构向各方(例如服务的用户、服务提供者)颁发数字证书，然后在与环境交换的消息中使用这些证书对自己进行身份验证。CA的证书撤销列表(CRL)构成不再有效的证书的引用。撤销证书的原因有很多。例如，因为与证书关联的加密私有材料已被公开，证书可能会被吊销。"
+"公钥基础设施（PKI）的元素。PKI "
+"由证书授权中心组成，这些授权中心向各方（例如服务的用户、服务提供者）颁发数字证书，然后在与环境交换的消息中使用这些证书对自己进行身份验证。CA "
+"的证书撤销列表（CRL）构成不再有效的证书的引用。撤销证书的原因有很多。例如，因为与证书关联的加密私有材料已被公开，证书可能会被吊销。"
 
 #: ../../source/identity/identity.md:69
 msgid ""
@@ -139,11 +151,12 @@ msgid ""
 "are properly authenticated. It's therefore important to understand the "
 "basics of PKI and then why MSPs are so important."
 msgstr ""
-"虽然区块链网络不仅仅是一个通信网络，它还依赖PKI标准来确保各个网络参与者之间的安全通信，并确保在区块链上发布的消息得到正确的身份验证。因此，了解PKI的基础知识以及为什么MSP如此重要是很重要的。"
+"虽然区块链网络不仅仅是一个通信网络，它还依赖 PKI 标准来确保各个网络参与者之间的安全通信，并确保在区块链上发布的消息得到正确的身份验证。因此，了解 "
+"PKI 的基础知识以及为什么 MSP 如此重要是很重要的。"
 
 #: ../../source/identity/identity.md:75
 msgid "There are four key elements to PKI:"
-msgstr "PKI有四个要素:"
+msgstr "PKI 有四个要素："
 
 #: ../../source/identity/identity.md:77 ../../source/identity/identity.md:86
 msgid "Digital Certificates"
@@ -165,7 +178,7 @@ msgstr "证书撤销列表"
 msgid ""
 "Let's quickly describe these PKI basics, and if you want to know more "
 "details, Wikipedia is a good place to start."
-msgstr "让我们快速描述一下这些PKI基础知识，如果您想了解更多细节，可以从Wikipedia开始。"
+msgstr "让我们快速描述一下这些 PKI 基础知识，如果您想了解更多细节，可以从 Wikipedia 开始。"
 
 #: ../../source/identity/identity.md:88
 msgid ""
@@ -173,7 +186,8 @@ msgid ""
 " to the holder of the certificate. The most common type of certificate is "
 "the one compliant with the X.509 standard, which allows the encoding of a "
 "party's identifying details in its structure."
-msgstr "数字证书是包含一组与证书持有者相关的属性的文档。最常见的证书类型是符合X.509标准的证书，该标准允许在其结构中编码某参与方的身份细节。"
+msgstr ""
+"数字证书是包含一组与证书持有者相关的属性的文档。最常见的证书类型是符合 X.509 标准的证书，该标准允许在其结构中编码某参与方的身份细节。"
 
 #: ../../source/identity/identity.md:93
 msgid ""
@@ -185,9 +199,10 @@ msgid ""
 "facts about her. There are many other attributes in an X.509 certificate, "
 "but let's concentrate on just these for now."
 msgstr ""
-"例如，密歇根州底特律市Mitchell Cars公司制造部门的玛丽莫里斯可能拥有一个SUBJECT 属性为C=US, ST=Michigan, "
-"L=Detroit, O=Mitchell Cars, OU=Manufacturing, CN=Mary Morris "
-"/UID=123456的数字证书。玛丽的证件类似于她的政府身份证——它提供了有关玛丽的信息，她可以用这些信息来证明有关她的关键事实。在X.509证书中还有许多其他属性，但是现在让我们只关注这些属性。"
+"例如，密歇根州底特律市 Mitchell Cars 公司制造部门的玛丽莫里斯可能拥有一个 SUBJECT  属性为 C=US, ST=Michigan,"
+" L=Detroit, O=Mitchell Cars, OU=Manufacturing, CN=Mary Morris /UID=123456 "
+"的数字证书。玛丽的证件类似于她的政府身份证——它提供了有关玛丽的信息，她可以用这些信息来证明有关她的关键事实。在 X.509 "
+"证书中还有许多其他属性，但是现在让我们只关注这些属性。"
 
 #: ../../source/identity/identity.md:103
 msgid ""
@@ -198,7 +213,8 @@ msgid ""
 "certificate, whereas her private signing key is not. This signing key must "
 "be kept private."
 msgstr ""
-"描述一个叫玛丽·莫里斯的参与方的数字证书。玛丽是证书的SUBJECT(主题)，突出显示的主题文本显示了关于玛丽的关键事实。如您所见，证书还包含更多的信息。最重要的是，玛丽的公钥分布在她的证书中，而她的私钥没有。此签名密钥必须保持私有。"
+"描述一个叫玛丽·莫里斯的参与方的数字证书。玛丽是证书的 SUBJECT "
+"，突出显示的主题文本显示了关于玛丽的关键事实。如您所见，证书还包含更多的信息。最重要的是，玛丽的公钥分布在她的证书中，而她的私钥没有。此签名密钥必须保持私有。"
 
 #: ../../source/identity/identity.md:109
 msgid ""
@@ -214,9 +230,10 @@ msgid ""
 "Mary's X.509 certificate as a digital identity card that is impossible to "
 "change."
 msgstr ""
-"重要的是，玛丽的所有属性都可以使用一种称为密码学的数学技术(字面意思是“秘密写作”)记录下来，这样篡改会使证书失效。密码学允许玛丽向其他人提供她的证书，以证明她的身份，只要另一方信任证书颁发者，即证书颁发机构(certificate"
-" Authority, "
-"CA)。只要CA安全地保存某些加密信息(即它自己的私有签名密钥)，任何阅读证书的人都可以确保关于玛丽的信息没有被篡改——它始终具有玛丽莫里斯的那些特定属性。将玛丽的X.509证书看作是无法更改的数字身份证。"
+"重要的是，玛丽的所有属性都可以使用一种称为密码学的数学技术（字面意思是“秘密写作”）记录下来，这样篡改会使证书失效。密码学允许玛丽向其他人提供她的证书，以证明她的身份，只要另一方信任证书颁发者，即证书颁发机构（certificate"
+" Authority, CA）。只要 CA "
+"安全地保存某些加密信息（即它自己的私有签名密钥），任何阅读证书的人都可以确保关于玛丽的信息没有被篡改——它始终具有玛丽莫里斯的那些特定属性。将玛丽的 "
+"X.509 证书看作是无法更改的数字身份证。"
 
 #: ../../source/identity/identity.md:119
 msgid "Authentication, Public keys, and Private Keys"
@@ -252,7 +269,7 @@ msgid ""
 "checking that the attached signature is valid under the public key of the "
 "expected sender."
 msgstr ""
-"从技术上讲，数字签名机制要求每一方都持有两个加密连接的密钥:一个公开密钥(广泛可用并充当身份验证锚)和一个私有密钥(用于在消息上生成数字签名)。数字签名消息的接收方可以通过检查附加签名在预期发送方的公钥下是否有效来验证接收到的消息的来源和完整性。"
+"从技术上讲，数字签名机制要求每一方都持有两个加密连接的密钥:一个公开密钥（广泛可用并充当身份验证锚）和一个私有密钥（用于在消息上生成数字签名）。数字签名消息的接收方可以通过检查附加签名在预期发送方的公钥下是否有效来验证接收到的消息的来源和完整性。"
 
 #: ../../source/identity/identity.md:140
 msgid ""
@@ -280,7 +297,8 @@ msgid ""
 "certificates that comply with X.509 standard and are issued by a Certificate"
 " Authority (CA)."
 msgstr ""
-"正如您所看到的，参与者或节点能够通过系统信任的权威机构为其颁发的数字身份参与区块链网络。在最常见的情况下，数字身份(或简单的身份)具有加密验证的数字证书的形式，这些证书符合X.509标准，由证书颁发机构(CA)颁发。"
+"正如您所看到的，参与者或节点能够通过系统信任的权威机构为其颁发的数字身份参与区块链网络。在最常见的情况下，数字身份（或简单的身份）具有加密验证的数字证书的形式，这些证书符合"
+" X.509 标准，由证书颁发机构（CA）颁发。"
 
 #: ../../source/identity/identity.md:159
 msgid ""
@@ -300,14 +318,15 @@ msgid ""
 "the certificate, and owns the included attributes, by validating the CA's "
 "signature on the actor's certificate."
 msgstr ""
-"证书颁发机构将证书分发给不同的参与者。这些证书由CA进行数字签名，并将参与者与参与者的公钥绑定在一起(还可以选择使用完整的属性列表)。因此，如果信任CA(并且知道它的公钥)，则可以通过验证参与者证书中的CA签名，信任绑定到证书中公钥的特定的参与者和证书包含的属性。"
+"证书授权中心将证书分发给不同的参与者。这些证书由 CA 进行数字签名，并将参与者与参与者的公钥绑定在一起（还可以选择使用完整的属性列表）因此，如果信任 "
+"CA （并且知道它的公钥），则可以通过验证参与者证书中的 CA 签名，信任绑定到证书中公钥的特定的参与者和证书包含的属性。"
 
 #: ../../source/identity/identity.md:172
 msgid ""
 "Certificates can be widely disseminated, as they do not include either the "
 "actors' nor the CA's private keys. As such they can be used as anchor of "
 "trusts for authenticating messages coming from different actors."
-msgstr "证书可以广泛传播，因为它们既不包含参与者的私钥，也不包含CA的私钥。因此，它们可以用作信任的锚点，用于验证来自不同参与者的消息。"
+msgstr "证书可以广泛传播，因为它们既不包含参与者的私钥，也不包含 CA 的私钥。因此，它们可以用作信任的锚点，用于验证来自不同参与者的消息。"
 
 #: ../../source/identity/identity.md:176
 msgid ""
@@ -315,7 +334,7 @@ msgid ""
 "the consumers of identities issued by a given CA to verify them by checking "
 "that the certificate could only have been generated by the holder of the "
 "corresponding private key (the CA)."
-msgstr "CA也有一个证书，可以广泛使用。这允许给定CA颁发的身份的使用者，通过检查证书只能由相应私钥(CA)的持有者生成来验证它们。"
+msgstr "CA 也有一个证书，可以广泛使用。这允许给定 CA 颁发的身份的使用者，通过检查证书只能由相应私钥（CA）的持有者生成来验证它们。"
 
 #: ../../source/identity/identity.md:181
 msgid ""
@@ -325,11 +344,12 @@ msgid ""
 "perspective. It's the CA that provides the basis for an organization's "
 "actors to have a verifiable digital identity."
 msgstr ""
-"在区块链设置中，希望与网络交互的每个参与者都需要一个身份。在这种情况下，您可能会说可以使用一个或多个CA从数字的角度定义组织的成员。CA为组织的参与者提供了一个可验证的数字身份的基础。"
+"在区块链设置中，希望与网络交互的每个参与者都需要一个身份。在这种情况下，您可能会说可以使用一个或多个 CA 从数字的角度定义组织的成员。CA "
+"为组织的参与者提供了一个可验证的数字身份的基础。"
 
 #: ../../source/identity/identity.md:187
 msgid "Root CAs, Intermediate CAs and Chains of Trust"
-msgstr "根CA，中介CA和信任链"
+msgstr "根 CA，中介 CA 和信任链"
 
 #: ../../source/identity/identity.md:189
 msgid ""
@@ -346,7 +366,10 @@ msgid ""
 "compromised, would endanger the entire chain of trust. If an Intermediate CA"
 " is compromised, on the other hand, there will be a much smaller exposure."
 msgstr ""
-"CA有两种类型:根CA和中间CA。由于根CA(赛门铁克、Geotrust等)必须向互联网用户安全分发数亿个证书，因此将此过程分散到所谓的中间CA是有意义的。这些中间CA的证书由根CA或其他中间机构颁发，允许为链中的任何CA颁发的任何证书建立“信任链”。这种能力来追踪回根CA不仅让CA上规模，同时仍然提供安全的功能——允许使用证书的组织对使用中间CA有信心——它限制了根CA的曝光,如果妥协,会危及整个链的信任。另一方面，如果中间CA受到损害，则会有更小的风险。"
+"CA 有两种类型：根 CA 和中间 CA。由于根 CA（赛门铁克、Geotrust等）必须向互联网用户安全颁发数亿个证书，因此将此过程分散到所谓的中间 "
+"CA 是有意义的。这些中间 CA 的证书由根 CA 或其他中间机构颁发，允许为链中的任何 CA 颁发的任何证书建立“信任链”。追溯到根 CA "
+"的这种能力不仅允许 CA 的功能在仍然提供安全性的同时进行扩展——允许使用证书的组织充满信心地使用中间 CA——它限制了根 CA的 "
+"暴露，其如果受到损害，将会危及整个信任链。另一方面，如果中间 CA 受到损害，则曝光量会小得多。"
 
 #: ../../source/identity/identity.md:204
 msgid ""
@@ -354,7 +377,8 @@ msgid ""
 "CAs as long as the issuing CA for the certificate of each of these "
 "Intermediate CAs is either the Root CA itself or has a chain of trust to the"
 " Root CA."
-msgstr "在根CA和一组中间CA之间建立信任链，只要为每个中间CA的证书颁发CA的CA是根CA本身，或者对根CA具有信任链。"
+msgstr ""
+"在根 CA 和一组中间 CA 之间建立信任链，只要为每个中间 CA 的证书颁发 CA 的 CA 是根 CA 本身，或者对根 CA 具有信任链。"
 
 #: ../../source/identity/identity.md:208
 msgid ""
@@ -365,7 +389,8 @@ msgid ""
 "same Root CA with different Intermediate CAs --- it really does depend on "
 "the needs of the network."
 msgstr ""
-"当涉及到跨多个组织颁发证书时，中间CA提供了巨大的灵活性，这在经过许可的区块链系统(如Fabric)中非常有用。例如，您将看到不同的组织可能使用不同的根CA，或者使用相同的根CA和不同的中间CA——这确实取决于网络的需要。"
+"当涉及到跨多个组织颁发证书时，中间 CA 提供了巨大的灵活性，这在经过许可的区块链系统（如 "
+"Fabric）中非常有用。例如，您将看到不同的组织可能使用不同的根 CA，或者使用相同的根 CA 和不同的中间 CA——这确实取决于网络的需要。"
 
 #: ../../source/identity/identity.md:214
 msgid "Fabric CA"
@@ -385,16 +410,16 @@ msgid ""
 "appropriate --- to use a public/commercial root or intermediate CA to "
 "provide identification."
 msgstr ""
-"这是因为CA非常重要，Fabric提供了一个内置的CA组件，允许您在您形成的区块链网络中创建CA。这个组件——称为Fabric "
-"CA，是一个私有根CA提供者，能够管理具有X.509证书的Fabric参与者的数字身份。因为Fabric "
-"CA是针对Fabric的根CA需求的自定义CA，所以它本质上不能为浏览器中的常规/自动使用提供SSL证书。但是，由于必须使用一些CA来管理身份(即使在测试环境中)，Fabric"
-" CA可以用来提供和管理证书。使用公共/商业根或中间CA来提供标识也是可能的，而且完全合适。"
+"这是因为 CA 非常重要，Fabric 提供了一个内置的 CA 组件，允许您在您构成的区块链网络中创建 CA。这个组件——称为 Fabric  CA "
+"，是一个私有根 CA 提供者，能够管理具有 X.509 证书的 Fabric 参与者的数字身份。因为 Fabric CA 是针对 Fabric 的根 "
+"CA 需求的自定义 CA，所以它本质上不能为浏览器中的常规/自动使用提供 SSL 证书。但是，由于必须使用一些 CA "
+"来管理身份（即使在测试环境中），Fabric CA 可以用来提供和管理证书。使用公共/商业根或中间 CA 来提供标识也是可能的，而且完全合适。"
 
 #: ../../source/identity/identity.md:227
 msgid ""
 "If you're interested, you can read a lot more about Fabric CA in the CA "
 "documentation section."
-msgstr "如果您感兴趣，可以在CA文档部分阅读更多关于Fabric CA的内容。"
+msgstr "如果您感兴趣，可以在 CA 文档部分阅读更多关于 Fabric CA 的内容。"
 
 #: ../../source/identity/identity.md:232
 msgid ""
@@ -403,8 +428,8 @@ msgid ""
 "reason or another. If you recall the store scenario, a CRL would be like a "
 "list of stolen credit cards."
 msgstr ""
-"证书撤销列表(Certificate Revocation List, "
-"CRL)很容易理解——它只是一个引用证书的列表，CA知道这些证书会因为这样或那样的原因被撤销。如果您回想一下商店场景，CRL就像一个被盗信用卡列表。"
+"证书撤销列表（Certificate Revocation List， CRL）很容易理解——它只是一个引用证书的列表，CA "
+"知道这些证书会因为这样或那样的原因被撤销。如果您回想一下商店场景，CRL 就像一个被盗信用卡列表。"
 
 #: ../../source/identity/identity.md:236
 msgid ""
@@ -413,7 +438,8 @@ msgid ""
 "revoked. A verifier doesn't have to check the CRL, but if they don't they "
 "run the risk of accepting a compromised identity."
 msgstr ""
-"当第三方想要验证另一方的身份时，它首先检查发出CA的CRL，以确保证书没有被撤销。验证者不需要检查CRL，但是如果他们不检查CRL，他们将冒着接受被盗身份的风险。"
+"当第三方想要验证另一方的身份时，它首先检查发出 CA 的 CRL ，以确保证书没有被撤销。验证者不需要检查 CRL，但是如果他们不检查 "
+"CRL，他们将冒着接受被盗身份的风险。"
 
 #: ../../source/identity/identity.md:243
 msgid ""
@@ -422,7 +448,7 @@ msgid ""
 "can be first checked against the issuing CA's CRL to make sure it's not "
 "listed as no longer valid."
 msgstr ""
-"使用CRL检查证书是否有效。如果模拟程序试图将一个损坏的数字证书传递给验证方，可以首先根据发出CA的CRL检查它，以确保它不会被列为不再有效。"
+"使用 CRL 检查证书是否有效。如果模拟程序试图将一个损坏的数字证书传递给验证方，可以首先根据发出CA的CRL检查它，以确保它不会被列为不再有效。"
 
 #: ../../source/identity/identity.md:247
 msgid ""
@@ -431,7 +457,7 @@ msgid ""
 " measure, a fully valid certificate. For more in-depth information about "
 "CRLs, click here."
 msgstr ""
-"注意，被撤销的证书与到期的证书非常不同。被撤销的证书还没有过期——按其他任何标准衡量，它们都是完全有效的证书。有关CRL的更深入信息，请单击这里。"
+"注意，被撤销的证书与到期的证书非常不同。被撤销的证书还没有过期——按其他任何标准衡量，它们都是完全有效的证书。有关 CRL 的更深入信息，请单击这里。"
 
 #: ../../source/identity/identity.md:251
 msgid ""
@@ -442,10 +468,11 @@ msgid ""
 "parties who are the members of a given organization in the blockchain "
 "network."
 msgstr ""
-"现在您已经了解了PKI如何通过信任链提供可验证的身份，下一步是了解如何使用这些身份来表示区块链网络的可信成员。这就是成员服务提供者(MSP)发挥作用的地方——它标识区块链网络中给定组织的成员。"
+"现在您已经了解了 PKI "
+"如何通过信任链提供可验证的身份，下一步是了解如何使用这些身份来表示区块链网络的可信成员。这就是成员服务提供者（MSP）发挥作用的地方——它标识区块链网络中给定组织的成员。"
 
 #: ../../source/identity/identity.md:257
 msgid ""
 "To learn more about membership, check out the conceptual documentation on "
 "MSPs."
-msgstr "要了解更多关于成员身份的信息，请参阅关于MSP的概念文档。"
+msgstr "要了解更多关于成员身份的信息，请参阅关于 MSP 的概念文档。"

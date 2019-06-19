@@ -5,6 +5,7 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 19:55+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,15 +34,15 @@ msgid ""
 " support pluggable implementations of different components and accommodate "
 "the complexity and intricacies that exist across the economic ecosystem."
 msgstr ""
-"Hyperledger "
-"Fabric是一个分布式账本解决方案的平台，其基础是提供高度机密性、弹性、灵活性和可伸缩性的模块化架构。它旨在支持不同组件的可插入实现，并适应经济生态系统中存在的复杂性和复杂性。"
+"Hyperledger Fabric是一个分布式账本解决方案的平台，采用模块化架构，提供高度机密性，弹性，灵活性 "
+"和可扩展性。它旨在支持不同组件的可插拔实现，并适应经济生态系统中存在的复杂性。"
 
 #: ../../source/blockchain.rst:9
 msgid ""
 "We recommend first-time users begin by going through the rest of the "
 "introduction below in order to gain familiarity with how blockchains work "
 "and with the specific features and components of Hyperledger Fabric."
-msgstr "我们建议初次使用的用户从通读下面介绍的剩余部分开始，以便熟悉区块链的工作原理以及Hyperledger Fabric的特定特性和组件。"
+msgstr "我们建议初次使用的用户从通读下面介绍的剩余部分开始，以便熟悉区块链的工作原理以及 Hyperledger Fabric 的特性和组件。"
 
 #: ../../source/blockchain.rst:13
 msgid ""
@@ -49,8 +50,8 @@ msgid ""
 "Hyperledger Fabric --- go to :doc:`getting_started` and from there explore "
 "the demos, technical specifications, APIs, etc."
 msgstr ""
-"如果您已经熟悉了区块链和Hyperledger "
-"Fabric，那么可以访问:doc:`getting_started`，然后在那里查看演示、技术规范和API等。"
+"如果您已经熟悉了区块链和 Hyperledger Fabric，那么可以访问 :doc:`getting_started` "
+"，然后在那里查看示例、技术规范和 API 等。"
 
 #: ../../source/blockchain.rst:18
 msgid "What is a Blockchain?"
@@ -64,7 +65,7 @@ msgstr "**一个分布式账本**"
 msgid ""
 "At the heart of a blockchain network is a distributed ledger that records "
 "all the transactions that take place on the network."
-msgstr "区块链网络的核心是一个分布式账本，它记录在网络上发生的所有交易。"
+msgstr "区块链网络的核心是一个分布式账本，记录在网络上发生的所有交易。"
 
 #: ../../source/blockchain.rst:24
 msgid ""
@@ -74,7 +75,8 @@ msgid ""
 "powerful attributes that mirror the way businesses exchange goods and "
 "services in the real world."
 msgstr ""
-"区块链账本通常被描述为**去中心化的**，因为它是跨许多网络参与者复制的，每个参与者**协作**维护它。我们将看到，去中心化和协作是反映现实世界中企业交换商品和服务方式的强大属性。"
+"区块链账本通常被描述为**去中心化的**，因为它被复制到许多网络参与者中，每个参与者共同协作来 **协作** "
+"维护它。我们将看到，去中心化和协作是反映现实世界中企业交换商品和服务方式的重要属性。"
 
 #: ../../source/blockchain.rst:31
 msgid ""
@@ -86,7 +88,7 @@ msgid ""
 "has not been changed after the fact. It’s why blockchains are sometimes "
 "described as **systems of proof**."
 msgstr ""
-"除了去中心和协作之外，记录到区块链的信息是仅追加的，使用了加密技术，该技术可以保证，一旦将交易添加到账本中，就不能对其进行修改。这种“不可改”属性使确定信息来源变得很简单，因为参与者可以确定信息在事后没有被更改。这就是为什么区块链有时被描述为**证据系统**。"
+"除了去中心和协作之外，记录到区块链的信息只可以追加，使用了加密技术，来保证一旦将交易添加到账本中，就不能对其进行修改。这种“不变性”属性使确定信息来源变得很简单，因为参与者可以确定信息在事后没有被更改。这就是为什么区块链有时被描述为**证明系统**。"
 
 #: ../../source/blockchain.rst:38 ../../source/blockchain.rst:176
 msgid "**Smart Contracts**"
@@ -128,7 +130,7 @@ msgid ""
 "they update with the same transactions in the same order --- is called "
 "**consensus**."
 msgstr ""
-"在整个网络中保持账本交易同步的过程——确保账本只有交易被适当的参与者批准时才更新，并且当账本确实更新时，它们以相同的交易顺序更新——被称为**共识**。"
+"整个网络中保持账本交易同步的过程——确保账本只有交易被适当的参与者批准时才更新，并且当账本确实更新时，它们以相同的交易顺序更新——被称为**共识**。"
 
 #: ../../source/blockchain.rst:64
 msgid ""
@@ -137,7 +139,7 @@ msgid ""
 "transaction system which is updated via smart contracts and kept "
 "consistently synchronized through a collaborative process called consensus."
 msgstr ""
-"以后你会学到更多关于账本、智能合约和共识的知识。现在，只要将区块链看作是一个共享的、复制的交易系统就足够了，它通过智能合约进行更新，并通过一个称为共识的协作过程保持一致的同步。"
+"以后你会学到更多关于账本、智能合约和共识的知识。现在，只要将区块链看作是一个共享和复制交易的系统就足够了，它通过智能合约进行更新，并通过一个称为共识的协作过程保持一致。"
 
 #: ../../source/blockchain.rst:70
 msgid "Why is a Blockchain useful?"
@@ -158,11 +160,11 @@ msgid ""
 "they’re sold to ensure that the business selling an item possesses a chain "
 "of title verifying their ownership of it."
 msgstr ""
-"今天的交易网络只不过是自保留业务记录以来就存在的网络的稍加更新的版本。一个**业务网络**的成员彼此进行交易，但是他们保持各自的交易记录。无论是16世纪的佛兰德挂毯，还是今天的证券，他们所做的交易都必须在每次出售时确定其来源，以确保出售一件物品拥有一系列所有权。"
+"今天的交易网络只不过是自保留业务记录以来就存在的网络的稍加更新的版本。一个**业务网络**的成员彼此进行交易，但是他们维护各自的交易记录。无论是16世纪的佛兰德挂毯，还是今天的证券，他们所交易的东西都必须在每次出售时确定其来源，以确保出售物品的企业拥有一系列产权，来验证其所有权。"
 
 #: ../../source/blockchain.rst:83
 msgid "What you’re left with is a business network that looks like this:"
-msgstr "剩下的就是象这样的一个业务网络:"
+msgstr "现在的商业网络看起来像这样："
 
 #: ../../source/blockchain.rst:87
 msgid ""
@@ -175,18 +177,18 @@ msgid ""
 "every database in the system contains unique information and therefore "
 "represents a single point of failure."
 msgstr ""
-"现代技术已经将这一过程从石碑和文件夹带到硬盘和云平台，但其底层结构是相同的。不存在统一的系统来管理网络参与者的身份，确定出处是如此费力需要几天清理证券交易(全世界的量在数万亿美元)，合同必须手动签署和执行,每个数据库系统中包含独特的信息,因此代表了一个单点故障。"
+"现代技术已经将这一过程从石碑和文件夹带到硬盘和云平台，但其底层结构是相同的。由于没有统一的系统来管理网络参与者的身份，因而建立追溯体系非常费力，通常需要数天清理证券交易（全世界有数万亿美元），合同必须手动签署和执行，每个数据库系统中都包含唯一的信息，因此代表了单点故障。"
 
 #: ../../source/blockchain.rst:96
 msgid ""
 "It’s impossible with today’s fractured approach to information and process "
 "sharing to build a system of record that spans a business network, even "
 "though the needs of visibility and trust are clear."
-msgstr "尽管对可见性和信任的需求是明确的，但在当今信息和流程共享的破碎方法下，构建跨越业务网络的记录系统是不可能的。"
+msgstr "尽管对可见性和信任的需求是很明显的，今天的信息和流程共享方法也不可能构建一个跨越业务网络的记录系统。"
 
 #: ../../source/blockchain.rst:100
 msgid "**The Blockchain Difference**"
-msgstr "**区块链是不同的**"
+msgstr "**区块链的不同之处**"
 
 #: ../../source/blockchain.rst:102
 msgid ""
@@ -197,11 +199,11 @@ msgid ""
 " looking through a list of transactions that, once written, cannot be "
 "changed, and can therefore be trusted?"
 msgstr ""
-"如果商业网络有标准的方法在网络上建立身份、执行交易和存储数据，而不是用“现代”交易系统来表示效率低下的老鼠洞，那会怎么样?如果可以通过查看一列交易来确定资产的来源，而这些交易一旦写入，就不能更改，因此可以信任，那么该怎么办?"
+"如果商业网络有标准的方法在网络上建立身份、执行交易和存储数据，而不是用“现代”交易系统来表示效率低下的老鼠洞，那会怎么样？如果可以通过查看一列交易来确定资产的来源，而这些交易一旦写入，就不能更改，因此可以信任，那会怎么样?"
 
 #: ../../source/blockchain.rst:109
 msgid "That business network would look more like this:"
-msgstr "商业网络应该是这样的:"
+msgstr "该业务网络看起来更像是这样的："
 
 #: ../../source/blockchain.rst:113
 msgid ""
@@ -212,7 +214,7 @@ msgid ""
 "update their **private** ledgers, a blockchain system has **shared** "
 "programs to update **shared** ledgers."
 msgstr ""
-"这是一个区块链网络，每个参与者都有自己复制的账本副本。除了共享账本信息，更新账本的过程也被共享。不像今天的系统，参与者的**私有**程序用于更新他们的**私有**账本，区块链系统有**共享**程序来更新**共享**账本。"
+"这是一个区块链网络，每个参与者都有自己复的账本副本。除了共享账本信息，更新账本的过程也被共享。不像今天的系统，参与者的**私有**程序用于更新他们的**私有**账本，区块链系统有**共享**程序来更新**共享**账本。"
 
 #: ../../source/blockchain.rst:119
 msgid ""
@@ -220,7 +222,7 @@ msgid ""
 "ledger, blockchain networks can reduce the time, cost, and risk associated "
 "with private information and processing while improving trust and "
 "visibility."
-msgstr "区块链网络能够通过共享账本协调其业务网络，可以减少关联私有信息和处理的时间、成本和风险，同时提高信任和可见性。"
+msgstr "区块链网络能够通过共享账本协调其业务网络，可以减少和私有信息相关的处理时间、成本和风险，同时提高信任和可见性。"
 
 #: ../../source/blockchain.rst:123
 msgid ""
@@ -231,7 +233,7 @@ msgstr "您现在知道了区块链是什么以及它为什么有用。还有很
 
 #: ../../source/blockchain.rst:128
 msgid "What is Hyperledger Fabric?"
-msgstr "什么是超级账本Fabric？"
+msgstr "什么是 Hyperledger Fabric？"
 
 #: ../../source/blockchain.rst:130
 msgid ""
@@ -242,14 +244,16 @@ msgid ""
 "rights that encourage open development and the adoption of key standards "
 "over time."
 msgstr ""
-"Linux基金会于2015年创建了Hyperledger项目，以推进跨行业的区块链技术。它不是宣布一个单一的区块链标准，而是鼓励通过一个社区过程以协作的方式开发区块链技术，并拥有鼓励开放知识产权和采用及时关键标准。"
+"Linux 基金会于 2015 年创建了 Hyperledger "
+"项目，以推进跨行业的区块链技术。与宣布单一区块链标准不同，它鼓励通过社区流程开发区块链技术的协作方法，知识产权鼓励开放式开发，并随着时间的推移采用关键标准。"
 
 #: ../../source/blockchain.rst:137
 msgid ""
 "Hyperledger Fabric is one of the blockchain projects within Hyperledger. "
 "Like other blockchain technologies, it has a ledger, uses smart contracts, "
 "and is a system by which participants manage their transactions."
-msgstr "超级账本Fabric是超级账本中的区块链项目之一。和其他区块链技术一样，它有一个账本，使用智能合同，是一个参与者管理交易的系统。"
+msgstr ""
+"Hyperledger Fabric 是超级账本中的区块链项目之一。和其他区块链技术一样，它有一个账本，使用智能合约，是一个参与者管理交易的系统。"
 
 #: ../../source/blockchain.rst:141
 msgid ""
@@ -260,14 +264,17 @@ msgid ""
 "secure the network), the members of a Hyperledger Fabric network enroll "
 "through a trusted **Membership Service Provider (MSP)**."
 msgstr ""
-"超级账本结构与其他区块链系统的不同之处在于，它是**私有的**和**许可的**。与允许匿名参与网络的开放无许可系统(需要像“工作证明”这样的协议来验证交易并保护网络)不同，超级账本Fabric网络成员通过一个受信任的**成员服务提供者(MSP)**来注册。"
+"Hyperledger Fabric "
+"与其他区块链系统的不同之处在于，它是**私有的**和**许可的**。与允许匿名参与网络的开放无许可系统（需要像“工作证明”这样的协议来验证交易并保护网络）不同，Hyperledger"
+" Fabric 网络成员通过一个受信任的**成员服务提供者（MSP）**来注册。"
 
 #: ../../source/blockchain.rst:147
 msgid ""
 "Hyperledger Fabric also offers several pluggable options. Ledger data can be"
 " stored in multiple formats, consensus mechanisms can be swapped in and out,"
 " and different MSPs are supported."
-msgstr "超级账本Fabric还提供了几个可插入的选项。账本数据可以以多种格式存储，共识机制可以在内部和外部交换，并且支持不同的MSPs。"
+msgstr ""
+"Hyperledger Fabric 还提供多种可插拔选项。账本数据可以以多种格式存储，共识机制可以在内部和外部交换，并且支持不同的MSP。"
 
 #: ../../source/blockchain.rst:151
 msgid ""
@@ -280,7 +287,9 @@ msgid ""
 "participants --- and no others --- have copies of the ledger for that "
 "channel."
 msgstr ""
-"超级账本Fabric还提供了创建**通道**的能力，允许一组参与者创建单独的交易账本。某些参与者可能是竞争对手，并且不希望每个参与者都知道他们所做的每一笔交易(例如，他们向某些参与者而不是其他参与者提供特殊的价格)的网络来说，这是一个特别重要的选择。如果两个参与者组成一个通道，那么只是这些参与者（没有其他参与者）拥有该通道的账本副本。"
+"Hyperledger Fabric 还提供了创建**通道**的功能，允许一组参与者创建各自的交易账本。对于某些网络而言， "
+"这是一个特别重要的选项。这些网络中，一些参与者可能是竞争对手，并且不希望他们做出的每笔交易被每个参与者知晓， 例如， "
+"他们向某些特定参与者提供的特殊价格。如果两个参与者组成一个通道，那么这两个参与者就拥有该通道的账本副本，而其他参与者没有。"
 
 #: ../../source/blockchain.rst:159
 msgid "**Shared Ledger**"
@@ -292,7 +301,8 @@ msgid ""
 "**world state** and the **transaction log**. Each participant has a copy of "
 "the ledger to every Hyperledger Fabric network they belong to."
 msgstr ""
-"超级账本Fabric有一个账本子系统，它由两个组件组成：**世界状态**和**交易日志**。对于所属的超级账本Fabric网络，每个参与者都有一份账本的副本。"
+"Hyperledger Fabric 有一个账本子系统，包括两个组件：**世界状态**和**交易日志**。对于所属的 Hyperledger "
+"Fabric 网络，每个参与者都有一份账本的副本。"
 
 #: ../../source/blockchain.rst:165
 msgid ""
@@ -303,7 +313,7 @@ msgid ""
 "is a combination of the world state database and the transaction log "
 "history."
 msgstr ""
-"世界状态组件描述在给定时间点的账本状态。这是账本的数据库。交易日志组件记录导致当前世界状态的所有交易；它是世界状态的更新历史。因此，账本是世界状态数据库和交易日志历史记录的组合。"
+"世界状态组件描述在给定时间点的账本状态。它是账本的数据库。交易日志组件记录产生当前世界状态的所有交易；它是世界状态的更新历史。因此，账本是世界状态数据库和交易日志历史记录的组合。"
 
 #: ../../source/blockchain.rst:171
 msgid ""
@@ -312,7 +322,8 @@ msgid ""
 "need to be pluggable. It simply records the before and after values of the "
 "ledger database being used by the blockchain network."
 msgstr ""
-"账本为世界状态提供了一个可替换的数据存储。默认情况下，这是一个LevelDB键值存储数据库。交易日志不需要可插入的。它只简单地记录区块链网络使用的账本数据库的之前和之后的值。"
+"账本为世界状态提供了一个可替换的数据存储。默认情况下，这是一个 LevelDB "
+"键值存储数据库。交易日志是不需要可插拔的。它只简单地记录区块链网络使用的账本数据库的之前和之后的值。"
 
 #: ../../source/blockchain.rst:178
 msgid ""
@@ -322,13 +333,14 @@ msgid ""
 "with the database component of the ledger, the world state (querying it, for"
 " example), and not the transaction log."
 msgstr ""
-"超级账本Fabric智能合约是用**链码**编写的，当应用程序需要与账本交互时，由区块链外部的应用程序调用。在大多数情况下，链码只与账本的数据库组件、世界状态(例如查询它)交互，而不是与交易日志交互。"
+"Hyperledger Fabric "
+"智能合约是用**链码**编写的，当应用程序需要与账本交互时，由区块链外部的应用程序调用。在大多数情况下，链码只与账本的数据库组件、世界状态（例如，查询）交互，而不是与交易日志交互。"
 
 #: ../../source/blockchain.rst:184
 msgid ""
 "Chaincode can be implemented in several programming languages. Currently, Go"
 " and Node are supported."
-msgstr "链码可以用几种编程语言实现。目前支持Go和Node。"
+msgstr "链码可以用多种编程语言实现。目前支持Go和Node。"
 
 #: ../../source/blockchain.rst:187
 msgid "**Privacy**"
@@ -339,13 +351,13 @@ msgid ""
 "Depending on the needs of a network, participants in a Business-to-Business "
 "(B2B) network might be extremely sensitive about how much information they "
 "share. For other networks, privacy will not be a top concern."
-msgstr "根据网络的需要，企业对企业(B2B)网络中的参与者可能对他们共享多少信息非常敏感。对于其他网络来说，隐私不会是他们最关心的问题。"
+msgstr "根据网络的需要，企业对企业（B2B）网络中的参与者可能对他们共享的信息量非常敏感。对于其他网络来说，隐私不会是他们最关心的问题。"
 
 #: ../../source/blockchain.rst:193
 msgid ""
 "Hyperledger Fabric supports networks where privacy (using channels) is a key"
 " operational requirement as well as networks that are comparatively open."
-msgstr "超级账本Fabric支持隐私(使用通道)是关键功能需求的网络，就象它支持相对开放的网络一样。"
+msgstr "Hyperledger Fabric 支持隐私（使用通道），者是一项关键需求，就像网络是相对开放的一样。"
 
 #: ../../source/blockchain.rst:198
 msgid ""
@@ -355,7 +367,7 @@ msgid ""
 "and a method for rejecting bad transactions that have been inserted into the"
 " ledger in error (or maliciously) must be put into place."
 msgstr ""
-"交易必须按照发生的顺序写在账本上，即使它们可能位于网络中不同的参与者之间。为了做到这一点，必须建立交易的顺序，并且必须建立一种拒绝错误地(或恶意地)插入账本的不良交易的方法。"
+"交易必须按照发生的顺序写在账本上，即使它们可能位于网络中不同的参与者之间。为了做到这一点，必须建立交易的顺序，且必须采用一种方法来拒绝错误（或恶意）插入到账本中的错误交易。"
 
 #: ../../source/blockchain.rst:204
 msgid ""
@@ -368,7 +380,7 @@ msgid ""
 "cryptographic puzzle which defines the order that all processes subsequently"
 " build upon."
 msgstr ""
-"这是计算机科学的一个深入研究领域，有许多方法可以实现它，每种方法都有不同的权衡。例如，PBFT(实用拜占庭容错)可以为文件副本提供一种相互通信的机制，以保持每个副本的一致性，即使在损坏的情况下也是如此。或者，在比特币中，排序是通过一个称为“挖矿”的过程进行的，在这个过程中，相互竞争的计算机竞相解决一个密码谜题，这个谜题定义了所有进程随后建立的顺序。"
+"这是计算机科学深入研究的一个领域，有许多方法可以实现它，每种方法都有不同的权衡。例如，PBFT（实用拜占庭容错）可以为文件副本提供一种相互通信的机制，使其能够保持各个副本的一致性，即使在发生损坏的情况下也是如此。或者，在比特币中，通过称为挖掘的过程进行排序，在这个过程中，相互竞争的计算机竞相解决一个密码谜题，这个谜题定义了所有过程随后建立的顺序。"
 
 #: ../../source/blockchain.rst:212
 msgid ""
@@ -378,13 +390,14 @@ msgid ""
 "networks that are highly structured in their relationships to those that are"
 " more peer-to-peer."
 msgstr ""
-"超级账本Fabric的设计允许网络启动者选择一种最能代表参与者之间关系的共识机制。就隐私而言，有一系列的需求：从关系中高度结构化的网络到更加对等的网络。"
+"Hyperledger Fabric "
+"的设计允许网络启动者选择一种最能代表参与者之间关系的共识机制。就隐私而言，有一系列的需求：从关系中高度结构化的网络到更加对等的网络。"
 
 #: ../../source/blockchain.rst:218
 msgid ""
 "We’ll learn more about the Hyperledger Fabric consensus mechanisms, which "
 "currently include SOLO and Kafka."
-msgstr "我们将学习更多关于超级账本Fabric的共识机制，目前包括SOLO和Kafka。"
+msgstr "我们将学习更多关于 Hyperledger Fabric 的共识机制，目前包括SOLO 和 Kafka。"
 
 #: ../../source/blockchain.rst:222
 msgid "Where can I learn more?"
@@ -392,49 +405,49 @@ msgstr "我在哪里可以学到更多?"
 
 #: ../../source/blockchain.rst:224
 msgid "`Identity <identity/identity.html>`_ (conceptual documentation)"
-msgstr "`身份<identity/identity.html>`_ (概念文档)"
+msgstr "`身份<identity/identity.html>`_ （概念文档）"
 
 #: ../../source/blockchain.rst:226
 msgid ""
 "A conceptual doc that will take you through the critical role identities "
 "play in a Fabric network (using an established PKI structure and x.509 "
 "certificates)."
-msgstr "概念文档，将带您了解身份在Fabric网络中扮演的关键角色(使用已建立的PKI结构和x.509证书)。"
+msgstr "概念文档，将带您了解身份在 Fabric 网络中扮演的关键角色（使用已建立的 PKI 结构和 x.509 证书）。"
 
 #: ../../source/blockchain.rst:229
 msgid "`Membership <membership/membership.html>`_ (conceptual documentation)"
-msgstr "`成员<membership/membership.html>`_ (概念文档)"
+msgstr "`成员<membership/membership.html>`_  (概念文档)"
 
 #: ../../source/blockchain.rst:231
 msgid ""
 "Talks through the role of a Membership Service Provider (MSP), which "
 "converts identities into roles in a Fabric network."
-msgstr "讨论成员服务提供者(MSP)的角色，该角色将身份转换为Fabric网络中的角色。"
+msgstr "讨论成员服务提供者（MSP）的角色，该角色将身份转换为 Fabric 网络中的角色。"
 
 #: ../../source/blockchain.rst:234
 msgid "`Peers <peers/peers.html>`_ (conceptual documentation)"
-msgstr "`peer节点<peers/peers.html>`_ (概念文档"
+msgstr "`节点<peers/peers.html>`_  （概念文档）"
 
 #: ../../source/blockchain.rst:236
 msgid ""
 "Peers --- owned by organizations --- host the ledger and smart contracts and"
 " make up the physical structure of a Fabric network."
-msgstr "peer节点，被组织拥有，承载着账本和智能合约，构成了Fabric网络的物理结构。"
+msgstr "节点，组织所有，承载着账本和智能合约，构成了 Fabric 网络的物理结构。"
 
 #: ../../source/blockchain.rst:239
 msgid ":doc:`build_network` (tutorial)"
-msgstr ":doc:`build_network` (教程：构建网络)"
+msgstr ":doc:`build_network`  （教程）"
 
 #: ../../source/blockchain.rst:241
 msgid ""
 "Learn how to download Fabric binaries and bootstrap your own sample network "
 "with a sample script. Then tear down the network and learn how it was "
 "constructed one step at a time."
-msgstr "了解如何下载Fabric二进制文件并使用示例脚本引导您自己的示例网络。然后卸载网络，一步一步地学习它是如何构建的。"
+msgstr "了解如何使用示例脚本下载 Fabric 二进制文件并引导你自己的示例网络。然后拆解网络，了解它是如何一步一步构建的。"
 
 #: ../../source/blockchain.rst:245
 msgid ":doc:`write_first_app` (tutorial)"
-msgstr ":doc:`write_first_app` (教程：编写第一个app)"
+msgstr ":doc:`write_first_app`  （教程）"
 
 #: ../../source/blockchain.rst:247
 msgid ""
@@ -444,11 +457,11 @@ msgstr "部署一个非常简单的网络，甚至比构建第一个网络还要
 
 #: ../../source/blockchain.rst:250
 msgid ":doc:`txflow`"
-msgstr ":doc:`txflow` 交易流程"
+msgstr ":doc:`txflow`  交易流程"
 
 #: ../../source/blockchain.rst:252
 msgid "A high level look at a sample transaction flow."
-msgstr "一个查看示范交易流程的高级视图。"
+msgstr "从高层视角看一个简单的交易流程。"
 
 #: ../../source/blockchain.rst:254
 msgid ":doc:`fabric_model`"
@@ -459,4 +472,4 @@ msgid ""
 "A high level look at some of components and concepts brought up in this "
 "introduction as well as a few others and describes how they work together in"
 " a sample transaction flow."
-msgstr "从高层次上看一下本文介绍的一些组件和概念，以及其他一些组件和概念，并描述它们如何在示例交易流程中协同工作。"
+msgstr "本文以高层视角介绍了一些组件和概念，还有一些其他内容并描述了他们如何在示例交易流中协同工作。"

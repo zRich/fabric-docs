@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JIANNAN GUO <guojiannan1101@gmail.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:57+0000\n"
+"Last-Translator: JIANNAN GUO <guojiannan1101@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../source/couchdb_tutorial.rst:3
 msgid "Using CouchDB"
-msgstr ""
+msgstr "使用CouchDB"
 
 #: ../../source/couchdb_tutorial.rst:5
 msgid ""
@@ -27,6 +31,8 @@ msgid ""
 "state database with Hyperledger Fabric. By now, you should be familiar with "
 "Fabric concepts and have explored some of the samples and tutorials."
 msgstr ""
+"这篇教程将描述使用CouchDB作为Hyperledger "
+"Fabric状态数据库的步骤。现在，您应该已经熟悉了Fabric基本概念，并且已经探索了一些示例和教程。"
 
 #: ../../source/couchdb_tutorial.rst:9
 msgid ""
@@ -39,14 +45,18 @@ msgid ""
 "/fabric-samples/tree/release-1.4/>`_ to use this tutorial. For more "
 "information, see :ref:`cdb-add-index`."
 msgstr ""
+"Fabric 2.0 Alpha版本中引入的新的链码生命周期目前不支持CouchDB索引。所以，这篇教程要求使用`之前的生命周期管理流程 <https"
+"://hyperledger-"
+"fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`，来安装与实例化一个包含CouchDB索引的链码。下载`1.4版本的Fabric示例<https://github.com/hyperledger"
+"/fabric-samples/tree/release-1.4/>`来使用本教程。更多信息，请见:ref:`cdb-add-index`。"
 
 #: ../../source/couchdb_tutorial.rst:16
 msgid "The tutorial will take you through the following steps:"
-msgstr ""
+msgstr "这篇教程会带领你进行以下步骤："
 
 #: ../../source/couchdb_tutorial.rst:18
 msgid ":ref:`cdb-enable-couch`"
-msgstr ""
+msgstr ":ref:`cdb-enable-couch`"
 
 #: ../../source/couchdb_tutorial.rst:19
 msgid ":ref:`cdb-create-index`"
@@ -87,6 +97,8 @@ msgid ""
 "<ledger/ledger.html>`_ topic. Follow the tutorial below for details on how "
 "to leverage CouchDB in your blockchain network."
 msgstr ""
+"深入了解CouchDB，请见 :doc:`couchdb_as_state_database` 。更多关于Fabric账本的信息，请见 `账本 "
+"<ledger/ledger.html>`. 本篇教程剩余内容将解释在区块链网络中使用CouchDB的细节。"
 
 #: ../../source/couchdb_tutorial.rst:33
 msgid ""
