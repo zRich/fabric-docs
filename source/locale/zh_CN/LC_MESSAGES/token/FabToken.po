@@ -5,6 +5,7 @@
 # 
 # Translators:
 # JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 王伟兵 <wbwang@inspur.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
-"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
+"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:1
 msgid "Using FabToken"
-msgstr ""
+msgstr "使用FabToken"
 
 #: ../../source/token/FabToken.md:3
 msgid ""
@@ -38,23 +39,23 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:9 ../../source/token/FabToken.md:15
 msgid "What is FabToken"
-msgstr ""
+msgstr "什么是FabToken "
 
 #: ../../source/token/FabToken.md:10
 msgid "The Token lifecycle"
-msgstr ""
+msgstr "token生命周期"
 
 #: ../../source/token/FabToken.md:11
 msgid "The Token transaction flow"
-msgstr ""
+msgstr "token交易流程"
 
 #: ../../source/token/FabToken.md:12
 msgid "FabToken example"
-msgstr ""
+msgstr "FabToken示例"
 
 #: ../../source/token/FabToken.md:13 ../../source/token/FabToken.md:517
 msgid "Future features"
-msgstr ""
+msgstr "未来功能"
 
 #: ../../source/token/FabToken.md:17
 msgid ""
@@ -109,7 +110,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:48
 msgid "The token lifecycle"
-msgstr ""
+msgstr "token生命周期"
 
 #: ../../source/token/FabToken.md:50
 msgid ""
@@ -122,7 +123,7 @@ msgid ""
 "Tokens are created by being issued. The token issuer defines the type of "
 "asset represented by the tokens and the quantity. The issuer also assigns "
 "issued tokens to their original owners."
-msgstr ""
+msgstr "token是通过发行来创建的。token发行方定义token表示的资产类型和数量。发行方还将已发行的token分配给其原始所有者。"
 
 #: ../../source/token/FabToken.md:57
 msgid ""
@@ -131,12 +132,13 @@ msgid ""
 "channel. Once the token has been transferred, it can no longer be spent or "
 "accessed by the previous owner."
 msgstr ""
+"token是通过转账来“花费”的。token所有者将token表示的资产转账给作为fabric通道成员的某个新所有者。一旦token被转账，它就不能再被以前的所有者使用或访问。"
 
 #: ../../source/token/FabToken.md:62
 msgid ""
 "Tokens are removed from the channel by being redeemed. Redeemed tokens are "
 "no longer owned by any channel member and thus can no longer be spent."
-msgstr ""
+msgstr "可以通过赎回，将token从通道中删除。赎回的token不再属于任何通道成员，因此不能再使用。"
 
 #: ../../source/token/FabToken.md:65
 msgid ""
@@ -181,7 +183,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:91
 msgid "Issuing tokens"
-msgstr ""
+msgstr "发行token"
 
 #: ../../source/token/FabToken.md:93
 msgid ""
@@ -199,17 +201,17 @@ msgstr "Token有三个属性："
 msgid ""
 "Owner identifies the channel member that can transfer or redeem the new "
 "token through its MSP identity."
-msgstr ""
+msgstr "Owner属性标识了能够转账或赎回新token的通道成员（通过其MSP标识）。"
 
 #: ../../source/token/FabToken.md:101
 msgid ""
 "Type describes the asset the token represents, such as USD, EUR, or "
 "BYFNcoins in the example below."
-msgstr ""
+msgstr "Type属性描述了token表示的资产，如下面示例中的美元、欧元或BYFNcoins。"
 
 #: ../../source/token/FabToken.md:103
 msgid "Quantity is the number of units of Type that the Token represents."
-msgstr ""
+msgstr "Quantity属性是token表示的类型单位的数量。"
 
 #: ../../source/token/FabToken.md:105
 msgid ""
@@ -232,7 +234,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:115
 msgid "List"
-msgstr ""
+msgstr "列表"
 
 #: ../../source/token/FabToken.md:117
 msgid ""
@@ -242,21 +244,21 @@ msgstr "您可以使用List方法或命令查询您拥有的未花费的token。
 
 #: ../../source/token/FabToken.md:120
 msgid "TokenID is the identifier of each token you own."
-msgstr ""
+msgstr "TokenID是您拥有的每个token的标识符。"
 
 #: ../../source/token/FabToken.md:121
 msgid "Type is the asset your tokens represent."
-msgstr ""
+msgstr "Type是token表示的资产。"
 
 #: ../../source/token/FabToken.md:122
 msgid ""
 "Quantity is number of units of Type in hexadecimal format of each asset that"
 " you own."
-msgstr ""
+msgstr "Quantity是您拥有的每个资产的十六进制格式的类型单位的数量。"
 
 #: ../../source/token/FabToken.md:125
 msgid "Transfer"
-msgstr ""
+msgstr "转账"
 
 #: ../../source/token/FabToken.md:127
 msgid ""
@@ -266,19 +268,19 @@ msgstr "您可以通过将自己拥有的token转账给其他通道成员来花�
 
 #: ../../source/token/FabToken.md:130
 msgid "Token ID: The ID of the tokens you want to transfer."
-msgstr ""
+msgstr "Token ID：要转账的token的ID。"
 
 #: ../../source/token/FabToken.md:131
 msgid ""
 "Quantity: The amount of the asset represented by each token to be "
 "transferred."
-msgstr ""
+msgstr "Quantity：要转账的每个token表示的资产金额。"
 
 #: ../../source/token/FabToken.md:133
 msgid ""
 "Recipient: The MSP identifier of the channel member you want to transfer the"
 " assets to."
-msgstr ""
+msgstr "Recipient：要将资产转账到的通道成员的MSP标识符。"
 
 #: ../../source/token/FabToken.md:136
 msgid ""
@@ -313,15 +315,15 @@ msgstr "为取得成功，转账须符合下列条件："
 msgid ""
 "The tokens being transferred need to belong to the transaction initiator and"
 " are unspent."
-msgstr ""
+msgstr "正在转账的token需要属于交易发起人，并且未被花费。"
 
 #: ../../source/token/FabToken.md:155
 msgid "All input tokens of the transaction need to be of the same type."
-msgstr ""
+msgstr "交易的所有输入token都需要具有相同的类型。"
 
 #: ../../source/token/FabToken.md:157
 msgid "Redeem"
-msgstr ""
+msgstr "赎回"
 
 #: ../../source/token/FabToken.md:159
 msgid ""
@@ -340,13 +342,13 @@ msgstr "所有者赎回token需要提供以下参数："
 
 #: ../../source/token/FabToken.md:167
 msgid "Token ID: The ID of the token you want to redeem."
-msgstr ""
+msgstr "Token ID：要赎回的token的ID。"
 
 #: ../../source/token/FabToken.md:168
 msgid ""
 "Quantity: The quantity of the asset represented by each token you want to "
 "redeem."
-msgstr ""
+msgstr "Quantity：要赎回的每个token表示的资产数量。"
 
 #: ../../source/token/FabToken.md:171
 msgid ""
@@ -362,7 +364,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:179
 msgid "The token transaction flow"
-msgstr ""
+msgstr "token交易流程"
 
 #: ../../source/token/FabToken.md:181
 msgid ""
@@ -396,13 +398,13 @@ msgid ""
 "In the case of an issue transaction, the prover peer will verify that the "
 "requested operation satisfies the IssuingPolicy associated with the tokens "
 "being created."
-msgstr ""
+msgstr "在发行交易的情况下，验证者节点将验证所请求的操作是否满足与正在创建的token相关联的发行策略。"
 
 #: ../../source/token/FabToken.md:200
 msgid ""
 "In the case of transfer, redeem and list, the peer checks that the input "
 "tokens are unspent and belong to the entity requesting the transaction."
-msgstr ""
+msgstr "在转账、赎回和列表的情况下，节点检查输入token是否已花费，是否属于请求交易的实体。"
 
 #: ../../source/token/FabToken.md:202
 msgid ""
@@ -410,6 +412,7 @@ msgid ""
 "output tokens are all of the same type and that the output tokens have the "
 "same type and sum up to the same quantity as the input tokens."
 msgstr ""
+"在转账和赎回的情况下，节点检查输入和输出token是否都具有相同的类型，以及输出token是否具有相同的类型并与输入token的数量之和是否相同。"
 
 #: ../../source/token/FabToken.md:206
 msgid ""
@@ -424,7 +427,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:213
 msgid "FabToken Example"
-msgstr ""
+msgstr "FabToken示例"
 
 #: ../../source/token/FabToken.md:215
 msgid ""
@@ -449,7 +452,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:226
 msgid "Start the network"
-msgstr ""
+msgstr "启动网络"
 
 #: ../../source/token/FabToken.md:228
 msgid ""
@@ -522,7 +525,7 @@ msgstr "该命令将创建用于发行和转账token的orgs、peers、orderers�
 
 #: ../../source/token/FabToken.md:377
 msgid "Issue tokens"
-msgstr ""
+msgstr "发行token"
 
 #: ../../source/token/FabToken.md:379
 msgid ""
@@ -562,7 +565,7 @@ msgstr "在命令输出中，您可以找到tokenID、类型和数量。tokenID�
 
 #: ../../source/token/FabToken.md:426
 msgid "Transferring tokens"
-msgstr ""
+msgstr "转账token"
 
 #: ../../source/token/FabToken.md:428
 msgid ""
@@ -619,7 +622,7 @@ msgstr ""
 
 #: ../../source/token/FabToken.md:479
 msgid "Redeeming tokens"
-msgstr ""
+msgstr "赎回token"
 
 #: ../../source/token/FabToken.md:481
 msgid ""
