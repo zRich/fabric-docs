@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:54+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,218 +23,218 @@ msgstr ""
 
 #: ../../source/MAINTAINERS.rst:2
 msgid "Maintainers"
-msgstr ""
+msgstr "维护者"
 
 #: ../../source/MAINTAINERS.rst:4
 msgid "**Active Maintainers**"
-msgstr ""
+msgstr "**活跃的维护者**"
 
 #: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:39
 msgid "Name"
-msgstr ""
+msgstr "名字"
 
 #: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:39
 msgid "Gerrit"
-msgstr ""
+msgstr "Gerrit"
 
 #: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:39
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:39
 msgid "Chat"
-msgstr ""
+msgstr "Chat"
 
 #: ../../source/MAINTAINERS.rst:7 ../../source/MAINTAINERS.rst:39
 msgid "email"
-msgstr ""
+msgstr "邮箱"
 
 #: ../../source/MAINTAINERS.rst:9
 msgid "Alessandro Sorniotti"
-msgstr ""
+msgstr "Alessandro Sorniotti"
 
 #: ../../source/MAINTAINERS.rst:9 ../../source/MAINTAINERS.rst:9
 msgid "ale-linux"
-msgstr ""
+msgstr "ale-linux"
 
 #: ../../source/MAINTAINERS.rst:9
 msgid "aso"
-msgstr ""
+msgstr "aso"
 
 #: ../../source/MAINTAINERS.rst:9
 msgid "ale.linux@sopit.net"
-msgstr ""
+msgstr "ale.linux@sopit.net"
 
 #: ../../source/MAINTAINERS.rst:11
 msgid "Artem Barger"
-msgstr ""
+msgstr "Artem Barger"
 
 #: ../../source/MAINTAINERS.rst:11 ../../source/MAINTAINERS.rst:11
 #: ../../source/MAINTAINERS.rst:11
 msgid "c0rwin"
-msgstr ""
+msgstr "c0rwin"
 
 #: ../../source/MAINTAINERS.rst:11
 msgid "bartem@il.ibm.com"
-msgstr ""
+msgstr "bartem@il.ibm.com"
 
 #: ../../source/MAINTAINERS.rst:13
 msgid "Binh Nguyen"
-msgstr ""
+msgstr "Binh Nguyen"
 
 #: ../../source/MAINTAINERS.rst:13 ../../source/MAINTAINERS.rst:13
 #: ../../source/MAINTAINERS.rst:13
 msgid "binhn"
-msgstr ""
+msgstr "binhn"
 
 #: ../../source/MAINTAINERS.rst:13
 msgid "binh1010010110@gmail.com"
-msgstr ""
+msgstr "binh1010010110@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:41
 msgid "Chris Ferris"
-msgstr ""
+msgstr "Chris Ferris"
 
 #: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:41
 msgid "ChristopherFerris"
-msgstr ""
+msgstr "ChristopherFerris"
 
 #: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:41
 msgid "christo4ferris"
-msgstr ""
+msgstr "christo4ferris"
 
 #: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:41
 msgid "cbf"
-msgstr ""
+msgstr "cbf"
 
 #: ../../source/MAINTAINERS.rst:15 ../../source/MAINTAINERS.rst:41
 msgid "chris.ferris@gmail.com"
-msgstr ""
+msgstr "chris.ferris@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:43
 msgid "Dave Enyeart"
-msgstr ""
+msgstr "Dave Enyeart"
 
 #: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:17
 #: ../../source/MAINTAINERS.rst:43 ../../source/MAINTAINERS.rst:43
 msgid "denyeart"
-msgstr ""
+msgstr "denyeart"
 
 #: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:43
 msgid "dave.enyeart"
-msgstr ""
+msgstr "dave.enyeart"
 
 #: ../../source/MAINTAINERS.rst:17 ../../source/MAINTAINERS.rst:43
 msgid "enyeart@us.ibm.com"
-msgstr ""
+msgstr "enyeart@us.ibm.com"
 
 #: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:45
 msgid "Gari Singh"
-msgstr ""
+msgstr "Gari Singh"
 
 #: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:19
 #: ../../source/MAINTAINERS.rst:45 ../../source/MAINTAINERS.rst:45
 msgid "mastersingh24"
-msgstr ""
+msgstr "mastersingh24"
 
 #: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:45
 msgid "garisingh"
-msgstr ""
+msgstr "garisingh"
 
 #: ../../source/MAINTAINERS.rst:19 ../../source/MAINTAINERS.rst:45
 msgid "gari.r.singh@gmail.com"
-msgstr ""
+msgstr "gari.r.singh@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:21
 msgid "Jason Yellick"
-msgstr ""
+msgstr "Jason Yellick"
 
 #: ../../source/MAINTAINERS.rst:21 ../../source/MAINTAINERS.rst:21
 #: ../../source/MAINTAINERS.rst:21
 msgid "jyellick"
-msgstr ""
+msgstr "jyellick"
 
 #: ../../source/MAINTAINERS.rst:21
 msgid "jyellick@us.ibm.com"
-msgstr ""
+msgstr "jyellick@us.ibm.com"
 
 #: ../../source/MAINTAINERS.rst:23
 msgid "Jonathan Levi"
-msgstr ""
+msgstr "Jonathan Levi"
 
 #: ../../source/MAINTAINERS.rst:23 ../../source/MAINTAINERS.rst:23
 msgid "JonathanLevi"
-msgstr ""
+msgstr "JonathanLevi"
 
 #: ../../source/MAINTAINERS.rst:23
 msgid "hacera"
-msgstr ""
+msgstr "hacera"
 
 #: ../../source/MAINTAINERS.rst:23
 msgid "jonathan@hacera.com"
-msgstr ""
+msgstr "jonathan@hacera.com"
 
 #: ../../source/MAINTAINERS.rst:25
 msgid "Kostas Christidis"
-msgstr ""
+msgstr "Kostas Christidis"
 
 #: ../../source/MAINTAINERS.rst:25 ../../source/MAINTAINERS.rst:25
 msgid "kchristidis"
-msgstr ""
+msgstr "kchristidis"
 
 #: ../../source/MAINTAINERS.rst:25
 msgid "kostas"
-msgstr ""
+msgstr "kostas"
 
 #: ../../source/MAINTAINERS.rst:25
 msgid "kostas@gmail.com"
-msgstr ""
+msgstr "kostas@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:27
 msgid "Manish Sethi"
-msgstr ""
+msgstr "Manish Sethi"
 
 #: ../../source/MAINTAINERS.rst:27 ../../source/MAINTAINERS.rst:27
 #: ../../source/MAINTAINERS.rst:27
 msgid "manish-sethi"
-msgstr ""
+msgstr "manish-sethi"
 
 #: ../../source/MAINTAINERS.rst:27
 msgid "manish.sethi@gmail.com"
-msgstr ""
+msgstr "manish.sethi@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:29
 msgid "Matthew Sykes"
-msgstr ""
+msgstr "Matthew Sykes"
 
 #: ../../source/MAINTAINERS.rst:29 ../../source/MAINTAINERS.rst:29
 #: ../../source/MAINTAINERS.rst:29
 msgid "sykesm"
-msgstr ""
+msgstr "sykesm"
 
 #: ../../source/MAINTAINERS.rst:29
 msgid "sykesmat@us.ibm.com"
-msgstr ""
+msgstr "sykesmat@us.ibm.com"
 
 #: ../../source/MAINTAINERS.rst:31
 msgid "Srinivasan Muralidharan"
-msgstr ""
+msgstr "Srinivasan Muralidharan"
 
 #: ../../source/MAINTAINERS.rst:31 ../../source/MAINTAINERS.rst:31
 msgid "muralisr"
-msgstr ""
+msgstr "muralisr"
 
 #: ../../source/MAINTAINERS.rst:31
 msgid "muralisrini"
-msgstr ""
+msgstr "muralisrini"
 
 #: ../../source/MAINTAINERS.rst:31
 msgid "srinivasan.muralidharan99@gmail.com"
-msgstr ""
+msgstr "srinivasan.muralidharan99@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:33
 msgid "Yacov Manevich"
-msgstr ""
+msgstr "Yacov Manevich"
 
 #: ../../source/MAINTAINERS.rst:33 ../../source/MAINTAINERS.rst:33
 #: ../../source/MAINTAINERS.rst:33

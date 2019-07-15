@@ -175,10 +175,15 @@ msgid ""
 "of contributions and reviews (a month or more) demonstrating a renewed "
 "commitment to the project."
 msgstr ""
+"项目的维护者会时不时地考虑添加或者删除维护者。现有的维护者可以提交变更到 :doc:`MAINTAINERS.rst <MAINTAINERS>` "
+"文件中。一个提名的贡献者可以由大多数现有的维护者批准通过成为正式的维护者。一旦批准通过，变更就会被合并，相应的维护者就会在维护者的组中被添加（或者移除）。维护者可能会因为明确的辞职、长时间的不活动（超过3个月或者更长的时间），或者因为违反相关的"
+" `行为准则 <https://wiki.hyperledger.org/community/hyperledger-project-code-of-"
+"conduct>`__ "
+"或持续表现出糟糕的判断而被移出维护者的队列。在持续地(一个月或更长时间)恢复对项目的贡献和审查，以显示对项目的新义务之后，应恢复因不活动而被删除的维护人员。"
 
 #: ../../source/CONTRIBUTING.rst:84
 msgid "Release cadence"
-msgstr ""
+msgstr "发布节奏"
 
 #: ../../source/CONTRIBUTING.rst:86
 msgid ""
@@ -189,10 +194,13 @@ msgid ""
 "the maintainers. Follow the discussion on the #fabric-maintainers channel in"
 " Chat."
 msgstr ""
+"Fabric的维护者已经确定了每个季度大致的发布节奏 (请参考 `releases "
+"<https://github.com/hyperledger/fabric#releases>`__)。我们也在积极考虑采用LTS（long term"
+" support）的发布过程，虽然这些细节需要由具体的维护者决定。相关细节请参考在Chat的#fabric-maintainers频道中的讨论。"
 
 #: ../../source/CONTRIBUTING.rst:93
 msgid "Making Feature/Enhancement Proposals"
-msgstr ""
+msgstr "提出功能/改进建议"
 
 #: ../../source/CONTRIBUTING.rst:95
 msgid ""
@@ -211,24 +219,30 @@ msgid ""
 "introductory email to the fabric@lists.hyperledger.org mailing list linking "
 "the JIRA issue, and soliciting feedback."
 msgstr ""
+"首先，请回顾一下 `JIRA <https://jira.hyperledger.org/issues/?filter=12524>`__ "
+"确保之前没有已经开启或者关闭的相同功能的提案。如果没有，为了启动一个提案，我们建议创建一个JIRA的Epic或者Story， "
+"选择一个最合适的环境，附上一个链接或者内嵌一个提案的页面，说明这个特性是做什么的，如果可能的话，描述一下它应该如何实现。 "
+"这有助于说明为什么应该添加这个特性，例如指出需要该特性的用例，以及如果实现该特性的好处。 "
+"一旦JIRA的issue被创建了，并且描述中添加了附加的或者内嵌的页面或者一个公开的可访问的文档链接，就可以向 "
+"fabric@lists.hyperledger.org 邮件列表发送介绍性的电子邮件，邮件中附上JIRA issue的链接，并征求反馈。"
 
 #: ../../source/CONTRIBUTING.rst:110
 msgid ""
 "Discussion of the proposed feature should be conducted in the JIRA issue "
 "itself, so that we have a consistent pattern within our community as to "
 "where to find design discussion."
-msgstr ""
+msgstr "对于提出的特性的讨论应该在JIRA中对应的issue中进行，这样的话，在社区中我们就可以有一个统一的地方找到有关这个设计的讨论。"
 
 #: ../../source/CONTRIBUTING.rst:114
 msgid ""
 "Getting the support of three or more of the Hyperledger Fabric maintainers "
 "for the new feature will greatly enhance the probability that the feature's "
 "related CRs will be included in a subsequent release."
-msgstr ""
+msgstr "获得3个或者更多的维护者对新特性的支持，将会大幅提高该特性相关的变更申请被包含到下一次发布中的可能性。"
 
 #: ../../source/CONTRIBUTING.rst:119
 msgid "Maintainers meeting"
-msgstr ""
+msgstr "维护者会议"
 
 #: ../../source/CONTRIBUTING.rst:121
 msgid ""
@@ -237,33 +251,39 @@ msgid ""
 "`community calendar <https://wiki.hyperledger.org/community/calendar-public-"
 "meetings>`__ for details."
 msgstr ""
+"维护者会在 `Zoom <https://zoom.us/my/hyperledger.community>`__ "
+"上每隔一周的周三的东部时间9点举行双周会议。 请参考 `community calendar "
+"<https://wiki.hyperledger.org/community/calendar-public-meetings>`__ 获取具体信息。"
 
 #: ../../source/CONTRIBUTING.rst:126
 msgid ""
 "The purpose of the maintainers meeting is to plan for and review the "
 "progress of releases, and to discuss the technical and operational direction"
 " of the project and sub-projects."
-msgstr ""
+msgstr "维护者会议的目的是为了做版本计划或者审查版本发布的进度，同时讨论项目或者子项目的技术以及运营方向上的事宜。"
 
 #: ../../source/CONTRIBUTING.rst:130
 msgid ""
 "New feature/enhancement proposals as described above should be presented to "
 "a maintainers meeting for consideration, feedback and acceptance."
-msgstr ""
+msgstr "如上所述的新特性/改进建议应该在维护者的会议上进行探讨，反馈和接受。"
 
 #: ../../source/CONTRIBUTING.rst:134
 msgid "Release roadmap"
-msgstr ""
+msgstr "版本发布路线"
 
 #: ../../source/CONTRIBUTING.rst:136
 msgid ""
 "The Fabric release roadmap of epics is maintained in `JIRA "
 "<https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104>`__."
 msgstr ""
+"在 `JIRA "
+"<https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104>`__ "
+"上有Fabric相关的发布路线的史诗维护。"
 
 #: ../../source/CONTRIBUTING.rst:140
 msgid "Communications"
-msgstr ""
+msgstr "交流"
 
 #: ../../source/CONTRIBUTING.rst:142
 msgid ""
@@ -274,14 +294,19 @@ msgid ""
 "discussions/decisions to the `mailing list "
 "<https://lists.hyperledger.org/mailman/listinfo/hyperledger-fabric>`__."
 msgstr ""
+"我们使用 `RocketChat <https://chat.hyperledger.org/>`__ 来进行交流，并且使用 Google "
+"Hangouts™ 进行屏幕分享。我们的开发计划和优先级在 `JIRA <https://jira.hyperledger.org>`__ "
+"上进行发布，同时我们也花大量的时间在 `mailing list "
+"<https://lists.hyperledger.org/mailman/listinfo/hyperledger-fabric>`__ "
+"上进行讨论才做决定。"
 
 #: ../../source/CONTRIBUTING.rst:150
 msgid "Contribution guide"
-msgstr ""
+msgstr "贡献指南"
 
 #: ../../source/CONTRIBUTING.rst:153
 msgid "Install prerequisites"
-msgstr ""
+msgstr "安装前置条件"
 
 #: ../../source/CONTRIBUTING.rst:155
 msgid ""
@@ -290,10 +315,12 @@ msgid ""
 " on which you'll be developing blockchain applications and/or operating "
 "Hyperledger Fabric."
 msgstr ""
+"在我们开始之前，如果你还没有这样做，那你可能需要检查一下您是否已经在将要开发区块链应用或者运行Hyperledger Fabric 的平台上预先安装 "
+":doc:`prerequisites <prereqs>` 了运行所需的环境。"
 
 #: ../../source/CONTRIBUTING.rst:161
 msgid "Getting help"
-msgstr ""
+msgstr "获得帮助"
 
 #: ../../source/CONTRIBUTING.rst:163
 msgid ""
@@ -307,10 +334,15 @@ msgid ""
 " are in fact a great way to help improve the project as they highlight where"
 " our documentation could be clearer."
 msgstr ""
+"如果你试图寻找一种途径来寻找专家援助或者解决一些问题，我们的  `community "
+"<https://www.hyperledger.org/community>`__ 总是会为您提供帮助的。在 `Chat "
+"<https://chat.hyperledger.org/channel/fabric/>`__ ，IRC (#hyperledger on "
+"freenode.net) 以及 `mailing lists <https://lists.hyperledger.org/>`__ "
+"中都可以找到我们。 我们大多数人都很乐意提供帮助。唯一的问题是你不去问。问题实际上是帮助改进项目的好方法，因为它们使我们的文档更加清晰。"
 
 #: ../../source/CONTRIBUTING.rst:175
 msgid "Reporting bugs"
-msgstr ""
+msgstr "反馈错误"
 
 #: ../../source/CONTRIBUTING.rst:177
 msgid ""
@@ -322,12 +354,18 @@ msgid ""
 " reported, then you might add a comment that you also are interested in "
 "seeing the defect fixed."
 msgstr ""
+"如果你是一个用户，并且发现了错误，请使用  `JIRA "
+"<https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104>`__ "
+"来提交问题。在您创建新的JIRA问题之前，请尝试搜索是否有人已经提过类似的问题，确保之前没有人报告过。 "
+"如果之前有人报告过，那么你可以添加评论表明你也期望这个问题被修复。"
 
 #: ../../source/CONTRIBUTING.rst:184
 msgid ""
 "If the defect is security-related, please follow the Hyperledger `security "
 "bug reporting process <https://wiki.hyperledger.org/security>`__."
 msgstr ""
+"如果缺陷与安全相关，请遵循Hyperledger "
+"`安全问题处理流程<https://wiki.hyperledger.org/security>`__。"
 
 #: ../../source/CONTRIBUTING.rst:187
 msgid ""
@@ -340,10 +378,15 @@ msgid ""
 " should be broadcast to ``#fabric-documentation``, a database bug to "
 "``#fabric-ledger``, and so on..."
 msgstr ""
+"如果以前没有报告过，请创建一个新的JIRA。请尝试为其他人提供足够多的信息以重现该问题。该项目的维护人员应该在24小时之内回复您的问题。 "
+"如果没有，请通过评论提出问题，并要求对其进行评审。您还可以在  `Hyperledger Chat "
+"<https://chat.hyperledger.org>`__ 中将问题发布到相关的Hyperledger "
+"Fabric的频道中。比如，可以将一个文档问题在 #fabric-documentation 中进行广播，一个数据存储问题可以在 #fabric-"
+"ledger 中广播，以此类推。"
 
 #: ../../source/CONTRIBUTING.rst:197
 msgid "Submitting your fix"
-msgstr ""
+msgstr "提交你的修复"
 
 #: ../../source/CONTRIBUTING.rst:199
 msgid ""
@@ -351,16 +394,17 @@ msgid ""
 "provide a fix, we would welcome that gladly! Please assign the JIRA issue to"
 " yourself, then you can submit a change request (CR)."
 msgstr ""
+"如果你在JIRA上提交了你刚刚发现的问题，并希望提供一种修复方法，我们很乐意并且非常欢迎您这么做。请将JIRA问题分配给自己，然后您可以提交变更请求（CR）。"
 
 #: ../../source/CONTRIBUTING.rst:203
 msgid ""
 "If you need help with submitting your first CR, we have created a brief "
 ":doc:`tutorial <submit_cr>` for you."
-msgstr ""
+msgstr "如果你第一次提交CR的时候需要帮助，我们为你创建了一个简短的教程 :doc:`tutorial <submit_cr>` 。"
 
 #: ../../source/CONTRIBUTING.rst:207
 msgid "Fixing issues and working stories"
-msgstr ""
+msgstr "修复问题和认领正在进行的任务"
 
 #: ../../source/CONTRIBUTING.rst:209
 msgid ""
@@ -374,10 +418,14 @@ msgid ""
 "finish in a reasonable time, or add a comment saying that you are still "
 "actively working the issue if you need a little more time."
 msgstr ""
+"查看问题列表 `issues list <https://jira.hyperledger.org/issues/?filter=10580>`__ "
+"找到你感兴趣的内容。您也可以从 \"求助\"  `\"help-wanted\" "
+"<https://jira.hyperledger.org/issues/?filter=10147>`__ "
+"列表中寻找。明智的做法是从相对直接和可实现的任务开始，并且这个任务是未被分配的。如果没有分配给别人，请将问题分配给自己。如果你无法在合理的时间内完成，请考虑取消认领，如果你需要更多的时间，请添加评论说明你正在积极处理问题。"
 
 #: ../../source/CONTRIBUTING.rst:221
 msgid "Reviewing submitted Change Requests (CRs)"
-msgstr ""
+msgstr "审核提交的变更请求(CRs)"
 
 #: ../../source/CONTRIBUTING.rst:223
 msgid ""
@@ -393,16 +441,20 @@ msgid ""
 "maintainers in their evaluation. As a result, maintainers will be able to "
 "process CRs faster and everybody will gain from it."
 msgstr ""
+"另一种了解Hyperledger "
+"Fabric和参与贡献的方法是帮助维护人员审查公开的CR。实际上维护者的工作相对来说是比较困难的，他们需要审查提交的所有CR并且评估它们是否应该被合并。您可以审核代码或文档修改，测试更改的内容，并告知提交者和维护者您的想法。完成审核或测试后，您可以通过添加评论或投票的方式回复CR。评论诸如此类“我在系统X上测试过这个CR，是正确的”，或者“我在系统X上运行这个CR发现了一些错误”，这将帮助维护者进行评估。因此，维护人员也能够更快地处理CR，并且每个人都能从中获益。"
 
 #: ../../source/CONTRIBUTING.rst:236
 msgid ""
 "Just browse through `the open CRs on Gerrit "
 "<https://gerrit.hyperledger.org/r/#/q/status:open>`__ to get started."
 msgstr ""
+"浏览Gerrit上开放的CRs `the open CRs on Gerrit "
+"<https://gerrit.hyperledger.org/r/#/q/status:open>`__ 开始你的贡献。"
 
 #: ../../source/CONTRIBUTING.rst:240
 msgid "CR Aging"
-msgstr ""
+msgstr "变更请求的过期处理"
 
 #: ../../source/CONTRIBUTING.rst:242
 msgid ""
@@ -413,10 +465,11 @@ msgid ""
 "will be enforced by bots.  This is consistent with how other large projects "
 "manage their CR backlog."
 msgstr ""
+"随着Fabric项目的发展，公开CRs的积累也在增加。几乎所有项目都面临的一个问题是，有效地管理积压的CRs，Fabric也不例外。为了保持Fabric积压的CRs和相关项目CRs的可管理性，我们引入了一个由机器人执行的老化策略。这与其他大型项目管理其积压的CR的方式是一致的。"
 
 #: ../../source/CONTRIBUTING.rst:250
 msgid "CR Aging Policy"
-msgstr ""
+msgstr "变更请求过期处理策略"
 
 #: ../../source/CONTRIBUTING.rst:252
 msgid ""
@@ -429,6 +482,7 @@ msgid ""
 "submitted, even if it has activity, it will be flagged for maintainer "
 "review."
 msgstr ""
+"Fabric项目维护者将自动监视所有CR活动，以确定是否有错误。如果CR在两周内没有更新，则会添加一条提醒评论，要求更新CR以处理任何未完成的评论，如果CR将被撤销，则会抛弃CR。如果一个拖延2周的CR再过2周还没有更新，它将被自动放弃。如果一个CR在最初提交时已经超过2个月，即使它有活动，它也会被标记以供维护者检查。"
 
 #: ../../source/CONTRIBUTING.rst:260
 msgid ""
@@ -436,6 +490,8 @@ msgid ""
 "hours (3 days), it will be flagged to the #fabric-pr-review channel daily "
 "until it receives a review comment(s)."
 msgstr ""
+"If a submitted CR has passed all validation but has not been reviewed in 72 hours (3 days), it will be flagged to the #fabric-pr-review channel daily until it receives a review comment(s).\n"
+"如果提交的CR通过了所有验证，但在72小时(3天)内没有被评审，则每天将其标记到#fabric-pr-review 频道，直到收到评审意见为止。"
 
 #: ../../source/CONTRIBUTING.rst:264
 msgid ""
@@ -444,20 +500,25 @@ msgid ""
 "chaincode-node, fabric-chaincode-java, fabric-chaincode-evm, fabric-"
 "baseimage, and fabric-amcl)."
 msgstr ""
+"本政策适用于所有正式的Fabric项目(fabric、fabric-ca、fabric-samples、fabric-test、fabric-sdk-"
+"node、fabric-sdk-java、fabric-chaincode-node、fabric-chaincode-java、fabric-"
+"chaincode-evm、fabric-baseimage、fabric-amcl)。"
 
 #: ../../source/CONTRIBUTING.rst:270
 msgid "Setting up development environment"
-msgstr ""
+msgstr "设置开发环境"
 
 #: ../../source/CONTRIBUTING.rst:272
 msgid ""
 "Next, try :doc:`building the project <dev-setup/build>` in your local "
 "development environment to ensure that everything is set up correctly."
 msgstr ""
+"接下来，在本地开发环境中构建项目 :doc:`building the project <dev-setup/build>` "
+"，以确保所有配置都是正确的。"
 
 #: ../../source/CONTRIBUTING.rst:276
 msgid "What makes a good change request?"
-msgstr ""
+msgstr "什么是好的变更请求?"
 
 #: ../../source/CONTRIBUTING.rst:278
 msgid ""
@@ -466,6 +527,8 @@ msgid ""
 "is much easier to identify the culprit commit than if we have some composite"
 " change that impacts more of the code."
 msgstr ""
+"一次只包含一个变更。不是五个、3个、10个。仅仅一个变更。为什么呢？因为这样能限制变更的影响范围。 "
+"如果我们有一轮回归，那么就能证明一次影响较广的组合提交将是问题之源。"
 
 #: ../../source/CONTRIBUTING.rst:283
 msgid ""
@@ -475,6 +538,8 @@ msgid ""
 " should be some discussion around a proposed change and we want to link back"
 " to that from the change itself."
 msgstr ""
+"在JIRA的故事中包含变更的链接。为什么？因为 a) 我们希望追踪你的速度以便更好地判断我们可以传递什么信息以及何时传递。 b) "
+"因为我们可以证明这次变更是有效的。在很多情况下，会有很多围绕提交的变更产生的讨论，我们希望有个链接能指到变更本身。"
 
 #: ../../source/CONTRIBUTING.rst:290
 msgid ""
@@ -485,6 +550,8 @@ msgid ""
 "tests that demonstrate that your change does what it claims. Why? Because "
 "without this we have no clue whether our current code base actually works."
 msgstr ""
+"每次变更都包含单元或者集成测试（或者对已有测试的修改）。这不仅仅意味着积极的测试。同样包括一些异常测试来捕获错误。在你写代码的时候，你有责任去测试它并且证明你的变更是正确的。为什么呢？因为没有这些，"
+" 我们无法知道你的代码是否真的正确地工作。"
 
 #: ../../source/CONTRIBUTING.rst:298
 msgid ""
@@ -500,6 +567,12 @@ msgid ""
 "test/>`__ of unit testing for a good set of criteria to keep in mind for "
 "writing effective unit tests."
 msgstr ""
+"单元测试必须没有外部依赖。你应该使用 ``go test`` "
+"或者等同的测试方式来运行单元测试。任何需要外部依赖的测试（例如需要用脚本来运行另一个组件）应该适当的mocking。任何除了单元测试以外的测试根据定义都是集成测试。为什么？因为很多开源软件开发者都使用测试驱动的开发方式。"
+" "
+"他们关注一个目录下的测试用例，一旦代码变更了他们采用测试去判断他们的代码是否正确。相比当代码变更后运行整个项目来说，这是非常高效的。请参考单元测试的定义"
+" `this definition <http://artofunittesting.com/definition-of-a-unit-"
+"test/>`__ 在脑海中建立单元测试的标准，以此来写出高效的单元测试。"
 
 #: ../../source/CONTRIBUTING.rst:311
 msgid ""
@@ -514,13 +587,15 @@ msgid ""
 "will be forgiven;-) If you need to make a change that has broad impact or a "
 "bunch of generated code (protobufs, etc.). Again, there can be exceptions."
 msgstr ""
+"每个CR的代码行数尽量少。为什么？因为维护者每天同样也有工作。如果你发送1000或者2000行的代码， "
+"你认为维护者需要多久才能审查完你的代码？尽可能地保证你的变更在200-300行左右。如果你有一个比较大的变更，可以将它分解为几个比较小的相互独立的变更。如果你要添加一组新功能来满足一个需求，请在分别添加它们，并且每次添加都附带测试用例，然后编写使用这一组功能的代码来满足你的需求。当然，总会有例外。如果你增加一个小变动然后添加了300行测试代码，如果你需要做一个变更，而且影响比较广或者生成了很多代码（protobufs等），你将会被宽恕;-)。同样，也可能会有例外。"
 
 #: ../../source/CONTRIBUTING.rst:324
 msgid ""
 "Large change requests, e.g. those with more than 300 LOC are more likely "
 "than not going to receive a -2, and you'll be asked to refactor the change "
 "to conform with this guidance."
-msgstr ""
+msgstr "大的变更，例如那些大于300行的CR将更有可能收到-2的审核结果，并且你可能被要求重构以符合本指南。"
 
 #: ../../source/CONTRIBUTING.rst:328
 msgid ""
@@ -530,6 +605,7 @@ msgid ""
 " your subsequent requests may be held up because of review comments in the "
 "preceding requests."
 msgstr ""
+"不要堆叠你的变更请求（例如在先前的变更请求的本地分支提交你新的变更）除非它们是相关联的。这将最大幅度减少合并冲突，并且更快地合并。如果你堆叠你的变更请求，由于前面的请求中的审核注释，你后续的请求将被搁置。"
 
 #: ../../source/CONTRIBUTING.rst:334
 msgid ""
@@ -540,11 +616,13 @@ msgid ""
 "should also be in the body of the commit message. See the :doc:`complete "
 "requirements <Gerrit/changes>` for an acceptable change request."
 msgstr ""
+"提交信息要写的有意义。包括55个或者更少字符的标题，后面跟一行空行，然后跟上更全面的关于变更的描述。每个变更必须包括对应的变更的JIRA标识号(例如[FAB-1234])。这个可以写在标题中，但是同样需要写在消息正文中。查看可接受的合规变更的完整要求"
+" :doc:`complete requirements <Gerrit/changes>` 。"
 
 #: ../../source/CONTRIBUTING.rst:342
 msgid ""
 "That Gerrit will automatically create a hyperlink to the JIRA item. e.g."
-msgstr ""
+msgstr "Gerrit会自动创建超链接到JIRA的条目。例如"
 
 #: ../../source/CONTRIBUTING.rst:352
 msgid ""
@@ -553,10 +631,11 @@ msgid ""
 "further delays getting it merged and adds more work for you - to remediate "
 "the merge conflicts."
 msgstr ""
+"最后，要有回应。不要让一个变更请求因为评审意见而不了了之，这样会导致它需要进行rebase。这只会进一步延迟合并，给你带来更多修复合并冲突的工作。"
 
 #: ../../source/CONTRIBUTING.rst:358
 msgid "Legal stuff"
-msgstr ""
+msgstr "法律材料"
 
 #: ../../source/CONTRIBUTING.rst:360
 msgid ""
@@ -565,6 +644,9 @@ msgid ""
 "<https://github.com/hyperledger/fabric/blob/master/docs/source/dev-"
 "setup/headers.txt>`__."
 msgstr ""
+"**Note:** 每一个源文件必须包括Apache Software License 2.0。参考模板 `license header "
+"<https://github.com/hyperledger/fabric/blob/master/docs/source/dev-"
+"setup/headers.txt>`__."
 
 #: ../../source/CONTRIBUTING.rst:364
 msgid ""
@@ -576,25 +658,30 @@ msgid ""
 "<https://elinux.org/Developer_Certificate_Of_Origin>`__ uses to manage code "
 "contributions."
 msgstr ""
+"我们尽可能让贡献变得简单。这个协议为我们提供了贡献相关的法律相关的知识。我们使用和Linux® Kernel社区 `community "
+"<https://elinux.org/Developer_Certificate_Of_Origin>`__ 一样的管理贡献的方法，即 "
+"`Developer's Certificate of Origin 1.1 (DCO) "
+"<https://github.com/hyperledger/fabric/blob/master/docs/source/DCO1.1.txt>`__"
+" 来管理Hyperledger Fabric。"
 
 #: ../../source/CONTRIBUTING.rst:371
 msgid ""
 "We simply ask that when submitting a patch for review, the developer must "
 "include a sign-off statement in the commit message."
-msgstr ""
+msgstr "我们只要求在提交要审核的补丁时，开发者要在提交信息中带上他们的sign-off签名即可。"
 
 #: ../../source/CONTRIBUTING.rst:374
 msgid ""
 "Here is an example Signed-off-by line, which indicates that the submitter "
 "accepts the DCO:"
-msgstr ""
+msgstr "这里是一个Signed-off-by line的签名例子，指示了提交者接受DCO约定："
 
 #: ../../source/CONTRIBUTING.rst:381
 msgid ""
 "You can include this automatically when you commit a change to your local "
 "git repository using ``git commit -s``."
-msgstr ""
+msgstr "你可以使用 ``git commit -s`` 在提交的时候来自动带上你的签名。"
 
 #: ../../source/CONTRIBUTING.rst:385
 msgid "Related Topics"
-msgstr ""
+msgstr "相关的主题"
