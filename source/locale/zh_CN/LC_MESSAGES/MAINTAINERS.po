@@ -239,127 +239,127 @@ msgstr "Yacov Manevich"
 #: ../../source/MAINTAINERS.rst:33 ../../source/MAINTAINERS.rst:33
 #: ../../source/MAINTAINERS.rst:33
 msgid "yacovm"
-msgstr ""
+msgstr "yacovm"
 
 #: ../../source/MAINTAINERS.rst:33
 msgid "yacovm@il.ibm.com"
-msgstr ""
+msgstr "yacovm@il.ibm.com"
 
 #: ../../source/MAINTAINERS.rst:36
 msgid "**Release Managers**"
-msgstr ""
+msgstr "**版本发布管理员**"
 
 #: ../../source/MAINTAINERS.rst:48
 msgid "**Retired Maintainers**"
-msgstr ""
+msgstr "**退休的维护者**"
 
 #: ../../source/MAINTAINERS.rst:51
 msgid "Gabor Hosszu"
-msgstr ""
+msgstr "Gabor Hosszu"
 
 #: ../../source/MAINTAINERS.rst:51
 msgid "hgabre"
-msgstr ""
+msgstr "hgabre"
 
 #: ../../source/MAINTAINERS.rst:51
 msgid "gabre"
-msgstr ""
+msgstr "gabre"
 
 #: ../../source/MAINTAINERS.rst:51
 msgid "hgabor"
-msgstr ""
+msgstr "hgabor"
 
 #: ../../source/MAINTAINERS.rst:51
 msgid "gabor@digitalasset.com"
-msgstr ""
+msgstr "gabor@digitalasset.com"
 
 #: ../../source/MAINTAINERS.rst:53
 msgid "Sheehan Anderson"
-msgstr ""
+msgstr "Sheehan Anderson"
 
 #: ../../source/MAINTAINERS.rst:53 ../../source/MAINTAINERS.rst:53
 msgid "sheehan"
-msgstr ""
+msgstr "sheehan"
 
 #: ../../source/MAINTAINERS.rst:53
 msgid "srderson"
-msgstr ""
+msgstr "srderson"
 
 #: ../../source/MAINTAINERS.rst:53
 msgid "sranderson@gmail.com"
-msgstr ""
+msgstr "sranderson@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:55
 msgid "Tamas Blummer"
-msgstr ""
+msgstr "Tamas Blummer"
 
 #: ../../source/MAINTAINERS.rst:55
 msgid "TamasBlummer"
-msgstr ""
+msgstr "TamasBlummer"
 
 #: ../../source/MAINTAINERS.rst:55
 msgid "tamasblummer"
-msgstr ""
+msgstr "tamasblummer"
 
 #: ../../source/MAINTAINERS.rst:55
 msgid "tamas"
-msgstr ""
+msgstr "tamas"
 
 #: ../../source/MAINTAINERS.rst:55
 msgid "tamas@digitalasset.com"
-msgstr ""
+msgstr "tamas@digitalasset.com"
 
 #: ../../source/MAINTAINERS.rst:57
 msgid "Jim Zhang"
-msgstr ""
+msgstr "Jim Zhang"
 
 #: ../../source/MAINTAINERS.rst:57 ../../source/MAINTAINERS.rst:57
 #: ../../source/MAINTAINERS.rst:57
 msgid "jimthematrix"
-msgstr ""
+msgstr "jimthematrix"
 
 #: ../../source/MAINTAINERS.rst:57
 msgid "jim\\_the\\_matrix@hotmail.com"
-msgstr ""
+msgstr "jim\\_the\\_matrix@hotmail.com"
 
 #: ../../source/MAINTAINERS.rst:59
 msgid "Yaoguo Jiang"
-msgstr ""
+msgstr "Yaoguo Jiang"
 
 #: ../../source/MAINTAINERS.rst:59 ../../source/MAINTAINERS.rst:59
 #: ../../source/MAINTAINERS.rst:59
 msgid "jiangyaoguo"
-msgstr ""
+msgstr "jiangyaoguo"
 
 #: ../../source/MAINTAINERS.rst:59
 msgid "jiangyaoguo@gmail.com"
-msgstr ""
+msgstr "jiangyaoguo@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:61
 msgid "Greg Haskins"
-msgstr ""
+msgstr "Greg Haskins"
 
 #: ../../source/MAINTAINERS.rst:61
 msgid "greg.haskins"
-msgstr ""
+msgstr "greg.haskins"
 
 #: ../../source/MAINTAINERS.rst:61 ../../source/MAINTAINERS.rst:61
 msgid "ghaskins"
-msgstr ""
+msgstr "ghaskins"
 
 #: ../../source/MAINTAINERS.rst:61
 msgid "gregory.haskins@gmail.com"
-msgstr ""
+msgstr "gregory.haskins@gmail.com"
 
 #: ../../source/MAINTAINERS.rst:63
 msgid "Keith Smith"
-msgstr ""
+msgstr "Keith Smith"
 
 #: ../../source/MAINTAINERS.rst:63 ../../source/MAINTAINERS.rst:63
 #: ../../source/MAINTAINERS.rst:63
 msgid "smithbk"
-msgstr ""
+msgstr "smithbk"
 
 #: ../../source/MAINTAINERS.rst:63
 msgid "bksmith@us.ibm.com"
-msgstr ""
+msgstr "bksmith@us.ibm.com"

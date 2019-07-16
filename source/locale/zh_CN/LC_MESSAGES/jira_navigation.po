@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 19:53+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../source/jira_navigation.rst:2
 msgid "Using Jira to understand current work items"
-msgstr ""
+msgstr "使用Jira来了解当前的工作流项"
 
 #: ../../source/jira_navigation.rst:4
 msgid ""
@@ -28,6 +32,8 @@ msgid ""
 "community roadmap. The requirements for the roadmap are being tracked in "
 "`Jira <https://jira.hyperledger.org/>`__."
 msgstr ""
+"本文档旨在创建进一步了解基于社区路线图的Hyperledger Fabric v1架构方面的工作进展。 路线图在  `Jira "
+"<https://jira.hyperledger.org/>`__ 可追踪。"
 
 #: ../../source/jira_navigation.rst:9
 msgid ""
@@ -36,16 +42,18 @@ msgid ""
 "We’ve done this via boards. To see these boards and the priorities click on "
 "**Boards** -> **Manage Boards**:"
 msgstr ""
+"采用Sprints来管理，它能更好的追踪反馈的问题，并且展示问题实现的优先级列表。我们使用面板来实现这些功能。通过点击 **Boards** -> "
+"**Manage Boards** 来查看这些面板："
 
 #: ../../source/jira_navigation.rst:17 ../../source/jira_navigation.rst:24
 #: ../../source/jira_navigation.rst:35 ../../source/jira_navigation.rst:43
 #: ../../source/jira_navigation.rst:60
 msgid "Jira boards"
-msgstr ""
+msgstr "Jira 面板"
 
 #: ../../source/jira_navigation.rst:19
 msgid "Now on the left side of the screen click on **All boards**:"
-msgstr ""
+msgstr "现在在左侧点击  **All boards** ："
 
 #: ../../source/jira_navigation.rst:26
 msgid ""
@@ -55,47 +63,49 @@ msgid ""
 "the column **Board type** is labeled **Scrum**. For example the **Board "
 "Name** Consensus:"
 msgstr ""
+"在这里，你可以看到创建的所有公开的（或者有权限限制的）面板。 如果你想看当前sprint下的条目，请设置  **Visibility** 为 **All Users** ，设置 **Board type** 是 **Scrum* 的。看下例， **Board Name**\n"
+"Consensus:"
 
 #: ../../source/jira_navigation.rst:37
 msgid ""
 "When you click on Consensus under **Board name** you will be directed to a "
 "page that contains the following columns:"
-msgstr ""
+msgstr "当你点击了 **Board name** 下的Consensus之后，你会被导航到下面的列中："
 
 #: ../../source/jira_navigation.rst:45
 msgid "The meanings to these columns are as follows:"
-msgstr ""
+msgstr "这些列的含义如下："
 
 #: ../../source/jira_navigation.rst:47
 msgid ""
 "Backlog – list of items slated for the current sprint (sprints are defined "
 "in 2 week iterations), but are not currently in progress"
-msgstr ""
+msgstr "Backlog – 为当前sprint计划的条目 (sprints的定义是2周一个迭代)，但是还没有开始执行"
 
 #: ../../source/jira_navigation.rst:49
 msgid ""
 "In progress – items currently being worked by someone in the community."
-msgstr ""
+msgstr "In progress – 有人正在进行的条目。"
 
 #: ../../source/jira_navigation.rst:51
 msgid "In Review – items waiting to be reviewed and merged in Gerrit"
-msgstr ""
+msgstr "In Review – 在Gerrit中正在等待审核和合并的条目。"
 
 #: ../../source/jira_navigation.rst:52
 msgid "Done – items merged and complete in the sprint."
-msgstr ""
+msgstr "Done – 在本sprint中已经合并完成的条目。"
 
 #: ../../source/jira_navigation.rst:54
 msgid ""
 "If you want to see all items in the backlog for a given feature set, click "
 "on the stacked rows on the left navigation of the screen:"
-msgstr ""
+msgstr "如果你希望查看某个特性的backlog的所有条目，点击导航栏左侧堆栈形式的按钮即可："
 
 #: ../../source/jira_navigation.rst:62
 msgid ""
 "This shows you items slated for the current sprint at the top, and all items"
 " in the backlog at the bottom. Items are listed in priority order."
-msgstr ""
+msgstr "这张图展示了当前的sprint的条目，所有待办的条目。所有的条目都按优先级排列。"
 
 #: ../../source/jira_navigation.rst:65
 msgid ""
@@ -104,3 +114,4 @@ msgid ""
 "higher priority, please add comments directly to the Jira item. All feedback"
 " and help is very much appreciated."
 msgstr ""
+"如果有一个正在进行的条目你感兴趣，或者你针对一些问题想了解更多的信息，或者你觉得有些条目有必要提高优先级，请在Jira上直接评论。感谢所有有帮助的反馈和帮助。"
