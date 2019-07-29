@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 20:03+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../source/Gerrit/best-practices.rst:2
 msgid "Gerrit Recommended Practices"
-msgstr ""
+msgstr "Gerrit 推荐的练习"
 
 #: ../../source/Gerrit/best-practices.rst:4
 msgid ""
@@ -27,11 +31,11 @@ msgid ""
 "effectively. The intent is to show how content can be submitted easily. Use "
 "the recommended practices to reduce your troubleshooting time and improve "
 "participation in the community."
-msgstr ""
+msgstr "本文提供了一些最佳实践来帮助您更有效地使用Gerrit。其目的是展示如何轻松提交内容。使用推荐的实践来减少故障排除时间，提高社区的参与度。"
 
 #: ../../source/Gerrit/best-practices.rst:10
 msgid "Browsing the Git Tree"
-msgstr ""
+msgstr "浏览Git Tree"
 
 #: ../../source/Gerrit/best-practices.rst:12
 msgid ""
@@ -41,10 +45,13 @@ msgid ""
 " side. Now, ``gitweb`` loads your selection on the Git web interface and "
 "redirects appropriately."
 msgstr ""
+"访问 `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__ "
+"然后选择 ``Projects --> List --> SELECT-PROJECT --> Branches``。选择你感兴趣的分支，点击右手边的 "
+"``gitweb`` 。现在，``gitweb`` 会加载你的部分，并进行适当的重定向。"
 
 #: ../../source/Gerrit/best-practices.rst:20
 msgid "Watching a Project"
-msgstr ""
+msgstr "关注一个项目"
 
 #: ../../source/Gerrit/best-practices.rst:22
 msgid ""
@@ -52,21 +59,24 @@ msgid ""
 " then select ``Settings``, located on the top right corner. Select ``Watched"
 " Projects`` and then add any projects that interest you."
 msgstr ""
+"访问 `Gerrit "
+"<https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__，然后选择右上角的 "
+"``Settings``。选择``Watched Projects``，然后添加任何你感兴趣的项目。"
 
 #: ../../source/Gerrit/best-practices.rst:28
 msgid "Commit Messages"
-msgstr ""
+msgstr "提交信息"
 
 #: ../../source/Gerrit/best-practices.rst:30
 msgid ""
 "Gerrit follows the Git commit message format. Ensure the headers are at the "
 "bottom and don't contain blank lines between one another. The following "
 "example shows the format and content expected in a commit message:"
-msgstr ""
+msgstr "Gerrit遵循Git提交消息格式。确保标题位于底部，并且彼此之间不包含空行。下面的示例显示了提交消息中期望的格式和内容:"
 
 #: ../../source/Gerrit/best-practices.rst:35
 msgid "Brief (no more than 55 chars) one line description."
-msgstr ""
+msgstr "简短的(不超过55个字符)一行描述。"
 
 #: ../../source/Gerrit/best-practices.rst:37
 msgid ""
@@ -74,213 +84,219 @@ msgid ""
 " changed and how it was tested. Note also any changes to documentation made "
 "to remain consistent with the code changes, wrapping text at 72 chars/line."
 msgstr ""
+"详细总结所做的更改，包括为什么(动机)、更改了什么以及如何进行测试。还请注意为保持代码和文档的一致性而对文档所做的任何更改，文本的格式应是72字符/行。"
 
 #: ../../source/Gerrit/best-practices.rst:42
 msgid "Jira: FAB-100"
-msgstr ""
+msgstr "Jira: FAB-100"
 
 #: ../../source/Gerrit/best-practices.rst:43
 msgid "Change-Id: LONGHEXHASH"
-msgstr ""
+msgstr "Change-Id: LONGHEXHASH"
 
 #: ../../source/Gerrit/best-practices.rst:44
 msgid "Signed-off-by: Your Name your.email\\@example.org"
-msgstr ""
+msgstr "Signed-off-by: Your Name your.email\\@example.org"
 
 #: ../../source/Gerrit/best-practices.rst:45
 msgid "AnotherExampleHeader: An Example of another Value"
-msgstr ""
+msgstr "AnotherExampleHeader: An Example of another Value"
 
 #: ../../source/Gerrit/best-practices.rst:47
 msgid ""
 "The Gerrit server provides a precommit hook to autogenerate the Change-Id "
 "which is one time use."
-msgstr ""
+msgstr "Gerrit服务器提供了一个预提交hook来自动生成Change-Id，这是一次性使用。"
 
 #: ../../source/Gerrit/best-practices.rst:50
 msgid ""
 "**Recommended reading:** `How to Write a Git Commit Message "
 "<https://chris.beams.io/posts/git-commit/>`__"
 msgstr ""
+"**推荐阅读：** `如何写 Git Commit Message <https://chris.beams.io/posts/git-"
+"commit/>`__"
 
 #: ../../source/Gerrit/best-practices.rst:54
 msgid "Avoid Pushing Untested Work to a Gerrit Server"
-msgstr ""
+msgstr "避免往 Gerrit 服务器推送未测试过的工作"
 
 #: ../../source/Gerrit/best-practices.rst:56
 msgid "To avoid pushing untested work to Gerrit."
-msgstr ""
+msgstr "避免向Gerrit推送未测试过的工作。"
 
 #: ../../source/Gerrit/best-practices.rst:58
 msgid ""
 "Check your work at least three times before pushing your change to Gerrit. "
 "Be mindful of what information you are publishing."
-msgstr ""
+msgstr "在将更改提交给Gerrit之前，至少检查三次。谨慎发布你的信息。"
 
 #: ../../source/Gerrit/best-practices.rst:62
 msgid "Keeping Track of Changes"
-msgstr ""
+msgstr "持续跟踪变更"
 
 #: ../../source/Gerrit/best-practices.rst:64
 msgid "Set Gerrit to send you emails:"
-msgstr ""
+msgstr "设置 Gerrit 自动发送邮件给你："
 
 #: ../../source/Gerrit/best-practices.rst:66
 msgid ""
 "Gerrit will add you to the email distribution list for a change if a "
 "developer adds you as a reviewer, or if you comment on a specific Patch Set."
-msgstr ""
+msgstr "如果开发人员将您添加为审核者，或者您对特定的补丁集进行了评论，Gerrit会将您添加到变更的电子邮件分发列表中。"
 
 #: ../../source/Gerrit/best-practices.rst:70
 msgid ""
 "Opening a change in Gerrit's review interface is a quick way to follow that "
 "change."
-msgstr ""
+msgstr "在Gerrit的审核接口中打开更改是跟踪更改的一种快速方法。"
 
 #: ../../source/Gerrit/best-practices.rst:73
 msgid ""
 "Watch projects in the Gerrit projects section at ``Gerrit``, select at least"
 " *New Changes, New Patch Sets, All Comments* and *Submitted Changes*."
 msgstr ""
+"在“Gerrit”中的Gerrit projects部分查看其中的项目，选择至少*New Changes, New Patch Sets, All "
+"Comments* 和 *Submitted Changes*这几种类型。"
 
 #: ../../source/Gerrit/best-practices.rst:77
 msgid ""
 "Always track the projects you are working on; also see the feedback/comments"
 " mailing list to learn and help others ramp up."
-msgstr ""
+msgstr "一直跟踪你正在做的项目；也可以查看反馈/评论邮件列表来学习或者帮助其他人提升。"
 
 #: ../../source/Gerrit/best-practices.rst:81
 msgid "Topic branches"
-msgstr ""
+msgstr "主题分支"
 
 #: ../../source/Gerrit/best-practices.rst:83
 msgid ""
 "Topic branches are temporary branches that you push to commit a set of "
 "logically-grouped dependent commits:"
-msgstr ""
+msgstr "主题分支是临时分支，您可以通过它提交一组逻辑分组的依赖提交："
 
 #: ../../source/Gerrit/best-practices.rst:86
 msgid ""
 "To push changes from ``REMOTE/master`` tree to Gerrit for being reviewed as "
 "a topic in **TopicName** use the following command as an example:"
-msgstr ""
+msgstr "从 ``REMOTE/master`` 树推送变更到Gerrit作为一个名为**TopicName**的主题来审核，命令如下："
 
 #: ../../source/Gerrit/best-practices.rst:90
 msgid "::"
-msgstr ""
+msgstr "::"
 
 #: ../../source/Gerrit/best-practices.rst:90
 msgid "$ git push REMOTE HEAD:refs/for/master/TopicName"
-msgstr ""
+msgstr "$ git push REMOTE HEAD:refs/for/master/TopicName"
 
 #: ../../source/Gerrit/best-practices.rst:92
 msgid ""
 "The topic will show up in the review ``UI`` and in the ``Open Changes "
 "List``. Topic branches will disappear from the master tree when its content "
 "is merged."
-msgstr ""
+msgstr "这个主题将出现在审核 ``UI``和 ``Open Changes List``中。当主树的内容合并时，主题分支将从主树中消失。"
 
 #: ../../source/Gerrit/best-practices.rst:97
 msgid "Creating a Cover Letter for a Topic"
-msgstr ""
+msgstr "为主题写简介"
 
 #: ../../source/Gerrit/best-practices.rst:99
 msgid ""
 "You may decide whether or not you'd like the cover letter to appear in the "
 "history."
-msgstr ""
+msgstr "你可以决定是否让简介出现在历史记录里。"
 
 #: ../../source/Gerrit/best-practices.rst:102
 msgid "To make a cover letter that appears in the history, use this command:"
-msgstr ""
+msgstr "要历史记录里出现简介，可以使用以下命令："
 
 #: ../../source/Gerrit/best-practices.rst:108
 msgid ""
 "Edit the commit message, this message then becomes the cover letter. The "
 "command used doesn't change any files in the source tree."
-msgstr ""
+msgstr "编辑提交消息，该消息将成为简介。使用的命令不会更改源码树中的任何文件。"
 
 #: ../../source/Gerrit/best-practices.rst:111
 msgid ""
 "To make a cover letter that doesn't appear in the history follow these "
 "steps:"
-msgstr ""
+msgstr "要使历史记录里不出现简介，可以遵循以下步骤："
 
 #: ../../source/Gerrit/best-practices.rst:0
 msgid ""
 "Put the empty commit at the end of your commits list so it can be ignored"
-msgstr ""
+msgstr "将空提交放在提交列表的末尾，"
 
 #: ../../source/Gerrit/best-practices.rst:0
 msgid "without having to rebase."
-msgstr ""
+msgstr "不必重新rebase。"
 
 #: ../../source/Gerrit/best-practices.rst:118
 msgid "Now add your commits"
-msgstr ""
+msgstr "现在添加你的提交"
 
 #: ../../source/Gerrit/best-practices.rst:126
 msgid ""
 "Finally, push the commits to a topic branch. The following command is an "
 "example:"
-msgstr ""
+msgstr "最后，将提交推到主题分支。下面的命令是一个例子："
 
 #: ../../source/Gerrit/best-practices.rst:133
 msgid ""
 "If you already have commits but you want to set a cover letter, create an "
 "empty commit for the cover letter and move the commit so it becomes the last"
 " commit on the list. Use the following command as an example:"
-msgstr ""
+msgstr "如果您已经提交了，但是您想要设置一个简介，那么为简介创建一个空的提交，并移动提交，使其成为列表中的最后一个提交。以以下命令为例："
 
 #: ../../source/Gerrit/best-practices.rst:141
 msgid ""
 "Be careful to uncomment the commit before moving it. ``#Commits`` is the sum"
 " of the commits plus your new cover letter."
-msgstr ""
+msgstr "在移动提交之前，请注意取消注释。``#Commits``是提交和新简介的总和。"
 
 #: ../../source/Gerrit/best-practices.rst:145
 msgid "Finding Available Topics"
-msgstr ""
+msgstr "找到可用的主题"
 
 #: ../../source/Gerrit/best-practices.rst:152
 msgid ""
 "`gerrit.hyperledger.org <https://gerrit.hyperledger.org>`__ Is the current "
 "URL where the project is hosted."
 msgstr ""
+"`gerrit.hyperledger.org <https://gerrit.hyperledger.org>`__ 是项目所在的当前URL。"
 
 #: ../../source/Gerrit/best-practices.rst:154
 msgid ""
 "*status* Indicates the topic's current status: open , merged, abandoned, "
 "draft, merge conflict."
-msgstr ""
+msgstr "*status* 指示主题的当前状态： open , merged, abandoned, draft, merge conflict。"
 
 #: ../../source/Gerrit/best-practices.rst:156
 msgid ""
 "*project* Refers to the current name of the project, in this case fabric."
-msgstr ""
+msgstr "*project* 指项目的当前名称，本例中是fabric。"
 
 #: ../../source/Gerrit/best-practices.rst:158
 msgid "*branch* The topic is searched at this branch."
-msgstr ""
+msgstr "*branch* 在本分支中搜索主题。"
 
 #: ../../source/Gerrit/best-practices.rst:159
 msgid ""
 "*topic* The name of an specific topic, leave it blank to include them all."
-msgstr ""
+msgstr "*topic* 特定主题的名称，留空可以包含它们全部。"
 
 #: ../../source/Gerrit/best-practices.rst:161
 msgid "*sort* Sorts the found topics, in this case by update (-u)."
-msgstr ""
+msgstr "*sort* 将找到的主题排序，本例中是使用update (-u)。"
 
 #: ../../source/Gerrit/best-practices.rst:164
 msgid "Downloading or Checking Out a Change"
-msgstr ""
+msgstr "下载或者检出一个变更"
 
 #: ../../source/Gerrit/best-practices.rst:166
 msgid ""
 "In the review UI, on the top right corner, the **Download** link provides a "
 "list of commands and hyperlinks to checkout or download diffs or files."
-msgstr ""
+msgstr "在审核界面右上角， **Download** 链接提供了一个命令列表和检出或下载差异或文件的超链接。"
 
 #: ../../source/Gerrit/best-practices.rst:170
 msgid ""
@@ -290,28 +306,30 @@ msgid ""
 "<https://wiki.openstack.org/wiki/Documentation/HowTo/FirstTimers>`__ for the"
 " installation process."
 msgstr ""
+"我们建议使用 *git review* 插件。安装git review的步骤超出了本文档的范围。参考`git review documentation "
+"<https://wiki.openstack.org/wiki/Documentation/HowTo/FirstTimers>`__ 学习安装流程。"
 
 #: ../../source/Gerrit/best-practices.rst:176
 msgid ""
 "To check out a specific change using Git, the following command usually "
 "works:"
-msgstr ""
+msgstr "使用Git检出特定的更改，通常可以使用以下命令："
 
 #: ../../source/Gerrit/best-practices.rst:183
 msgid ""
 "If you don't have Git-review installed, the following commands will do the "
 "same thing:"
-msgstr ""
+msgstr "如果你没有安装 Git-review，可参考以下命令："
 
 #: ../../source/Gerrit/best-practices.rst:190
 msgid ""
 "For example, for the 4th version of change 2464, NN is the first two digits "
 "(24):"
-msgstr ""
+msgstr "例如，第4版本的变更2464，NN是指变更ID的前两位数字(24)："
 
 #: ../../source/Gerrit/best-practices.rst:198
 msgid "Using Draft Branches"
-msgstr ""
+msgstr "使用草稿分支"
 
 #: ../../source/Gerrit/best-practices.rst:200
 msgid ""
@@ -319,79 +337,80 @@ msgid ""
 "your change. The Draft Branches are pushed to "
 "``refs/drafts/master/TopicName``"
 msgstr ""
+"您可以使用draft分支在发布变更之前添加特定的审核人员。草稿分支被推送到了 ``refs/drafts/master/TopicName``。"
 
 #: ../../source/Gerrit/best-practices.rst:204
 msgid "The next command ensures a local branch is created:"
-msgstr ""
+msgstr "下面的命令确保创建一个本地分支："
 
 #: ../../source/Gerrit/best-practices.rst:210
 msgid ""
 "The next command pushes your change to the drafts branch under "
 "**TopicName**:"
-msgstr ""
+msgstr "下面的命令可以将你的变更推送到**TopicName**名下的drafts分支："
 
 #: ../../source/Gerrit/best-practices.rst:218
 msgid "Using Sandbox Branches"
-msgstr ""
+msgstr "使用沙箱分支"
 
 #: ../../source/Gerrit/best-practices.rst:220
 msgid ""
 "You can create your own branches to develop features. The branches are "
 "pushed to the ``refs/sandbox/USERNAME/BRANCHNAME`` location."
-msgstr ""
+msgstr "你可以创建自己的分支来开发功能。这些分支可以推动到这个位置``refs/sandbox/USERNAME/BRANCHNAME``。"
 
 #: ../../source/Gerrit/best-practices.rst:223
 msgid "These commands ensure the branch is created in Gerrit's server."
-msgstr ""
+msgstr "这些命令可以在Gerrit的服务器里面创建这个分支。"
 
 #: ../../source/Gerrit/best-practices.rst:230
 msgid "Usually, the process to create content is:"
-msgstr ""
+msgstr "通常，创建内容的流程是："
 
 #: ../../source/Gerrit/best-practices.rst:232
 msgid "develop the code,"
-msgstr ""
+msgstr "开发代码，"
 
 #: ../../source/Gerrit/best-practices.rst:233
 msgid "break the information into small commits,"
-msgstr ""
+msgstr "信息分散在各个小的提交里，"
 
 #: ../../source/Gerrit/best-practices.rst:234
 msgid "submit changes,"
-msgstr ""
+msgstr "提交变更，"
 
 #: ../../source/Gerrit/best-practices.rst:235
 msgid "apply feedback,"
-msgstr ""
+msgstr "应用反馈"
 
 #: ../../source/Gerrit/best-practices.rst:236
 msgid "rebase."
-msgstr ""
+msgstr "rebase."
 
 #: ../../source/Gerrit/best-practices.rst:238
 msgid "The next command pushes forcibly without review:"
-msgstr ""
+msgstr "下面这条命令强行推送，无需审核："
 
 #: ../../source/Gerrit/best-practices.rst:244
 msgid "You can also push forcibly with review:"
-msgstr ""
+msgstr "你也可以强行推送要求审核的："
 
 #: ../../source/Gerrit/best-practices.rst:251
 msgid "Updating the Version of a Change"
-msgstr ""
+msgstr "更新变更的版本"
 
 #: ../../source/Gerrit/best-practices.rst:253
 msgid ""
 "During the review process, you might be asked to update your change. It is "
 "possible to submit multiple versions of the same change. Each version of the"
 " change is called a patch set."
-msgstr ""
+msgstr "在审核过程中，可能会要求您更新更改。可以提交同一变更的多个版本。每个版本的更改都称为一个补丁集。"
 
 #: ../../source/Gerrit/best-practices.rst:257
 msgid ""
 "Always maintain the **Change-Id** that was assigned. For example, there is a"
 " list of commits, **c0...c7**, which were submitted as a topic branch:"
-msgstr ""
+msgstr "始终维护已分配的**Change-Id**。例如，有一个提交列表，**c0…c7**，作为主题分支提交："
 
 #: ../../source/Gerrit/best-practices.rst:271
 msgid ""
@@ -401,6 +420,9 @@ msgid ""
 "Rebasing>`__ section for more information. However, you must keep the same "
 "Change-Id and push the changes again:"
 msgstr ""
+"在你得到审核者的反馈之后，有 **c3** 和 **c4**必须修复。如果修复时需要rebasing，rebasing改变commit ID，查看 "
+"`rebasing <https://git-scm.com/book/en/v2/Git-Branching-"
+"Rebasing>`__获取更多信息。但是，你必须保持同一个Change-Id并且重新推送变更："
 
 #: ../../source/Gerrit/best-practices.rst:282
 msgid ""
@@ -408,96 +430,99 @@ msgid ""
 "cleared. However you can still access the history of your changes in Gerrit "
 "on the ``review UI`` section, for each change."
 msgstr ""
+"此新推送创建补丁修订版，然后清除本地历史记录。不过，对于每个变更，您仍然可以在Gerrit中的 ``review UI`` 模块访问变更的历史记录。"
 
 #: ../../source/Gerrit/best-practices.rst:286
 msgid "It is also permitted to add more commits when pushing new versions."
-msgstr ""
+msgstr "允许在推送新版本时添加更多提交。"
 
 #: ../../source/Gerrit/best-practices.rst:289
 msgid "Rebasing"
-msgstr ""
+msgstr "变更基准"
 
 #: ../../source/Gerrit/best-practices.rst:291
 msgid ""
 "Rebasing is usually the last step before pushing changes to Gerrit; this "
 "allows you to make the necessary *Change-Ids*. The *Change-Ids* must be kept"
 " the same."
-msgstr ""
+msgstr "rebase通常是将更改推入Gerrit之前的最后一步；这允许你添加必需的*Change-Ids*。必须保持*Change-Ids*不变。"
 
 #: ../../source/Gerrit/best-practices.rst:295
 msgid "**squash:** mixes two or more commits into a single one."
-msgstr ""
+msgstr "**squash：** 将两个或多个提交混合到一个提交中。"
 
 #: ../../source/Gerrit/best-practices.rst:296
 msgid "**reword:** changes the commit message."
-msgstr ""
+msgstr "**reword：** 改变提交信息。"
 
 #: ../../source/Gerrit/best-practices.rst:297
 msgid "**edit:** changes the commit content."
-msgstr ""
+msgstr "**edit：** 改变提交的内容。"
 
 #: ../../source/Gerrit/best-practices.rst:298
 msgid "**reorder:** allows you to interchange the order of the commits."
-msgstr ""
+msgstr "**reorder：** 允许您改变内部各个提交的顺序。"
 
 #: ../../source/Gerrit/best-practices.rst:299
 msgid "**rebase:** stacks the commits on top of the master."
-msgstr ""
+msgstr "**rebase:** 在主分支顶部入栈各个提交。"
 
 #: ../../source/Gerrit/best-practices.rst:302
 msgid "Rebasing During a Pull"
-msgstr ""
+msgstr "拉取时Rebasing"
 
 #: ../../source/Gerrit/best-practices.rst:304
 msgid ""
 "Before pushing a rebase to your master, ensure that the history has a "
 "consecutive order."
-msgstr ""
+msgstr "在将rebase推给主分支之前，请确保历史记录具有连续的顺序。"
 
 #: ../../source/Gerrit/best-practices.rst:307
 msgid ""
 "For example, your ``REMOTE/master`` has the list of commits from **a0** to "
 "**a4**; Then, your changes **c0...c7** are on top of **a4**; thus:"
 msgstr ""
+"例如，你的``REMOTE/master`` 有从 **a0** 到 **a4**到提交列表；然后，你的变更**c0...c7** "
+"在**a4**上面；就这样："
 
 #: ../../source/Gerrit/best-practices.rst:324
 msgid ""
 "If ``REMOTE/master`` receives commits **a5**, **a6** and **a7**. Pull with a"
 " rebase as follows:"
-msgstr ""
+msgstr "如果 ``REMOTE/master`` 接受了 **a5**、**a6**、**a7**三个新的提交。拉取时要加上rebase，像这样："
 
 #: ../../source/Gerrit/best-practices.rst:331
 msgid "This pulls **a5-a7** and re-apply **c0-c7** on top of them:"
-msgstr ""
+msgstr "这样拉取了**a5-a7**，并且重新把**c0-c7**应用到它们顶部："
 
 #: ../../source/Gerrit/best-practices.rst:345
 msgid "Getting Better Logs from Git"
-msgstr ""
+msgstr "从Git获取更好的日志"
 
 #: ../../source/Gerrit/best-practices.rst:347
 msgid ""
 "Use these commands to change the configuration of Git in order to produce "
 "better logs:"
-msgstr ""
+msgstr "使用这些命令来更改Git的配置，以便生成更好的日志："
 
 #: ../../source/Gerrit/best-practices.rst:354
 msgid "The command above sets the log to abbreviate the commits' hash."
-msgstr ""
+msgstr "上面的命令将日志设置为提交的哈希的缩写。"
 
 #: ../../source/Gerrit/best-practices.rst:360
 msgid ""
 "The command above sets the abbreviation length to the last 5 characters of "
 "the hash."
-msgstr ""
+msgstr "上面的命令将缩写长度设置为哈希的最后5个字符。"
 
 #: ../../source/Gerrit/best-practices.rst:367
 msgid ""
 "The command above avoids the insertion of an unnecessary line before the "
 "Author line."
-msgstr ""
+msgstr "上面的命令避免在Author行之前插入不必要的行。"
 
 #: ../../source/Gerrit/best-practices.rst:370
 msgid ""
 "To make these configuration changes specifically for the current Git user, "
 "you must add the path option ``--global`` to ``config`` as follows:"
-msgstr ""
+msgstr "要针对当前Git用户进行这些配置更改，必须将path选项 ``--global`` 添加到``config``中，像这样："

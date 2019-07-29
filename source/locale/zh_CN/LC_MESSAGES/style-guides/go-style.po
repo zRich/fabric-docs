@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +23,11 @@ msgstr ""
 
 #: ../../source/style-guides/go-style.rst:2
 msgid "Coding guidelines"
-msgstr ""
+msgstr "编程指南"
 
 #: ../../source/style-guides/go-style.rst:5
 msgid "Coding Golang"
-msgstr ""
+msgstr "Golang编程"
 
 #: ../../source/style-guides/go-style.rst:7
 msgid ""
@@ -32,67 +36,73 @@ msgid ""
 "supplemental rules from the `Go Code Review Comments wiki "
 "<https://github.com/golang/go/wiki/CodeReviewComments>`__."
 msgstr ""
+"我们使用Go™编程，并且试着遵循`Effective Go <https://golang.org/doc/effective_go.html>`__ "
+"这里提到的最佳实践、格式规范，还有`Go Code Review Comments wiki "
+"<https://github.com/golang/go/wiki/CodeReviewComments>`__ 包含的补充规则。"
 
 #: ../../source/style-guides/go-style.rst:12
 msgid ""
 "We also recommend new contributors review the following before submitting "
 "change requests:"
-msgstr ""
+msgstr "我们也建议新的贡献者在提交变更请求之前，查看以下内容："
 
 #: ../../source/style-guides/go-style.rst:15
 msgid ""
 "`Practical Go <https://dave.cheney.net/practical-go/presentations/qcon-"
 "china.html>`__"
 msgstr ""
+"`Practical Go <https://dave.cheney.net/practical-go/presentations/qcon-"
+"china.html>`__"
 
 #: ../../source/style-guides/go-style.rst:16
 msgid "`Go Proverbs <https://go-proverbs.github.io/>`__"
-msgstr ""
+msgstr "`Go Proverbs <https://go-proverbs.github.io/>`__"
 
 #: ../../source/style-guides/go-style.rst:18
 msgid ""
 "The following tools are executed against all change requests. Any errors "
 "flagged by these tools must be addressed before the code will be merged:"
-msgstr ""
+msgstr "以下工具针对所有更改请求执行。这些工具标记的任何错误必须在合并代码之前处理："
 
 #: ../../source/style-guides/go-style.rst:21
 msgid "`gofmt -s <https://golang.org/cmd/gofmt/>`__"
-msgstr ""
+msgstr "`gofmt -s <https://golang.org/cmd/gofmt/>`__"
 
 #: ../../source/style-guides/go-style.rst:22
 msgid "`goimports <https://godoc.org/golang.org/x/tools/cmd/goimports>`__"
-msgstr ""
+msgstr "`goimports <https://godoc.org/golang.org/x/tools/cmd/goimports>`__"
 
 #: ../../source/style-guides/go-style.rst:23
 msgid "`go vet <https://golang.org/cmd/vet/>`__"
-msgstr ""
+msgstr "`go vet <https://golang.org/cmd/vet/>`__"
 
 #: ../../source/style-guides/go-style.rst:26
 msgid "Testing"
-msgstr ""
+msgstr "测试"
 
 #: ../../source/style-guides/go-style.rst:28
 msgid ""
 "Unit tests are expected to accompany all production code changes. These "
 "tests should be fast, provide very good coverage for new and modified code, "
 "and support parallel execution."
-msgstr ""
+msgstr "所有生产代码的更改都必须同步做相应的单元测试。这些测试应该快速做，为新的和修改过的代码提供很好的覆盖率，并且支持并行执行。"
 
 #: ../../source/style-guides/go-style.rst:32
 msgid ""
 "Two matching libraries are commonly used in our tests. When modifying code, "
 "please use the matching library that has already been chosen for the "
 "package."
-msgstr ""
+msgstr "在我们的测试中通常使用两个匹配的库。修改代码时，请使用已经为包选择的匹配库。"
 
 #: ../../source/style-guides/go-style.rst:35
 msgid "`gomega <https://onsi.github.io/gomega/>`__"
-msgstr ""
+msgstr "`gomega <https://onsi.github.io/gomega/>`__"
 
 #: ../../source/style-guides/go-style.rst:36
 msgid ""
 "`testify/assert <https://godoc.org/github.com/stretchr/testify/assert>`__"
 msgstr ""
+"`testify/assert <https://godoc.org/github.com/stretchr/testify/assert>`__"
 
 #: ../../source/style-guides/go-style.rst:38
 msgid ""
@@ -104,6 +114,7 @@ msgid ""
 "to regenerate the fixtures should be provided in the tests or a "
 "``README.txt``. Sharing fixtures across packages is strongly discouraged."
 msgstr ""
+"测试所需的任何fixture或数据都应该临时生成或置于版本控制之下。临时生成fixture时，它们必须放在创建的临时目录``ioutil.TempDir``中，测试结束时要清空。当fixture置于版本控制之下时，应该在``testdata``文件夹中创建它们；在tests模块或README.txt中，应该提供如何重新生成fixture的文档。非常不建议跨包共享fixture。"
 
 #: ../../source/style-guides/go-style.rst:46
 msgid ""
@@ -112,38 +123,42 @@ msgid ""
 "inevitably diverge from reality. Within Fabric, we use ``go generate`` "
 "directives to manage the generation with the following tools:"
 msgstr ""
+"当需要伪造或模拟时，必须临时生成它们。定制的、手工编码的模拟是维护的负担，而且往往包含不可避免地偏离现实的模拟。在Fabric中，我们使用``go "
+"generate``指令和以下工具管理生成物："
 
 #: ../../source/style-guides/go-style.rst:51
 msgid "`counterfeiter <https://github.com/maxbrunsfeld/counterfeiter>`__"
-msgstr ""
+msgstr "`counterfeiter <https://github.com/maxbrunsfeld/counterfeiter>`__"
 
 #: ../../source/style-guides/go-style.rst:52
 msgid "`mockery <https://github.com/vektra/mockery>`__"
-msgstr ""
+msgstr "`mockery <https://github.com/vektra/mockery>`__"
 
 #: ../../source/style-guides/go-style.rst:55
 msgid "API Documentation"
-msgstr ""
+msgstr "API 文档"
 
 #: ../../source/style-guides/go-style.rst:57
 msgid ""
 "The API documentation for Hyperledger Fabric's Golang APIs is available in "
 "`GoDoc <https://godoc.org/github.com/hyperledger/fabric>`_."
 msgstr ""
+"超级账本Fabric的Golang API的文档可在 `GoDoc "
+"<https://godoc.org/github.com/hyperledger/fabric>`_查看。"
 
 #: ../../source/style-guides/go-style.rst:62
 msgid "Generating gRPC code"
-msgstr ""
+msgstr "生成 gRPC 代码"
 
 #: ../../source/style-guides/go-style.rst:64
 msgid ""
 "If you modify any ``.proto`` files, run the following command to "
 "generate/update the respective ``.pb.go`` files."
-msgstr ""
+msgstr "如果你修改了任何 ``.proto`` 类型的文件，要运行下面的命令来自动生成或更新对应的 ``.pb.go`` 文件。"
 
 #: ../../source/style-guides/go-style.rst:73
 msgid "Adding or updating Go packages"
-msgstr ""
+msgstr "添加或者更新Go packages"
 
 #: ../../source/style-guides/go-style.rst:75
 msgid ""
@@ -153,3 +168,7 @@ msgid ""
 "``go install`` or ``go build`` commands are executed. To manage the packages"
 " in the ``vendor`` folder, we use `dep <https://golang.github.io/dep/>`__."
 msgstr ""
+"Hyperledger Fabric vendor文件夹里面的依赖，所有需要的package都放在文件夹 "
+"``$GOPATH/src/github.com/hyperledger/fabric/vendor`` 中。当执行命令 ``go install`` "
+"或者 ``go build``时，Go会使用这个文件夹里面的packege，而不是GOPATH里面的。我们使用 `dep "
+"<https://golang.github.io/dep/>`__这个工具管理 ``vendor`` 文件夹里面的packages。"

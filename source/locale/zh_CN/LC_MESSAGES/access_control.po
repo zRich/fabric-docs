@@ -5,6 +5,8 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# Yang Cheng <cystone@aliyun.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-09 08:55+0800\n"
 "PO-Revision-Date: 2019-04-22 19:58+0000\n"
-"Last-Translator: 王伟兵 <wbwang@inspur.com>, 2019\n"
+"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,11 +25,11 @@ msgstr ""
 
 #: ../../source/access_control.md:1
 msgid "Access Control Lists (ACL)"
-msgstr ""
+msgstr "访问控制列表（ACL）"
 
 #: ../../source/access_control.md:3
 msgid "What is an Access Control List?"
-msgstr ""
+msgstr "什么是访问控制列表"
 
 #: ../../source/access_control.md:5
 msgid ""
@@ -44,7 +46,7 @@ msgid ""
 "number of default ACLs. In this document, we'll talk about how they're "
 "formatted and how the defaults can be overridden."
 msgstr ""
-"Fabric使用访问控制列表(ACL)来管理对资源的访问，方法是将一个策略与资源相关联，策略指定一个计算结果为true或false规则，给定一组标识。Fabric包含许多缺省ACL。在本文档中，我们将讨论如何格式化它们以及如何重写默认值。"
+"Fabric使用访问控制列表(ACL)来管理对资源的访问，方法是将一个策略与资源相关联，策略指对于给定的一组身份标识可得出一个计算结果为true或false的规则。Fabric包含许多默认的ACL。在本文档中，我们将讨论如何格式化它们以及如何修改默认值。"
 
 #: ../../source/access_control.md:14
 msgid ""
@@ -54,14 +56,14 @@ msgstr "但在此之前，有必要对资源和策略有一些了解。"
 
 #: ../../source/access_control.md:17
 msgid "Resources"
-msgstr ""
+msgstr "资源"
 
 #: ../../source/access_control.md:19
 msgid ""
 "Users interact with Fabric by targeting a user chaincode, system chaincode, "
 "or an events stream source. As such, these endpoints are considered "
 "\"resources\" on which access control should be exercised."
-msgstr "用户通过指定用户链码、系统链码或事件流源与Fabric交互。因此，这些端点被认为是应该执行访问控制的“资源”。"
+msgstr "用户通过指定用户链码、系统链码或事件流的源与Fabric交互。因此，这些端点是访问的入口，它们被认为是应该执行访问控制的“资源”。"
 
 #: ../../source/access_control.md:24
 msgid ""
@@ -79,11 +81,11 @@ msgid ""
 " <component>/<resource>. So cscc/GetConfigBlock is the resource for the "
 "GetConfigBlock call in the CSCC component."
 msgstr ""
-"在configtx.yaml中命名的资源是Fabric当前定义的所有内部资源的详细列表。那里采用的宽松约定是<component>/<resource>。因此cscc/GetConfigBlock是CSCC组件中GetConfigBlock调用的资源。"
+"在configtx.yaml中命名的资源是Fabric当前定义的所有内部资源的详细列表。那里采用的宽松约定是<component>/<resource>。因此cscc/GetConfigBlock是cscc组件中调用的资源GetConfigBlock。"
 
 #: ../../source/access_control.md:33
 msgid "Policies"
-msgstr ""
+msgstr "策略"
 
 #: ../../source/access_control.md:35
 msgid ""
@@ -95,17 +97,17 @@ msgid ""
 "configuration are referenced as modification policies as well as for access "
 "control, and are defined in the channel configuration itself."
 msgstr ""
-"策略是Fabric工作方式的基础，因为它们允许根据与实现请求所需的资源关联的策略检查与请求关联的身份(或一组身份)。背书策略用于确定交易是否得到了适当的背书。在通道配置中定义的策略被引用为访问控制策略的修改策略，并在通道配置本身中定义。"
+"策略是Fabric运作方式的基础，因为，Fabric运行时会产生各种各样的请求，这些请求通常由某个身份或者一组身份发起，请求的关键步骤通常要访问具体的资源，而这些资源的访问权限是由访问策略控制的，Fabric每次请求都会根据这个策略检查当前的身份是否有权限请求对应的资源。背书策略用于确定交易是否得到了适当的背书。背书策略被当成是对通道配置文件里面策略的修改，同时也是对通道配置文件本身的访问控制策略。"
 
 #: ../../source/access_control.md:42
 msgid ""
 "Policies can be structured in one of two ways: as Signature policies or as "
 "an ImplicitMeta policy."
-msgstr "策略可以通过以下两种方式构建：签名策略或 ImplicitMeta策略。"
+msgstr "策略可以通过以下两种方式之一构建：签名策略或 ImplicitMeta策略。"
 
 #: ../../source/access_control.md:45
 msgid "Signature policies"
-msgstr ""
+msgstr "签名策略"
 
 #: ../../source/access_control.md:47
 msgid ""
@@ -131,7 +133,7 @@ msgstr ""
 
 #: ../../source/access_control.md:66
 msgid "ImplicitMeta policies"
-msgstr ""
+msgstr "ImplicitMeta 策略"
 
 #: ../../source/access_control.md:68
 msgid ""
@@ -175,7 +177,7 @@ msgstr "在这里，大多数管理员可以满足策略AnotherPolicy，其中�
 
 #: ../../source/access_control.md:99
 msgid "Where is access control specified?"
-msgstr ""
+msgstr "访问控制在哪里指定？"
 
 #: ../../source/access_control.md:101
 msgid ""
@@ -194,7 +196,7 @@ msgstr ""
 
 #: ../../source/access_control.md:108
 msgid "How ACLs are formatted in configtx.yaml"
-msgstr ""
+msgstr "configtx.yaml 中 ACL 的格式是什么样的"
 
 #: ../../source/access_control.md:110
 msgid ""
@@ -218,7 +220,7 @@ msgstr ""
 
 #: ../../source/access_control.md:129
 msgid "Updating ACL defaults in configtx.yaml"
-msgstr ""
+msgstr "在 configtx.yaml 中更新默认 ACL"
 
 #: ../../source/access_control.md:131
 msgid ""
@@ -295,7 +297,7 @@ msgstr "如果已经创建了希望使用这个ACL的通道，则它们必须使
 
 #: ../../source/access_control.md:193
 msgid "Updating ACL defaults in the channel config"
-msgstr ""
+msgstr "在通道配置中更新默认 ACL"
 
 #: ../../source/access_control.md:195
 msgid ""
@@ -349,7 +351,7 @@ msgstr "一旦更新了配置，就需要通过通常的通道更新流程来提
 
 #: ../../source/access_control.md:263
 msgid "Satisfying an ACL that requires access to multiple resources"
-msgstr ""
+msgstr "设置一个需要多个资源访问的 ACL"
 
 #: ../../source/access_control.md:265
 msgid ""
@@ -386,7 +388,7 @@ msgstr ""
 #: ../../source/access_control.md:284
 msgid ""
 "Migration considerations for customers using the experimental ACL feature"
-msgstr ""
+msgstr "使用实验性 ACL 功能客户的迁移注意事项"
 
 #: ../../source/access_control.md:286
 msgid ""

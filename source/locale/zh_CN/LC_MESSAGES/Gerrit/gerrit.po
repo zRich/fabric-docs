@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,13 +23,13 @@ msgstr ""
 
 #: ../../source/Gerrit/gerrit.rst:2
 msgid "Working with Gerrit"
-msgstr ""
+msgstr "使用Gerrit进行工作"
 
 #: ../../source/Gerrit/gerrit.rst:4
 msgid ""
 "Follow these instructions to collaborate on Hyperledger Fabric through the "
 "Gerrit review system."
-msgstr ""
+msgstr "遵守这些指引，使用Gerrit审核系统在Hyperledger Fabric项目上进行协作。"
 
 #: ../../source/Gerrit/gerrit.rst:7
 msgid ""
@@ -34,29 +38,32 @@ msgid ""
 "of course, you can reach out on `chat <https://chat.hyperledger.org/>`__ if "
 "you need help."
 msgstr ""
+"请确保你已经订阅了邮件列表 `mailing list  <https://lists.hyperledger.org/mailman/listinfo"
+"/hyperledger-fabric>`__ 。当然如果你需要帮助的话也可以在 `chat "
+"<https://chat.hyperledger.org/>`__ 寻求帮助。"
 
 #: ../../source/Gerrit/gerrit.rst:12
 msgid "Gerrit assigns the following roles to users:"
-msgstr ""
+msgstr "Gerrit为用户分配了以下角色："
 
 #: ../../source/Gerrit/gerrit.rst:14
 msgid ""
 "**Submitters**: May submit changes for consideration, review other code "
 "changes, and make recommendations for acceptance or rejection by voting +1 "
 "or -1, respectively."
-msgstr ""
+msgstr "**Submitters**: 可以提交变更以供考虑，审核别人的代码变更，通过投票 +1 或者 -1 接受或者拒绝的建议。"
 
 #: ../../source/Gerrit/gerrit.rst:17
 msgid ""
 "**Maintainers**: May approve or reject changes based upon feedback from "
 "reviewers voting +2 or -2, respectively."
-msgstr ""
+msgstr "**Maintainers**: 基于审核者的反馈进行+2或者-2的投票，以此来批准或者拒绝变更。"
 
 #: ../../source/Gerrit/gerrit.rst:19
 msgid ""
 "**Builders**: (e.g. Jenkins) May use the build automation infrastructure to "
 "verify the change."
-msgstr ""
+msgstr "**Builders**: (例如 Jenkins)可以使用自动化基础架构来验证变更。"
 
 #: ../../source/Gerrit/gerrit.rst:22
 msgid ""
@@ -64,10 +71,12 @@ msgid ""
 "However, anyone is welcome to (and encouraged!) review changes, and hence "
 "may find that document of value."
 msgstr ""
+"维护者应当熟悉审核流程 :doc:`review process <reviewing>`。 "
+"但是，我们欢迎任何人都来审核变更，因此这个文档才有存在的价值。"
 
 #: ../../source/Gerrit/gerrit.rst:27
 msgid "Git-review"
-msgstr ""
+msgstr "Git-review"
 
 #: ../../source/Gerrit/gerrit.rst:29
 msgid ""
@@ -77,10 +86,13 @@ msgid ""
 "the information below is also highly recommended so that you understand "
 "what's going on behind the scenes."
 msgstr ""
+"有一个**非常**有用的和Gerrit合作的工具叫做  `git-review "
+"<https://www.mediawiki.org/wiki/Gerrit/git-review>`__ "
+"。这个命令行工具可以帮你执行大部分后续工作。当然，强烈推荐阅读以下内容，以便了解幕后发生的事情。"
 
 #: ../../source/Gerrit/gerrit.rst:36
 msgid "Getting deeper into Gerrit"
-msgstr ""
+msgstr "深入了解 Gerrit"
 
 #: ../../source/Gerrit/gerrit.rst:38
 msgid ""
@@ -90,31 +102,35 @@ msgid ""
 " also provided a set of :doc:`Best Practices <best-practices>` that you may "
 "find helpful."
 msgstr ""
+"Gerrit的全面演练超出了本文档的范围。互联网上有大量的资源可供使用。可以在 `这里 "
+"<https://www.mediawiki.org/wiki/Gerrit/Tutorial>`__找到一个好的总结。我们还为你提供了一份有用的最佳实践"
+" :doc:`Best Practices <best-practices>` 。"
 
 #: ../../source/Gerrit/gerrit.rst:46
 msgid "Working with a local clone of the repository"
-msgstr ""
+msgstr "配合本地仓库使用"
 
 #: ../../source/Gerrit/gerrit.rst:48
 msgid "To work on something, whether a new feature or a bugfix:"
-msgstr ""
+msgstr "无论处理新特性还是错误："
 
 #: ../../source/Gerrit/gerrit.rst:50
 msgid ""
 "Open the Gerrit `Projects page "
 "<https://gerrit.hyperledger.org/r/#/admin/projects/>`__"
 msgstr ""
+"打开Gerrit的 `项目页面 <https://gerrit.hyperledger.org/r/#/admin/projects/>`__ 。"
 
 #: ../../source/Gerrit/gerrit.rst:53
 msgid "Select the project you wish to work on."
-msgstr ""
+msgstr "选择一个你希望工作的项目。"
 
 #: ../../source/Gerrit/gerrit.rst:55
 msgid ""
 "Open a terminal window and clone the project locally using the ``Clone with "
 "git hook`` URL. Be sure that ``ssh`` is also selected, as this will make "
 "authentication much simpler:"
-msgstr ""
+msgstr "打开一个终端窗口，然后使用``Clone with git hook`` 克隆项目。 确定使用 ``ssh`` ，这将会简化授权："
 
 #: ../../source/Gerrit/gerrit.rst:63
 msgid ""
@@ -123,20 +139,25 @@ msgid ""
 "build, and so that you can use it with the Vagrant :doc:`development "
 "environment <../dev-setup/devenv>`."
 msgstr ""
+"如果要克隆项目仓库，你需要将它克隆到 ``$GOPATH/src/github.com/hyperledger`` "
+"目录下，这样它才能构建，这样你才能使用Vagrant :doc:`development environment <../dev-"
+"setup/devenv>` 开发环境。"
 
 #: ../../source/Gerrit/gerrit.rst:68
 msgid "Create a descriptively-named branch off of your cloned repository"
-msgstr ""
+msgstr "在你克隆的仓库创建描述性的分支。"
 
 #: ../../source/Gerrit/gerrit.rst:75
 msgid ""
 "Commit your code. For an in-depth discussion of creating an effective "
 "commit, please read :doc:`this document on submitting changes <changes>`."
 msgstr ""
+"提交你的代码。创建有关深入探讨的提交，请阅读 如何提交更改的文档 :doc:`this document on submitting changes "
+"<changes>`。"
 
 #: ../../source/Gerrit/gerrit.rst:82
 msgid "Then input precise and readable commit msg and submit."
-msgstr ""
+msgstr "请输入精确的可读的消息进行提交。"
 
 #: ../../source/Gerrit/gerrit.rst:84
 msgid ""
@@ -144,88 +165,90 @@ msgid ""
 "corresponding changes (or additions) to the documentation and tests. This "
 "will ensure that if the merged PR is reversed, all traces of the change will"
 " be reversed as well."
-msgstr ""
+msgstr "任何影响文档的代码变更都应该伴随对文档和测试的相应更改（或者添加）。这保证了如果变更被合并了，那同样所有的有关的文档和测试都会更新。"
 
 #: ../../source/Gerrit/gerrit.rst:90
 msgid "Submitting a Change"
-msgstr ""
+msgstr "提交变更"
 
 #: ../../source/Gerrit/gerrit.rst:92
 msgid "Currently, Gerrit is the only method to submit a change for review."
-msgstr ""
+msgstr "目前，Gerrit是提交用以审核的变更的唯一方法。"
 
 #: ../../source/Gerrit/gerrit.rst:94
 msgid ""
 "Please review the :doc:`guidelines <changes>` for making and submitting a "
 "change."
-msgstr ""
+msgstr "请查看创建和提交变更的指南 :doc:`guidelines <changes>` 。"
 
 #: ../../source/Gerrit/gerrit.rst:98
 msgid "Using git review"
-msgstr ""
+msgstr "使用 git review"
 
 #: ../../source/Gerrit/gerrit.rst:100
 msgid ""
 "if you prefer, you can use the `git-review <#git-review>`__ tool instead of "
 "the following. e.g."
-msgstr ""
+msgstr "如果你愿意，你可以使用 `git-review <#git-review>`__ 工具做以下工作。例如"
 
 #: ../../source/Gerrit/gerrit.rst:103
 msgid ""
 "Add the following section to ``.git/config``, and replace ``<USERNAME>`` "
 "with your gerrit id."
-msgstr ""
+msgstr "添加以下部分到 ``.git/config``，并且用你的gerrit id替换 ``<USERNAME>`` 。"
 
 #: ../../source/Gerrit/gerrit.rst:112
 msgid "Then submit your change with ``git review``."
-msgstr ""
+msgstr "然后用 ``git review``提交你的更改。"
 
 #: ../../source/Gerrit/gerrit.rst:119
 msgid ""
 "When you update your patch, you can commit with ``git commit --amend``, and "
 "then repeat the ``git review`` command."
-msgstr ""
+msgstr "当你更新补丁的时候，你可以使用  ``git commit --amend`` 来提交，然后重复 ``git review`` 命令。"
 
 #: ../../source/Gerrit/gerrit.rst:123
 msgid "Not using git review"
-msgstr ""
+msgstr "不使用git review"
 
 #: ../../source/Gerrit/gerrit.rst:125
 msgid ""
 "See the :doc:`directions for building the source code <../dev-setup/build>`."
 msgstr ""
+"请参考构建源代码指南 :doc:`directions for building the source code <../dev-"
+"setup/build>`。"
 
 #: ../../source/Gerrit/gerrit.rst:127
 msgid ""
 "When a change is ready for submission, Gerrit requires that the change be "
 "pushed to a special branch. The name of this special branch contains a "
 "reference to the final branch where the code should reside, once accepted."
-msgstr ""
+msgstr "当准备好提交变更的时候，Gerrit要求将变更推送到特殊的分支上。这个特殊的分支的名称需要包含当代码被接受之后被合并的目标分支的引用。"
 
 #: ../../source/Gerrit/gerrit.rst:132
 msgid ""
 "For the Hyperledger Fabric repository, the special branch is called "
 "``refs/for/master``."
-msgstr ""
+msgstr "对于Hyperledger Fabric的仓库来说，特殊的分支叫做``refs/for/master``。"
 
 #: ../../source/Gerrit/gerrit.rst:135
 msgid ""
 "To push the current local development branch to the gerrit server, open a "
 "terminal window at the root of your cloned repository:"
-msgstr ""
+msgstr "打开本地仓库的根目录的终端窗口，推送本地开发分支的代码到gerrit服务器上："
 
 #: ../../source/Gerrit/gerrit.rst:143
 msgid ""
 "If the command executes correctly, the output should look similar to this:"
-msgstr ""
+msgstr "如果命令正确执行了，输出将和下述类似："
 
 #: ../../source/Gerrit/gerrit.rst:159
 msgid "The gerrit server generates a link where the change can be tracked."
-msgstr ""
+msgstr "Gerrit服务器生成了一个可以被追踪的链接。"
 
 #: ../../source/Gerrit/gerrit.rst:162
 msgid "Reviewing Using Gerrit"
-msgstr ""
+msgstr "使用Gerrit进行审核"
 
 #: ../../source/Gerrit/gerrit.rst:164
 msgid ""
@@ -234,12 +257,14 @@ msgid ""
 "auto-complete based on the list of people registered and with access to the "
 "system. They will be notified by email that you are requesting their input."
 msgstr ""
+"**Add**: "
+"这个按钮可以让提交者添加进行审核的人员的名字；开始输入一个名字，系统会基于注册的用户和系统的权限进行自动补全。如果你请求他们来审核代码，他们会收到邮件。"
 
 #: ../../source/Gerrit/gerrit.rst:170
 msgid ""
 "**Abandon**: This button is available to the submitter only; it allows a "
 "committer to abandon a change and remove it from the merge queue."
-msgstr ""
+msgstr "**Abandon**: 这个按钮仅提供给提交者使用；它允许提交者放弃更改并将其从合并队列中删除。"
 
 #: ../../source/Gerrit/gerrit.rst:174
 msgid ""
@@ -249,6 +274,9 @@ msgid ""
 "are present, Gerrit will remember it and present it as another version of "
 "the same change."
 msgstr ""
+"**Change-ID**: "
+"这个ID由Gerrit（或者系统）生成。当审核过程中确定你的提交必须被修改时，这个ID比较有用。修改后，你需要提交一个新的版本；如果 Change-"
+"ID是相同的，Gerrit会记住，并且呈现同一个变更的一个新版本。"
 
 #: ../../source/Gerrit/gerrit.rst:180
 msgid ""
@@ -258,6 +286,8 @@ msgid ""
 "disagree. Gerrit users with a Maintainer role can agree to the merge or "
 "refuse it by voting +2 or -2 respectively."
 msgstr ""
+"**Status**: 显示本按钮时，表示变更已经进入审核状态，在左上角显示 “Needs Verified” "
+"。审核者将会发表他们的意见，如果同意则+1，不同意则-1。具有维护者角色的Gerrit用户可以通过投票+2或者-2来表示同意或者拒绝合并。"
 
 #: ../../source/Gerrit/gerrit.rst:186
 msgid ""
@@ -266,16 +296,18 @@ msgid ""
 "<https://gerrit.hyperledger.org/r/#/dashboard/self>`__, to check the "
 "progress of your requests."
 msgstr ""
+"通知将以电子邮件的形式发送到您的提交消息的Signed-off-by行保留的电子邮箱地址中。访问您的`Gerrit dashboard "
+"<https://gerrit.hyperledger.org/r/#/dashboard/self>`__，可以查看您的请求进度。"
 
 #: ../../source/Gerrit/gerrit.rst:191
 msgid ""
 "The history tab in Gerrit will show you the in-line comments and the author "
 "of the review."
-msgstr ""
+msgstr "Gerrit中的历史记录将显示审核的批注和审核作者等信息。"
 
 #: ../../source/Gerrit/gerrit.rst:195
 msgid "Viewing Pending Changes"
-msgstr ""
+msgstr "查看待定的更改"
 
 #: ../../source/Gerrit/gerrit.rst:197
 msgid ""
@@ -283,18 +315,20 @@ msgid ""
 "upper-left corner, or `open this link "
 "<https://gerrit.hyperledger.org/r/#/q/project:fabric>`__."
 msgstr ""
+"点击左上角 ``All --> Changes`` 的链接查看所有待定的变更，或者打开这个链接 `open this link "
+"<https://gerrit.hyperledger.org/r/#/q/project:fabric>`__。"
 
 #: ../../source/Gerrit/gerrit.rst:201
 msgid ""
 "If you collaborate in multiple projects, you may wish to limit searching to "
 "the specific branch through the search bar in the upper-right side."
-msgstr ""
+msgstr "如果你在多个项目中协作，你可能希望通过右上方的搜索栏限制搜索特定分支。"
 
 #: ../../source/Gerrit/gerrit.rst:204
 msgid ""
 "Add the filter *project:fabric* to limit the visible changes to only those "
 "from Hyperledger Fabric."
-msgstr ""
+msgstr "添加 *project:fabric* 过滤器来过滤显示界面，仅保留Hyperledger Fabric的更改。"
 
 #: ../../source/Gerrit/gerrit.rst:207
 msgid ""
@@ -302,3 +336,6 @@ msgid ""
 "of your input by clicking on ``My --> Changes`` or `open this link "
 "<https://gerrit.hyperledger.org/r/#/dashboard/self>`__"
 msgstr ""
+"通过选择 ``My --> Changes`` 或者打开这个链接 `open this link "
+"<https://gerrit.hyperledger.org/r/#/dashboard/self>`__ "
+"列出你提交的所有变更，或者只列出那些需要您输入的更改。"

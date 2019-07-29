@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../source/Gerrit/lf-account.rst:2
 msgid "Requesting a Linux Foundation Account"
-msgstr ""
+msgstr "申请一个Linux Foundation账号"
 
 #: ../../source/Gerrit/lf-account.rst:4
 msgid ""
@@ -27,112 +31,117 @@ msgid ""
 "Foundation <https://linuxfoundation.org/>`__ account --- follow the steps "
 "below to create one if you don't already have one."
 msgstr ""
+"贡献Hyperledger Fabric的代码需要一个 `Linux Foundation "
+"<https://linuxfoundation.org/>`__  账户---如果你没有的话，根据下面的步骤来创建一个。"
 
 #: ../../source/Gerrit/lf-account.rst:10
 msgid "Creating a Linux Foundation ID"
-msgstr ""
+msgstr "创建一个Linux Foundation ID"
 
 #: ../../source/Gerrit/lf-account.rst:12
 msgid ""
 "Go to the `Linux Foundation ID website "
 "<https://identity.linuxfoundation.org/>`__."
 msgstr ""
+"登录 `Linux Foundation ID 网站 <https://identity.linuxfoundation.org/>`__."
 
 #: ../../source/Gerrit/lf-account.rst:15
 msgid ""
 "Select the option ``I need to create a Linux Foundation ID``, and fill out "
 "the form that appears."
-msgstr ""
+msgstr "选择选项 ``I need to create a Linux Foundation ID``，然后填写出现的表单。"
 
 #: ../../source/Gerrit/lf-account.rst:18
 msgid ""
 "Wait a few minutes, then look for an email message with the subject line: "
 "\"Validate your Linux Foundation ID email\"."
-msgstr ""
+msgstr "等待几分钟，查看邮箱中的邮件是否有如下行：\"Validate your Linux Foundation ID email\"。"
 
 #: ../../source/Gerrit/lf-account.rst:21
 msgid "Open the received URL to validate your email address."
-msgstr ""
+msgstr "打开收到的链接来验证你的邮箱。"
 
 #: ../../source/Gerrit/lf-account.rst:23
 msgid ""
 "Verify that your browser displays the message ``You have successfully "
 "validated your e-mail address``."
 msgstr ""
+"确保你的浏览器显示如下信息 ``You have successfully validated your e-mail address``。"
 
 #: ../../source/Gerrit/lf-account.rst:26
 msgid ""
 "Access Gerrit by selecting ``Sign In``, and use your new Linux Foundation "
 "account ID to sign in."
-msgstr ""
+msgstr "通过 ``Sign In``访问Gerrit，然后使用你的 Linux Foundation account ID进行登录。"
 
 #: ../../source/Gerrit/lf-account.rst:30
 msgid "Configuring Gerrit to Use SSH"
-msgstr ""
+msgstr "在Gerrit上配置SSH"
 
 #: ../../source/Gerrit/lf-account.rst:32
 msgid ""
 "Gerrit uses SSH to interact with your Git client. If you already have an SSH"
 " key pair, you can skip the part of this section that explains how to "
 "generate one."
-msgstr ""
+msgstr "Gerrit使用SSH来和Git客户端交互。如果你已经有了SSH密钥对，那么你可以跳过解释怎么生成SSH密钥对的部分。"
 
 #: ../../source/Gerrit/lf-account.rst:35
 msgid ""
 "What follows explains how to generate an SSH key pair in a Linux environment"
 " --- follow the equivalent steps on your OS."
-msgstr ""
+msgstr "下述步骤解释了如何在Linux环境下生成SSH密钥对---可以在你的操作系统上进行等价的步骤。"
 
 #: ../../source/Gerrit/lf-account.rst:38
 msgid "First, create an SSH key pair with the command:"
-msgstr ""
+msgstr "首先，使用如下命令创建SSH密钥对："
 
 #: ../../source/Gerrit/lf-account.rst:44
 msgid ""
 "**Note:** This will ask you for a password to protect the private key as it "
 "generates a unique key. Please keep this password private, and DO NOT enter "
 "a blank password."
-msgstr ""
+msgstr "**Note:** 这会提示你输入一个密码来保护这个唯一的私钥。请对密码进行保密，不要填写空格。"
 
 #: ../../source/Gerrit/lf-account.rst:48
 msgid ""
 "The generated SSH key pair can be found in the files ``~/.ssh/id_rsa`` and "
 "``~/.ssh/id_rsa.pub``."
-msgstr ""
+msgstr "生成的SSH密钥对可以在 ``~/.ssh/id_rsa`` 和 ``~/.ssh/id_rsa.pub`` 文件中找到。"
 
 #: ../../source/Gerrit/lf-account.rst:51
 msgid ""
 "Next, add the private key in the ``id_rsa`` file to your key ring, e.g.:"
-msgstr ""
+msgstr "接下来，把在 ``id_rsa`` 文件中的私钥添加到key ring中，例如："
 
 #: ../../source/Gerrit/lf-account.rst:57
 msgid ""
 "Finally, add the public key of the generated key pair to the Gerrit server, "
 "with the following steps:"
-msgstr ""
+msgstr "最后，将生成的密钥对的公钥添加到Gerrit服务端，按照如下步骤："
 
 #: ../../source/Gerrit/lf-account.rst:60
 msgid ""
 "Go to `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__."
 msgstr ""
+"进入 `Gerrit <https://gerrit.hyperledger.org/r/#/admin/projects/fabric>`__。"
 
 #: ../../source/Gerrit/lf-account.rst:63
 msgid "Click on your account name in the upper right corner."
-msgstr ""
+msgstr "点击右上角你的账号名。"
 
 #: ../../source/Gerrit/lf-account.rst:65
 msgid "From the pop-up menu, select ``Settings``."
-msgstr ""
+msgstr "从弹出的菜单中选择``Settings``。"
 
 #: ../../source/Gerrit/lf-account.rst:67
 msgid "On the left side menu, click on ``SSH Public Keys``."
-msgstr ""
+msgstr "在左侧的菜单上，点击 ``SSH Public Keys``。"
 
 #: ../../source/Gerrit/lf-account.rst:69
 msgid ""
 "Paste the contents of your public key ``~/.ssh/id_rsa.pub`` and click ``Add "
 "key``."
-msgstr ""
+msgstr "复制你的公钥的内容 ``~/.ssh/id_rsa.pub`` 点击 ``Add key``。"
 
 #: ../../source/Gerrit/lf-account.rst:72
 msgid ""
@@ -140,6 +149,8 @@ msgid ""
 " that all the contents of the file are selected, copied and pasted into the "
 "``Add SSH key`` window in Gerrit."
 msgstr ""
+"**注意：**  ``id_rsa.pub`` 文件在文本编辑器中打开，确保该文件所有的内容都被选中，复制粘贴到Gerrit的 ``Add SSH "
+"key`` 窗口中。"
 
 #: ../../source/Gerrit/lf-account.rst:76
 msgid ""
@@ -151,31 +162,36 @@ msgid ""
 "configure SSH to use the correct key for Gerrit. In that case, you need to "
 "create a ``~/.ssh/config`` file modeled after the one below."
 msgstr ""
+"**注意：** SSH密钥生成指南是基于你是用默认的命名的假设前提下操作的。当然也可以生成多个SSH密钥对，使用不同的命名。参考 `ssh-keygen"
+" <https://en.wikipedia.org/wiki/Ssh-keygen>`__ "
+"文档查看具体如何操作。一旦你生成了一个非默认名字的密钥对，你需要为Gerrit配置使用正确的SSH密钥。在这种情况下，你需要仿照下面的模型创建``~/.ssh/config``"
+"  配置文件。"
 
 #: ../../source/Gerrit/lf-account.rst:92
 msgid ""
 "where <LFID> is your Linux Foundation ID and the value of IdentityFile is "
 "the name of the public key file you generated."
-msgstr ""
+msgstr " <LFID> 是你的Linux Foundation ID，IdentityFile是你生成的公钥的文件名。"
 
 #: ../../source/Gerrit/lf-account.rst:95
 msgid ""
 "**Warning:** Potential Security Risk! Do not copy your private key "
 "``~/.ssh/id_rsa``. Use only the public ``~/.ssh/id_rsa.pub``."
 msgstr ""
+"**警告：** 潜在安全风险！不要拷贝你的私钥``~/.ssh/id_rsa`` ，仅仅使用公钥``~/.ssh/id_rsa.pub``。"
 
 #: ../../source/Gerrit/lf-account.rst:99
 msgid "Checking Out the Source Code"
-msgstr ""
+msgstr "检出源代码"
 
 #: ../../source/Gerrit/lf-account.rst:101
 msgid ""
 "Once you've set up SSH as explained in the previous section, you can clone "
 "the source code repository with the command:"
-msgstr ""
+msgstr "一旦你设置了之前讲的SSH，你可以通过下面的命令克隆源代码："
 
 #: ../../source/Gerrit/lf-account.rst:108
 msgid ""
 "You have now successfully checked out a copy of the source code to your "
 "local machine."
-msgstr ""
+msgstr "现在，你已经成功地在你的电脑上检出了源代码。"

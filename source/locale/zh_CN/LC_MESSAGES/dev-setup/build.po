@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,21 +23,21 @@ msgstr ""
 
 #: ../../source/dev-setup/build.rst:2
 msgid "Building Hyperledger Fabric"
-msgstr ""
+msgstr "构建Hyperledger Fabric"
 
 #: ../../source/dev-setup/build.rst:4
 msgid ""
 "The following instructions assume that you have already set up your "
 ":doc:`development environment <devenv>`."
-msgstr ""
+msgstr "下面的指南假设你已经设置好了你的开发环境 :doc:`development environment <devenv>`。"
 
 #: ../../source/dev-setup/build.rst:7
 msgid "To build Hyperledger Fabric:"
-msgstr ""
+msgstr "来构建Hyperledger Fabric："
 
 #: ../../source/dev-setup/build.rst:15
 msgid "Running the unit tests"
-msgstr ""
+msgstr "运行单元测试"
 
 #: ../../source/dev-setup/build.rst:17
 msgid ""
@@ -44,17 +48,20 @@ msgid ""
 "cryptographic computations. For test environments, SoftHSM can be used to "
 "satisfy this requirement."
 msgstr ""
+"在运行单元测试之前，需要配置安装PKCS #11的加密令牌套件。 PKCS "
+"#11的API在Fabric的bccsp组件中使用，像硬件安全模块（HSMs），用于存储加密的数据和进行加密计算。 "
+"在测试环境中，SoftHSM可以满足需求。"
 
 #: ../../source/dev-setup/build.rst:24
 msgid "SoftHSM can be installed with the following commands:"
-msgstr ""
+msgstr "SoftHSM可以通过如下命令安装："
 
 #: ../../source/dev-setup/build.rst:32
 msgid ""
 "Once SoftHSM is installed, additional configuration may be required. For "
 "example, the default configuration file stores token data in a system "
 "directory that unprivileged users are unable to write to."
-msgstr ""
+msgstr "一旦安装了SoftHSM，可能需要额外的配置。 举个例子，默认的配置文件在系统路径中存储了令牌数据，无权限的用户不能写入这个文件。"
 
 #: ../../source/dev-setup/build.rst:36
 msgid ""
@@ -63,29 +70,31 @@ msgid ""
 "``directories.tokendir`` to an appropriate location. Please see the man page"
 " for ``softhsm2.conf`` for details."
 msgstr ""
+"典型地配置包括复制 ``/etc/softhsm2.conf`` 到 ``$HOME/.config/softhsm2/softhsm2.conf`` "
+"改变 ``directories.tokendir`` 到合适的位置。请查看 ``softhsm2.conf`` 的man页面来获取更详细的信息。"
 
 #: ../../source/dev-setup/build.rst:41
 msgid ""
 "After SoftHSM has been configured, the following command can be used to "
 "initialize the required token:"
-msgstr ""
+msgstr "配置好了SoftHSM之后，下面的命令可以用于初始化需要的令牌："
 
 #: ../../source/dev-setup/build.rst:48
 msgid ""
 "If the test cannot find libsofthsm2.so in your environment, specify its "
 "path, the PIN and the label of the token through environment variables. For "
 "example, on macOS:"
-msgstr ""
+msgstr "如果测试时，在你的环境中找不到libsofthsm2.so，请通过环境变量指定令牌的路径、PIN以及label。 例如，在macOS中："
 
 #: ../../source/dev-setup/build.rst:58
 msgid "Use the following sequence to run all unit tests:"
-msgstr ""
+msgstr "使用下列顺序来运行所有的单元测试："
 
 #: ../../source/dev-setup/build.rst:65
 msgid ""
 "To run a subset of tests, set the TEST_PKGS environment variable. Specify a "
 "list of packages (separated by space), for example:"
-msgstr ""
+msgstr "如果只需要运行一部分单元测试，请设置TEST_PKGS环境变量。 指定一部分包（根据空间划分），例如："
 
 #: ../../source/dev-setup/build.rst:73
 msgid ""
@@ -94,10 +103,12 @@ msgid ""
 " use the ``-v`` flag. For example, to run the ``TestGetFoo`` test case, "
 "change to the directory containing the ``foo_test.go`` and call/execute"
 msgstr ""
+"为了运行具体的单元测试，请使用 ``-run RE`` 标识符，RE代表一个正则表达式，可以匹配一些测试用例的名字。要显示详细的过程，请使用 "
+"``-v`` 标识。举个例子，要运行测试用例 ``TestGetFoo`` ， 导航到包含 ``foo_test.go``文件的目录，然后执行："
 
 #: ../../source/dev-setup/build.rst:85
 msgid "Running Node.js Client SDK Unit Tests"
-msgstr ""
+msgstr "运行 Node.js 客户端SDK的单元测试"
 
 #: ../../source/dev-setup/build.rst:87
 msgid ""
@@ -106,16 +117,21 @@ msgid ""
 " instructions `here <https://github.com/hyperledger/fabric-sdk-"
 "node/blob/master/README.md>`__."
 msgstr ""
+"你必须还要运行Node.js的单元测试，确保Node.js client SDK没有因为你的修改而崩溃。 要运行Node.js的单元测试，请遵循下述指南"
+" `here <https://github.com/hyperledger/fabric-sdk-"
+"node/blob/master/README.md>`__ 。"
 
 #: ../../source/dev-setup/build.rst:93
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../source/dev-setup/build.rst:95
 msgid ""
 "Configuration utilizes the `viper <https://github.com/spf13/viper>`__ and "
 "`cobra <https://github.com/spf13/cobra>`__ libraries."
 msgstr ""
+"配置采用 `viper <https://github.com/spf13/viper>`__ 和 `cobra "
+"<https://github.com/spf13/cobra>`__ 库来实现。"
 
 #: ../../source/dev-setup/build.rst:98
 msgid ""
@@ -125,3 +141,5 @@ msgid ""
 "prefixing with *'CORE\\_'*. For example, setting `peer.networkId` can be "
 "accomplished with:"
 msgstr ""
+"有一个**core.yaml**文件包含了peer进程的配置项。很多配置可以被带有*'CORE\\_'*前缀的环境变量覆盖。例如，设置 "
+"`peer.networkId` 可以如此操作："

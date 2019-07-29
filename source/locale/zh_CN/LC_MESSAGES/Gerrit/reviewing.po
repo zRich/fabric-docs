@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 20:02+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,34 +23,34 @@ msgstr ""
 
 #: ../../source/Gerrit/reviewing.rst:2
 msgid "Reviewing a Change"
-msgstr ""
+msgstr "审核变更"
 
 #: ../../source/Gerrit/reviewing.rst:4
 msgid "Click on a link for incoming or outgoing review."
-msgstr ""
+msgstr "点击链接来审核输入或输出。"
 
 #: ../../source/Gerrit/reviewing.rst:6
 msgid "The details of the change and its current status are loaded:"
-msgstr ""
+msgstr "变更的详细信息及其当前状态加载如下："
 
 #: ../../source/Gerrit/reviewing.rst:8
 msgid ""
 "**Status:** Displays the current status of the change. In the example below,"
 " the status reads: Needs Verified."
-msgstr ""
+msgstr "**Status:** 显示更改的当前状态。在下面的示例中，状态为：Needs verify。"
 
 #: ../../source/Gerrit/reviewing.rst:11
 msgid ""
 "**Reply:** Click on this button after reviewing to add a final review "
 "message and a score, -1, 0 or +1."
-msgstr ""
+msgstr "**Reply:** 审核结束后点击此按钮，添加审核信息和分数, -1、0 或 +1。"
 
 #: ../../source/Gerrit/reviewing.rst:14
 msgid ""
 "**Patch Sets:** If multiple revisions of a patch exist, this button enables "
 "navigation among revisions to see the changes. By default, the most recent "
 "revision is presented."
-msgstr ""
+msgstr "**Patch Sets:** 如果存在一个补丁的多个版本，此按钮允许在版本之间导航以查看更改。默认情况下，将显示最新的版本。"
 
 #: ../../source/Gerrit/reviewing.rst:18
 msgid ""
@@ -55,18 +59,20 @@ msgid ""
 "the line to your clipboard. You can easily paste it into your git interface "
 "to work with the patch as you prefer."
 msgstr ""
+"**Download:** "
+"此按钮将打开一个新窗口，其中有多个选项可以下载或checkout当前更改集。右边的按钮将命令复制到剪贴板。您可以轻松地将其粘贴到git接口中，以使用您想要的版本。"
 
 #: ../../source/Gerrit/reviewing.rst:23
 msgid ""
 "Underneath the commit information, the files that have been changed by this "
 "patch are displayed."
-msgstr ""
+msgstr "在提交信息的下面，显示了这个补丁修改过的文件。"
 
 #: ../../source/Gerrit/reviewing.rst:26
 msgid ""
 "Click on a filename to review it. Select the code base to differentiate "
 "against. The default is ``Base`` and it will generally be what is needed."
-msgstr ""
+msgstr "单击文件名即可审核该文件。选择相差分的代码基。默认值是 ``Base`` ，通常是这个。"
 
 #: ../../source/Gerrit/reviewing.rst:30
 msgid ""
@@ -77,6 +83,7 @@ msgid ""
 "main change screen. Click on the yellow sticky pad to add comments to the "
 "whole file."
 msgstr ""
+"审核页面显示对文件所做的更改。在页面的顶部，显示了一些通用的导航选项。使用右上角的箭头在补丁集中导航。可以转到集合中的上一个或下一个文件，也可以返回到主更改屏幕。单击黄色的便利贴，将注释添加到整个文件中。"
 
 #: ../../source/Gerrit/reviewing.rst:37
 msgid ""
@@ -86,10 +93,11 @@ msgid ""
 "a specific section of the code. Press *c* once the code is highlighted to "
 "add comments to that section."
 msgstr ""
+"页面的焦点是比较窗口。所做的更改在右侧以绿色显示，而在左侧以基本版本显示。双击可高亮显示实际更改中的文本，以对代码的特定部分提供反馈。代码突出显示后，按*c*向该部分添加注释。"
 
 #: ../../source/Gerrit/reviewing.rst:43
 msgid "After adding the comment, it is saved as a *Draft*."
-msgstr ""
+msgstr "添加评论之后，评论会作为*Draft*保存下来。"
 
 #: ../../source/Gerrit/reviewing.rst:45
 msgid ""
@@ -102,3 +110,6 @@ msgid ""
 "reference. All individual comments are saved as *Draft* until the ``Post`` "
 "button is clicked."
 msgstr ""
+"审核完所有文件并提供反馈之后，单击右上角的 *绿色向上箭头* 回到主更改页面。点击 ``Reply``按钮，写下一些最终的评论，并提交补丁集的评分。点击"
+" ``Post`` "
+"按钮，提交每个被审核文件的评论，以及你的最终评论和评分。Gerrit向变更提交者和所有列出的审核者发送电子邮件。最后，它记录了回顾，以供将来参考。所有人的评论都先被保存为草稿，直到点击``Post``按钮。"
