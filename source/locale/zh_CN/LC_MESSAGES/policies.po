@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-23 09:48+0800\n"
 "PO-Revision-Date: 2019-04-22 19:58+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +23,7 @@ msgstr ""
 
 #: ../../source/policies.rst:2
 msgid "Policies in Hyperledger Fabric"
-msgstr ""
+msgstr "Hyperledger Fabric中的策略"
 
 #: ../../source/policies.rst:4
 msgid ""
@@ -30,17 +34,19 @@ msgid ""
 "specified in some other places, such as chaincodes, so this information may "
 "be of interest outside the scope of channel configuration."
 msgstr ""
+"Hyperledger Fabric "
+"区块链网络的配置是由策略管理的。这些策略通常属于通道配置。本文档的主要目的是解释策略在通道配置中是如何定义的，以及策略是如何与通道配置交互的。但是，策略也可以在其他一些地方指定，比如链码，因此本文档的这些信息可能超出了通道配置的范围。"
 
 #: ../../source/policies.rst:13
 msgid "What is a Policy?"
-msgstr ""
+msgstr "什么是策略？"
 
 #: ../../source/policies.rst:15
 msgid ""
 "At its most basic level, a policy is a function which accepts as input a set"
 " of signed data and evaluates successfully, or returns an error because some"
 " aspect of the signed data did not satisfy the policy."
-msgstr ""
+msgstr "在最基本的层次上，策略是一个函数，它接受一组带签名的数据作为输入，然后运算成功，或者因为带签名数据的某些方面不满足策略而返回一个错误。"
 
 #: ../../source/policies.rst:19
 msgid ""
@@ -49,6 +55,7 @@ msgid ""
 "This is useful for determining that the correct parties have agreed to a "
 "transaction, or change."
 msgstr ""
+"更具体地说，策略为了判断某些数据的签名是否“有效”，而测试数据的签名者是否满足某些必要的条件。这用来判断正确的参与方是否同意进行交易或更改。"
 
 #: ../../source/policies.rst:24
 msgid ""
@@ -56,20 +63,21 @@ msgid ""
 "from 2 out 5 possible different organizations must sign. \\* Any member from"
 " any organization must sign. \\* Two specific certificates must both sign."
 msgstr ""
+"例如，策略可以定义成以下任意一种：\\*必须有5个不同组织中的2个组织的管理员签名。\\*任何组织的任何成员都必须签名。\\*两个指定的身份证书必须都签名。"
 
 #: ../../source/policies.rst:29
 msgid ""
 "Of course these are only examples, and other more powerful rules can be "
 "constructed."
-msgstr ""
+msgstr "当然，这些只是示例，还可以构造其他更强大的规则。"
 
 #: ../../source/policies.rst:33
 msgid "Policy Types"
-msgstr ""
+msgstr "策略类型"
 
 #: ../../source/policies.rst:35
 msgid "There are presently two different types of policies implemented:"
-msgstr ""
+msgstr "目前实现的策略有两种："
 
 #: ../../source/policies.rst:37
 msgid ""
@@ -79,6 +87,7 @@ msgid ""
 "construction of extremely powerful rules like: \"An admin of org A and 2 "
 "other admins, or 11 of 20 org admins\"."
 msgstr ""
+"**SignaturePolicy**：签名策略，这种策略类型是最强大的，它将策略指定为MSP主体的评估规则的组合。它支持*AND*、*OR*、*NOutOf*的任意组合，允许构造极其强大的规则，比如：“组织A的一个管理员和2个其他管理员，或20个组织中的11个组织的管理员”。"
 
 #: ../../source/policies.rst:42
 msgid ""
@@ -88,6 +97,7 @@ msgid ""
 "hierarchy, which are ultimately defined by SignaturePolicies. It supports "
 "good default rules like \"A majority of the organization admin policies\"."
 msgstr ""
+"**ImplicitMetaPolicy**：隐式的元策略，这种策略类型不如SignaturePolicy灵活，并且只在配置的上下文中有效。它在配置层次结构中更深入地聚合了评估策略的结果，这种聚合结果最终由SignaturePolicies定义。它支持良好的默认规则，比如“组织管理策略的大多数”。"
 
 #: ../../source/policies.rst:49
 msgid ""
@@ -95,6 +105,7 @@ msgid ""
 "``fabric/protos/common/policies.proto``. They are defined by the following "
 "message:"
 msgstr ""
+"策略编码为``common.Policy``消息，定义在``fabric/protos/common/policies.proto``中。它们由以下消息定义："
 
 #: ../../source/policies.rst:66
 msgid ""
@@ -102,10 +113,11 @@ msgid ""
 " ``IMPLICIT_META``, set it to the ``type`` field, and marshal the "
 "corresponding policy implementation proto to ``policy``."
 msgstr ""
+"要对策略进行编码，只需选择``SIGNATURE``或``IMPLICIT_META``的策略类型，将其设置为``type``字段的值，并根据相应的策略实现proto序列化成``policy``。"
 
 #: ../../source/policies.rst:71
 msgid "Configuration and Policies"
-msgstr ""
+msgstr "配置和策略"
 
 #: ../../source/policies.rst:73
 msgid ""
@@ -115,6 +127,7 @@ msgid ""
 "organizations and one ordering organization, the configuration looks "
 "minimally as follows:"
 msgstr ""
+"通道配置由层次结构的配置组的表示，每个组都有一些与之关联的值和策略。对于具有两个应用程序组织和一个排序组织的有效配置的应用通道，配置看起来最少如下所示："
 
 #: ../../source/policies.rst:115
 msgid ""
@@ -124,6 +137,8 @@ msgid ""
 "directory components are group names, while the last component resembling a "
 "file basename is the policy name."
 msgstr ""
+"考虑上面示例中使用 ``------->`` 标记引用的Writers策略。这个策略可以用简写符号 "
+"``/Channel/Application/Writers``来引用。注意，与目录相似的元素是组名，而与文件名相似的最后一个组件是策略名。"
 
 #: ../../source/policies.rst:121
 msgid ""
@@ -133,20 +148,21 @@ msgid ""
 "a peer will require that the ``/Channel/Application/Readers`` policy be "
 "satisfied."
 msgstr ""
+"系统的不同组件要参考这些策略名称。例如，要调用排序者的``Deliver``，请求上的签名必须满足``/Channel/Readers``策略。然而，向节点Gossip同步一个区块需要满足``/Channel/Application/Readers``的策略。"
 
 #: ../../source/policies.rst:127
 msgid ""
 "By setting these different policies, the system can be configured with rich "
 "access controls."
-msgstr ""
+msgstr "通过设置这些不同的策略，系统可以配置丰富的访问控制。"
 
 #: ../../source/policies.rst:131
 msgid "Constructing a SignaturePolicy"
-msgstr ""
+msgstr "构造一个SignaturePolicy"
 
 #: ../../source/policies.rst:133
 msgid "As with all policies, the SignaturePolicy is expressed as protobuf."
-msgstr ""
+msgstr "与所有策略一样，SignaturePolicy也是用protobuf表示。"
 
 #: ../../source/policies.rst:154
 msgid ""
@@ -156,6 +172,8 @@ msgid ""
 "``identities`` by index. For more details on how to specify MSP Principals, "
 "see the MSP Principals section."
 msgstr ""
+"外部的``SignaturePolicyEnvelope``定义了一个版本（目前只支持``0`` ），一组表示为``MSPPrincipal``\\ "
+"s的身份标识，以及一个``policy``定义策略规则，通过索引引用``identities``。有关如何指定MSP主体的详细信息，请参阅MSP主体部分。"
 
 #: ../../source/policies.rst:160
 msgid ""
@@ -164,10 +182,12 @@ msgid ""
 "or a collection of ``SignaturePolicy``\\ s, requiring that ``N`` of them are"
 " satisfied."
 msgstr ""
+"``SignaturePolicy``是一个递归的数据结构，它要么表示来自特定``MSPPrincipal``的单个签名需求，要么表示 "
+"``SignaturePolicy``\\ s的集合，要求满足其中的``N``。"
 
 #: ../../source/policies.rst:165
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #: ../../source/policies.rst:183
 msgid ""
@@ -175,10 +195,11 @@ msgid ""
 " It requires both that there is a signature satisfying ``mspP1`` and a "
 "signature satisfying ``mspP2``."
 msgstr ""
+"这在MSP主体``mspP1``和``mspP2``上定义了一个签名策略。它要求同时有一个满足``mspP1``的签名和一个满足``mspP2``的签名。"
 
 #: ../../source/policies.rst:187
 msgid "As another more complex example:"
-msgstr ""
+msgstr "另一个更复杂的例子是："
 
 #: ../../source/policies.rst:213
 msgid ""

@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Yang Cheng <cystone@aliyun.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:55+0000\n"
-"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../source/glossary.rst:2
 msgid "Glossary"
-msgstr ""
+msgstr "术语表"
 
 #: ../../source/glossary.rst:4
 msgid ""
@@ -33,6 +34,7 @@ msgid ""
 "needed, but feel free to read the entire thing in one sitting if you like; "
 "it's pretty enlightening!"
 msgstr ""
+"专业术语很重要，所以全体超级账本Fabric项目的用户和开发人员，都认同我们所说的每个特定术语的含义。比如什么是智能合约。该文档将会按需引用这些术语，但是如果你愿意的话可以按你自己的方式自由阅读整个文档，这会非常有启发！"
 
 #: ../../source/glossary.rst:12
 msgid "Anchor Peer"
@@ -42,7 +44,7 @@ msgstr "锚节点"
 msgid ""
 "Used by gossip to make sure peers in different organizations know about each"
 " other."
-msgstr ""
+msgstr "Gossip点对点通信协议使用锚节点来确保不同组织中的Peers能够知道彼此。"
 
 #: ../../source/glossary.rst:16
 msgid ""
@@ -55,6 +57,7 @@ msgid ""
 "don't know about, a common view of membership can be established for a "
 "channel."
 msgstr ""
+"通道当提交一个包含更新锚节点信息的配置区块的时候，Peers会连接到锚节点然后从它们那里获取该锚节点所记录的所有的Peers信息。一旦每个组织中至少有一个Peer连接到了至少一个锚节点的话，锚节点会知道在这个通道中的每个Peer。因为网络持续地进行着Gossip通信，并且因为Peers总是会互相询问是否存在它们所不知道的其他Peer，所以可以建立通道内成员的通用视图。"
 
 #: ../../source/glossary.rst:24
 msgid ""
@@ -67,6 +70,8 @@ msgid ""
 "that point forward, organizations ``A`` and ``B`` would start exchanging "
 "membership information directly without any assistance from ``peer0.orgC``."
 msgstr ""
+"比如，我们可以假设一个通道中有三个组织---``A``、``B``、 "
+"``C``，``C``组织有一个单独的锚节点---``peer0.orgC``。当``A``组织的``peer1.orgA``连接``peer0.orgC``时，``peer1.orgA``会告诉``peer0.orgC``关于``peer0.orgA``的信息。稍后``peer1.orgB``连接``peer0.orgC``的时候，``peer0.orgC``会告诉``peer1.orgB``关于``peer0.orgA``的信息。然后，组织``A``和``B`就可以开始直接地交换成员信息而不需要任何来自于``peer0.orgC``的帮助了。"
 
 #: ../../source/glossary.rst:32
 msgid ""
@@ -75,10 +80,11 @@ msgid ""
 " It is strongly recommended that every organization provides its own set of "
 "anchor peers for high availability and redundancy."
 msgstr ""
+"由于组织间的通信要基于Gossip协议来工作，所以在通道配置中至少要定义一个锚节点。为了网络的高可用和冗余，强烈建议每个组织提供他们自己的一组锚节点。"
 
 #: ../../source/glossary.rst:40
 msgid "ACL"
-msgstr ""
+msgstr "访问控制列表"
 
 #: ../../source/glossary.rst:42
 msgid ""
@@ -89,6 +95,7 @@ msgid ""
 "the channel's configuration blocks, and can be updated using the standard "
 "configuration update mechanism."
 msgstr ""
+"ACL，或称访问控制列表将对特定节点资源（例如系统链码API或事件服务）的访问与策略（指定需要多少和哪些类型的组织或角色）相关联。ACL是通道配置的一部分。因此，它持久化在通道的配置区块中，并可使用标准配置更新机制进行更新。"
 
 #: ../../source/glossary.rst:49
 msgid ""
@@ -100,6 +107,9 @@ msgid ""
 "is accessible by identities which satisfy the "
 "``/Channel/Application/Readers`` policy."
 msgstr ""
+"ACL被格式化为键值对列表，其中键标识我们希望控制其访问的资源，其值标识允许访问它的通道策略（组）。例如，``lscc/GetDeploymentSpec:"
+" /Channel/Application/Readers``定义对生命周期链码 ``GetDeploymentSpec`` "
+"API（就是对应的资源）可被满足``/Channel/Application/Readers``策略的身份对象访问。"
 
 #: ../../source/glossary.rst:57
 msgid ""
@@ -108,14 +118,16 @@ msgid ""
 " in the top level \"Application\" section of ``configtx.yaml`` or overridden"
 " on a per profile basis in the \"Profiles\" section."
 msgstr ""
+"``configtx.yaml``文件中提供了一组默认ACLs，configtxgen使用该文件来构建通道配置。可以在 "
+"``configtx.yaml``的第一层级\"Application\"部分中设置默认值，也可以在\"Profiles\"部分的每个配置模块中覆盖默认值。"
 
 #: ../../source/glossary.rst:65
 msgid "Block"
-msgstr ""
+msgstr "区块"
 
 #: ../../source/glossary.rst:73
 msgid "Block B1 is linked to block B0. Block B2 is linked to block B1."
-msgstr ""
+msgstr "区块B1是连接到区块B0的。区块B2是连接到区块 B1 的。"
 
 #: ../../source/glossary.rst:77
 msgid ""
@@ -124,14 +136,16 @@ msgid ""
 "blocks. The first block in such a chain of blocks is called the **genesis "
 "block**. Blocks are created by the ordering system, and validated by peers."
 msgstr ""
+"一个区块包含了一系列有序的交易。它通过加密方法与前一区块相连，并且他也会被后续的区块连接。在这个链条的第一个区块被称为创世区块**genesis "
+"block**。区块是由排序系统创建的，然后由 Peers进行验证。"
 
 #: ../../source/glossary.rst:87
 msgid "Chain"
-msgstr ""
+msgstr "链"
 
 #: ../../source/glossary.rst:95
 msgid "Blockchain B contains blocks 0, 1, 2."
-msgstr ""
+msgstr "区块链B包含了区块0、1、2。"
 
 #: ../../source/glossary.rst:99
 msgid ""
@@ -141,22 +155,23 @@ msgid ""
 "endorsement policies and concurrency violations, and append the block to the"
 " hash chain on the peer's file system."
 msgstr ""
+"账本的链是一个由交易组成的区块通过哈希链接结构化的交易日志。Peers收到从排序服务发送过来的交易区块，基于背书策略和是否有并发冲突来标记区块的交易为有效或者无效状态，然后将区块追加到文件系统的哈希链中。"
 
 #: ../../source/glossary.rst:108
 msgid "Chaincode"
-msgstr ""
+msgstr "链码"
 
 #: ../../source/glossary.rst:110
 msgid "See Smart-Contract_."
-msgstr ""
+msgstr "参见 Smart-Contract_."
 
 #: ../../source/glossary.rst:115
 msgid "Channel"
-msgstr ""
+msgstr "通道"
 
 #: ../../source/glossary.rst:123
 msgid "Channel C connects application A1, peer P2 and ordering service O1."
-msgstr ""
+msgstr "通道C连接了应用程序A1，Peer P2和排序服务O1。"
 
 #: ../../source/glossary.rst:127
 msgid ""
@@ -166,10 +181,12 @@ msgid ""
 "channel in order to interact with it.  Channels are defined by a "
 "Configuration-Block_."
 msgstr ""
+"通道是一个私有的区块链覆盖层，允许数据的隔离和保密。特定通道的账本在该通道中的所有Peers之间共享，交易方必须通过该通道的正确验证才能与账本进行交互。通道是由配置区块"
+" Configuration-Block_来定义的。"
 
 #: ../../source/glossary.rst:137
 msgid "Commit"
-msgstr ""
+msgstr "提交"
 
 #: ../../source/glossary.rst:139
 msgid ""
@@ -177,10 +194,12 @@ msgid ""
 "commits (writes/appends) the blocks to its replica of the channel Ledger_. "
 "Peers also mark each transaction in each block as valid or invalid."
 msgstr ""
+"一个通道中的每个Peer_都会验证排好序的交易区块，然后将区块提交（写或追加） "
+"至该通道上Ledger_的各个副本中。Peers也会标记每个区块中的每笔交易的状态是有效或者无效。"
 
 #: ../../source/glossary.rst:147
 msgid "Concurrency Control Version Check"
-msgstr ""
+msgstr "并发控制版本检查"
 
 #: ../../source/glossary.rst:149
 msgid ""
@@ -192,10 +211,11 @@ msgid ""
 "Version Check violation has occurred, and the transaction is marked as "
 "invalid on the ledger and values are not updated in the state database."
 msgstr ""
+"并发控制版本检查是保持通道中各节点间状态同步的一种方法。Peers并行的执行交易，在交易提交至账本之前，节点会检查交易在执行期间读到的数据是否被修改。如果读取的数据在执行时间和提交时间之间的时间段被改变，就会引发并发控制版本检查冲突，该交易就会在账本中被标记为无效，而且值不会更新到状态数据库中。"
 
 #: ../../source/glossary.rst:160
 msgid "Configuration Block"
-msgstr ""
+msgstr "配置区块"
 
 #: ../../source/glossary.rst:162
 msgid ""
@@ -205,21 +225,22 @@ msgid ""
 " a new configuration block being appended to the appropriate chain. This "
 "block will contain the contents of the genesis block, plus the delta."
 msgstr ""
+"包含为系统链（排序服务）或通道定义成员和策略的配置数据。对某个通道或整个网络的任何配置修改（比如，成员离开或加入）都将导致生成一个新的配置区块并追加到适当的链上。这个配置区块会包含创始区块的内容加上增量内容。"
 
 #: ../../source/glossary.rst:171
 msgid "Consensus"
-msgstr ""
+msgstr "共识"
 
 #: ../../source/glossary.rst:173
 msgid ""
 "A broader term overarching the entire transactional flow, which serves to "
 "generate an agreement on the order and to confirm the correctness of the set"
 " of transactions constituting a block."
-msgstr ""
+msgstr "覆盖整个交易流的一个广泛的术语，用于生成关于顺序的一致结果，并确认组成区块的一组交易的正确性。"
 
 #: ../../source/glossary.rst:180
 msgid "Consenter set"
-msgstr ""
+msgstr "批准者集合"
 
 #: ../../source/glossary.rst:182
 msgid ""
@@ -228,10 +249,11 @@ msgid ""
 "nodes exist on the system channel, but are not a part of a channel, they are"
 " not part of that channel's consenter set."
 msgstr ""
+"在Raft排序服务中，这是一些积极参与通道上的共识机制的排序节点。如果系统通道上存在其他排序节点，并且不属于应用通道，则它们不属于该应用通道的批准者集合。"
 
 #: ../../source/glossary.rst:190
 msgid "Consortium"
-msgstr ""
+msgstr "联盟"
 
 #: ../../source/glossary.rst:192
 msgid ""
@@ -243,10 +265,11 @@ msgid ""
 " organization that is not defined in a consortium may be added to an "
 "existing channel."
 msgstr ""
+"联盟是区块链网络上的非排序者组织的集合。这些是组建、加入通道，并且拥有节点的组织。虽然一个区块链网络可以有多个联盟，但大多数区块链网络都只有一个联盟。在通道创建时，添加到通道的所有组织都必须是联盟的一部分。然而，未在联盟中定义的组织可能会被添加到现有通道中。"
 
 #: ../../source/glossary.rst:202
 msgid "Chaincode definition"
-msgstr ""
+msgstr "链码定义"
 
 #: ../../source/glossary.rst:204
 msgid ""
@@ -261,18 +284,19 @@ msgid ""
 "chaincode (or, if requested, the execution of the Init function) will start "
 "the chaincode on the channel."
 msgstr ""
+"链码在通道上使用之前，链码定义被组织用来就链码的参数达成一致。每个希望使用某链码来背书交易或查询账本的通道成员都需要为其组织批准一个链码定义。一旦有足够多的通道成员批准了链码定义，满足了生命周期背书策略（默认情况下，该策略被设置为通道中的大多数组织批准即可），就可以将链码定义提交给通道。提交定义之后，该链码的第一次调用（或者，如果被请求，执行Init函数）将在通道上启动链码。"
 
 #: ../../source/glossary.rst:217
 msgid "Current State"
-msgstr ""
+msgstr "当前状态"
 
 #: ../../source/glossary.rst:219
 msgid "See World-State_."
-msgstr ""
+msgstr "查看 World-State_."
 
 #: ../../source/glossary.rst:224
 msgid "Dynamic Membership"
-msgstr ""
+msgstr "动态成员关系"
 
 #: ../../source/glossary.rst:226
 msgid ""
@@ -281,10 +305,11 @@ msgid ""
 "overall network. Dynamic membership is critical when business relationships "
 "adjust and entities need to be added/removed for various reasons."
 msgstr ""
+"超级账本Fabric支持成员、节点、排序服务节点的添加或移除，而不影响整个网络的可操作性。当业务关系调整或因各种原因需添加/移除实体时，动态成员关系至关重要。"
 
 #: ../../source/glossary.rst:234
 msgid "Endorsement"
-msgstr ""
+msgstr "背书"
 
 #: ../../source/glossary.rst:236
 msgid ""
@@ -296,10 +321,11 @@ msgid ""
 "corresponding endorsement policies, in which the endorsing peers are "
 "specified."
 msgstr ""
+"背书是指特定节点执行一个链码交易并返回一个提案响应给客户端应用程序的过程。提案响应包含链码执行后返回的消息、结果（读写集）、事件，同时也包含证明该节点执行链码的签名。链码应用程序具有相应的背书策略，其中指定了背书节点。"
 
 #: ../../source/glossary.rst:246
 msgid "Endorsement policy"
-msgstr ""
+msgstr "背书策略"
 
 #: ../../source/glossary.rst:248
 msgid ""
@@ -313,10 +339,11 @@ msgid ""
 "the endorsing peers. A transaction that is submitted must satisfy the "
 "endorsement policy before being marked as valid by committing peers."
 msgstr ""
+"定义了通道上，针对特定的链码应用程序必须执行交易的节点，和要求的响应（背书结果）的组合。策略可指定特定链码应用程序的交易背书节点，以及交易背书的最小参与节点数、百分比，或全部节点。策略可以根据应用程序和背书节点对于抵御不当行为(有意或无意)的预期弹性级别来策划。提交的交易在被执行提交的节点标记成有效前，必须符合背书策略。"
 
 #: ../../source/glossary.rst:260 ../../source/glossary.rst:270
 msgid "FabToken"
-msgstr ""
+msgstr "FabToken"
 
 #: ../../source/glossary.rst:262 ../../source/glossary.rst:272
 msgid ""
@@ -325,10 +352,12 @@ msgid ""
 "FabToken uses the membership services of Fabric to authenticate the identity"
 " of token owners and manage their public and private keys."
 msgstr ""
+"FabToken是一个基于未花费交易输出 (UTXO) "
+"原理的Token管理系统，它允许用户在通道中发行、交易、赎回Token。FabToken使用Fabric的成员关系服务来给Token的拥有者身份对象授权，并用这种服务管理这些身份对象的公钥和私钥。"
 
 #: ../../source/glossary.rst:280
 msgid "Follower"
-msgstr ""
+msgstr "跟随者"
 
 #: ../../source/glossary.rst:282
 msgid ""
@@ -339,20 +368,21 @@ msgid ""
 "followers will initiate a leader election and one of them will be elected "
 "leader."
 msgstr ""
+"在基于领导者的共识协议中，例如Raft，复制领导者产生的日志条目的节点被称为追随者。在Raft中，追随者也接收来自于领导者的心跳\"heartbeat\"信息。如果领导者在可配置的一段时间内停止发送这些信息，追随者们会初始化一个领导者选举，它们之一会成为被选举出来的领导者。"
 
 #: ../../source/glossary.rst:291
 msgid "Genesis Block"
-msgstr ""
+msgstr "创始区块"
 
 #: ../../source/glossary.rst:293
 msgid ""
 "The configuration block that initializes the ordering service, or serves as "
 "the first block on a chain."
-msgstr ""
+msgstr "创始区块是初始化排序服务的配置区块，也是链上的第一个区块。"
 
 #: ../../source/glossary.rst:299
 msgid "Gossip Protocol"
-msgstr ""
+msgstr "Gossip协议"
 
 #: ../../source/glossary.rst:301
 msgid ""
@@ -361,10 +391,12 @@ msgid ""
 "all peers on the channel; 3) syncs ledger state across all peers on the "
 "channel. Refer to the :doc:`Gossip <gossip>` topic for more details."
 msgstr ""
+"Gossip数据传播协议有三个功能：1）管理节点发现和通道成员关系；2）在通道上的所有节点之间传播账本数据；3）在通道上的所有节点之间同步账本状态。查看"
+" :doc:`Gossip <gossip>` 主题可得详情。"
 
 #: ../../source/glossary.rst:310
 msgid "Hyperledger Fabric CA"
-msgstr ""
+msgstr "超级账本Fabric证书授权中心（Certificate Authority）"
 
 #: ../../source/glossary.rst:312
 msgid ""
@@ -373,10 +405,11 @@ msgid ""
 "users. The CA issues one root certificate (rootCert) to each member and one "
 "enrollment certificate (ECert) to each authorized user."
 msgstr ""
+"超级账本Fabric证书授权中心是默认的认证授权管理组件，它向网络成员组织及其用户颁发基于PKI的证书。CA为每个成员颁发一个根证书（rootCert），为每个授权用户颁发一个注册证书（ECert）。"
 
 #: ../../source/glossary.rst:320
 msgid "Init"
-msgstr ""
+msgstr "初始化"
 
 #: ../../source/glossary.rst:322
 msgid ""
@@ -385,18 +418,19 @@ msgid ""
 "you can use the chaincode definition to request the execution of the Init "
 "function in order to initialize the chaincode."
 msgstr ""
+"初始化链码应用程序的一个方法。所有的链码都需要有一个初始化函数。默认情况下，这个函数永远不会被执行。但是，为了初始化链码，你可以使用链码定义来请求这个初始化函数的执行。"
 
 #: ../../source/glossary.rst:328
 msgid "Install"
-msgstr ""
+msgstr "安装"
 
 #: ../../source/glossary.rst:330
 msgid "The process of placing a chaincode on a peer's file system."
-msgstr ""
+msgstr "将链码放到节点文件系统里面的过程。"
 
 #: ../../source/glossary.rst:333
 msgid "Instantiate"
-msgstr ""
+msgstr "实例化"
 
 #: ../../source/glossary.rst:335
 msgid ""
@@ -407,10 +441,13 @@ msgid ""
 "to start a chaincode on a channel with the new Fabric chaincode lifecycle "
 "introduced as part of the Fabric v2.0 Alpha, see Chaincode-definition_."
 msgstr ""
+"在特定通道上启动并初始化链码应用程序的过程。实例化后，安装有链码的节点可以接受链码调用。这个方法在链码生命周期的前一个版本中使用。 "
+"对于当前在通道上启动链码的过程，在Fabric v2.0 Alpha中引入了新的Fabric链码生命周期，查看Chaincode-"
+"definition_。"
 
 #: ../../source/glossary.rst:345
 msgid "Invoke"
-msgstr ""
+msgstr "调用"
 
 #: ../../source/glossary.rst:347
 msgid ""
@@ -426,10 +463,11 @@ msgid ""
 "purpose. The invoke includes a channel identifier, the chaincode function to"
 " invoke, and an array of arguments."
 msgstr ""
+"用于调用链码内的函数。客户端应用程序通过向节点发送交易提案来调用链码。节点会执行链码并向客户端应用程序返回背书提案。客户端应用程序会收集足够的提案响应来满足背书策略，之后再将交易结果递交出去进行排序、验证和提交。客户端应用程序可以选择不递交交易结果。比如，如果调用只查询账本，客户端应用程序是不会递交这种只读性交易的，除非基于审计目的，需要记录访问账本的日志。调用包含了通道标识符、调用的链码函数，以及一个包含参数的数组。"
 
 #: ../../source/glossary.rst:361
 msgid "Leader"
-msgstr ""
+msgstr "领导者"
 
 #: ../../source/glossary.rst:363
 msgid ""
@@ -439,10 +477,11 @@ msgid ""
 "**type** of orderer. It is only a role that an orderer may have at certain "
 "times, and then not others, as circumstances determine."
 msgstr ""
+"在基于领导者的共识协议中，像Raft，领导者负责吸收新的日志条目，把它们复制给追随者排序节点，处理需要提交的条目。这不是一个特殊的排序者**类型**。它只是排序者在某些时候可能的角色，而不是其他角色，比如由环境决定的那类。"
 
 #: ../../source/glossary.rst:372
 msgid "Leading Peer"
-msgstr ""
+msgstr "主导节点"
 
 #: ../../source/glossary.rst:374
 msgid ""
@@ -453,14 +492,16 @@ msgid ""
 "leading peer(s) on a channel, who then distribute them to other peers within"
 " the same organization."
 msgstr ""
+"每一个组织Organization_ "
+"在其订阅的通道上可以拥有多个节点，其中一个或多个节点会作为通道的主导节点，代表该组织与网络排序服务节点通信。排序服务将区块传递给通道上的主导节点，主导节点再将此区块分发给同一组织下的其他节点。"
 
 #: ../../source/glossary.rst:384
 msgid "Ledger"
-msgstr ""
+msgstr "账本"
 
 #: ../../source/glossary.rst:392
 msgid "A Ledger, 'L'"
-msgstr ""
+msgstr "一个账本， 'L'"
 
 #: ../../source/glossary.rst:395
 msgid ""
@@ -472,6 +513,8 @@ msgid ""
 "that have been added, modified or deleted by the set of validated and "
 "committed transactions in the blockchain."
 msgstr ""
+"账本由两个不同但相关的部分组成——\"区块链\"和\"状态数据库\"，也称为\"世界状态\"。与其他账本不同，区块链是 "
+"**不可篡改**的——也就是说，一旦将一个区块添加到链中，它就无法更改。相反，\"世界状态\"是一个数据库，其中含有由区块链中经过验证和提交的交易添加、修改或删除的键值对集合的当前值。"
 
 #: ../../source/glossary.rst:403
 msgid ""
@@ -483,10 +526,12 @@ msgid ""
 "that is logically singular, but has many identical copies distributed across"
 " a set of network nodes (peers and the ordering service)."
 msgstr ""
+"认为网络中每个通道都有一个 **逻辑** "
+"账本是有帮助的。实际上，通道中的每个节点都维护着自己的账本副本——通过称为**共识**的过程与所有其他节点的副本保持一致。术语**分布式账本技**（**DLT**）通常与这种账本相关联——这种账本在逻辑上是单一的，但在一组网络节点（Peers和排序服务节点）上分布有许多相同的副本。"
 
 #: ../../source/glossary.rst:414
 msgid "Log entry"
-msgstr ""
+msgstr "日志条目"
 
 #: ../../source/glossary.rst:416
 msgid ""
@@ -495,22 +540,23 @@ msgid ""
 "such entries known as the \"log\". The log is considered to be consistent if"
 " all members agree on the entries and their order."
 msgstr ""
+"日志条目，这种Raft排序服务中的主要工作单元，是被领导者排序节点分发给追随者的。这种条目的全序列被称为\"日志\"。如果所有的成员认同这些条目和它们的顺序，那么日志就是一致的。"
 
 #: ../../source/glossary.rst:424
 msgid "Member"
-msgstr ""
+msgstr "成员"
 
 #: ../../source/glossary.rst:426
 msgid "See Organization_."
-msgstr ""
+msgstr "查看 Organization_."
 
 #: ../../source/glossary.rst:431
 msgid "Membership Service Provider"
-msgstr ""
+msgstr "成员关系服务提供者"
 
 #: ../../source/glossary.rst:439
 msgid "An MSP, 'ORG.MSP'"
-msgstr ""
+msgstr "一个 MSP，'ORG.MSP'"
 
 #: ../../source/glossary.rst:442
 msgid ""
@@ -524,10 +570,11 @@ msgid ""
 " that alternate implementations of this can be smoothly plugged in without "
 "modifying the core of transaction processing components of the system."
 msgstr ""
+"成员关系服务提供者（MSP）是指为客户端和节点加入超级账本Fabric网络，提供凭证的系统抽象组件（以接口的形式存在）。客户端用凭证来认证他们的交易，节点用凭证认证交易处理结果（背书结果）。虽然与系统的交易处理组件紧密连接，但此接口的目标是定义成员服务组件，以便在不修改系统的交易处理组件核心的情况下平滑接入该组件的替代实现。"
 
 #: ../../source/glossary.rst:455
 msgid "Membership Services"
-msgstr ""
+msgstr "成员关系服务"
 
 #: ../../source/glossary.rst:457
 msgid ""
@@ -537,10 +584,11 @@ msgid ""
 "  It is a PKI-based implementation of the Membership Services Provider (MSP)"
 " abstraction."
 msgstr ""
+"成员关系服务在许可制的区块链网络上做认证、授权和身份管理。运行在Peers和排序服务上的成员关系服务代码进行认证、授权区块链操作。它是基于PKI的抽象成员关系服务提供者（MSP）的接口实现。"
 
 #: ../../source/glossary.rst:465
 msgid "Ordering Service"
-msgstr ""
+msgstr "排序服务"
 
 #: ../../source/glossary.rst:467
 msgid ""
@@ -552,14 +600,16 @@ msgid ""
 "varieties. The ordering service is a common binding for the overall network;"
 " it contains the cryptographic identity material tied to each Member_."
 msgstr ""
+"也被称为**orderer（排序者）**。预先定义好的一组节点，将交易排序放入区块。排序服务独立于Peer流程之外，并以先到先处理的方式为网络上所有通道做交易排序。排序服务支持插件式实现，而不仅仅是目前默认实现了的开箱即用的SOLO和Kafka这两种方式。排序服务是整个网络的公共绑定，包含与每个成员Member_"
+" 相关的加密材料。"
 
 #: ../../source/glossary.rst:477
 msgid "Organization"
-msgstr ""
+msgstr "组织"
 
 #: ../../source/glossary.rst:488
 msgid "An organization, 'ORG'"
-msgstr ""
+msgstr "一个组织， 'ORG'"
 
 #: ../../source/glossary.rst:491
 msgid ""
@@ -576,25 +626,27 @@ msgid ""
 " Consortium_. While all of the organizations on a network are members, not "
 "every organization will be part of a consortium."
 msgstr ""
+"也被称为\"members（成员）\"，组织被区块链服务提供者邀请加入区块链网络。将成员关系服务提供者（MSP_）添加到网络的同时，组织就加入了网络。MSP定义了网络的其他成员如何验证签名（例如交易上的签名），这些签名是由该组织颁发的有效身份签出的。MSP中身份的特定访问权限由策略控制，组织加入网络的同时需要同意这些策略。组织可以像跨国公司一样大，也可以像个人一样小。"
+" 组织的交易端点是节点Peer_。一组组织组成联盟Consortium_。虽然网络上的所有组织都是成员，但并非每个组织都会加入一个联盟。"
 
 #: ../../source/glossary.rst:505
 msgid "Peer"
-msgstr ""
+msgstr "节点"
 
 #: ../../source/glossary.rst:513
 msgid "A peer, 'P'"
-msgstr ""
+msgstr "一个节点，'P'"
 
 #: ../../source/glossary.rst:515
 msgid ""
 "A network entity that maintains a ledger and runs chaincode containers in "
 "order to perform read/write operations to the ledger.  Peers are owned and "
 "maintained by members."
-msgstr ""
+msgstr "节点是一个网络实体，维护账本并运行链码容器来对账本做读写操作。节点由成员所拥有，也由成员负责维护。"
 
 #: ../../source/glossary.rst:521
 msgid "Policy"
-msgstr ""
+msgstr "策略"
 
 #: ../../source/glossary.rst:523
 msgid ""
@@ -607,10 +659,12 @@ msgid ""
 "instantiating chaincode on a channel. A default set of policies ship in the "
 "sample ``configtx.yaml`` which will be appropriate for most networks."
 msgstr ""
+"策略是由数字身份的属性组成的表达式，例如：``Org1.Peer OR "
+"Org2.Peer``。它们用于限制对区块链网络上的资源的访问。例如，它们决定谁可以读取或写入某个通道，或者谁可以通过ACL_使用特定的链码API。在引导启动排序服务或创建通道之前，可以在``configtx.yaml``中定义策略，或者可以在通道上实例化链码时指定它们。示例``configtx.yaml``中提供了一组默认策略，适用于大多数网络。"
 
 #: ../../source/glossary.rst:535
 msgid "Private Data"
-msgstr ""
+msgstr "私有数据"
 
 #: ../../source/glossary.rst:537
 msgid ""
@@ -623,10 +677,12 @@ msgid ""
 "Ordering-Service_, not the private data itself, so this keeps private data "
 "confidential from Orderer."
 msgstr ""
+"私有数据是指存储在每个已被授权的节点里面的私有数据库里的机密数据，逻辑上与通道账本数据分离。通过私有数据集合定义，对这种数据的访问权限被限制在通道上的一个或多个组织的范围内。通道账本上存储有私有数据的哈希作为交易数据的证据，未经授权的组织读取这些哈希值不受限制。此外，为了进一步保护隐私，发送给排序服务"
+" Ordering-Service_的是私有数据的哈希值，而不是私有数据本身，因此这使得私有数据对排序者保密。"
 
 #: ../../source/glossary.rst:549
 msgid "Private Data Collection (Collection)"
-msgstr ""
+msgstr "私有数据集合"
 
 #: ../../source/glossary.rst:551
 msgid ""
@@ -636,35 +692,37 @@ msgid ""
 "entitled to store a set of private data, which by extension implies that "
 "only these organizations can transact with the private data."
 msgstr ""
+"私有数据集合用于管理通道上的私有数据，使得两个或两个以上组织的私有数据相对通道上的其他组织保持机密。集合定义描述了有权存储一组私有数据的通道上的组织子集，这意味着只有这些组织才能与私有数据进行交易。"
 
 #: ../../source/glossary.rst:560
 msgid "Proposal"
-msgstr ""
+msgstr "提案"
 
 #: ../../source/glossary.rst:562
 msgid ""
 "A request for endorsement that is aimed at specific peers on a channel. Each"
 " proposal is either an Init or an invoke (read/write) request."
-msgstr ""
+msgstr "提案是指通道中一种针对特定节点的背书请求。每个提案要么是链码的实例化，要么是链码的调用（读写）请求。"
 
 #: ../../source/glossary.rst:568 ../../source/glossary.rst:576
 msgid "Prover peer"
-msgstr ""
+msgstr "证明者节点"
 
 #: ../../source/glossary.rst:570
 msgid ""
 "A trusted peer used by the FabToken client to assemble a token transaction "
 "and list the unspent tokens owned by a given authorized party."
-msgstr ""
+msgstr "证明者节点是一种可信任的节点，它被FabToken客户端用来组装token交易和列出给定的已被授权参与方拥有的未花费tokens。"
 
 #: ../../source/glossary.rst:578
 msgid ""
 "A trusted peer used by the FabToken client to assemble a token transaction."
 msgstr ""
+"A trusted peer used by the FabToken client to assemble a token transaction."
 
 #: ../../source/glossary.rst:583
 msgid "Query"
-msgstr ""
+msgstr "查询"
 
 #: ../../source/glossary.rst:585
 msgid ""
@@ -678,10 +736,11 @@ msgid ""
 "wants auditable proof on the ledger chain that it had knowledge of specific "
 "ledger state at a certain point in time."
 msgstr ""
+"查询是一个链码调用，只读取账本当前状态，不写入账本。链码函数可能查询账本上的特定键名，也可能查询账本上的一组键名。由于查询不改变账本状态，因此客户端应用通常不会提交这类只读交易做排序、验证和提交。不过，特殊情况下，客户端应用还是会选择提交只读交易做排序、验证和提交，比如，客户端希望在账本上有可审计的证据，证明它在某个时间点知道特定的账本状态。"
 
 #: ../../source/glossary.rst:597
 msgid "Quorum"
-msgstr ""
+msgstr "仲裁数量"
 
 #: ../../source/glossary.rst:599
 msgid ""
@@ -692,10 +751,11 @@ msgid ""
 "unavailable for any reason, the cluster becomes unavailable for both read "
 "and write operations and no new logs can be committed."
 msgstr ""
+"集群中需要足够数量的成员确认提案然后才可以将交易排序，执行确认的最小成员数量就是仲裁数量。对于每个共识集合，这个数字占节点总数的**多数（majority）**。在具有五个节点的集群中，必须有三个节点可用，才能达到仲裁数量。如果有仲裁数量个节点因任何原因不可用，则集群对于读和写操作都会变得不可用，不能提交任何新日志。"
 
 #: ../../source/glossary.rst:609
 msgid "Raft"
-msgstr ""
+msgstr "Raft"
 
 #: ../../source/glossary.rst:611
 msgid ""
@@ -708,10 +768,13 @@ msgid ""
 "and their design allows organizations to contribute nodes to a distributed "
 "ordering service."
 msgstr ""
+"版本v1.4.1的新功能，Raft是基于`Raft protocol` "
+"<https://raft.github.io/raft.pdf>`_的`etcd library "
+"<https://coreos.com/etcd/>`_实现的一个崩溃容错排序服务（CFT）。Raft遵守\"领导者和追随者\"模型，当（每个通道）选举出领导者节点之后，它的追随者会复制它的决策。Raft排序服务应该比基于kafka的排序服务更容易设置和管理，而且它们的设计允许组织向分布式排序服务贡献节点。"
 
 #: ../../source/glossary.rst:623
 msgid "Software Development Kit (SDK)"
-msgstr ""
+msgstr "软件开发包（SDK）"
 
 #: ../../source/glossary.rst:625
 msgid ""
@@ -723,6 +786,7 @@ msgid ""
 "SDK provides APIs for transaction processing, membership services, node "
 "traversal and event handling."
 msgstr ""
+"超级账本Fabric客户端软件开发包（SDK）为开发人员提供了一个结构化的库环境，用于编写和测试链码应用程序。本SDK完全可以通过标准接口实现配置和扩展。它的各种组件：签名加密算法、日志框架、状态存储，都可以轻松地组装进SDK或者从SDK拆除。本SDK为交易处理、成员服务、节点遍历以及事件处理提供了APIs。"
 
 #: ../../source/glossary.rst:632
 msgid ""
@@ -730,10 +794,11 @@ msgid ""
 " three more -- Python, Go and REST -- are not yet official but can still be "
 "downloaded and tested."
 msgstr ""
+"目前，两个官方支持的SDK分别是对接Node.js和Java，而另外三个版本——Python，Go和REST——尚非官方，但仍可以下载和测试。"
 
 #: ../../source/glossary.rst:639
 msgid "Smart Contract"
-msgstr ""
+msgstr "智能合约"
 
 #: ../../source/glossary.rst:641
 msgid ""
@@ -743,20 +808,22 @@ msgid ""
 "contracts are referred to as chaincode. Smart contract chaincode is "
 "installed onto peer nodes and then defined and used on one or more channels."
 msgstr ""
+"智能合约是代码——由区块链网络外部的客户端应用程序调用——管理着对世界状态 :ref:`World-"
+"State`中的键值对的访问和修改。在超级账本Fabric中，智能合约被称为链码。智能合约链码安装在Peer节点上，并由一个或多个通道定义和使用。"
 
 #: ../../source/glossary.rst:650
 msgid "State Database"
-msgstr ""
+msgstr "状态数据库"
 
 #: ../../source/glossary.rst:652
 msgid ""
 "Current state data is stored in a state database for efficient reads and "
 "queries from chaincode. Supported databases include levelDB and couchDB."
-msgstr ""
+msgstr "为了从链码中高效的读写查询，当前状态数据存储在状态数据库中。支持的数据库包括levelDB和couchDB。"
 
 #: ../../source/glossary.rst:658
 msgid "System Chain"
-msgstr ""
+msgstr "系统链"
 
 #: ../../source/glossary.rst:660
 msgid ""
@@ -767,6 +834,7 @@ msgid ""
 " network (e.g. a new org joining or a new ordering node being added) will "
 "result in a new configuration block being added to the system chain."
 msgstr ""
+"系统链包含一个在系统级别定义网络的配置区块。系统链存在于排序服务中，与通道类似，具有包含以下信息的初始配置：MSP（成员关系服务提供者）信息、策略和配置详情。全网中的任何变化（例如新的组织加入或者新的排序节点加入）将导致新的配置区块被添加到系统链中。"
 
 #: ../../source/glossary.rst:667
 msgid ""
@@ -774,15 +842,15 @@ msgid ""
 "group of channels.  For instance, a collection of financial institutions may"
 " form a consortium (represented through the system chain), and then proceed "
 "to create channels relative to their aligned and varying business agendas."
-msgstr ""
+msgstr "系统链可看做是一个或一组通道的公用绑定。例如，金融机构的集合可以组成一个联盟（表现为系统链）， 然后根据其相同或不同的业务计划创建通道。"
 
 #: ../../source/glossary.rst:675
 msgid "Transaction"
-msgstr ""
+msgstr "交易"
 
 #: ../../source/glossary.rst:683
 msgid "A transaction, 'T'"
-msgstr ""
+msgstr "一个交易，'T'"
 
 #: ../../source/glossary.rst:685
 msgid ""
@@ -795,14 +863,15 @@ msgid ""
 "that is submitted to the ordering service and then validated by committing "
 "peers."
 msgstr ""
+"当使用链码或FabToken客户端读写账本数据时，就会创建交易。如果你正在调用链码，应用程序客户端会从背书节点收集提案的回应，然后将执行结果和背书内容打包进一个交易中，然后递交出去，进行排序、验证和提交。如果使用FabToken创建token交易，FabToken客户端会使用证明者节点创建一个交易，然后递交给排序服务，然后被提交者节点验证。"
 
 #: ../../source/glossary.rst:696
 msgid "World State"
-msgstr ""
+msgstr "世界状态"
 
 #: ../../source/glossary.rst:704
 msgid "The World State, 'W'"
-msgstr ""
+msgstr "世界状态，'W'"
 
 #: ../../source/glossary.rst:706
 msgid ""
@@ -820,3 +889,4 @@ msgid ""
 "Peers commit the latest values to the ledger world state for each valid "
 "transaction included in a processed block."
 msgstr ""
+"世界状态也称为“当前状态”，是超级账本Fabric账本:ref:`Ledger`的一个组件。世界状态表示链交易日志中包含的所有键的最新值。链码根据世界状态数据执行交易提案，因为世界状态提供对这些键的最新值的直接访问，而不是通过遍历整个交易日志来计算它们。每当键的值发生变化时（例如，当汽车的所有权——\"键key\"——从一个所有者转移到另一个——\"值value\"）或添加新键（生成一个汽车）时，世界状态就会改变。必须先知道键值对的当前状态才能更改它，因此，世界状态对交易流程至关重要。对于处理过的区块中包含的每个有效交易，Peers将最新值提交到账本世界状态中。"
