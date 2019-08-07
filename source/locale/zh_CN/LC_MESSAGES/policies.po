@@ -207,6 +207,7 @@ msgid ""
 "and ``mspP3``. It requires one signature which satisfies ``mspP1``, and "
 "another signature which either satisfies ``mspP2`` or ``mspP3``."
 msgstr ""
+"这在MSP主体``mspP1``、``mspP2``、``mspP3``上定义了一个签名策略。它要求一个签名满足``mspP1``，并且还有一个签名满足``mspP2``或者``mspP3``。"
 
 #: ../../source/policies.rst:218
 msgid ""
@@ -214,6 +215,7 @@ msgid ""
 " expressed using the SignaturePolicy policy type. For code which constructs "
 "signature policies, consult ``fabric/common/cauthdsl/cauthdsl_builder.go``."
 msgstr ""
+"希望可以清楚地看到，可以使用SignaturePolicy策略类型来表示复杂且相对比较任意的逻辑。对于构造签名策略SignaturePolicy的代码，查看``fabric/common/cauthdsl/cauthdsl_builder.go``。"
 
 #: ../../source/policies.rst:225
 msgid ""
@@ -221,22 +223,23 @@ msgid ""
 " signatures are 'consumed', in the order in which they appear, regardless of"
 " whether they satisfy multiple policy principals."
 msgstr ""
+"**限制**：当根据签名集合评估其是否满足策略时，（系统）按签名出现的顺序评估其是否满足策略，排序在前的签名评估后会被标记为'已消费'，不管该签名是否满足策略后续出现的更多主体。"
 
 #: ../../source/policies.rst:229
 msgid "For example.  Consider a policy which requires"
-msgstr ""
+msgstr "例如，考虑一个需要的策略"
 
 #: ../../source/policies.rst:235
 msgid ""
 "The naive intent of this policy is to require that both an admin, and a "
 "member sign. For the signature set"
-msgstr ""
+msgstr "此策略的原始意图是要求同时具有一个管理员和一个成员的签名。对于签名集"
 
 #: ../../source/policies.rst:242
 msgid ""
 "the policy evaluates to true, just as expected.  However, consider the "
 "signature set"
-msgstr ""
+msgstr "这个策略的评估结果是True，跟预想的一样。但是，考虑这个签名集："
 
 #: ../../source/policies.rst:249
 msgid ""
@@ -246,6 +249,9 @@ msgid ""
 "``org1.Admin`` principal cannot be satisfied by the "
 "``org1.MemberSignature``, the policy evaluates to false."
 msgstr ""
+"这个签名集不满足这个策略。评估失败是因为当 ``org1.AdminSignature`` "
+"满足``org1.Member``的角色之后，会被系统标记为'已消费'，它被认为是满足了普通成员的需求。 因为``org1.Admin``主体不能被 "
+"``org1.MemberSignature``满足，所以整个策略评估结果为false。"
 
 #: ../../source/policies.rst:255
 msgid ""
@@ -254,10 +260,11 @@ msgid ""
 "should be ordered from least privileged to most privileged in the signature "
 "set."
 msgstr ""
+"为了避免这个陷阱，应该在策略中把身份标识顺序指定成从权限最高的身份到权限最低的身份，并且应该在签名集中从权限最低的身份的签名排到权限最高的身份的签名。"
 
 #: ../../source/policies.rst:260
 msgid "MSP Principals"
-msgstr ""
+msgstr "MSP主体"
 
 #: ../../source/policies.rst:262
 msgid ""
@@ -267,12 +274,14 @@ msgid ""
 "assume that the underlying MSP implementation is the default MSP type, based"
 " on X.509 cryptography."
 msgstr ""
+"MSP主体是加密身份的一个广义概念。尽管MSP框架被设计的兼容处理X.509之外的加密类型，但出于本文档的目的，讨论将假定底层MSP实现是默认MSP类型"
+"----基于X.509加密的。"
 
 #: ../../source/policies.rst:268
 msgid ""
 "An MSP Principal is defined in ``fabric/protos/msp_principal.proto`` as "
 "follows:"
-msgstr ""
+msgstr "MSP主体在``fabric/protos/msp_principal.proto``中定义，如下："
 
 #: ../../source/policies.rst:286
 msgid ""
@@ -280,24 +289,25 @@ msgid ""
 "``IDENTITY``. The ``ORGANIZATIONAL_UNIT`` is at the time of this writing not"
 " implemented."
 msgstr ""
+"``principal_classification``必须设置为``ROLE``或者``IDENTITY``。``ORGANIZATIONAL_UNIT``目前还没有实现。"
 
 #: ../../source/policies.rst:290
 msgid ""
 "In the case of ``IDENTITY`` the ``principal`` field is set to the bytes of a"
 " certificate literal."
-msgstr ""
+msgstr "在``IDENTITY``的情况下，``principal``字段被设置为证书的字节流内容。"
 
 #: ../../source/policies.rst:293
 msgid ""
 "However, more commonly the ``ROLE`` type is used, as it allows the principal"
 " to match many different certs issued by the MSP's certificate authority."
-msgstr ""
+msgstr "但是，``ROLE``用的更多一些，因为这种类型允许主体匹配很多MSP的CA颁发的不同的证书。"
 
 #: ../../source/policies.rst:297
 msgid ""
 "In the case of ``ROLE``, the ``principal`` is a marshaled ``MSPRole`` "
 "message defined as follows:"
-msgstr ""
+msgstr "在``ROLE``的情况下，``principal``是一个序列化之后的``MSPRole``消息，定义如下："
 
 #: ../../source/policies.rst:315
 msgid ""
@@ -306,31 +316,35 @@ msgid ""
 "evaluate the signature, and the ``Role`` is set to either ``MEMBER``, "
 "``ADMIN``, ``CLIENT`` or ``PEER``. In particular:"
 msgstr ""
+"``msp_identifier``被设置为MSP的ID（由``MSPConfig`` "
+"proto在通道配置中为组织定义），它对应的公钥将用来评估是否匹配签名的结果，``Role``被设置为``MEMBER``、``ADMIN``、``CLIENT``或``PEER``四值之一。特别是："
 
 #: ../../source/policies.rst:320
 msgid "``MEMBER`` matches any certificate issued by the MSP."
-msgstr ""
+msgstr "``MEMBER`` 可以匹配MSP签署的任何证书。"
 
 #: ../../source/policies.rst:321
 msgid ""
 "``ADMIN`` matches certificates enumerated as admin in the MSP definition."
-msgstr ""
+msgstr "``ADMIN`` 匹配MSP定义中被枚举为管理员的证书。"
 
 #: ../../source/policies.rst:322
 msgid ""
 "``CLIENT`` (``PEER``) matches certificates that carry the client (peer) "
 "Organizational unit."
-msgstr ""
+msgstr "``CLIENT``（``PEER``）匹配代表客户端或者Peer的组织单位的证书。"
 
 #: ../../source/policies.rst:324
 msgid ""
 "(see `MSP Documentation <http://hyperledger-"
 "fabric.readthedocs.io/en/latest/msp.html>`_)"
 msgstr ""
+"（查看 `MSP Documentation <http://hyperledger-"
+"fabric.readthedocs.io/en/latest/msp.html>`_）"
 
 #: ../../source/policies.rst:327
 msgid "Constructing an ImplicitMetaPolicy"
-msgstr ""
+msgstr "构造一个ImplicitMetaPolicy"
 
 #: ../../source/policies.rst:329
 msgid ""
@@ -340,10 +354,13 @@ msgid ""
 "evaluation is not against MSP principals, but rather against other policies."
 " It is defined in ``fabric/protos/common/policies.proto`` as follows:"
 msgstr ""
+"``ImplicitMetaPolicy`` "
+"仅在通道配置的上下文中定义才有效。它是``Implicit隐式的``，因为它是基于当前配置隐式（此处译者有疑问）构造的；它是``Meta元``的，因为它的计算不是针对MSP主体的，而是针对其他策略的（此处译者有疑问）。它在``fabric/protos/common/policies.proto``"
+" 中定义。如下："
 
 #: ../../source/policies.rst:348
 msgid "For example, consider a policy defined at ``/Channel/Readers`` as"
-msgstr ""
+msgstr "例如，考虑一个给``/Channel/Readers`定义的策略："
 
 #: ../../source/policies.rst:357
 msgid ""
@@ -354,12 +371,14 @@ msgid ""
 "to see if ``ANY`` of those two policies evaluate without error. Had the rule"
 " been ``ALL`` it would require both."
 msgstr ""
+"该策略将隐式地选择``/Channel``的子组，在本例中为``Application``和``Orderer``，在选择的组内检索名称为``foo``的策略，得到``/Channel/Application/foo``和`/Channel/Orderer/foo``。然后，当对策略进行评估时，它将检查这两个策略中的``ANY``，即任何一个，是否没有报错。如果规则是``ALL``，那就需要两者都没有报错。"
 
 #: ../../source/policies.rst:364
 msgid ""
 "Consider another policy defined at ``/Channel/Application/Writers`` where "
 "there are 3 application orgs defined, ``OrgA``, ``OrgB``, and ``OrgC``."
 msgstr ""
+"考虑一个给``/Channel/Application/Writers``定义的策略，包含三个组织``OrgA``、``OrgB``、``OrgC``。"
 
 #: ../../source/policies.rst:375
 msgid ""
@@ -369,14 +388,15 @@ msgid ""
 " this policy will require that 2 of the three organization's ``bar`` "
 "policies are satisfied."
 msgstr ""
+"在本例中，能被检索出来的策略总共有``/Channel/Application/OrgA/bar``、``/Channel/Application/OrgB/bar``、``/Channel/Application/OrgC/bar``。因为规则是要``MAJORITY``多数原则，本策略就需要满足三个组织里面的至少两个子策略。"
 
 #: ../../source/policies.rst:382
 msgid "Policy Defaults"
-msgstr ""
+msgstr "默认策略"
 
 #: ../../source/policies.rst:384
 msgid "The ``configtxgen`` tool creates default policies as follows:"
-msgstr ""
+msgstr "``configtxgen``按如下方式工具创建默认策略："
 
 #: ../../source/policies.rst:405
 msgid ""
@@ -387,3 +407,6 @@ msgid ""
 "organizations change, and the individual organizations may pick their own "
 "rules and thresholds for what is means to be a Reader, Writer, and Admin."
 msgstr ""
+"注意，层级高的策略都是定义为``ImplicitMetaPolicy``\\ "
+"s，只有在最低一级的叶节点才有必要定义``SignaturePolicy``\\ "
+"s。这组默认值效果良好，``ImplicitMetaPolicies``不需要因为组织的数量变化而重新定义，具体组织可以选择他们自己的规则和阈值来决定怎样才能成为一个Reader、Writer或者Admin这样的角色。"

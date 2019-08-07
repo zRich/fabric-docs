@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:56+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +23,11 @@ msgstr ""
 
 #: ../../source/idemix.rst:2
 msgid "MSP Implementation with Identity Mixer"
-msgstr ""
+msgstr "使用Identity Mixer的MSP实现"
 
 #: ../../source/idemix.rst:5
 msgid "What is Idemix?"
-msgstr ""
+msgstr "什么是Idemix？"
 
 #: ../../source/idemix.rst:7
 msgid ""
@@ -34,18 +38,19 @@ msgid ""
 "transactions without revealing that the transactions were sent by the same "
 "identity."
 msgstr ""
+"Idemix是一个加密协议套件，提供了强大的身份验证和隐私保护功能：比如匿名**anonymity**，不用明示交易者的身份即可执行交易的功能；还比如不可链接性**unlinkability**，一个身份发送多个交易时，不能显示出这些交易是由同一个身份发出的。"
 
 #: ../../source/idemix.rst:13
 msgid ""
 "There are three actors involved in an Idemix flow: **user**, **issuer**, and"
 " **verifier**."
-msgstr ""
+msgstr "在一个Idemix流程中涉及到三个参与者：用户**user**、发布方**issuer**、验证者**verifier**。"
 
 #: ../../source/idemix.rst:18
 msgid ""
 "An issuer certifies a set of user's attributes are issued in the form of a "
 "digital certificate, hereafter called \"credential\"."
-msgstr ""
+msgstr "发布方以数字证书的形式发布一组用户属性，以下称此证书为凭证“credential”。"
 
 #: ../../source/idemix.rst:20
 msgid ""
@@ -55,12 +60,15 @@ msgid ""
 "chooses to reveal. The proof, because it is zero-knowledge, reveals no "
 "additional information to the verifier, issuer, or anyone else."
 msgstr ""
+"用户随后会生成一个零知识证明 \"`zero-knowledge proof <https://en.wikipedia.org/wiki/Zero-"
+"knowledge_proof>`_\" "
+"来证明自己拥有这个凭证，并且只选择性的公开自己想公开的属性。这个证明，因为是零知识的，所以不会向验证者、发布方或任何人透露任何额外信息。"
 
 #: ../../source/idemix.rst:25
 msgid ""
 "As an example, suppose \"Alice\" needs to prove to Bob (a store clerk) that "
 "she has a driver's license issued to her by the DMV."
-msgstr ""
+msgstr "例如，假设“Alice”需要向Bob（商店职员）证明她有机动车管理局发给她的驾照。"
 
 #: ../../source/idemix.rst:28
 msgid ""
@@ -69,30 +77,31 @@ msgid ""
 "could show it to him. However, Bob would then be able to see Alice's name, "
 "address, exact age, etc. --- much more information than Bob needs to know."
 msgstr ""
+"在这个场景中，Alice是用户，机动车管理局是发布方，Bob是验证方。为了向Bob证明Alice有驾驶执照，她可以给他看。但是，这样Bob就可以看到Alice的名字、地址、确切年龄等等——这比Bob有必要知道的信息多得多。"
 
 #: ../../source/idemix.rst:33
 msgid ""
 "Instead, Alice can use Idemix to generate a \"zero-knowledge proof\" for "
 "Bob, which only reveals that she has a valid driver's license and nothing "
 "else."
-msgstr ""
+msgstr "替代地，Alice可以使用Idemix为Bob生成一个“零知识证明”，该证明只显示她拥有有效的驾照，除此之外什么都没有。"
 
 #: ../../source/idemix.rst:36
 msgid "So from the proof:"
-msgstr ""
+msgstr "所以，从这个证明中："
 
 #: ../../source/idemix.rst:38
 msgid ""
 "Bob does not learn any additional information about Alice other than the "
 "fact that she has a valid license (anonymity)."
-msgstr ""
+msgstr "Bob只知道Alice有一个有效的执照，除此之外，他没有了解到关于Alice的任何其他信息（匿名性）。"
 
 #: ../../source/idemix.rst:40
 msgid ""
 "If Alice visits the store multiple times and generates a proof each time for"
 " Bob, Bob would not be able to tell from the proof that it was the same "
 "person (unlinkability)."
-msgstr ""
+msgstr "如果Alice多次访问商店并每次都为Bob生成一个证明，Bob将无法从这些证明中看出这是同一个人（不可链接性）。"
 
 #: ../../source/idemix.rst:44
 msgid ""
@@ -103,10 +112,11 @@ msgid ""
 "compare Idemix and X.509 technologies in detail in the technical section "
 "below."
 msgstr ""
+"Idemix身份验证技术提供了与标准X.509证书类似的信任模型和安全保证，但是使用了底层加密算法，有效地提供了高级隐私特性，包括上面描述的特性。在下面的技术部分中，我们将详细比较Idemix和X.509技术。"
 
 #: ../../source/idemix.rst:51
 msgid "How to use Idemix"
-msgstr ""
+msgstr "如何使用Idemix"
 
 #: ../../source/idemix.rst:53
 msgid ""
@@ -114,42 +124,43 @@ msgid ""
 "which Fabric components correspond to the user, issuer, and verifier in "
 "Idemix."
 msgstr ""
+"要了解如何在Hyperledger Fabric中使用Idemix，我们需要查看哪些Fabric组件对应于Idemix中的用户、发布方和验证方。"
 
 #: ../../source/idemix.rst:56
 msgid ""
 "The Fabric Java SDK is the API for the **user**. In the future, other Fabric"
 " SDKs will also support Idemix."
-msgstr ""
+msgstr "Fabric Java SDK是用户**user**的API。在将来，其他Fabric SDKs也会支持Idemix。"
 
 #: ../../source/idemix.rst:59
 msgid "Fabric provides two possible Idemix **issuers**:"
-msgstr ""
+msgstr "Fabric提供了两种可能的Idemix发布者**issuers**："
 
 #: ../../source/idemix.rst:61
 msgid "Fabric CA for production environments or development, and"
-msgstr ""
+msgstr "Fabric CA 支持生产环境和开发环境"
 
 #: ../../source/idemix.rst:62
 msgid "the :doc:`idemixgen <idemixgen>` tool for development environments."
-msgstr ""
+msgstr ":doc:`idemixgen <idemixgen>` 工具支持开发环境。"
 
 #: ../../source/idemix.rst:64
 msgid "The **verifier** is an Idemix MSP in Fabric."
-msgstr ""
+msgstr "验证者**verifier**在Fabric中是Idemix MSP。"
 
 #: ../../source/idemix.rst:66
 msgid ""
 "In order to use Idemix in Hyperledger Fabric, the following three basic "
 "steps are required:"
-msgstr ""
+msgstr "为了在Hyperledger Fabric中使用Idemix，需要以下三个基本步骤："
 
 #: ../../source/idemix.rst:71
 msgid "*Compare the roles in this image to the ones above.*"
-msgstr ""
+msgstr "*对比这个图和上面那个图中的角色。*"
 
 #: ../../source/idemix.rst:73
 msgid "Consider the issuer."
-msgstr ""
+msgstr "考虑发布者issuer。"
 
 #: ../../source/idemix.rst:75
 msgid ""
@@ -160,22 +171,26 @@ msgid ""
 "``IssuerPublicKey`` and ``IssuerRevocationPublicKey``. These files are "
 "required in step 2."
 msgstr ""
+"Fabric CA（版本1.3或更高版本）改进后可自动充当Idemix发布者。当启动``fabric-ca-server``时（或通过``fabric-"
+"ca-server init``命令初始化时），将在``fabric-ca-"
+"server``的主目录中自动创建以下两个文件：``IssuerPublicKey``和``IssuerRevocationPublicKey``。步骤2需要这些文件。"
 
 #: ../../source/idemix.rst:82
 msgid ""
 "For a development environment and if you are not using Fabric CA, you may "
 "use ``idemixgen`` to create these files."
-msgstr ""
+msgstr "对于开发环境，如果你还没使用Fabric CA，你可以使用``idemixgen``创建这些文件。"
 
 #: ../../source/idemix.rst:85
 msgid "Consider the verifier."
-msgstr ""
+msgstr "考虑验证者verifier。"
 
 #: ../../source/idemix.rst:87
 msgid ""
 "You need to create an Idemix MSP using the ``IssuerPublicKey`` and "
 "``IssuerRevocationPublicKey`` from step 1."
 msgstr ""
+"您需要使用步骤1中的 ``IssuerPublicKey``和``IssuerRevocationPublicKey``创建Idemix MSP。"
 
 #: ../../source/idemix.rst:90
 msgid ""
@@ -184,6 +199,10 @@ msgid ""
 "java/blob/master/src/test/fixture/sdkintegration/e2e-"
 "2Orgs/v1.3/configtx.yaml>`_:"
 msgstr ""
+"例如，考虑下面的这些摘录，他们来自于`configtx.yaml in the Hyperledger Java SDK sample "
+"<https://github.com/hyperledger/fabric-sdk-"
+"java/blob/master/src/test/fixture/sdkintegration/e2e-"
+"2Orgs/v1.3/configtx.yaml>`_："
 
 #: ../../source/idemix.rst:106
 msgid ""
@@ -192,16 +211,18 @@ msgid ""
 "example) contains the ``IssuerPublicKey`` and ``IssuerRevocationPublicKey`` "
 "files."
 msgstr ""
+"``msptype``被设置为``idemix``，并且``mspdir``目录（本例中是``crypto-"
+"config/peerOrganizations/org3.example.com/msp``）的内容包含``IssuerPublicKey``和``IssuerRevocationPublicKey``文件。"
 
 #: ../../source/idemix.rst:111
 msgid ""
 "Note that in this example, ``Org1Idemix`` represents the Idemix MSP for "
 "``Org1`` (not shown), which would also have an X509 MSP."
-msgstr ""
+msgstr "注意在本例中，``Org1Idemix``代表``Org1``（未显示）的Idemix MSP，``Org1``还有一个X509 MSP。"
 
 #: ../../source/idemix.rst:114
 msgid "Consider the user. Recall that the Java SDK is the API for the user."
-msgstr ""
+msgstr "考虑用户user。回想一下，Java SDK是用户的API。"
 
 #: ../../source/idemix.rst:116
 msgid ""
@@ -212,12 +233,17 @@ msgid ""
 "``org.hyperledger.fabric.sdk.Enrollment`` associated with your X509 "
 "certificate."
 msgstr ""
+"要使用Java "
+"SDK的Idemix，只需要调用一个额外的API：``org.hyperledger.fabric_ca.sdk.HFCAClient``类中的``idemixEnroll``"
+" "
+"方法。例如，假设``hfcaClient``是你的HFCAClient对象，``x509Enrollment``与你的X509证书相关联的``org.hyperledger.fabric.sdk.Enrollment``。"
 
 #: ../../source/idemix.rst:122
 msgid ""
 "The following call will return an ``org.hyperledger.fabric.sdk.Enrollment`` "
 "object associated with your Idemix credential."
 msgstr ""
+"下面的调用将会返回一个和你的Idemix凭证相关联的``org.hyperledger.fabric.sdk.Enrollment``对象。"
 
 #: ../../source/idemix.rst:129
 msgid ""
@@ -227,17 +253,18 @@ msgid ""
 "course, that this automatically provides the privacy enhancing features of "
 "Idemix."
 msgstr ""
+"还需要注意，``IdemixEnrollment``要实现``org.hyperledger.fabric.sdk.Enrollment``的接口，并且因此可以像使用X509注册对象一样使用它，当然Idemix自动提供了改进了的隐私保护功能。"
 
 #: ../../source/idemix.rst:135
 msgid "Idemix and chaincode"
-msgstr ""
+msgstr "Idemix和链码"
 
 #: ../../source/idemix.rst:137
 msgid ""
 "From a verifier perspective, there is one more actor to consider: chaincode."
 " What can chaincode learn about the transactor when an Idemix credential is "
 "used?"
-msgstr ""
+msgstr "从验证者的角度来看，还有一个参与者需要考虑：链码。当使用Idemix凭证时，链码可以了解有关交易参与者的哪些信息?"
 
 #: ../../source/idemix.rst:140
 msgid ""
@@ -248,16 +275,20 @@ msgid ""
 "\"Current limitations\" section below, there are only two attributes which "
 "are disclosed in the Idemix case: ``ou`` and ``role``."
 msgstr ""
+"当使用Idemix凭证时，`cid (Client Identity) library "
+"<https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/cid>`_"
+" （只支持golang）已扩展支持 ``GetAttributeValue`` 方法。但是，像下面\"当前限制Current "
+"limitations\"模块提到的那样，在Idemix的情况下，只有两个展示出来的属性：``ou``和``role``。"
 
 #: ../../source/idemix.rst:146
 msgid "If Fabric CA is the credential issuer:"
-msgstr ""
+msgstr "如果Fabric CA是凭证发布者issuer："
 
 #: ../../source/idemix.rst:148
 msgid ""
 "the value of the `ou` attribute is the identity's **affiliation** (e.g. "
 "\"org1.department1\");"
-msgstr ""
+msgstr "`ou`属性的值是身份的**affiliation**（例如，\"org1.department1\"）；"
 
 #: ../../source/idemix.rst:150
 msgid ""
@@ -267,6 +298,8 @@ msgid ""
 "order to create an 'admin' identity, register the identity with the ``role``"
 " attribute and a value of ``2``."
 msgstr ""
+"``role``属性的值将是'member'或'admin'。值'admin'表示身份是MSP管理员。默认情况下，Fabric "
+"CA创建的身份将返回'member'角色。要创建一个'admin'身份，使用值为``2``的``role``属性注册身份。"
 
 #: ../../source/idemix.rst:156
 msgid ""
@@ -274,6 +307,9 @@ msgid ""
 "<https://github.com/hyperledger/fabric-sdk-"
 "java/blob/master/src/test/java/org/hyperledger/fabric/sdkintegration/End2endIdemixIT.java#L121>`_."
 msgstr ""
+"用Java SDK设置affiliation的例子，查看 `sample <https://github.com/hyperledger/fabric-"
+"sdk-"
+"java/blob/master/src/test/java/org/hyperledger/fabric/sdkintegration/End2endIdemixIT.java#L121>`_。"
 
 #: ../../source/idemix.rst:158
 msgid ""
@@ -282,101 +318,104 @@ msgid ""
 "sdk-"
 "java/blob/master/src/test/fixture/sdkintegration/gocc/sampleIdemix/src/github.com/example_cc/example_cc.go#L88>`_."
 msgstr ""
+"在go链码中使用CID库来检索属性的例子，查看`go chaincode <https://github.com/hyperledger/fabric-"
+"sdk-"
+"java/blob/master/src/test/fixture/sdkintegration/gocc/sampleIdemix/src/github.com/example_cc/example_cc.go#L88>`_。"
 
 #: ../../source/idemix.rst:162
 msgid "Current limitations"
-msgstr ""
+msgstr "当前限制"
 
 #: ../../source/idemix.rst:164
 msgid "The current version of Idemix does have a few limitations."
-msgstr ""
+msgstr "Idemix的当前版本有一些限制。"
 
 #: ../../source/idemix.rst:166
 msgid "**Fixed set of attributes**"
-msgstr ""
+msgstr "**固定的属性集合**"
 
 #: ../../source/idemix.rst:168
 msgid ""
 "It not yet possible to issue or use an Idemix credential with custom "
 "attributes. Custom attributes will be supported in a future release."
-msgstr ""
+msgstr "还不支持发布Idemix凭证的自定义属性。自定义属性在将来会支持。"
 
 #: ../../source/idemix.rst:171
 msgid "The following four attributes are currently supported:"
-msgstr ""
+msgstr "下面的四个属性是支持的："
 
 #: ../../source/idemix.rst:173
 msgid "Organizational Unit attribute (\"ou\"):"
-msgstr ""
+msgstr "Organizational Unit属性（\"ou\"）："
 
 #: ../../source/idemix.rst:175 ../../source/idemix.rst:181
 msgid "Usage: same as X.509"
-msgstr ""
+msgstr "用法：和X.509一样"
 
 #: ../../source/idemix.rst:176
 msgid "Type: String"
-msgstr ""
+msgstr "类型：String"
 
 #: ../../source/idemix.rst:177 ../../source/idemix.rst:183
 msgid "Revealed: always"
-msgstr ""
+msgstr "显示：always"
 
 #: ../../source/idemix.rst:179
 msgid "Role attribute (\"role\"):"
-msgstr ""
+msgstr "Role属性（\"role\"）："
 
 #: ../../source/idemix.rst:182 ../../source/idemix.rst:195
 msgid "Type: integer"
-msgstr ""
+msgstr "类型：integer"
 
 #: ../../source/idemix.rst:185
 msgid "Enrollment ID attribute"
-msgstr ""
+msgstr "Enrollment ID 属性"
 
 #: ../../source/idemix.rst:187
 msgid ""
 "Usage: uniquely identify a user --- same in all enrollment credentials that "
 "belong to the same user (will be used for auditing in the future releases)"
-msgstr ""
+msgstr "用法：用户唯一身份---属于同一用户的所有注册凭证都是相同的（在将来的版本中用于审计）"
 
 #: ../../source/idemix.rst:189
 msgid "Type: BIG"
-msgstr ""
+msgstr "类型：BIG"
 
 #: ../../source/idemix.rst:190
 msgid ""
 "Revealed: never in the signature, only when generating an authentication "
 "token for Fabric CA"
-msgstr ""
+msgstr "显示：不在签名中使用，只在为Fabric CA生成身份验证token时使用"
 
 #: ../../source/idemix.rst:192
 msgid "Revocation Handle attribute"
-msgstr ""
+msgstr "Revocation Handle属性"
 
 #: ../../source/idemix.rst:194
 msgid ""
 "Usage: uniquely identify a credential (will be used for revocation in future"
 " releases)"
-msgstr ""
+msgstr "用法：唯一性身份凭证（在将来的版本中用于撤销）"
 
 #: ../../source/idemix.rst:196
 msgid "Revealed: never"
-msgstr ""
+msgstr "显示：不显示"
 
 #: ../../source/idemix.rst:198
 msgid "**Revocation is not yet supported**"
-msgstr ""
+msgstr "**还不支持撤销**"
 
 #: ../../source/idemix.rst:200
 msgid ""
 "Although much of the revocation framework is in place as can be seen by the "
 "presence of a revocation handle attribute mentioned above, revocation of an "
 "Idemix credential is not yet supported."
-msgstr ""
+msgstr "尽管存在上面提到的revocation handle属性，可以看出撤销框架的大部分已经就绪，但是还不支持撤销Idemix凭据。"
 
 #: ../../source/idemix.rst:204
 msgid "**Peers do not use Idemix for endorsement**"
-msgstr ""
+msgstr "**Peers背书时不使用Idemix**"
 
 #: ../../source/idemix.rst:206
 msgid ""
@@ -384,14 +423,16 @@ msgid ""
 "Signing with Idemix is only done via Client SDK. More roles (including a "
 "'peer' role) will be supported by Idemix MSP."
 msgstr ""
+"现在，Idemix MSP只被Peers用来验证签名。使用Idemix签名只在Client SDK中做好了。将会支持更多角色（包括'peer' "
+"角色）使用Idemix MSP。"
 
 #: ../../source/idemix.rst:211
 msgid "Technical summary"
-msgstr ""
+msgstr "技术总结"
 
 #: ../../source/idemix.rst:214
 msgid "Comparing Idemix credentials to X.509 certificates"
-msgstr ""
+msgstr "对比Idemix凭证和X.509证书"
 
 #: ../../source/idemix.rst:216
 msgid ""
@@ -400,6 +441,8 @@ msgid ""
 "signature that cannot be forged and there is a secret key to which a "
 "credential is cryptographically bound."
 msgstr ""
+"Idemix和X.509 "
+"certs中的证书/凭证的概念、颁发过程，非常相似：一组属性是用不能伪造的签名进行数字签名的，并且有一个密钥，凭证以密码方式绑定到该密钥。"
 
 #: ../../source/idemix.rst:221
 msgid ""
@@ -413,6 +456,8 @@ msgid ""
 "some attributes is valid and the user is in possession of the corresponding "
 "credential secret key."
 msgstr ""
+"标准X.509证书和Identity Mixer证书之间的主要区别是用于验证属性的签名方案。Identity "
+"Mixer系统下的签名能够使其有效地证明所有者拥有该签名和相应的属性，而无需揭示签名和（选择的）属性值本身。我们使用零知识证明来确保这些“知识”或“信息”不会被泄露，同时确保属性上的签名有效，并且确保用户拥有相应的凭证密钥。"
 
 #: ../../source/idemix.rst:230
 msgid ""
@@ -421,13 +466,14 @@ msgid ""
 "successfully forged. Only the user who knows the credential secret key can "
 "generate the proofs about the credential and its attributes."
 msgstr ""
+"这样的证明，比如X.509证书，可以使用最初签署证书的机构的公钥进行验证，并且无法成功伪造。只有知道凭证密钥的用户才能生成凭证及其属性的证明。"
 
 #: ../../source/idemix.rst:235
 msgid ""
 "With regard to unlinkability, when an X.509 certificate is presented, all "
 "attributes have to be revealed to verify the certificate signature. This "
 "implies that all certificate usages for signing transactions are linkable."
-msgstr ""
+msgstr "关于不可链接性，当提供X.509证书时，必须显示所有属性来验证证书签名。这意味着所有用于签署交易的证书的用法都是可链接的。"
 
 #: ../../source/idemix.rst:239
 msgid ""
@@ -437,6 +483,7 @@ msgid ""
 "the CA issuing the certificates is able to link all the transactions to the "
 "user."
 msgstr ""
+"为了避免这种可链接性，每次都需要使用新的X.509证书，这会导致复杂的密钥管理、通信和存储开销。此外，在某些情况下，即使颁发证书的CA也不应该将所有交易链接到用户，这一点很重要。"
 
 #: ../../source/idemix.rst:244
 msgid ""
@@ -445,6 +492,7 @@ msgid ""
 "Neither the issuer nor a verifier can tell whether two proofs were derived "
 "from the same credential (or from two different ones)."
 msgstr ""
+"Idemix有助于避免CA和验证者之间的可链接性，因为即使是CA也不能将证明链接到原始凭证。签发者或验证者都不能分辨两种证明是否是来自同一凭证。"
 
 #: ../../source/idemix.rst:249
 msgid ""
@@ -453,10 +501,13 @@ msgid ""
 "Attribute-Based Authentication "
 "<https://link.springer.com/chapter/10.1007%2F978-3-642-37282-7_4>`_."
 msgstr ""
+"这篇文章详细介绍了Identity Mixer技术的概念和特点 `Concepts and Languages for Privacy-"
+"Preserving Attribute-Based Authentication "
+"<https://link.springer.com/chapter/10.1007%2F978-3-642-37282-7_4>`_。"
 
 #: ../../source/idemix.rst:253
 msgid "Topology Information"
-msgstr ""
+msgstr "拓扑信息"
 
 #: ../../source/idemix.rst:255
 msgid ""
@@ -468,6 +519,8 @@ msgid ""
 "leak the MSP-ID of the signer. In other words, Idemix currently provides "
 "only anonymity of clients among the same organization (MSP)."
 msgstr ""
+"鉴于上述限制，建议每个通道仅使用一个基于Idemix的MSP，或者在极端情况下，每个网络使用一个基于Idemix的MSP。实际上，如果每个通道有多个基于Idemix的MSPs，那么任意参与方读取该通道的账本，即可区分出来各个交易分别是由哪个Idemix"
+" MSP签署的。这是因为，每个交易都会泄漏签名者的MSP-ID。换句话说，Idemix目前只提供同一组织（MSP）中客户端的匿名性。"
 
 #: ../../source/idemix.rst:262
 msgid ""
@@ -477,6 +530,7 @@ msgid ""
 "organizations (MSPs). This would allow multiple Idemix-based MSPs to coexist"
 " in the same channel."
 msgstr ""
+"将来，Idemix可以扩展为支持基于Idemix的多层匿名结构的认证机构体系，这些机构认证的凭证可以通过使用唯一的公钥进行验证，从而实现跨组织的匿名性（MSPs）。这将允许多个基于Idemix的MSPs在同一个通道中共存。"
 
 #: ../../source/idemix.rst:267
 msgid ""
@@ -485,10 +539,11 @@ msgid ""
 "can potential leak information. An assessment of the leaked information need"
 " to be done case by case.wq"
 msgstr ""
+"在主体中，可以将通道配置为具有单个基于Idemix的MSP和多个基于X.509的MSP。当然，这些MSP之间的交互可能会泄露信息。对泄露的信息需要逐案进行评估。"
 
 #: ../../source/idemix.rst:272
 msgid "Underlying cryptographic protocols"
-msgstr ""
+msgstr "底层加密协议"
 
 #: ../../source/idemix.rst:274
 msgid ""
@@ -498,6 +553,7 @@ msgid ""
 "published at the top conferences and journals and verified by the scientific"
 " community."
 msgstr ""
+"Idemix技术是建立在一个盲签名方案的基础上的，该方案支持签名拥有多个消息和有效的的零知识证明。Idemix的所有密码构建模块都在顶级会议和期刊上发表了，并得到了科学界的验证。"
 
 #: ../../source/idemix.rst:279
 msgid ""
@@ -509,3 +565,8 @@ msgid ""
 "prove knowledge of a signature in a zero-knowledge proof `Camenisch et al. "
 "<https://eprint.iacr.org/2016/663.pdf>`_ was used."
 msgstr ""
+"Fabric的这个特定Idemix实现使用了一个pairing-based的签名方案，该方案由 `Camenisch and Lysyanskaya "
+"<https://link.springer.com/chapter/10.1007/978-3-540-28628-8_4>`_ 简要提出，并由`Au"
+" et al. "
+"<https://link.springer.com/chapter/10.1007/11832072_8>`_详细描述。使用了在零知识证明`Camenisch"
+" et al. <https://eprint.iacr.org/2016/663.pdf>`_ 中证明签名的知识的能力。"

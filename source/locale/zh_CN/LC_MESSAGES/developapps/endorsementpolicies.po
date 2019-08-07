@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-09 09:03+0800\n"
 "PO-Revision-Date: 2019-04-22 19:59+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +23,11 @@ msgstr ""
 
 #: ../../source/developapps/endorsementpolicies.md:1
 msgid "Endorsement policies"
-msgstr ""
+msgstr "背书策略"
 
 #: ../../source/developapps/endorsementpolicies.md:3
 msgid "Audience: Architects, Application and smart contract developers"
-msgstr ""
+msgstr "受众：架构师，应用程序和智能合约开发人员。"
 
 #: ../../source/developapps/endorsementpolicies.md:5
 msgid ""
@@ -36,6 +40,7 @@ msgid ""
 "If this is not the case, the transaction is invalidated and it will have no "
 "effect on world state."
 msgstr ""
+"背书策略定义了组织的最小集合，为了使交易有效，这些组织需要对交易进行背书。要进行背书，组织的背书节点需要运行与交易相关的智能合约并签署其结果。当排序服务将交易发送给提交节点时，它们将各自检查交易中的背书是否符合背书策略。如果不是这样，交易将无效，并且它对世界状态不会有影响。"
 
 #: ../../source/developapps/endorsementpolicies.md:13
 msgid ""
@@ -47,3 +52,6 @@ msgid ""
 "AND(MagnetoCorp.peer, DigiBank.peer), requiring any changes to this paper to"
 " be endorsed by both MagnetoCorp and DigiBank."
 msgstr ""
+"背书策略有两种不同的粒度：以整个命名空间，或者以单个状态键设置它们。它们是使用基本逻辑表达式（如AND和OR）来表示的。例如，在PaperNet中可以这样使用：从MagnetoCorp出售给DigiBank的纸张的背书策略可以设置为"
+" AND(MagnetoCorp.peer, "
+"DigiBank.peer)，要求对该纸张所作的任何修改均须获得MagnetoCorp和DigiBank的背书。"

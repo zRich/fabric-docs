@@ -6,6 +6,7 @@
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
 # Yang Cheng <cystone@aliyun.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:54+0000\n"
-"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,8 +40,8 @@ msgid ""
 "state through transactions submitted by applications."
 msgstr ""
 "链码是一个用 `Go <https://golang.org>`_ 、  `node.js <https://nodejs.org>`_ 或 `Java"
-" <https://java.com/en/>`_ 语言编写的程序，它实现了一个规定的接口。 链码运行在一个隔离于背书节点进程的安全 Docker "
-"容器中。链码通过由应用提交的交易来初始化和管理账本状态。"
+" <https://java.com/en/>`_ 语言编写的程序，它实现了一个规定的接口。 "
+"链码运行在一个与背书节点进程相隔离的安全的Docker容器中。链码通过由应用程序提交的交易来初始化和管理账本状态。"
 
 #: ../../source/chaincode.rst:13
 msgid ""
@@ -51,11 +52,11 @@ msgid ""
 "appropriate permission a chaincode may invoke another chaincode to access "
 "its state."
 msgstr ""
-"链码通常处理被网络成员认可的业务逻辑，所以它可以被认为是一个“智能合约”。链码创建的状态的作用域在链码中是唯一的，不能被其他链码直接访问。然而，在同一个网络中，给予适当的权限，一个链码可以被另一个链码访问它的状态。"
+"链码通常处理被网络成员认可的业务逻辑，所以它可以被看作是\"智能合约\"。链码创建的状态的作用域在链码中是唯一的，不能被其他链码直接访问。但是，在同一个网络中，如果被赋予适当的权限，一个链码可以调用另一个链码的状态。"
 
 #: ../../source/chaincode.rst:21
 msgid "Two Personas"
-msgstr "两种角色"
+msgstr "两个角色"
 
 #: ../../source/chaincode.rst:23
 msgid ""
@@ -67,9 +68,9 @@ msgid ""
 "install and govern chaincode, but would likely not be involved in the "
 "development of a chaincode application."
 msgstr ""
-"对于链码我们提供两个不同的视角。一个是从开发区块链应用/解决方案的应用开发者视角，题为 :doc:`chaincode4ade`，另一个是 "
-":doc:`chaincode4noah`，它面向负责管理区块链网络的操作员，他利用 Hyperledger Fabric API "
-"来安装和管理链码，而不太可能参与链码应用的开发。"
+"对于链码我们提供两个不同的视角。一是开发区块链应用或者解决方案的应用开发者的视角，题为 :doc:`chaincode4ade`，另一个是 "
+":doc:`chaincode4noah`，它面向负责管理区块链网络的网络操作员，他们利用Hyperledger Fabric "
+"API来安装和管理链码，一般不会参与链码应用程序的开发。"
 
 #: ../../source/chaincode.rst:32
 msgid "Fabric Chaincode Lifecycle"
@@ -85,12 +86,12 @@ msgid ""
 "such as the chaincode endorsement policy, before the chaincode is used to "
 "interact with the ledger."
 msgstr ""
-"Fabric 链码生命周期负责管理链码安装和链码在一个通道中使用之前定义它们的参数。从 Fabric 2.0 Alpha "
-"版开始，链码的管理是完全去中心的：多个组织可以使用 Fabric 链码周期来认可链码的参数，如在链码与账本交互前确定链码背书策略。"
+"Fabric链码生命周期负责管理链码安装以及链码定义，在通道中使用链码之前需定义链码的参数。从 Fabric 2.0 Alpha "
+"版开始，链码的管理是完全去中心的：多个组织可以使用 Fabric 链码周期来共识链码的参数，比如在链码与账本交互前需确定链码背书策略。"
 
 #: ../../source/chaincode.rst:42
 msgid "The new model offers several improvements over the previous lifecycle:"
-msgstr "新模式相对于之前的生命周期提供了几个改进。"
+msgstr "新模式相对于之前的生命周期提供了几个改进："
 
 #: ../../source/chaincode.rst:44
 msgid ""
@@ -103,8 +104,8 @@ msgid ""
 "sufficient number of organizations to agree on an endorsement policy before "
 "it goes into effect."
 msgstr ""
-"**多个组织必须认同一个链码中的参数：** 在 Fabric 1.x 版本中，一个组织有能力为通道的其他成员设置链码参数（如背书策略）。新 Fabric"
-" 链码生命周期更灵活，因为它同时支持中心化信任模型（如之前的生命周期模型）和去中心化模型，即在背书策略生效前需要足够多的组织认同。"
+"**链码参数必须由多个组织同意：** 在 Fabric 1.x "
+"版本中，一个组织有能力为所有其他通道成员设置链码参数（如背书策略）。新Fabric链码生命周期更灵活，因为它同时支持中心化信任模式（如之前的生命周期模型）和去中心化模式，即在背书策略生效前需要足够多的组织同意。"
 
 #: ../../source/chaincode.rst:52
 msgid ""
@@ -114,7 +115,7 @@ msgid ""
 " new model allows for a chaincode to be upgraded only after a sufficient "
 "number of organizations have approved the upgrade."
 msgstr ""
-"**更安全的链码升级过程：**在之前的链码生命周期中，升级交易可以被单个组织发起，对于没有安装新链码的通道成员这带来了风险。新模式只有在足够数量的组织同意升级后才能升级链码。"
+"**更安全的链码升级过程：**在之前的链码生命周期中，升级交易可以由单个组织发起，对于没有安装新链码的通道成员来说存在风险。新模式只有在足够数量的组织批准升级后才能升级链码。"
 
 #: ../../source/chaincode.rst:58
 msgid ""
@@ -125,8 +126,8 @@ msgid ""
 "is updated automatically when organizations are added or removed from the "
 "channel."
 msgstr ""
-"**更容易的背书策略更新：** Fabric "
-"生命周期允许你在不重新打包和不重新安装链码的情况下修改背书策略。用户还可以利用新的默认策略，它需要通道的多数成员背书。当通道有组织加入或离开，这个策略可以自动更新。"
+"**更容易更新背书策略：** "
+"Fabric生命周期允许你在不重新打包和不重装链码的情况下修改背书策略。用户还可以利用新的默认策略，即需要通道的多数成员背书的策略。当通道有组织加入或离开时，这个策略可以自动更新。"
 
 #: ../../source/chaincode.rst:64
 msgid ""
@@ -134,7 +135,7 @@ msgid ""
 "in easily readable tar files. This makes it easier to inspect the chaincode "
 "package and coordinate installation across multiple organizations."
 msgstr ""
-"**可查看的链码包装：** Fabric 生命周期将链码文件打包成易读的 tar 文件来。这使得查看链码包和跨多个组织协调安装链码变得更容易。"
+"**可查看的链码包：** Fabric生命周期工具lifecycle将链码文件打包成易读的tar文件。这使得查看链码包和跨组织协调安装链码变得更容易。"
 
 #: ../../source/chaincode.rst:68
 msgid ""
@@ -144,20 +145,20 @@ msgid ""
 " a single chaincode package and deploy it multiple times with different "
 "names on the same or different channel."
 msgstr ""
-"**在通道上使用一个链码报包启动多个链码：**之前的生命周期中定义的是，当链码包安装的时候通道上每一个链码都使用链码包中指定的的名称和版本号。现在你可以使用一个链码包，在同一个或者不同的通道上使用不同的名称部署多次。"
+"**在通道上使用一个链码包启动多个链码：**之前的生命周期中定义的是，当链码包安装的时候通道上每一个链码都使用链码包中指定的名称和版本号。现在你可以使用一个链码包，在同一个或者不同的通道上使用不同的名称部署多次。"
 
 #: ../../source/chaincode.rst:74
 msgid ""
 "To learn how more about the new Fabric Lifecycle, visit "
 ":doc:`chaincode4noah`."
-msgstr "要学习更多新的关于 Fabric 生命周期的内容，请访问 :doc:`chaincode4noah`。"
+msgstr "要学习关于 Fabric 生命周期的更多新内容，请访问 :doc:`chaincode4noah`。"
 
 #: ../../source/chaincode.rst:76
 msgid ""
 "The new Fabric chaincode lifecycle in the v2.0 Alpha release is not yet "
 "feature complete. Specifically, be aware of the following limitations in the"
 " Alpha release:"
-msgstr "在 v2.0 Alpha 版中，新的 Fabric 链码生命周期的特性尚未完成。特别地，请注意 Alpha 发行版中的以下限制："
+msgstr "在v2.0 Alpha版中，新的Fabric链码生命周期的功能尚未完成。特别地，请注意Alpha版中的以下限制："
 
 #: ../../source/chaincode.rst:80
 msgid "CouchDB indexes are not yet supported"
@@ -176,8 +177,8 @@ msgid ""
 "version of the `Chaincode for Operators tutorial <https://hyperledger-"
 "fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`_"
 msgstr ""
-"这些限制将在 Alpha 发行版之后得到解决。使用旧生命周期模型安装和实例化链码，请访问 v1.4 版本的`操作员链码教程<https"
-"://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`_"
+"这些限制将在Alpha版本后解决。要使用旧生命周期模式安装和实例化链码，请访问v1.4版本的`操作员链码教程<https://hyperledger-"
+"fabric.readthedocs.io/en/release-1.4/chaincode4noah.html>`_"
 
 #: ../../source/chaincode.rst:88
 msgid ""
@@ -189,6 +190,5 @@ msgid ""
 "capabilities. Migration from the previous lifecycle to the new lifecycle is "
 "not supported for the Fabric v2.0 Alpha."
 msgstr ""
-"你可以通过创建一个新通道并设置通道功能到 V2_0 来使用 Fabric 链码生命周期。通道启用了 V2_0 "
-"功能后，你就不能使用旧生命周期来安装、实例化或更新链码。然而，你启用 V2_0 功能后，你仍然可以调用使用之前的生命周期模型安装的链码。 Fabric "
-"v2.0 Alpha 版不支持从之前的生命周期迁移到新生命周期。"
+"你可以通过创建一个新通道并设置通道capabilities为V2_0来使用Fabric链码生命周期功能。通道启用了V2_0功能后，你就不能使用旧生命周期工具来安装、实例化或更新链码。但是，你启用V2_0功能后，你仍然可以使用之前的生命周期模式调用安装的链码。Fabric"
+" v2.0 Alpha版不支持从之前的生命周期迁移到新生命周期。"

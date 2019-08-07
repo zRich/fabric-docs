@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the hyperledger-fabricdocs package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 20:01+0000\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +24,7 @@ msgstr ""
 #: ../../source/commands/peerlifecycle.md:1
 #: ../../source/commands/peerlifecycle.md:47
 msgid "peer lifecycle chaincode"
-msgstr ""
+msgstr "peer lifecycle chaincode"
 
 #: ../../source/commands/peerlifecycle.md:3
 msgid ""
@@ -31,6 +35,9 @@ msgid ""
 "definition has been successfully committed to the channel. For more "
 "information, visit Chaincode for Operators."
 msgstr ""
+"命令peer lifecycle "
+"chaincode允许管理员使用Fabric链码生命周期命令工具打包链码、在Peers上安装链码、为组织批准链码定义、然后向通道提交定义。定义被成功提交给通道之后，链码就可以使用了。获取更多信息，请访问"
+" Chaincode for Operators 章节。"
 
 #: ../../source/commands/peerlifecycle.md:10
 msgid ""
@@ -39,88 +46,90 @@ msgid ""
 "install and instantiate a chaincode, visit the peer chaincode command "
 "reference."
 msgstr ""
+"注意：这些指令在v2.0 Alpha版本的Fabric 链码生命周期命令chaincode "
+"lifecycle中使用。如果你想使用旧版本的生命周期lifecycle来安装和实例化链码，查看peer chaincode 命令的介绍。"
 
 #: ../../source/commands/peerlifecycle.md:15
 msgid "Syntax"
-msgstr ""
+msgstr "语法"
 
 #: ../../source/commands/peerlifecycle.md:17
 msgid "The peer lifecycle chaincode command has the following subcommands:"
-msgstr ""
+msgstr "命令peer lifecycle chaincode有如下子命令："
 
 #: ../../source/commands/peerlifecycle.md:19
 msgid "package"
-msgstr ""
+msgstr "package"
 
 #: ../../source/commands/peerlifecycle.md:20
 msgid "install"
-msgstr ""
+msgstr "install"
 
 #: ../../source/commands/peerlifecycle.md:21
 msgid "queryinstalled"
-msgstr ""
+msgstr "queryinstalled"
 
 #: ../../source/commands/peerlifecycle.md:22
 msgid "approveformyorg"
-msgstr ""
+msgstr "approveformyorg"
 
 #: ../../source/commands/peerlifecycle.md:23
 msgid "queryapprovalstatus"
-msgstr ""
+msgstr "queryapprovalstatus"
 
 #: ../../source/commands/peerlifecycle.md:24
 msgid "commit"
-msgstr ""
+msgstr "commit"
 
 #: ../../source/commands/peerlifecycle.md:25
 msgid "querycommitted"
-msgstr ""
+msgstr "querycommitted"
 
 #: ../../source/commands/peerlifecycle.md:27
 msgid ""
 "Each peer lifecycle chaincode subcommand is described together with its "
 "options in its own section in this topic."
-msgstr ""
+msgstr "在本主题中，每个 peer lifecycle chaincode 子命令及其选项都在其自己的部分中进行了描述。"
 
 #: ../../source/commands/peerlifecycle.md:30
 msgid "peer lifecycle"
-msgstr ""
+msgstr "peer lifecycle"
 
 #: ../../source/commands/peerlifecycle.md:78
 msgid "peer lifecycle chaincode package"
-msgstr ""
+msgstr "peer lifecycle chaincode package"
 
 #: ../../source/commands/peerlifecycle.md:106
 msgid "peer lifecycle chaincode install"
-msgstr ""
+msgstr "peer lifecycle chaincode install"
 
 #: ../../source/commands/peerlifecycle.md:131
 msgid "peer lifecycle chaincode queryinstalled"
-msgstr ""
+msgstr "peer lifecycle chaincode queryinstalled"
 
 #: ../../source/commands/peerlifecycle.md:156
 msgid "peer lifecycle chaincode approveformyorg"
-msgstr ""
+msgstr "peer lifecycle chaincode approveformyorg"
 
 #: ../../source/commands/peerlifecycle.md:194
 msgid "peer lifecycle chaincode queryapprovalstatus"
-msgstr ""
+msgstr "peer lifecycle chaincode queryapprovalstatus"
 
 #: ../../source/commands/peerlifecycle.md:229
 msgid "peer lifecycle chaincode commit"
-msgstr ""
+msgstr "peer lifecycle chaincode commit"
 
 #: ../../source/commands/peerlifecycle.md:266
 msgid "peer lifecycle chaincode querycommitted"
-msgstr ""
+msgstr "peer lifecycle chaincode querycommitted"
 
 #: ../../source/commands/peerlifecycle.md:292
 msgid "Example Usage"
-msgstr ""
+msgstr "用法举例"
 
 #: ../../source/commands/peerlifecycle.md:294
 msgid "peer lifecycle chaincode package example"
-msgstr ""
+msgstr "peer lifecycle chaincode package 例子"
 
 #: ../../source/commands/peerlifecycle.md:296
 msgid ""
@@ -128,39 +137,42 @@ msgid ""
 "This example uses the peer lifecycle chaincode package command to package a "
 "Golang chaincode."
 msgstr ""
+"在把链码往Peers上安装之前要把链码打包。本例使用peer lifecycle chaincode package "
+"命令来打包一个Golang语言的链码。"
 
 #: ../../source/commands/peerlifecycle.md:300
 msgid ""
 "Use the --label flag to provide a chaincode package label of myccv1 that "
 "your organization will use to identify the package."
-msgstr ""
+msgstr "使用 --label 标记来为链码包指定一个标签，本例为myccv1，你的组织会使用这个标签来识别链码包。"
 
 #: ../../source/commands/peerlifecycle.md:307
 msgid "peer lifecycle chaincode install example"
-msgstr ""
+msgstr "peer lifecycle chaincode install 例子"
 
 #: ../../source/commands/peerlifecycle.md:309
 msgid ""
 "After the chaincode is packaged, you can use the peer chaincode install "
 "command to install the chaincode on your peers."
-msgstr ""
+msgstr "链码打包后，你可以使用 peer chaincode install 命令在Peers上安装链码。"
 
 #: ../../source/commands/peerlifecycle.md:312
 msgid ""
 "Install the mycc.tar.gz  package on peer0.org1.example.com:7051 (the peer "
 "defined by --peerAddresses)."
 msgstr ""
+"在peer0.org1.example.com:7051（这个peer是使用标记 --peerAddresses指定的）上安装包mycc.tar.gz。"
 
 #: ../../source/commands/peerlifecycle.md:318
 msgid ""
 "If successful, the command will return the package identifier. The package "
 "ID is the package label combined with a hash of the chaincode package taken "
 "by the peer."
-msgstr ""
+msgstr "如果命令执行成功，它会返回包的识别符。package ID是由包的标签与Peer所计算的链码包的hash组合而成。"
 
 #: ../../source/commands/peerlifecycle.md:326
 msgid "peer lifecycle chaincode queryinstalled example"
-msgstr ""
+msgstr "peer lifecycle chaincode queryinstalled 例子"
 
 #: ../../source/commands/peerlifecycle.md:328
 msgid ""
@@ -169,10 +181,12 @@ msgid ""
 "chaincodes you have installed by using the peer lifecycle chaincode "
 "queryinstalled command:"
 msgstr ""
+"你需要使用链码包标识符来为你的组织批准链码定义。你能通过使用peer lifecycle chaincode "
+"queryinstalled命令查询你安装的链码的package ID："
 
 #: ../../source/commands/peerlifecycle.md:342
 msgid "peer lifecycle chaincode approveformyorg example"
-msgstr ""
+msgstr "peer lifecycle chaincode approveformyorg 例子"
 
 #: ../../source/commands/peerlifecycle.md:344
 msgid ""
@@ -180,7 +194,7 @@ msgid ""
 " a chaincode definition for your organization. The chaincode definition "
 "includes the important parameters of chaincode governance, including the "
 "chaincode name, version and the endorsement policy."
-msgstr ""
+msgstr "一旦链码包安装到您的Peers上，您就可以为您的组织批准链码定义。链码定义包括链码治理的重要参数，包括链码名称、版本和背书策略。"
 
 #: ../../source/commands/peerlifecycle.md:349
 msgid ""
@@ -188,6 +202,8 @@ msgid ""
 "which approves the definition of a chaincode  named mycc at version 1.0 on "
 "channel mychannel."
 msgstr ""
+"下面是peer lifecycle chaincode "
+"approveformyorg命令的一个示例，它在mychannel这个通道上批准了名为mycc、版本为1.0的链码定义。"
 
 #: ../../source/commands/peerlifecycle.md:353
 msgid ""
@@ -196,6 +212,8 @@ msgid ""
 "Use the init-required flag to request the execution of the Init function to "
 "initialize the chaincode."
 msgstr ""
+"使用--package-id传入链码包的标识符。使用--signature-policy标记来为链码定义一个背书策略。使用init-"
+"required标记来请求链码Init函数的执行来初始化链码。"
 
 #: ../../source/commands/peerlifecycle.md:367
 msgid ""
@@ -203,10 +221,12 @@ msgid ""
 "channel configuration as the chaincode endorsement policy. The default "
 "endorsement policy is Channel/Application/Endorsement"
 msgstr ""
+"你还可以使用--channel-config-"
+"policy标记使用一个内置在通道配置里面的策略作为链码的背书策略。默认背书策略是Channel/Application/Endorsement 。"
 
 #: ../../source/commands/peerlifecycle.md:380
 msgid "peer lifecycle chaincode queryapprovalstatus example"
-msgstr ""
+msgstr "peer lifecycle chaincode queryapprovalstatus 例子"
 
 #: ../../source/commands/peerlifecycle.md:382
 msgid ""
@@ -219,16 +239,19 @@ msgid ""
 "Application/Channel/Endorsement policy (a majority by default) before the "
 "definition can be committed to a channel."
 msgstr ""
+"将链码定义提交到通道之前，你可以使用peer lifecycle chaincode "
+"queryapprovalstatus命令查询哪些组织已经批准了该链码定义。如果某组织已经批准了命令中指定的链码定义，该命令将返回true值。您可以使用此命令来了解，在将链码定义提交到通道之前，是否有足够多的通道成员批准了链码定义，以满足Application/Channel/Endorsement"
+" 策略（一个默认的多数策略）。"
 
 #: ../../source/commands/peerlifecycle.md:397
 msgid ""
 "If successful, the command will return a JSON map that shows if an "
 "organization has approved the chaincode definition."
-msgstr ""
+msgstr "如果执行成功，命令会返回一个JSON体，展示某组织是否已经批准了该链码定义。"
 
 #: ../../source/commands/peerlifecycle.md:408
 msgid "peer lifecycle chaincode commit example"
-msgstr ""
+msgstr "peer lifecycle chaincode commit 例子"
 
 #: ../../source/commands/peerlifecycle.md:410
 msgid ""
@@ -237,16 +260,18 @@ msgid ""
 "the definition the channel using the peer lifecycle chaincode commit "
 "command:"
 msgstr ""
+"一旦有足够多的组织批准了他们组织的链码定义（默认的多数策略），一个组织就可以使用peer lifecycle chaincode "
+"commit命令向通道提交该链码定义："
 
 #: ../../source/commands/peerlifecycle.md:414
 msgid ""
 "This command needs to target the peers of other organizations on the channel"
 " to collect their organization endorsement for the definition."
-msgstr ""
+msgstr "此命令需要针对通道上其他组织的Peers，以收集它们对链码定义的组织背书。"
 
 #: ../../source/commands/peerlifecycle.md:426
 msgid "peer lifecycle chaincode querycommitted example"
-msgstr ""
+msgstr "peer lifecycle chaincode querycommitted 例子"
 
 #: ../../source/commands/peerlifecycle.md:428
 msgid ""
@@ -255,12 +280,14 @@ msgid ""
 "can use this command to query the current definition sequence number before "
 "upgrading a chaincode."
 msgstr ""
+"您可以使用peer lifecycle chaincode "
+"querycommitted命令查询已提交到通道的链码定义。在升级链码之前，可以使用此命令查询当前的定义序列号。"
 
 #: ../../source/commands/peerlifecycle.md:433
 msgid ""
 "You need to supply the chaincode name and channel name in order to query the"
 " chaincode definition."
-msgstr ""
+msgstr "您需要提供链码名称和通道名，以便查询链码定义。"
 
 #: ../../source/commands/peerlifecycle.md:445
 msgid ""
@@ -271,3 +298,9 @@ msgid ""
 "href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
 "Attribution 4.0 International License</a>."
 msgstr ""
+"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img"
+" alt=\"Creative Commons License\" style=\"border-width:0\" "
+"src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br />This "
+"work is licensed under a <a rel=\"license\" "
+"href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons "
+"Attribution 4.0 International License</a>."

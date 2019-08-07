@@ -247,25 +247,25 @@ msgstr ""
 
 #: ../../source/raft_configuration.md:119
 msgid "Consensus parameters:"
-msgstr ""
+msgstr "共识参数："
 
 #: ../../source/raft_configuration.md:121
 msgid ""
 "WALDir: the location at which Write Ahead Logs for etcd/raft are stored. "
 "Each channel will have its own subdirectory named after the channel ID."
-msgstr ""
+msgstr " * `WALDir`：日志头为 `etcd/raft` 的日志的保存位置。每个通道都会有以通道 ID 为名的子目录。 "
 
 #: ../../source/raft_configuration.md:123
 msgid ""
 "SnapDir: specifies the location at which snapshots for etcd/raft are stored."
 " Each channel will have its own subdirectory named after the channel ID."
-msgstr ""
+msgstr "* `SnapDir`： 指定 `etcd/raft` 快照的存储位置。每个通道都会有以通道 ID 为名的子目录。"
 
 #: ../../source/raft_configuration.md:126
 msgid ""
 "There is also a hidden configuration parameter that can be set by adding it "
 "to the consensus section in the orderer.yaml:"
-msgstr ""
+msgstr "还有一个隐藏配置参数可以加入到 `orderer.yaml` 的共识部分："
 
 #: ../../source/raft_configuration.md:129
 msgid ""

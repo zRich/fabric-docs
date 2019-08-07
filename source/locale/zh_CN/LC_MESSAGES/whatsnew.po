@@ -6,6 +6,7 @@
 # Translators:
 # Jiachuan Li <jiachuan.li@outlook.com>, 2019
 # Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-01 12:09+0800\n"
 "PO-Revision-Date: 2019-04-22 19:57+0000\n"
-"Last-Translator: Zhenhua Zhao <zhao.zhenhua@gmail.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,11 +25,11 @@ msgstr ""
 
 #: ../../source/whatsnew.rst:2
 msgid "What's new in the v2.0 Alpha"
-msgstr "v2.0 Alpha 新功能"
+msgstr "v2.0 Alpha版有什么新功能"
 
 #: ../../source/whatsnew.rst:5
 msgid "A word about the Alpha release"
-msgstr "有关 Alpha release 的一句话概要"
+msgstr "关于Alpha版本的一句话概要"
 
 #: ../../source/whatsnew.rst:7
 msgid ""
@@ -39,10 +40,9 @@ msgid ""
 "is no upgrade support to the v2.0 Alpha release, and no intended upgrade "
 "support from the the Alpha release to future versions of v2.x."
 msgstr ""
-"Hyperledger v2.0 的 Alpha release 版本允许用户可以尝试两种非常棒的功能 --- 全新的 Fabric chaincode"
-" 生命周期以及 FabToken。Alpha release "
-"正在被用来为用户提供关于这些新能力的一个预览，这并不代表她可以被用于生产环境。另外现在还没有对于 v2.0 Alpha release "
-"的升级支持，也没有任何从 Alpha release 到未来的 v2.x 版本的升级支持的打算。"
+"Hyperledger Fabric 2.0的Alpha版本允许用户尝试两个令人兴奋的新特性——新的Fabric chaincode "
+"lifecycle和FabToken。Alpha版提供给用户预览新功能，并不打算在生产中使用。此外，不支持升级到v2.0 "
+"Alpha版本，也不支持从Alpha版本升级到未来版本的v2.x。"
 
 #: ../../source/whatsnew.rst:15
 msgid "Fabric chaincode lifecycle"
@@ -57,10 +57,10 @@ msgid ""
 " endorsement policy, before it can be used to interact with the ledger. The "
 "new model offers several improvements over the previous lifecycle:"
 msgstr ""
-"Fabric 2.0 Alpha 引入了对 chaincode 的去中心化的管理，带来了一个在你的 peers 安装一个 chaincode 并且在一个"
-" channel 中启动 chaincode 的新流程。这个全新的 Fabric chaincode 生命周期在一个 chaincode "
-"能够被用于同账本进行交互之前，允许多个组织对于一个 chaincode 的参数达成协议，比如 chaincode "
-"背书策略。这个新的模型相对于以前的生命周期而言，提供了多个改进："
+"Fabric 2.0 "
+"Alpha为chaincode引入了去中心化的治理，并提供了一个新流程，用于在peer节点上安装chaincode并在channel上启动它。新的Fabric"
+" "
+"chaincode生命周期允许多个组织在chaincode与账本交互之前，就chaincode的参数达成一致，比如chaincode背书策略。新模式相比之前的生命周期提供了几个改进："
 
 #: ../../source/whatsnew.rst:25
 msgid ""
@@ -73,9 +73,8 @@ msgid ""
 "sufficient number of organizations to agree on an endorsement policy before "
 "it goes into effect."
 msgstr ""
-"**多个组织必须同意一个 chaincode 的参数：** 在 Fabric release 1.x 版本中，一个组织有能力为所有的 channel "
-"成员设置一个 chaincode 的参数（比如背书策略）。新的 Fabric chaincode "
-"生命周期变得更加灵活，因为她及支持中心化的信任模型（就像之前的生命周期模型），同时也支持在一个背书策略起作用前，必须要有足够有效的数量的组织同意这个背书策略的这种去中心化的模型。"
+"**多个组织必须同意链码的参数：** "
+"在Fabric的1.x版本中，一个组织能够为所有其他通道成员设置链码的参数（例如背书策略）。新的Fabric链码生命周期更加灵活，因为它既支持中心化的信任模式（如之前的生命周期模式），也支持去中心化的模式，后者需要足够多的组织在认可策略生效之前就其达成一致。"
 
 #: ../../source/whatsnew.rst:33
 msgid ""
@@ -85,8 +84,8 @@ msgid ""
 " new model allows for a chaincode to be upgraded only after a sufficient "
 "number of organizations have approved the upgrade."
 msgstr ""
-"**更安全的 chaincode 升级流程：** 在以前的 chaincode 生命周期中，升级的交易可以有单独的一个组织来发起，这就为尚未安装新的 "
-"chaincode 的 channel 成员带来了风险。新的模型允许一个 chaincode 只有当有效数量的组织已经批准了这个升级之后才会被升级。"
+"**更安全的链码升级流程：** "
+"在以前的链码生命周期中，升级的交易可以由单个组织发起，这就为尚未安装新的链码的通道成员带来了风险。新的模式要求一个链码只有在足够多的组织批准升级之后才能升级。"
 
 #: ../../source/whatsnew.rst:39
 msgid ""
@@ -97,9 +96,7 @@ msgid ""
 "is updated automatically when organizations are added or removed from the "
 "channel."
 msgstr ""
-"**更简单的背书策略更新：** Fabric 生命周期允许你能够改变一个背书策略而不需要必须打包或者重新安装 "
-"chaincode。用户也可以利用一个新的必须要求 channel 上的主要成员提供背书的默认策略。这个策略会在组织被添加到或者从 channel "
-"中被移除的时候自动被更新。"
+"**更简单的背书策略更新：**Fabric生命周期允许您更改背书策略，而无需重新打包或重新安装链码。用户还可以利用新的默认策略，该策略需要通道上的多数成员认可。当从通道中添加或删除组织时，此策略将自动更新。"
 
 #: ../../source/whatsnew.rst:45
 msgid ""
@@ -107,8 +104,7 @@ msgid ""
 "in easily readable tar files. This makes it easier to inspect the chaincode "
 "package and coordinate installation across multiple organizations."
 msgstr ""
-"**可检查的 chaincode 包：** Fabric 生命周期将 chaincode 打包成了更容易阅读的 tar 文件。这使其更容易来检查 "
-"chaincode 包，并且在多个组织间协调安装。"
+"**可检查的 chaincode 包：**Fabric生命周期将链码打包在易读的tar文件中。这使得检查链码包和跨组织协调安装变得更加容易。"
 
 #: ../../source/whatsnew.rst:49
 msgid ""
@@ -118,26 +114,24 @@ msgid ""
 " a single chaincode package and deploy it multiple times with different "
 "names on the same or different channel."
 msgstr ""
-"**在一个 channel 上使用一个包来启动多个 chaincode：** 之前的生命周期使用一个在 chaincode "
-"包被安装的时候所指定的名字和版本来定义 channel 上的每个 chaincode。现在你可以使用不同名字的同一个 chaincode "
-"包并且可以把它多次的部署到相同或者不同的 channel 上去。"
+"**在一个通道上使用一个包来启动多个链码：** "
+"之前的生命周期安装链码包时指定名称和版本定义通道上的每个链码。现在，您可以使用一个链码包，并在相同或不同的通道上多次以不同的名称部署它。"
 
 #: ../../source/whatsnew.rst:56
 msgid "Using the new chaincode lifecycle"
-msgstr "使用新的 chaincode 生命周期"
+msgstr "使用新的链码生命周期"
 
 #: ../../source/whatsnew.rst:58
 msgid ""
 "Use the following tutorials to get started with the new chaincode lifecycle:"
-msgstr "使用下边的教程来开始新的 chaincode 生命周期："
+msgstr "使用以下的教程开始新的链码生命周期："
 
 #: ../../source/whatsnew.rst:60
 msgid ""
 ":doc:`chaincode4noah`: Provides a detailed overview of the steps required to"
 " install and define a chaincode, as well as the capabilities available with "
 "the new model."
-msgstr ""
-":doc:`chaincode4noah`：提供了一个关于安装及定义一个 chaincode 所需步骤的详细的概览，也包括新的模型具有的可用的新能力。"
+msgstr ":doc:`chaincode4noah`：提供安装和定义链码所需步骤的详细概述，以及新模式的可用功能。"
 
 #: ../../source/whatsnew.rst:64
 msgid ""
@@ -146,8 +140,8 @@ msgid ""
 ":doc:`commands/peerlifecycle` CLI to install and define chaincode on a "
 "sample network."
 msgstr ""
-":doc:`build_network`：如果你现在就想使用新的生命周期的话，BYFN 教程已经被更新成了在一个例子网络上，使用 "
-":doc:`commands/peerlifecycle` CLI 来安装和定义 chaincode。"
+":doc:`build_network`：如果您想立即开始使用新的链码生命周期，那么BYFN教程已经更新为使用peer "
+"chaincode生命周期的CLI在示例网络上安装和定义链码。"
 
 #: ../../source/whatsnew.rst:69
 msgid ""
@@ -155,8 +149,8 @@ msgid ""
 ":doc:`private-data/private-data` collections with the new chaincode "
 "lifecycle."
 msgstr ""
-":doc:`private_data_tutorial`：已经被更新用来表现如何通过新的 chaincode 生命周期来使用 :doc"
-":`private-data/private-data` 集合。"
+":doc:`private_data_tutorial`：已更新了教程，演示如何在新的链码生命周期中使用私有数据集合 :doc:`private-"
+"data/private-data` 集合。"
 
 #: ../../source/whatsnew.rst:73
 msgid ""
@@ -175,13 +169,11 @@ msgid ""
 "The new Fabric chaincode lifecycle in the v2.0 Alpha release is not yet "
 "feature complete. Specifically, be aware of the following limitations in the"
 " Alpha release:"
-msgstr ""
-"在 v2.0 Alpha release 中的新的 Fabric chaincode 生命周期功能还没有彻底完成。特别的，要注意下边这些在 Alpha "
-"release 中的局限性："
+msgstr "在v2.0 Alpha版本中，新的Fabric chaincode生命周期还没有完成。具体来说，要注意Alpha发行版中的以下限制："
 
 #: ../../source/whatsnew.rst:83
 msgid "CouchDB indexes are not yet supported"
-msgstr "尚未支持 CoachDB 索引"
+msgstr "尚未支持 CouchDB 索引"
 
 #: ../../source/whatsnew.rst:84
 msgid ""
@@ -250,11 +242,9 @@ msgid ""
 "design allows organizations spread out across the world to contribute nodes "
 "to a decentralized ordering service."
 msgstr ""
-"在 v1.4.1 中被引入，`Raft <https://raft.github.io/raft.pdf>`_ 是一个崩溃容错 fault "
-"tolerant (CFT) 排序服务，基于一个在 `etcd <https://coreos.com/etcd/>`_ 中的 Raft "
-"协议的实现。Raft 遵循一个 “leader 和 follower” 模型，一个 leader 节点被选举出来（每个 "
-"channel）并且它的决定会被复制给 followers。Raft 排序服务应该比基于 Kafka "
-"的排序服务更简单的设置并管理，并且他们的设计允许分布世界各地的组织来为一个去中心化的排序服务贡献节点。"
+"在v1.4.1中引入了Raft `Raft <https://raft.github.io/raft.pdf>`_，它是一种基于etcd协议 `etcd"
+" <https://coreos.com/etcd/>`_ 实现的崩溃容错(CFT)排序服务。Raft遵循“leader and "
+"follower”模型，其中选择一个leader节点(每个channel)，并将其决策复制给follower。Raft排序服务应该比基于kafka的排序服务更容易设置和管理，而且它们的设计允许分布在世界各地的组织为去中心化的排序服务贡献节点。"
 
 #: ../../source/whatsnew.rst:125
 msgid ""

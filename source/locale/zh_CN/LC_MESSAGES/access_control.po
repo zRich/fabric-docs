@@ -5,8 +5,8 @@
 # 
 # Translators:
 # 王伟兵 <wbwang@inspur.com>, 2019
-# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # Yang Cheng <cystone@aliyun.com>, 2019
+# JulienGuo郭立冬 <690748277@qq.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-09 08:55+0800\n"
 "PO-Revision-Date: 2019-04-22 19:58+0000\n"
-"Last-Translator: Yang Cheng <cystone@aliyun.com>, 2019\n"
+"Last-Translator: JulienGuo郭立冬 <690748277@qq.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hyperledger/teams/97220/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgid ""
 "number of default ACLs. In this document, we'll talk about how they're "
 "formatted and how the defaults can be overridden."
 msgstr ""
-"Fabric使用访问控制列表(ACL)来管理对资源的访问，方法是将一个策略与资源相关联，策略指对于给定的一组身份标识可得出一个计算结果为true或false的规则。Fabric包含许多默认的ACL。在本文档中，我们将讨论如何格式化它们以及如何修改默认值。"
+"Fabric使用访问控制列表(ACL)来管理对资源的访问，方法是将策略与资源相关联，策略指对于给定的一组身份标识可得出一个计算结果为true或false的规则。Fabric包含许多默认的ACL。在本文档中，我们将讨论如何格式化它们以及如何修改默认值。"
 
 #: ../../source/access_control.md:14
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "Users interact with Fabric by targeting a user chaincode, system chaincode, "
 "or an events stream source. As such, these endpoints are considered "
 "\"resources\" on which access control should be exercised."
-msgstr "用户通过指定用户链码、系统链码或事件流的源与Fabric交互。因此，这些端点是访问的入口，它们被认为是应该执行访问控制的“资源”。"
+msgstr "用户通过指定用户链码、系统链码或事件流的源与Fabric交互。因此，这些点是访问的入口，它们被认为是应该执行访问控制的“资源”。"
 
 #: ../../source/access_control.md:24
 msgid ""
@@ -120,7 +120,7 @@ msgid ""
 "This policy construct can be interpreted as: the policy named MyPolicy can "
 "only be satisfied by the signature of an identity with role of \"a peer from"
 " Org1\" or \"a peer from Org2\"."
-msgstr "此策略结构可以解释为：名为MyPolicy的策略只能通过“来自Org1的节点”或“来自Org2的节点”角色的身份签名来满足。"
+msgstr "此策略结构可以解释为：名为MyPolicy的策略只能由角色“一个来自Org1的节点”或者角色“一个来自Org2的节点”的身份签名来满足。"
 
 #: ../../source/access_control.md:62
 msgid ""
@@ -128,8 +128,8 @@ msgid ""
 "allowing the construction of extremely powerful rules like: \"An admin of "
 "org A and two other admins, or 11 of 20 org admins\"."
 msgstr ""
-"签名策略支持AND、OR和NOutOf的任意组合，允许构造非常强大的规则，比如：“一个org "
-"A管理员和两个其他管理员，或者20个org管理员中的11个”。"
+"签名策略支持AND、OR和NOutOf的任意组合，可以构造非常强大的规则，比如：“一个org "
+"A的管理员和两个其他管理员，或者20个org管理员中的11个”。"
 
 #: ../../source/access_control.md:66
 msgid "ImplicitMeta policies"
@@ -143,8 +143,8 @@ msgid ""
 "These policies use a different but still very simple syntax as compared to "
 "Signature policies: <ALL|ANY|MAJORITY> <sub_policy>."
 msgstr ""
-"ImplicitMeta策略在配置层次结构的更深层上聚合最终由签名策略定义的策略结果。它们支持默认规则，比如“大多数组织管理员”。与签名策略相比，这些策略使用了不同但仍然非常简单的语法：<ALL|ANY|MAJORITY>"
-" <sub_policy>。"
+"ImplicitMeta策略聚合配置层次结构中更深层次的策略结果，这些策略最终由签名策略定义。它们支持默认规则，比如“组织中多数管理员”。这些策略使用的语法和签名策略不同，但是依旧很简单："
+" <ALL|ANY|MAJORITY> <sub_policy>。"
 
 #: ../../source/access_control.md:74
 msgid "For example: ANY Readers or MAJORITY Admins."
@@ -163,27 +163,30 @@ msgid ""
 "tasks. These default policies can be added to, edited, or supplemented, for "
 "example by the new peer and client roles (if you have NodeOU support)."
 msgstr ""
-"注意，在默认策略配置中，管理员具有管理角色。指定只有管理员(或管理员的某些子集)才能访问资源的策略往往是针对敏感或网络管理方面(例如在通道上实例化链码)。写入者往往能够提议账本更新，比如交易，但通常没有管理权限。读者是一个被动的角色。他们可以获取信息，但没有提议更新账本的权限，也不能执行管理任务。这些默认策略可以添加、编辑或补充，例如通过新的节点和客户端角色(如果您有NodeOU支持)。"
+"注意，在默认策略配置中，Admins有一个可操作的角色。指定只有管理员---或某些管理员子集---"
+"才能访问资源的策略，往往是针对网络敏感的或可操作的方面（例如在通道上实例化链代码）。Writers往往能够提议账本更新，比如一个交易，但是通常没有管理权限。Readers是被动角色。他们可以获取信息，但没有提议更新账本的权限，也不能执行管理任务。这些默认策略可以被一些角色添加、编辑或者补充，比如Peer角色，或者如果你的网络支持NodeOU，Client角色也可以。"
 
 #: ../../source/access_control.md:87
 msgid "Here's an example of an ImplicitMeta policy structure:"
-msgstr "这里有一个ImplicitMeta策略结构的例子："
+msgstr "这是一个ImplicitMeta策略结构的例子："
 
 #: ../../source/access_control.md:96
 msgid ""
 "Here, the policy AnotherPolicy can be satisfied by the MAJORITY of Admins, "
 "where Admins is eventually being specified by lower level Signature policy."
-msgstr "在这里，大多数管理员可以满足策略AnotherPolicy，其中管理员最终由下级的签名策略指定。"
+msgstr ""
+"这里， AnotherPolicy策略可以通过MAJORITY Admins "
+"（多数管理员同意）的方式来满足。其中Admins是再通过更低级的Signature策略来满足的。"
 
 #: ../../source/access_control.md:99
 msgid "Where is access control specified?"
-msgstr "访问控制在哪里指定？"
+msgstr "在哪里指定访问控制？"
 
 #: ../../source/access_control.md:101
 msgid ""
 "Access control defaults exist inside configtx.yaml, the file that "
 "configtxgen uses to build channel configurations."
-msgstr "访问控制默认值存在于configtx.yaml中, configtxgen用于构建通道的配置文件。"
+msgstr "默认的访问控制在configtx.yaml中，这是configtxgen用来构建通道配置的文件。"
 
 #: ../../source/access_control.md:104
 msgid ""
@@ -192,7 +195,7 @@ msgid ""
 "channels, or by updating access control in the channel configuration of a "
 "particular channel."
 msgstr ""
-"访问控制可以通过以下两种方式之一进行更新：编辑configtx.yaml，它将ACL更改传播到任何新通道，或者通过更新特定通道配置文件中的访问控制。"
+"访问控制可以通过以下两种方式之一进行更新：编辑configtx.yaml，这会把ACL的更改传递到所有新通道，或者通过更新特定通道的通道配置来更新访问控制。"
 
 #: ../../source/access_control.md:108
 msgid "How ACLs are formatted in configtx.yaml"
@@ -216,7 +219,8 @@ msgid ""
 " /Channel/Application/Writers and /Channel/Application/Readers, "
 "respectively."
 msgstr ""
-"这些ACL定义了对节点/提议和事件/区块资源的访问，仅限于满足分别在正则路径/Channel/Application/Writers和/Channel/Application/Readers上定义的策略。"
+"这些 "
+"ACLs定义了对资源peer/Propose和event/Block的访问分别被限定为满足路径/Channel/Application/Writers和/Channel/Application/Readers中定义的策略的身份。"
 
 #: ../../source/access_control.md:129
 msgid "Updating ACL defaults in configtx.yaml"
@@ -227,7 +231,7 @@ msgid ""
 "In cases where it will be necessary to override ACL defaults when "
 "bootstrapping a network, or to change the ACLs before a channel has been "
 "bootstrapped, the best practice will be to update configtx.yaml."
-msgstr "在引导网络时需要覆盖ACL默认值，或者在引导通道之前更改ACL的情况下，最佳实践将是更新config .yaml。"
+msgstr "如果在最初引导启动网络时需要覆盖ACL默认值，或者在最初引导启动通道之前更改ACL，最佳做法是更新configtx.yaml。"
 
 #: ../../source/access_control.md:135
 msgid ""
@@ -235,8 +239,7 @@ msgid ""
 "specifies the policy for invoking chaincodes on a peer -- from "
 "/Channel/Application/Writers to a policy called MyPolicy."
 msgstr ""
-"假设您想修改节点/提议的ACL默认值，它指定了在节点上调用链码的策略，从/Channel/Application/ "
-"writer到一个名为MyPolicy的策略。"
+"假如你想修改peer/Propose的默认ACL，它指定了在节点上调用链码的策略，从默认值/Channel/Application/Writers修改为一个叫MyPolicy的策略。"
 
 #: ../../source/access_control.md:139
 msgid ""
@@ -246,13 +249,13 @@ msgid ""
 "specifies a rule to be checked to grant or deny access to a user. For this "
 "example, we'll be creating a Signature policy identifying SampleOrg.admin."
 msgstr ""
-"这是通过添加一个名为MyPolicy的策略来实现的（它可以被称为任何名称，但在本例中，我们将其称为MyPolicy）。这个策略在configtx.yaml中的Application.Policies部分下定义，它指定了对于一个用户要授予或拒绝的访问授权。对于本例，我们将创建一个标识为SampleOrg.admin的签名策略。"
+"这是通过添加一个名为MyPolicy的策略来实现的（它可以被称为任何名称，但在本例中，我们将其称为MyPolicy）。这个策略在configtx.yaml中的Application.Policies部分下定义，它指定了对于检查一个用户后要授予还是要拒绝的访问规则。对于本例，我们将创建一个标识为SampleOrg.admin的签名策略。"
 
 #: ../../source/access_control.md:161
 msgid ""
 "Then, edit the Application: ACLs section inside configtx.yaml to change "
 "peer/Propose from this:"
-msgstr "然后，编辑configtx.yaml中的Application: ACLs部分，来修改 peer/Propose从下面的:"
+msgstr "然后，编辑configtx.yaml中的Application: ACLs部分，修改 peer/Propose，从下面的："
 
 #: ../../source/access_control.md:164
 msgid "peer/Propose: /Channel/Application/Writers"
@@ -260,7 +263,7 @@ msgstr "peer/Propose: /Channel/Application/Writers"
 
 #: ../../source/access_control.md:166 ../../source/access_control.md:250
 msgid "To this:"
-msgstr "到："
+msgstr "改成："
 
 #: ../../source/access_control.md:168
 msgid "peer/Propose: /Channel/Application/MyPolicy"
